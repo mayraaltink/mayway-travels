@@ -196,7 +196,10 @@ export const ui = {
     'planner.anythingElse': 'Anything else you\'d like us to know about you or your perfect trip?',
     'planner.submit': 'Send Request',
 
-
+'home.about.title': "Hi, I'm Mayra 👋",
+'home.about.p1': "I help you design meaningful travel experiences across Australia, New Zealand and Southeast Asia.",
+'home.about.p2': "Think of me as your personal travel planner — combining local insights, route planning and real-life experience.",
+'home.about.cta': "Get to know me better",
 
 
     
@@ -390,7 +393,10 @@ export const ui = {
     'planner.anythingElse': 'Is er nog iets anders dat je ons wilt vertellen over jezelf of je perfecte reis?',
     'planner.submit': 'Verzoek verzenden',
 
-
+'home.about.title': "Hi, ik ben Mayra 👋",
+'home.about.p1': "Ik help je met het plannen van unieke reiservaringen door Australië, Nieuw-Zeeland en Zuidoost-Azië.",
+'home.about.p2': "Zie mij als jouw persoonlijke reisplanner — met lokale tips, routes en echte ervaring uit de praktijk.",
+'home.about.cta': "Leer mij beter kennen",
   },
 } as const;
 

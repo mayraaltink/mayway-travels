@@ -6,6 +6,7 @@ import HomeCarousel from '../../components/ui/HomeCarousel.astro';
 // import backgroundImage from '../../assets/pexels-1320686.jpeg';
 import { ui } from '../../i18n/ui';
 const t = ui.en;
+import AboutMeHome from '../../components/ui/AboutMeHome.astro';
 ---
 
 <BaseLayout title="Home | MAYWAY travels">
@@ -21,8 +22,11 @@ const t = ui.en;
     secondaryButtonText="View e-guides"
     secondaryButtonLink="/en/e-guides"
   />
+<AboutMeHome />
 
   <HomeCarousel />
+
+
 
   <!-- components for new sections can go here -->
 

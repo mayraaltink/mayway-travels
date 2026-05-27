@@ -7,7 +7,7 @@ export const defaultLang = 'nl';
 
 export const ui = {
   en: {
-    // homepage and menu
+    // homepage and menu /////////////////////////////////////////////
     'nav.home': 'Home',
     'nav.destinations': 'Destinations',
     'nav.advice': 'Travel Tips',
@@ -52,8 +52,8 @@ export const ui = {
     'contact.form.messagePlaceholder': 'Tell me briefly about your plans...',
     'contact.form.submit': 'Send message',
 
-    // eguides
-        // E-Guides Page
+
+    // eguides ///////////////////////////////////////////////////////////
     'eguides.title': 'E-guides | MAYWAY Travels',
     'eguides.hero.badge1': 'Digital product',
     'eguides.hero.title1': 'Interactive guide',
@@ -123,7 +123,7 @@ export const ui = {
     "advice.cta.link": "View the guide →",
 
 
-    // destinations
+    // destinations ////////////////////////////////////////////////////////////////////////
     'destinations.title': 'Destinations | MAYWAY Travels',
     'destinations.heading': 'Where do you want to go?',
     'destinations.subheading': 'Click or hover over a marker on the map to explore',
@@ -171,9 +171,39 @@ export const ui = {
     'indonesia.page.language': 'Indonesian',
     'indonesia.page.currency': 'Indonesian Rupiah (IDR)',
 
+
+    // Route Planner /////////////////////////////////////////////////////////
+    'planner.title': 'Route Planner',
+    'planner.heading': 'Design Your Perfect Trip',
+    'planner.subheading': 'Tell us what you want, and we\'ll craft the ultimate adventure.',
+    'planner.country': 'Destination',
+    'planner.startDate': 'Start Date',
+    'planner.flexible': 'I\'m flexible',
+    'planner.days': 'Number of Days',
+    'planner.unsure': 'Unsure',
+    'planner.people': 'Number of People',
+    'planner.startPlace': 'Starting Location',
+    'planner.endPlace': 'Ending Location',
+    'planner.mustSee': 'Places you definitely want to see',
+    'planner.accommodation': 'Accommodation Style',
+    'planner.hostels': 'Popular Hostels',
+    'planner.privateRooms': 'Private Rooms',
+    'planner.vibe': 'Your Vibe',
+    'planner.relaxing': 'Relaxing',
+    'planner.adventure': 'Adventure',
+    'planner.party': 'Party',
+    'planner.activities': 'Activities',
+    'planner.anythingElse': 'Anything else you\'d like us to know about you or your perfect trip?',
+    'planner.submit': 'Send Request',
+
+
+
+
+    
+
   },
   nl: {
-    // homepage and menu
+    // homepage and menu /////////////////////////////////////////////
     'nav.home': 'Home',
     'nav.destinations': 'Bestemmingen',
     'nav.advice': 'Reisadvies',
@@ -218,7 +248,8 @@ export const ui = {
     'contact.form.messagePlaceholder': 'Vertel me kort iets over je plannen...',
     'contact.form.submit': 'Verstuur bericht',
 
-    // eguides
+
+    // eguides ///////////////////////////////////////////////////////////
     'eguides.title': 'E-gidsen | MAYWAY Travels',
     'eguides.hero.badge1': 'Digitaal product',
     'eguides.hero.title1': 'Interactieve gids',
@@ -285,7 +316,7 @@ export const ui = {
     "advice.cta.link": "Bekijk de gids →",
 
         
-    // destinations
+    // destinations /////////////////////////////////////////////////////////////////////////
     'destinations.title': 'Bestemmingen | MAYWAY Travels',
     'destinations.heading': 'Waar wil je naartoe?',
     'destinations.subheading': 'Klik of hover over een marker op de kaart om meer te zien',
@@ -333,6 +364,31 @@ export const ui = {
     'indonesia.page.capital': 'Jakarta',
     'indonesia.page.language': 'Indonesisch',
     'indonesia.page.currency': 'Indonesische Rupiah (IDR)',
+
+
+    // Route Planner /////////////////////////////////////////////////////////
+    'planner.title': 'Routeplanner',
+    'planner.heading': 'Ontwerp je perfecte reis',
+    'planner.subheading': 'Vertel ons wat je wilt, en wij creëren het ultieme avontuur.',
+    'planner.country': 'Bestemming',
+    'planner.startDate': 'Startdatum',
+    'planner.flexible': 'Ik ben flexibel',
+    'planner.days': 'Aantal dagen',
+    'planner.unsure': 'Niet zeker',
+    'planner.people': 'Aantal personen',
+    'planner.startPlace': 'Startlocatie',
+    'planner.endPlace': 'Eindlocatie',
+    'planner.mustSee': 'Plaatsen die je zeker wilt zien',
+    'planner.accommodation': 'Type accommodatie',
+    'planner.hostels': 'Populaire hostels',
+    'planner.privateRooms': 'Privékamers',
+    'planner.vibe': 'Jouw sfeer',
+    'planner.relaxing': 'Ontspannen',
+    'planner.adventure': 'Avontuur',
+    'planner.party': 'Feesten',
+    'planner.activities': 'Activiteiten',
+    'planner.anythingElse': 'Is er nog iets anders dat je ons wilt vertellen over jezelf of je perfecte reis?',
+    'planner.submit': 'Verzoek verzenden',
 
 
   },

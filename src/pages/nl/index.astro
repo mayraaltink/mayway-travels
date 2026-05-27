@@ -4,11 +4,15 @@ import Hero from '../../components/ui/Hero.astro';
 import backgroundImage from '../../assets/moalboal_drone_2.webp';
 import HomeCarousel from '../../components/ui/HomeCarousel.astro';
 // import backgroundImage from '../../assets/pexels-1320686.jpeg';
+import { ui } from '../../i18n/ui';
+const t = ui.nl;
 ---
+
+
 
 <BaseLayout title="Home | MAYWAY travels">
   
-  <!-- We pass the Dutch text as props to the reusable Hero component -->
+  <!-- Pass the Dutch text as props to the reusable Hero component -->
   <Hero 
     heroImage={backgroundImage}
     titleLine1="jouw avontuur,"
@@ -19,6 +23,7 @@ import HomeCarousel from '../../components/ui/HomeCarousel.astro';
     secondaryButtonText="Bekijk e-gidsen"
     secondaryButtonLink="/nl/e-gidsen"
   />
+
 
   <HomeCarousel />
   <!-- The next sections (Hotspots, About Mayra, etc.) will go here! -->

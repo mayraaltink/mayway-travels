@@ -1,0 +1,393 @@
+---
+// src/components/ui/RoutePlannerContent.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { ui, defaultLang } from '../../i18n/ui';
+
+const lang = Astro.currentLocale || defaultLang;
+
+// Bulletproof translation helper
+function t(key: string) {
+  try {
+    // @ts-ignore
+    return ui[lang]?.[key] || ui[defaultLang]?.[key] || key;
+  } catch (e) {
+    return key;
+  }
+}
+---
+
+<BaseLayout title={t('planner.title')} description={t('planner.subheading')}>
+  <div class="font-neucha flex flex-col md:flex-row min-h-screen">
+    
+    <!-- Left Section: Image & Branding -->
+    <div class="relative w-full md:w-5/12 min-h-[50vh] md:min-h-screen md:sticky md:top-0">
+      <img 
+        id="planner-hero-image"
+        src="/images/australia/default.jpg" 
+        onerror="this.onerror=null; this.src='/images/back%20on%20the%20island%F0%9F%98%83.jpg';"
+        alt="Travel Destination" 
+        class="absolute inset-0 h-full w-full object-cover"
+      >
+      <!-- Gradient flipped to top (to-b) so the text at the top is readable -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#1CABB0]/95 via-[#1CABB0]/60 to-black/40"></div>
+      
+      <!-- Text moved to the top (with a top buffer to clear the navbar) -->
+      <div class="absolute top-24 left-8 md:top-36 md:left-12 pr-8 z-10">
+        <h1 class="font-libre text-4xl sm:text-5xl md:text-6xl font-normal italic text-white leading-tight mb-4 drop-shadow-lg">
+          {t('planner.heading')}
+        </h1>
+        <p class="text-white/95 text-lg md:text-xl max-w-md">
+          {t('planner.subheading')}
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Section: Form (Added pt-24 and md:pt-32 to create a buffer for the navbar) -->
+    <div class="w-full md:w-7/12 bg-[#F9FBFB] px-6 pt-20 pb-12 md:px-14 md:pt-32 md:pb-16 text-gray-800">
+      
+      <form id="route-planner-form" class="space-y-10 max-w-2xl mx-auto" data-unsure={t('planner.unsure')}>
+        
+        <!-- Web3Forms Hidden Inputs -->
+        <input type="hidden" name="access_key" value="2959f375-6a4f-4be5-8939-f7fdf988e6fd" />
+        <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+        <input type="hidden" name="subject" value="New Route Planner Request!" />
+
+        <!-- Contact Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+          <div class="flex flex-col gap-2">
+            <label class="font-bold text-xl text-gray-700">Name</label>
+            <input type="text" name="Name" required class="rounded-md border-gray-300 p-3 focus:border-[#1CABB0] focus:ring-[#1CABB0] bg-gray-50" placeholder="Your Name">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="font-bold text-xl text-gray-700">Email</label>
+            <input type="email" name="Email" required class="rounded-md border-gray-300 p-3 focus:border-[#1CABB0] focus:ring-[#1CABB0] bg-gray-50" placeholder="Your Email">
+          </div>
+        </div>
+
+        <!-- Destination (Made Text Bigger) -->
+        <div class="flex flex-col gap-3">
+          <label class="font-bold text-2xl md:text-3xl text-[#15939a]">{t('planner.country')}</label>
+          <select id="country-select" name="Destination" class="w-full rounded-md border-gray-300 p-4 shadow-sm focus:border-[#1CABB0] focus:ring-[#1CABB0] bg-white text-xl font-medium">
+            <option value="australia">Australia</option>
+            <option value="indonesia">Indonesia</option>
+            <option value="new-zealand">New Zealand</option>
+          </select>
+        </div>
+
+        <!-- The Basics -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+          
+          <!-- Start Date -->
+          <div class="flex flex-col gap-2">
+            <label class="font-bold text-xl text-gray-700">{t('planner.startDate')}</label>
+            <input type="date" id="start-date" name="Start Date" class="rounded-md text-lg border-gray-300 p-2 focus:ring-[#1CABB0] bg-gray-50">
+            <label class="flex items-center gap-2 mt-1 text-lg text-gray-600">
+              <input type="checkbox" id="flexible-date" name="Date Flexible" value="Yes" class="rounded text-[#1CABB0] focus:ring-[#1CABB0]">
+              {t('planner.flexible')}
+            </label>
+          </div>
+
+          <!-- People -->
+          <div class="flex flex-col gap-2">
+            <label class="font-bold text-xl text-gray-700">{t('planner.people')}</label>
+            <input type="number" name="Number of People" min="1" value="1" class="rounded-md text-lg border-gray-300 p-2 focus:ring-[#1CABB0] bg-gray-50">
+          </div>
+
+          <!-- Days Slider -->
+          <div class="flex flex-col gap-2 md:col-span-2">
+            <div class="flex justify-between items-center">
+               <label class="font-bold text-xl text-gray-700">{t('planner.days')} (<span id="days-output">14</span>)</label>
+               <label class="flex items-center gap-2 text-lg text-gray-600">
+                 <input type="checkbox" id="unsure-days" name="Days Unsure" value="Yes" class="rounded text-[#1CABB0] focus:ring-[#1CABB0]">
+                 {t('planner.unsure')}
+               </label>
+            </div>
+            <input type="range" id="days-slider" name="Days Required" min="10" max="90" value="14" class="w-full accent-[#1CABB0]">
+          </div>
+        </div>
+
+        <!-- The Route -->
+        <div class="space-y-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="font-bold text-xl text-gray-700">{t('planner.startPlace')}</label>
+              <select id="start-place" name="Starting Location" class="rounded-md border-gray-300 p-2 focus:ring-[#1CABB0] bg-gray-50"></select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-bold text-xl text-gray-700">{t('planner.endPlace')}</label>
+              <select id="end-place" name="Ending Location" class="rounded-md border-gray-300 p-2 focus:ring-[#1CABB0] bg-gray-50"></select>
+            </div>
+          </div>
+
+          <!-- Must See -->
+          <div class="flex flex-col gap-2 pt-4 border-t border-gray-100">
+            <label class="font-bold text-xl text-gray-700">{t('planner.mustSee')}</label>
+            <div id="must-see-container" class="grid grid-cols-2 gap-3 text-gray-600">
+              <!-- Checkboxes populated via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Style & Vibe -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          <!-- Accommodation Style (Made Text Bigger) -->
+          <div class="flex flex-col gap-3">
+            <label class="font-bold text-[#15939a] text-2xl md:text-3xl mb-1">{t('planner.accommodation')}</label>
+            <label class="flex items-center gap-3 bg-white p-3 rounded-lg border border-gray-100 shadow-sm cursor-pointer hover:border-[#1CABB0] transition-colors">
+              <input type="radio" name="Accommodation Style" value="Hostels" class="text-[#1CABB0] focus:ring-[#1CABB0] w-4 h-4"> 
+              <span class="text-lg">{t('planner.hostels')}</span>
+            </label>
+            <label class="flex items-center gap-3 bg-white p-3 rounded-lg border border-gray-100 shadow-sm cursor-pointer hover:border-[#1CABB0] transition-colors">
+              <input type="radio" name="Accommodation Style" value="Private Rooms" class="text-[#1CABB0] focus:ring-[#1CABB0] w-4 h-4"> 
+              <span class="text-lg">{t('planner.privateRooms')}</span>
+            </label>
+          </div>
+
+          <!-- Vibe (Made Text Bigger) -->
+          <div class="flex flex-col gap-3">
+            <label class="font-bold text-[#15939a] text-2xl md:text-3xl mb-1">{t('planner.vibe')}</label>
+            <label class="flex items-center gap-3 bg-white p-3 rounded-lg border border-gray-100 shadow-sm cursor-pointer hover:border-[#1CABB0] transition-colors">
+              <input type="checkbox" name="Vibe" value="Relaxing" class="rounded text-[#1CABB0] focus:ring-[#1CABB0] w-4 h-4"> 
+              <span class="text-lg">{t('planner.relaxing')}</span>
+            </label>
+            <label class="flex items-center gap-3 bg-white p-3 rounded-lg border border-gray-100 shadow-sm cursor-pointer hover:border-[#1CABB0] transition-colors">
+              <input type="checkbox" name="Vibe" value="Adventure" class="rounded text-[#1CABB0] focus:ring-[#1CABB0] w-4 h-4"> 
+              <span class="text-lg">{t('planner.adventure')}</span>
+            </label>
+            <label class="flex items-center gap-3 bg-white p-3 rounded-lg border border-gray-100 shadow-sm cursor-pointer hover:border-[#1CABB0] transition-colors">
+              <input type="checkbox" name="Vibe" value="Party" class="rounded text-[#1CABB0] focus:ring-[#1CABB0] w-4 h-4"> 
+              <span class="text-lg">{t('planner.party')}</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Activities -->
+        <div class="flex flex-col gap-3 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+          <label class="font-bold text-xl text-gray-700">{t('planner.activities')}</label>
+          <div id="activities-container" class="grid grid-cols-2 md:grid-cols-3 gap-3 text-gray-600">
+            <!-- Checkboxes populated via JS -->
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="flex flex-col gap-2">
+          <label class="font-bold text-xl text-gray-700">{t('planner.anythingElse')}</label>
+          <textarea name="Additional Notes" rows="4" class="rounded-xl border-gray-300 p-4 focus:border-[#1CABB0] focus:ring-[#1CABB0] w-full resize-none shadow-sm bg-gray-50"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button id="submit-btn" type="submit" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#1CABB0] hover:bg-[#15939a] text-white font-semibold uppercase tracking-wider py-4 px-10 rounded-full transition-all text-lg shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed">
+          <span id="submit-text">{t('planner.submit')}</span>
+          <!-- Loading Spinner -->
+          <svg id="submit-spinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </button>
+
+        <!-- Notification Box -->
+        <div id="notification-box" class="hidden mt-6 p-5 rounded-xl border flex items-start gap-4 transition-all duration-300">
+          <div id="notify-icon" class="flex-shrink-0 mt-0.5"></div>
+          <div>
+            <h4 id="notify-title" class="font-bold text-lg mb-1"></h4>
+            <p id="notify-desc" class="text-gray-700 text-sm leading-relaxed"></p>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline>
+  function initRoutePlanner() {
+    // Dynamic Form Data Configuration
+    const dataMap = {
+      'australia': {
+        places: ['Sydney', 'Melbourne', 'Cairns', 'Brisbane', 'Perth', 'Darwin', 'Adelaide'],
+        mustSee: ['Whitsundays', 'Fraser Island', 'Great Barrier Reef', 'Uluru', 'Great Ocean Road', 'Daintree'],
+        activities: ['Surfing', 'Scuba Diving', 'Skydiving', 'Sailing', 'Wine Tasting', 'Hiking']
+      },
+      'indonesia': {
+        places: ['Bali', 'Jakarta', 'Lombok', 'Yogyakarta', 'Gili Islands', 'Komodo'],
+        mustSee: ['Ubud', 'Komodo National Park', 'Mount Batur', 'Nusa Penida', 'Borobudur'],
+        activities: ['Yoga', 'Volcano Trekking', 'Snorkeling', 'Surfing', 'Temple Hopping', 'Cooking Class']
+      },
+      'new-zealand': {
+        places: ['Auckland', 'Queenstown', 'Christchurch', 'Wellington', 'Rotorua', 'Nelson'],
+        mustSee: ['Milford Sound', 'Hobbiton', 'Franz Josef Glacier', 'Mount Cook', 'Tongariro'],
+        activities: ['Bungee Jumping', 'Hiking', 'Jet Boating', 'Skiing/Snowboarding', 'Whale Watching']
+      }
+    };
+
+    const form = document.getElementById('route-planner-form');
+    if (!form) return;
+
+    const unsureText = form.getAttribute('data-unsure') || 'Unsure';
+    const countrySelect = document.getElementById('country-select');
+    const startPlaceSelect = document.getElementById('start-place');
+    const endPlaceSelect = document.getElementById('end-place');
+    const mustSeeContainer = document.getElementById('must-see-container');
+    const activitiesContainer = document.getElementById('activities-container');
+
+    // Populate Dynamic Fields
+    function populateDynamicFields() {
+      if (!countrySelect) return;
+      const country = countrySelect.value;
+      const data = dataMap[country];
+      if (!data) return;
+
+      const optionsHtml = '<option value="unsure">' + unsureText + '</option>' + 
+        data.places.map(p => '<option value="' + p + '">' + p + '</option>').join('');
+      
+      if(startPlaceSelect) startPlaceSelect.innerHTML = optionsHtml;
+      if(endPlaceSelect) endPlaceSelect.innerHTML = optionsHtml;
+
+      if(mustSeeContainer) {
+        mustSeeContainer.innerHTML = `
+          <label class="flex items-center gap-2"><input type="checkbox" name="Must See Places" value="unsure" class="rounded text-[#1CABB0] focus:ring-[#1CABB0]"> ${unsureText}</label>
+        ` + data.mustSee.map(item => `
+          <label class="flex items-center gap-2"><input type="checkbox" name="Must See Places" value="${item}" class="rounded text-[#1CABB0] focus:ring-[#1CABB0]"> ${item}</label>
+        `).join('');
+      }
+
+      if(activitiesContainer) {
+        activitiesContainer.innerHTML = data.activities.map(act => `
+          <label class="flex items-center gap-2"><input type="checkbox" name="Activities" value="${act}" class="rounded text-[#1CABB0] focus:ring-[#1CABB0]"> ${act}</label>
+        `).join('');
+      }
+    }
+
+    // Handle URL Parameter to pre-select country
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlCountry = urlParams.get('country');
+    if (urlCountry && dataMap[urlCountry] && countrySelect) {
+      countrySelect.value = urlCountry;
+    }
+
+    populateDynamicFields();
+    if(countrySelect) {
+      countrySelect.addEventListener('change', populateDynamicFields);
+    }
+
+    // UI Logic: Dates & Sliders
+    const startDate = document.getElementById('start-date');
+    const flexibleDate = document.getElementById('flexible-date');
+    if (flexibleDate && startDate) {
+      flexibleDate.addEventListener('change', function(e) {
+        startDate.disabled = e.target.checked;
+      });
+    }
+
+    const daysSlider = document.getElementById('days-slider');
+    const daysOutput = document.getElementById('days-output');
+    const unsureDays = document.getElementById('unsure-days');
+    
+    if (daysSlider && daysOutput) {
+      daysSlider.addEventListener('input', function(e) {
+        daysOutput.textContent = e.target.value;
+      });
+    }
+
+    if (unsureDays && daysSlider && daysOutput) {
+      unsureDays.addEventListener('change', function(e) {
+        const isChecked = e.target.checked;
+        daysSlider.disabled = isChecked;
+        daysOutput.textContent = isChecked ? unsureText : daysSlider.value;
+      });
+    }
+
+    // Form Submission to Web3Forms
+    const submitBtn = document.getElementById("submit-btn");
+    const submitText = document.getElementById("submit-text");
+    const submitSpinner = document.getElementById("submit-spinner");
+    const notificationBox = document.getElementById("notification-box");
+    const notifyIcon = document.getElementById("notify-icon");
+    const notifyTitle = document.getElementById("notify-title");
+    const notifyDesc = document.getElementById("notify-desc");
+
+    const iconSuccess = `<svg class="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+    const iconError = `<svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const originalBtnText = submitText.innerText;
+      
+      submitBtn.disabled = true;
+      submitText.innerText = "Sending...";
+      submitSpinner.classList.remove("hidden");
+      notificationBox.classList.add("hidden");
+
+      const formData = new FormData(form);
+      const object = {};
+      
+      for (let [key, value] of formData.entries()) {
+        if (object[key] !== undefined) {
+          if (!Array.isArray(object[key])) {
+             object[key] = [object[key]];
+          }
+          object[key].push(value);
+        } else {
+          object[key] = value;
+        }
+      }
+      
+      const json = JSON.stringify(object);
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        notificationBox.classList.remove("hidden");
+
+        if (response.status == 200) {
+          notificationBox.className = "mt-6 p-5 rounded-xl border bg-green-50 border-green-200 flex items-start gap-4 transition-all duration-300";
+          notifyIcon.innerHTML = iconSuccess;
+          notifyTitle.innerText = "Itinerary Request Sent!";
+          notifyTitle.className = "font-bold text-lg mb-1 text-green-900";
+          notifyDesc.innerText = "Thanks for your details. We're excited to start planning your perfect trip and will be in touch soon!";
+          
+          form.reset();
+          populateDynamicFields();
+          daysOutput.textContent = "14";
+        } else {
+          notificationBox.className = "mt-6 p-5 rounded-xl border bg-red-50 border-red-200 flex items-start gap-4 transition-all duration-300";
+          notifyIcon.innerHTML = iconError;
+          notifyTitle.innerText = "Oops! Something went wrong.";
+          notifyTitle.className = "font-bold text-lg mb-1 text-red-900";
+          notifyDesc.innerText = json.message || "Please try again later.";
+        }
+      })
+      .catch((error) => {
+        notificationBox.classList.remove("hidden");
+        notificationBox.className = "mt-6 p-5 rounded-xl border bg-red-50 border-red-200 flex items-start gap-4 transition-all duration-300";
+        notifyIcon.innerHTML = iconError;
+        notifyTitle.innerText = "Connection Error";
+        notifyTitle.className = "font-bold text-lg mb-1 text-red-900";
+        notifyDesc.innerText = "Please check your internet connection and try again.";
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitText.innerText = originalBtnText;
+        submitSpinner.classList.add("hidden");
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", initRoutePlanner);
+  document.addEventListener("astro:page-load", initRoutePlanner);
+</script>

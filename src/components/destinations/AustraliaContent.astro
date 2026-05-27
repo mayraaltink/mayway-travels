@@ -21,7 +21,7 @@ function t(key: keyof typeof ui[typeof lang]) {
   currency={t('aus.page.currency')}
   imageSrc="/images/australia/aus_main.jpg"
   imageAlt="Beautiful landscape in Australia"
-  planUrl={lang === 'nl' ? '/nl/contact/' : '/en/contact/'}
+  planUrl={lang === 'nl' ? '/nl/route-planner?country=australia' : '/en/route-planner?country=australia'}
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
 >
   <!-- The carousel gets injected into the <slot /> of DestinationContent -->

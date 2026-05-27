@@ -196,10 +196,11 @@ export const ui = {
     'planner.anythingElse': 'Anything else you\'d like us to know about you or your perfect trip?',
     'planner.submit': 'Send Request',
 
-'home.about.title': "Hi, I'm Mayra 👋",
-'home.about.p1': "I help you design meaningful travel experiences across Australia, New Zealand and Southeast Asia.",
-'home.about.p2': "Think of me as your personal travel planner — combining local insights, route planning and real-life experience.",
-'home.about.cta': "Get to know me better",
+// ENGLISH
+'home.about.title': "Meet Mayra",
+'home.about.p1': "Ever since I was young, I’ve been fascinated by travel. Planning unique routes, discovering hidden places, and seeking experiences beyond the beaten path.",
+'home.about.p2': "With a curious perspective on the world, I’m always searching for the true local experience. For me, the magic of travel lies in unexpected encounters, authentic places, and daring to step outside your comfort zone.",
+'home.about.cta': "Get to know me better"
 
 
     
@@ -393,9 +394,10 @@ export const ui = {
     'planner.anythingElse': 'Is er nog iets anders dat je ons wilt vertellen over jezelf of je perfecte reis?',
     'planner.submit': 'Verzoek verzenden',
 
-'home.about.title': "Hi, ik ben Mayra 👋",
-'home.about.p1': "Ik help je met het plannen van unieke reiservaringen door Australië, Nieuw-Zeeland en Zuidoost-Azië.",
-'home.about.p2': "Zie mij als jouw persoonlijke reisplanner — met lokale tips, routes en echte ervaring uit de praktijk.",
+// DUTCH
+'home.about.title': "Meet Mayra",
+'home.about.p1': "Vanaf jongs af aan ben ik gefascineerd door reizen. Het uitstippelen van unieke routes, het ontdekken van verborgen plekken en het opzoeken van ervaringen buiten de gebaande paden.",
+'home.about.p2': "Met een nieuwsgierige blik op de wereld ben ik altijd op zoek naar de échte lokale beleving. Voor mij zit het geheim van reizen in onverwachte ontmoetingen, authentieke plekken en het durven stappen buiten je comfortzone.",
 'home.about.cta': "Leer mij beter kennen",
   },
 } as const;

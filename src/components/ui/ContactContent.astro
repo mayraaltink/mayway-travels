@@ -10,15 +10,15 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 ---
 
 <BaseLayout title={t('contact.title')}>
-  <div class="bg-[#F7F4EF] relative z-0 flex-grow pt-28 md:pt-36 pb-20 px-6 font-neucha">
+  <div class="bg-[#F7F4EF] relative z-0 flex-grow pt-28 md:pt-36 pb-20 px-6">
     
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 md:gap-20 items-start">
       
       <!-- Left Side: Info & CTA -->
       <div class="flex flex-col justify-center">
-        <h1 class="font-libre text-4xl md:text-5xl font-normal italic text-gray-900 mb-6">
-          {t('contact.heading')}
-        </h1>
+      <h1 class="text-4xl md:text-5xl font-semibold text-gray-900 leading-[0.95] mb-6">
+  {t('contact.heading')}
+</h1>
         <p class="text-lg text-gray-600 mb-10 max-w-md leading-relaxed">
           {t('contact.intro')}
         </p>
@@ -33,13 +33,32 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
         <div class="flex flex-col gap-4">
           <div class="flex items-center gap-3">
-            <span class="text-[#4ED2CE] font-bold text-md uppercase tracking-wider">E-mail</span>
-            <span class="font-medium text-gray-800 text-lg">hello@maywaytravels.nl</span>
-          </div>
+  <span class="text-[#4ED2CE] font-bold text-md uppercase tracking-wider">
+    E-mail
+  </span>
+
+<a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=maywaytravels1@gmail.com"
+  target="_blank"
+  class="font-medium text-gray-800 text-lg hover:text-[#4ED2CE] transition-colors"
+>
+  maywaytravels1@gmail.com
+</a>
+</div>
           <div class="flex items-center gap-3">
-            <span class="text-[#4ED2CE] font-bold text-md uppercase tracking-wider">Instagram</span>
-            <span class="font-medium text-gray-800 text-lg">@maywaytravels</span>
-          </div>
+  <span class="text-[#4ED2CE] font-bold text-md uppercase tracking-wider">
+    Instagram
+  </span>
+
+  <a 
+    href="https://instagram.com/maywaytravels"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="font-medium text-gray-800 text-lg hover:text-[#4ED2CE] transition-colors"
+  >
+    @maywaytravels
+  </a>
+</div>
         </div>
       </div>
 

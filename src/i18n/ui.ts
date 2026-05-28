@@ -16,6 +16,12 @@ export const ui = {
     'nav.contact': 'Contact',
     'button.book': 'Book Now',
 
+    'oceania.title.before': 'Discover the diversity of',
+'oceania.title.bold': 'Oceania',
+'oceania.description': 'From unforgettable road trips along the East Coast to the rugged beauty of the Outback, the vibrant city life of Sydney and Melbourne, the wineries of Margaret River, hiking through the untouched wilderness of Tasmania, and diving at the Great Barrier Reef.',
+'oceania.card.title': 'Australia',
+'oceania.card.button': 'Go to destination',
+
     // carousel
     'carousel.subtitle': 'Hotspots',
     'carousel.title': 'In and around Australia',
@@ -38,7 +44,7 @@ export const ui = {
     // contact
     'contact.title': 'Contact | MAYWAY Travels',
     'contact.heading': "Let's talk",
-    'contact.intro': 'Have a question about an itinerary, an e-guide, or just want to bounce some ideas around? I’d love to help make your dream trip a reality.',
+    'contact.intro': 'Do you have a question about a route, events, webinars, the community, or would you like to chat things through? I’d love to help you further with your adventure.',
     'contact.intake.title': 'Ready for the next step?',
     'contact.intake.desc': 'Book a 1-on-1 intake session for a travel plan tailored 100% to you.',
     'contact.intake.btn': 'Schedule your intake',
@@ -216,6 +222,12 @@ export const ui = {
     'nav.contact': 'Contact',
     'button.book': 'Boek Nu',
 
+    'oceania.title.before': 'Ontdek de diversiteit van',
+'oceania.title.bold': 'Oceanië',
+'oceania.description': 'Van onvergetelijke roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in steden zoals Sydney en Melbourne, de wijngaarden van Margaret River, hiken door de ongerepte natuur van Tasmanië en duiken bij het Great Barrier Reef.',
+'oceania.card.title': 'Australië',
+'oceania.card.button': 'Naar bestemming',
+
     // carousel
     'carousel.subtitle': 'Hotspots',
     'carousel.title': 'In en om Australië',
@@ -238,7 +250,7 @@ export const ui = {
     // contact
     'contact.title': 'Contact | MAYWAY Travels',
     'contact.heading': 'Laten we praten',
-    'contact.intro': 'Heb je een vraag over een route, een e-gids of wil je even overleggen? Ik help je graag om jouw droomreis werkelijkheid te maken.',
+    'contact.intro': 'Heb je een vraag over een route, events, webinars, de community of wil je even overleggen? Ik help je graag verder met jouw avontuur.',
     'contact.intake.title': 'Klaar voor de volgende stap?',
     'contact.intake.desc': 'Boek een 1-op-1 intakegesprek voor een reisplan dat 100% bij jou past.',
     'contact.intake.btn': 'Plan jouw intake',

@@ -3,10 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/ui/Hero.astro';
 import backgroundImage from '../../assets/moalboal_drone_2.webp';
 import HomeCarousel from '../../components/ui/HomeCarousel.astro';
-// import backgroundImage from '../../assets/pexels-1320686.jpeg';
-import { ui } from '../../i18n/ui';
-const t = ui.en;
 import AboutMeHome from '../../components/ui/AboutMeHome.astro';
+import OceaniaHighlight from '../../components/ui/OceaniaHighlight.astro';
+
+// import backgroundImage from '../../assets/pexels-1320686.jpeg';
+
+import { ui } from '../../i18n/ui';
+
 ---
 
 <BaseLayout title="Home | MAYWAY travels">
@@ -23,6 +26,7 @@ import AboutMeHome from '../../components/ui/AboutMeHome.astro';
     secondaryButtonLink="/en/e-guides"
   />
 <AboutMeHome />
+  <OceaniaHighlight />
 
   <HomeCarousel />
 

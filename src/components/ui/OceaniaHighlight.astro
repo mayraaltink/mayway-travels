@@ -1,0 +1,81 @@
+---
+import { useTranslations } from '../../i18n/ui';
+
+const lang = Astro.currentLocale || 'nl';
+const t = useTranslations(lang as 'nl' | 'en');
+---
+
+<section class="w-full bg-white py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-12">
+    
+    <div class="grid items-center gap-14 lg:grid-cols-2">
+      
+      <!-- LEFT CONTENT -->
+      <div class="self-start pt-6 lg:pt-16">
+
+  <h2 class="flex flex-col leading-[0.80] tracking-[-0.03em] mb-5">
+
+  <!-- Line 1 -->
+  <span class="text-xl md:text-4xl font-medium text-black">
+    Ontdek de diversiteit
+  </span>
+
+  <!-- Line 2 -->
+  <span class="text-3xl md:text-5xl font-semibold text-[#5CC2BF]">
+    van Oceanië
+  </span>
+
+</h2>
+
+  <p class="max-w-xl text-base md:text-lg leading-[1.8] text-gray-700">
+    {t('oceania.description')}
+  </p>
+
+</div>
+
+      <!-- RIGHT IMAGE CARD -->
+<div class="relative overflow-hidden rounded-[32px] group h-[340px]">
+
+  <img
+    src="/images/australia/aus_main.jpg"
+    alt="Australia"
+    class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+  <!-- Bottom Center Content -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-center">
+
+    <h3 class="mb-3 text-3xl md:text-4xl font-semibold text-white">
+      {t('oceania.card.title')}
+    </h3>
+
+    <a
+      href={`/${lang}/destinations/australia`}
+      class="inline-flex items-center gap-2 text-white text-sm font-semibold transition hover:opacity-80"
+    >
+      {t('oceania.card.button')}
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12h14"></path>
+        <path d="m12 5 7 7-7 7"></path>
+      </svg>
+    </a>
+
+  </div>
+</div>
+    </div>
+  </div>
+</section>

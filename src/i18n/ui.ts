@@ -47,7 +47,7 @@ export const ui = {
     'contact.intro': 'Do you have a question about a route, events, webinars, the community, or would you like to chat things through? I’d love to help you further with your adventure.',
     'contact.intake.title': 'Ready for the next step?',
     'contact.intake.desc': 'Book a 1-on-1 intake session for a travel plan tailored 100% to you.',
-    'contact.intake.btn': 'Schedule your intake',
+    'contact.intake.btn': 'Start your adventure',
     'contact.form.nameLabel': 'Full name',
     'contact.form.namePlaceholder': 'Your name',
     'contact.form.emailLabel': 'Email address',
@@ -65,7 +65,7 @@ export const ui = {
     'eguides.hero.title1': 'Personalised Travel Plan',
     'eguides.hero.title2': 'Australia',
     'eguides.hero.desc': 'Would you like to stay in control of booking your trip while still benefiting from our knowledge and expertise? Then a personalized travel plan is exactly what you need! After a personal meeting where we dive into your wishes, interests, and budget, we’ll craft a tailor-made travel plan just for you. Imagine having a unique itinerary packed with handpicked accommodations, unforgettable sights, exciting activities, and insider tips. All designed to make your trip truly one-of-a-kind. We give you the plan, and you book at your own pace.',
-    'eguides.hero.buybtn': 'Plan your intake',
+    'eguides.hero.buybtn': 'Start your travel planning',
     'eguides.hero.previewbtn': 'Learn more',
     'eguides.hero.badge2': 'Including: Working Holiday tips',
     'eguides.hero.included': 'Included',
@@ -300,7 +300,7 @@ export const ui = {
     
 
     Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed voorbereid op avontuur.Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.`,
-'eguides.hero.buybtn': 'Plan jouw intake',
+'eguides.hero.buybtn': 'Plan jouw reis op maat',
     'eguides.hero.previewbtn': 'Ontdek meer',
     'eguides.hero.badge2': 'Inclusief: Working Holiday tips',
     'eguides.hero.included': 'Inclusief',

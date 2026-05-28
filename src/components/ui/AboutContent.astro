@@ -13,7 +13,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 ---
 
 <BaseLayout title={t('about.title')} description={t('about.description')}>
-  <div class="font-neucha flex flex-col md:flex-row md:min-h-[calc(100dvh-4.25rem)]">
+  <div class="flex flex-col md:flex-row md:min-h-[calc(100dvh-4.25rem)]">
     <!-- Image Section -->
     <div class="relative w-full md:w-1/2 min-h-[42vh] md:min-h-[calc(100dvh-4.25rem)]">
       <img 
@@ -34,8 +34,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
     </div>
 
     <!-- Text Section -->
-    <div class="flex w-full md:w-1/2 flex-col justify-center bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] px-8 py-16 md:px-14 md:py-20">
-      <h1 class="font-libre text-3xl sm:text-4xl md:text-5xl font-normal italic text-white leading-tight mb-8">
+    <div class="flex w-full md:w-1/2 flex-col justify-center bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] px-8 py-16 md:px-14 md:py-20 mt-6 md:mt-12">
+      <h1 class="font-libre text-3xl sm:text-4xl md:text-5xl font-normal italic text-white leading-tight mb-4">
         {t('about.heading')}
       </h1>
       <div class="space-y-6 text-base sm:text-lg text-white/95 leading-relaxed">

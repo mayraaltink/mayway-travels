@@ -1,0 +1,116 @@
+---
+// src/components/ui/CollaborationSection.astro
+
+import { ui, defaultLang } from '../../i18n/ui';
+
+const lang = Astro.currentLocale || defaultLang;
+
+function t(key: keyof typeof ui[typeof defaultLang]) {
+  return ui[lang as keyof typeof ui][key];
+}
+---
+
+<section class="relative z-0 w-full bg-[#FFFDFA] py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-12">
+
+    <div class="grid items-center gap-14 lg:grid-cols-2">
+
+      <!-- LEFT CONTENT -->
+      <div class="self-start pt-6 lg:pt-12">
+
+        <!-- Heading -->
+        <div class="mb-8 text-center lg:text-left">
+          <h2 class="text-3xl md:text-5xl font-semibold tracking-[-0.03em] text-black">
+            {t('collaboration.title')}
+          </h2>
+        </div>
+
+        <!-- Text -->
+        <div class="space-y-6 max-w-2xl text-base md:text-lg leading-[1.9] text-gray-700">
+
+          <p>
+            {t('collaboration.text1')}
+          </p>
+
+          <p>
+            {t('collaboration.text2')}
+          </p>
+
+          <!-- Instagram links -->
+          <div class="flex flex-wrap items-center gap-2 text-base md:text-lg">
+
+            <a
+              href="https://www.instagram.com/maywaytravels"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-[#5CC2BF] transition hover:opacity-70"
+            >
+              @maywaytravels
+            </a>
+
+            <span class="text-gray-500">
+              {lang === 'nl' ? 'en' : 'and'}
+            </span>
+
+            <a
+              href="https://www.instagram.com/mayraaltink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-[#5CC2BF] transition hover:opacity-70"
+            >
+              @mayraaltink
+            </a>
+
+          </div>
+
+          <p class="font-medium text-black">
+            {t('collaboration.text3')}
+          </p>
+
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGE CARD -->
+      <div class="relative overflow-hidden rounded-[32px] group h-[500px]">
+
+        <img
+          src="/images/about/IMG_8932.jpeg"
+          alt="Samenwerken met MAY WAY"
+          class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+        <!-- Bottom Center Content -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-center">
+
+          <a
+            href={`/${lang}/contact`}
+            class="inline-flex items-center gap-2 text-white text-base font-semibold transition hover:opacity-80"
+          >
+            {t('collaboration.button')}
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

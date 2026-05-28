@@ -62,16 +62,12 @@ export const ui = {
     // eguides ///////////////////////////////////////////////////////////
     'eguides.title': 'E-guides | MAYWAY Travels',
     'eguides.hero.badge1': 'Digital product',
-    'eguides.hero.title1': 'Interactive guide',
+    'eguides.hero.title1': 'Personalised Travel Plan',
     'eguides.hero.title2': 'Australia',
-    'eguides.hero.desc': 'All-in-one for backpackers, working holidaymakers and those who want to discover Australia at their own pace — with my itineraries, maps and personal notes.',
-    'eguides.hero.rating': 'More than 200 satisfied travelers',
-    'eguides.hero.price': '€14.99',
-    'eguides.hero.oldprice': '€24.99',
-    'eguides.hero.discount': '-40%',
-    'eguides.hero.buybtn': 'Buy now — €14.99',
-    'eguides.hero.previewbtn': 'Watch preview',
-    'eguides.hero.badge2': 'Direct download',
+    'eguides.hero.desc': 'Would you like to stay in control of booking your trip while still benefiting from our knowledge and expertise? Then a personalized travel plan is exactly what you need! After a personal meeting where we dive into your wishes, interests, and budget, we’ll craft a tailor-made travel plan just for you. Imagine having a unique itinerary packed with handpicked accommodations, unforgettable sights, exciting activities, and insider tips. All designed to make your trip truly one-of-a-kind. We give you the plan, and you book at your own pace.',
+    'eguides.hero.buybtn': 'Plan your intake',
+    'eguides.hero.previewbtn': 'Learn more',
+    'eguides.hero.badge2': 'Including: Working Holiday tips',
     'eguides.hero.included': 'Included',
     'eguides.hero.modules': '8 modules',
     
@@ -107,9 +103,20 @@ export const ui = {
     'eguides.cta.badge': 'Your adventure begins here',
     'eguides.cta.title': 'Ready to start?',
     'eguides.cta.desc': 'Download the guide immediately after purchase and start planning today — at your own pace, with my maps and routes in your pocket.',
-    'eguides.cta.btn': 'Buy now — €14.99',
-    'eguides.cta.sub': 'Available immediately after purchase',
+    'eguides.cta.btn': 'Start your adventure',
+    
+'collaboration.title': 'Collaborations',
 
+'collaboration.text1':
+  'The best travel experiences are never created alone. That’s why we collaborate with tourism boards, travel brands, and hospitality companies that align with the MAY WAY audience.',
+
+'collaboration.text2':
+  'Every month, we inspire thousands of adventurous travelers in the Netherlands and Belgium through our personal travel content and tips. We also share our experiences with over 17,800 engaged followers on Instagram.',
+
+'collaboration.text3':
+  'What matters most to us is collaborating with destinations and brands that truly fit our audience. ',
+
+'collaboration.button': 'Get in touch',
 
     // advice
     "advice.kicker": "Tips & mindset",
@@ -208,7 +215,6 @@ export const ui = {
 'home.about.p2': "With a curious perspective on the world, I’m always searching for the true local experience. For me, the magic of travel lies in unexpected encounters, authentic places, and daring to step outside your comfort zone.",
 'home.about.cta': "Get to know me better"
 
-
     
 
   },
@@ -265,21 +271,34 @@ export const ui = {
     'contact.form.submit': 'Verstuur bericht',
 
 
+    'collaboration.title': 'Samenwerken',
+
+'collaboration.text1':
+  'De mooiste reisbelevingen creëer je niet alleen. Daarom werken wij samen met verkeersbureaus, (reis)merken en bedrijven in de hospitality branche die passen bij de doelgroep van MAY WAY.',
+
+'collaboration.text2':
+  'Wij bereiken maandelijks duizenden avonturisten in Nederland en België met onze persoonlijke reis posts en tips. Ook delen wij onze ervaringen vol enthousiasme met ruim 17.800 betrokken volgers op Instagram.',
+
+'collaboration.text3':
+  'Wat we het belangrijkste vinden is dat we samenwerken met bestemmingen en merken die passen bij onze doelgroep. Zie jij de match? Neem gerust contact met ons op!',
+
+'collaboration.button': 'Neem contact op',
+
+
     // eguides ///////////////////////////////////////////////////////////
-    'eguides.title': 'E-gidsen | MAYWAY Travels',
+    'eguides.title': 'E-gidsen | MAY WAY Travels',
     'eguides.hero.badge1': 'Digitaal product',
-    'eguides.hero.title1': 'Interactieve gids',
+    'eguides.hero.title1': 'Gepersonaliseerd reisplan',
     'eguides.hero.title2': 'Australië',
-    'eguides.hero.desc': 'All-in-one voor backpackers, working holidaymakers en iedereen die Australië op eigen tempo wil ontdekken — met mijn routes, kaarten en persoonlijke notities.',
-    'eguides.hero.rating': 'Meer dan 200 tevreden reizigers',
-    'eguides.hero.price': '€14,99',
-    'eguides.hero.oldprice': '€24,99',
-    'eguides.hero.discount': '-40%',
-    'eguides.hero.buybtn': 'Koop nu — €14,99',
-    'eguides.hero.previewbtn': 'Bekijk preview',
-    'eguides.hero.badge2': 'Direct download',
+    'eguides.hero.desc': `Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips? 
+    
+
+    Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed voorbereid op avontuur.Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.`,
+'eguides.hero.buybtn': 'Plan jouw intake',
+    'eguides.hero.previewbtn': 'Ontdek meer',
+    'eguides.hero.badge2': 'Inclusief: Working Holiday tips',
     'eguides.hero.included': 'Inclusief',
-    'eguides.hero.modules': '8 modules',
+    'eguides.hero.modules': 'Al mijn hidden gems',
     
     'eguides.features.title': 'Wat maakt deze gids speciaal?',
     'eguides.features.desc': 'Alles wat je nodig hebt, in één gids.',
@@ -313,8 +332,8 @@ export const ui = {
     'eguides.cta.badge': 'Jouw avontuur begint hier',
     'eguides.cta.title': 'Klaar om te beginnen?',
     'eguides.cta.desc': 'Download de gids direct na je aankoop en start vandaag nog met plannen — op jouw tempo, met mijn kaarten en routes in je zak.',
-    'eguides.cta.btn': 'Koop nu — €14,99',
-    'eguides.cta.sub': 'Direct beschikbaar na aankoop',
+    'eguides.cta.btn': 'Start jouw avontuur',
+  
 
 
     // advice
@@ -333,7 +352,7 @@ export const ui = {
 
         
     // destinations /////////////////////////////////////////////////////////////////////////
-    'destinations.title': 'Bestemmingen | MAYWAY Travels',
+    'destinations.title': 'Bestemmingen | MAY WAY Travels',
     'destinations.heading': 'Waar wil je naartoe?',
     'destinations.subheading': 'Klik of hover over een marker op de kaart om meer te zien',
     
@@ -420,4 +439,6 @@ export function useTranslations(lang: keyof typeof ui) {
   return function t(key: keyof typeof ui[typeof defaultLang]) {
     return ui[lang][key] || ui[defaultLang][key];
   }
+
+  
 }

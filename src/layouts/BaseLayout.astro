@@ -24,14 +24,15 @@ const isHomePage = Astro.url.pathname.split('/').filter(Boolean).length <= 1;
   </head>
  <body class="color-bg text-gray-900 antialiased min-h-screen flex flex-col">
     
+  <div class="relative z-50">
     <Header />
+  </div>
 
-    <!-- main tag ensures the content takes up the remaining space -->
-    <main class="flex-grow">
-      <slot /> 
-    </main>
+  <main class="flex-grow">
+    <slot /> 
+  </main>
 
-    <Footer />
+  <Footer />
 
-  </body>
+</body>
 </html>

@@ -2,6 +2,8 @@
 // src/components/ui/AboutContent.astro
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { ui, defaultLang } from '../../i18n/ui';
+import CollaborationSection from "./CollaborationSection.astro";
+
 
 // Detect language from URL
 const lang = Astro.currentLocale || defaultLang;
@@ -53,4 +55,5 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       </a>
     </div>
   </div>
+    <CollaborationSection />
 </BaseLayout>

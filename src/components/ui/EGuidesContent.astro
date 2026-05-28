@@ -23,7 +23,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
           <span class="mb-5 inline-block rounded-full bg-[#E6F6F6] px-4 py-1.5 text-sm font-semibold text-[#1CABB0]">
             {t('eguides.hero.badge1')}
           </span>
-          <h1 class="text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-[3.25rem]">
+          <h1 class="text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
             <span class="font-libre">{t('eguides.hero.title1')}</span> 
             <span class="block font-dancing text-5xl text-[#4ED2CE] md:inline md:text-6xl lg:text-7xl">{t('eguides.hero.title2')}</span>
           </h1>
@@ -31,19 +31,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
             {t('eguides.hero.desc')}
           </p>
           
-          <div class="mt-6 flex flex-wrap items-center gap-2">
-            <!-- 5 Stars -->
-            {[...Array(5)].map(() => (
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star fill-amber-400 text-amber-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            ))}
-            <span class="ml-2 text-sm font-medium text-gray-600">{t('eguides.hero.rating')}</span>
-          </div>
-          
-          <div class="mt-8 flex flex-wrap items-baseline gap-4">
-            <span class="text-4xl font-bold text-[#1CABB0]">{t('eguides.hero.price')}</span>
-            <span class="text-xl text-gray-400 line-through">{t('eguides.hero.oldprice')}</span>
-            <span class="rounded-full bg-rose-100 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-rose-600">{t('eguides.hero.discount')}</span>
-          </div>
+      
+    
           
           <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a href={`/${lang}/contact`} class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-[#4ED2CE] hover:bg-[#1CABB0] text-white shadow-lg hover:shadow-xl">
@@ -199,7 +188,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
           <a href={`/${lang}/contact`} class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-white text-[#1CABB0] hover:bg-[#E6F6F6] hover:text-[#15939a] shadow-xl">
             {t('eguides.cta.btn')}
           </a>
-          <p class="text-sm text-white/80">{t('eguides.cta.sub')}</p>
+       
         </div>
       </div>
     </section>

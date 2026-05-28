@@ -27,15 +27,22 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
             <span class="font-libre">{t('eguides.hero.title1')}</span> 
             <span class="block font-dancing text-5xl text-[#4ED2CE] md:inline md:text-6xl lg:text-7xl">{t('eguides.hero.title2')}</span>
           </h1>
-          <p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
-            {t('eguides.hero.desc')}
-          </p>
-          
+        <div class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
+
+  <p class="font-semibold text-gray-900">
+    {t('eguides.hero.descBold')}
+  </p>
+
+  <p class="mt-6">
+    {t('eguides.hero.descNormal')}
+  </p>
+
+</div>
       
     
           
           <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href={`/${lang}/contact`} class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-[#4ED2CE] hover:bg-[#1CABB0] text-white shadow-lg hover:shadow-xl">
+            <a href={`/${lang}/route-planner?country=australia`} class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-[#4ED2CE] hover:bg-[#1CABB0] text-white shadow-lg hover:shadow-xl">
               {t('eguides.hero.buybtn')}
             </a>
             <a href="#inhoud" class="inline-flex items-center justify-center rounded-full border-2 border-[#4ED2CE] px-8 py-3 font-medium text-[#1CABB0] transition-all hover:bg-[#E6F6F6]">
@@ -185,7 +192,10 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
         <h2 class="mt-6 font-libre text-3xl font-semibold md:text-4xl">{t('eguides.cta.title')}</h2>
         <p class="mt-4 text-lg text-white/90">{t('eguides.cta.desc')}</p>
         <div class="mt-10 flex flex-col items-center gap-3">
-          <a href={`/${lang}/contact`} class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-white text-[#1CABB0] hover:bg-[#E6F6F6] hover:text-[#15939a] shadow-xl">
+          <a href={lang === 'nl' 
+  ? '/nl/route-planner?country=australia' 
+  : '/en/route-planner?country=australia'}
+          class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-white text-[#1CABB0] hover:bg-[#E6F6F6] hover:text-[#15939a] shadow-xl">
             {t('eguides.cta.btn')}
           </a>
        

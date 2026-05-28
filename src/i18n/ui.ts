@@ -209,11 +209,17 @@ export const ui = {
     'planner.anythingElse': 'Anything else you\'d like us to know about you or your perfect trip?',
     'planner.submit': 'Send Request',
 
+    
+'eguides.hero.descBold': 'Do you want to stay in control of booking your Australia trip at your own pace, while still benefiting from my knowledge, experience, and tips?',
+
+'eguides.hero.descNormal': 'At MAY WAY, we start with a personal video call to discuss your wishes, interests, and budget. Whether you already have a route in mind or have no idea where to begin yet, together we’ll create your perfect journey.',
+
 // ENGLISH
 'home.about.title': "Meet Mayra",
 'home.about.p1': "Ever since I was young, I’ve been fascinated by travel. Planning unique routes, discovering hidden places, and seeking experiences beyond the beaten path.",
 'home.about.p2': "With a curious perspective on the world, I’m always searching for the true local experience. For me, the magic of travel lies in unexpected encounters, authentic places, and daring to step outside your comfort zone.",
 'home.about.cta': "Get to know me better"
+
 
     
 
@@ -430,6 +436,11 @@ export const ui = {
 'home.about.p1': "Vanaf jongs af aan ben ik gefascineerd door reizen. Het uitstippelen van unieke routes, het ontdekken van verborgen plekken en het opzoeken van ervaringen buiten de gebaande paden.",
 'home.about.p2': "Met een nieuwsgierige blik op de wereld ben ik altijd op zoek naar de échte lokale beleving. Voor mij zit het geheim van reizen in onverwachte ontmoetingen, authentieke plekken en het durven stappen buiten je comfortzone.",
 'home.about.cta': "Leer mij beter kennen",
+
+
+'eguides.hero.descBold': 'Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips?',
+
+'eguides.hero.descNormal': 'Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.',
   },
 } as const;
 

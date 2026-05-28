@@ -187,8 +187,8 @@ export const ui = {
 
     // Route Planner /////////////////////////////////////////////////////////
     'planner.title': 'Route Planner',
-    'planner.heading': 'Design Your Perfect Trip',
-    'planner.subheading': 'Tell us what you want, and we\'ll craft the ultimate adventure.',
+    'planner.heading': 'Share your travel idea',
+    'planner.subheading': 'Already have an idea for your next adventure? Tell us where you want to go and what your ideal trip looks like. We turn your ideas and wishes into a tailored travel plan for you.',
     'planner.country': 'Destination',
     'planner.startDate': 'Start Date',
     'planner.flexible': 'I\'m flexible',
@@ -409,8 +409,8 @@ export const ui = {
 
     // Route Planner /////////////////////////////////////////////////////////
     'planner.title': 'Routeplanner',
-    'planner.heading': 'Ontwerp je perfecte reis',
-    'planner.subheading': 'Vertel ons wat je wilt, en wij creëren het ultieme avontuur.',
+    'planner.heading': 'Vertel ons jouw reisidee',
+    'planner.subheading': 'Heb je al een idee voor je volgende avontuur? Vertel ons waar je naartoe wilt en hoe jouw ideale reis eruitziet. Wij vertalen jouw ideeën en wensen naar een gepersonaliseerd reisplan op maat.',
     'planner.country': 'Bestemming',
     'planner.startDate': 'Startdatum',
     'planner.flexible': 'Ik ben flexibel',

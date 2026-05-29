@@ -1,0 +1,75 @@
+---
+// src/components/ui/EGuidesSteps.astro
+import { ui, defaultLang } from '../../i18n/ui';
+
+const lang = Astro.currentLocale || defaultLang;
+
+function t(key: keyof typeof ui[typeof defaultLang]) {
+  return ui[lang as keyof typeof ui][key];
+}
+
+const steps = [
+  { key: 'step1', icon: '📝' },
+  { key: 'step2', icon: '🎥' },
+  { key: 'step3', icon: '⚙️' },
+  { key: 'step4', icon: '📩' },
+  { key: 'step5', icon: '🤝' }
+];
+---
+
+<section class="py-20 bg-[#FFFDFA]">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center mb-12">
+      <h2 class="font-libre text-3xl md:text-4xl font-bold text-gray-900">
+        {t('eguides.steps.title')}
+      </h2>
+      <p class="mt-3 text-gray-600 text-lg">
+        {t('eguides.steps.desc')}
+      </p>
+    </div>
+
+    <div class="relative">
+
+  <!-- fade edges (optioneel maar aanrader) -->
+  <div class="pointer-events-none absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-[#FFFDFA] to-transparent z-10"></div>
+  <div class="pointer-events-none absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-[#FFFDFA] to-transparent z-10"></div>
+
+  <!-- SCROLL CONTAINER -->
+  <div
+    class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 scrollbar-hide"
+  >
+
+    {steps.map((step, index) => (
+
+      <details class="snap-center shrink-0 w-[85%] sm:w-[60%] lg:w-[40%] group rounded-2xl border border-[#E6F6F6] bg-white shadow-sm hover:shadow-md transition">
+
+        <summary class="cursor-pointer list-none px-6 py-5 flex items-center justify-between">
+
+          <div class="flex items-center gap-4">
+
+            <span class="h-10 w-10 flex items-center justify-center rounded-full bg-[#E6F6F6] text-[#1CABB0] font-bold">
+              {index + 1}
+            </span>
+
+            <h3 class="font-semibold text-gray-900 text-lg">
+              {t(`eguides.steps.${step.key}.title` as any)}
+            </h3>
+
+          </div>
+
+          <span class="text-[#4ED2CE] text-xl group-open:rotate-180 transition-transform">
+            ⌄
+          </span>
+
+        </summary>
+
+        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+          {t(`eguides.steps.${step.key}.text` as any)}
+        </div>
+
+      </details>
+
+    ))}
+
+  </div>
+</div>

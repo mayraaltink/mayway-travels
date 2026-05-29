@@ -2,6 +2,7 @@
 // src/components/ui/EguidesContent.astro
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { ui, defaultLang } from '../../i18n/ui';
+import EGuidesSteps from "./EGuidesSteps.astro";
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -202,6 +203,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
         </div>
       </div>
     </section>
+    <EGuidesSteps />
 
   </div>
 </BaseLayout>

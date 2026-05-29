@@ -136,6 +136,25 @@ export const ui = {
     "advice.cta.link": "View the guide →",
 
 
+    'eguides.steps.title': 'Your travel plan in 5 steps',
+'eguides.steps.desc': 'How we create your personalised travel experience',
+
+'eguides.steps.step1.title': 'Fill in your travel wishes',
+'eguides.steps.step1.text': 'Share your travel style, budget, interests and must-sees so everything is tailored to you.',
+
+'eguides.steps.step2.title': 'Personal video call',
+'eguides.steps.step2.text': 'We discuss your wishes live so I can fully personalise your trip.',
+
+'eguides.steps.step3.title': 'Building your itinerary',
+'eguides.steps.step3.text': 'I create your route, tips, schedule and unique recommendations.',
+
+'eguides.steps.step4.title': 'Receive your travel plan',
+'eguides.steps.step4.text': 'You get a complete, clear and practical custom travel plan.',
+
+'eguides.steps.step5.title': 'Travel plan review',
+'eguides.steps.step5.text': 'We go through everything together and fine-tune where needed so you’re 100% ready.',
+
+
     // destinations ////////////////////////////////////////////////////////////////////////
     'destinations.title': 'Destinations | MAYWAY Travels',
     'destinations.heading': 'Where do you want to go?',
@@ -342,6 +361,24 @@ export const ui = {
     'eguides.cta.desc': 'Download de gids direct na je aankoop en start vandaag nog met plannen — op jouw tempo, met mijn kaarten en routes in je zak.',
     'eguides.cta.btn': 'Start jouw avontuur',
   
+// EGUIDES STEPS
+'eguides.steps.title': 'Jouw reisplan in 5 stappen',
+'eguides.steps.desc': 'Zo werken we samen aan jouw persoonlijke reiservaring',
+
+'eguides.steps.step1.title': 'Vul je reiswensen in',
+'eguides.steps.step1.text': 'Je deelt jouw reisstijl, budget, interesses en must-sees zodat alles volledig op jou wordt afgestemd.',
+
+'eguides.steps.step2.title': 'Persoonlijk videogesprek',
+'eguides.steps.step2.text': 'We bespreken jouw wensen live zodat ik je reis nog beter kan personaliseren.',
+
+'eguides.steps.step3.title': 'Reisplan verwerken',
+'eguides.steps.step3.text': 'Ik ga aan de slag met jouw route, tips, planning en unieke aanbevelingen.',
+
+'eguides.steps.step4.title': 'Ontvang jouw reisplan',
+'eguides.steps.step4.text': 'Je ontvangt een compleet, overzichtelijk en praktisch reisplan op maat.',
+
+'eguides.steps.step5.title': 'Reisplan bespreken',
+'eguides.steps.step5.text': 'We lopen alles samen door en finetunen waar nodig zodat je 100% ready bent.',
 
 
     // advice

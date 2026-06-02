@@ -10,7 +10,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 ---
 
 <BaseLayout title={t('contact.title')}>
-  <div class="bg-[#F7F4EF] relative z-0 flex-grow pt-28 md:pt-36 pb-20 px-6">
+  <div class="bg-[#FFFFF] relative z-0 flex-grow pt-28 md:pt-36 pb-20 px-6">
     
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 md:gap-20 items-start">
       
@@ -19,7 +19,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       <h1 class="text-4xl md:text-5xl font-semibold text-gray-900 leading-[0.95] mb-6">
   {t('contact.heading')}
 </h1>
-        <p class="text-lg text-gray-600 mb-10 max-w-md leading-relaxed">
+        <p class="text-base text-gray-600 mb-10 max-w-md leading-relaxed">
           {t('contact.intro')}
         </p>
         
@@ -37,14 +37,14 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
         <div class="flex flex-col gap-4">
           <div class="flex items-center gap-3">
-  <span class="text-[#4ED2CE] font-bold text-md uppercase tracking-wider">
-    E-mail
-  </span>
+  <span class="text-[#4ED2CE] font-bold text-md uppercase tracking-wider leading-none">
+  E-mail
+</span>
 
 <a
   href="https://mail.google.com/mail/?view=cm&fs=1&to=maywaytravels1@gmail.com"
   target="_blank"
-  class="font-medium text-gray-800 text-lg hover:text-[#4ED2CE] transition-colors"
+  class="font-medium text-gray-800 text-base hover:text-[#4ED2CE] transition-colors"
 >
   maywaytravels1@gmail.com
 </a>
@@ -54,11 +54,12 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
     Instagram
   </span>
 
+ 
   <a 
     href="https://instagram.com/maywaytravels"
     target="_blank"
     rel="noopener noreferrer"
-    class="font-medium text-gray-800 text-lg hover:text-[#4ED2CE] transition-colors"
+    class="font-medium text-gray-800 text-base hover:text-[#4ED2CE] transition-colors"
   >
     @maywaytravels
   </a>
@@ -106,7 +107,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
           </div>
 
           <!-- Submit Button -->
-          <button id="submit-btn" type="submit" class="w-full flex items-center justify-center gap-3 bg-gray-900 hover:bg-[#1CABB0] text-white p-4 rounded-xl font-bold transition-all text-lg disabled:opacity-70 disabled:cursor-not-allowed">
+          <button id="submit-btn" type="submit" class="w-full flex items-center justify-center gap-3 bg-[#39C2BE] hover:bg-[#1CABB0] text-white p-4 rounded-xl font-bold transition-all text-lg disabled:opacity-70 disabled:cursor-not-allowed">
             <span id="submit-text">{t('contact.form.submit')}</span>
             <!-- Loading Spinner (Hidden by default) -->
             <svg id="submit-spinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

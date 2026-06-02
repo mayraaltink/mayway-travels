@@ -39,7 +39,11 @@ const navLinks = [
 ];
 
 // Check if on homepage
-const isHomePage = Astro.url.pathname.split('/').filter(Boolean).length <= 1;
+const path = Astro.url.pathname;
+
+const isHomePage = path === '/' || path === '/nl' || path === '/en';
+const isTravelAdvice = path.includes('/traveladvice');
+const isTransparentPage = isHomePage || isTravelAdvice;
 ---
 
 <!-- 

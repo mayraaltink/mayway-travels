@@ -60,7 +60,7 @@ export const ui = {
 
 'about.p7': 'All of my experiences have led to MAY WAY: a travel community and platform where I share my knowledge, routes, and experiences. With one goal: to help you create your own adventure, your way.',
 
-'about.follow': 'Follow me on Instagram',
+'about.follow': 'Travel with us on Instagram',
 
 
 
@@ -333,7 +333,7 @@ export const ui = {
 
 'about.p7': 'Al mijn ervaringen hebben geleid tot MAY WAY: een travel community en platform waar ik mijn kennis, routes en ervaringen deel. Met één doel: jou helpen om je eigen avontuur te creëren, op jouw manier.',
 
-'about.follow': 'Volg mij op Instagram',
+'about.follow': 'Reis mee op Instagram',
 
 ///////////partners 
 'partners.title': 'Eerdere samenwerkingen', 

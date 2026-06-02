@@ -136,6 +136,11 @@ export const ui = {
 
 'collaboration.button': 'Get in touch',
 
+'collaboration.preheader': 'Collaboration',
+
+'collaboration.titlePart1': 'Work together with ',
+'collaboration.titleHighlight': 'MAY WAY',
+
   // community
 'community.pageTitle': 'Community | MAY WAY Travels',
 'community.kicker': 'Travel Community',
@@ -268,6 +273,8 @@ export const ui = {
 'home.about.cta': "Get to know me better"
 
 
+
+
   
   },
   nl: {
@@ -352,6 +359,11 @@ export const ui = {
   'Wat we het belangrijkste vinden is dat we samenwerken met bestemmingen en merken die passen bij onze doelgroep. Zie jij de match? Neem gerust contact met ons op!',
 
 'collaboration.button': 'Neem contact op',
+
+'collaboration.preheader': 'Samenwerken',
+
+'collaboration.titlePart1': 'Werk met ',
+'collaboration.titleHighlight': 'MAY WAY',
 
 
     // travel advice ///////////////////////////////////////////////////////////

@@ -15,60 +15,64 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
     <div class="grid items-center gap-14 lg:grid-cols-2">
 
-      <!-- LEFT CONTENT -->
-      <div class="self-start pt-6 lg:pt-12">
+     <!-- LEFT CONTENT -->
+<div class="self-start pt-6 lg:pt-12">
 
-        <!-- Heading -->
-        <div class="mb-8 text-center lg:text-left">
-          <h2 class="text-3xl md:text-5xl font-semibold tracking-[-0.03em] text-black">
-            {t('collaboration.title')}
-          </h2>
-        </div>
+  <!-- PREHEADER (klein turquoise woord) -->
+  <p class="mb-3 text-sm uppercase tracking-[0.25em] text-[#5CC2BF] font-medium">
+    {t('collaboration.preheader')}
+  </p>
 
-        <!-- Text -->
-        <div class="space-y-6 max-w-2xl text-base md:text-lg leading-[1.9] text-gray-700">
+  <!-- TITLE -->
+  <h2 class="mb-8 text-3xl md:text-5xl tracking-[-0.03em] text-black leading-[1.1]">
 
-          <p>
-            {t('collaboration.text1')}
-          </p>
+    <span class="font-normal">
+      {t('collaboration.titlePart1')}
+    </span>
 
-          <p>
-            {t('collaboration.text2')}
-          </p>
+    <span class="font-semibold">
+      {t('collaboration.titleHighlight')}
+    </span>
 
-          <!-- Instagram links -->
-          <div class="flex flex-wrap items-center gap-2 text-base md:text-lg">
+  </h2>
 
-            <a
-              href="https://www.instagram.com/maywaytravels"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="font-semibold text-[#5CC2BF] transition hover:opacity-70"
-            >
-              @maywaytravels
-            </a>
+  <!-- TEXT -->
+  <div class="space-y-6 max-w-2xl text-base md:text-lg leading-[1.9] text-gray-700">
 
-            <span class="text-gray-500">
-              {lang === 'nl' ? 'en' : 'and'}
-            </span>
+    <p>{t('collaboration.text1')}</p>
+    <p>{t('collaboration.text2')}</p>
 
-            <a
-              href="https://www.instagram.com/mayraaltink"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="font-semibold text-[#5CC2BF] transition hover:opacity-70"
-            >
-              @mayraaltink
-            </a>
+    <div class="flex flex-wrap items-center gap-2 text-base md:text-lg">
 
-          </div>
+      <a
+        href="https://www.instagram.com/maywaytravels"
+        target="_blank"
+        class="font-semibold text-[#5CC2BF] hover:opacity-70 transition"
+      >
+        @maywaytravels
+      </a>
 
-          <p class="font-medium text-black">
-            {t('collaboration.text3')}
-          </p>
+      <span class="text-gray-500">
+        {lang === 'nl' ? 'en' : 'and'}
+      </span>
 
-        </div>
-      </div>
+      <a
+        href="https://www.instagram.com/mayraaltink"
+        target="_blank"
+        class="font-semibold text-[#5CC2BF] hover:opacity-70 transition"
+      >
+        @mayraaltink
+      </a>
+
+    </div>
+
+    <p class="font-medium text-black">
+      {t('collaboration.text3')}
+    </p>
+
+  </div>
+
+</div>
 
       <!-- RIGHT IMAGE CARD -->
       <div class="relative overflow-hidden rounded-[32px] group h-[500px]">

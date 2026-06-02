@@ -4,7 +4,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { ui, defaultLang } from '../../i18n/ui';
 import CollaborationSection from "./CollaborationSection.astro";
 
-
 // Detect language from URL
 const lang = Astro.currentLocale || defaultLang;
 
@@ -35,15 +34,24 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       </div>
     </div>
 
-    <!-- Text Section -->
-    <div class="flex w-full md:w-1/2 flex-col justify-center bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] px-8 py-16 md:px-14 md:py-20 mt-6 md:mt-12">
-      <h1 class="font-libre text-3xl sm:text-4xl md:text-5xl font-normal italic text-white leading-tight mb-4">
-        {t('about.heading')}
-      </h1>
-      <div class="space-y-6 text-base sm:text-lg text-white/95 leading-relaxed">
-        <p>{t('about.p1')}</p>
-        <p>{t('about.p2')}</p>
-      </div>
+<!-- Text -->
+<div class="flex w-full md:w-3/5 flex-col justify-center bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] px-8 py-16 md:px-14 md:py-20 mt-6 md:mt-12">
+  
+  <h1 class="font-libre text-3xl sm:text-4xl md:text-5xl font-normal italic text-white leading-tight mb-4">
+    {t('about.heading')}
+  </h1>
+
+<div class="space-y-6 text-sm sm:text-base text-white/95 leading-relaxed">
+    <p>{t('about.p1')}</p>
+    <p>{t('about.p2')}</p>
+    <p>{t('about.p3')}</p>
+    <p>{t('about.p4')}</p>
+    <p>{t('about.p5')}</p>
+    <p>{t('about.p6')}</p>
+    <p>{t('about.p7')}</p>
+  </div>
+
+</div>
       
       <a href="https://www.instagram.com/maywaytravels/" target="_blank" rel="noopener noreferrer" class="mt-10 inline-flex w-fit items-center gap-3 rounded-full border-2 border-white/90 px-7 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/15">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram">

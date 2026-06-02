@@ -1,0 +1,77 @@
+[33m580ac13[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m stappenplan so far
+[33m618d432[m stappenplan werkt
+[33m95c3172[m Merge branch 'main' of https://github.com/atp800/MayWay
+[33md677abb[m stappenplan weer aangepast
+[33mc121241[m stappenplan
+[33mfb85b0d[m Merge branch 'main' of https://github.com/atp800/MayWay
+[33mafddf9a[m requirements deleted
+[33m034ea32[m Delete requirements.txt
+[33m4b98e30[m proberen aan te passen de vragenlijst maar lukt niet
+[33mba126ce[m tekst aangepast planner
+[33m2383041[m Tekst vorm aangepast voor formulier
+[33m0013d42[m CTA buttons aangepast voor op eguide pagina
+[33m22d0405[m Formulier gekoppeld aan eguide pagina
+[33m3177084[m requirements verwijderd
+[33mb72dd65[m translation doesnt work
+[33m7059e26[m over mij aangepast - lettertype en tekst dichterbij elkaar
+[33m71115e8[m CTA aangepast AboutMeHome
+[33m6d7be4b[m Requirmenet verwijderd
+[33m14cd9bf[m changed lettertype contact
+[33m401e032[m Change Text about me homepage
+[33mb5b1152[m deleted requirements
+[33m323e128[m Added about section, replaced forms key
+[33m3a251f8[m wcerc
+[33mea990dd[m added requiremnets.txt
+[33mb5ce044[m added picture
+[33mf359a0d[m made a change
+[33m82e2f65[m Added route planner
+[33m3fcec27[m Added confirmation to email form submission
+[33m31dec99[m Added email sending to contact form via web3forms
+[33mae05abf[m Comment edits
+[33med6a475[m Improved positining and size of CTA buttons
+[33m8953bba[m Added CTA buttons for all destnations
+[33m6832ccd[m FIxed carousel eguides links
+[33ma8dca8c[m FIxed nz destinaiton page incorrectly dispalying indonesia content
+[33mde32d90[m Updated indo and nz page content
+[33m75f2794[m Fixed DestinationsExplorePage import
+[33m52b9de9[m Added pages fro indoensia and new zealnad, refactored to make each destinaiton page use a reusable component and just inject correct text, image and carousel
+[33m5934b2d[m Refactored carousel code to be more reusable and added script to adjust number of navigation dots underneath based on screen size
+[33m76599c4[m Added australia carousel to aus pages
+[33mc695429[m Added destinations page for australia and moved map links to point to it
+[33m932a9af[m Added destination images
+[33meae5aea[m Added support for tapping on destinatiosn grid
+[33m63a7e71[m Made map dsiappear on small screens, darkened map markers
+[33m59cc494[m Add destinations grid under map
+[33m54e4b50[m Added advice page and deleted unused files
+[33m37451ec[m Added tap/click to reveal country bubble cards on destinations map
+[33me702b62[m adjusted minimum map size, tweaked text
+[33m62b29fa[m added world map destinations page
+[33m1504833[m Added contact page, fixed language switch to stay on same page
+[33mbf7380e[m Remove turquoise block from carousel
+[33m0b43ced[m Imporved transparency of menu bar and language handling
+[33m0f7d7fb[m added about page
+[33m74dcc5c[m Added social links and changed from text to logos
+[33m41b5b5e[m Added carousel
+[33m028b5fe[m updated menu font sizes and hide width point
+[33me97d08e[m Tweaked button transparency values
+[33m636c029[m made footer text clearer and removed grey line
+[33mcca84f5[m updated icon file names to avoid caching issues
+[33m7e084d8[m updated icons
+[33m4261d6b[m updated default font
+[33mc540b2e[m Added language toggle to mobile menu
+[33mebc171a[m Fixed menu language hvoering and adjust button translucence
+[33m474801a[m Updated menu bar an dhomepage fonts
+[33m9d98f1b[m Refactor Header component for improved navigation and mobile responsiveness; update Hero component to use new background image
+[33mc654430[m Merge branch 'main' of https://github.com/atp800/MayWay
+[33m80e752d[m Updated homepage
+[33med1c869[m Remove Astro Starter Kit header from README
+[33mc9dff23[m readme update
+[33m9e8b4fa[m Fixed redirect bug
+[33mb9d6fe8[m added a redirect for root page to dutch homepage
+[33mfa3a40c[m fixed dutch as default
+[33mbd87dd1[m Made dutch default language
+[33m8f1b1e9[m removed slug.astro
+[33mbdb61af[m Set up nl and en homepages
+[33m57d15c1[m File structure setup
+[33m3a1235a[m Initialised astro project
+[33m439bec2[m Initial commit

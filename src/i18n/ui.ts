@@ -35,28 +35,27 @@ export const ui = {
     'carousel.next': 'Next',
 
    // about
-'about.title': 'Over mij | MAY WAY Travels',
-'about.description': 'Hi! Ik ben Mayra. Ontdek mijn passie voor reizen.',
-'about.location': 'Great Ocean Road — Australië',
+'about.title': 'About me | MAY WAY Travels',
+'about.description': 'Hi! I’m Mayra. Discover my passion for travel.',
+'about.location': 'Great Ocean Road — Australia',
 
-'about.heading': 'Hi, Ik ben Mayra!',
+'about.heading': 'Hi, I’m Mayra!',
 
-'about.p1': 'In de afgelopen jaren heb ik mogen ervaren hoe het is om een avontuur aan te gaan dat je dwingt buiten je comfortzone te stappen en hoeveel dat je leven kan verrijken. Zoveel bijzondere mensen, verhalen en plekken. Ik wil jou inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven.',
+'about.p1': 'Over the past few years, I’ve experienced what it’s like to go on an adventure that pushes you outside your comfort zone — and how much it can enrich your life. So many incredible people, stories, and places. I want to inspire you to take the leap, explore, and write your own story.',
 
-'about.p2': 'Mijn liefde voor reizen begon al op jonge leeftijd, met reizen naar onder andere India en Japan die mijn nieuwsgierigheid naar andere culturen aanwakkerden en de basis legden voor alles wat daarna kwam. Het liet me al vroeg zien hoeveel moois de wereld te bieden heeft.',
+'about.p2': 'My love for travel started at a young age, with trips to places like India and Japan that sparked my curiosity for different cultures and laid the foundation for everything that followed. It showed me early on how much beauty the world has to offer.',
 
-'about.p3': 'Op mijn 18e vertrok ik naar Tanzania voor vrijwilligerswerk binnen een childcare project. Twee jaar later keerde ik terug om een project op te zetten dat straatkinderen hielp toegang te krijgen tot onderwijs. Niet veel later reisde ik solo door Peru, waar ik vijf weken lang backpackte en een meerdaagse tocht door de Amazone maakte. Na mijn studie in 2023 volgde een backpackreis door Zuidoost-Azië, die eindigde met een campervan trip door Nieuw-Zeeland.',
+'about.p3': 'At 18, I moved to Tanzania for volunteer work in a childcare project. Two years later, I returned to set up a project helping street children gain access to education. Not long after, I traveled solo through Peru, backpacking for five weeks and completing a multi-day trek through the Amazon. After finishing my studies in 2023, I went on a backpacking trip through Southeast Asia, which ended with a campervan trip through New Zealand.',
 
-'about.p4': 'In januari 2024 kwam ik met alleen een backpack aan in Sydney. Wat bedoeld was als een korte tussenstop van drie maanden, werd het begin van een nieuw hoofdstuk.',
+'about.p4': 'In January 2024, I arrived in Sydney with just a backpack. What was meant to be a short three-month stop turned into the beginning of a new chapter.',
 
-'about.p5': 'Inmiddels woon en werk ik al ruim 2,5 jaar in Australië, waar ik het land intensief heb verkend: van roadtrips langs de westkust en surfen in Byron Bay tot skiën in Victoria en het ontdekken van The Outback.',
+'about.p5': 'I’ve now been living and working in Australia for over 2.5 years, where I’ve explored the country extensively: from road trips along the west coast and surfing in Byron Bay to skiing in Victoria and discovering the Outback.',
 
-'about.p6': 'Als Travel Sales Agent werkte ik samen met de beste lokale touroperators, transport providers, hotels, hostels en activiteiten. Hierdoor kon ik de beste ervaringen zelf testen en honderden reizigers helpen hun droomreis door Australië, Nieuw-Zeeland, Fiji en Indonesië te plannen. Daarnaast begeleidde ik Working Holiday reizigers met alles wat ze nodig hadden om hun leven hier op te bouwen: van praktische zaken zoals TFN’s en CV’s tot advies over het leven in Australië.',
+'about.p6': 'As a Travel Sales Agent, I worked with the best local tour operators, transport providers, hotels, hostels, and activity providers, giving me the chance to personally test the best experiences while helping hundreds of travelers plan their dream trips across Australia, New Zealand, Fiji, and Indonesia. I also supported Working Holiday travelers with everything they needed to build their life here: from practical essentials like TFNs and CVs to advice on living, working, and traveling in Australia.',
 
-'about.p7': 'Al mijn ervaringen hebben geleid tot MAY WAY: een travel community en platform waar ik mijn kennis, routes en ervaringen deel. Met één doel: jou helpen om je eigen avontuur te creëren, op jouw manier.',
+'about.p7': 'All of my experiences have led to MAY WAY: a travel community and platform where I share my knowledge, routes, and experiences. With one goal: to help you create your own adventure, your way.',
 
-'about.follow': 'Volg mij op Instagram',
-
+'about.follow': 'Follow me on Instagram',
 
     // contact
     'contact.title': 'Contact | MAYWAY Travels',
@@ -76,30 +75,32 @@ export const ui = {
     'contact.form.submit': 'Send message',
 
 
-    // eguides ///////////////////////////////////////////////////////////
-    'eguides.title': 'E-guides | MAYWAY Travels',
-    'eguides.hero.badge1': 'Digital product',
-    'eguides.hero.title1': 'Personalised Travel Plan',
-    'eguides.hero.title2': 'Australia',
-    'eguides.hero.desc': 'Would you like to stay in control of booking your trip while still benefiting from our knowledge and expertise? Then a personalized travel plan is exactly what you need! After a personal meeting where we dive into your wishes, interests, and budget, we’ll craft a tailor-made travel plan just for you. Imagine having a unique itinerary packed with handpicked accommodations, unforgettable sights, exciting activities, and insider tips. All designed to make your trip truly one-of-a-kind. We give you the plan, and you book at your own pace.',
-    'eguides.hero.buybtn': 'Start your travel planning',
-    'eguides.hero.previewbtn': 'Learn more',
-    'eguides.hero.badge2': 'Including: Working Holiday tips',
-    'eguides.hero.included': 'Included',
-    'eguides.hero.modules': '8 modules',
-    
-    'eguides.features.title': 'What makes this guide special?',
-    'eguides.features.desc': 'Everything you need, in one guidebook.',
-    'eguides.features.1': '8 comprehensive modules',
-    'eguides.features.2': 'Interactive and digital',
-    'eguides.features.3': 'Available immediately after purchase',
-    'eguides.features.4': 'Regularly updated',
-    'eguides.features.5': 'Personal tips & experiences',
-    'eguides.features.6': 'Handy checklists',
+  'travelAdvice.title': 'Travel Advice | MAYWAY Travels',
+
+'travelAdvice.hero.badge1': 'Digital product',
+'travelAdvice.hero.title1': 'Personalised Travel Plan',
+'travelAdvice.hero.title2': 'Australia',
+'travelAdvice.hero.desc': 'Would you like to stay in control of booking your trip while still benefiting from our knowledge and expertise? Then a personalized travel plan is exactly what you need! After a personal meeting where we dive into your wishes, interests, and budget, we’ll craft a tailor-made travel plan just for you. Imagine having a unique itinerary packed with handpicked accommodations, unforgettable sights, exciting activities, and insider tips. All designed to make your trip truly one-of-a-kind. We give you the plan, and you book at your own pace.',
+'travelAdvice.hero.buybtn': 'Start your travel planning',
+'travelAdvice.hero.previewbtn': 'Learn more',
+'travelAdvice.hero.badge2': 'Including: Working Holiday tips',
+'travelAdvice.hero.included': 'Included',
+'travelAdvice.hero.modules': '8 modules',
+
+'travelAdvice.features.title': 'What’s included in your personalised travel plan?',
+'travelAdvice.features.desc': 'Everything you need to start your Australia adventure fully prepared and with confidence.',
+
+'travelAdvice.features.1': 'Personal video call to fully tailor your travel plan',
+'travelAdvice.features.2': 'A day-by-day overview of your personalised travel itinerary',
+'travelAdvice.features.3': 'Local tips, must-see hotspots and hidden gems per destination, including personal favourites',
+'travelAdvice.features.4': 'Two carefully selected accommodation options per location',
+'travelAdvice.features.5': 'Best transport options including advice on flights, buses and other routes',
+'travelAdvice.features.6': 'Practical preparation tips, from visas to useful apps',
+'travelAdvice.features.7': 'E-guide with 8 educational modules on living, working and travelling in Australia',
     
     'eguides.modules.badge': 'Contents',
     'eguides.modules.title': '8 modules',
-    'eguides.modules.desc': 'From preparation to practical resources — built on real experience, not dry wiki texts.',
+    'eguides.modules.desc': 'From preparation to practical tools, built on 2.5 years of real experience living, working and travelling across Australia.',
     'eguides.mod1.title': 'Preparation',
     'eguides.mod1.desc': 'Visa, insurance, packing and timeline — quietly prepared for departure.',
     'eguides.mod2.title': 'Why Australia',
@@ -158,23 +159,26 @@ export const ui = {
 'community.cta.link': 'Get in touch →',
 
 
-    'eguides.steps.title': 'Your travel plan in 5 steps',
-'eguides.steps.desc': 'How we create your personalised travel experience',
 
-'eguides.steps.step1.title': 'Fill in your travel wishes',
-'eguides.steps.step1.text': 'Share your travel style, budget, interests and must-sees so everything is tailored to you.',
+/////////////Travel advice steps
 
-'eguides.steps.step2.title': 'Personal video call',
-'eguides.steps.step2.text': 'We discuss your wishes live so I can fully personalise your trip.',
+'travelAdvice.steps.title': 'Your travel plan in 5 steps',
+'travelAdvice.steps.desc': 'How we create your personalised travel experience',
 
-'eguides.steps.step3.title': 'Building your itinerary',
-'eguides.steps.step3.text': 'I create your route, tips, schedule and unique recommendations.',
+'travelAdvice.steps.step1.title': 'Fill in your travel wishes',
+'travelAdvice.steps.step1.text': 'Share your travel style, budget, interests and must-sees so everything is tailored to you.',
 
-'eguides.steps.step4.title': 'Receive your travel plan',
-'eguides.steps.step4.text': 'You get a complete, clear and practical custom travel plan.',
+'travelAdvice.steps.step2.title': 'Personal video call',
+'travelAdvice.steps.step2.text': 'We discuss your wishes live so I can fully personalise your trip.',
 
-'eguides.steps.step5.title': 'Travel plan review',
-'eguides.steps.step5.text': 'We go through everything together and fine-tune where needed so you’re 100% ready.',
+'travelAdvice.steps.step3.title': 'Building your itinerary',
+'travelAdvice.steps.step3.text': 'I create your route, tips, schedule and unique recommendations.',
+
+'travelAdvice.steps.step4.title': 'Receive your travel plan',
+'travelAdvice.steps.step4.text': 'You get a complete, clear and practical custom travel plan.',
+
+'travelAdvice.steps.step5.title': 'Travel plan review',
+'travelAdvice.steps.step5.text': 'We go through everything together and fine-tune where needed so you’re 100% ready.',
 
 
     // destinations ////////////////////////////////////////////////////////////////////////
@@ -260,12 +264,11 @@ export const ui = {
 // ENGLISH
 'home.about.title': "Meet Mayra",
 'home.about.p1': "Ever since I was young, I’ve been fascinated by travel. Planning unique routes, discovering hidden places, and seeking experiences beyond the beaten path.",
-'home.about.p2': "With a curious perspective on the world, I’m always searching for the true local experience. For me, the magic of travel lies in unexpected encounters, authentic places, and daring to step outside your comfort zone.",
+'home.about.p2': "With a curious perspective on the world, I’m always searching for the true local experience. After more than 2.5 years of living in Australia, I’ve discovered what makes an adventure truly special: unexpected encounters, authentic places, and the courage to step outside your comfort zone.",
 'home.about.cta': "Get to know me better"
 
 
-    
-
+  
   },
   nl: {
     // homepage and menu /////////////////////////////////////////////
@@ -296,36 +299,36 @@ export const ui = {
     'carousel.next': 'Volgende',
 
     // about
-    'about.title': 'About me | MAY WAY Travels',
-'about.description': 'Hi! I’m Mayra. Discover my passion for travel.',
-'about.location': 'Great Ocean Road — Australia',
+'about.title': 'Over mij | MAY WAY Travels',
+'about.description': 'Hi! Ik ben Mayra. Ontdek mijn passie voor reizen.',
+'about.location': 'Great Ocean Road — Australië',
 
-'about.heading': 'Hi, I’m Mayra!',
+'about.heading': 'Hi, Ik ben Mayra!',
 
-'about.p1': 'Over the past few years, I’ve experienced what it’s like to go on an adventure that pushes you outside your comfort zone — and how much it can enrich your life. So many incredible people, stories, and places. I want to inspire you to take the leap, explore, and write your own story.',
+'about.p1': 'In de afgelopen jaren heb ik mogen ervaren hoe het is om een avontuur aan te gaan dat je dwingt buiten je comfortzone te stappen en hoeveel dat je leven kan verrijken. Zoveel bijzondere mensen, verhalen en plekken. Ik wil jou inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven.',
 
-'about.p2': 'My love for travel started at a young age, with trips to places like India and Japan that sparked my curiosity for different cultures and laid the foundation for everything that followed. It showed me early on how much beauty the world has to offer.',
+'about.p2': 'Mijn liefde voor reizen begon al op jonge leeftijd, met reizen naar onder andere India en Japan die mijn nieuwsgierigheid naar andere culturen aanwakkerden en de basis legden voor alles wat daarna kwam. Het liet me al vroeg zien hoeveel moois de wereld te bieden heeft.',
 
-'about.p3': 'At 18, I moved to Tanzania for volunteer work in a childcare project. Two years later, I returned to set up a project helping street children gain access to education. Not long after, I traveled solo through Peru, backpacking for five weeks and completing a multi-day trek through the Amazon. After finishing my studies in 2023, I went on a backpacking trip through Southeast Asia, which ended with a campervan trip through New Zealand.',
+'about.p3': 'Op mijn 18e vertrok ik naar Tanzania voor vrijwilligerswerk binnen een childcare project. Twee jaar later keerde ik terug om een project op te zetten dat straatkinderen hielp toegang te krijgen tot onderwijs. Niet veel later reisde ik solo door Peru, waar ik vijf weken lang backpackte en een meerdaagse tocht door de Amazone maakte. Na mijn studie in 2023 volgde een backpackreis door Zuidoost-Azië, die eindigde met een campervan trip door Nieuw-Zeeland.',
 
-'about.p4': 'In January 2024, I arrived in Sydney with just a backpack. What was meant to be a short three-month stop turned into the beginning of a new chapter.',
+'about.p4': 'In januari 2024 kwam ik met alleen een backpack aan in Sydney. Wat bedoeld was als een korte tussenstop van drie maanden, werd het begin van een nieuw hoofdstuk.',
 
-'about.p5': 'I’ve now been living and working in Australia for over 2.5 years, where I’ve explored the country extensively: from road trips along the west coast and surfing in Byron Bay to skiing in Victoria and discovering the Outback.',
+'about.p5': 'Inmiddels woon en werk ik al ruim 2,5 jaar in Australië, waar ik het land intensief heb verkend: van roadtrips langs de westkust en surfen in Byron Bay tot skiën in Victoria en het ontdekken van The Outback.',
 
-'about.p6': 'As a Travel Sales Agent, I worked with the best local tour operators, transport providers, hotels, hostels, and activity providers, giving me the chance to personally test the best experiences while helping hundreds of travelers plan their dream trips across Australia, New Zealand, Fiji, and Indonesia. I also supported Working Holiday travelers with everything they needed to build their life here: from practical essentials like TFNs and CVs to advice on living, working, and traveling in Australia.',
+'about.p6': 'Als Travel Sales Agent werkte ik samen met de beste lokale touroperators, transport providers, hotels, hostels en activiteiten. Hierdoor kon ik de beste ervaringen zelf testen en honderden reizigers helpen hun droomreis door Australië, Nieuw-Zeeland, Fiji en Indonesië te plannen. Daarnaast begeleidde ik Working Holiday reizigers met alles wat ze nodig hadden om hun leven hier op te bouwen: van praktische zaken zoals TFN’s en CV’s tot advies over het leven in Australië.',
 
-'about.p7': 'All of my experiences have led to MAY WAY: a travel community and platform where I share my knowledge, routes, and experiences. With one goal: to help you create your own adventure, your way.',
+'about.p7': 'Al mijn ervaringen hebben geleid tot MAY WAY: een travel community en platform waar ik mijn kennis, routes en ervaringen deel. Met één doel: jou helpen om je eigen avontuur te creëren, op jouw manier.',
 
-'about.follow': 'Follow me on Instagram',
+'about.follow': 'Volg mij op Instagram',
 
 
     // contact
     'contact.title': 'Contact | MAYWAY Travels',
-    'contact.heading': 'Laten we praten',
-    'contact.intro': 'Heb je een vraag over een route, events, webinars, de community of wil je even overleggen? Ik help je graag verder met jouw avontuur.',
+    'contact.heading': "Laten we kennismaken",
+    'contact.intro': 'Heb je een vraag over een samenwerking, opkomende events en webinars, de community of wil je even overleggen? Ik help je graag verder.',
     'contact.intake.title': 'Klaar voor de volgende stap?',
-    'contact.intake.desc': 'Boek een 1-op-1 intakegesprek voor een reisplan dat 100% bij jou past.',
-    'contact.intake.btn': 'Plan jouw intake',
+    'contact.intake.desc': 'Vul jouw reiswensen in, zodat we een reis kunnen creëren die echt bij jou past.',
+    'contact.intake.btn': 'Begin mijn avontuur',
     'contact.form.nameLabel': 'Volledige naam',
     'contact.form.namePlaceholder': 'Jouw naam',
     'contact.form.emailLabel': 'E-mailadres',
@@ -351,33 +354,39 @@ export const ui = {
 'collaboration.button': 'Neem contact op',
 
 
-    // eguides ///////////////////////////////////////////////////////////
-    'eguides.title': 'E-gidsen | MAY WAY Travels',
-    'eguides.hero.badge1': 'Digitaal product',
-    'eguides.hero.title1': 'Gepersonaliseerd reisplan',
-    'eguides.hero.title2': 'Australië',
-    'eguides.hero.desc': `Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips? 
-    
+    // travel advice ///////////////////////////////////////////////////////////
 
-    Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed voorbereid op avontuur.Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.`,
-'eguides.hero.buybtn': 'Plan jouw reis op maat',
-    'eguides.hero.previewbtn': 'Ontdek meer',
-    'eguides.hero.badge2': 'Inclusief: Working Holiday tips',
-    'eguides.hero.included': 'Inclusief',
-    'eguides.hero.modules': 'Al mijn hidden gems',
+'travelAdvice.title': 'E-gidsen | MAY WAY Travels',
+
+'travelAdvice.hero.badge1': 'Digitaal product',
+'travelAdvice.hero.title1': 'Persoonlijk reisplan',
+'travelAdvice.hero.title2': 'Australië',
+'travelAdvice.hero.desc': `Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips? 
+
+Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed voorbereid op avontuur. Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.`,
+
+'travelAdvice.hero.buybtn': 'Plan jouw reis op maat',
+'travelAdvice.hero.previewbtn': 'Ontdek meer',
+'travelAdvice.hero.badge2': 'Inclusief: Working Holiday tips',
+'travelAdvice.hero.included': 'Inclusief',
+'travelAdvice.hero.modules': 'Al mijn hidden gems',
+
+'travelAdvice.features.title': 'Wat krijg je bij jouw persoonlijke reisplan?',
+'travelAdvice.features.desc': 'Alles wat je nodig hebt om goed voorbereid en vol vertrouwen aan jouw Australië-avontuur te beginnen.',
+
+'travelAdvice.features.1': 'Persoonlijk videogesprek om jouw reis volledig op maat samen te stellen',
+'travelAdvice.features.2': 'Een dag-tot-dag overzicht van jouw persoonlijke reisroute',
+'travelAdvice.features.3': 'Lokale tips, must-see hotspots en hidden gems per bestemming, inclusief persoonlijke favorieten',
+'travelAdvice.features.4': 'Twee zorgvuldig geselecteerde accommodaties per locatie',
+'travelAdvice.features.5': 'De beste transportoptie inclusief advies voor vluchten, bussen en andere routes',
+'travelAdvice.features.6': 'Praktische voorbereidingstips, van visa tot handige apps',
+'travelAdvice.features.7': 'E-gids met 8 leerzame modules over wonen, werken en reizen in Australië',
+
+
     
-    'eguides.features.title': 'Wat maakt deze gids speciaal?',
-    'eguides.features.desc': 'Alles wat je nodig hebt, in één gids.',
-    'eguides.features.1': '8 uitgebreide modules',
-    'eguides.features.2': 'Interactief en digitaal',
-    'eguides.features.3': 'Direct beschikbaar na aankoop',
-    'eguides.features.4': 'Regelmatig geüpdatet',
-    'eguides.features.5': 'Persoonlijke tips & ervaringen',
-    'eguides.features.6': 'Handige checklists',
-    
-    'eguides.modules.badge': 'Inhoud',
+    'eguides.modules.badge': 'Inhoud e-gids',
     'eguides.modules.title': '8 modules',
-    'eguides.modules.desc': 'Van voorbereiding tot praktische hulpmiddelen — gebouwd op echte ervaring, niet op droge wiki-teksten.',
+    'eguides.modules.desc': 'Van voorbereiding tot praktische tools, opgebouwd uit 2,5 jaar leven, werken en reizen door heel Australië.',
     'eguides.mod1.title': 'Voorbereiding',
     'eguides.mod1.desc': 'Visum, verzekering, inpakken en tijdlijn — rustig voorbereid op vertrek.',
     'eguides.mod2.title': 'Waarom Australië',
@@ -395,45 +404,51 @@ export const ui = {
     'eguides.mod8.title': 'Resources',
     'eguides.mod8.desc': 'Links, downloads en tools die ik zelf gebruik.',
 
-    'eguides.cta.badge': 'Jouw avontuur begint hier',
-    'eguides.cta.title': 'Klaar om te beginnen?',
-    'eguides.cta.desc': 'Download de gids direct na je aankoop en start vandaag nog met plannen — op jouw tempo, met mijn kaarten en routes in je zak.',
-    'eguides.cta.btn': 'Start jouw avontuur',
+   'travelAdvice.cta.badge': 'Jouw avontuur begint hier',
+'travelAdvice.cta.title': 'Klaar om te beginnen?',
+'travelAdvice.cta.desc': 'Download de gids direct na je aankoop en start vandaag nog met plannen — op jouw tempo, met mijn kaarten en routes in je zak.',
+'travelAdvice.cta.btn': 'Start jouw avontuur',
   
-// EGUIDES STEPS
-'eguides.steps.title': 'Jouw reisplan in 5 stappen',
-'eguides.steps.desc': 'Zo werken we samen aan jouw persoonlijke reiservaring',
+ // STEPS
+    'travelAdvice.steps.title': 'Jouw reisplan in 5 stappen',
+    'travelAdvice.steps.desc': 'Zo creëren we jouw persoonlijke reiservaring',
 
-'eguides.steps.step1.title': 'Vul je reiswensen in',
-'eguides.steps.step1.text': 'Je deelt jouw reisstijl, budget, interesses en must-sees zodat alles volledig op jou wordt afgestemd.',
+    'travelAdvice.steps.step1.title': 'Vul je reiswensen in',
+    'travelAdvice.steps.step1.text': 'Deel je reisstijl, budget en interesses.',
 
-'eguides.steps.step2.title': 'Persoonlijk videogesprek',
-'eguides.steps.step2.text': 'We bespreken jouw wensen live zodat ik je reis nog beter kan personaliseren.',
+    'travelAdvice.steps.step2.title': 'Persoonlijk videogesprek',
+    'travelAdvice.steps.step2.text': 'We bespreken jouw wensen live.',
 
-'eguides.steps.step3.title': 'Reisplan verwerken',
-'eguides.steps.step3.text': 'Ik ga aan de slag met jouw route, tips, planning en unieke aanbevelingen.',
+    'travelAdvice.steps.step3.title': 'Reisplan maken',
+    'travelAdvice.steps.step3.text': 'Ik maak jouw route en planning.',
 
-'eguides.steps.step4.title': 'Ontvang jouw reisplan',
-'eguides.steps.step4.text': 'Je ontvangt een compleet, overzichtelijk en praktisch reisplan op maat.',
+    'travelAdvice.steps.step4.title': 'Ontvang je reisplan',
+    'travelAdvice.steps.step4.text': 'Je krijgt een compleet reisplan op maat.',
 
-'eguides.steps.step5.title': 'Reisplan bespreken',
-'eguides.steps.step5.text': 'We lopen alles samen door en finetunen waar nodig zodat je 100% ready bent.',
+    'travelAdvice.steps.step5.title': 'Laatste check',
+    'travelAdvice.steps.step5.text': 'We finetunen alles samen.',
 
+// community
+'community.pageTitle': 'Community | MAY WAY Travels',
+'community.kicker': 'Reiscommunity',
+'community.title': 'Word onderdeel van de community',
+'community.subtitle': 'Verbind met gelijkgestemde reizigers en deel ervaringen.',
 
-    // advice
-    "advice.kicker": "Tips & mindset",
-    "advice.title": "Reisadvies",
-    "advice.subtitle": "Praktische inzichten uit echte reiservaring — geen theorie, alleen wat echt werkt onderweg.",
-    "advice.plan.title": "Plan zonder strak schema",
-    "advice.plan.text": "Laat ruimte in je planning. Een flexibele route zorgt voor spontane stops en betere lokale ervaringen.",    "advice.budget.title": "Houd je budget realistisch",
-    "advice.budget.text": "Werk met een dagbudget en houd rekening met transportkosten per regio — die kunnen flink verschillen.",    "advice.safety.title": "Verzekering & veiligheid",
-    "advice.safety.text": "Zorg dat je verzekerd bent voor activiteiten, verhuur en langere reizen. Bewaar belangrijke documenten digitaal.",
-    "advice.maps.title": "Navigatie & offline kaarten",
-    "advice.maps.text": "Download offline kaarten en sla belangrijke locaties op zodat je ook zonder bereik kunt navigeren.",
-    "advice.cta.title": "Alles in één pakket?",
-    "advice.cta.text": "De complete gids bevat voorbereiding, budgettering, werken in het buitenland, verblijf en persoonlijke routes.",
-    "advice.cta.link": "Bekijk de gids →",
+'community.connect.title': 'Ontmoet reizigers',
+'community.connect.text': 'Kom in contact met mensen die dezelfde passie delen.',
 
+'community.share.title': 'Deel jouw reisverhalen',
+'community.share.text': 'Deel verhalen, foto’s en ervaringen.',
+
+'community.meet.title': 'Ontmoet elkaar wereldwijd',
+'community.meet.text': 'Vind reismaatjes en evenementen.',
+
+'community.inspire.title': 'Laat je inspireren',
+'community.inspire.text': 'Ontdek hidden gems en unieke ervaringen.',
+
+'community.cta.title': 'Klaar om mee te doen?',
+'community.cta.text': 'Word onderdeel van de MAY WAY community.',
+'community.cta.link': 'Neem contact op →',
         
     // destinations /////////////////////////////////////////////////////////////////////////
     'destinations.title': 'Bestemmingen | MAY WAY Travels',
@@ -512,9 +527,9 @@ export const ui = {
     'planner.submit': 'Verzoek verzenden',
 
 // DUTCH
-'home.about.title': "Meet Mayra",
+'home.about.title': "Hi, Ik ben Mayra!",
 'home.about.p1': "Vanaf jongs af aan ben ik gefascineerd door reizen. Het uitstippelen van unieke routes, het ontdekken van verborgen plekken en het opzoeken van ervaringen buiten de gebaande paden.",
-'home.about.p2': "Met een nieuwsgierige blik op de wereld ben ik altijd op zoek naar de échte lokale beleving. Voor mij zit het geheim van reizen in onverwachte ontmoetingen, authentieke plekken en het durven stappen buiten je comfortzone.",
+'home.about.p2': "Met een nieuwsgierige blik op de wereld ben ik altijd op zoek naar échte lokale belevingen. Na ruim 2,5 jaar wonen in Australië heb ik ervaren wat avontuur bijzonder maakt: onverwachte ontmoetingen, authentieke plekken en het durven stappen buiten je comfortzone.",
 'home.about.cta': "Leer mij beter kennen",
 
 

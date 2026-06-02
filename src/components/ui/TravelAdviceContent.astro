@@ -1,17 +1,18 @@
 ---
-// src/components/ui/EguidesContent.astro
+// src/components/ui/TravelAdviceContent.astro
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { ui, defaultLang } from '../../i18n/ui';
-import EGuidesSteps from "./EGuidesSteps.astro";
+import TravelAdviceSteps from "./TravelAdviceSteps.astro";
 
 const lang = Astro.currentLocale || defaultLang;
 
-function t(key: keyof typeof ui[typeof defaultLang]) {
-  return ui[lang as keyof typeof ui][key];
+function t(key: string) {
+  const dict = ui[lang as keyof typeof ui] as Record<string, string>;
+  return dict[key] ?? key;
 }
 ---
 
-<BaseLayout title={t('eguides.title')}>
+<BaseLayout title={t('travelAdvice.title')}>
   <div class="bg-[#FFFDFA]">
     
     <!-- Hero Section -->
@@ -22,11 +23,11 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         <div>
           <span class="mb-5 inline-block rounded-full bg-[#E6F6F6] px-4 py-1.5 text-sm font-semibold text-[#1CABB0]">
-            {t('eguides.hero.badge1')}
+            {t('travelAdvice.hero.badge1')}
           </span>
           <h1 class="text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
-            <span class="font-libre">{t('eguides.hero.title1')}</span> 
-            <span class="block font-dancing text-5xl text-[#4ED2CE] md:inline md:text-6xl lg:text-7xl">{t('eguides.hero.title2')}</span>
+            <span class="font-libre">{t('travelAdvice.hero.title1')}</span> 
+            <span class="block font-dancing text-5xl text-[#4ED2CE] md:inline md:text-6xl lg:text-7xl">{t('travelAdvice.hero.title2')}</span>
           </h1>
         <div class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
 
@@ -40,21 +41,19 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
 </div>
       
-    
-          
           <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a href={`/${lang}/route-planner?country=australia`} class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-[#4ED2CE] hover:bg-[#1CABB0] text-white shadow-lg hover:shadow-xl">
-              {t('eguides.hero.buybtn')}
+              {t('travelAdvice.hero.buybtn')}
             </a>
             <a href="#inhoud" class="inline-flex items-center justify-center rounded-full border-2 border-[#4ED2CE] px-8 py-3 font-medium text-[#1CABB0] transition-all hover:bg-[#E6F6F6]">
-              {t('eguides.hero.previewbtn')}
+              {t('travelAdvice.hero.previewbtn')}
             </a>
           </div>
         </div>
         
         <div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
           <div class="absolute -right-2 -top-3 z-10 rotate-2 rounded-full bg-[#4ED2CE] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-lg">
-            {t('eguides.hero.badge2')}
+            {t('travelAdvice.hero.badge2')}
           </div>
           <div class="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#E8FAF9] to-[#d4f3f1] p-4 shadow-2xl ring-1 ring-black/5">
             <div class="overflow-hidden rounded-2xl shadow-inner">
@@ -62,8 +61,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
               <img src="/images/pexels-1320686.jpeg" alt="Interactive guide Australia" class="aspect-[4/3] w-full object-cover">
             </div>
             <div class="absolute bottom-5 left-5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-              <p class="text-xs font-semibold uppercase tracking-wide text-[#1CABB0]">{t('eguides.hero.included')}</p>
-              <p class="text-lg font-bold text-gray-900">{t('eguides.hero.modules')}</p>
+              <p class="text-xs font-semibold uppercase tracking-wide text-[#1CABB0]">{t('travelAdvice.hero.included')}</p>
+              <p class="text-lg font-bold text-gray-900">{t('travelAdvice.hero.modules')}</p>
             </div>
           </div>
         </div>
@@ -75,8 +74,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.06%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-40"></div>
       <div class="relative mx-auto max-w-6xl px-6">
         <div class="mx-auto max-w-2xl text-center">
-          <h2 class="font-libre text-3xl font-semibold md:text-4xl">{t('eguides.features.title')}</h2>
-          <p class="mt-3 text-lg text-white/90">{t('eguides.features.desc')}</p>
+          <h2 class="font-libre text-3xl font-semibold md:text-4xl">{t('travelAdvice.features.title')}</h2>
+          <p class="mt-3 text-lg text-white/90">{t('travelAdvice.features.desc')}</p>
         </div>
         <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[1, 2, 3, 4, 5, 6].map((num) => (
@@ -84,7 +83,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
               <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/20">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white"><path d="M20 6 9 17l-5-5"></path></svg>
               </span>
-              <span class="pt-1.5 text-left font-medium leading-snug">{t(`eguides.features.${num}` as any)}</span>
+              <span class="pt-1.5 text-left font-medium leading-snug">{t(`travelAdvice.features.${num}` as any)}</span>
             </div>
           ))}
         </div>
@@ -184,26 +183,28 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       </div>
     </section>
 
+      <TravelAdviceSteps />
+
     <!-- Bottom CTA Section -->
     <section class="border-t border-white/10 bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] py-20 text-center text-white">
       <div class="mx-auto max-w-2xl px-6">
         <span class="inline-block rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-wider">
-          {t('eguides.cta.badge')}
+          {t('travelAdvice.cta.badge')}
         </span>
-        <h2 class="mt-6 font-libre text-3xl font-semibold md:text-4xl">{t('eguides.cta.title')}</h2>
-        <p class="mt-4 text-lg text-white/90">{t('eguides.cta.desc')}</p>
+        <h2 class="mt-6 font-libre text-3xl font-semibold md:text-4xl">{t('travelAdvice.cta.title')}</h2>
+        <p class="mt-4 text-lg text-white/90">{t('travelAdvice.cta.desc')}</p>
         <div class="mt-10 flex flex-col items-center gap-3">
           <a href={lang === 'nl' 
   ? '/nl/route-planner?country=australia' 
   : '/en/route-planner?country=australia'}
           class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-white text-[#1CABB0] hover:bg-[#E6F6F6] hover:text-[#15939a] shadow-xl">
-            {t('eguides.cta.btn')}
+            {t('travelAdvice.cta.btn')}
           </a>
        
         </div>
       </div>
     </section>
-    <EGuidesSteps />
+
 
   </div>
 </BaseLayout>

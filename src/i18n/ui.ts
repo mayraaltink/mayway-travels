@@ -34,6 +34,11 @@ export const ui = {
     'carousel.prev': 'Previous',
     'carousel.next': 'Next',
 
+
+    /////////////partners 
+
+    'partners.title': 'Previous collaborations',
+
    // about
 'about.title': 'About me | MAY WAY Travels',
 'about.description': 'Hi! I’m Mayra. Discover my passion for travel.',
@@ -56,6 +61,8 @@ export const ui = {
 'about.p7': 'All of my experiences have led to MAY WAY: a travel community and platform where I share my knowledge, routes, and experiences. With one goal: to help you create your own adventure, your way.',
 
 'about.follow': 'Follow me on Instagram',
+
+
 
     // contact
     'contact.title': 'Contact | MAYWAY Travels',
@@ -328,6 +335,8 @@ export const ui = {
 
 'about.follow': 'Volg mij op Instagram',
 
+///////////partners 
+'partners.title': 'Eerdere samenwerkingen', 
 
     // contact
     'contact.title': 'Contact | MAYWAY Travels',

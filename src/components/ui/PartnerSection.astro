@@ -1,0 +1,31 @@
+---
+import { ui, defaultLang } from '../../i18n/ui';
+
+const lang = Astro.currentLocale || defaultLang;
+
+function t(key: keyof typeof ui[typeof defaultLang]) {
+  return ui[lang as keyof typeof ui][key];
+}
+---
+
+<section class="w-full bg-white py-12">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <!-- HEADER -->
+    <h3 class="mb-10">
+      <span class="text-xl md:text-4xl font-medium text-black">
+        {t('partners.title')}
+      </span>
+    </h3>
+
+    <!-- IMAGE -->
+    <div class="flex justify-center">
+<img
+  src="/images/Partners/partners-collage.png"
+  alt="Eerdere samenwerkingen"
+  class="max-w-4xl w-full mx-auto animate-float rounded-2xl"
+/>
+
+  </div>
+</section>
+

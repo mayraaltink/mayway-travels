@@ -126,13 +126,13 @@ export const ui = {
 'collaboration.title': 'Collaborations',
 
 'collaboration.text1':
-  'The best travel experiences are never created alone. That’s why we collaborate with tourism boards, travel brands, and hospitality companies that align with the MAY WAY audience.',
+  'The most beautiful travel stories are not created alone. That is why MAY WAY collaborates with destinations, (travel) brands, and hospitality companies that perfectly align with our adventurous audience.',
 
 'collaboration.text2':
-  'Every month, we inspire thousands of adventurous travelers in the Netherlands and Belgium through our personal travel content and tips. We also share our experiences with over 17,800 engaged followers on Instagram.',
+  'We reach thousands of travelers across the Netherlands and Belgium every month with our personal travel posts and tips. We also share our experiences with enthusiasm with more than {followers} engaged followers on Instagram via {ig1} and {ig2}.',
 
 'collaboration.text3':
-  'What matters most to us is collaborating with destinations and brands that truly fit our audience. ',
+  'From creative campaigns and UGC content to long-term partnerships: we love to think along on concept, strategy, and execution to create meaningful impact for a travel-loving audience. Got an idea or want to explore possibilities? Feel free to reach out via our contact form. We look forward to an inspiring collaboration.',
 
 'collaboration.button': 'Get in touch',
 
@@ -350,13 +350,13 @@ export const ui = {
     'collaboration.title': 'Samenwerken',
 
 'collaboration.text1':
-  'De mooiste reisbelevingen creëer je niet alleen. Daarom werken wij samen met verkeersbureaus, (reis)merken en bedrijven in de hospitality branche die passen bij de doelgroep van MAY WAY.',
+  'De mooiste reisverhalen ontstaan niet alleen. Daarom werkt MAY WAY samen met bestemmingen, (reis)merken en hospitalitybedrijven die perfect aansluiten bij onze avontuurlijke doelgroep.',
 
 'collaboration.text2':
-  'Wij bereiken maandelijks duizenden avonturisten in Nederland en België met onze persoonlijke reis posts en tips. Ook delen wij onze ervaringen vol enthousiasme met ruim 17.800 betrokken volgers op Instagram.',
+  'Wij bereiken maandelijks duizenden avonturisten in Nederland en België met onze persoonlijke reis posts en tips. Ook delen wij onze ervaringen vol enthousiasme met ruim {followers} betrokken volgers op Instagram via {ig1} en {ig2}.',
 
 'collaboration.text3':
-  'Wat we het belangrijkste vinden is dat we samenwerken met bestemmingen en merken die passen bij onze doelgroep. Zie jij de match? Neem gerust contact met ons op!',
+  'Van creatieve campagnes en UGC-content tot langdurige partnerships: wij denken graag mee over concept, strategie en uitvoering om samen impact te maken bij een reislustig publiek. Heb je een leuk idee of wil je sparren over de mogelijkheden? Stuur gerust een mailtje naar {email}. We kijken uit naar een inspirerende samenwerking.',
 
 'collaboration.button': 'Neem contact op',
 

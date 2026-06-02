@@ -8,12 +8,22 @@ export const defaultLang = 'nl';
 export const ui = {
   en: {
     // homepage and menu /////////////////////////////////////////////
-    'nav.home': 'Home',
-    'nav.destinations': 'Destinations',
-    'nav.advice': 'Travel Tips',
-    'nav.eguides': 'E-Guides',
-    'nav.about': 'About Me',
-    'nav.contact': 'Contact',
+   'nav.home': 'Home',
+'nav.destinations': 'Destinations',
+    'nav.advice': 'Travel Advice',
+    'nav.eguides': 'Community',
+'nav.about': 'About Me',
+'nav.collaborate': 'Collaborate',
+'nav.contact': 'Contact',
+
+////hero
+export const ui = {
+  nl: {
+    hero: {
+      subtitle: "Persoonlijk reisadvies, routes op maat & hidden gems"
+    }
+  },
+
     'button.book': 'Book Now',
 
     'oceania.title.before': 'Discover the diversity of',
@@ -32,21 +42,36 @@ export const ui = {
     'carousel.prev': 'Previous',
     'carousel.next': 'Next',
 
-    // about
-    'about.title': 'About me | MAYWAY Travels',
-    'about.description': 'Hi! I am Mayra. Discover my passion for travel.',
-    'about.location': 'Great Ocean Road — Australia',
-    'about.heading': "Hi! I'm Mayra",
-    'about.p1': 'With a curious perspective and routes I have tried myself, I help you discover Australia and the region — always looking for moments that truly make you feel something. I love pushing my boundaries, embracing new experiences, and sharing what I learn with you.',
-    'about.p2': 'For me, the secret of traveling lies in the details: unexpected encounters, the colors of a sunset on an empty beach, and the excitement of new flavors. I believe travel broadens your horizons. With practical tips and personal e-guides, I want to show you that your adventure is within reach — without unnecessary stress.',
-    'about.follow': 'Follow me on Instagram',
+   // about
+'about.title': 'Over mij | MAY WAY Travels',
+'about.description': 'Hi! Ik ben Mayra. Ontdek mijn passie voor reizen.',
+'about.location': 'Great Ocean Road — Australië',
+
+'about.heading': 'Hi, Ik ben Mayra!',
+
+'about.p1': 'In de afgelopen jaren heb ik mogen ervaren hoe het is om een avontuur aan te gaan dat je dwingt buiten je comfortzone te stappen en hoeveel dat je leven kan verrijken. Zoveel bijzondere mensen, verhalen en plekken. Ik wil jou inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven.',
+
+'about.p2': 'Mijn liefde voor reizen begon al op jonge leeftijd, met reizen naar onder andere India en Japan die mijn nieuwsgierigheid naar andere culturen aanwakkerden en de basis legden voor alles wat daarna kwam. Het liet me al vroeg zien hoeveel moois de wereld te bieden heeft.',
+
+'about.p3': 'Op mijn 18e vertrok ik naar Tanzania voor vrijwilligerswerk binnen een childcare project. Twee jaar later keerde ik terug om een project op te zetten dat straatkinderen hielp toegang te krijgen tot onderwijs. Niet veel later reisde ik solo door Peru, waar ik vijf weken lang backpackte en een meerdaagse tocht door de Amazone maakte. Na mijn studie in 2023 volgde een backpackreis door Zuidoost-Azië, die eindigde met een campervan trip door Nieuw-Zeeland.',
+
+'about.p4': 'In januari 2024 kwam ik met alleen een backpack aan in Sydney. Wat bedoeld was als een korte tussenstop van drie maanden, werd het begin van een nieuw hoofdstuk.',
+
+'about.p5': 'Inmiddels woon en werk ik al ruim 2,5 jaar in Australië, waar ik het land intensief heb verkend: van roadtrips langs de westkust en surfen in Byron Bay tot skiën in Victoria en het ontdekken van The Outback.',
+
+'about.p6': 'Als Travel Sales Agent werkte ik samen met de beste lokale touroperators, transport providers, hotels, hostels en activiteiten. Hierdoor kon ik de beste ervaringen zelf testen en honderden reizigers helpen hun droomreis door Australië, Nieuw-Zeeland, Fiji en Indonesië te plannen. Daarnaast begeleidde ik Working Holiday reizigers met alles wat ze nodig hadden om hun leven hier op te bouwen: van praktische zaken zoals TFN’s en CV’s tot advies over het leven in Australië.',
+
+'about.p7': 'Al mijn ervaringen hebben geleid tot MAY WAY: een travel community en platform waar ik mijn kennis, routes en ervaringen deel. Met één doel: jou helpen om je eigen avontuur te creëren, op jouw manier.',
+
+'about.follow': 'Volg mij op Instagram',
+
 
     // contact
     'contact.title': 'Contact | MAYWAY Travels',
-    'contact.heading': "Let's talk",
-    'contact.intro': 'Do you have a question about a route, events, webinars, the community, or would you like to chat things through? I’d love to help you further with your adventure.',
+    'contact.heading': "Let's connect",
+    'contact.intro': 'Do you have a question about collaborations, upcoming events and webinars, our community, or would you like to chat things through? I’d love to help you further.',
     'contact.intake.title': 'Ready for the next step?',
-    'contact.intake.desc': 'Book a 1-on-1 intake session for a travel plan tailored 100% to you.',
+    'contact.intake.desc': 'Share your travel ideas so we can create a travel plan tailored to you.',
     'contact.intake.btn': 'Start your adventure',
     'contact.form.nameLabel': 'Full name',
     'contact.form.namePlaceholder': 'Your name',
@@ -100,10 +125,10 @@ export const ui = {
     'eguides.mod8.title': 'Resources',
     'eguides.mod8.desc': 'Links, downloads and tools that I use myself.',
 
-    'eguides.cta.badge': 'Your adventure begins here',
-    'eguides.cta.title': 'Ready to start?',
-    'eguides.cta.desc': 'Download the guide immediately after purchase and start planning today — at your own pace, with my maps and routes in your pocket.',
-    'eguides.cta.btn': 'Start your adventure',
+   'travelAdvice.cta.badge': 'Your adventure begins here',
+'travelAdvice.cta.title': 'Ready to start?',
+'travelAdvice.cta.desc': 'Download the guide immediately after purchase and start planning today — at your own pace, with my maps and routes in your pocket.',
+'travelAdvice.cta.btn': 'Start your adventure',
     
 'collaboration.title': 'Collaborations',
 
@@ -118,22 +143,27 @@ export const ui = {
 
 'collaboration.button': 'Get in touch',
 
-    // advice
-    "advice.kicker": "Tips & mindset",
-    "advice.title": "Travel advice",
-    "advice.subtitle":
-    "Practical insights from real travel experience — not theory, just what actually helps on the road.",
-    "advice.plan.title": "Plan without a rigid schedule",
-    "advice.plan.text": "Keep your itinerary flexible. A loose route leaves space for spontaneous detours and better local experiences.",
-    "advice.budget.title": "Keep your budget realistic",
-    "advice.budget.text": "Work with a daily spending range and track transport costs by region — they can vary a lot more than expected.",
-    "advice.safety.title": "Insurance & safety",
-    "advice.safety.text": "Make sure you’re covered for activities, rentals, and longer trips. Keep digital copies of important documents.",
-    "advice.maps.title": "Navigation & offline maps",
-    "advice.maps.text": "Download offline maps before you travel and save key locations so you can navigate even without signal.",
-    "advice.cta.title": "Want everything in one place?",
-    "advice.cta.text": "The full guide includes preparation, budgeting, working abroad, accommodation, and personal itineraries.",
-    "advice.cta.link": "View the guide →",
+  // community
+'community.pageTitle': 'Community | MAY WAY Travels',
+'community.kicker': 'Travel Community',
+'community.title': 'Join the Community',
+'community.subtitle': 'Connect with like-minded travellers and share experiences.',
+
+'community.connect.title': 'Connect with Travellers',
+'community.connect.text': 'Meet people who share your passion for travel.',
+
+'community.share.title': 'Share Your Journey',
+'community.share.text': 'Share stories, photos and experiences.',
+
+'community.meet.title': 'Meet Up Worldwide',
+'community.meet.text': 'Find travel buddies and local events.',
+
+'community.inspire.title': 'Get Inspired',
+'community.inspire.text': 'Discover hidden gems and authentic experiences.',
+
+'community.cta.title': 'Ready to join?',
+'community.cta.text': 'Become part of the MAY WAY community.',
+'community.cta.link': 'Get in touch →',
 
 
     'eguides.steps.title': 'Your travel plan in 5 steps',
@@ -247,12 +277,14 @@ export const ui = {
   },
   nl: {
     // homepage and menu /////////////////////////////////////////////
-    'nav.home': 'Home',
-    'nav.destinations': 'Bestemmingen',
-    'nav.advice': 'Reisadvies',
-    'nav.eguides': 'E-Gidsen',
-    'nav.about': 'Over Mij',
-    'nav.contact': 'Contact',
+  'nav.home': 'Home',
+'nav.destinations': 'Bestemmingen',
+'nav.travelAdvice': 'Reisadvies',
+'nav.community': 'Community',
+'nav.about': 'Over mij',
+'nav.collaborate': 'Samenwerken',
+'nav.contact': 'Contact',
+
     'button.book': 'Boek Nu',
 
     'oceania.title.before': 'Ontdek de diversiteit van',
@@ -272,13 +304,28 @@ export const ui = {
     'carousel.next': 'Volgende',
 
     // about
-    'about.title': 'Over mij | MAYWAY Travels',
-    'about.description': 'Hi! Ik ben Mayra. Ontdek mijn passie voor reizen.',
-    'about.location': 'Great Ocean Road — Australië',
-    'about.heading': 'Hi! Ik ben Mayra',
-    'about.p1': 'Met een nieuwsgierige blik en routes die ik zelf heb uitgeprobeerd, help ik jou om Australië en de regio te ontdekken — altijd op zoek naar momenten die je echt iets laten voelen. Ik verleg graag mijn grenzen, omarm nieuwe ervaringen en deel wat ik leer met jou.',
-    'about.p2': 'Voor mij zit het geheim van reizen in de details: onverwachte ontmoetingen, de kleuren van een zonsondergang op een leeg strand en de opwinding van nieuwe smaken. Ik geloof dat reizen je blik verruimt. Met praktische tips en persoonlijke e-gidsen wil ik laten zien dat jouw avontuur binnen handbereik ligt — zonder onnodige stress.',
-    'about.follow': 'Volg mij op Instagram',
+    'about.title': 'About me | MAY WAY Travels',
+'about.description': 'Hi! I’m Mayra. Discover my passion for travel.',
+'about.location': 'Great Ocean Road — Australia',
+
+'about.heading': 'Hi, I’m Mayra!',
+
+'about.p1': 'Over the past few years, I’ve experienced what it’s like to go on an adventure that pushes you outside your comfort zone — and how much it can enrich your life. So many incredible people, stories, and places. I want to inspire you to take the leap, explore, and write your own story.',
+
+'about.p2': 'My love for travel started at a young age, with trips to places like India and Japan that sparked my curiosity for different cultures and laid the foundation for everything that followed. It showed me early on how much beauty the world has to offer.',
+
+'about.p3': 'At 18, I moved to Tanzania for volunteer work in a childcare project. Two years later, I returned to set up a project helping street children gain access to education. Not long after, I traveled solo through Peru, backpacking for five weeks and completing a multi-day trek through the Amazon. After finishing my studies in 2023, I went on a backpacking trip through Southeast Asia, which ended with a campervan trip through New Zealand.',
+
+'about.p4': 'In January 2024, I arrived in Sydney with just a backpack. What was meant to be a short three-month stop turned into the beginning of a new chapter.',
+
+'about.p5': 'I’ve now been living and working in Australia for over 2.5 years, where I’ve explored the country extensively: from road trips along the west coast and surfing in Byron Bay to skiing in Victoria and discovering the Outback.',
+
+'about.p6': 'As a Travel Sales Agent, I worked with the best local tour operators, transport providers, hotels, hostels, and activity providers, giving me the chance to personally test the best experiences while helping hundreds of travelers plan their dream trips across Australia, New Zealand, Fiji, and Indonesia. I also supported Working Holiday travelers with everything they needed to build their life here: from practical essentials like TFNs and CVs to advice on living, working, and traveling in Australia.',
+
+'about.p7': 'All of my experiences have led to MAY WAY: a travel community and platform where I share my knowledge, routes, and experiences. With one goal: to help you create your own adventure, your way.',
+
+'about.follow': 'Follow me on Instagram',
+
 
     // contact
     'contact.title': 'Contact | MAYWAY Travels',

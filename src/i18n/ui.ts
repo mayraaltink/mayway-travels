@@ -19,10 +19,11 @@ export const ui = {
     'button.book': 'Book Now',
 
     'oceania.title.before': 'Discover the diversity of',
-'oceania.title.bold': 'Oceania',
+'oceania.title.bold': 'Australia',
 'oceania.description': 'From unforgettable road trips along the East Coast to the rugged beauty of the Outback, the vibrant city life of Sydney and Melbourne, the wineries of Margaret River, hiking through the untouched wilderness of Tasmania, and diving at the Great Barrier Reef.',
 'oceania.card.title': 'Australia',
 'oceania.card.button': 'Go to destination',
+
 
     // carousel
     'carousel.subtitle': 'Hotspots',
@@ -82,15 +83,22 @@ export const ui = {
     'contact.form.submit': 'Send message',
 
 
+
+
+
+    ///traveladvice 
+    'travelAdvice.hero.subtitle': 'Tailor-made travel plan',
+'travelAdvice.hero.titleTop': 'Australia',
+'travelAdvice.hero.titleBottom': 'Discovery',
+
   'travelAdvice.title': 'Travel Advice | MAYWAY Travels',
 
-'travelAdvice.hero.badge1': 'Digital product',
 'travelAdvice.hero.title1': 'Personalised Travel Plan',
 'travelAdvice.hero.title2': 'Australia',
 'travelAdvice.hero.desc': 'Would you like to stay in control of booking your trip while still benefiting from our knowledge and expertise? Then a personalized travel plan is exactly what you need! After a personal meeting where we dive into your wishes, interests, and budget, we’ll craft a tailor-made travel plan just for you. Imagine having a unique itinerary packed with handpicked accommodations, unforgettable sights, exciting activities, and insider tips. All designed to make your trip truly one-of-a-kind. We give you the plan, and you book at your own pace.',
 'travelAdvice.hero.buybtn': 'Start your travel planning',
 'travelAdvice.hero.previewbtn': 'Learn more',
-'travelAdvice.hero.badge2': 'Including: Working Holiday tips',
+'travelAdvice.hero.badge2': 'Digital product',
 'travelAdvice.hero.included': 'Included',
 'travelAdvice.hero.modules': '8 modules',
 
@@ -296,8 +304,10 @@ export const ui = {
 
     'button.book': 'Boek Nu',
 
+
+
     'oceania.title.before': 'Ontdek de diversiteit van',
-'oceania.title.bold': 'Oceanië',
+'oceania.title.bold': 'Australië',
 'oceania.description': 'Van onvergetelijke roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in steden zoals Sydney en Melbourne, de wijngaarden van Margaret River, hiken door de ongerepte natuur van Tasmanië en duiken bij het Great Barrier Reef.',
 'oceania.card.title': 'Australië',
 'oceania.card.button': 'Naar bestemming',
@@ -377,9 +387,12 @@ export const ui = {
 
     // travel advice ///////////////////////////////////////////////////////////
 
+    'travelAdvice.hero.subtitle': 'Persoonlijk reisplan op maat',
+'travelAdvice.hero.titleTop': 'Australië',
+'travelAdvice.hero.titleBottom': 'Ontdekken',
+
 'travelAdvice.title': 'E-gidsen | MAY WAY Travels',
 
-'travelAdvice.hero.badge1': 'Digitaal product',
 'travelAdvice.hero.title1': 'Persoonlijk reisplan',
 'travelAdvice.hero.title2': 'Australië',
 'travelAdvice.hero.desc': `Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips? 
@@ -388,7 +401,7 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 
 'travelAdvice.hero.buybtn': 'Plan jouw reis op maat',
 'travelAdvice.hero.previewbtn': 'Ontdek meer',
-'travelAdvice.hero.badge2': 'Inclusief: Working Holiday tips',
+'travelAdvice.hero.badge2': 'Digitaal product',
 'travelAdvice.hero.included': 'Inclusief',
 'travelAdvice.hero.modules': 'Al mijn hidden gems',
 

@@ -15,6 +15,43 @@ function t(key: string) {
 <BaseLayout title={t('travelAdvice.title')}>
   <div class="bg-[#FFFDFA]">
     
+<section class="relative h-[80vh] flex items-center justify-center overflow-hidden -mt-16">
+
+  <!-- GRADIENT OVERLAY -->
+  <div class="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/30 to-transparent z-10"></div>
+
+  <!-- BACKGROUND IMAGE -->
+  <img
+    src="/images/australia/aus_main.jpg"
+    alt="Australia travel"
+    class="absolute inset-0 z-0 h-full w-full object-cover"
+  />
+
+  <!-- CONTENT -->
+  <div class="relative z-20 text-center text-white max-w-3xl px-6">
+
+    <!-- small subtitle -->
+    <p class="text-sm md:text-base uppercase tracking-[0.2em] text-white/80 mb-4">
+      Persoonlijk reisplan op maat
+    </p>
+
+    <!-- title -->
+    <h1 class="flex flex-col leading-[0.95] tracking-[-0.03em]">
+
+      <span class="text-2xl md:text-5xl font-medium">
+        Australië
+      </span>
+
+      <span class="text-4xl md:text-6xl font-bold">
+        Ontdekken
+      </span>
+
+    </h1>
+
+  </div>
+
+</section>
+
     <!-- Hero Section -->
     <section class="relative overflow-hidden pt-28 pb-16 md:pb-24">
       <div class="pointer-events-none absolute -right-24 top-24 h-96 w-96 rounded-full bg-[#4ED2CE]/10 blur-3xl"></div>
@@ -22,9 +59,7 @@ function t(key: string) {
       
       <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         <div>
-          <span class="mb-5 inline-block rounded-full bg-[#E6F6F6] px-4 py-1.5 text-sm font-semibold text-[#1CABB0]">
-            {t('travelAdvice.hero.badge1')}
-          </span>
+         
           <h1 class="text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
             <span class="font-libre">{t('travelAdvice.hero.title1')}</span> 
             <span class="block font-dancing text-5xl text-[#4ED2CE] md:inline md:text-6xl lg:text-7xl">{t('travelAdvice.hero.title2')}</span>
@@ -45,14 +80,14 @@ function t(key: string) {
             <a href={`/${lang}/route-planner?country=australia`} class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-[#4ED2CE] hover:bg-[#1CABB0] text-white shadow-lg hover:shadow-xl">
               {t('travelAdvice.hero.buybtn')}
             </a>
-            <a href="#inhoud" class="inline-flex items-center justify-center rounded-full border-2 border-[#4ED2CE] px-8 py-3 font-medium text-[#1CABB0] transition-all hover:bg-[#E6F6F6]">
-              {t('travelAdvice.hero.previewbtn')}
-            </a>
+          <a href="#features" class="inline-flex items-center justify-center rounded-full border-2 border-[#4ED2CE] px-8 py-3 font-medium text-[#1CABB0] transition-all hover:bg-[#E6F6F6]">
+  {t('travelAdvice.hero.previewbtn')}
+</a>
           </div>
         </div>
         
         <div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
-          <div class="absolute -right-2 -top-3 z-10 rotate-2 rounded-full bg-[#4ED2CE] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-lg">
+          <div class="absolute -right-2 -top-3 z-10 rotate-2 rounded-full bg-[#E6F6F6] px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#1CABB0] shadow-lg">
             {t('travelAdvice.hero.badge2')}
           </div>
           <div class="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#E8FAF9] to-[#d4f3f1] p-4 shadow-2xl ring-1 ring-black/5">
@@ -69,31 +104,50 @@ function t(key: string) {
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-[#4ED2CE] to-[#2eb8b3] py-20 text-white">
-      <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.06%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-40"></div>
-      <div class="relative mx-auto max-w-6xl px-6">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="font-libre text-3xl font-semibold md:text-4xl">{t('travelAdvice.features.title')}</h2>
-          <p class="mt-3 text-lg text-white/90">{t('travelAdvice.features.desc')}</p>
+ <!-- Features Section -->
+<section
+  id="features"
+  class="relative overflow-hidden bg-[#4CC2BF] py-20 text-white"
+>
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.06%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-30"></div>
+
+  <div class="relative mx-auto max-w-4xl px-6">
+    
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-libre text-3xl font-semibold md:text-4xl">
+        {t('travelAdvice.features.title')}
+      </h2>
+      <p class="mt-3 text-base text-white/90">
+        {t('travelAdvice.features.desc')}
+      </p>
+    </div>
+
+    <!-- Features list (NOW VERTICAL) -->
+    <div class="mt-12 flex flex-col gap-3">
+      {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+        <div class="flex items-start gap-3 rounded-xl bg-white/10 px-4 py-3 backdrop-blur-sm">
+          
+          <span class="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </span>
+
+          <span class="text-sm leading-relaxed text-white/90">
+            {t(`travelAdvice.features.${num}` as any)}
+          </span>
+
         </div>
-        <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3, 4, 5, 6].map((num) => (
-            <div class="flex items-start gap-4 rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-sm transition-transform hover:bg-white/15">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white"><path d="M20 6 9 17l-5-5"></path></svg>
-              </span>
-              <span class="pt-1.5 text-left font-medium leading-snug">{t(`travelAdvice.features.${num}` as any)}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      ))}
+    </div>
+
+  </div>
+</section>
 
     <!-- Modules Section -->
     <section id="inhoud" class="scroll-mt-24 py-20 md:py-28">
       <div class="mx-auto max-w-6xl px-6">
-        <p class="text-center text-sm font-bold uppercase tracking-[0.2em] text-[#4ED2CE]">{t('eguides.modules.badge')}</p>
+        <p class="text-center text-sm font-bold uppercase tracking-[0.2em] text-[#39C2BE]">{t('eguides.modules.badge')}</p>
         <h2 class="mt-2 text-center font-libre text-3xl font-bold text-gray-900 md:text-4xl">{t('eguides.modules.title')}</h2>
         <p class="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-600">{t('eguides.modules.desc')}</p>
         

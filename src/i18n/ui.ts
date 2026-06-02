@@ -94,7 +94,7 @@ export const ui = {
   'travelAdvice.title': 'Travel Advice | MAYWAY Travels',
 
 'travelAdvice.hero.title1': 'Personalised Travel Plan',
-'travelAdvice.hero.title2': 'Australia',
+
 'travelAdvice.hero.desc': 'Would you like to stay in control of booking your trip while still benefiting from our knowledge and expertise? Then a personalized travel plan is exactly what you need! After a personal meeting where we dive into your wishes, interests, and budget, we’ll craft a tailor-made travel plan just for you. Imagine having a unique itinerary packed with handpicked accommodations, unforgettable sights, exciting activities, and insider tips. All designed to make your trip truly one-of-a-kind. We give you the plan, and you book at your own pace.',
 'travelAdvice.hero.buybtn': 'Start your travel planning',
 'travelAdvice.hero.previewbtn': 'Learn more',
@@ -388,13 +388,11 @@ export const ui = {
     // travel advice ///////////////////////////////////////////////////////////
 
     'travelAdvice.hero.subtitle': 'Persoonlijk reisplan op maat',
-'travelAdvice.hero.titleTop': 'Australië',
 'travelAdvice.hero.titleBottom': 'Ontdekken',
+'travelAdvice.hero.title1': 'Jouw reis op maat',
 
 'travelAdvice.title': 'E-gidsen | MAY WAY Travels',
 
-'travelAdvice.hero.title1': 'Persoonlijk reisplan',
-'travelAdvice.hero.title2': 'Australië',
 'travelAdvice.hero.desc': `Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips? 
 
 Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed voorbereid op avontuur. Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.`,

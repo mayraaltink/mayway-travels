@@ -129,7 +129,6 @@ Australië </span>
          
           <h1 class="text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
             <span class="font-libre">{t('travelAdvice.hero.title1')}</span> 
-            <span class="block font-dancing text-5xl text-[#4ED2CE] md:inline md:text-6xl lg:text-7xl">{t('travelAdvice.hero.title2')}</span>
           </h1>
         <div class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
 
@@ -165,51 +164,132 @@ Australië </span>
     </section>
 
  <!-- Features Section -->
-<section
-  id="features"
-  class="relative overflow-hidden bg-[#4CC2BF] py-20 text-white"
->
-  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.06%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-30"></div>
+<section id="features" class="bg-[#F4FBFB] py-20 md:py-28">
 
-  <div class="relative mx-auto max-w-4xl px-6">
-    
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="font-libre text-3xl font-semibold md:text-4xl">
-        {t('travelAdvice.features.title')}
-      </h2>
-      <p class="mt-3 text-base text-white/90">
-        {t('travelAdvice.features.desc')}
-      </p>
-    </div>
+  <div class="mx-auto max-w-6xl px-6">
 
-    <!-- Features list (NOW VERTICAL) -->
-    <div class="mt-12 flex flex-col gap-3">
-      {[1, 2, 3, 4, 5, 6, 7].map((num) => (
-        <div class="flex items-start gap-3 rounded-xl bg-white/10 px-4 py-3 backdrop-blur-sm">
-          
-          <span class="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-white/20">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 6 9 17l-5-5"></path>
-            </svg>
-          </span>
+    <!-- GRID -->
+    <div class="grid items-center gap-16 lg:grid-cols-2">
 
-          <span class="text-sm leading-relaxed text-white/90">
-            {t(`travelAdvice.features.${num}` as any)}
-          </span>
+      <!-- LEFT: IMAGE -->
+      <div class="relative">
+
+        <!-- Main Card -->
+        <div class="overflow-hidden rounded-[2rem] bg-white p-3 shadow-[0_20px_60px_rgba(0,0,0,0.15)] ring-1 ring-black/5 transition duration-500 hover:scale-[1.02]">
+
+          <img
+            src="/images/travel-plan/travelplan-preview.png"
+            alt="Persoonlijk reisplan Australië"
+            class="w-full rounded-2xl object-cover"
+          />
 
         </div>
-      ))}
-    </div>
+
+        
+
+        <!-- Floating card -->
+        <div
+          class="absolute -bottom-6 -right-6 hidden md:block
+                 rounded-2xl
+                 bg-[#F4FBFB]
+                 px-6 py-5
+                 shadow-[0_20px_60px_rgba(0,0,0,0.18)]
+                 ring-1 ring-[#E6F6F6]"
+        >
+          <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[#1CABB0]">
+            Preview reisplan
+          </p>
+        </div>
+
+    
+      </div>
+
+   <!-- RIGHT: TEXT -->
+<div>
+
+  <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">
+    {t('travelAdvice.features.title')}
+  </h2>
+
+  <p class="mt-5 text-lg leading-relaxed text-gray-600">
+    {t('travelAdvice.features.desc')}
+  </p>
+
+  <!-- FEATURES -->
+  <div class="mt-8 space-y-3">
+
+    {[1,2,3,4,5,6,7].map((num) => (
+      <div class="flex items-start gap-4">
+
+        <!-- Check -->
+        <div class="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#1CABB0]/10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+               viewBox="0 0 24 24" fill="none" stroke="#1CABB0"
+               stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+        </div>
+
+        <!-- Text -->
+        <p class="leading-relaxed text-gray-700">
+          {t(`travelAdvice.features.${num}` as any)}
+        </p>
+
+      </div>
+    ))}
 
   </div>
+
+  <!-- CTA -->
+<div class="mt-10 flex justify-center">
+
+  <a
+   <a
+  href="/route-planner"
+  class="inline-flex items-center gap-3
+         rounded-full
+        bg-[#1CABB0]/60
+         px-7 py-3
+         text-sm font-semibold text-white
+         shadow-[0_18px_45px_rgba(28,171,176,0.25)]
+         transition-all duration-300
+         hover:scale-[1.04]
+         hover:bg-[#15939a]
+         hover:shadow-[0_25px_70px_rgba(28,171,176,0.35)]"
+>
+  <span>Start jouw avontuur</span>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M5 12h14"></path>
+    <path d="m12 5 7 7-7 7"></path>
+  </svg>
+</a>
+
+</div>
+
+</div>
+
 </section>
+
+
+
 
     <!-- Modules Section -->
     <section id="inhoud" class="scroll-mt-24 py-20 md:py-28">
       <div class="mx-auto max-w-6xl px-6">
         <p class="text-center text-sm font-bold uppercase tracking-[0.2em] text-[#1CABB0]">{t('eguides.modules.badge')}</p>
         <h2 class="mt-2 text-center font-libre text-3xl font-bold text-gray-900 md:text-4xl">{t('eguides.modules.title')}</h2>
-        <p class="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-600">{t('eguides.modules.desc')}</p>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-base text-gray-600">{t('eguides.modules.desc')}</p>
         
         <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           
@@ -280,7 +360,7 @@ Australië </span>
             </div>
             <p class="text-[11px] font-bold uppercase tracking-wider text-[#4ED2CE]">Module 7</p>
             <h3 class="mt-2 text-lg font-bold text-gray-900">{t('eguides.mod7.title')}</h3>
-            <p class="mt-2 flex-1 text-sm leading-relaxed text-gray-600">{t('eguides.mod7.desc')}</p>
+            <p class="mt-2 flex-1 text-sm leading-relaxed text-gray-600">{t('eguides.mod7.desc')}</p>t+Y)
           </article>
 
           <!-- Module 8 -->

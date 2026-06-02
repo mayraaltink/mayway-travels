@@ -9,20 +9,12 @@ export const ui = {
   en: {
     // homepage and menu /////////////////////////////////////////////
    'nav.home': 'Home',
-'nav.destinations': 'Destinations',
-    'nav.advice': 'Travel Advice',
-    'nav.eguides': 'Community',
-'nav.about': 'About Me',
-'nav.collaborate': 'Collaborate',
-'nav.contact': 'Contact',
-
-////hero
-export const ui = {
-  nl: {
-    hero: {
-      subtitle: "Persoonlijk reisadvies, routes op maat & hidden gems"
-    }
-  },
+   'nav.destinations': 'Destinations',
+   'nav.travelAdvice': 'Travel Advice',
+   'nav.community': 'Community',
+   'nav.about': 'About Me',
+   'nav.collaborate': 'Collaborate',
+   'nav.contact': 'Contact',
 
     'button.book': 'Book Now',
 

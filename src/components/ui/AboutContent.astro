@@ -14,54 +14,68 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 ---
 
 <BaseLayout title={t('about.title')} description={t('about.description')}>
-  <div class="flex flex-col md:flex-row md:min-h-[calc(100dvh-4.25rem)]">
-    <!-- Image Section -->
-    <div class="relative w-full md:w-1/2 min-h-[42vh] md:min-h-[calc(100dvh-4.25rem)]">
-      <img 
-        src="/images/back%20on%20the%20island%F0%9F%98%83.jpg" 
-        alt="Reizen door Australië" 
+
+<section class="w-screen px-6 py-10">
+
+  <!-- OUTER ROUNDED HERO -->
+  <div class="relative w-full min-h-[90vh] overflow-hidden rounded-[50px] flex flex-col md:flex-row">
+
+    <!-- IMAGE SIDE -->
+    <div class="relative w-full md:w-1/2 min-h-[40vh] md:min-h-full">
+
+      <img
+        src="/images/back%20on%20the%20island%F0%9F%98%83.jpg"
+        alt="Reizen"
         class="absolute inset-0 h-full w-full object-cover"
-      >
-      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20"></div>
-      
-      <!-- Location Tag -->
+      />
+
+      <!-- overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/30"></div>
+
+      <!-- location -->
       <div class="absolute bottom-6 left-6 flex items-center gap-2 rounded-full bg-black/35 px-4 py-2 text-sm text-white backdrop-blur-sm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-[#4ED2CE]">
-          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-        <span class="font-medium tracking-wide uppercase text-xs sm:text-sm">{t('about.location')}</span>
+        <span class="uppercase text-xs tracking-wide">
+          {t('about.location')}
+        </span>
       </div>
+
     </div>
 
-<!-- Text -->
-<div class="flex w-full md:w-3/5 flex-col justify-center bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] px-8 py-16 md:px-14 md:py-20 mt-6 md:mt-12">
-  
-  <h1 class="font-libre text-3xl sm:text-4xl md:text-5xl font-normal italic text-white leading-tight mb-4">
-    {t('about.heading')}
-  </h1>
+    <!-- TEXT SIDE -->
+    <div class="w-full md:w-1/2 flex items-center justify-center bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] px-8 py-16 md:px-14">
 
-<div class="space-y-6 text-sm sm:text-base text-white/95 leading-relaxed">
-    <p>{t('about.p1')}</p>
-    <p>{t('about.p2')}</p>
-    <p>{t('about.p3')}</p>
-    <p>{t('about.p4')}</p>
-    <p>{t('about.p5')}</p>
-    <p>{t('about.p6')}</p>
-    <p>{t('about.p7')}</p>
-  </div>
+      <div class="max-w-xl text-white">
 
-</div>
-      
-      <a href="https://www.instagram.com/maywaytravels/" target="_blank" rel="noopener noreferrer" class="mt-10 inline-flex w-fit items-center gap-3 rounded-full border-2 border-white/90 px-7 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/15">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram">
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-        </svg>
-        {t('about.follow')}
-      </a>
+        <h1 class="font-libre text-3xl sm:text-4xl md:text-5xl italic leading-tight mb-6">
+          {t('about.heading')}
+        </h1>
+
+        <div class="space-y-5 text-sm sm:text-base text-white/95 leading-relaxed">
+          <p>{t('about.p1')}</p>
+          <p>{t('about.p2')}</p>
+          <p>{t('about.p3')}</p>
+          <p>{t('about.p4')}</p>
+          <p>{t('about.p5')}</p>
+          <p>{t('about.p6')}</p>
+          <p>{t('about.p7')}</p>
+        </div>
+
+        <a
+          href="https://www.instagram.com/maywaytravels/"
+          target="_blank"
+          class="mt-10 inline-flex items-center gap-3 rounded-full border border-white/80 px-6 py-3 text-sm font-semibold uppercase tracking-wider bg-white/10 backdrop-blur hover:bg-white/20 transition"
+        >
+          {t('about.follow')}
+        </a>
+
+      </div>
+
     </div>
+
   </div>
-    <CollaborationSection />
+
+</section>
+
+<CollaborationSection />
+
 </BaseLayout>

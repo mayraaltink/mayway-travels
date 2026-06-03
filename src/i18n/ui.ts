@@ -25,6 +25,15 @@ export const ui = {
 'oceania.card.button': 'Go to destination',
 
 
+
+// home services
+'homeServices.subtitle': 'About MAY WAY',
+'homeServices.title': 'What we can do for you',
+'homeServices.desc':
+  'We don’t just help you plan trips, but also inspire you with real travel experiences that go beyond the ordinary.',
+'homeServices.cta': 'Discover more',
+
+
     // carousel
     'carousel.subtitle': 'Hotspots',
     'carousel.title': 'In and around Australia',
@@ -322,9 +331,14 @@ export const ui = {
     'carousel.prev': 'Vorige',
     'carousel.next': 'Volgende',
 
+    // home services (NL)
+'homeServices.subtitle': 'Over MAY WAY',
+'homeServices.title': 'Wat wij voor jou kunnen betekenen',
+'homeServices.desc':
+  'We helpen je niet alleen met het plannen van reizen, maar inspireren je ook met echte reiservaringen die verder gaan dan het gewone.',
+'homeServices.cta': 'Ontdek meer',
+
     // about
-'about.title': 'Over mij | MAY WAY Travels',
-'about.description': 'Hi! Ik ben Mayra. Ontdek mijn passie voor reizen.',
 'about.location': 'Great Ocean Road — Australië',
 
 'about.heading': 'Hi, Ik ben Mayra!',

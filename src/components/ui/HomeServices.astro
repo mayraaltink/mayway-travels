@@ -1,0 +1,93 @@
+---
+// src/components/HomeServices.astro
+import { useTranslations } from '../../i18n/ui';
+
+type SupportedLang = 'nl' | 'en';
+const lang = (Astro.currentLocale || 'nl') as SupportedLang;
+const t = useTranslations(lang);
+
+const services = [
+  {
+    title: {
+      nl: "Reisplan op maat",
+      en: "Custom Travel Planning"
+    },
+    desc: {
+      nl: "Een persoonlijk reisplan afgestemd op jouw stijl, tempo en budget. Geen standaard routes, maar unieke ervaringen.",
+      en: "A personalised travel plan tailored to your style, pace and budget. No standard routes, only unique experiences."
+    },
+    link: {
+      nl: "/reisplan",
+      en: "/en/travel-plan"
+    }
+  },
+  {
+    title: {
+      nl: "Community & inspiratie",
+      en: "Community & Inspiration"
+    },
+    desc: {
+      nl: "Laat je inspireren door echte reisverhalen, tips en verborgen plekken uit onze community.",
+      en: "/en/community"
+    },
+    link: {
+      nl: "/community",
+      en: "/en/community"
+    }
+  }
+];
+---
+
+<section class="pt-20 pb-24 px-6 bg-gradient-to-b from-[#F3FBFB] to-white">
+  <div class="max-w-6xl mx-auto">
+
+   <!-- HEADER -->
+<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-14 ml-4">
+
+  <!-- LEFT -->
+  <h2 class="max-w-xl leading-[0.95]">
+
+  <span class="block text-3xl md:text-4xl font-normal italic text-gray-800">
+    {lang === 'nl' ? 'Laat je inspireren' : 'Get inspired'}
+  </span>
+
+  <span class="block text-3xl md:text-4xl font-bold text-gray-800 mt-0.5">
+    {lang === 'nl' ? 'voor jouw volgende reis' : 'for your next journey'}
+  </span>
+
+</h2>
+
+  <!-- RIGHT -->
+  <p class="lg:max-w-md lg:text-left text-base text-gray-600 leading-relaxed lg:pt-2">
+    {t('homeServices.desc')}
+  </p>
+
+</div>
+    <!-- CARDS -->
+    <div class="grid md:grid-cols-2 gap-10">
+      {services.map((service) => (
+        <a
+          href={service.link[lang]}
+          class="group relative rounded-3xl overflow-hidden shadow-lg h-[380px] bg-[#0f172a] flex items-end"
+        >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+          <div class="relative p-8 text-white">
+            <h3 class="text-2xl font-bold mb-3 group-hover:translate-x-1 transition">
+              {service.title[lang]}
+            </h3>
+
+            <p class="text-white/80 leading-relaxed">
+              {service.desc[lang]}
+            </p>
+
+            <span class="inline-block mt-6 text-sm border border-white/40 px-4 py-2 rounded-full group-hover:bg-white/10 transition">
+              {t('homeServices.cta')}
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>

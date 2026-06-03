@@ -6,7 +6,7 @@ const t = useTranslations(lang as 'nl' | 'en');
 ---
 
 <!-- Header Image Hero -->
-<section class="relative w-full h-[60vh] md:h-[70vh] overflow-hidden px-6 pt-24">
+<section class="relative w-full h-[60vh] md:h-[80vh] overflow-hidden px-6 pt-24">
 
   <!-- IMAGE WRAPPER (rounded) -->
   <div class="absolute inset-6 overflow-hidden rounded-[40px]">
@@ -23,9 +23,9 @@ const t = useTranslations(lang as 'nl' | 'en');
   </div>
 
   <!-- CONTENT -->
-  <div class="relative z-10 flex h-full items-center justify-center text-center">
+  <div class="relative z-10 flex h-full items-center justify-center text-center px-6">
 
-    <div class="max-w-3xl text-white">
+  <div class="max-w-3xl text-white -translate-y-6 md:-translate-y-9">
 
       <h2 class="flex flex-col leading-[0.9] tracking-[-0.03em] mb-5 text-white">
 
@@ -43,9 +43,9 @@ const t = useTranslations(lang as 'nl' | 'en');
         {t('oceania.description')}
       </p>
 
-     <a
+    <a
   href={`/${lang}/destinations/australia`}
-  class="inline-flex items-center gap-2 text-base font-semibold text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/30 hover:bg-white/20 transition"
+  class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-white/10 backdrop-blur-md px-8 py-3 rounded-full border border-white/30 hover:bg-white/20 transition"
 >
   {t('oceania.card.button')}
 

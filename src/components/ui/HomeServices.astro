@@ -81,9 +81,25 @@ const services = [
               {service.desc[lang]}
             </p>
 
-            <span class="inline-block mt-6 text-sm border border-white/40 px-4 py-2 rounded-full group-hover:bg-white/10 transition">
-              {t('homeServices.cta')}
-            </span>
+           <span class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-white border border-white/30 px-8 py-3 rounded-full group-hover:bg-white/10 transition">
+  {t('homeServices.cta')}
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="transition group-hover:translate-x-1"
+  >
+    <path d="M5 12h14"></path>
+    <path d="m12 5 7 7-7 7"></path>
+  </svg>
+</span>
           </div>
         </a>
       ))}

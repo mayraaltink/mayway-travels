@@ -68,7 +68,7 @@ const isTransparentPage = isHomePage || isTravelAdvice;
       <!-- Desktop Navigation -->
       <nav class="hidden min-[900px]:flex items-center space-x-8">
         {navLinks.map(link => (
-          <a href={getRelativeLocaleUrl(link.href)} class="nav-link text-lg transition-colors duration-300 text-white hover:text-[#4ED2CE]">
+          <a href={getRelativeLocaleUrl(link.href)} class="nav-link text-base transition-colors duration-300 text-white hover:text-[#4ED2CE]">
             {link.text}
           </a>
         ))}

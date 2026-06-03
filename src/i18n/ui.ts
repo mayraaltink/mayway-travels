@@ -284,6 +284,18 @@ export const ui = {
     'planner.anythingElse': 'Anything else you\'d like us to know about you or your perfect trip?',
     'planner.submit': 'Send Request',
 
+     //////////footer
+    
+    'footer.description': 'Your travel platform for unique routes, hidden gems and real travel inspiration.',
+    'footer.nav.australia': 'Australia',
+    'footer.nav.travelAdvice': 'Travel Advice',
+    'footer.nav.community': 'Community',
+    'footer.nav.about': 'About me',
+    'footer.nav.contact': 'Contact',
+    'footer.followTitle': 'Travel with me?',
+    'footer.followText': 'Follow my journeys on social media and discover daily inspiration, tips and hidden places.',
+    'footer.copyright': 'All rights reserved',
+
     
 'eguides.hero.descBold': 'Do you want to stay in control of booking your Australia trip at your own pace, while still benefiting from my knowledge, experience, and tips?',
 
@@ -294,7 +306,6 @@ export const ui = {
 'home.about.p1': "Ever since I was young, I’ve been fascinated by travel. Planning unique routes, discovering hidden places, and seeking experiences beyond the beaten path.",
 'home.about.p2': "With a curious perspective on the world, I’m always searching for the true local experience. After more than 2.5 years of living in Australia, I’ve discovered what makes an adventure truly special: unexpected encounters, authentic places, and the courage to step outside your comfort zone.",
 'home.about.cta': "Get to know me better"
-
 
 
 
@@ -572,6 +583,21 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'planner.anythingElse': 'Is er nog iets anders dat je ons wilt vertellen over jezelf of je perfecte reis?',
     'planner.submit': 'Verzoek verzenden',
 
+///////Footer 
+    
+  'footer.description':'Jouw reisplatform voor unieke routes, verborgen plekken en echte travel-inspiratie. Voor reizigers die vrijheid willen, maar wel met een goed plan.',
+
+'footer.nav.australia': 'Australië',
+'footer.nav.travelAdvice': 'Reisadvies',
+'footer.nav.community': 'Community',
+'footer.nav.about': 'Over mij',
+'footer.nav.contact': 'Contact',
+
+'footer.followTitle': 'Reis je met ons mee?',
+'footer.followText': 'Volg mijn reizen via social media en ontdek dagelijkse inspiratie, tips en verborgen plekken.',
+
+'footer.copyright': 'Alle rechten voorbehouden',
+
 // DUTCH
 'home.about.title': "Hi, Ik ben Mayra!",
 'home.about.p1': "Vanaf jongs af aan ben ik gefascineerd door reizen. Het uitstippelen van unieke routes, het ontdekken van verborgen plekken en het opzoeken van ervaringen buiten de gebaande paden.",
@@ -583,6 +609,10 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 
 'eguides.hero.descNormal': 'Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.',
   },
+
+
+
+ 
 } as const;
 
 

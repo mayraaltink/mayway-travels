@@ -22,11 +22,11 @@ function t(key: string) {
   <div class="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/30 to-transparent z-10"></div>
 
   <!-- BACKGROUND IMAGE -->
-  <img
-    src="/images/australia/aus_main.jpg"
-    alt="Australia travel"
-    class="absolute inset-0 z-0 h-full w-full object-cover"
-  />
+<img
+  src="/images/travel-plan/Sydney.jpg"
+  alt="Sydney travel"
+  class="absolute inset-0 z-0 h-full w-full object-cover"
+/>
 
   <!-- LOCATION (bottom left badge) -->
 <div class="absolute bottom-6 left-6 flex items-center gap-2 rounded-full bg-black/35 px-4 py-2 text-sm text-white backdrop-blur-sm z-20">
@@ -119,6 +119,52 @@ Australië </span>
 
 </section>
 
+<!-- STICKY SUB NAV -->
+<div class="sticky top-0 z-30 border-b border-gray-100 bg-white/90 backdrop-blur-md shadow-sm">
+  <div class="mx-auto max-w-6xl px-6 flex justify-center">
+
+    <ul class="flex items-center gap-2 py-4 text-sm font-semibold text-gray-700">
+
+      <!-- ITEM -->
+      <li>
+        <a href="#reisplan"
+           class="nav-link px-4 py-2 rounded-full transition-all duration-300 hover:bg-[#1CABB0] hover:text-white">
+          Reisplan
+        </a>
+      </li>
+
+      <li>
+        <a href="#features"
+           class="nav-link px-4 py-2 rounded-full transition-all duration-300 hover:bg-[#1CABB0] hover:text-white">
+          Inclusief
+        </a>
+      </li>
+
+      <li>
+        <a href="#inhoud"
+           class="nav-link px-4 py-2 rounded-full transition-all duration-300 hover:bg-[#1CABB0] hover:text-white">
+          E-gids
+        </a>
+      </li>
+
+      <li>
+        <a href="#stappenplan"
+           class="nav-link px-4 py-2 rounded-full transition-all duration-300 hover:bg-[#1CABB0] hover:text-white">
+          Stappenplan
+        </a>
+      </li>
+
+      <li>
+        <a href="#prijzen"
+           class="nav-link px-4 py-2 rounded-full transition-all duration-300 hover:bg-[#1CABB0] hover:text-white">
+          Prijzen
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</div>
     <!-- Hero Section -->
     <section class="relative overflow-hidden pt-28 pb-16 md:pb-24">
       <div class="pointer-events-none absolute -right-24 top-24 h-96 w-96 rounded-full bg-[#4ED2CE]/10 blur-3xl"></div>
@@ -163,6 +209,8 @@ Australië </span>
       </div>
     </section>
 
+
+    
  <!-- Features Section -->
 <section id="features" class="bg-[#F4FBFB] py-20 md:py-28">
 
@@ -285,7 +333,7 @@ Australië </span>
 
 
     <!-- Modules Section -->
-    <section id="inhoud" class="scroll-mt-24 py-20 md:py-28">
+   <section id="inhoud" class="scroll-mt-24 py-20 md:py-28 bg-[#FFFDFA]">
       <div class="mx-auto max-w-6xl px-6">
         <p class="text-center text-sm font-bold uppercase tracking-[0.2em] text-[#1CABB0]">{t('eguides.modules.badge')}</p>
         <h2 class="mt-2 text-center font-libre text-3xl font-bold text-gray-900 md:text-4xl">{t('eguides.modules.title')}</h2>
@@ -401,4 +449,7 @@ Australië </span>
 
 
   </div>
+
+  
 </BaseLayout>
+

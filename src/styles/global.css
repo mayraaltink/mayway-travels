@@ -36,3 +36,60 @@ body {
   --color-bg: #FFFDFA;
   --color-text: #222222;
 }
+
+/* 🌍 WORLD MAP MARKERS */
+
+.placemarker {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  cursor: pointer;
+}
+
+/* Tooltip */
+.tooltiptext {
+  visibility: hidden;
+  background: #111;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.placemarker:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Hover effect */
+.placemarker img {
+  transition: transform 0.2s ease;
+}
+
+.placemarker:hover img {
+  transform: scale(1.15);
+}
+
+/* Example positions (Oceania) */
+.marker-australie {
+  left: 72%;
+  top: 70%;
+}
+
+.marker-nieuwzeeland {
+  left: 88%;
+  top: 82%;
+}
+
+.marker-fiji {
+  left: 82%;
+  top: 60%;
+} 

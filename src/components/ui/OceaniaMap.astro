@@ -1,0 +1,42 @@
+---
+// src/components/OceaniaMap.astro
+
+const markers = [
+  {
+    name: "Australië",
+    slug: "australie",
+    class: "marker-australie",
+  },
+  {
+    name: "Nieuw-Zeeland",
+    slug: "nieuw-zeeland",
+    class: "marker-nieuwzeeland",
+  },
+  {
+    name: "Fiji",
+    slug: "fiji",
+    class: "marker-fiji",
+  },
+];
+---
+
+<div class="relative w-full">
+  <!-- Map image -->
+  <img
+    src="/world-map-oceania.png"
+    alt="Oceania map"
+    class="w-full h-auto select-none"
+  />
+
+  <!-- Markers -->
+  <div class="absolute inset-0">
+    {markers.map((m) => (
+      <div class={`placemarker ${m.class}`}>
+        <a href={`/bestemmingen/${m.slug}`}>
+          <img src="/placemarker.svg" class="w-6 h-6" alt={m.name} />
+          <span class="tooltiptext">{m.name}</span>
+        </a>
+      </div>
+    ))}
+  </div>
+</div>

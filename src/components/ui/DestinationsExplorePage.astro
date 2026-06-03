@@ -40,16 +40,9 @@ const destinations = [
 ---
 
 <BaseLayout title={t('destinations.title')}>
-  <div class="bg-[#FFFDFA] relative z-0 flex-grow pt-28 md:pt-36 pb-20 px-6 overflow-hidden font-zain">
+<div class="bg-[#4CC2BF] relative z-0 flex-grow pt-16 md:pt-36 pb-2 px-6 overflow-hidden font-zain rounded-b-[60px]">
     
-    <div class="max-w-6xl mx-auto text-center mb-12">
-      <h1 class="font-libre text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
-        {t('destinations.heading')}
-      </h1>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        {t('destinations.subheading')}
-      </p>
-    </div>
+  
 
     <!-- Map Container -->
     <div class="max-[499px]:hidden w-full mx-auto overflow-x-auto pb-10 hide-scrollbar cursor-grab active:cursor-grabbing">
@@ -102,6 +95,8 @@ const destinations = [
 
       </div>
     </div>
+      </div>
+</section> 
 
     <DestinationsGrid destinations={destinations} />
 

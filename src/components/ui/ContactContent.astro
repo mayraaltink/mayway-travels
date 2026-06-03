@@ -7,10 +7,9 @@ const lang = Astro.currentLocale || defaultLang;
 function t(key: keyof typeof ui[typeof defaultLang]) {
   return ui[lang as keyof typeof ui][key];
 }
----
-
+--- 
 <BaseLayout title={t('contact.title')}>
-  <div class="bg-[#FFFFF] relative z-0 flex-grow pt-28 md:pt-36 pb-20 px-6">
+  <div class="bg-[#F3FBFB] relative z-0 flex-grow pt-28 md:pt-36 pb-20 px-6">
     
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 md:gap-20 items-start">
       
@@ -105,6 +104,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
             <label for="bericht" class="block text-lg font-bold uppercase tracking-wider mb-2 text-gray-900">{t('contact.form.messageLabel')}</label>
             <textarea id="bericht" name="bericht" rows="4" placeholder={t('contact.form.messagePlaceholder')} required class="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:border-[#4ED2CE] focus:bg-white transition-colors"></textarea>
           </div>
+          
 
           <!-- Submit Button -->
           <button id="submit-btn" type="submit" class="w-full flex items-center justify-center gap-3 bg-[#39C2BE] hover:bg-[#1CABB0] text-white p-4 rounded-xl font-bold transition-all text-lg disabled:opacity-70 disabled:cursor-not-allowed">
@@ -117,6 +117,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
           </button>
           
         </form>
+
+        
 
         <!-- New Clear Notification Alert Box -->
         <div id="notification-box" class="hidden mt-6 p-5 rounded-xl border flex items-start gap-4 transition-all duration-300">
@@ -131,7 +133,12 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
     </div>
   </div>
+
+  
+  <div class="h-16 md:h-24 bg-white"></div>
+
 </BaseLayout>
+
 
 <style>
   /* Form Validation Styles */
@@ -249,6 +256,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       });
     });
   }
+
+  
 
   // Run on standard load
   document.addEventListener("DOMContentLoaded", setupContactForm);

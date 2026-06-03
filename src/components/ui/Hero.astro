@@ -29,7 +29,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative h-screen flex items-center justify-center overflow-hidden -mt-16">
+<section class="relative min-h-[110vh] flex items-center justify-center overflow-hidden -mt-16 rounded-b-[80px]">
   <!-- Video Overlay Gradient -->
   <div class="absolute inset-0 bg-gradient-to-b from-gray-900/40 via-gray-900/20 to-transparent z-10"></div>
   
@@ -46,6 +46,20 @@ const {
     loading="eager"
     quality="mid"
   />
+
+  <!-- LOCATION (bottom left badge) -->
+<div class="absolute bottom-10 left-10 flex items-center gap-2 rounded-full bg-transparant px-4 py-2 text-sm text-white backdrop-blur-sm z-20 ">
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+    <circle cx="12" cy="10" r="3"></circle>
+  </svg>
+
+  <span class="uppercase text-xs tracking-wide text-white/90">
+    Australië · Sydney
+  </span>
+
+</div>
 
   <!-- Content -->
   <div class="relative z-20 text-center px-6 max-w-4xl mx-auto">

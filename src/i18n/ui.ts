@@ -20,7 +20,7 @@ export const ui = {
 
     'oceania.title.before': 'Discover the diversity of',
 'oceania.title.bold': 'Australia',
-'oceania.description': 'From unforgettable road trips along the East Coast to the rugged beauty of the Outback, the vibrant city life of Sydney and Melbourne, the wineries of Margaret River, hiking through the untouched wilderness of Tasmania, and diving at the Great Barrier Reef.',
+'oceania.description': 'From unforgettable road trips along the East Coast to the rugged beauty of the Outback, the vibrant city life of Sydney and Melbourne, hiking through the untouched wilderness of the Daintree Rainforest, and diving at the Great Barrier Reef.',
 'oceania.card.title': 'Australia',
 'oceania.card.button': 'Go to destination',
 
@@ -328,7 +328,7 @@ export const ui = {
 
     'oceania.title.before': 'Ontdek de diversiteit van',
 'oceania.title.bold': 'Australië',
-'oceania.description': 'Van onvergetelijke roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in steden zoals Sydney en Melbourne, de wijngaarden van Margaret River, hiken door de ongerepte natuur van Tasmanië en duiken bij het Great Barrier Reef.',
+'oceania.description': 'Van onvergetelijke roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in Sydney en Melbourne,  hiken door de ongerepte natuur van Daintree en duiken bij het Great Barrier Reef.',
 'oceania.card.title': 'Australië',
 'oceania.card.button': 'Naar bestemming',
 

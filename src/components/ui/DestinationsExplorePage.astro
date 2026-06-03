@@ -55,13 +55,14 @@ const destinations = [
           <!-- Added 'map-marker' to target via JS -->
           <div 
             class="absolute group cursor-pointer map-marker" 
+              data-href={`/${lang}/destinations/${dest.id}`}
             style={`top: ${dest.top}; left: ${dest.left}; transform: translate(-50%, -50%); z-index: 10;`}
           >
             <!-- Pulse Animation Background (Swapped group-hover for group-[.is-active]) -->
             <div class="absolute inset-0 bg-[#4ED2CE] rounded-full animate-ping opacity-75 group-[.is-active]:hidden"></div>
             
             <!-- Map Marker Pin -->
-            <div class="relative flex items-center justify-center w-8 h-8 bg-[#11888c] border-[3px] border-white rounded-full shadow-lg group-[.is-active]:bg-[#4ED2CE] transition-colors duration-300">
+            <div class="pin relative flex items-center justify-center w-8 h-8 bg-[#11888c] border-[3px] border-white rounded-full shadow-lg group-[.is-active]:bg-[#4ED2CE] transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
@@ -124,22 +125,31 @@ const destinations = [
       activeMarker = marker;
     };
 
-    markers.forEach(marker => {
-      // Desktop Hover behavior
-      marker.addEventListener('mouseenter', () => openMarker(marker));
-      marker.addEventListener('mouseleave', () => closeActive());
+   markers.forEach(marker => {
+  const pin = marker.querySelector('div'); // of specifieker selecteren
 
-      // Mobile Tap/Click behavior
-      marker.addEventListener('click', (e) => {
-        // Stops the click from hitting the document and instantly closing
-        e.stopPropagation();
-        
-        // Don't intercept clicks if the user clicks the destination link inside the card
-        if ((e.target as HTMLElement).closest('a')) return;
-        
-        openMarker(marker);
-      });
-    });
+  // Desktop Hover behavior
+  marker.addEventListener('mouseenter', () => openMarker(marker));
+  marker.addEventListener('mouseleave', () => closeActive());
+
+  // Mobile Tap on marker (hover card)
+  marker.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+
+    // ❗ als je op de pin klikt → redirect
+    if (target.closest('.pin')) {
+      const url = marker.getAttribute('data-href');
+      if (url) window.location.href = url;
+      return;
+    }
+
+    e.stopPropagation();
+
+    if (target.closest('a')) return;
+
+    openMarker(marker);
+  });
+});
 
     // Close any active card when clicking anywhere else on the map/page
     document.removeEventListener('click', closeActive);

@@ -8,15 +8,15 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 }
 ---
 
-<section class="py-16 md:py-24 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
+<section class="pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-b from-[#F3FBFB] to-white">
+  <div class="max-w-5xl mx-auto px-6">
     <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
       
       <!-- LEFT IMAGE - Rounded to match carousel cards -->
-      <div class="w-full md:w-1/2">
-        <div class="relative h-[400px] md:h-[550px] w-full rounded-3xl overflow-hidden shadow-xl">
+    <div class="w-full md:w-[50%] lg:w-[42%] flex flex-col justify-center">
+        <div class="relative h-[380px] md:h-[500px] w-full rounded-3xl overflow-hidden shadow-xl">
           <img 
-            src="/images/about/me.jpg" 
+            src="/images/about/Mayra-foto.jpg" 
             alt="About Mayra"
             class="absolute inset-0 w-full h-full object-cover"
           />
@@ -24,15 +24,23 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       </div>
 
       <!-- RIGHT TEXT -->
-      <div class="w-full md:w-1/2 flex flex-col justify-center">
+      <div class="w-full md:w-[55%] flex flex-col justify-center">
+  <div class="space-y-6 mb-8 max-w-md ml-auto">
+
+    
         <!-- Matches Carousel Header Style -->
+
+        <!-- Preheader -->
+<p class="mb-3 text-xs uppercase tracking-[0.25em] text-[#5CC2BF] font-medium">
+  {t('home.about.preheader')}
+</p>
         <h2 class="mb-4">
-  <span class="block text-3xl md:text-4xl text-[#4ED2CE] leading-tight">
+   <span class="block text-4xl md:text-4xl font-bold text-gray-800 mt-0.5">
     Hi, ik ben Mayra!
   </span>
 </h2>
 
-        <div class="space-y-6 mb-8">
+       <div class="space-y-6 mb-8 max-w-md">
           <p class="text-base text-gray-600 leading-relaxed">
             {t('home.about.p1')}
           </p>
@@ -45,7 +53,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
         <div>
           <a 
             href="/about" 
-            class="inline-flex items-center gap-2 rounded-full border-2 border-[#4ED2CE] bg-[#4ED2CE] px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#4ED2CE]"
+            class="inline-flex items-center gap-2 rounded-full border-2 border-[#39C2BE] bg-[#39C2BE] px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#4ED2CE]"
           >
             {t('home.about.cta')}
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>

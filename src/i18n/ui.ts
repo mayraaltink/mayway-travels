@@ -24,7 +24,7 @@ export const ui = {
 'oceania.card.title': 'Australia',
 'oceania.card.button': 'Go to destination',
 
-
+'home.about.preheader': 'About me',
 
 // home services
 'homeServices.subtitle': 'About MAY WAY',
@@ -50,8 +50,7 @@ export const ui = {
     'partners.title': 'Previous collaborations',
 
    // about
-'about.title': 'About me | MAY WAY Travels',
-'about.description': 'Hi! I’m Mayra. Discover my passion for travel.',
+'about.title': 'Hi! I’m Mayra.',
 'about.location': 'Great Ocean Road — Australia',
 
 'about.heading': 'Hi, I’m Mayra!',
@@ -313,6 +312,7 @@ export const ui = {
 
     'button.book': 'Boek Nu',
 
+    'home.about.preheader': 'Over MAY WAY',
 
 
     'oceania.title.before': 'Ontdek de diversiteit van',
@@ -341,7 +341,7 @@ export const ui = {
     // about
 'about.location': 'Great Ocean Road — Australië',
 
-'about.heading': 'Hi, Ik ben Mayra!',
+'about.title': 'Hi, Ik ben Mayra!',
 
 'about.p1': 'In de afgelopen jaren heb ik mogen ervaren hoe het is om een avontuur aan te gaan dat je dwingt buiten je comfortzone te stappen en hoeveel dat je leven kan verrijken. Zoveel bijzondere mensen, verhalen en plekken. Ik wil jou inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven.',
 

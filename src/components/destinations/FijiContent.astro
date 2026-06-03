@@ -13,14 +13,16 @@ function t(key: keyof typeof ui[typeof lang]) {
 ---
 
 <DestinationContent
-  title={t('indonesia.page.title')}
-  description={t('indonesia.page.desc')}
-  capital={t('indonesia.page.capital')}
-  language={t('indonesia.page.language')}
-  currency={t('indonesia.page.currency')}
-  imageSrc="/images/indonesia/indo_main.jpg"
-  imageAlt="Beautiful landscape in Indonesia"
-  planUrl={lang === 'nl' ? '/nl/route-planner?country=indonesia' : '/en/route-planner?country=indonesia'}
+  title={t('Fiji.page.title')}
+  description={t('Fiji.page.desc')}
+  capital={t('Fiji.page.capital')}
+  language={t('Fiji.page.language')}
+  currency={t('Fiji.page.currency')}
+imageSrc="/images/fiji/fiji_main.jpg"
+imageAlt="Beautiful landscape in Fiji"
+  planUrl={lang === 'nl'
+  ? '/nl/route-planner?country=fiji'
+  : '/en/route-planner?country=fiji'}
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
 >
 </DestinationContent>

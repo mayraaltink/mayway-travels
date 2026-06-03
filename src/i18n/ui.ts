@@ -220,8 +220,8 @@ export const ui = {
     'destinations.nz.name': 'New Zealand', // nz
     'destinations.nz.desc': 'Discover majestic fjords, lush mountains, and breathtaking natural beauty.',
     
-    'destinations.indo.name': 'Indonesia', // indo
-    'destinations.indo.desc': 'Experience tropical islands, ancient temples, and a rich, warm culture.',
+'destinations.fiji.name': 'Fiji',
+'destinations.fiji.desc': 'Paradise islands, crystal-clear waters and a relaxed South Pacific atmosphere.',
     
     'destinations.btn': 'Plan your trip!',
 
@@ -250,12 +250,12 @@ export const ui = {
     'nz.page.language': 'English',
     'nz.page.currency': 'New Zealand Dollar (NZD)',
 
-    // destination pages - indonesia
-    'indonesia.page.title': 'Indonesia',
-    'indonesia.page.desc': 'Indonesia is a tropical archipelago known for its diverse culture, stunning landscapes, and rich history. From the bustling streets of Jakarta to the serene beaches of Bali, it offers an unforgettable experience. Whether you are exploring ancient temples, hiking volcanic peaks, or diving into crystal-clear waters, Indonesia is a paradise for travelers.',
-    'indonesia.page.capital': 'Jakarta',
-    'indonesia.page.language': 'Indonesian',
-    'indonesia.page.currency': 'Indonesian Rupiah (IDR)',
+    // destination pages - Fiji
+   'Fiji.page.title': 'Fiji',
+'Fiji.page.desc': 'Discover paradise islands, crystal-clear waters and a relaxed South Pacific atmosphere.',
+'Fiji.page.capital': 'Suva',
+'Fiji.page.language': 'English, Fiji Hindi and Fijian',
+'Fiji.page.currency': 'Fijian Dollar (FJD)',
 
 
     // Route Planner /////////////////////////////////////////////////////////
@@ -518,8 +518,8 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'destinations.nz.name': 'Nieuw-Zeeland', // nz
     'destinations.nz.desc': 'Ontdek majestueuze fjorden, weelderige bergen en adembenemende natuur.',
     
-    'destinations.indo.name': 'Indonesië', // indo
-    'destinations.indo.desc': 'Ervaar tropische eilanden, eeuwenoude tempels en een rijke, warme cultuur.',
+    'destinations.fiji.name': 'Fiji', // Fiji
+    'destinations.fiji.desc': 'Ervaar tropische eilanden, eeuwenoude tempels en een rijke, warme cultuur.',
     
     'destinations.btn': 'Plan jouw reis!',
 
@@ -549,12 +549,12 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'nz.page.language': 'Engels',
     'nz.page.currency': 'Nieuw-Zeelandse Dollar (NZD)',
 
-    // destination pages - indonesia
-    'indonesia.page.title': 'Indonesië',
-    'indonesia.page.desc': 'Indonesië is een tropische archipel die bekend staat om zijn diverse cultuur, adembenemende landschappen en rijke geschiedenis. Van de bruisende straten van Jakarta tot de serene stranden van Bali, het biedt een onvergetelijke ervaring. Of je nu oude tempels verkent, vulkanische pieken beklimt of duikt in kristalhelder water, Indonesië is een paradijs voor reizigers.',
-    'indonesia.page.capital': 'Jakarta',
-    'indonesia.page.language': 'Indonesisch',
-    'indonesia.page.currency': 'Indonesische Rupiah (IDR)',
+    // destination pages - fiji
+  'Fiji.page.title': 'Fiji',
+'Fiji.page.desc': 'Ontdek paradijselijke eilanden, helderblauw water en een ontspannen Zuidzee-sfeer.',
+'Fiji.page.capital': 'Suva',
+'Fiji.page.language': 'Engels, Fiji Hindi en Fijisch',
+'Fiji.page.currency': 'Fijische dollar (FJD)',
 
 
     // Route Planner /////////////////////////////////////////////////////////

@@ -63,11 +63,24 @@ export const ui = {
 
 'about.follow': 'Travel with us on Instagram',
 
-'about.tabs.travel': 'What started as curiosity has grown into a lifestyle full of adventure, freedom, and new experiences. From Tanzania and Peru to backpacking through Asia and building a life in Australia: every step shaped the story behind MAY WAY.',
+'about.preheader': 'About MAY WAY',
 
-'about.tabs.work': 'As a travel specialist, I worked with local tour operators, hostels, and travel providers. This allowed me to help travelers build their perfect trips and personally test the best experiences.',
+'about.titlePart1': 'This is',
 
-'about.tabs.vision': 'With MAY WAY, I want to inspire you to take the leap, explore, and write your own story — your way.',
+'about.titleHighlight': 'my story',
+
+ 
+ 'community.preheader': 'Community',
+    'community.titlePart1': 'Get',
+    'community.titleHighlight': 'inspired',
+    'community.subtitle': 'Discover blogs, webinars, events and stories from the community.',
+    'community.ctaBlogs': 'View blogs',
+    'community.ctaEvents': 'Events & webinars',
+    'community.navBlogs': 'Blogs',
+    'community.navWebinars': 'Webinars & events',
+    'community.navSocials': 'Socials',
+    'community.navCommunity': 'My community',
+
 
 
     // contact
@@ -161,27 +174,7 @@ export const ui = {
 'collaboration.titlePart1': 'Work together with ',
 'collaboration.titleHighlight': 'MAY WAY',
 
-  // community
-'community.pageTitle': 'Community | MAY WAY Travels',
-'community.kicker': 'Travel Community',
-'community.title': 'Join the Community',
-'community.subtitle': 'Connect with like-minded travellers and share experiences.',
 
-'community.connect.title': 'Connect with Travellers',
-'community.connect.text': 'Meet people who share your passion for travel.',
-
-'community.share.title': 'Share Your Journey',
-'community.share.text': 'Share stories, photos and experiences.',
-
-'community.meet.title': 'Meet Up Worldwide',
-'community.meet.text': 'Find travel buddies and local events.',
-
-'community.inspire.title': 'Get Inspired',
-'community.inspire.text': 'Discover hidden gems and authentic experiences.',
-
-'community.cta.title': 'Ready to join?',
-'community.cta.text': 'Become part of the MAY WAY community.',
-'community.cta.link': 'Get in touch →',
 
 
 
@@ -359,12 +352,12 @@ export const ui = {
 
 'about.follow': 'Reis mee op Instagram',
 
-'about.tabs.travel': 'Wat begon met nieuwsgierigheid is uitgegroeid tot een levensstijl vol avontuur, vrijheid en nieuwe ervaringen. Van reizen door Tanzania en Peru tot backpacken door Azië en het opbouwen van een leven in Australië: elke stap heeft bijgedragen aan het verhaal achter MAY WAY.',
 
-'about.tabs.work': 'Als reisspecialist werkte ik samen met lokale tour operators, hostels en travel providers. Hierdoor kon ik reizigers helpen hun ideale reis samen te stellen en zelf de beste ervaringen testen.',
+'about.preheader': 'Over MAY WAY',
 
-'about.tabs.vision': 'Met MAY WAY wil ik je inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven — op jouw manier.', 
+'about.titlePart1': 'Dit is',
 
+'about.titleHighlight': 'mijn verhaal', 
 ///////////partners 
 'partners.title': 'Eerdere samenwerkingen', 
 
@@ -481,26 +474,18 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'travelAdvice.steps.step5.text': 'We finetunen alles samen.',
 
 // community
-'community.pageTitle': 'Community | MAY WAY Travels',
-'community.kicker': 'Reiscommunity',
-'community.title': 'Word onderdeel van de community',
-'community.subtitle': 'Verbind met gelijkgestemde reizigers en deel ervaringen.',
+    'community.preheader': 'Community',
+    'community.titlePart1': 'Laat je',
+    'community.titleHighlight': 'inspireren',
+    'community.subtitle': 'Ontdek blogs, webinars, events en verhalen uit de community.',
+    'community.ctaBlogs': 'Bekijk blogs',
+    'community.ctaEvents': 'Events & webinars',
+    'community.navBlogs': 'Blogs',
+    'community.navWebinars': 'Webinars & events',
+    'community.navSocials': 'Socials',
+    'community.navCommunity': 'Mijn community',
+  
 
-'community.connect.title': 'Ontmoet reizigers',
-'community.connect.text': 'Kom in contact met mensen die dezelfde passie delen.',
-
-'community.share.title': 'Deel jouw reisverhalen',
-'community.share.text': 'Deel verhalen, foto’s en ervaringen.',
-
-'community.meet.title': 'Ontmoet elkaar wereldwijd',
-'community.meet.text': 'Vind reismaatjes en evenementen.',
-
-'community.inspire.title': 'Laat je inspireren',
-'community.inspire.text': 'Ontdek hidden gems en unieke ervaringen.',
-
-'community.cta.title': 'Klaar om mee te doen?',
-'community.cta.text': 'Word onderdeel van de MAY WAY community.',
-'community.cta.link': 'Neem contact op →',
         
     // destinations /////////////////////////////////////////////////////////////////////////
     'destinations.title': 'Bestemmingen | MAY WAY Travels',
@@ -596,7 +581,7 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 // DUTCH
 'home.about.title': "Hi, Ik ben Mayra!",
 'home.about.p1': "Vanaf jongs af aan ben ik gefascineerd door reizen. Het uitstippelen van unieke routes, het ontdekken van verborgen plekken en het opzoeken van ervaringen buiten de gebaande paden.",
-'home.about.p2': "Met een nieuwsgierige blik op de wereld ben ik altijd op zoek naar échte lokale belevingen. Na ruim 2,5 jaar wonen in Australië heb ik ervaren wat avontuur bijzonder maakt: onverwachte ontmoetingen, authentieke plekken en het durven stappen buiten je comfortzone.",
+'home.about.p2': "Met een nieuwsgierige blik op de wereld ben ik altijd op zoek naar échte lokale belevingen. Na ruim 2,5 jaar wonen in Australië heb ik mogen mogen ervaren wat avontuur bijzonder maakt: onverwachte ontmoetingen, authentieke plekken en het durven stappen buiten je comfortzone.",
 'home.about.cta': "Leer mij beter kennen",
 
 

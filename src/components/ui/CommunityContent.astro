@@ -1,96 +1,95 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { ui, defaultLang } from "../../i18n/ui";
+import headerImg from "../../assets/Header.avif";
+import { ui, defaultLang } from '../../i18n/ui';
 
-const lang = Astro.currentLocale || defaultLang;
+const pathLang = Astro.url.pathname.split('/')[1];
+
+const lang =
+  pathLang === 'nl' || pathLang === 'en'
+    ? pathLang
+    : defaultLang;
 
 function t(key: keyof typeof ui[typeof defaultLang]) {
-  return ui[lang as keyof typeof ui][key];
+  const dict = ui[lang as keyof typeof ui] ?? ui[defaultLang];
+  return dict[key];
 }
-
-const communityCards = [
-  {
-    icon: "🌍",
-    titleKey: "community.connect.title",
-    textKey: "community.connect.text",
-  },
-  {
-    icon: "✈️",
-    titleKey: "community.share.title",
-    textKey: "community.share.text",
-  },
-  {
-    icon: "🤝",
-    titleKey: "community.meet.title",
-    textKey: "community.meet.text",
-  },
-  {
-    icon: "📸",
-    titleKey: "community.inspire.title",
-    textKey: "community.inspire.text",
-  },
-];
 ---
 
-<BaseLayout title={t("community.pageTitle")}>
-  <div class="min-h-[60vh] bg-[#FFFDFA]">
+<BaseLayout>
+  <section class="relative bg-[#FFFDFA]">
 
-    <!-- Header -->
-    <header class="border-b border-[#E8F5F4] bg-gradient-to-b from-white to-[#FFFDFA] px-6 pb-14 pt-28">
-      <div class="mx-auto max-w-6xl">
-        <p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#4ED2CE]">
-          {t("community.kicker")}
+    <!-- HERO -->
+    <div class="relative h-screen flex items-center justify-center overflow-hidden -mt-16 rounded-b-[80px]">
+
+      <!-- GRADIENT -->
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/30 to-transparent z-10"></div>
+
+      <!-- IMAGE -->
+<img
+  src="/images/australia/aus_main.jpg"
+  alt="Australia"
+  class="absolute inset-0 z-0 h-full w-full object-cover"
+/>
+
+
+      <!-- CONTENT -->
+      <div class="relative z-20 text-center text-white max-w-3xl px-6">
+
+        <!-- PREHEADER -->
+        <p class="uppercase tracking-[0.2em] text-xs md:text-xs text-white/80 mb-4">
+          {t('community.preheader')}
         </p>
 
-        <h1 class="font-libre text-4xl font-bold text-gray-900 md:text-5xl">
-          {t("community.title")}
+        <!-- TITLE -->
+        <h1 class="flex flex-col leading-[0.85] tracking-[-0.03em]">
+
+          <span class="text-xl md:text-5xl font-medium text-white">
+            {t('community.titlePart1')}
+          </span>
+
+          <span class="text-3xl md:text-5xl font-semibold text-white">
+            {t('community.titleHighlight')}
+          </span>
+
         </h1>
 
-        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-gray-600">
-          {t("community.subtitle")}
-        </p>
-      </div>
-    </header>
+        <!-- CTA'S -->
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center sm:items-center">
 
-    <!-- Cards -->
-    <div class="mx-auto max-w-6xl px-6 py-14 md:py-20">
-      <div class="grid gap-6 md:grid-cols-2">
-        {
-          communityCards.map((card) => (
-            <div class="rounded-2xl border border-[#E6F6F6] bg-white p-8 shadow-sm transition-shadow hover:border-[#4ED2CE]/30 hover:shadow-md">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#E6F6F6] text-[#1CABB0] text-xl">
-                {card.icon}
-              </div>
+          <!-- PRIMARY -->
+          <a
+            href="#blogs"
+            class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a]"
+          >
+            {t('community.ctaBlogs')}
 
-              <h2 class="text-xl font-bold text-gray-900">
-                {t(card.titleKey as any)}
-              </h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
 
-              <p class="mt-3 leading-relaxed text-gray-600">
-                {t(card.textKey as any)}
-              </p>
-            </div>
-          ))
-        }
-      </div>
+          <!-- SECONDARY -->
+          <a
+            href="#webinars"
+            class="inline-flex items-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white"
+          >
+            {t('community.ctaEvents')}
 
-      <!-- CTA -->
-      <div class="mt-16 rounded-2xl border border-dashed border-[#4ED2CE]/40 bg-[#F5FCFC] p-8 md:p-10">
-        <h2 class="font-libre text-2xl font-bold text-gray-900">
-          {t("community.cta.title")}
-        </h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
 
-        <p class="mt-3 max-w-2xl text-gray-600">
-          {t("community.cta.text")}
-        </p>
+        </div>
 
-        <a
-          class="mt-6 inline-flex font-semibold text-[#1CABB0] underline-offset-4 hover:text-[#4ED2CE] hover:underline"
-          href={`/${lang}/contact`}
-        >
-          {t("community.cta.link")}
-        </a>
       </div>
     </div>
-  </div>
+  </section>
 </BaseLayout>

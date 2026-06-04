@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { ui, defaultLang } from '../../i18n/ui';
 import CollaborationSection from "./CollaborationSection.astro";
 import PartnerSection from '../ui/PartnerSection.astro';
+import StorySections from '../ui/StorySections.astro'
 
 // Detect language from URL
 const lang = Astro.currentLocale || defaultLang;
@@ -44,14 +45,14 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
     <!-- RIGHT SIDE (UPDATED ONLY HERE) -->
     <div class="w-full md:w-1/2 flex items-center justify-center bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] px-8 py-16 md:px-14">
 
-      <div class="max-w-xl text-white">
+      <div class="max-w-md text-white">
 
         <!-- FIXED INTRO -->
         <h1 class="font-libre text-3xl sm:text-4xl md:text-5xl italic mb-4">
           Hi, ik ben Mayra
         </h1>
 
-      <div class="mb-8 text-white/90 leading-relaxed space-y-4">
+      <div class="mb-12 text-white/90 leading-relaxed space-y-4">
 
   <p>{t('about.intro.p1')}</p>
   <p>{t('about.intro.p2')}</p>
@@ -59,22 +60,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
 </div>
 
-       <div class="flex flex-wrap gap-2 mb-6">
 
-  <button onclick="setTab('travel')" id="tab-travel"
-    class="tab-btn active-tab">
-    Mijn verhaal
-  </button>
-
-  <button onclick="setTab('work')" id="tab-work"
-    class="tab-btn">
-    Werk
-  </button>
-
-  <button onclick="setTab('vision')" id="tab-vision"
-    class="tab-btn">
-    Visie
-  </button>
 
 </div>
 
@@ -94,19 +80,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 <!-- SCRIPT -->
 <script is:inline>
 
-  const content = {
-    travel: `
-Wat begon met nieuwsgierigheid is uitgegroeid tot een levensstijl vol avontuur, vrijheid en nieuwe ervaringen. Van reizen door Tanzania en Peru tot backpacken door Azië en het opbouwen van een leven in Australië: elke stap heeft bijgedragen aan het verhaal achter MAY WAY.
-    `,
 
-    work: `
-Als reisspecialist werkte ik samen met lokale tour operators, hostels en travel providers. Hierdoor kon ik reizigers helpen hun ideale reis samen te stellen en zelf de beste ervaringen testen.
-    `,
-
-    vision: `
-Met MAY WAY wil ik je inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven — op jouw manier.
-    `
-  };
 
  let activeTab = null;
 
@@ -177,6 +151,8 @@ function setTab(tab) {
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   }
 </style>
+
+<StorySections />
 <CollaborationSection />
 
 <PartnerSection />

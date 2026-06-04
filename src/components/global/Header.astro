@@ -29,13 +29,23 @@ function getSwitchLocaleUrl(targetLang: string) {
 }
 
 // Define your navigation links in one place for easy maintenance (DRY principle)
+// Define your navigation links in one place for easy maintenance (DRY principle)
 const navLinks = [
-  { href: '/', text: t('nav.home') },
-  { href: '/destinations', text: t('nav.destinations') },
-  { href: '/traveladvice', text: t('nav.travelAdvice') },
-  { href: '/community', text: t('nav.community') },
-  { href: '/about', text: t('nav.about') },
-  { href: '/contact', text: t('nav.contact') },
+  { href: '/', text: t('nav.home'), type: 'link' },
+  { href: '/destinations', text: t('nav.destinations'), type: 'link' },
+
+  {
+    text: t('nav.travelAdvice'),
+    type: 'dropdown',
+    children: [
+      { href: '/traveladvice/australia', text: 'Australië' },
+      { href: '/traveladvice/fiji', text: 'Fiji' },
+    ],
+  },
+
+  { href: '/community', text: t('nav.community'), type: 'link' },
+  { href: '/about', text: t('nav.about'), type: 'link' },
+  { href: '/contact', text: t('nav.contact'), type: 'link' },
 ];
 
 // Check if on homepage
@@ -67,11 +77,47 @@ const isTransparentPage = isHomePage || isTravelAdvice;
 
       <!-- Desktop Navigation -->
       <nav class="hidden min-[900px]:flex items-center space-x-8">
-        {navLinks.map(link => (
-          <a href={getRelativeLocaleUrl(link.href)} class="nav-link text-base transition-colors duration-300 text-white hover:text-[#4ED2CE]">
-            {link.text}
-          </a>
-        ))}
+        {navLinks.map((item) => {
+  if (item.type === 'dropdown') {
+    return (
+      <div class="relative group">
+
+        <button class="nav-link text-base transition-colors duration-300 text-white hover:text-[#4ED2CE] flex items-center gap-1">
+          {item.text}
+
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+
+        <div class="absolute top-full left-0 mt-3 w-48 rounded-xl bg-white shadow-lg ring-1 ring-black/5
+                    opacity-0 scale-95 pointer-events-none transition-all duration-200
+                    group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto">
+
+          {item.children.map((child) => (
+            <a
+              href={getRelativeLocaleUrl(child.href)}
+              class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              {child.text}
+            </a>
+          ))}
+
+        </div>
+
+      </div>
+    );
+  }
+
+  return (
+    <a
+      href={getRelativeLocaleUrl(item.href)}
+      class="nav-link text-base transition-colors duration-300 text-white hover:text-[#4ED2CE]"
+    >
+      {item.text}
+    </a>
+  );
+})}
       </nav>
 
       <!-- Right side icons & Mobile Menu Button -->

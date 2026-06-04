@@ -1,0 +1,48 @@
+---
+import { ui, defaultLang } from '../../i18n/ui';
+
+const lang = Astro.currentLocale || defaultLang;
+
+function t(key: string) {
+  const dict = ui[lang as keyof typeof ui] as Record<string, string>;
+  return dict[key] ?? key;
+}
+---
+
+<section
+  class="rounded-[40px] py-16 px-8"
+  style="
+    background: linear-gradient(
+      180deg,
+      #F8FDFC 0%,
+      #F1FAFA 50%,
+      #FFFFFF 100%
+    );
+  "
+>
+
+<!-- HEADER -->
+<div class="mb-12 text-center">
+
+  <!-- PREHEADER -->
+  <p class="mb-3 text-xs uppercase tracking-[0.25em] text-[#5CC2BF] font-medium">
+    {t('about.preheader')}
+  </p>
+
+  <!-- TITLE -->
+  <h2 class="text-3xl md:text-5xl tracking-[-0.03em] text-black leading-[1.1]">
+
+    <span class="font-normal">
+      {t('about.titlePart1')}
+    </span>
+
+    <span class="font-semibold">
+      {t('about.titleHighlight')}
+    </span>
+
+  </h2>
+
+  
+
+</div>
+

@@ -55,22 +55,19 @@ export const ui = {
 
 'about.heading': 'Hi, I’m Mayra!',
 
-'about.p1': 'Over the past few years, I’ve experienced what it’s like to go on an adventure that pushes you outside your comfort zone — and how much it can enrich your life. So many incredible people, stories, and places. I want to inspire you to take the leap, explore, and write your own story.',
+'about.intro.p1': 'Over the years, I’ve learned that the best memories are often created outside your comfort zone: when you dare to explore the unknown and stay open to whatever comes your way.',
 
-'about.p2': 'My love for travel started at a young age, with trips to places like India and Japan that sparked my curiosity for different cultures and laid the foundation for everything that followed. It showed me early on how much beauty the world has to offer.',
+'about.intro.p2': 'What started as curiosity has grown into a lifestyle full of adventure, freedom, and new experiences. From traveling through Tanzania and Peru to backpacking across Asia and building a life in Australia: every step has shaped the story behind MAY WAY.',
 
-'about.p3': 'At 18, I moved to Tanzania for volunteer work in a childcare project. Two years later, I returned to set up a project helping street children gain access to education. Not long after, I traveled solo through Peru, backpacking for five weeks and completing a multi-day trek through the Amazon. After finishing my studies in 2023, I went on a backpacking trip through Southeast Asia, which ended with a campervan trip through New Zealand.',
-
-'about.p4': 'In January 2024, I arrived in Sydney with just a backpack. What was meant to be a short three-month stop turned into the beginning of a new chapter.',
-
-'about.p5': 'I’ve now been living and working in Australia for over 2.5 years, where I’ve explored the country extensively: from road trips along the west coast and surfing in Byron Bay to skiing in Victoria and discovering the Outback.',
-
-'about.p6': 'As a Travel Sales Agent, I worked with the best local tour operators, transport providers, hotels, hostels, and activity providers, giving me the chance to personally test the best experiences while helping hundreds of travelers plan their dream trips across Australia, New Zealand, Fiji, and Indonesia. I also supported Working Holiday travelers with everything they needed to build their life here: from practical essentials like TFNs and CVs to advice on living, working, and traveling in Australia.',
-
-'about.p7': 'All of my experiences have led to MAY WAY: a travel community and platform where I share my knowledge, routes, and experiences. With one goal: to help you create your own adventure, your way.',
+'about.intro.p3': 'With MAY WAY, I want to inspire you to take the leap, explore, and write your own story: your way.',
 
 'about.follow': 'Travel with us on Instagram',
 
+'about.tabs.travel': 'What started as curiosity has grown into a lifestyle full of adventure, freedom, and new experiences. From Tanzania and Peru to backpacking through Asia and building a life in Australia: every step shaped the story behind MAY WAY.',
+
+'about.tabs.work': 'As a travel specialist, I worked with local tour operators, hostels, and travel providers. This allowed me to help travelers build their perfect trips and personally test the best experiences.',
+
+'about.tabs.vision': 'With MAY WAY, I want to inspire you to take the leap, explore, and write your own story — your way.',
 
 
     // contact
@@ -354,32 +351,30 @@ export const ui = {
 
 'about.title': 'Hi, Ik ben Mayra!',
 
-'about.p1': 'In de afgelopen jaren heb ik mogen ervaren hoe het is om een avontuur aan te gaan dat je dwingt buiten je comfortzone te stappen en hoeveel dat je leven kan verrijken. Zoveel bijzondere mensen, verhalen en plekken. Ik wil jou inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven.',
+'about.intro.p1': 'Door de jaren heen heb ik geleerd dat de mooiste herinneringen vaak ontstaan buiten je comfortzone: wanneer je het onbekende durft op te zoeken en je openstelt voor wat er op je pad komt.',
 
-'about.p2': 'Mijn liefde voor reizen begon al op jonge leeftijd, met reizen naar onder andere India en Japan die mijn nieuwsgierigheid naar andere culturen aanwakkerden en de basis legden voor alles wat daarna kwam. Het liet me al vroeg zien hoeveel moois de wereld te bieden heeft.',
+'about.intro.p2': 'Wat begon met nieuwsgierigheid is uitgegroeid tot een levensstijl vol avontuur, vrijheid en nieuwe ervaringen. Van reizen door Tanzania en Peru tot backpacken door Azië en het opbouwen van een leven in Australië: elke stap heeft bijgedragen aan het verhaal achter MAY WAY.',
 
-'about.p3': 'Op mijn 18e vertrok ik naar Tanzania voor vrijwilligerswerk binnen een childcare project. Twee jaar later keerde ik terug om een project op te zetten dat straatkinderen hielp toegang te krijgen tot onderwijs. Niet veel later reisde ik solo door Peru, waar ik vijf weken lang backpackte en een meerdaagse tocht door de Amazone maakte. Na mijn studie in 2023 volgde een backpackreis door Zuidoost-Azië, die eindigde met een campervan trip door Nieuw-Zeeland.',
-
-'about.p4': 'In januari 2024 kwam ik met alleen een backpack aan in Sydney. Wat bedoeld was als een korte tussenstop van drie maanden, werd het begin van een nieuw hoofdstuk.',
-
-'about.p5': 'Inmiddels woon en werk ik al ruim 2,5 jaar in Australië, waar ik het land intensief heb verkend: van roadtrips langs de westkust en surfen in Byron Bay tot skiën in Victoria en het ontdekken van The Outback.',
-
-'about.p6': 'Als Travel Sales Agent werkte ik samen met de beste lokale touroperators, transport providers, hotels, hostels en activiteiten. Hierdoor kon ik de beste ervaringen zelf testen en honderden reizigers helpen hun droomreis door Australië, Nieuw-Zeeland, Fiji en Indonesië te plannen. Daarnaast begeleidde ik Working Holiday reizigers met alles wat ze nodig hadden om hun leven hier op te bouwen: van praktische zaken zoals TFN’s en CV’s tot advies over het leven in Australië.',
-
-'about.p7': 'Al mijn ervaringen hebben geleid tot MAY WAY: een travel community en platform waar ik mijn kennis, routes en ervaringen deel. Met één doel: jou helpen om je eigen avontuur te creëren, op jouw manier.',
+'about.intro.p3': 'Met MAY WAY wil ik je inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven — op jouw manier.',
 
 'about.follow': 'Reis mee op Instagram',
+
+'about.tabs.travel': 'Wat begon met nieuwsgierigheid is uitgegroeid tot een levensstijl vol avontuur, vrijheid en nieuwe ervaringen. Van reizen door Tanzania en Peru tot backpacken door Azië en het opbouwen van een leven in Australië: elke stap heeft bijgedragen aan het verhaal achter MAY WAY.',
+
+'about.tabs.work': 'Als reisspecialist werkte ik samen met lokale tour operators, hostels en travel providers. Hierdoor kon ik reizigers helpen hun ideale reis samen te stellen en zelf de beste ervaringen testen.',
+
+'about.tabs.vision': 'Met MAY WAY wil ik je inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven — op jouw manier.', 
 
 ///////////partners 
 'partners.title': 'Eerdere samenwerkingen', 
 
     // contact
-    'contact.title': 'Contact | MAYWAY Travels',
+    'contact.title': 'Contact | MAYWAY Travels',    
     'contact.heading': "Laten we kennismaken",
-    'contact.intro': 'Heb je een vraag over een samenwerking, opkomende events en webinars, de community of wil je even overleggen? Ik help je graag verder.',
+    'contact.intro': 'Heb je een vraag over een samenwerking, opkomende events en webinars, onze commmunity of wil je even overleggen? Ik help je graag verder.',
     'contact.intake.title': 'Klaar voor de volgende stap?',
     'contact.intake.desc': 'Vul jouw reiswensen in, zodat we een reis kunnen creëren die echt bij jou past.',
-    'contact.intake.btn': 'Begin mijn avontuur',
+    'contact.intake.btn': 'Begin jouw avontuur',
     'contact.form.nameLabel': 'Volledige naam',
     'contact.form.namePlaceholder': 'Jouw naam',
     'contact.form.emailLabel': 'E-mailadres',

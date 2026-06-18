@@ -10,7 +10,7 @@ export const ui = {
     // homepage and menu /////////////////////////////////////////////
    'nav.home': 'Home',
    'nav.destinations': 'Destinations',
-   'nav.travelAdvice': 'Travel Advice',
+   'nav.traveladvice': 'Travel Advice',
    'nav.community': 'Community',
    'nav.about': 'About Me',
    'nav.collaborate': 'Collaborate',
@@ -274,11 +274,33 @@ export const ui = {
     'planner.anythingElse': 'Anything else you\'d like us to know about you or your perfect trip?',
     'planner.submit': 'Send Request',
 
+
+    //////my story 
+    'about.travelStory.title': 'My Passion for Travel',
+'about.travelStory.p1':
+  'My love for travel started at a young age. Family trips to India and South Korea sparked my curiosity about the world and laid the foundation for my own adventures, which began when I was eighteen.',
+
+'about.travelStory.p2':
+  'My first major journey took me to Tanzania, where I volunteered in a childcare project. Two years later, I returned for three months to help establish a project that gave street children access to education. Not long after, I embarked on my first solo backpacking trip through Peru, including a multi-day expedition deep into the Amazon rainforest.',
+
+'about.travelStory.p3':
+  'Since then, I have explored more than 35 countries. From backpacking across Southeast Asia for four months to spending a month travelling New Zealand by campervan, every journey has shaped who I am and deepened my passion for discovering the world.',
+
+'about.workStory.title': 'My Work as a Travel Specialist',
+'about.workStory.p1':
+  'My passion for travel naturally evolved into a career as a travel specialist. This allowed me to personally explore incredible destinations, activities and hidden gems across Australia, New Zealand, Fiji and Indonesia.',
+
+'about.workStory.p2':
+  'I helped hundreds of travellers design their dream holidays by sharing first-hand advice and creating personalised itineraries based on their interests, travel style and budget.',
+
+'about.workStory.p3':
+  'I also guided Working Holiday travellers through every step of starting their new life in Australia. From organising essentials such as TFN applications and CVs to providing practical advice on jobs, accommodation and everyday life, my goal was to help every traveller begin their adventure with confidence.', 
+
      //////////footer
     
     'footer.description': 'Your travel platform for unique routes, hidden gems and real travel inspiration.',
     'footer.nav.australia': 'Australia',
-    'footer.nav.travelAdvice': 'Travel Advice',
+    'footer.nav.traveladvice': 'Travel Advice',
     'footer.nav.community': 'Community',
     'footer.nav.about': 'About me',
     'footer.nav.contact': 'Contact',
@@ -305,7 +327,7 @@ export const ui = {
     // homepage and menu /////////////////////////////////////////////
   'nav.home': 'Home',
 'nav.destinations': 'Bestemmingen',
-'nav.travelAdvice': 'Reisadvies',
+'nav.traveladvice': 'Reisadvies',
 'nav.community': 'Community',
 'nav.about': 'Over mij',
 'nav.collaborate': 'Samenwerken',
@@ -563,12 +585,35 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'planner.anythingElse': 'Is er nog iets anders dat je ons wilt vertellen over jezelf of je perfecte reis?',
     'planner.submit': 'Verzoek verzenden',
 
+
+
+    ////////////mijn verhaal 
+    'about.travelStory.title': 'Mijn passie voor reizen',
+'about.travelStory.p1':
+  'Mijn liefde voor reizen begon al op jonge leeftijd. Reizen naar India en Zuid-Korea met mijn familie wakkerden mijn nieuwsgierigheid naar de wereld aan en vormden de basis voor mijn eigen avontuur, dat begon toen ik achttien was.',
+
+'about.travelStory.p2':
+  'Mijn eerste grote reis bracht me naar Tanzania, waar ik vrijwilligerswerk deed binnen een childcare project. Twee jaar later keerde ik terug om drie maanden lang mee te bouwen aan een project dat straatkinderen toegang gaf tot onderwijs. Niet veel later volgde mijn eerste solo backpackreis door Peru, inclusief een meerdaagse tocht diep door de Amazone.',
+
+'about.travelStory.p3':
+  'Inmiddels heb ik meer dan 35 landen bezocht. Van vier maanden backpacken door Zuidoost-Azië tot een maand met een camper door Nieuw-Zeeland: iedere reis heeft me nieuwe ervaringen, inzichten en herinneringen gegeven die ik nu graag met anderen deel.',
+
+'about.workStory.title': 'Mijn werk als reisspecialist',
+'about.workStory.p1':
+  'Mijn passie voor reizen groeide uit tot mijn werk als reisspecialist. Hierdoor kreeg ik de kans om de mooiste plekken, activiteiten en verborgen parels zelf te ontdekken in Australië, Nieuw-Zeeland, Fiji en Indonesië.',
+
+'about.workStory.p2':
+  'Ik hielp honderden reizigers bij het samenstellen van hun droomreis en deelde persoonlijk advies op basis van mijn eigen ervaringen. Van unieke activiteiten tot complete reisroutes: iedere reis werd afgestemd op de wensen van de reiziger.',
+
+'about.workStory.p3':
+  'Daarnaast begeleidde ik Working Holiday reizigers bij hun avontuur in Australië. Van praktische zaken zoals het aanvragen van een TFN en het opstellen van een cv tot tips over werk, accommodatie en het leven in Australië. Mijn doel was om iedere reiziger met vertrouwen aan zijn of haar avontuur te laten beginnen.',
+
 ///////Footer 
     
   'footer.description':'Jouw reisplatform voor unieke routes, verborgen plekken en echte travel-inspiratie. Voor reizigers die vrijheid willen, maar wel met een goed plan.',
 
 'footer.nav.australia': 'Australië',
-'footer.nav.travelAdvice': 'Reisadvies',
+'footer.nav.traveladvice': 'Reisadvies',
 'footer.nav.community': 'Community',
 'footer.nav.about': 'Over mij',
 'footer.nav.contact': 'Contact',

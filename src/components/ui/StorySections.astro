@@ -21,7 +21,7 @@ function t(key: string) {
   "
 >
 
-<!-- HEADER -->
+<!-- HEADER (blijft exact zoals jij hebt) -->
 <div class="mb-12 text-center">
 
   <!-- PREHEADER -->
@@ -42,7 +42,110 @@ function t(key: string) {
 
   </h2>
 
-  
+</div>
+
+
+
+<!-- STORY SECTION -->
+<div class="mx-auto mt-24 max-w-6xl px-6 space-y-20">
+
+  <!-- BLOCK 1: TRAVEL STORY -->
+  <div class="grid items-center gap-10 md:grid-cols-2">
+
+    <!-- TEXT -->
+    <div>
+      <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+        {t('about.travelStory.title')}
+      </h3>
+
+      <p class="mt-6 text-sm md:text-base text-gray-600 leading-7">
+        {t('about.travelStory.p1')}
+      </p>
+
+      <p class="mt-4 text-sm md:text-base text-gray-600 leading-7">
+        {t('about.travelStory.p2')}
+      </p>
+
+      <p class="mt-4 text-sm md:text-base text-gray-600 leading-7">
+        {t('about.travelStory.p3')}
+      </p>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="overflow-hidden rounded-3xl">
+      <img
+        src="/images/about/Mayra-foto.jpg"
+        alt="Travel story"
+        class="h-[420px] w-full object-cover transition-transform duration-500 hover:scale-105"
+      />
+    </div>
+
+  </div>
+
+  <!-- BLOCK 2: WORK STORY (REVERSED) -->
+  <div class="grid items-center gap-10 md:grid-cols-2">
+
+    <!-- IMAGE (LEFT THIS TIME) -->
+    <div class="order-2 md:order-1 overflow-hidden rounded-3xl">
+      <img
+        src="/images/about/IMG_8932.jpeg"
+        alt="Work story"
+        class="h-[420px] w-full object-cover transition-transform duration-500 hover:scale-105"
+      />
+    </div>
+
+    <!-- TEXT (RIGHT THIS TIME) -->
+    <div class="order-1 md:order-2">
+      <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+        {t('about.workStory.title')}
+      </h3>
+
+      <p class="mt-6 text-sm md:text-base text-gray-600 leading-7">
+        {t('about.workStory.p1')}
+      </p>
+
+      <p class="mt-4 text-sm md:text-base text-gray-600 leading-7">
+        {t('about.workStory.p2')}
+      </p>
+
+      <p class="mt-4 text-sm md:text-base text-gray-600 leading-7">
+        {t('about.workStory.p3')}
+      </p>
+    </div>
+
+  </div>
 
 </div>
 
+<style>
+.story-card {
+  padding: 26px;
+  border-radius: 24px;
+
+  /* glass turquoise effect */
+  background: rgba(92, 194, 191, 0.08);
+
+  border: 1px solid rgba(92, 194, 191, 0.18);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  cursor: pointer;
+  transition: all 0.35s ease;
+
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+}
+
+/* hover = more glow, more depth */
+.story-card:hover {
+  transform: translateY(-6px);
+  background: rgba(92, 194, 191, 0.14);
+  border-color: rgba(92, 194, 191, 0.35);
+  box-shadow: 0 16px 40px rgba(92, 194, 191, 0.18);
+}
+
+/* content stays soft */
+.story-card h3 {
+  letter-spacing: -0.02em;
+}
+</style>

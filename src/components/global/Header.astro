@@ -2,8 +2,6 @@
 // src/components/global/Header.astro
 import { ui, defaultLang } from '../../i18n/ui';
 
-
-// Your existing i18n logic - no changes needed here.
 const lang = Astro.currentLocale || defaultLang;
 
 function t(key: keyof typeof ui[typeof defaultLang]) {
@@ -11,44 +9,52 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 }
 
 function getRelativeLocaleUrl(path: string) {
-  // We add a trailing slash to base URLs for consistency
-  const basePath = path === '/' ? '/' : `${path}/`;
-  // return lang === defaultLang ? basePath : `/${lang}${basePath}`;  //- defaultLang case means if in default there's not language in the url like /nl/ or /en/
-  return `/${lang}${basePath}`;                                       //- this version always inserts /nl/ or /en/ into urls
+  const cleanPath = path === '/' ? '' : path;
+  return `/${lang}${cleanPath}`;
 }
 
-// Function to swap the language of the CURRENT page
 const currentPath = Astro.url.pathname;
+
 function getSwitchLocaleUrl(targetLang: string) {
-  // 1. Remove the current language prefix (/nl or /en) from the URL
   const pathWithoutLang = currentPath.replace(/^\/(nl|en)/, '');
-  // 2. Ensure it has a leading slash
-  const cleanPath = pathWithoutLang.startsWith('/') ? pathWithoutLang : `/${pathWithoutLang}`;
-  // 3. Add the new language prefix
+  const cleanPath = pathWithoutLang.startsWith('/')
+    ? pathWithoutLang
+    : `/${pathWithoutLang}`;
+
   return `/${targetLang}${cleanPath === '/' ? '' : cleanPath}`;
 }
 
-// Define your navigation links in one place for easy maintenance (DRY principle)
-// Define your navigation links in one place for easy maintenance (DRY principle)
-const navLinks = [
+
+type NavItem =
+  | {
+      href: string;
+      text: string;
+      type: 'link';
+    }
+  | {
+      text: string;
+      type: 'dropdown';
+      children: { href: string; text: string }[];
+    };
+
+const navLinks: NavItem[] = [
   { href: '/', text: t('nav.home'), type: 'link' },
   { href: '/destinations', text: t('nav.destinations'), type: 'link' },
 
-{
-  text: t('nav.traveladvice'),
-  type: 'dropdown',
-  children: [
-    { href: '/traveladvice/australia', text: 'Australië' },
-    { href: '/traveladvice/fiji', text: 'Fiji' },
-  ],
-}
+  {
+    text: t('nav.traveladvice'),
+    type: 'dropdown',
+    children: [
+      { href: '/traveladvice/australia', text: 'Australië' },
+      { href: '/traveladvice/fiji', text: 'Fiji' },
+    ],
+  },
 
   { href: '/community', text: t('nav.community'), type: 'link' },
   { href: '/about', text: t('nav.about'), type: 'link' },
   { href: '/contact', text: t('nav.contact'), type: 'link' },
 ];
 
-// Check if on homepage
 const path = Astro.url.pathname;
 
 const isHomePage = path === '/' || path === '/nl' || path === '/en';
@@ -76,49 +82,68 @@ const isTransparentPage = isHomePage || isTravelAdvice;
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden min-[900px]:flex items-center space-x-8">
-        {navLinks.map((item) => {
-  if (item.type === 'dropdown') {
-    return (
-      <div class="relative group">
-
-        <button class="nav-link text-base transition-colors duration-300 text-white hover:text-[#4ED2CE] flex items-center gap-1">
-          {item.text}
-
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/>
-          </svg>
-        </button>
-
-        <div class="absolute top-full left-0 mt-3 w-48 rounded-xl bg-white shadow-lg ring-1 ring-black/5
-                    opacity-0 scale-95 pointer-events-none transition-all duration-200
-                    group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto">
-
-          {item.children.map((child) => (
-            <a
-              href={getRelativeLocaleUrl(child.href)}
-              class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-            >
-              {child.text}
-            </a>
-          ))}
-
-        </div>
-
-      </div>
-    );
-  }
-
+    <nav class="hidden min-[900px]:flex items-center space-x-8">
+  {navLinks.map((item) => {
+if (item.type === 'dropdown') {
   return (
-    <a
-      href={getRelativeLocaleUrl(item.href)}
-      class="nav-link text-base transition-colors duration-300 text-white hover:text-[#4ED2CE]"
-    >
-      {item.text}
-    </a>
+  <div class="relative group z-50 py-2">
+
+      <a
+        href={getRelativeLocaleUrl('/traveladvice')}
+        class="nav-link flex items-center gap-2 text-base text-white hover:text-[#4ED2CE]"
+      >
+        {item.text}
+
+        <svg
+          class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M6 9l6 6 6-6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+
+      <div
+  class="absolute top-full left-0 mt-1 w-52
+         bg-white rounded-xl shadow-xl z-[999]
+         transition-all duration-200
+         pointer-events-none"
+>
+
+  
+
+        {item.children.map((child) => (
+          <a
+            href={getRelativeLocaleUrl(child.href)}
+            class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+          >
+            {child.text}
+          </a>
+        ))}
+      </div>
+
+    </div>
   );
-})}
-      </nav>
+}
+
+    // LINK
+    return (
+      <a
+        href={getRelativeLocaleUrl(item.href)}
+        class="nav-link text-base text-white hover:text-[#4ED2CE]"
+      >
+        {item.text}
+      </a>
+    );
+  })}
+</nav>
+
 
       <!-- Right side icons & Mobile Menu Button -->
       <div class="flex items-center gap-1 sm:gap-2">
@@ -179,12 +204,40 @@ const isTransparentPage = isHomePage || isTravelAdvice;
         
         <!-- Centered nav -->
         <nav class="flex flex-1 flex-col justify-center gap-1">
-            {navLinks.map(link => (
-            <a href={getRelativeLocaleUrl(link.href)} class="mobile-nav-link block border-b border-white/15 py-4 text-3xl font-bold tracking-tight transition-all duration-500 sm:text-4xl text-white/85 hover:text-white translate-x-8 opacity-0">
-                {link.text}
+           {navLinks.map((item) => {
+  if (item.type === 'dropdown') {
+    return (
+      <>
+        <a
+          href={getRelativeLocaleUrl('/traveladvice')}
+          class="mobile-nav-link block border-b border-white/15 py-4 text-3xl font-bold text-white"
+        >
+          {item.text}
+        </a>
+
+        <div class="pl-6">
+          {item.children.map((child) => (
+            <a
+              href={getRelativeLocaleUrl(child.href)}
+              class="block py-2 text-xl text-white/80"
+            >
+              {child.text}
             </a>
-            ))}
-        </nav>
+          ))}
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <a
+      href={getRelativeLocaleUrl(item.href)}
+      class="mobile-nav-link block border-b border-white/15 py-4 text-3xl font-bold text-white"
+    >
+      {item.text}
+    </a>
+  );
+})}
 
         <!-- Bottom-right language switcher -->
         <div class="flex justify-end mt-auto">

@@ -2,6 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import headerImg from "../../assets/Header.avif";
 import { ui, defaultLang } from '../../i18n/ui';
+import BlogGrid from "./BlogGrid.astro";
+import UpcomingEvents from "./UpcomingEvents.astro";
+import MayWayMoments from "./MayWayMoments.astro";
 
 const pathLang = Astro.url.pathname.split('/')[1];
 
@@ -92,4 +95,9 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       </div>
     </div>
   </section>
+
+  <BlogGrid />
+  <MayWayMoments />
+  <UpcomingEvents />
+
 </BaseLayout>

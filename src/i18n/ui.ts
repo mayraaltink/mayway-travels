@@ -155,6 +155,38 @@ export const ui = {
 'travelAdvice.cta.title': 'Ready to start?',
 'travelAdvice.cta.desc': 'Download the guide immediately after purchase and start planning today — at your own pace, with my maps and routes in your pocket.',
 'travelAdvice.cta.btn': 'Start your adventure',
+
+
+
+////Travel advice Fiji 
+//// Travel Advice Fiji - EN
+
+'travelAdviceFiji.hero.subtitle': 'Personalised travel plan',
+'travelAdviceFiji.hero.titleBottom': 'Explore',
+'travelAdviceFiji.hero.title1': 'Your tailor-made Fiji adventure',
+
+'travelAdviceFiji.title': 'Fiji Travel Plans | MAY WAY Travels',
+
+'travelAdviceFiji.hero.desc': `Want the freedom to book your own Fiji adventure at your own pace while still benefiting from my personal experience, insider knowledge and local tips?
+
+With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, well-prepared and stress-free. At MAY WAY, we begin with a personal video call to discuss your travel style, interests and budget. Whether you already have an itinerary in mind or have no idea where to start, we'll create the perfect Fiji adventure together.`,
+
+'travelAdviceFiji.hero.buybtn': 'Plan your custom trip',
+'travelAdviceFiji.hero.previewbtn': 'Discover more',
+'travelAdviceFiji.hero.badge2': 'Digital product',
+'travelAdviceFiji.hero.included': 'Included',
+'travelAdviceFiji.hero.modules': 'All my hidden gems',
+
+'travelAdviceFiji.features.title': 'What’s included in your personalised travel plan?',
+'travelAdviceFiji.features.desc': 'Everything you need to explore Fiji with confidence and make the most of your adventure.',
+
+'travelAdviceFiji.features.1': 'A personal video call to design your trip around your travel style and wishes',
+'travelAdviceFiji.features.2': 'A personalised day-by-day itinerary',
+'travelAdviceFiji.features.3': 'Local recommendations, must-see highlights and hidden gems for every destination, including my personal favourites',
+'travelAdviceFiji.features.4': 'Two carefully selected accommodation recommendations for each destination',
+'travelAdviceFiji.features.5': 'The best transport options, including advice on ferries, domestic flights and island transfers',
+'travelAdviceFiji.features.6': 'Practical travel tips, from entry requirements to useful travel apps',
+'travelAdviceFiji.features.7': 'A comprehensive Fiji e-guide packed with everything you need to know before your trip', 
     
 'collaboration.title': 'Collaborations',
 
@@ -494,6 +526,39 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 
     'travelAdvice.steps.step5.title': 'Laatste check',
     'travelAdvice.steps.step5.text': 'We finetunen alles samen.',
+
+
+
+
+    ////travel advice fiji 
+
+'travelAdviceFiji.hero.subtitle': 'Persoonlijk reisplan op maat',
+'travelAdviceFiji.hero.titleBottom': 'Ontdekken',
+'travelAdviceFiji.hero.title1': 'Jouw reis op maat',
+
+'travelAdviceFiji.title': 'E-gidsen | MAY WAY Travels',
+
+'travelAdviceFiji.hero.desc': `Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips? 
+
+Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed voorbereid op avontuur. Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.`,
+
+'travelAdviceFiji.hero.buybtn': 'Plan jouw reis op maat',
+'travelAdviceFiji.hero.previewbtn': 'Ontdek meer',
+'travelAdviceFiji.hero.badge2': 'Digitaal product',
+'travelAdviceFiji.hero.included': 'Inclusief',
+'travelAdviceFiji.hero.modules': 'Al mijn hidden gems',
+
+'travelAdviceFiji.features.title': 'Wat krijg je bij jouw persoonlijke reisplan?',
+'travelAdviceFiji.features.desc': 'Alles wat je nodig hebt om goed voorbereid en vol vertrouwen aan jouw Australië-avontuur te beginnen.',
+
+'travelAdviceFiji.features.1': 'Persoonlijk videogesprek om jouw reis volledig op maat samen te stellen',
+'travelAdviceFiji.features.2': 'Een dag-tot-dag overzicht van jouw persoonlijke reisroute',
+'travelAdviceFiji.features.3': 'Lokale tips, must-see hotspots en hidden gems per bestemming, inclusief persoonlijke favorieten',
+'travelAdviceFiji.features.4': 'Twee zorgvuldig geselecteerde accommodaties per locatie',
+'travelAdviceFiji.features.5': 'De beste transportoptie inclusief advies voor vluchten, bussen en andere routes',
+'travelAdviceFiji.features.6': 'Praktische voorbereidingstips, van visa tot handige apps',
+'travelAdviceFiji.features.7': 'E-gids met 8 leerzame modules over wonen, werken en reizen in Australië',
+
 
 // community
     'community.preheader': 'Community',

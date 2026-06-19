@@ -1,0 +1,65 @@
+---
+const blogs = [
+  {
+    title: "10 tips before travelling Australia",
+    image: "/images/blogs/australia.jpg",
+    slug: "10-tips-australia"
+  },
+  {
+    title: "Backpacking New Zealand",
+    image: "/images/blogs/nz.jpg",
+    slug: "backpacking-new-zealand"
+  },
+  {
+    title: "How much money do you need?",
+    image: "/images/blogs/money.jpg",
+    slug: "travel-budget"
+  }
+];
+---
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+ <!-- Intro -->
+<div class="max-w-3xl mx-auto mb-12 text-center">
+    <p class="text-sm uppercase tracking-[0.2em] text-[#1CABB0] mb-3">
+       Reisinspiratie
+    </p>
+
+    <h2 class="text-4xl font-semibold mb-4">
+        Blogs 
+    </h2>
+
+  <p class="max-w-lg mx-auto text-gray-600 leading-relaxed">
+    Laat je inspireren door handige tips en praktische zaken om goed voorbereid op avontuur te gaan!
+</p>
+</div>
+
+  <!-- Blog kaarten -->
+<div class="flex flex-wrap justify-center gap-6">
+
+  {blogs.map(blog => (
+
+    <a
+      href={`/blogs/${blog.slug}`}
+      class="group w-[290px] rounded-3xl overflow-hidden shadow-lg bg-white transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+    >
+      <img
+        src={blog.image}
+        alt={blog.title}
+        class="aspect-[4/3] w-full object-cover group-hover:scale-105 transition duration-500"
+      />
+
+      <div class="p-5">
+        <h3 class="text-lg font-semibold leading-snug">
+          {blog.title}
+        </h3>
+      </div>
+
+    </a>
+
+  ))}
+
+</div>
+
+</section>

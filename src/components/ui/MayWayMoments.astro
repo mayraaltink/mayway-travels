@@ -1,0 +1,76 @@
+---
+const moments = Array.from({ length: 15 }, (_, i) => ({
+  image: `/images/community/moment${(i % 5) + 1}.jpg`,
+  title: `Moment ${i + 1}`,
+  caption: "A special memory from the road.",
+  description:
+    "Here you can write a longer story about this moment. Share what happened, why this place was special or give travel tips related to the location."
+}));
+---
+
+<section class="py-20 bg-white">
+
+  <!-- HEADER -->
+  <div class="max-w-3xl mx-auto text-center px-6 mb-12">
+
+    <p class="uppercase tracking-[0.2em] text-[#1CABB0] text-sm mb-3">
+      Community
+    </p>
+
+    <h2 class="text-4xl font-semibold mb-4">
+      MAY WAY Moments
+    </h2>
+
+    <p class="text-gray-600 max-w-xl mx-auto">
+      Deel jouw MAY WAY momenten en laat je inspireren door verhalen, bestemmingen en herinneringen van reizigers.
+    </p>
+
+  </div>
+
+  <!-- SLIDER -->
+  <div
+    class="flex gap-6 overflow-x-auto px-[12vw] pb-4 snap-x snap-mandatory scrollbar-hide"
+  >
+
+    {moments.map((moment) => (
+
+      <button
+        class="group flex-shrink-0 w-[280px] md:w-[320px] snap-center rounded-3xl overflow-hidden shadow-lg bg-white hover:-translate-y-2 transition"
+      >
+
+        <img
+          src={moment.image}
+          alt={moment.title}
+          class="h-80 w-full object-cover group-hover:scale-105 transition duration-500"
+        />
+
+        <div class="p-6 text-left">
+
+          <h3 class="text-xl font-semibold mb-2">
+            {moment.title}
+          </h3>
+
+          <p class="text-gray-500 text-sm">
+            {moment.caption}
+          </p>
+
+        </div>
+
+      </button>
+
+    ))}
+
+  </div>
+
+</section>
+
+<style>
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>

@@ -1,0 +1,129 @@
+---
+const routes = [
+  {
+    title: "Oostkust",
+    description: "Van tropische stranden tot bruisende steden en het Great Barrier Reef.",
+    images: [
+      "/images/australia/routes/east-1.jpg",
+      "/images/australia/routes/east-2.jpg",
+      "/images/australia/routes/east-3.jpg",
+    ],
+  },
+  {
+    title: "Westkust",
+    description: "Ruige roadtrips, lege stranden en turquoise wateren.",
+    images: [
+      "/images/australia/routes/west-1.jpg",
+      "/images/australia/routes/west-2.jpg",
+      "/images/australia/routes/west-3.jpg",
+    ],
+  },
+  {
+    title: "Red Centre",
+    description: "Uluru, woestijnlandschappen en sterrenhemels zoals nergens anders.",
+    images: [
+      "/images/australia/routes/red-1.jpg",
+      "/images/australia/routes/red-2.jpg",
+      "/images/australia/routes/red-3.jpg",
+    ],
+  },
+  {
+    title: "Top End & Outback",
+    description: "Watervallen, wildlife en tropisch avontuur in het noorden.",
+    images: [
+      "/images/australia/routes/top-1.jpg",
+      "/images/australia/routes/top-2.jpg",
+      "/images/australia/routes/top-3.jpg",
+    ],
+  },
+  {
+    title: "Tasmanië",
+    description: "Groene bergen, hikes en pure natuur op een compact eiland.",
+    images: [
+      "/images/australia/routes/tas-1.jpg",
+      "/images/australia/routes/tas-2.jpg",
+      "/images/australia/routes/tas-3.jpg",
+    ],
+  },
+];
+---
+
+<section class="bg-[#F2FBFB] py-20">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="max-w-[720px] mx-auto">
+
+      <h2 class="text-4xl font-bold mb-6">
+        Reizen door Australië
+      </h2>
+
+      <p class="text-sm text-neutral-700 leading-8">
+       xxxx
+      </p>
+
+      <p class="text-sm text-neutral-700 leading-8 mt-6">
+       xxxxx
+      </p>
+
+    </div>
+
+  </div>
+
+     <h3 class="text-3xl font-semibold mt-16 mb-8 text-center">
+  Ontdek verschillende reisroutes
+</h3>
+
+
+  <!-- GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {routes.map((route) => (
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+
+          <!-- SWIPE CAROUSEL -->
+          <div class="relative overflow-x-auto flex snap-x snap-mandatory scrollbar-hide">
+            {route.images.map((img) => (
+              <img
+                src={img}
+                class="min-w-full h-56 object-cover snap-center"
+              />
+            ))}
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-5">
+            <h3 class="text-xl font-semibold mb-2">
+              {route.title}
+            </h3>
+
+            <p class="text-sm text-neutral-600 leading-6">
+              {route.description}
+            </p>
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+<!-- optional: hide scrollbar -->
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+
+    <!-- Hier komen straks de routekaarten -->
+
+  </div>
+</section>
+
+

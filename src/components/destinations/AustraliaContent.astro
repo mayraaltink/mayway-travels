@@ -2,7 +2,7 @@
 import DestinationContent from "./DestinationContent.astro";
 import HotspotCarousel from './HotspotCarousel.astro';
 import { ui, defaultLang } from '../../i18n/ui';
-
+import AustraliaRoutes from './AustraliaRoutes.astro';
 
 
 // Get current language
@@ -26,7 +26,12 @@ function t(key: keyof typeof ui[typeof lang]) {
   planUrl={lang === 'nl' ? '/nl/route-planner?country=australia' : '/en/route-planner?country=australia'}
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
 >
+
   <!-- The carousel gets injected into the <slot /> of DestinationContent -->
-  <HotspotCarousel />
+       <HotspotCarousel />
+     <AustraliaRoutes />
+    
+
+
   
 </DestinationContent>

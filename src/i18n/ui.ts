@@ -35,8 +35,8 @@ export const ui = {
 
 
     // carousel
-'hotspots_title_line1': 'Hotspots',
-'hotspots_title_line2': 'in Down Under',
+'hotspots_title_line1': 'Discover hotspots',
+'hotspots_title_line2': 'Down Under',
 'hotspots_desc': 'Australia is packed with incredible things to see and do. Get inspired by my favorite hotspots.',
 
     'carousel.subtitle': 'Hotspots',
@@ -422,7 +422,7 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 
 //// Carousel 
 
-'hotspots_title_line1': 'Hotspots',
+'hotspots_title_line1': 'Ontdek hotspots',
 'hotspots_title_line2': 'in Down Under',
 'hotspots_desc': 'Australië zit vol met gigantisch veel te zien en te doen. Laat je inspireren door mijn favoriete hotspots.',
 

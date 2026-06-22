@@ -22,13 +22,13 @@ const isHomePage = Astro.url.pathname.split('/').filter(Boolean).length <= 1;
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Dancing+Script:wght@400..700&family=Neucha&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 
   </head>
- <body class="color-bg text-gray-900 antialiased min-h-screen flex flex-col">
+<body class="color-bg text-gray-900 antialiased min-h-screen overflow-x-hidden">
     
   <div class="relative z-50">
     <Header />
-  </div>
+  
 
-  <main class="flex-grow">
+  <main class="w-full">
     <slot /> 
   </main>
 
@@ -36,5 +36,5 @@ const isHomePage = Astro.url.pathname.split('/').filter(Boolean).length <= 1;
 
 </body>
 
-<body class="color-bg text-gray-900 antialiased min-h-screen flex flex-col overflow-x-hidden"> </body>
+<body class="color-bg text-gray-900 antialiased min-h-screen overflow-x-hidden"> </body>
 </html>

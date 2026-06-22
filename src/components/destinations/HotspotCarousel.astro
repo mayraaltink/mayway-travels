@@ -166,12 +166,12 @@ const getItemWidth = () =>
       });
     };
 
-    const scrollToIndex = (i) => {
-      track.scrollTo({
-        left: i * getItemWidth(),
-        behavior: 'smooth'
-      });
-    };
+   const scrollToIndex = (i: number) => {
+  track.scrollTo({
+    left: i * getItemWidth(),
+    behavior: 'smooth'
+  });
+};
 
     next.addEventListener('click', () => {
       scrollToIndex(Math.min(getIndex() + 1, getMaxIndex()));

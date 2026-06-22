@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import CTAButtons from "../ui/CTAButtons.astro";
 import { ui, defaultLang } from '../../i18n/ui';
 
+
 export interface Props {
   title: string;
   description: string;
@@ -129,5 +130,6 @@ function t(key: keyof typeof ui[typeof lang]) {
   <slot />
 
   <CTAButtons planUrl={planUrl} guideUrl={guideUrl} />
+
 
 </BaseLayout>

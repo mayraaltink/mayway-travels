@@ -1,7 +1,9 @@
 ---
 import DestinationContent from "./DestinationContent.astro";
-import AustraliaCarousel from "./AustraliaCarousel.astro";
+import HotspotCarousel from './HotspotCarousel.astro';
 import { ui, defaultLang } from '../../i18n/ui';
+
+
 
 // Get current language
 const currentPath = Astro.url.pathname;
@@ -25,5 +27,6 @@ function t(key: keyof typeof ui[typeof lang]) {
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
 >
   <!-- The carousel gets injected into the <slot /> of DestinationContent -->
-  <AustraliaCarousel />
+  <HotspotCarousel />
+  
 </DestinationContent>

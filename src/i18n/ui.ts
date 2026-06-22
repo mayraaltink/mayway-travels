@@ -35,6 +35,10 @@ export const ui = {
 
 
     // carousel
+'hotspots_title_line1': 'Hotspots',
+'hotspots_title_line2': 'in Down Under',
+'hotspots_desc': 'Australia is packed with incredible things to see and do. Get inspired by my favorite hotspots.',
+
     'carousel.subtitle': 'Hotspots',
     'carousel.title': 'In and around Australia',
     'carousel.desc': 'E-guides for iconic Australian routes and nature, plus logical trips to New Zealand and tropical Asia — with Google Maps, routes, and mini-guides.',
@@ -416,7 +420,13 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 'oceania.card.title': 'Australië',
 'oceania.card.button': 'Naar bestemming',
 
-    // carousel
+//// Carousel 
+
+'hotspots_title_line1': 'Hotspots',
+'hotspots_title_line2': 'in Down Under',
+'hotspots_desc': 'Australië zit vol met gigantisch veel te zien en te doen. Laat je inspireren door mijn favoriete hotspots.',
+
+
     'carousel.subtitle': 'Hotspots',
     'carousel.title': 'In en om Australië',
     'carousel.desc': 'E-gidsen voor iconische Australische routes en natuur, plus logische uitstapjes naar Nieuw-Zeeland en tropisch Azië — met Google Maps-kaarten, routes en minigidsen.',

@@ -23,13 +23,28 @@ const hotspots = [
 <section class="py-24 px-6 bg-white" data-carousel-wrapper>
   <div class="max-w-6xl mx-auto">
 
-    <!-- TITLE -->
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-gray-800">
-        {get('carousel_title') ?? 'Ontdek Australië'}
-      </h2>
-    </div>
+<!-- HEADER -->
+<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-14 ml-4">
 
+  <!-- LEFT -->
+  <h2 class="max-w-xl leading-[0.95]">
+
+    <span class="block text-3xl md:text-5xl font-bold italic  text-gray-800">
+      {t('hotspots_title_line1')}
+    </span>
+
+  <span class="block text-3xl md:text-3xl font-normal text-[#1CABB0] mt-0.5">
+      {t('hotspots_title_line2')}
+    </span>
+
+  </h2>
+
+  <!-- RIGHT -->
+  <p class="lg:max-w-md lg:text-left text-base text-gray-600 leading-relaxed lg:pt-2">
+    {t('hotspots_desc')}
+  </p>
+
+</div>
     <!-- TRACK -->
     <div
       data-carousel-track
@@ -106,24 +121,41 @@ const hotspots = [
     const wrapper = document.querySelector('[data-carousel-wrapper]');
     if (!wrapper) return;
 
-    const track = wrapper.querySelector('[data-carousel-track]');
-    const next = wrapper.querySelector('[data-carousel-next]');
-    const prev = wrapper.querySelector('[data-carousel-prev]');
-    const dots = Array.from(wrapper.querySelectorAll('[data-carousel-dot]'));
-
+   const track = wrapper.querySelector('[data-carousel-track]') as HTMLElement;
+const next = wrapper.querySelector('[data-carousel-next]') as HTMLButtonElement;
+const prev = wrapper.querySelector('[data-carousel-prev]') as HTMLButtonElement;
+const dots = Array.from(
+  wrapper.querySelectorAll('[data-carousel-dot]')
+) as HTMLElement[];
     if (!track || !next || !prev || !dots.length) return;
 
-    const scrollStep = 300;
+    const gap = 24;
+
+const getItemWidth = () =>
+  ((track.firstElementChild as HTMLElement)?.offsetWidth ?? 0) + gap;
+
+    const getMaxIndex = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      return Math.max(0, Math.round(maxScroll / getItemWidth()));
+    };
 
     const getIndex = () => {
-      const index = Math.round(track.scrollLeft / scrollStep);
-      return Math.max(0, Math.min(index, dots.length - 1));
+      return Math.round(track.scrollLeft / getItemWidth());
     };
 
     const updateDots = () => {
       const index = getIndex();
+      const maxIndex = getMaxIndex();
 
       dots.forEach((dot, i) => {
+        // verberg overtollige dots
+        if (i > maxIndex) {
+          dot.style.display = 'none';
+          return;
+        }
+
+        dot.style.display = 'block';
+
         if (i === index) {
           dot.classList.add('bg-[#4ED2CE]', 'w-4');
           dot.classList.remove('bg-gray-300', 'w-2.5');
@@ -134,23 +166,27 @@ const hotspots = [
       });
     };
 
+    const scrollToIndex = (i) => {
+      track.scrollTo({
+        left: i * getItemWidth(),
+        behavior: 'smooth'
+      });
+    };
+
     next.addEventListener('click', () => {
-      track.scrollBy({ left: scrollStep, behavior: 'smooth' });
-      setTimeout(updateDots, 300);
+      scrollToIndex(Math.min(getIndex() + 1, getMaxIndex()));
+      setTimeout(updateDots, 250);
     });
 
     prev.addEventListener('click', () => {
-      track.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-      setTimeout(updateDots, 300);
+      scrollToIndex(Math.max(getIndex() - 1, 0));
+      setTimeout(updateDots, 250);
     });
 
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
-        track.scrollTo({
-          left: i * scrollStep,
-          behavior: 'smooth'
-        });
-        setTimeout(updateDots, 300);
+        scrollToIndex(i);
+        setTimeout(updateDots, 250);
       });
     });
 

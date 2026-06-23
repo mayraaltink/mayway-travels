@@ -209,8 +209,8 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 
 
 ////hotspots 
-'hotspots_title_line1': 'x',
-'hotspots_desc': 'x',
+'hotspots_title_line1': 'Discover Hotspots',
+'hotspots_desc': '',
 
 'whitsundays_badge': 'Snorkeling • Sailing • Islands',
 'whitsundays_title': 'The Whitsundays',
@@ -618,7 +618,7 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'community.navCommunity': 'Mijn community',
   
 ///hotspots 
-'hotspots_title_line1': 'x',
+'hotspots_title_line1': 'Ontdek Hotspots',
 'hotspots_desc': 'x',
 
 

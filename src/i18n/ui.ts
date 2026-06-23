@@ -208,6 +208,51 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 
 
 
+////hotspots 
+'hotspots_title_line1': 'x',
+'hotspots_desc': 'x',
+
+'whitsundays_badge': 'Snorkeling • Sailing • Islands',
+'whitsundays_title': 'The Whitsundays',
+'whitsundays_text': 'The Whitsundays are a paradise of white beaches and turquoise waters...',
+
+'fraser_badge': 'Lakes • Dingoes • 4WD adventure',
+'fraser_title': 'Fraser Island',
+'fraser_text': 'Fraser Island (K’gari) is the largest sand island in the world...',
+
+'reef_badge': 'Coral • Snorkeling • Diving',
+'reef_title': 'Great Barrier Reef',
+'reef_text': 'The Great Barrier Reef is the largest coral reef system in the world...',
+
+'magnetic_badge': 'Koalas • Hiking • Sunsets',
+'magnetic_title': 'Magnetic Island',
+'magnetic_text': 'Magnetic Island combines nature, wildlife and relaxed beaches...',
+
+'uluru_badge': 'Outback • Spiritual • Sunset',
+'uluru_title': 'Uluru',
+'uluru_text': 'Uluru is a sacred site in the middle of the red desert...',
+
+'daintree_badge': 'Rainforest • Wildlife • Hiking',
+'daintree_title': 'Daintree Rainforest',
+'daintree_text': 'The Daintree Rainforest is one of the oldest rainforests in the world...',
+
+'ningaloo_badge': 'Snorkeling • Whale sharks • Coral',
+'ningaloo_title': 'Ningaloo Reef',
+'ningaloo_text': 'Ningaloo Reef is a pristine reef where you can snorkel with whale sharks...',
+
+'great_ocean_badge': 'Cliffs • Roadtrip • Twelve Apostles',
+'great_ocean_title': 'Great Ocean Road',
+'great_ocean_text': 'The Great Ocean Road is one of the most beautiful coastal drives in the world...',
+
+'kakadu_badge': 'Outback • Waterfalls • Crocodiles',
+'kakadu_title': 'Kakadu National Park',
+'kakadu_text': 'Kakadu is one of Australia’s largest and most diverse national parks...',
+
+'hunter_valley_badge': 'Wine Region • Tastings • Getaway',
+'hunter_valley_title': 'Hunter Valley',
+'hunter_valley_text': 'Hunter Valley is Australia’s oldest wine region with stunning landscapes...',
+
+'hotspot_btn': 'Explore more',
 
 
 /////////////Travel advice steps
@@ -572,6 +617,52 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'community.navSocials': 'Socials',
     'community.navCommunity': 'Mijn community',
   
+///hotspots 
+'hotspots_title_line1': 'x',
+'hotspots_desc': 'x',
+
+
+'whitsundays_badge': 'Snorkelen • Zeilen • Eilanden',
+'whitsundays_title': 'The Whitsundays',
+'whitsundays_text': 'De Whitsundays zijn een paradijs van witte stranden en turquoise wateren...',
+
+'fraser_badge': 'Meren • Dingo’s • 4WD avontuur',
+'fraser_title': 'Fraser Island',
+'fraser_text': 'Fraser Island (K’gari) is het grootste zandeiland ter wereld...',
+
+'reef_badge': 'Koraal • Snorkelen • Duiken',
+'reef_title': 'Great Barrier Reef',
+'reef_text': 'Het Great Barrier Reef is het grootste koraalrif ter wereld...',
+
+'magnetic_badge': 'Koala’s • Wandelen • Zonsondergangen',
+'magnetic_title': 'Magnetic Island',
+'magnetic_text': 'Magnetic Island combineert natuur, wildlife en relaxte stranden...',
+
+'uluru_badge': 'Outback • Spiritual • Zonsondergang',
+'uluru_title': 'Uluru',
+'uluru_text': 'Uluru is een heilige plek midden in de rode woestijn...',
+
+'daintree_badge': 'Regenwoud • Wildlife • Hiken',
+'daintree_title': 'Daintree Rainforest',
+'daintree_text': 'Het Daintree Rainforest is een van de oudste regenwouden ter wereld...',
+
+'ningaloo_badge': 'Snorkelen • Walvishaaien • Koraal',
+'ningaloo_title': 'Ningaloo Reef',
+'ningaloo_text': 'Ningaloo Reef is een ongerept rif waar je kunt snorkelen met walvishaaien...',
+
+'great_ocean_badge': 'Kliffen • Roadtrip • Twelve Apostles',
+'great_ocean_title': 'Great Ocean Road',
+'great_ocean_text': 'De Great Ocean Road is een van de mooiste kustwegen ter wereld...',
+
+'kakadu_badge': 'Outback • Watervallen • Krokodillen',
+'kakadu_title': 'Kakadu National Park',
+'kakadu_text': 'Kakadu is een van de grootste en meest diverse nationale parken van Australië...',
+
+'hunter_valley_badge': 'Wijnstreek • Proeverij • Getaway',
+'hunter_valley_title': 'Hunter Valley',
+'hunter_valley_text': 'Hunter Valley is Australië’s oudste wijnregio met prachtige landschappen...',
+
+'hotspot_btn': 'Ontdek meer',
 
         
     // destinations /////////////////////////////////////////////////////////////////////////

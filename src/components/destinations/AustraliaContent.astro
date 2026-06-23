@@ -1,6 +1,7 @@
 ---
 import DestinationContent from "./DestinationContent.astro";
 import HotspotCarousel from './HotspotCarousel.astro';
+import AustraliaRoutes from './AustraliaRoutes.astro';
 import { ui, defaultLang } from '../../i18n/ui';
 
 // Get current language
@@ -26,4 +27,5 @@ function t(key: keyof typeof ui[typeof lang]) {
 >
   <!-- The carousel gets injected into the <slot /> of DestinationContent -->
      <HotspotCarousel />
+     <AustraliaRoutes />
 </DestinationContent>

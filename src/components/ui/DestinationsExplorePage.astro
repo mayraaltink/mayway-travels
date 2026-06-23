@@ -45,7 +45,7 @@ const destinations = [
   
 
     <!-- Map Container -->
-    <div class="max-[499px]:hidden w-full mx-auto overflow-x-auto pb-10 hide-scrollbar cursor-grab active:cursor-grabbing">
+<div class="hidden md:block w-full mx-auto overflow-x-auto pb-10 hide-scrollbar cursor-grab active:cursor-grabbing">
       <div class="relative w-full max-w-[1400px] mx-auto aspect-[2000/857] min-w-[450px]">
         
         <WorldMap class="absolute inset-0 w-full h-full text-[#E8FAF9]" />
@@ -99,13 +99,7 @@ const destinations = [
       </div>
 </section> 
 
-    <DestinationsGrid destinations={destinations} />
-
-  </div>
-
-
-
-  <div class="block md:hidden w-full pb-8">
+<div class="block md:hidden w-full pb-8">
   <div class="relative aspect-square overflow-hidden rounded-3xl">
 
     <div
@@ -123,6 +117,14 @@ const destinations = [
 
   </div>
 </div>
+
+    <DestinationsGrid destinations={destinations} />
+
+  </div>
+
+
+
+  
 </BaseLayout>
 
 <script>

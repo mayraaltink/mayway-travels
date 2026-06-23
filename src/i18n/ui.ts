@@ -206,6 +206,33 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 'collaboration.titlePart1': 'Work together with ',
 'collaboration.titleHighlight': 'MAY WAY',
 
+///FAQ 
+  faq_title: "Frequently asked questions about Australia",
+
+  faq_visa_q: "Do I need a visa for Australia?",
+  faq_visa_a:
+    "Yes. Most travelers need a Working Holiday Visa (subclass 417 or 462) or a tourist visa. Always check official government rules.",
+
+  faq_flights_q: "Where can I find cheap flights to Australia?",
+  faq_flights_a:
+    "Skyscanner, Google Flights and Momondo are the best tools. Being flexible with routes via Asia can save a lot of money.",
+
+  faq_money_q: "What payment methods work in Australia?",
+  faq_money_a:
+    "Australia is mostly cashless. Revolut and Wise work perfectly. Many long-term travelers also use Commonwealth Bank.",
+
+  faq_bank_q: "Do I need an Australian bank account?",
+  faq_bank_a:
+    "Not immediately, but useful if you work or stay longer. Commonwealth Bank is the most popular choice.",
+
+  faq_transport_q: "What’s the best way to travel around Australia?",
+  faq_transport_a:
+    "Campervan for freedom, domestic flights for long distances, and Greyhound buses for budget travel.",
+
+  faq_sim_q: "Which SIM card should I use?",
+  faq_sim_a:
+    "Telstra has the best coverage, Vodafone is cheaper. Prepaid SIMs are the easiest start.",
+
 
 
 ////hotspots 
@@ -686,6 +713,33 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'btn.eguides': 'Bekijk E-Gidsen',
     'btn.plan': 'Plan jouw reis',
 
+///FAQ 
+
+ faq_title: "Veelgestelde vragen over Australië",
+
+  faq_visa_q: "Heb ik een visum nodig voor Australië?",
+  faq_visa_a:
+    "Ja. Voor de meeste reizigers uit Europa heb je een Working Holiday Visa (subclass 417 of 462) of toeristenvisum nodig. Check altijd de officiële overheidssite.",
+
+  faq_flights_q: "Waar vind ik goedkope vliegtickets naar Australië?",
+  faq_flights_a:
+    "Skyscanner, Google Flights en Momondo zijn de beste tools. Flexibel reizen via Azië scheelt vaak veel geld.",
+
+  faq_money_q: "Welke betaalmethoden werken in Australië?",
+  faq_money_a:
+    "Australië is grotendeels cashless. Revolut en Wise werken perfect. Voor langere verblijven gebruiken veel mensen ook Commonwealth Bank.",
+
+  faq_bank_q: "Moet ik een Australische bankrekening openen?",
+  faq_bank_a:
+    "Niet meteen nodig, maar handig bij werken of langer verblijf. Commonwealth Bank is het populairst onder backpackers.",
+
+  faq_transport_q: "Hoe reis je het beste door Australië?",
+  faq_transport_a:
+    "Campervan voor vrijheid, binnenlandse vluchten voor lange afstanden en Greyhound bussen voor budget reizen.",
+
+  faq_sim_q: "Welke simkaart moet ik nemen?",
+  faq_sim_a:
+    "Telstra heeft de beste dekking, Vodafone is goedkoper. Prepaid is ideaal om te starten.",
 
 
     // destination pages global

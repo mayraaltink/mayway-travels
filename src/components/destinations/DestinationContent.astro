@@ -9,19 +9,22 @@ export interface Props {
   capital: string;
   language: string;
   currency: string;
+  flightTime: string;
   imageSrc: string;
   imageAlt: string;
-  planUrl: string;   
-  guideUrl: string;  
+  planUrl: string;
+  guideUrl: string;
 }
 
-const { 
-  title, 
-  description, 
-  capital, 
-  language, 
-  currency, 
-  imageSrc, 
+
+const {
+  title,
+  description,
+  capital,
+  language,
+  currency,
+  flightTime,
+  imageSrc,
   imageAlt,
   planUrl,
   guideUrl
@@ -37,7 +40,7 @@ function t(key: keyof typeof ui[typeof lang]) {
 ---
 
 <BaseLayout title={title}>
-  <div class="bg-[#FFFDFA] flex-grow pt-32 pb-24 px-6 font-zain overflow-hidden relative">
+  <div class="bg-[#1CABB0] flex-grow pt-32 pb-24 px-6 font-zain overflow-hidden relative">
     
     <!-- Background decorative blur -->
     <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-[#E8FAF9] rounded-full blur-3xl opacity-60 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
@@ -46,7 +49,7 @@ function t(key: keyof typeof ui[typeof lang]) {
       
       <!-- Back Button -->
       <!-- If you have a translation for 'Back to Destinations', you can replace the text below with {t('labels.back')} -->
-      <a href={`/${lang}/destinations`} class="inline-flex items-center text-[#1CABB0] hover:text-[#4ED2CE] font-bold mb-10 transition-colors">
+      <a href={`/${lang}/destinations`} class="inline-flex items-center text-[#FFFFFF] hover:text-[#1CABB0] font-bold mb-10 transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
@@ -58,16 +61,16 @@ function t(key: keyof typeof ui[typeof lang]) {
         
         <!-- LEFT COLUMN: Text & Icons -->
         <div class="flex flex-col">
-          <h1 class="font-libre text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
+          <h1 class="font-libre text-5xl md:text-6xl font-semibold text-white mb-6 leading-tight">
             {title}
           </h1>
           
-          <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
+          <p class="text-lg md:text-s text-white leading-relaxed mb-10">
             {description}
           </p>
 
           <!-- Quick Facts -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100">
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-white">
             
             <!-- Capital -->
             <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
@@ -103,8 +106,25 @@ function t(key: keyof typeof ui[typeof lang]) {
               <span class="text-gray-900 font-bold text-lg">{currency}</span>
             </div>
 
+<!-- Flight time -->
+<div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+  <div class="w-12 h-12 bg-[#E8FAF9] text-[#1CABB0] rounded-full flex items-center justify-center mb-3">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M2.5 16l8.5-2.5V18l2-1 2 1v-4.5L21.5 16l-1-2.5-7-4V6a1 1 0 10-2 0v3.5l-7 4L2.5 16z" />
+    </svg>
+  </div>
+  <span class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">
+    {t('labels.flighttime')}
+  </span>
+  <span class="text-gray-900 font-bold text-lg">
+    {flightTime}
+  </span>
+</div>
           </div>
         </div>
+
+      
+
 
         <!-- RIGHT COLUMN: Bubble Card Image -->
         <div class="relative w-full aspect-[4/5] max-w-[500px] mx-auto lg:ml-auto">
@@ -128,6 +148,5 @@ function t(key: keyof typeof ui[typeof lang]) {
   <!-- This slot allows us to inject the correct Carousel at the bottom of the page -->
   <slot />
 
-  <CTAButtons planUrl={planUrl} guideUrl={guideUrl} />
 
 </BaseLayout>

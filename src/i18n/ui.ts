@@ -282,6 +282,17 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 'hotspot_btn': 'Explore more',
 
 
+/// Working holiday 
+'workingholiday.highlight': 'Highlight',
+
+'workingholiday.title': 'Live and work in Australia',
+
+'workingholiday.description':
+  'Have you always dreamed of an adventure on the other side of the world? With a Working Holiday visa, you can live, work and travel throughout Australia for one to three years. It gives travellers the freedom to explore the country while earning money to help fund their adventure. You can work across a wide range of industries, allowing you to experience Australia in a unique way while supporting your travels.',
+
+'workingholiday.button': 'Working Holiday guide',
+
+
 /////////////Travel advice steps
 
 'travelAdvice.steps.title': 'Your travel plan in 5 steps',
@@ -320,6 +331,8 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
     'destinations.btn': 'Plan your trip!',
 
 
+
+
     // buttons
     'btn.eguides': 'View E-Guides',
     'btn.plan': 'Plan Your Trip',
@@ -329,6 +342,8 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
     'labels.capital': 'Capital',
     'labels.language': 'Language',
     'labels.currency': 'Currency',
+    'labels.flighttime': 'Flight time',
+
 
     // destination pages - australia
     'aus.page.title': 'Australia',
@@ -336,6 +351,8 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
     'aus.page.capital': 'Canberra',
     'aus.page.language': 'English',
     'aus.page.currency': 'Australian Dollar (AUD)',
+    'aus.page.flightTime': '22–24 hours',
+
 
     // destination pages - new zealand
     'nz.page.title': 'New Zealand',
@@ -692,6 +709,21 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 'hotspot_btn': 'Ontdek meer',
 
         
+
+
+
+///working holiday 
+
+'workingholiday.highlight': 'Uitgelicht',
+
+'workingholiday.title': 'Wonen en werken in Australië',
+
+'workingholiday.description':
+  'Altijd al gedroomd van een avontuur aan de andere kant van de wereld? Met een Working Holiday-visum kun je één tot drie jaar wonen, werken en reizen door Australië. Dit visum biedt reizigers de vrijheid om niet alleen rond te trekken, maar ook tijdelijk te werken om hun avontuur te financieren. Je kunt aan de slag in uiteenlopende sectoren, waardoor je het land op een unieke manier leert kennen en tegelijkertijd je reis bekostigt.',
+
+'workingholiday.button': 'Working Holiday reisadvies', 
+
+
     // destinations /////////////////////////////////////////////////////////////////////////
     'destinations.title': 'Bestemmingen | MAY WAY Travels',
     'destinations.heading': 'Waar wil je naartoe?',
@@ -746,6 +778,7 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'labels.capital': 'Hoofdstad',
     'labels.language': 'Taal',
     'labels.currency': 'Valuta',
+    'labels.flighttime': 'Vluchttijd',
 
     // destination pages - australia
     'aus.page.title': 'Australië',
@@ -753,6 +786,7 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'aus.page.capital': 'Canberra',
     'aus.page.language': 'Engels',
     'aus.page.currency': 'Australische Dollar (AUD)',
+    'aus.page.flightTime': '22–24 uur',
 
     // destination pages - new zealand
     'nz.page.title': 'Nieuw-Zeeland',

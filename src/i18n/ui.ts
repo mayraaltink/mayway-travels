@@ -369,6 +369,46 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 'Fiji.page.currency': 'Fijian Dollar (FJD)',
 
 
+
+/////////////reis down under ////////////////////
+// Australia Intro
+'australia.intro.label': 'Australia',
+'australia.intro.title': 'Travelling Down Under',
+
+'australia.intro.text1':
+  'Australia is one of the most impressive and diverse countries in the world. Covering an area almost 21 times larger than the Netherlands, every region feels like a completely different destination. From tropical rainforests and white-sand beaches to vast deserts, breathtaking mountain ranges and vibrant cities, no two road trips are the same.',
+
+'australia.intro.text2':
+  'Because of its enormous size, Australia has 8 different climate zones and 3 time zones. A domestic flight from Perth to Sydney takes around five hours—roughly the same as flying from the Netherlands to Egypt. Travelling around Australia therefore requires a very different approach than exploring Europe or Southeast Asia.',
+
+'australia.intro.text3':
+  "Australia's size and diversity are exactly what make it so special, but they can also make planning your trip feel overwhelming. Which route best suits your travel style? How much time do you really need? And where can you find those unique accommodations, hidden beaches and local gems that aren't in the guidebooks?",
+
+'australia.intro.mistakesTitle':
+  'Common mistakes when travelling through Australia',
+
+'australia.intro.mistake1':
+  'Trying to see too much in one trip',
+
+'australia.intro.mistake2':
+  "Underestimating Australia's huge distances",
+
+'australia.intro.mistake3':
+  'Ignoring the different seasons across the country',
+
+'australia.intro.mistake4':
+  'Booking accommodation without planning your route',
+
+'australia.intro.mistake5':
+  'Booking popular destinations last minute during peak season',
+
+'australia.intro.mistake6':
+  'Thinking Australia is similar to backpacking through Southeast Asia',
+
+'australia.intro.cta':
+  'Discover personalised travel advice',
+
+
     // Route Planner /////////////////////////////////////////////////////////
     'planner.title': 'Route Planner',
     'planner.heading': 'Share your travel idea',
@@ -802,6 +842,45 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 'Fiji.page.language': 'Engels, Fiji Hindi en Fijisch',
 'Fiji.page.currency': 'Fijische dollar (FJD)',
 
+
+
+////Reis down under////////////
+// Australia Intro
+'australia.intro.label': 'Australië',
+'australia.intro.title': 'Reizen in Down Under',
+
+'australia.intro.text1':
+  'Australië is één van de meest indrukwekkende én veelzijdige landen ter wereld. Met een oppervlakte die bijna 21 keer groter is dan Nederland voelt iedere regio als een compleet nieuwe bestemming. Van tropische regenwouden en parelwitte stranden tot uitgestrekte woestijnen, indrukwekkende berggebieden en bruisende wereldsteden: geen enkele route is hetzelfde.',
+
+'australia.intro.text2':
+  'Door de enorme afstanden kent Australië 8 verschillende klimaatzones en 3 tijdzones. Een binnenlandse vlucht van Perth naar Sydney duurt ongeveer vijf uur – vergelijkbaar met een vlucht van Nederland naar Egypte. Daardoor vraagt een reis door Australië om een heel andere planning dan een vakantie in Europa of Azië.',
+
+'australia.intro.text3':
+  'Juist die enorme grootte en diversiteit maken Australië zo bijzonder, maar kunnen het plannen van je reis ook behoorlijk overweldigend maken. Welke route past het beste bij jouw reisstijl? Hoeveel tijd heb je écht nodig? En waar vind je die unieke accommodaties, verborgen stranden en lokale hotspots die je niet in de standaard reisgidsen vindt?',
+
+'australia.intro.mistakesTitle':
+  "Veelgemaakte 'fouten' bij een reis door Australië",
+
+'australia.intro.mistake1':
+  'Te veel te snel willen zien in één reis',
+
+'australia.intro.mistake2':
+  'De enorme afstanden onderschatten',
+
+'australia.intro.mistake3':
+  'Geen rekening houden met de verschillende seizoenen per regio',
+
+'australia.intro.mistake4':
+  'Accommodaties boeken zonder een duidelijke route',
+
+'australia.intro.mistake5':
+  'Populaire plekken in het hoogseizoen last minute boeken',
+
+'australia.intro.mistake6':
+  'Denken dat Australië hetzelfde werkt als backpacken in Azië',
+
+'australia.intro.cta':
+  'Ontdek persoonlijk reisadvies', 
 
     // Route Planner /////////////////////////////////////////////////////////
     'planner.title': 'Routeplanner',

@@ -195,9 +195,14 @@ if (item.type === 'dropdown') {
 </header>
 
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Main Menu" class="fixed inset-0 z-[100] md:hidden transition-[visibility] duration-500 pointer-events-none invisible delay-300">
-  <!-- This is the container that slides up -->
-  <div id="mobile-menu-container" class="absolute inset-0 flex flex-col bg-gradient-to-b from-[#1CABB0] via-[#1ba9ae] to-[#4ED2CE] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-full">
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[100] md:hidden opacity-0 pointer-events-none transition-opacity duration-300"
+>
+  <div
+    id="mobile-menu-container"
+    class="absolute inset-0 flex flex-col bg-gradient-to-b from-[#1CABB0] via-[#1ba9ae] to-[#4ED2CE] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-full"
+  >
     <div class="flex items-center justify-between px-6 pt-6 pb-2">
       <!-- <span class="font-serif italic text-lg text-white/90">Where do you want to go?</span> -->
       <button id="close-menu-btn" type="button" class="rounded-full bg-white/15 p-3 text-white backdrop-blur-sm transition-colors hover:bg-white/25" aria-label="Close">
@@ -305,8 +310,8 @@ if (item.type === 'dropdown') {
     const openMenu = () => {
       if (!mobileMenu || !mobileMenuContainer) return;
       
-      mobileMenu.classList.remove('invisible', 'pointer-events-none');
-      mobileMenuContainer.classList.remove('translate-y-full');
+     mobileMenu.classList.add('opacity-100');
+mobileMenu.classList.remove('pointer-events-none');
       openBtn?.setAttribute('aria-expanded', 'true');
       body.style.overflow = 'hidden'; // Prevent background scroll
 

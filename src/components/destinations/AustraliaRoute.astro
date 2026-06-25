@@ -168,11 +168,13 @@ const routes = [
            <div class="expand text-sm text-neutral-700 max-h-0 overflow-hidden transition-all duration-500 mt-3 space-y-3">
 
 
+ {typeof route.expand !== "string" && (
   <ul class="list-disc pl-5 space-y-1">
     {route.expand.highlights.map((item) => (
       <li>{item}</li>
     ))}
   </ul>
+)}
 
 </div>
             <button class="toggle mt-3 text-[#2AA6A1] text-sm font-medium">

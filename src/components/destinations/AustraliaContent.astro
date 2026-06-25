@@ -1,7 +1,7 @@
 ---
 import DestinationContent from "./DestinationContent.astro";
 import HotspotCarousel from './HotspotCarousel.astro';
-import AustraliaRoutes from './AustraliaRoutes.astro';
+import AustraliaRoute from './AustraliaRoute.astro';
 import FaqAustralia from './FaqAustralia.astro';
 import WorkingHoliday from './WorkingHoliday.astro';
 import Reisdownunder from './Reisdownunder.astro';
@@ -31,7 +31,8 @@ function t(key: keyof typeof ui[typeof lang]) {
 >
   <!-- The carousel gets injected into the <slot /> of DestinationContent -->
    <Reisdownunder />
-      <AustraliaRoutes />
+         <AustraliaRoute />
+  
   <HotspotCarousel />
   <WorkingHoliday />
     <FaqAustralia />

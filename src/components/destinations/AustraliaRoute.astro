@@ -1,0 +1,247 @@
+---
+import { ui, defaultLang } from "../../i18n/ui";
+
+const lang = defaultLang;
+const t = ui[lang];
+
+const routes = [
+  {
+    key: "east",
+    title: "East Coast Route",
+    tagline: t["routes.east.tagline"],
+    expand: t["routes.east.expand"],
+    images: [
+      { src: "/images/australia/routes/east-1.jpg", location: "Sydney" },
+      { src: "/images/australia/routes/east-2.jpg", location: "Byron Bay" },
+      { src: "/images/australia/routes/east-3.jpg", location: "Noosa" },
+      { src: "/images/australia/routes/east-4.jpg", location: "Whitsundays" },
+      { src: "/images/australia/routes/east-5.jpg", location: "Fraser Island" },
+      { src: "/images/australia/routes/east-6.jpg", location: "Daintree" },
+      { src: "/images/australia/routes/east-7.jpg", location: "Cairns" },
+    ],
+  },
+
+  {
+    key: "west",
+    title: "West Coast Route",
+        tagline: t["routes.west.tagline"],
+    expand: t["routes.west.expand"],
+    images: [
+     { src: "/images/australia/routes/west-1.jpg", location: "Perth" },
+      { src: "/images/australia/routes/west-2.jpg", location: "Rottnest Island" },
+      { src: "/images/australia/routes/west-3.jpg", location: "Kalbarri" },
+      { src: "/images/australia/routes/west-4.jpg", location: "Exmouth" },
+      { src: "/images/australia/routes/west-5.jpg", location: "Ningaloo Reef" },
+      { src: "/images/australia/routes/west-6.jpg", location: "Coral Bay" },
+      { src: "/images/australia/routes/west-7.jpg", location: "Monkey Mia" },
+      { src: "/images/australia/routes/west-8.jpg", location: "Esperance" },
+    ],
+  },
+
+  {
+    key: "red",
+    title: "Red Centre",
+     tagline: t["routes.red.tagline"],
+    expand: t["routes.red.expand"],
+    images: [
+      { src: "/images/australia/routes/red-1.jpg", location: "Uluru" },
+      { src: "/images/australia/routes/red-2.jpg", location: "Kata Tjuta" },
+      { src: "/images/australia/routes/red-3.jpg", location: "Alice Springs" },
+      { src: "/images/australia/routes/red-4.jpg", location: "Kings Canyon" },
+      { src: "/images/australia/routes/red-5.jpg", location: "MacDonnell Ranges" },
+      { src: "/images/australia/routes/red-6.jpg", location: "Devils Marbles" },
+      { src: "/images/australia/routes/red-7.jpg", location: "Outback Roads" },
+      { src: "/images/australia/routes/red-8.jpg", location: "Desert Stars" },
+
+    ],
+  },
+
+  {
+    key: "top",
+    title: "Top End",
+       tagline: t["routes.top.tagline"],
+    expand: t["routes.top.expand"],
+    images: [
+         { src: "/images/australia/routes/top-1.jpg", location: "Darwin" },
+      { src: "/images/australia/routes/top-2.jpg", location: "Kakadu National Park" },
+      { src: "/images/australia/routes/top-3.jpg", location: "Litchfield National Park" },
+      { src: "/images/australia/routes/top-4.jpg", location: "Gunlom Falls" },
+      { src: "/images/australia/routes/top-5.jpg", location: "Florence Falls" },
+      { src: "/images/australia/routes/top-6.jpg", location: "Nitmiluk Gorge" },
+      { src: "/images/australia/routes/top-7.jpg", location: "Crocodiles River" },
+      { src: "/images/australia/routes/top-8.jpg", location: "Arnhem Land" },
+    ],
+  },
+
+  {
+    key: "tas",
+    title: "Tasmanië",
+       tagline: t["routes.tas.tagline"],
+    expand: t["routes.tas.expand"],
+    images: [
+      { src: "/images/australia/routes/tas-1.jpg", location: "Hobart" },
+      { src: "/images/australia/routes/tas-2.jpg", location: "Cradle Mountain" },
+      { src: "/images/australia/routes/tas-3.jpg", location: "Wineglass Bay" },
+      { src: "/images/australia/routes/tas-4.jpg", location: "Freycinet National Park" },
+      { src: "/images/australia/routes/tas-5.jpg", location: "Launceston" },
+      { src: "/images/australia/routes/tas-6.jpg", location: "Bay of Fires" },
+      { src: "/images/australia/routes/tas-7.jpg", location: "Mount Field" },
+      { src: "/images/australia/routes/tas-8.jpg", location: "Bruny Island" },
+    ],
+  },
+
+  {
+    key: "sa",
+    title: "Zuid-Australië",
+       tagline: t["routes.sa.tagline"],
+    expand: t["routes.sa.expand"],
+    images: [
+       { src: "/images/australia/routes/sa-1.jpg", location: "Adelaide" },
+      { src: "/images/australia/routes/sa-2.jpg", location: "Barossa Valley" },
+      { src: "/images/australia/routes/sa-3.jpg", location: "Kangaroo Island" },
+      { src: "/images/australia/routes/sa-4.jpg", location: "McLaren Vale" },
+      { src: "/images/australia/routes/sa-5.jpg", location: "Flinders Ranges" },
+      { src: "/images/australia/routes/sa-6.jpg", location: "Victor Harbor" },
+      { src: "/images/australia/routes/sa-7.jpg", location: "Yorke Peninsula" },
+      { src: "/images/australia/routes/sa-8.jpg", location: "Nullarbor Plain" },
+    ],
+  },
+];
+---
+<section class="bg-[#FAFAFA] py-24">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- TITLE -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-4xl font-bold mb-4">
+        Ontdek verschillende reisroutes
+      </h2>
+      <p class="text-neutral-700 leading-7">
+        Ontdek de mooiste routes door Australië – elk met een compleet andere vibe.
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {routes.map((route) => (
+    <div class="route-card bg-white rounded-3xl shadow-xl overflow-hidden">
+
+          <!-- SWIPE -->
+          <div class="relative overflow-hidden">
+
+            <div class="track flex transition-transform duration-300 ease-out">
+              {route.images.map((img) => (
+                <div class="min-w-full relative">
+                  <img
+                    src={img.src}
+                    class="w-full h-[280px] object-cover"
+                  />
+
+                  <div class="absolute bottom-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
+                    {img.location}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <!-- ARROWS -->
+            <button class="prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 w-8 h-8 rounded-full">
+              ‹
+            </button>
+
+            <button class="next absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 w-8 h-8 rounded-full">
+              ›
+            </button>
+
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-5">
+
+            <h3 class="text-lg font-bold mb-1">
+              {route.title}
+            </h3>
+
+            <p class="text-neutral-600 text-sm leading-relaxed">
+              {route.tagline}
+            </p>
+
+            <p class="expand text-sm text-neutral-700 max-h-0 overflow-hidden transition-all duration-500 mt-3">
+              {route.expand}
+            </p>
+
+            <button class="toggle mt-3 text-[#2AA6A1] text-sm font-medium">
+              Lees meer
+            </button>
+
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>
+<script is:inline>
+document.querySelectorAll(".route-card").forEach((card) => {
+
+  const track = card.querySelector(".track");
+  const next = card.querySelector(".next");
+  const prev = card.querySelector(".prev");
+  const toggle = card.querySelector(".toggle");
+  const expand = card.querySelector(".expand");
+
+  const locationLabel = card.querySelector(".current-location");
+
+  let index = 0;
+  const slides = track.children.length;
+
+  const update = () => {
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    const activeSlide = track.children[index];
+    const location = activeSlide.querySelector(".location-tag")?.textContent;
+
+    if (locationLabel) {
+      locationLabel.textContent = location || "";
+    }
+  };
+
+  // init
+  update();
+
+  // 👉 CLICK OP FOTO = NEXT SLIDE
+  track.addEventListener("click", () => {
+    index = (index + 1) % slides;
+    update();
+  });
+
+  next?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    index = (index + 1) % slides;
+    update();
+  });
+
+  prev?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    index = (index - 1 + slides) % slides;
+    update();
+  });
+
+  let open = false;
+
+  toggle?.addEventListener("click", () => {
+    open = !open;
+
+    if (open) {
+      expand.style.maxHeight = expand.scrollHeight + "px";
+      toggle.textContent = "Minder lezen";
+    } else {
+      expand.style.maxHeight = "0px";
+      toggle.textContent = "Lees meer";
+    }
+  });
+
+});
+</script>

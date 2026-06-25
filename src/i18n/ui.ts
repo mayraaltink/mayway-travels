@@ -100,7 +100,7 @@ export const ui = {
     'contact.form.messagePlaceholder': 'Tell me briefly about your plans...',
     'contact.form.submit': 'Send message',
 
-
+///
 
 
 
@@ -312,6 +312,58 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 
 'travelAdvice.steps.step5.title': 'Travel plan review',
 'travelAdvice.steps.step5.text': 'We go through everything together and fine-tune where needed so you’re 100% ready.',
+
+
+///////////east coast
+  "routes.east.title": "East Coast",
+    "routes.east.subtitle": "Sydney to Cairns",
+
+    "routes.east.tagline":
+      "The most popular route among travellers with surf towns, tropical islands and jungle hikes.",
+
+    "routes.east.expand":
+      "Route: Sydney to Cairns\nDistance: ±2,600 km\n\nHighlights:\n• Very popular among solo travellers\n• Bus, campervan or fly & drive options\n• Byron Bay & Noosa surf towns\n• Whitsundays snorkeling & sailing\n• Daintree Rainforest jungle hikes",
+
+    "routes.readMore": "Read more",
+    "routes.close": "Close", 
+
+
+"routes.west.title": "West Coast",
+"routes.west.subtitle": "Perth to Exmouth & Esperance",
+"routes.west.tagline":
+  "A wild and remote coastline perfect for long road trips and freedom seekers.",
+"routes.west.expand":
+  "Route: Perth to Esperance\nDistance: ±3,200 km\n\nHighlights:\n• Less touristy & more adventurous\n• Coral Coast & Ningaloo Reef\n• Rottnest Island quokkas\n• Endless beaches & road freedom",
+
+"routes.red.title": "Red Centre",
+"routes.red.subtitle": "Uluru",
+"routes.red.tagline":
+  "The spiritual heart of Australia with iconic desert landscapes.",
+"routes.red.expand":
+  "Route: Alice Springs region\nDistance: varies\n\nHighlights:\n• Uluru sunrise & sunset\n• Kata Tjuta rock formations\n• Kings Canyon hikes\n• Outback star skies",
+
+"routes.top.title": "Top End",
+"routes.top.subtitle": "Darwin & Kakadu",
+"routes.top.tagline":
+  "Tropical northern Australia filled with waterfalls, wildlife and national parks.",
+"routes.top.expand":
+  "Route: Darwin region\nDistance: regional travel\n\nHighlights:\n• Kakadu National Park\n• Litchfield waterfalls\n• Crocodile rivers\n• Tropical monsoon landscapes",
+
+"routes.tas.title": "Tasmania",
+"routes.tas.subtitle": "Hobart",
+"routes.tas.tagline":
+  "A wild island with European vibes, mountains and hiking trails.",
+"routes.tas.expand":
+  "Route: Tasmania loop\nHighlights:\n• Cradle Mountain hikes\n• Wineglass Bay beaches\n• Bay of Fires\n• Wildlife (wallabies, wombats)",
+
+"routes.sa.title": "South Australia",
+"routes.sa.subtitle": "Adelaide & surroundings",
+"routes.sa.tagline":
+  "Wine regions, coastlines and kangaroo islands.",
+"routes.sa.expand":
+  "Route: Adelaide & regions\nHighlights:\n• Barossa Valley wine region\n• Kangaroo Island wildlife\n• McLaren Vale beaches\n• Flinders Ranges outback",
+
+
 
 
     // destinations ////////////////////////////////////////////////////////////////////////
@@ -841,6 +893,58 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 'Fiji.page.capital': 'Suva',
 'Fiji.page.language': 'Engels, Fiji Hindi en Fijisch',
 'Fiji.page.currency': 'Fijische dollar (FJD)',
+
+
+
+
+  ////Oostkust route 
+    "routes.east.title": "Oostkust",
+    "routes.east.subtitle": "Sydney tot Cairns",
+
+    "routes.east.tagline":
+      "De populairste route onder reizigers met surf towns, tropische eilanden en jungle hikes.",
+
+    "routes.east.expand":
+      "Route: Sydney tot Cairns\nAfstand: ±2.600 km\n\nHighlights:\n• Populair onder solo reizigers\n• Bus, campervan of fly & drive opties\n• Byron Bay & Noosa surf towns\n• Whitsundays snorkelen & zeilen\n• Daintree Rainforest jungle hikes",
+
+    "routes.readMore": "Lees meer",
+    "routes.close": "Sluiten",
+
+    "routes.west.title": "Westkust",
+"routes.west.subtitle": "Perth naar Exmouth & Esperance",
+"routes.west.tagline":
+  "Een ruige en rustige kustlijn, perfect voor lange roadtrips en vrijheid.",
+"routes.west.expand":
+  "Route: Perth naar Esperance\nAfstand: ±3.200 km\n\nHighlights:\n• Minder toeristisch en avontuurlijk\n• Coral Coast & Ningaloo Reef\n• Rottnest Island quokka’s\n• Eindeloze stranden en vrijheid",
+
+"routes.red.title": "Red Centre",
+"routes.red.subtitle": "Uluru",
+"routes.red.tagline":
+  "Het spirituele hart van Australië met iconische woestijnlandschappen.",
+"routes.red.expand":
+  "Route: regio Alice Springs\nAfstand: variabel\n\nHighlights:\n• Uluru zonsopkomst & zonsondergang\n• Kata Tjuta rotsformaties\n• Kings Canyon hikes\n• Outback sterrenhemel",
+
+"routes.top.title": "Top End",
+"routes.top.subtitle": "Darwin & Kakadu",
+"routes.top.tagline":
+  "Tropisch Noord-Australië vol watervallen, wildlife en nationale parken.",
+"routes.top.expand":
+  "Route: Darwin regio\nAfstand: regionaal reizen\n\nHighlights:\n• Kakadu National Park\n• Litchfield watervallen\n• Krokodillenrivieren\n• Tropisch moessonklimaat",
+
+"routes.tas.title": "Tasmanië",
+"routes.tas.subtitle": "Hobart",
+"routes.tas.tagline":
+  "Een wild eiland met Europese vibes, bergen en hikes.",
+"routes.tas.expand":
+  "Route: Tasmanië rondreis\nHighlights:\n• Cradle Mountain hikes\n• Wineglass Bay stranden\n• Bay of Fires\n• Wildlife zoals wallaby’s en wombats",
+
+"routes.sa.title": "Zuid-Australië",
+"routes.sa.subtitle": "Adelaide & omgeving",
+"routes.sa.tagline":
+  "Wijnregio’s, kustlijnen en kangoeroe-eilanden.",
+"routes.sa.expand":
+  "Route: Adelaide & regio’s\nHighlights:\n• Barossa Valley wijnregio\n• Kangaroo Island wildlife\n• McLaren Vale stranden\n• Flinders Ranges outback",
+
 
 
 

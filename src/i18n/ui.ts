@@ -315,14 +315,28 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 
 
 ///////////east coast
+
+"routes.section.title": "Discover travel routes",
+"routes.section.subtitle":
+  "Discover the most beautiful routes through Australia – each with a completely different vibe.",
+
   "routes.east.title": "East Coast",
     "routes.east.subtitle": "Sydney to Cairns",
 
     "routes.east.tagline":
       "The most popular route among travellers with surf towns, tropical islands and jungle hikes.",
 
-    "routes.east.expand":
-      "Route: Sydney to Cairns\nDistance: ±2,600 km\n\nHighlights:\n• Very popular among solo travellers\n• Bus, campervan or fly & drive options\n• Byron Bay & Noosa surf towns\n• Whitsundays snorkeling & sailing\n• Daintree Rainforest jungle hikes",
+    "routes.east.expand": {
+  route: "Route: Sydney to Cairns",
+  distance: "Distance: ±2,600 km",
+  highlights: [
+    "Very popular among solo travellers",
+    "Bus, campervan or fly & drive options",
+    "Byron Bay & Noosa surf towns",
+    "Whitsundays snorkeling & sailing",
+    "Daintree Rainforest jungle hikes"
+  ]
+},
 
     "routes.readMore": "Read more",
     "routes.close": "Close", 
@@ -332,38 +346,76 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 "routes.west.subtitle": "Perth to Exmouth & Esperance",
 "routes.west.tagline":
   "A wild and remote coastline perfect for long road trips and freedom seekers.",
-"routes.west.expand":
-  "Route: Perth to Esperance\nDistance: ±3,200 km\n\nHighlights:\n• Less touristy & more adventurous\n• Coral Coast & Ningaloo Reef\n• Rottnest Island quokkas\n• Endless beaches & road freedom",
+"routes.west.expand": {
+  route: "Route: Perth to Esperance & Perth to Exmouth",
+  
+  distance: "Distance: ±3,200 km",
+  highlights: [
+    "Less touristy & more adventurous",
+    "Coral Coast & Ningaloo Reef",
+    "Rottnest Island quokkas",
+    "Endless beaches & road freedom"
+  ]
+},
 
 "routes.red.title": "Red Centre",
 "routes.red.subtitle": "Uluru",
 "routes.red.tagline":
   "The spiritual heart of Australia with iconic desert landscapes.",
-"routes.red.expand":
-  "Route: Alice Springs region\nDistance: varies\n\nHighlights:\n• Uluru sunrise & sunset\n• Kata Tjuta rock formations\n• Kings Canyon hikes\n• Outback star skies",
-
+"routes.red.expand": {
+  route: "Route: Alice Springs region",
+  distance: "Distance: varies",
+  highlights: [
+    "Uluru sunrise & sunset",
+    "Kata Tjuta rock formations",
+    "Kings Canyon hikes",
+    "Outback star skies"
+  ]
+},
 "routes.top.title": "Top End",
 "routes.top.subtitle": "Darwin & Kakadu",
 "routes.top.tagline":
   "Tropical northern Australia filled with waterfalls, wildlife and national parks.",
-"routes.top.expand":
-  "Route: Darwin region\nDistance: regional travel\n\nHighlights:\n• Kakadu National Park\n• Litchfield waterfalls\n• Crocodile rivers\n• Tropical monsoon landscapes",
+"routes.top.expand": {
+  route: "Route: Darwin region",
+  distance: "Varies",
+  highlights: [
+    "Kakadu National Park",
+    "Litchfield waterfalls",
+    "Crocodile rivers",
+    "Tropical monsoon landscapes"
+  ]
+},
 
 "routes.tas.title": "Tasmania",
 "routes.tas.subtitle": "Hobart",
 "routes.tas.tagline":
   "A wild island with European vibes, mountains and hiking trails.",
-"routes.tas.expand":
-  "Route: Tasmania loop\nHighlights:\n• Cradle Mountain hikes\n• Wineglass Bay beaches\n• Bay of Fires\n• Wildlife (wallabies, wombats)",
+"routes.tas.expand": {
+  route: "Route: Tasmania loop",
+  distance: "",
+  highlights: [
+    "Cradle Mountain hikes",
+    "Wineglass Bay beaches",
+    "Bay of Fires",
+    "Wildlife (wallabies, wombats)"
+  ]
+},
 
 "routes.sa.title": "South Australia",
 "routes.sa.subtitle": "Adelaide & surroundings",
 "routes.sa.tagline":
   "Wine regions, coastlines and kangaroo islands.",
-"routes.sa.expand":
-  "Route: Adelaide & regions\nHighlights:\n• Barossa Valley wine region\n• Kangaroo Island wildlife\n• McLaren Vale beaches\n• Flinders Ranges outback",
-
-
+"routes.sa.expand": {
+  route: "Route: Adelaide & regions",
+  distance: "",
+  highlights: [
+    "Barossa Valley wine region",
+    "Kangaroo Island wildlife",
+    "McLaren Vale beaches",
+    "Flinders Ranges outback"
+  ]
+},
 
 
     // destinations ////////////////////////////////////////////////////////////////////////
@@ -898,6 +950,12 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 
 
   ////Oostkust route 
+
+"routes.section.title": "Ontdek verschillende reisroutes",
+"routes.section.subtitle":
+  "Ontdek de mooiste routes door Australië – elk met een compleet andere vibe.",
+
+
     "routes.east.title": "Oostkust",
     "routes.east.subtitle": "Sydney tot Cairns",
 

@@ -1,7 +1,7 @@
 ---
-import { ui, defaultLang } from "../../i18n/ui";
+import { ui } from "../../i18n/ui";
 
-const lang = defaultLang;
+const lang = (Astro.currentLocale as "nl" | "en") ?? "nl";
 const t = ui[lang];
 
 const routes = [
@@ -108,19 +108,17 @@ const routes = [
   },
 ];
 ---
-<section class="bg-[#FAFAFA] py-24">
+<section class="bg-[#F3FBFB] py-24">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- TITLE -->
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <h2 class="text-4xl font-bold mb-4">
-        Ontdek verschillende reisroutes
-      </h2>
-      <p class="text-neutral-700 leading-7">
-        Ontdek de mooiste routes door Australië – elk met een compleet andere vibe.
-      </p>
-    </div>
+<h2 class="text-4xl font-bold mb-4">
+  {t["routes.section.title"]}
+</h2>
 
+<p class="text-neutral-700 leading-7">
+  {t["routes.section.subtitle"]}
+</p>
     <!-- GRID -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -167,10 +165,16 @@ const routes = [
               {route.tagline}
             </p>
 
-            <p class="expand text-sm text-neutral-700 max-h-0 overflow-hidden transition-all duration-500 mt-3">
-              {route.expand}
-            </p>
+           <div class="expand text-sm text-neutral-700 max-h-0 overflow-hidden transition-all duration-500 mt-3 space-y-3">
 
+
+  <ul class="list-disc pl-5 space-y-1">
+    {route.expand.highlights.map((item) => (
+      <li>{item}</li>
+    ))}
+  </ul>
+
+</div>
             <button class="toggle mt-3 text-[#2AA6A1] text-sm font-medium">
               Lees meer
             </button>

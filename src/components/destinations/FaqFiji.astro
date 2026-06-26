@@ -1,0 +1,81 @@
+---
+import { ui } from "../../i18n/ui";
+
+const lang = "nl"; // later dynamisch
+const t = ui[lang];
+---
+
+<section class="bg-[#0F8F8A] py-24">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- TITLE -->
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+      {t.faq_title_f}
+    </h2>
+
+    <!-- FAQ -->
+    <div class="space-y-4">
+
+      <details class="group bg-white/10 backdrop-blur-md rounded-2xl p-5 text-white">
+        <summary class="flex justify-between items-center cursor-pointer list-none">
+          <span class="font-semibold">{t.faq_visa_q_f}</span>
+          <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-white/80 text-sm">
+          {t.faq_visa_a_f}
+        </p>
+      </details>
+
+      <details class="group bg-white/10 backdrop-blur-md rounded-2xl p-5 text-white">
+        <summary class="flex justify-between items-center cursor-pointer list-none">
+          <span class="font-semibold">{t.faq_flights_q_f}</span>
+          <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-white/80 text-sm">
+          {t.faq_flights_a_f}
+        </p>
+      </details>
+
+      <details class="group bg-white/10 backdrop-blur-md rounded-2xl p-5 text-white">
+        <summary class="flex justify-between items-center cursor-pointer list-none">
+          <span class="font-semibold">{t.faq_money_q_f}</span>
+          <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-white/80 text-sm">
+          {t.faq_money_a_f}
+        </p>
+      </details>
+
+      <details class="group bg-white/10 backdrop-blur-md rounded-2xl p-5 text-white">
+        <summary class="flex justify-between items-center cursor-pointer list-none">
+          <span class="font-semibold">{t.faq_bank_q_f}</span>
+          <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-white/80 text-sm">
+          {t.faq_bank_a_f}
+        </p>
+      </details>
+
+      <details class="group bg-white/10 backdrop-blur-md rounded-2xl p-5 text-white">
+        <summary class="flex justify-between items-center cursor-pointer list-none">
+          <span class="font-semibold">{t.faq_transport_q_f}</span>
+          <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-white/80 text-sm">
+          {t.faq_transport_a_f}
+        </p>
+      </details>
+
+      <details class="group bg-white/10 backdrop-blur-md rounded-2xl p-5 text-white">
+        <summary class="flex justify-between items-center cursor-pointer list-none">
+          <span class="font-semibold">{t.faq_sim_q_f}</span>
+          <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-white/80 text-sm">
+          {t.faq_sim_a_f}
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>

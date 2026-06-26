@@ -234,6 +234,33 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
     "Telstra has the best coverage, Vodafone is cheaper. Prepaid SIMs are the easiest start.",
 
 
+// FAQ Fiji
+faq_title_f: "Frequently asked questions about Fiji",
+
+faq_visa_q_f: "Do I need a visa for Fiji?",
+faq_visa_a_f:
+  "Most travelers do not need a visa for short stays in Fiji. Many nationalities receive a visa-free entry permit on arrival (usually up to 4 months). Always check the latest entry requirements before traveling.",
+
+faq_flights_q_f: "Where can I find cheap flights to Fiji?",
+faq_flights_a_f:
+  "Use tools like Skyscanner, Google Flights or Momondo. Flights via Australia or New Zealand are often the cheapest options.",
+
+faq_money_q_f: "What currency is used in Fiji?",
+faq_money_a_f:
+  "The official currency is the Fijian Dollar (FJD). Credit cards are widely accepted in hotels and tourist areas, but cash is useful for smaller islands and local markets.",
+
+faq_bank_q_f: "Do I need a bank account in Fiji?",
+faq_bank_a_f:
+  "For short stays, no. If you work or stay longer, a local bank account like Westpac Fiji can be useful, but most travelers rely on international cards.",
+
+faq_transport_q_f: "What’s the best way to travel around Fiji?",
+faq_transport_a_f:
+  "Ferries, domestic flights, and speedboats are the main ways to travel between islands. On the main islands, buses and taxis are affordable and easy to use.",
+
+faq_sim_q_f: "Which SIM card should I use in Fiji?",
+faq_sim_a_f:
+  "Vodafone Fiji and Digicel are the main providers. Vodafone usually has better coverage across islands, while Digicel can be cheaper.",
+    
 
 ////hotspots 
 'hotspots_title_line1': 'Discover Hotspots',
@@ -280,6 +307,38 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 'hunter_valley_text': 'Hunter Valley is Australia’s oldest wine region with stunning landscapes...',
 
 'hotspot_btn': 'Explore more',
+
+
+// Hotspots Fiji
+'hotspots_title_lineFiji': 'Discover the Hotspots',
+'hotspots_descFiji': 'From tropical islands and coral reefs to lush rainforests and vibrant cities – discover the very best of Fiji.',
+
+'mamanuca_badge': 'Islands • Snorkeling • Resorts',
+'mamanuca_title': 'Mamanuca Islands',
+'mamanuca_text': 'The Mamanuca Islands are famous for their crystal-clear waters, white sandy beaches, luxury resorts, and world-class snorkeling.',
+
+'yasawa_badge': 'Beaches • Backpacking • Diving',
+'yasawa_title': 'Yasawa Islands',
+'yasawa_text': 'The Yasawa Islands offer untouched beaches, turquoise lagoons, and some of the best diving and island-hopping experiences in Fiji.',
+
+'nadi_badge': 'Gateway • Markets • Culture',
+'nadi_title': 'Nadi',
+'nadi_text': 'Nadi is the gateway to Fiji, known for its colorful markets, the Sri Siva Subramaniya Temple, and easy access to the surrounding islands.',
+
+'coral_coast_badge': 'Beaches • Culture • Resorts',
+'coral_coast_title': 'Coral Coast',
+'coral_coast_text': 'The Coral Coast is a stunning stretch of coastline featuring beautiful beaches, coral reefs, luxury resorts, and traditional Fijian villages.',
+
+'taveuni_badge': 'Rainforest • Waterfalls • Nature',
+'taveuni_title': 'Taveuni Island',
+'taveuni_text': 'Known as the Garden Island of Fiji, Taveuni is home to lush rainforests, spectacular waterfalls, scenic hiking trails, and incredible marine life.',
+
+'suva_badge': 'Capital • Museums • Food',
+'suva_title': 'Suva',
+'suva_text': 'Suva, Fiji’s vibrant capital, offers fascinating museums, lively local markets, colonial architecture, and an exciting food scene.',
+
+'hotspot_btnFiji': 'Explore More',
+
 
 
 /// Working holiday 
@@ -458,12 +517,6 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
     'aus.page.flightTime': '22–24 hours',
 
 
-    // destination pages - new zealand
-    'nz.page.title': 'New Zealand',
-    'nz.page.desc': 'New Zealand is a land of majestic fjords, lush mountains, and breathtaking natural beauty. From the iconic Milford Sound to the vibrant streets of Auckland, it offers a unique experience. Whether you are climbing the Southern Alps, surfing the coast, or exploring the local culture, New Zealand is unforgettable.',
-    'nz.page.capital': 'Wellington',
-    'nz.page.language': 'English',
-    'nz.page.currency': 'New Zealand Dollar (NZD)',
 
     // destination pages - Fiji
    'Fiji.page.title': 'Fiji',
@@ -471,6 +524,8 @@ With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, w
 'Fiji.page.capital': 'Suva',
 'Fiji.page.language': 'English, Fiji Hindi and Fijian',
 'Fiji.page.currency': 'Fijian Dollar (FJD)',
+   'Fiji.page.flightTime': '24-26 hours',
+
 
 
 
@@ -854,6 +909,35 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 
         
 
+// Hotspots Fiji
+'hotspots_title_lineFiji': 'Ontdek de hotspots',
+'hotspots_descFiji': 'Van tropische eilanden en koraalriffen tot regenwouden en bruisende steden – ontdek de mooiste plekken van Fiji.',
+
+'mamanuca_badge': 'Eilanden • Snorkelen • Resorts',
+'mamanuca_title': 'Mamanuca-eilanden',
+'mamanuca_text': 'De Mamanuca-eilanden staan bekend om hun helderblauwe water, witte stranden, luxe resorts en fantastische snorkellocaties.',
+
+'yasawa_badge': 'Stranden • Backpacken • Duiken',
+'yasawa_title': 'Yasawa-eilanden',
+'yasawa_text': 'De Yasawa-eilanden bieden ongerepte stranden, turquoise lagunes en behoren tot de mooiste plekken van Fiji om te duiken en eilandhoppen.',
+
+'nadi_badge': 'Toegangspoort • Markten • Cultuur',
+'nadi_title': 'Nadi',
+'nadi_text': 'Nadi is de toegangspoort van Fiji en staat bekend om kleurrijke markten, de Sri Siva Subramaniya-tempel en de nabijgelegen eilandengroepen.',
+
+'coral_coast_badge': 'Stranden • Cultuur • Resorts',
+'coral_coast_title': 'Coral Coast',
+'coral_coast_text': 'De Coral Coast is een prachtige kuststrook met witte stranden, koraalriffen, luxe resorts en authentieke Fijische dorpjes.',
+
+'taveuni_badge': 'Regenwoud • Watervallen • Natuur',
+'taveuni_title': 'Taveuni',
+'taveuni_text': 'Taveuni, ook wel het Garden Island genoemd, is een groen paradijs vol regenwouden, watervallen, wandelroutes en kleurrijke onderwaterwereld.',
+
+'suva_badge': 'Hoofdstad • Musea • Eten',
+'suva_title': 'Suva',
+'suva_text': 'Suva is de bruisende hoofdstad van Fiji met musea, lokale markten, koloniale architectuur en een levendige foodscene.',
+
+'hotspot_btnFiji': 'Ontdek meer',
 
 
 ///working holiday 
@@ -918,6 +1002,33 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     "Telstra heeft de beste dekking, Vodafone is goedkoper. Prepaid is ideaal om te starten.",
 
 
+    // FAQ Fiji
+faq_title_f: "Veelgestelde vragen over Fiji",
+
+faq_visa_q_f: "Heb ik een visum nodig voor Fiji?",
+faq_visa_a_f:
+  "Voor de meeste reizigers is geen visum nodig voor een kort verblijf in Fiji. Veel nationaliteiten krijgen bij aankomst een visumvrije entry permit (meestal tot 4 maanden). Controleer altijd de actuele regels voor vertrek.",
+
+faq_flights_q_f: "Wat is het beste seizoen om naar Fiji te gaan?",
+faq_flights_a_f:
+  "x",
+
+faq_money_q_f: "Wat wordt verstaan onder Fiji Time?",
+faq_money_a_f:
+  "x",
+
+faq_bank_q_f: "Hoe betaal je het beste in Fiji?",
+faq_bank_a_f:
+  "x",
+
+faq_transport_q_f: "Wat is de beste manier om te reizen in Fiji?",
+faq_transport_a_f:
+  "Ferries, speedboats en binnenlandse vluchten zijn de belangrijkste manieren om tussen eilanden te reizen. Op de hoofdeilanden zijn bussen en taxi’s betaalbaar en makkelijk te gebruiken.",
+
+faq_sim_q_f: "Welke simkaart moet ik gebruiken in Fiji?",
+faq_sim_a_f:
+  "Vodafone Fiji en Digicel zijn de grootste providers. Vodafone heeft meestal de beste dekking over de eilanden, terwijl Digicel vaak goedkoper is.",
+
     // destination pages global
     'labels.capital': 'Hoofdstad',
     'labels.language': 'Taal',
@@ -932,12 +1043,7 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'aus.page.currency': 'Australische Dollar (AUD)',
     'aus.page.flightTime': '22–24 uur',
 
-    // destination pages - new zealand
-    'nz.page.title': 'Nieuw-Zeeland',
-    'nz.page.desc': 'Nieuw-Zeeland is een land van majestueuze fjorden, weelderige bergen en adembenemende natuur. Van het iconische Milford Sound tot de levendige straatjes van Auckland, het biedt een unieke ervaring. Of je nu klimt in de Southern Alps, surft aan de kust of ontdekt de lokale cultuur, Nieuw-Zeeland is onvergetelijk.',
-    'nz.page.capital': 'Wellington',
-    'nz.page.language': 'Engels',
-    'nz.page.currency': 'Nieuw-Zeelandse Dollar (NZD)',
+   
 
     // destination pages - fiji
   'Fiji.page.title': 'Fiji',
@@ -945,6 +1051,7 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 'Fiji.page.capital': 'Suva',
 'Fiji.page.language': 'Engels, Fiji Hindi en Fijisch',
 'Fiji.page.currency': 'Fijische dollar (FJD)',
+   'Fiji.page.flightTime': '24-26 uur',
 
 
 

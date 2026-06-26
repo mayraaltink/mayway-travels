@@ -1,5 +1,7 @@
 ---
 import DestinationContent from "./DestinationContent.astro";
+import FaqFiji from "./FaqFiji.astro";
+import HotspotFiji from "./HotspotFiji.astro";
 import { ui, defaultLang } from '../../i18n/ui';
 
 // Get current language
@@ -12,17 +14,20 @@ function t(key: keyof typeof ui[typeof lang]) {
 }
 ---
 
+
 <DestinationContent
   title={t('Fiji.page.title')}
   description={t('Fiji.page.desc')}
   capital={t('Fiji.page.capital')}
   language={t('Fiji.page.language')}
   currency={t('Fiji.page.currency')}
-imageSrc="/images/fiji/fiji_main.jpg"
-imageAlt="Beautiful landscape in Fiji"
+  flightTime={t('Fiji.page.flightTime')}
+  imageSrc="/images/fiji/fiji_main.jpg"
+  imageAlt="Beautiful landscape in Fiji"
   planUrl={lang === 'nl'
-  ? '/nl/route-planner?country=fiji'
-  : '/en/route-planner?country=fiji'}
+    ? '/nl/route-planner?country=fiji'
+    : '/en/route-planner?country=fiji'}
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
->
-</DestinationContent>
+/>
+<HotspotFiji />
+<FaqFiji />

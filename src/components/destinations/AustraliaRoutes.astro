@@ -1,0 +1,247 @@
+---
+const routes = [
+  {
+    title: "Oostkust",
+    description:
+      "Sydney tot Cairns",
+    details:
+      "De Oostkust is perfect voor eerste reizigers. Sydney, Byron Bay, Whitsundays en Cairns maken dit de populairste route van Australië.",
+    images: [
+      { src: "/images/australia/routes/east-1.jpg", location: "Sydney" },
+      { src: "/images/australia/routes/east-2.jpg", location: "Byron Bay" },
+      { src: "/images/australia/routes/east-3.jpg", location: "Whitsundays" },
+      { src: "/images/australia/routes/east-4.jpg", location: "Great Barrier Reef" },
+      { src: "/images/australia/routes/east-5.jpg", location: "Noosa" },
+      { src: "/images/australia/routes/east-6.jpg", location: "Fraser Island" },
+      { src: "/images/australia/routes/east-7.jpg", location: "Cairns" },
+      { src: "/images/australia/routes/east-8.jpg", location: "Gold Coast" },
+    ],
+  },
+
+  {
+    title: "Westkust",
+    description: "Perth tot Exmouth & Esperance",
+    details:
+      "De Westkust is wild, rustig en minder toeristisch. Perfect voor lange roadtrips en vrijheid.",
+    images: [
+      { src: "/images/australia/routes/west-1.jpg", location: "Perth" },
+      { src: "/images/australia/routes/west-2.jpg", location: "Rottnest Island" },
+      { src: "/images/australia/routes/west-3.jpg", location: "Kalbarri" },
+      { src: "/images/australia/routes/west-4.jpg", location: "Exmouth" },
+      { src: "/images/australia/routes/west-5.jpg", location: "Ningaloo Reef" },
+      { src: "/images/australia/routes/west-6.jpg", location: "Coral Bay" },
+      { src: "/images/australia/routes/west-7.jpg", location: "Monkey Mia" },
+      { src: "/images/australia/routes/west-8.jpg", location: "Esperance" },
+    ],
+  },
+
+  {
+    title: "Red Centre",
+    description: "Uluru",
+    details:
+      "Het hart van Australië met iconische outback landschappen en spirituele plekken.",
+    images: [
+      { src: "/images/australia/routes/red-1.jpg", location: "Uluru" },
+      { src: "/images/australia/routes/red-2.jpg", location: "Kata Tjuta" },
+      { src: "/images/australia/routes/red-3.jpg", location: "Alice Springs" },
+      { src: "/images/australia/routes/red-4.jpg", location: "Kings Canyon" },
+      { src: "/images/australia/routes/red-5.jpg", location: "MacDonnell Ranges" },
+      { src: "/images/australia/routes/red-6.jpg", location: "Devils Marbles" },
+      { src: "/images/australia/routes/red-7.jpg", location: "Outback Roads" },
+      { src: "/images/australia/routes/red-8.jpg", location: "Desert Stars" },
+    ],
+  },
+
+  {
+    title: "Top End",
+    description: "Darwin & omgeving",
+    details:
+      "Het noorden met Darwin, Kakadu en Litchfield National Park vol natuur en wildlife.",
+    images: [
+      { src: "/images/australia/routes/top-1.jpg", location: "Darwin" },
+      { src: "/images/australia/routes/top-2.jpg", location: "Kakadu National Park" },
+      { src: "/images/australia/routes/top-3.jpg", location: "Litchfield National Park" },
+      { src: "/images/australia/routes/top-4.jpg", location: "Gunlom Falls" },
+      { src: "/images/australia/routes/top-5.jpg", location: "Florence Falls" },
+      { src: "/images/australia/routes/top-6.jpg", location: "Nitmiluk Gorge" },
+      { src: "/images/australia/routes/top-7.jpg", location: "Crocodiles River" },
+      { src: "/images/australia/routes/top-8.jpg", location: "Arnhem Land" },
+    ],
+  },
+
+  {
+    title: "Tasmanië",
+    description: "Hobart",
+    details:
+      "Tasmanië voelt als Europa in Australië: ruige bergen, frisse lucht, hikes en wildlife zoals wallabies en wombats.",
+    images: [
+      { src: "/images/australia/routes/tas-1.jpg", location: "Hobart" },
+      { src: "/images/australia/routes/tas-2.jpg", location: "Cradle Mountain" },
+      { src: "/images/australia/routes/tas-3.jpg", location: "Wineglass Bay" },
+      { src: "/images/australia/routes/tas-4.jpg", location: "Freycinet National Park" },
+      { src: "/images/australia/routes/tas-5.jpg", location: "Launceston" },
+      { src: "/images/australia/routes/tas-6.jpg", location: "Bay of Fires" },
+      { src: "/images/australia/routes/tas-7.jpg", location: "Mount Field" },
+      { src: "/images/australia/routes/tas-8.jpg", location: "Bruny Island" },
+    ],
+  },
+
+  {
+    title: "Zuid-Australië",
+    description: "Adelaide & omgeving",
+    details:
+      "Zuid-Australië combineert Adelaide met wereldklasse wijnregio’s, koala’s en indrukwekkende kustlijnen.",
+    images: [
+      { src: "/images/australia/routes/sa-1.jpg", location: "Adelaide" },
+      { src: "/images/australia/routes/sa-2.jpg", location: "Barossa Valley" },
+      { src: "/images/australia/routes/sa-3.jpg", location: "Kangaroo Island" },
+      { src: "/images/australia/routes/sa-4.jpg", location: "McLaren Vale" },
+      { src: "/images/australia/routes/sa-5.jpg", location: "Flinders Ranges" },
+      { src: "/images/australia/routes/sa-6.jpg", location: "Victor Harbor" },
+      { src: "/images/australia/routes/sa-7.jpg", location: "Yorke Peninsula" },
+      { src: "/images/australia/routes/sa-8.jpg", location: "Nullarbor Plain" },
+    ],
+  },
+];
+---
+
+<section class="bg-white py-24">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- HEADER -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-4xl font-bold mb-4">
+        Ontdek verschillende reisroutes
+      </h2>
+      <p class="text-neutral-700 leading-7">
+        Ontdek de mooiste routes door Australië – elk met een compleet andere vibe.
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      {routes.map((route, i) => (
+        <article
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col"
+          data-route={i}
+        >
+
+          <!-- IMAGE WRAPPER -->
+          <div class="relative h-[340px]">
+
+            <!-- IMAGE SLIDES -->
+            {route.images.map((img, idx) => (
+              <img
+                src={img.src}
+                data-slide={i}
+                data-index={idx}
+                class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                  idx === 0 ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ))}
+
+            <!-- DARK GRADIENT -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+            <!-- TITLE IN IMAGE -->
+            <div class="absolute bottom-5 left-5 text-white">
+              <p class="text-[11px] uppercase tracking-[0.2em] opacity-80 mb-1">
+                {route.description}
+              </p>
+              <h3 class="text-2xl font-bold">
+                {route.title}
+              </h3>
+            </div>
+
+            <!-- ARROWS -->
+            <button
+              class="absolute left-3 top-1/2 -translate-y-1/2 text-white text-3xl opacity-0 group-hover:opacity-100 transition"
+              data-prev={i}
+            >
+              ‹
+            </button>
+
+            <button
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-white text-3xl opacity-0 group-hover:opacity-100 transition"
+              data-next={i}
+            >
+              ›
+            </button>
+
+          </div>
+<!-- CONTENT -->
+<div class="p-6 flex flex-col gap-4">
+
+  <!-- korte preview -->
+  <p class="text-sm text-neutral-700 leading-relaxed">
+    {route.details.split(".")[0]}.
+  </p>
+
+  <!-- extra tekst (collapsed) -->
+  <p
+    class="text-sm text-neutral-700 leading-relaxed overflow-hidden max-h-0 transition-all duration-500"
+    data-more={i}
+  >
+    {route.details}
+  </p>
+
+  <button
+    class="text-sm font-medium text-[#2AA6A1] hover:underline text-left"
+    data-toggle={i}
+  >
+    Lees meer
+  </button>
+
+</div>
+          <!-- EXPAND -->
+          <div
+            class="absolute inset-0 bg-white p-6 translate-y-full transition duration-500"
+            data-expand={i}
+          >
+
+            <h4 class="text-xl font-bold mb-3">
+              {route.title}
+            </h4>
+
+            <p class="text-sm text-neutral-700 leading-relaxed">
+              {route.details}
+            </p>
+
+            <button
+              class="mt-6 text-sm text-[#2AA6A1] underline"
+              data-close={i}
+            >
+              Sluiten
+            </button>
+
+          </div>
+
+        </article>
+      ))}
+
+    </div>
+  </div>
+</section>
+<script>
+  
+document.querySelectorAll("[data-toggle]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const id = btn.getAttribute("data-toggle");
+    const el = document.querySelector(`[data-more="${id}"]`);
+
+    if (!el) return;
+
+    const isHidden = el.classList.contains("hidden");
+
+    if (isHidden) {
+      el.classList.remove("hidden");
+      btn.textContent = "Minder lezen";
+    } else {
+      el.classList.add("hidden");
+      btn.textContent = "Lees meer";
+    }
+  });
+});
+</script>

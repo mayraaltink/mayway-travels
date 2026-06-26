@@ -2,7 +2,7 @@
 // src/components/ui/TravelAdviceContent.astro
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { ui, defaultLang } from '../../../i18n/ui';
-import TravelAdviceSteps from "./TravelAdviceSteps.astro";
+
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -12,7 +12,7 @@ function t(key: string) {
 }
 ---
 
-<BaseLayout title={t('travelAdviceFiji.title')}>
+<BaseLayout title={t('travelAdvice.title')}>
   <div class="bg-[#FFFDFA]">
 
   <section class="relative h-screen flex items-center justify-center overflow-hidden -mt-16 rounded-b-[80px]">
@@ -56,7 +56,7 @@ function t(key: string) {
   </span>
 
  <span class="text-3xl md:text-7xl font-semibold text-white">
-Fiji </span>
+Australië </span>
 
 </h1>
 
@@ -68,7 +68,7 @@ Fiji </span>
     href={`/${lang}/route-planner?country=australia`}
     class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a] hover:text-white"
   >
-    {t('travelAdviceFiji.hero.buybtn')}
+    {t('travelAdvice.hero.buybtn')}
 
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
@@ -92,7 +92,7 @@ Fiji </span>
     href="#features"
     class="inline-flex items-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white"
   >
-    {t('travelAdviceFiji.hero.previewbtn')}
+    {t('travelAdvice.hero.previewbtn')}
 
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
@@ -119,14 +119,6 @@ Fiji </span>
 
 </section>
 
-<!-- STICKY SUB NAV -->
-<div class="sticky top-0 z-30 border-b border-gray-100 bg-white/90 backdrop-blur-md shadow-sm">
-  <div class="mx-auto max-w-6xl px-6 flex justify-center">
-
-    <ul class="flex items-center gap-2 py-4 text-sm font-semibold text-gray-700">
-
-
-</div>
     <!-- Hero Section -->
     <section class="relative overflow-hidden pt-28 pb-16 md:pb-24">
       <div class="pointer-events-none absolute -right-24 top-24 h-96 w-96 rounded-full bg-[#4ED2CE]/10 blur-3xl"></div>
@@ -136,7 +128,7 @@ Fiji </span>
         <div>
          
           <h1 class="text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
-            <span class="font-libre">{t('travelAdviceFiji.hero.title1')}</span> 
+            <span class="font-libre">{t('travelAdvice.hero.title1')}</span> 
           </h1>
         <div class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
 
@@ -155,7 +147,7 @@ Fiji </span>
         
         <div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
           <div class="absolute -right-2 -top-3 z-10 rotate-2 rounded-full bg-[#E6F6F6] px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#1CABB0] shadow-lg">
-            {t('travelAdviceFiji.hero.badge2')}
+            {t('travelAdvice.hero.badge2')}
           </div>
           <div class="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#E8FAF9] to-[#d4f3f1] p-4 shadow-2xl ring-1 ring-black/5">
             <div class="overflow-hidden rounded-2xl shadow-inner">
@@ -163,8 +155,8 @@ Fiji </span>
               <img src="/images/pexels-1320686.jpeg" alt="Interactive guide Australia" class="aspect-[4/3] w-full object-cover">
             </div>
             <div class="absolute bottom-5 left-5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-              <p class="text-xs font-semibold uppercase tracking-wide text-[#1CABB0]">{t('travelAdviceFiji.hero.included')}</p>
-              <p class="text-lg font-bold text-gray-900">{t('travelAdviceFiji.hero.modules')}</p>
+              <p class="text-xs font-semibold uppercase tracking-wide text-[#1CABB0]">{t('travelAdvice.hero.included')}</p>
+              <p class="text-lg font-bold text-gray-900">{t('travelAdvice.hero.modules')}</p>
             </div>
           </div>
         </div>
@@ -218,11 +210,11 @@ Fiji </span>
 <div>
 
   <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">
-    {t('travelAdviceFiji.features.title')}
+    {t('travelAdvice.features.title')}
   </h2>
 
   <p class="mt-5 text-lg leading-relaxed text-gray-600">
-    {t('travelAdviceFiji.features.desc')}
+    {t('travelAdvice.features.desc')}
   </p>
 
   <!-- FEATURES -->
@@ -242,7 +234,7 @@ Fiji </span>
 
         <!-- Text -->
         <p class="leading-relaxed text-gray-700">
-          {t(`travelAdviceFiji.features.${num}` as any)}
+          {t(`travelAdvice.features.${num}` as any)}
         </p>
 
       </div>
@@ -295,22 +287,20 @@ Fiji </span>
 
 
 
-      <TravelAdviceSteps />
-
     <!-- Bottom CTA Section -->
     <section class="border-t border-white/10 bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] py-20 text-center text-white">
       <div class="mx-auto max-w-2xl px-6">
         <span class="inline-block rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-wider">
-          {t('travelAdviceFiji.cta.badge')}
+          {t('travelAdvice.cta.badge')}
         </span>
-        <h2 class="mt-6 font-libre text-3xl font-semibold md:text-4xl">{t('travelAdviceFiji.cta.title')}</h2>
-        <p class="mt-4 text-lg text-white/90">{t('travelAdviceFiji.cta.desc')}</p>
+        <h2 class="mt-6 font-libre text-3xl font-semibold md:text-4xl">{t('travelAdvice.cta.title')}</h2>
+        <p class="mt-4 text-lg text-white/90">{t('travelAdvice.cta.desc')}</p>
         <div class="mt-10 flex flex-col items-center gap-3">
           <a href={lang === 'nl' 
   ? '/nl/route-planner?country=australia' 
   : '/en/route-planner?country=australia'}
           class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-white text-[#1CABB0] hover:bg-[#E6F6F6] hover:text-[#15939a] shadow-xl">
-            {t('travelAdviceFiji.cta.btn')}
+            {t('travelAdvice.cta.btn')}
           </a>
        
         </div>
@@ -322,4 +312,3 @@ Fiji </span>
 
   
 </BaseLayout>
-

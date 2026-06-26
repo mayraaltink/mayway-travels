@@ -86,7 +86,7 @@ const isTransparentPage = isHomePage || isTravelAdvice;
   {navLinks.map((item) => {
 if (item.type === 'dropdown') {
   return (
-  <div class="relative group z-50 py-2">
+<div class="relative group py-2">
 
       <a
         href={getRelativeLocaleUrl('/traveladvice')}
@@ -111,7 +111,7 @@ if (item.type === 'dropdown') {
 
       <div
   class="absolute top-full left-0 mt-1 w-52
-         bg-white rounded-xl shadow-xl z-[999]
+         bg-white rounded-xl shadow-xl z-[50]
          opacity-0 scale-95
          pointer-events-none
          transition-all duration-200
@@ -121,7 +121,7 @@ if (item.type === 'dropdown') {
 >
 
 
-  
+
 
         {item.children.map((child) => (
           <a

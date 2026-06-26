@@ -1,0 +1,53 @@
+---
+import { ui, defaultLang } from '../../i18n/ui';
+
+export interface Props {
+  lang?: keyof typeof ui;
+}
+
+const { lang = defaultLang } = Astro.props;
+---
+
+<section class="relative overflow-hidden py-24">
+
+  <!-- Background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <img
+      src="/images/fiji/fijiLow.svg"
+      alt=""
+      class="absolute left-1/2 top-1/2 translate-x-[15%] -translate-y-[65%] w-[35%] opacity-50"
+    />
+    <div class="absolute inset-0 bg-[#FFFFF0]/10"></div>
+  </div>
+
+  <!-- CENTER WRAPPER -->
+  <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+
+    <!-- LABEL -->
+    <span class="text-[#1CABB0] font-semibold uppercase tracking-wider">
+      {ui[lang]['fiji_intro_label']}
+    </span>
+
+    <!-- TITLE -->
+    <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6">
+      {ui[lang]['fiji_intro_title']}
+    </h2>
+
+    <!-- TEXT -->
+    <div class="space-y-6 text-base leading-7 text-gray-700">
+      <p>{ui[lang]['fiji_intro_text1']}</p>
+      <p>{ui[lang]['fiji_intro_text2']}</p>
+      <p>{ui[lang]['fiji_intro_text3']}</p>
+    </div>
+
+    <!-- CTA -->
+    <a
+      href="/route-planner?country=fiji"
+      class="inline-flex items-center mt-10 bg-[#1CABB0] hover:bg-[#16969A] text-white font-semibold px-7 py-4 rounded-full transition"
+    >
+      {ui[lang]['fiji_intro_cta']}
+      <span class="ml-2">→</span>
+    </a>
+
+  </div>
+</section>

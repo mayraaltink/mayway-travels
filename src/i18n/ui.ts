@@ -567,6 +567,18 @@ faq_sim_a_f:
 'australia.intro.cta':
   'Discover personalised travel advice',
 
+  ////////fiji 
+
+  fiji_intro_label: "Discover Fiji",
+fiji_intro_title: "Paradise in the South Pacific",
+fiji_intro_text1:
+  "Fiji is a tropical paradise made up of over 300 islands, known for its crystal-clear waters, white sandy beaches, and warm hospitality.",
+fiji_intro_text2:
+  "From luxury resorts in the Mamanuca Islands to untouched nature in the Yasawa Islands, Fiji offers something for every type of traveler.",
+fiji_intro_text3:
+  "Whether you're diving with manta rays, exploring coral reefs, or relaxing on remote beaches, Fiji is the ultimate island escape.",
+fiji_intro_cta: "Start planning your trip",
+
 
     // Route Planner /////////////////////////////////////////////////////////
     'planner.title': 'Route Planner',
@@ -1150,6 +1162,21 @@ faq_sim_a_f:
 
 'australia.intro.cta':
   'Ontdek persoonlijk reisadvies', 
+
+
+
+
+  ///////////fiji/////////////////
+fiji_intro_label: "Ontdek Fiji",
+fiji_intro_title: "Paradijs in de Zuidelijke Stille Oceaan",
+fiji_intro_text1:
+  "Fiji is een tropisch paradijs bestaande uit meer dan 300 eilanden, bekend om kristalhelder water, witte stranden en warme gastvrijheid.",
+fiji_intro_text2:
+  "Van luxe resorts in de Mamanuca-eilanden tot ongerepte natuur op de Yasawa-eilanden, Fiji heeft voor elke reiziger iets te bieden.",
+fiji_intro_text3:
+  "Of je nu duikt met mantaroggen, koraalriffen verkent of ontspant op afgelegen stranden, Fiji is de ultieme eilandbestemming.",
+fiji_intro_cta: "Begin met het plannen van je reis",
+
 
     // Route Planner /////////////////////////////////////////////////////////
     'planner.title': 'Routeplanner',

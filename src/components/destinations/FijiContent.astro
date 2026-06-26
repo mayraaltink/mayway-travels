@@ -1,5 +1,6 @@
 ---
 import DestinationContent from "./DestinationContent.astro";
+import ReisFiji from "./ReisFiji.astro";
 import FaqFiji from "./FaqFiji.astro";
 import HotspotFiji from "./HotspotFiji.astro";
 import { ui, defaultLang } from '../../i18n/ui';
@@ -14,7 +15,6 @@ function t(key: keyof typeof ui[typeof lang]) {
 }
 ---
 
-
 <DestinationContent
   title={t('Fiji.page.title')}
   description={t('Fiji.page.desc')}
@@ -28,6 +28,12 @@ function t(key: keyof typeof ui[typeof lang]) {
     ? '/nl/route-planner?country=fiji'
     : '/en/route-planner?country=fiji'}
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
-/>
-<HotspotFiji />
-<FaqFiji />
+
+>
+  <!-- The carousel gets injected into the <slot /> of DestinationContent -->
+   <ReisFiji />
+         <HotspotFiji />
+  
+  <FaqFiji />
+
+</DestinationContent>

@@ -2,7 +2,7 @@
 // src/components/ui/TravelAdviceContent.astro
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { ui, defaultLang } from '../../../i18n/ui';
-import TravelAdviceSteps from "./TravelAdviceSteps.astro";
+
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -19,7 +19,7 @@ function t(key: string) {
     
 
   <!-- GRADIENT OVERLAY -->
-  <div class="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/30 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/30 to-transparent z-10 pointer-events-none"></div>
 
   <!-- BACKGROUND IMAGE -->
 <img
@@ -379,7 +379,7 @@ Australië </span>
       </div>
     </section>
 
-      <TravelAdviceSteps />
+  
 
     <!-- Bottom CTA Section -->
     <section class="border-t border-white/10 bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] py-20 text-center text-white">

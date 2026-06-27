@@ -1,6 +1,5 @@
 ---
 // src/components/ui/TravelAdviceContent.astro
-import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { ui, defaultLang } from '../../../i18n/ui';
 
 
@@ -12,7 +11,7 @@ function t(key: string) {
 }
 ---
 
-<BaseLayout title={t('travelAdvice.title')}>
+ title={t('travelAdvice.title')}>
   <div class="bg-[#FFFDFA]">
 
   <section class="relative h-screen flex items-center justify-center overflow-hidden -mt-16 rounded-b-[80px]">
@@ -311,4 +310,3 @@ Australië </span>
   </div>
 
   
-</BaseLayout>

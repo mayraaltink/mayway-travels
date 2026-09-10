@@ -9,17 +9,19 @@ const t = useTranslations(lang);
 const services = [
   {
     title: {
-      nl: "Reisplan op maat",
-      en: "Custom Travel Planning"
+      nl: "Reisadvies & begeleiding",
+      en: "Travel advice & Guidance"
     },
     desc: {
-      nl: "Een persoonlijk reisplan afgestemd op jouw stijl, tempo en budget. Geen standaard routes, maar unieke ervaringen.",
-      en: "A personalised travel plan tailored to your style, pace and budget. No standard routes, only unique experiences."
+      nl: "Van sparren over je route en reisplannen op maat tot volledige begeleiding en praktische hulp voor jouw volgende avontuur.",
+      en: "From route brainstorming and custom travel plans to full guidance and practical support for your next adventure."
     },
     link: {
-      nl: "/reisplan",
-      en: "/en/travel-plan"
-    }
+      nl: "/nl/traveladvice",
+      en: "/en/traveladvice"
+    },
+    /* FOTO 1: Verwijs direct naar de public-map */
+    image: "/about/sydney-opera.jpg" 
   },
   {
     title: {
@@ -28,12 +30,14 @@ const services = [
     },
     desc: {
       nl: "Laat je inspireren door echte reisverhalen, tips en verborgen plekken uit onze community.",
-      en: "/en/community"
+      en: "Get inspired by real travel stories, tips, and hidden gems from our community."
     },
     link: {
       nl: "/community",
-      en: "/en/community"
-    }
+      en: "/community"
+    },
+    /* FOTO 2: Vul hier het pad in naar je tweede foto */
+    image: "/images/community-bg.jpg" 
   }
 ];
 ---
@@ -41,28 +45,24 @@ const services = [
 <section class="pt-20 pb-24 px-6 bg-gradient-to-b from-[#FFFDFA] to-white">
   <div class="max-w-6xl mx-auto">
 
-   <!-- HEADER -->
-<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-14 ml-4">
+    <!-- HEADER -->
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-14 ml-4">
+      <!-- LEFT -->
+      <h2 class="max-w-xl leading-[0.95]">
+        <span class="block text-3xl md:text-4xl font-normal italic text-gray-800">
+          {lang === 'nl' ? 'Laat je inspireren' : 'Get inspired'}
+        </span>
+        <span class="block text-3xl md:text-4xl font-bold text-gray-800 mt-0.5">
+          {lang === 'nl' ? 'voor jouw volgende reis' : 'for your next journey'}
+        </span>
+      </h2>
 
-  <!-- LEFT -->
-  <h2 class="max-w-xl leading-[0.95]">
+      <!-- RIGHT -->
+      <p class="lg:max-w-md lg:text-left text-base text-gray-600 leading-relaxed lg:pt-2">
+        {t('homeServices.desc')}
+      </p>
+    </div>
 
-  <span class="block text-3xl md:text-4xl font-normal italic text-gray-800">
-    {lang === 'nl' ? 'Laat je inspireren' : 'Get inspired'}
-  </span>
-
-  <span class="block text-3xl md:text-4xl font-bold text-gray-800 mt-0.5">
-    {lang === 'nl' ? 'voor jouw volgende reis' : 'for your next journey'}
-  </span>
-
-</h2>
-
-  <!-- RIGHT -->
-  <p class="lg:max-w-md lg:text-left text-base text-gray-600 leading-relaxed lg:pt-2">
-    {t('homeServices.desc')}
-  </p>
-
-</div>
     <!-- CARDS -->
     <div class="grid md:grid-cols-2 gap-10">
       {services.map((service) => (
@@ -70,9 +70,17 @@ const services = [
           href={service.link[lang]}
           class="group relative rounded-3xl overflow-hidden shadow-lg h-[380px] bg-[#0f172a] flex items-end"
         >
+          <!-- AFBEELDING MET HOVER ZOOM EFFECT -->
+          <img 
+            src="/images/australia/surf-boys.jpg" 
+  alt="About Mayra"
+  class="absolute inset-0 w-full h-full object-cover scale-125"
+          />
+
+          <!-- DONKERE OVERLOOP VOOR LEESBAARHEID -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-          <div class="relative p-8 text-white">
+          <div class="relative p-8 text-white z-10">
             <h3 class="text-2xl font-bold mb-3 group-hover:translate-x-1 transition">
               {service.title[lang]}
             </h3>
@@ -81,25 +89,24 @@ const services = [
               {service.desc[lang]}
             </p>
 
-           <span class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-white border border-white/30 px-8 py-3 rounded-full group-hover:bg-white/10 transition">
-  {t('homeServices.cta')}
-
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="transition group-hover:translate-x-1"
-  >
-    <path d="M5 12h14"></path>
-    <path d="m12 5 7 7-7 7"></path>
-  </svg>
-</span>
+            <span class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-white border border-white/30 px-8 py-3 rounded-full group-hover:bg-white/10 transition">
+              {t('homeServices.cta')}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition group-hover:translate-x-1"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </span>
           </div>
         </a>
       ))}

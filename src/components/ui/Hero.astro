@@ -1,8 +1,13 @@
 ---
-// src/components/ui/Hero.astro
 import { Image } from 'astro:assets';
-import backgroundImage from '../../assets/Header.avif';
-// import backgroundImage from '../../assets/pexels-1320686.jpeg';
+import { ui, defaultLang } from '../../i18n/ui';
+import backgroundImage from '../../assets/Header.jpg';
+
+const lang = Astro.currentLocale || defaultLang;
+
+function t(key: keyof typeof ui[typeof defaultLang]) {
+  return ui[lang as keyof typeof ui][key];
+}
 
 
 
@@ -39,14 +44,15 @@ const {
   </video> -->
 
   <!-- Background Image (replaces video above) -->
-  <Image 
-    src={backgroundImage} 
-    alt="Breathtaking aerial view of a tropical coastline" 
-    class="absolute inset-0 z-0 h-full w-full object-cover"
-    loading="eager"
-    quality="mid"
-  />
-
+<Image  
+  src={backgroundImage}  
+  alt="Breathtaking aerial view of a tropical coastline"  
+  class="absolute inset-0 z-0 h-full w-full object-cover object-[center_65%] saturate-125" 
+  loading="eager" 
+  quality="mid" 
+/>
+<!-- Subtle dark overlay -->
+<div class="absolute inset-0 bg-black/5 z-10"></div>
   <!-- LOCATION (bottom left badge) -->
 <div class="absolute bottom-10 left-10 flex items-center gap-2 rounded-full bg-transparant px-4 py-2 text-sm text-white backdrop-blur-sm z-20 ">
 
@@ -56,7 +62,7 @@ const {
   </svg>
 
   <span class="uppercase text-xs tracking-wide text-white/90">
-    Australië · Sydney
+    Margaret River, Western Australia
   </span>
 
 </div>
@@ -65,21 +71,21 @@ const {
   <div class="relative z-20 text-center px-6 max-w-4xl mx-auto">
 <h1
   class="flex flex-col text-center leading-[0.85] tracking-[-0.03em]"
-  style="text-shadow: 0 3px 15px rgba(0,0,0,0.35);"
+  style="text-shadow: 0 3px 15px rgba(0,0,0,0.65);"
 >
-  <span class="text-3xl md:text-4xl font-medium text-white">
-    Jouw avontuur
-  </span>
+<span class="text-3xl md:text-4xl font-medium text-white">
+  {t('hero.title1')}
+</span>
 
-  <span class="text-5xl md:text-5xl font-semibold italic text-[#39C2BE]">
-    YOUR WAY.
-  </span>
+<span class="text-5xl md:text-5xl font-semibold italic text-[#39C2BE]">
+  {t('hero.title2')}
+</span>
 </h1>
 
-<p
-  class="mt-4 text-base md:text-lg text-white font-medium tracking-[0.02em]"
+<p 
+  class="mt-4 text-base md:text-lg text-white font-medium tracking-[0.02em]" 
   style="text-shadow: 0 3px 15px rgba(0,0,0,0.4);"
 >
-  Persoonlijke reisroutes & hidden gems
+  {t('hero.subtitle')}
 </p>
   

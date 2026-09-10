@@ -26,11 +26,15 @@ export const ui = {
 
 'home.about.preheader': 'About me',
 
+'hero.title1': 'Your adventure',
+'hero.title2': 'YOUR WAY.',
+'hero.subtitle': 'Personal travel advice & hidden gems',
+
 // home services
 'homeServices.subtitle': 'About MAY WAY',
 'homeServices.title': 'What we can do for you',
 'homeServices.desc':
-  'We don’t just help you plan trips, but also inspire you with real travel experiences that go beyond the ordinary.',
+  'Turn your dream trip into reality with real travel experiences, personalized guidance, and endless inspiration every step of the way.',
 'homeServices.cta': 'Discover more',
 
 
@@ -669,6 +673,10 @@ fiji_intro_cta: "Start planning your trip",
 
     'home.about.preheader': 'Over MAY WAY',
 
+    'hero.title1': 'Jouw avontuur',
+'hero.title2': 'YOUR WAY.',
+'hero.subtitle': 'Persoonlijke reisroutes & hidden gems',
+
 
     'oceania.title.before': 'Ontdek de diversiteit van',
 'oceania.title.bold': 'Australië',
@@ -690,7 +698,7 @@ fiji_intro_cta: "Start planning your trip",
 'homeServices.subtitle': 'Over MAY WAY',
 'homeServices.title': 'Wat wij voor jou kunnen betekenen',
 'homeServices.desc':
-  'We helpen je niet alleen met het plannen van reizen, maar inspireren je ook met echte reiservaringen die verder gaan dan het gewone.',
+  'Jouw volgende avontuur begint hier. Met echte reiservaringen, persoonlijk advies en praktische begeleiding helpen we je om jouw droomreis werkelijkheid te maken.',
 'homeServices.cta': 'Ontdek meer',
 
     // about

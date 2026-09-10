@@ -9,66 +9,75 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
   return ui[lang as keyof typeof ui][key];
 }
 ---
+
 <section class="relative z-0 w-full bg-white pt-30 pb-12">
   <div class="mx-auto max-w-7xl px-6 lg:px-12">
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-14">
+   <div class="flex justify-center">
 
-     <!-- LEFT CONTENT -->
-<div class="self-start pt-0 lg:pt-2">
+      <!-- LEFT CONTENT -->
+      <div class="self-start pt-0 lg:pt-2">
 
-  <!-- PREHEADER (klein turquoise woord) -->
-  <p class="mb-3 text-xs uppercase tracking-[0.25em] text-[#5CC2BF] font-medium">
-    {t('collaboration.preheader')}
-  </p>
+        <!-- PREHEADER -->
+        <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#5CC2BF]">
+          {t('collaboration.preheader')}
+        </p>
 
-  <!-- TITLE -->
-  <h2 class="mb-8 text-3xl md:text-5xl tracking-[-0.03em] text-black leading-[1.1]">
+        <!-- TITLE -->
+        <h2 class="mb-8 text-3xl leading-[1.1] tracking-[-0.03em] text-black md:text-5xl">
+          <span class="font-normal">
+            {t('collaboration.titlePart1')}
+          </span>
 
-    <span class="font-normal">
-      {t('collaboration.titlePart1')}
-    </span>
+          <span class="font-semibold">
+            {t('collaboration.titleHighlight')}
+          </span>
+        </h2>
 
-    <span class="font-semibold">
-      {t('collaboration.titleHighlight')}
-    </span>
+        <!-- TEXT -->
+        <div class="max-w-2xl space-y-6 text-base leading-[1.9] text-gray-700">
 
-  </h2>
+          <p>
+            {t('collaboration.text1')}
+          </p>
 
-  <!-- TEXT -->
-<div class="space-y-6 max-w-2xl text-base md:text-base leading-[1.9] text-gray-700">
+          <p
+            set:html={t('collaboration.text2')
+              .replace(
+                '{followers}',
+                `<span class="font-semibold text-[#5CC2BF]">17.800</span>`
+              )
+              .replace(
+                '{ig1}',
+                `<a href="https://www.instagram.com/maywaytravels" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#5CC2BF] transition hover:opacity-70">@maywaytravels</a>`
+              )
+              .replace(
+                '{ig2}',
+                `<a href="https://www.instagram.com/mayraaltink" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#5CC2BF] transition hover:opacity-70">@mayraaltink</a>`
+              )
+            }
+          />
 
-  <p>{t('collaboration.text1')}</p>
+          <p class="font-medium text-black">
+            {t('collaboration.text3').split('{email}')[0]}
 
-  <p set:html={t('collaboration.text2')
-    .replace(
-      '{followers}',
-      `<span class="font-semibold text-[#5CC2BF]">17.800</span>`
-    )
-    .replace(
-      '{ig1}',
-      `<a href="https://www.instagram.com/maywaytravels" target="_blank" class="font-semibold text-[#5CC2BF] hover:opacity-70 transition">@maywaytravels</a>`
-    )
-    .replace(
-      '{ig2}',
-      `<a href="https://www.instagram.com/mayraaltink" target="_blank" class="font-semibold text-[#5CC2BF] hover:opacity-70 transition">@mayraaltink</a>`
-    )
-  } />
+            <a
+              href="mailto:maywaytravels1@gmail.com?subject=Collaboration%20MAY%20WAY"
+              class="font-semibold text-[#5CC2BF] transition hover:opacity-70"
+            >
+              maywaytravels1@gmail.com
+            </a>
 
-  <p class="font-medium text-black">
-  {t('collaboration.text3').split('{email}')[0]}
+            {t('collaboration.text3').split('{email}')[1]}
+          </p>
 
-  <a
-    href="mailto:maywaytravels1@gmail.com?subject=Collaboration%20MAY%20WAY"
-    class="font-semibold text-[#5CC2BF] hover:opacity-70 transition"
-  >
-    maywaytravels1@gmail.com
-  </a>
+        </div>
+      </div>
 
-  {t('collaboration.text3').split('{email}')[1]}
-</p>
-</div>
+      <!-- RIGHT CONTENT -->
+      <!-- Hier kun je later bijvoorbeeld een foto, afbeelding
+           of samenwerkingsformulier plaatsen -->
 
-  
+    </div>
   </div>
 </section>

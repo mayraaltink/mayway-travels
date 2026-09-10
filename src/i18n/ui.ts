@@ -632,6 +632,10 @@ fiji_intro_cta: "Start planning your trip",
 'about.workStory.p3':
   'I also guided Working Holiday travellers through every step of starting their new life in Australia. From organising essentials such as TFN applications and CVs to providing practical advice on jobs, accommodation and everyday life, my goal was to help every traveller begin their adventure with confidence.', 
 
+
+  /////collab
+'collaboration.previousTitle': 'Eerdere samenwerkingen',
+
      //////////footer
     
     'footer.description': 'Your travel platform for unique routes, hidden gems and real travel inspiration.',
@@ -644,7 +648,8 @@ fiji_intro_cta: "Start planning your trip",
     'footer.followText': 'Follow my journeys on social media and discover daily inspiration, tips and hidden places.',
     'footer.copyright': 'All rights reserved',
 
-    
+
+
 'eguides.hero.descBold': 'Do you want to stay in control of booking your Australia trip at your own pace, while still benefiting from my knowledge, experience, and tips?',
 
 'eguides.hero.descNormal': 'At MAY WAY, we start with a personal video call to discuss your wishes, interests, and budget. Whether you already have a route in mind or have no idea where to begin yet, together we’ll create your perfect journey.',
@@ -1235,6 +1240,9 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'about.workStory.p3':
   'Daarnaast begeleidde ik Working Holiday reizigers bij hun avontuur in Australië. Van praktische zaken zoals het aanvragen van een TFN en het opstellen van een cv tot tips over werk, accommodatie en het leven in Australië. Mijn doel was om iedere reiziger met vertrouwen aan zijn of haar avontuur te laten beginnen.',
 
+  /////////samenwerkingen 
+  'collaboration.previousTitle': 'Eerdere samenwerkingen',
+  
 ///////Footer 
     
   'footer.description':'Jouw reisplatform voor unieke routes, verborgen plekken en echte travel-inspiratie. Voor reizigers die vrijheid willen, maar wel met een goed plan.',

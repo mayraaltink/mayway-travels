@@ -8,23 +8,45 @@ const lang = Astro.currentLocale || defaultLang;
 function t(key: keyof typeof ui[typeof defaultLang]) {
   return ui[lang as keyof typeof ui][key];
 }
+
+const logos = [
+  { src: '/images/Partners/logo-01.png', alt: 'Partner 1' },
+  { src: '/images/Partners/logo-02.png', alt: 'Partner 2' },
+  { src: '/images/Partners/logo-03.png', alt: 'Partner 3' },
+  { src: '/images/Partners/logo-04.png', alt: 'Partner 4' },
+  { src: '/images/Partners/logo-05.png', alt: 'Partner 5' },
+  { src: '/images/Partners/logo-06.png', alt: 'Partner 6' },
+  { src: '/images/Partners/logo-07.png', alt: 'Partner 7' },
+  { src: '/images/Partners/logo-08.png', alt: 'Partner 8' },
+  { src: '/images/Partners/logo-09.png', alt: 'Partner 9' },
+  { src: '/images/Partners/logo-10.png', alt: 'Partner 10' },
+  { src: '/images/Partners/logo-11.png', alt: 'Partner 11' },
+  { src: '/images/Partners/logo-12.png', alt: 'Partner 12' },
+  { src: '/images/Partners/logo-13.png', alt: 'Partner 13' },
+  { src: '/images/Partners/logo-14.png', alt: 'Partner 14' },
+  { src: '/images/Partners/logo-15.png', alt: 'Partner 15' },
+  { src: '/images/Partners/logo-16.png', alt: 'Partner 16' },
+  { src: '/images/Partners/logo-17.png', alt: 'Partner 17' },
+  { src: '/images/Partners/logo-18.png', alt: 'Partner 18' },
+  { src: '/images/Partners/logo-19.png', alt: 'Partner 19' },
+];
 ---
 
 <section class="relative z-0 w-full bg-white pt-30 pb-12">
   <div class="mx-auto max-w-7xl px-6 lg:px-12">
 
-   <div class="flex justify-center">
+    <div class="flex justify-center">
 
-      <!-- LEFT CONTENT -->
-      <div class="self-start pt-0 lg:pt-2">
+      <!-- CONTENT -->
+      <div class="w-full self-start pt-0 lg:pt-2">
 
         <!-- PREHEADER -->
-        <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#5CC2BF]">
+        <p class="mb-3 text-center text-xs font-medium uppercase tracking-[0.25em] text-[#5CC2BF]">
           {t('collaboration.preheader')}
         </p>
 
         <!-- TITLE -->
-        <h2 class="mb-8 text-3xl leading-[1.1] tracking-[-0.03em] text-black md:text-5xl">
+        <h2 class="mb-8 text-center text-3xl leading-[1.1] tracking-[-0.03em] text-black md:text-5xl">
           <span class="font-normal">
             {t('collaboration.titlePart1')}
           </span>
@@ -35,7 +57,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
         </h2>
 
         <!-- TEXT -->
-        <div class="max-w-2xl space-y-6 text-base leading-[1.9] text-gray-700">
+        <div class="mx-auto max-w-2xl space-y-6 text-left text-base leading-[1.9] text-gray-700">
 
           <p>
             {t('collaboration.text1')}
@@ -72,12 +94,315 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
           </p>
 
         </div>
+
+        <!-- PARTNER LOGO CAROUSEL -->
+        <div class="relative mt-16 w-full">
+
+          <!-- CAROUSEL TITLE -->
+          <h3 class="mb-8 text-center text-3xl font-semibold tracking-[-0.02em] text-black md:text-4xl">
+            {t('collaboration.previousTitle')}
+          </h3>
+
+          <!-- LOGO VIEWPORT -->
+          <div class="relative">
+
+            <div
+              id="partner-track"
+              class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2"
+              style="scrollbar-width: none; -ms-overflow-style: none;"
+            >
+
+              {logos.map((logo) => (
+                <div
+                  class="partner-item min-w-[calc((100%-3rem)/4)] snap-start md:min-w-[calc((100%-4rem)/5)]"
+                >
+
+                  <div
+                    class="flex h-28 w-full items-center justify-center rounded-2xl bg-[#F8F8F8] p-6"
+                  >
+
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      loading="lazy"
+                      draggable="false"
+                      class="max-h-14 w-auto max-w-[85%] select-none object-contain"
+                    />
+
+                  </div>
+
+                </div>
+              ))}
+
+            </div>
+
+            <!-- LEFT ARROW -->
+            <button
+              id="partner-prev"
+              type="button"
+              aria-label="Vorige partners"
+              class="absolute -left-5 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30"
+            >
+              ←
+            </button>
+
+            <!-- RIGHT ARROW -->
+            <button
+              id="partner-next"
+              type="button"
+              aria-label="Volgende partners"
+              class="absolute -right-5 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30"
+            >
+              →
+            </button>
+
+          </div>
+
+          <!-- DOTS -->
+          <div
+            id="partner-dots"
+            class="mt-6 flex justify-center gap-2"
+            aria-label="Partner carousel navigatie"
+          >
+          </div>
+
+        </div>
+
       </div>
 
-      <!-- RIGHT CONTENT -->
-      <!-- Hier kun je later bijvoorbeeld een foto, afbeelding
-           of samenwerkingsformulier plaatsen -->
-
     </div>
+
   </div>
 </section>
+
+<script>
+  function initPartnerCarousel() {
+    const track = document.querySelector<HTMLElement>('#partner-track');
+    const prev = document.querySelector<HTMLButtonElement>('#partner-prev');
+    const next = document.querySelector<HTMLButtonElement>('#partner-next');
+    const dotsContainer = document.querySelector<HTMLElement>('#partner-dots');
+
+    if (!track || !prev || !next || !dotsContainer) return;
+
+    const items = Array.from(
+      track.querySelectorAll<HTMLElement>('.partner-item')
+    );
+
+    if (!items.length) return;
+
+    // Aantal logo's per stap
+    const STEP = 4;
+
+    const getItemWidth = () => {
+      const item = items[0];
+
+      if (!item) return 0;
+
+      const styles = window.getComputedStyle(track);
+
+      const gap = parseFloat(
+        styles.columnGap || styles.gap || '0'
+      );
+
+      return item.offsetWidth + gap;
+    };
+
+    const getMaxIndex = () => {
+      const itemWidth = getItemWidth();
+
+      if (!itemWidth) return 0;
+
+      return Math.max(
+        0,
+        Math.round(
+          (track.scrollWidth - track.clientWidth) / itemWidth
+        )
+      );
+    };
+
+    const getIndex = () => {
+      const itemWidth = getItemWidth();
+
+      if (!itemWidth) return 0;
+
+      return Math.round(
+        track.scrollLeft / itemWidth
+      );
+    };
+
+    const scrollToIndex = (i: number) => {
+      const maxIndex = getMaxIndex();
+
+      const index = Math.min(
+        Math.max(i, 0),
+        maxIndex
+      );
+
+      track.scrollTo({
+        left: index * getItemWidth(),
+        behavior: 'smooth'
+      });
+    };
+
+    const createDots = () => {
+      dotsContainer.innerHTML = '';
+
+      const maxIndex = getMaxIndex();
+
+      // Eén dot per 4 logo's
+      const dotCount =
+        Math.ceil(maxIndex / STEP) + 1;
+
+      for (let i = 0; i < dotCount; i++) {
+
+        const dot = document.createElement('button');
+
+        dot.type = 'button';
+
+        dot.setAttribute(
+          'aria-label',
+          `Ga naar partner groep ${i + 1}`
+        );
+
+        dot.className =
+          'partner-dot h-2 w-2 rounded-full transition-all duration-300';
+
+        dot.addEventListener('click', () => {
+
+          scrollToIndex(i * STEP);
+
+          setTimeout(
+            updateDots,
+            250
+          );
+
+        });
+
+        dotsContainer.appendChild(dot);
+      }
+
+      updateDots();
+    };
+
+    const updateDots = () => {
+
+      const dots =
+        dotsContainer.querySelectorAll<HTMLButtonElement>(
+          '.partner-dot'
+        );
+
+      const currentIndex = getIndex();
+
+      const activeDot = Math.min(
+        Math.round(currentIndex / STEP),
+        dots.length - 1
+      );
+
+      dots.forEach((dot, i) => {
+
+        if (i === activeDot) {
+
+          dot.classList.remove(
+            'bg-gray-300'
+          );
+
+          dot.classList.add(
+            'bg-[#5CC2BF]',
+            'scale-125'
+          );
+
+        } else {
+
+          dot.classList.remove(
+            'bg-[#5CC2BF]',
+            'scale-125'
+          );
+
+          dot.classList.add(
+            'bg-gray-300'
+          );
+
+        }
+
+      });
+
+      prev.disabled = currentIndex <= 0;
+
+      next.disabled =
+        currentIndex >= getMaxIndex();
+    };
+
+    next.addEventListener('click', () => {
+
+      scrollToIndex(
+        Math.min(
+          getIndex() + STEP,
+          getMaxIndex()
+        )
+      );
+
+      setTimeout(
+        updateDots,
+        250
+      );
+
+    });
+
+    prev.addEventListener('click', () => {
+
+      scrollToIndex(
+        Math.max(
+          getIndex() - STEP,
+          0
+        )
+      );
+
+      setTimeout(
+        updateDots,
+        250
+      );
+
+    });
+
+    // Dots automatisch aanpassen tijdens swipen
+    track.addEventListener(
+      'scroll',
+      updateDots,
+      { passive: true }
+    );
+
+    // Opnieuw berekenen bij resize
+    window.addEventListener(
+      'resize',
+      () => {
+        createDots();
+      }
+    );
+
+    createDots();
+  }
+
+  if (document.readyState === 'loading') {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      initPartnerCarousel
+    );
+
+  } else {
+
+    initPartnerCarousel();
+
+  }
+</script>
+
+<style>
+  #partner-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  #partner-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+</style>

@@ -10,25 +10,25 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 }
 
 const logos = [
-  { src: '/images/Partners/logo-01.png', alt: 'Partner 1' },
-  { src: '/images/Partners/logo-02.png', alt: 'Partner 2' },
-  { src: '/images/Partners/logo-03.png', alt: 'Partner 3' },
-  { src: '/images/Partners/logo-04.png', alt: 'Partner 4' },
-  { src: '/images/Partners/logo-05.png', alt: 'Partner 5' },
-  { src: '/images/Partners/logo-06.png', alt: 'Partner 6' },
-  { src: '/images/Partners/logo-07.png', alt: 'Partner 7' },
-  { src: '/images/Partners/logo-08.png', alt: 'Partner 8' },
-  { src: '/images/Partners/logo-09.png', alt: 'Partner 9' },
-  { src: '/images/Partners/logo-10.png', alt: 'Partner 10' },
-  { src: '/images/Partners/logo-11.png', alt: 'Partner 11' },
-  { src: '/images/Partners/logo-12.png', alt: 'Partner 12' },
-  { src: '/images/Partners/logo-13.png', alt: 'Partner 13' },
-  { src: '/images/Partners/logo-14.png', alt: 'Partner 14' },
-  { src: '/images/Partners/logo-15.png', alt: 'Partner 15' },
-  { src: '/images/Partners/logo-16.png', alt: 'Partner 16' },
-  { src: '/images/Partners/logo-17.png', alt: 'Partner 17' },
-  { src: '/images/Partners/logo-18.png', alt: 'Partner 18' },
-  { src: '/images/Partners/logo-19.png', alt: 'Partner 19' },
+  { src: '/images/logo/Mojo.png', alt: 'Mojo' },
+  { src: '/images/logo/adventurerental.png', alt: 'Adventure Rentals' },
+   { src: '/images/logo/nzone.jfif', alt: 'NZone' },
+  { src: '/images/logo/bridgeclimb.png', alt: 'BridgeClimb' },
+     { src: '/images/logo/colorful.png', alt: 'Colorful' },
+  { src: '/images/logo/bungee.png', alt: 'Bungee' },
+  { src: '/images/logo/cooinda.jfif', alt: 'Cooinda' },
+  { src: '/images/logo/discovery.png', alt: 'Discovery' },
+  { src: '/images/logo/drifter.png', alt: 'Drifter' },
+  { src: '/images/logo/heliworks.png', alt: 'HeliWorks' },
+  { src: '/images/logo/kakadu.png', alt: 'Kakadu' },
+    { src: '/images/logo/nomads.png', alt: 'Nomads' },
+  { src: '/images/logo/kayak.jfif', alt: 'Kayak' },
+  { src: '/images/logo/lylo.jfif', alt: 'Lylo' },
+  { src: '/images/logo/milford.jfif', alt: 'Milford' },
+  { src: '/images/logo/puri.png', alt: 'Puri' },
+  { src: '/images/logo/utang.jfif', alt: 'Utang' },
+  { src: '/images/logo/watershed.png', alt: 'Watershed' },
+    { src: '/images/logo/byron.png', alt: 'Byron Bay' },
 ];
 ---
 
@@ -103,38 +103,39 @@ const logos = [
             {t('collaboration.previousTitle')}
           </h3>
 
-          <!-- LOGO VIEWPORT -->
-          <div class="relative">
+<!-- LOGO VIEWPORT -->
+<div class="relative">
 
-            <div
-              id="partner-track"
-              class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2"
-              style="scrollbar-width: none; -ms-overflow-style: none;"
-            >
+  <div
+    id="partner-track"
+    class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2"
+    style="scrollbar-width: none; -ms-overflow-style: none;"
+  >
 
-              {logos.map((logo) => (
-                <div
-                  class="partner-item min-w-[calc((100%-3rem)/4)] snap-start md:min-w-[calc((100%-4rem)/5)]"
-                >
+    {logos.map((logo) => (
+      <div
+        class="partner-item min-w-[calc((100%-3rem)/4)] snap-start md:min-w-[calc((100%-4rem)/5)]"
+      >
 
-                  <div
-                    class="flex h-28 w-full items-center justify-center rounded-2xl bg-[#F8F8F8] p-6"
-                  >
+        <div
+          class="flex h-28 w-full items-center justify-center bg-white md:h-32"
+        >
 
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      loading="lazy"
-                      draggable="false"
-                      class="max-h-14 w-auto max-w-[85%] select-none object-contain"
-                    />
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            loading="lazy"
+            draggable="false"
+            class="max-h-20 w-auto max-w-[95%] select-none object-contain md:max-h-24"
+          />
 
-                  </div>
+        </div>
 
-                </div>
-              ))}
+      </div>
+    ))}
 
-            </div>
+  </div>
+
 
             <!-- LEFT ARROW -->
             <button

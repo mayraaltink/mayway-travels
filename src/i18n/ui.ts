@@ -700,7 +700,7 @@ fiji_intro_cta: "Start planning your trip",
 'homeServices.subtitle': 'Over MAY WAY',
 'homeServices.title': 'Wat wij voor jou kunnen betekenen',
 'homeServices.desc':
-  'Jouw volgende avontuur begint hier. Met echte reiservaringen, persoonlijk advies en praktische begeleiding helpen we je om jouw droomreis werkelijkheid te maken.',
+  'Van creatieve content tot community building. We creëren momenten die verbinden, verhalen die blijven hangen en samenwerkingen die impact maken.',
 'homeServices.cta': 'Ontdek meer',
 
     // about

@@ -5,6 +5,7 @@ import AustraliaRoute from './AustraliaRoute.astro';
 import FaqAustralia from './FaqAustralia.astro';
 import WorkingHoliday from './WorkingHoliday.astro';
 import Reisdownunder from './Reisdownunder.astro';
+import BlogGrid from '../ui/BlogGrid.astro';
 import { ui, defaultLang } from '../../i18n/ui';
 
 // Get current language
@@ -31,9 +32,12 @@ function t(key: keyof typeof ui[typeof lang]) {
 >
   <!-- The carousel gets injected into the <slot /> of DestinationContent -->
    <Reisdownunder />
+   <HotspotCarousel />
+
+<BlogGrid lang={lang} />
          <AustraliaRoute />
   
-  <HotspotCarousel />
+  
   <WorkingHoliday />
     <FaqAustralia />
 </DestinationContent>

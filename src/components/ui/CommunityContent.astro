@@ -61,19 +61,29 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
         <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center sm:items-center">
 
           <!-- PRIMARY -->
-          <a
-            href="#blogs"
-            class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a]"
-          >
-            {t('community.ctaBlogs')}
+         
+<a
+  href={`/${lang}/destinations`}
+  class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a]"
+>
+  {t('community.ctaBlogs')}
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </a>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M5 12h14"></path>
+    <path d="m12 5 7 7-7 7"></path>
+  </svg>
+</a>
+
 
           <!-- SECONDARY -->
           <a
@@ -95,6 +105,55 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       </div>
     </div>
   </section>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-28 pb-16 md:pb-24">
+      <div class="pointer-events-none absolute -right-24 top-24 h-96 w-96 rounded-full bg-[#4ED2CE]/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-[#1CABB0]/10 blur-3xl"></div>
+      
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+        <div>
+         
+          <h1 class="text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
+            <span class="font-libre">{t('travelAdvice.hero.title1')}</span> 
+          </h1>
+        <div class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
+
+  <p class="font-semibold text-gray-900">
+    {t('eguides.hero.descBold')}
+  </p>
+
+  <p class="mt-6">
+    {t('eguides.hero.descNormal')}
+  </p>
+
+</div>
+      
+          
+        </div>
+        
+        <div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
+          <div class="absolute -right-2 -top-3 z-10 rotate-2 rounded-full bg-[#E6F6F6] px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#1CABB0] shadow-lg">
+            {t('travelAdvice.hero.badge2')}
+          </div>
+          <div class="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#E8FAF9] to-[#d4f3f1] p-4 shadow-2xl ring-1 ring-black/5">
+            <div class="overflow-hidden rounded-2xl shadow-inner">
+              <!-- Note: Change this src to the correct image in your public/images folder! -->
+              <img src="/images/pexels-1320686.jpeg" alt="Interactive guide Australia" class="aspect-[4/3] w-full object-cover">
+            </div>
+            <div class="absolute bottom-5 left-5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
+              <p class="text-xs font-semibold uppercase tracking-wide text-[#1CABB0]">{t('travelAdvice.hero.included')}</p>
+              <p class="text-lg font-bold text-gray-900">{t('travelAdvice.hero.modules')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+ 
+<section id="reisplan" class="py-24 bg-[#FFFDFA]">
+  <div class="max-w-6xl mx-auto px-6">
 
   
   <!-- DESTINATIONS -->

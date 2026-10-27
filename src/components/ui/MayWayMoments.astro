@@ -1,3 +1,4 @@
+
 ---
 const moments = Array.from({ length: 15 }, (_, i) => ({
   image: `/images/community/moment${(i % 5) + 1}.jpg`,
@@ -8,7 +9,7 @@ const moments = Array.from({ length: 15 }, (_, i) => ({
 }));
 ---
 
-<section class="py-20 bg-white">
+<section class="py-20 bg-[#FFFDFA] overflow-hidden">
 
   <!-- HEADER -->
   <div class="max-w-3xl mx-auto text-center px-6 mb-12">
@@ -17,60 +18,68 @@ const moments = Array.from({ length: 15 }, (_, i) => ({
       Community
     </p>
 
-    <h2 class="text-4xl font-semibold mb-4">
+    <h2 class="text-4xl font-semibold mb-4 text-gray-900">
       MAY WAY Moments
     </h2>
 
-    <p class="text-gray-600 max-w-xl mx-auto">
+    <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">
       Deel jouw MAY WAY momenten en laat je inspireren door verhalen, bestemmingen en herinneringen van reizigers.
     </p>
 
   </div>
 
-  <!-- SLIDER -->
+  <!-- FULL-WIDTH SWIPE SLIDER -->
   <div
-    class="flex gap-6 overflow-x-auto px-[12vw] pb-4 snap-x snap-mandatory scrollbar-hide"
+    class="w-full overflow-x-auto overflow-y-hidden pl-6 md:pl-10 pr-6 pb-6 snap-x snap-mandatory scrollbar-hide"
   >
+    <div class="flex gap-5 md:gap-6 w-max">
 
-    {moments.map((moment) => (
+      {moments.map((moment) => (
+        <article
+          class="group flex-shrink-0 w-[75vw] sm:w-[42vw] lg:w-[calc((100vw-10rem)/4)] lg:max-w-[340px] snap-start rounded-3xl overflow-hidden bg-white shadow-md hover:shadow-xl transition duration-300"
+        >
 
-      <button
-        class="group flex-shrink-0 w-[280px] md:w-[320px] snap-center rounded-3xl overflow-hidden shadow-lg bg-white hover:-translate-y-2 transition"
-      >
+          <div class="h-64 md:h-72 overflow-hidden">
+            <img
+              src={moment.image}
+              alt={moment.title}
+              loading="lazy"
+              class="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+            />
+          </div>
 
-        <img
-          src={moment.image}
-          alt={moment.title}
-          class="h-80 w-full object-cover group-hover:scale-105 transition duration-500"
-        />
+          <div class="p-5 md:p-6 text-left">
+            <h3 class="text-lg font-semibold mb-2 text-gray-900">
+              {moment.title}
+            </h3>
 
-        <div class="p-6 text-left">
+            <p class="text-gray-500 text-sm leading-relaxed">
+              {moment.caption}
+            </p>
+          </div>
 
-          <h3 class="text-xl font-semibold mb-2">
-            {moment.title}
-          </h3>
+        </article>
+      ))}
 
-          <p class="text-gray-500 text-sm">
-            {moment.caption}
-          </p>
-
-        </div>
-
-      </button>
-
-    ))}
-
+    </div>
   </div>
+
+  <!-- SWIPE INDICATOR -->
+  <p class="text-center text-sm text-gray-500 mt-2">
+    <span class="text-[#1CABB0]">←</span>
+    &nbsp; Swipe om meer momenten te ontdekken &nbsp;
+    <span class="text-[#1CABB0]">→</span>
+  </p>
 
 </section>
 
 <style>
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 </style>

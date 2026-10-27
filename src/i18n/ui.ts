@@ -10,7 +10,7 @@ export const ui = {
     // homepage and menu /////////////////////////////////////////////
    'nav.home': 'Home',
    'nav.destinations': 'Destinations',
-   'nav.traveladvice': 'Travel Advice',
+   'nav.traveladvice': 'For brands',
    'nav.community': 'Community',
    'nav.about': 'About Me',
    'nav.collaborate': 'Collaborate',
@@ -115,14 +115,12 @@ export const ui = {
 
   'travelAdvice.title': 'Travel Advice | MAYWAY Travels',
 
-'travelAdvice.hero.title1': 'Personalised Travel Plan',
+'travelAdvice.hero.title1': 'What will be your next adventure?',
 
 'travelAdvice.hero.desc': 'Would you like to stay in control of booking your trip while still benefiting from our knowledge and expertise? Then a personalized travel plan is exactly what you need! After a personal meeting where we dive into your wishes, interests, and budget, we’ll craft a tailor-made travel plan just for you. Imagine having a unique itinerary packed with handpicked accommodations, unforgettable sights, exciting activities, and insider tips. All designed to make your trip truly one-of-a-kind. We give you the plan, and you book at your own pace.',
 'travelAdvice.hero.buybtn': 'Start your travel planning',
 'travelAdvice.hero.previewbtn': 'Learn more',
-'travelAdvice.hero.badge2': 'Digital product',
-'travelAdvice.hero.included': 'Included',
-'travelAdvice.hero.modules': '8 modules',
+
 
 'travelAdvice.features.title': 'What’s included in your personalised travel plan?',
 'travelAdvice.features.desc': 'Everything you need to start your Australia adventure fully prepared and with confidence.',
@@ -157,8 +155,7 @@ export const ui = {
 
    'travelAdvice.cta.badge': 'Your adventure begins here',
 'travelAdvice.cta.title': 'Ready to start?',
-'travelAdvice.cta.desc': 'Download the guide immediately after purchase and start planning today — at your own pace, with my maps and routes in your pocket.',
-'travelAdvice.cta.btn': 'Start your adventure',
+'travelAdvice.cta.btn': 'Contact me',
 
 
 
@@ -667,8 +664,8 @@ fiji_intro_cta: "Start planning your trip",
   nl: {
     // homepage and menu /////////////////////////////////////////////
   'nav.home': 'Home',
-'nav.destinations': 'Bestemmingen',
-'nav.traveladvice': 'Reisadvies',
+
+'nav.traveladvice': 'For brands',
 'nav.community': 'Community',
 'nav.about': 'Over mij',
 'nav.collaborate': 'Samenwerken',
@@ -680,7 +677,7 @@ fiji_intro_cta: "Start planning your trip",
 
     'hero.title1': 'Jouw avontuur',
 'hero.title2': 'YOUR WAY.',
-'hero.subtitle': 'Persoonlijke reisroutes & hidden gems',
+'hero.subtitle': 'Beleven. Creëren. Inspireren.',
 
 
     'oceania.title.before': 'Ontdek de diversiteit van',
@@ -769,19 +766,21 @@ fiji_intro_cta: "Start planning your trip",
 
     'travelAdvice.hero.subtitle': 'Persoonlijk reisplan op maat',
 'travelAdvice.hero.titleBottom': 'Ontdekken',
-'travelAdvice.hero.title1': 'Jouw reis op maat',
+'travelAdvice.hero.title1': 'Stap uit je comfortzone',
+
 
 'travelAdvice.title': 'E-gidsen | MAY WAY Travels',
 
-'travelAdvice.hero.desc': `Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips? 
+'travelAdvice.hero.desc': `Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.
 
-Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed voorbereid op avontuur. Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.`,
+Ik heb zelf ervaren hoeveel er kan veranderen wanneer je de sprong waagt. Door de wereld te ontdekken, heb ik geleerd dat je niet alles van tevoren hoeft te weten om ergens aan te beginnen. Juist de onverwachte momenten, bijzondere ontmoetingen en uitdagingen maken een avontuur onvergetelijk.
+
+Met MAY WAY wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verleggen en te kiezen voor wat je écht wilt. Of dat nu een groot avontuur ver weg is of een kleine uitdaging dichter bij huis.`,
 
 'travelAdvice.hero.buybtn': 'Plan jouw reis op maat',
 'travelAdvice.hero.previewbtn': 'Ontdek meer',
-'travelAdvice.hero.badge2': 'Digitaal product',
-'travelAdvice.hero.included': 'Inclusief',
-'travelAdvice.hero.modules': 'Al mijn hidden gems',
+
+
 
 'travelAdvice.features.title': 'Wat krijg je bij jouw persoonlijke reisplan?',
 'travelAdvice.features.desc': 'Alles wat je nodig hebt om goed voorbereid en vol vertrouwen aan jouw Australië-avontuur te beginnen.',
@@ -817,9 +816,8 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'eguides.mod8.desc': 'Links, downloads en tools die ik zelf gebruik.',
 
    'travelAdvice.cta.badge': 'Jouw avontuur begint hier',
-'travelAdvice.cta.title': 'Klaar om te beginnen?',
-'travelAdvice.cta.desc': 'Download de gids direct na je aankoop en start vandaag nog met plannen — op jouw tempo, met mijn kaarten en routes in je zak.',
-'travelAdvice.cta.btn': 'Start jouw avontuur',
+'travelAdvice.cta.title': 'Laten we dit avontuur aangaan',
+'travelAdvice.cta.btn': 'Neem contact op',
   
  // STEPS
     'travelAdvice.steps.title': 'Jouw reisplan in 5 stappen',
@@ -875,15 +873,12 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
 
 // community
     'community.preheader': 'Community',
-    'community.titlePart1': 'Laat je',
-    'community.titleHighlight': 'inspireren',
-    'community.subtitle': 'Ontdek blogs, webinars, events en verhalen uit de community.',
-    'community.ctaBlogs': 'Bekijk blogs',
-    'community.ctaEvents': 'Events & webinars',
+    'community.titlePart1': 'Wat wordt jouw',
+    'community.titleHighlight': 'volgende avontuur?',
+    'community.ctaBlogs': 'Bestemmingen',
+    'community.ctaEvents': 'MAY WAY Moments',
     'community.navBlogs': 'Blogs',
-    'community.navWebinars': 'Webinars & events',
-    'community.navSocials': 'Socials',
-    'community.navCommunity': 'Mijn community',
+   
   
 ///hotspots 
 'hotspots_title_line1': 'Ontdek Hotspots',
@@ -1265,9 +1260,9 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'home.about.cta': "Leer mij beter kennen",
 
 
-'eguides.hero.descBold': 'Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips?',
+'eguides.hero.descBold': ' Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.',
 
-'eguides.hero.descNormal': 'Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.',
+'eguides.hero.descNormal': 'Door de wereld te ontdekken, heb ik geleerd dat je juist niet alles van tevoren hoeft te weten om ergens aan te beginnen. Ik wil je inspireren om nieuwsgierig te blijven, nieuwe dingen te proberen, bijzondere momenten te creëren en je grenzen te verleggen.',
   },
 
 

@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import headerImg from "../../assets/Header.avif";
+import WorkingHoliday from '../../components/destinations/WorkingHoliday.astro';
 import { ui, defaultLang } from '../../i18n/ui';
-import BlogGrid from "./BlogGrid.astro";
+
+
 
 import MayWayMoments from "./MayWayMoments.astro";
 
@@ -258,8 +260,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
   </section>
  
 
-  <BlogGrid />
-  <MayWayMoments />
 
+  <MayWayMoments />
+  <WorkingHoliday />
 
 </BaseLayout>

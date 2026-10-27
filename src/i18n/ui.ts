@@ -1255,8 +1255,8 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 
 // DUTCH
 'home.about.title': "Hi, Ik ben Mayra!",
-'home.about.p1': "Vanaf jongs af aan ben ik gefascineerd door reizen. Het uitstippelen van unieke routes, het ontdekken van verborgen plekken en het opzoeken van ervaringen buiten de gebaande paden.",
-'home.about.p2': "Met een nieuwsgierige blik op de wereld ben ik altijd op zoek naar échte lokale belevingen. Na ruim 2,5 jaar wonen in Australië heb ik mogen mogen ervaren wat avontuur bijzonder maakt: onverwachte ontmoetingen, authentieke plekken en het durven stappen buiten je comfortzone.",
+'home.about.p1': "Vanaf jongs af aan leg ik bijzondere ervaringen vast. Met mijn camera ontdek ik verborgen plekken en vang ik momenten die mensen samenbrengen en inspireren. ",
+'home.about.p2': "Mijn creativiteit vertaal ik naar authentieke content die het gevoel achter een ervaring vastlegt en jouw merk tot leven brengt. Na ruim 2,5 jaar in Australië te hebben gewoond, neem ik mijn avontuurlijke blik mee in mijn creatieve werk. ",
 'home.about.cta': "Leer mij beter kennen",
 
 

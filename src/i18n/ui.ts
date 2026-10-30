@@ -489,7 +489,7 @@ faq_sim_a_f:
 'destinations.fiji.name': 'Fiji',
 'destinations.fiji.desc': 'Paradise islands, crystal-clear waters and a relaxed South Pacific atmosphere.',
     
-    'destinations.btn': 'Plan your trip!',
+    'destinations.btn': 'Go to destination',
 
 
 
@@ -971,7 +971,7 @@ Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed 
     'destinations.fiji.name': 'Fiji', // Fiji
     'destinations.fiji.desc': 'Ervaar tropische eilanden, eeuwenoude tempels en een rijke, warme cultuur.',
     
-    'destinations.btn': 'Plan jouw reis!',
+    'destinations.btn': 'Naar bestemmming',
 
 
     // buttons

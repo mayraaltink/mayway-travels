@@ -1,0 +1,62 @@
+---
+// src/components/ui/ServiceCards.astro
+// Fotokaarten van de drie services; elke kaart linkt naar het blok op de For Brands-pagina
+import { ui, defaultLang } from '../../i18n/ui';
+
+const lang = Astro.currentLocale || defaultLang;
+
+function t(key: string) {
+  const dict = ui[lang as keyof typeof ui] as Record<string, string>;
+  return dict[key] ?? key;
+}
+
+// Foto's kun je hier vervangen
+const services = [
+  { num: 1, image: '/images/australia/surf-boys.jpg' },
+  { num: 2, image: '/images/about/reis-specialist.jpg' },
+  { num: 3, image: '/images/about/Mayra-foto.jpg' },
+].map((s) => ({
+  ...s,
+  href: `/${lang}/for-brands#service-${s.num}`,
+  title: t(`forBrands.services.${s.num}.title`),
+  desc: t(`forBrands.services.${s.num}.desc`),
+}));
+---
+
+<section class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-4 md:px-6">
+
+    <h2 class="text-center text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
+      <span class="block">{t('forBrands.services.title1')}</span>
+      <span class="block">{t('forBrands.services.title2')}</span>
+    </h2>
+
+    <!-- Titel in beeld, tekst + knop verschijnen bij hover (op mobiel altijd zichtbaar) -->
+    <div class="mt-12 grid gap-4 md:mt-16 md:grid-cols-3 md:gap-3">
+      {services.map((service) => (
+        <a href={service.href} class="group relative block aspect-[5/6] overflow-hidden rounded-[2rem]">
+          <img
+            src={service.image}
+            alt=""
+            loading="lazy"
+            class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gray-900/45 transition duration-500 md:bg-gray-900/30 md:group-hover:bg-gray-900/60"></div>
+
+          <div class="relative flex h-full flex-col items-center justify-center px-6 text-center text-white md:px-8">
+            <h3 class="text-2xl font-semibold leading-tight tracking-tight md:text-3xl">{service.title}</h3>
+
+            <div class="grid transition-all duration-500 md:grid-rows-[0fr] md:opacity-0 md:group-hover:grid-rows-[1fr] md:group-hover:opacity-100 md:group-focus-visible:grid-rows-[1fr] md:group-focus-visible:opacity-100">
+              <div class="overflow-hidden">
+                <p class="mt-4 text-sm leading-relaxed text-white/90 md:text-base">{service.desc}</p>
+                <span class="mt-6 inline-flex rounded-full bg-[#1CABB0] px-7 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15939a]">
+                  {t('forBrands.services.more')}
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

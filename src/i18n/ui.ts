@@ -618,7 +618,7 @@ fiji_intro_cta: "Start planning your trip",
     // homepage and menu /////////////////////////////////////////////
   'nav.home': 'Home',
 
-'nav.traveladvice': 'For brands',
+'nav.forbrands': 'For brands',
 'nav.community': 'Community',
 'nav.about': 'Over mij',
 'nav.collaborate': 'Samenwerken',

@@ -25,28 +25,13 @@ function getSwitchLocaleUrl(targetLang: string) {
 }
 
 
-type NavItem =
-  | {
-      href: string;
-      text: string;
-      type: 'link';
-    }
-  | {
-      text: string;
-      type: 'dropdown';
-      children: { href: string; text: string }[];
-    };
-
-const navLinks: NavItem[] = [
-  { href: '/', text: t('nav.home'), type: 'link' },
-
-
-   { href: '/for-brands', text: 'For Brands' },
-
-
-  { href: '/community', text: t('nav.community'), type: 'link' },
-  { href: '/about', text: t('nav.about'), type: 'link' },
-  { href: '/contact', text: t('nav.contact'), type: 'link' },
+// Same links on desktop and mobile
+const navLinks = [
+  { href: '/', text: t('nav.home') },
+  { href: '/for-brands', text: t('nav.forbrands') },
+  { href: '/community', text: t('nav.community') },
+  { href: '/about', text: t('nav.about') },
+  { href: '/contact', text: t('nav.contact') },
 ];
 
 const path = Astro.url.pathname;
@@ -133,7 +118,7 @@ const isHomePage = path === '/' || path === '/nl' || path === '/en';
 </header>
 
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Main Menu" class="fixed inset-0 z-[100] md:hidden transition-[visibility] duration-500 pointer-events-none invisible delay-300">
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Main Menu" class="fixed inset-0 z-[100] min-[900px]:hidden transition-[visibility] duration-500 pointer-events-none invisible delay-300">
   <!-- This is the container that slides up -->
   <div id="mobile-menu-container" class="absolute inset-0 flex flex-col bg-gradient-to-b from-[#1CABB0] via-[#1ba9ae] to-[#4ED2CE] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-full">
     <div class="flex items-center justify-between px-6 pt-6 pb-2">
@@ -144,27 +129,16 @@ const isHomePage = path === '/' || path === '/nl' || path === '/en';
     </div>
     <!-- Mobile Navigation Links with staggered animation classes -->
     <div class="flex flex-1 flex-col px-8 pb-10">
-        
-        <!-- Bottom-right language switcher -->
-<div class="flex justify-end mt-auto">
-  <div class="flex gap-2">
-    <a href={getSwitchLocaleUrl('en')} class:list={[
-      'px-4 py-2 rounded-full text-sm transition-all',
-      lang === 'en' ? 'bg-white text-[#1CABB0] font-semibold' : 'bg-white/10 text-white/80'
-    ]}>
-      EN
-    </a>
-
-    <a href={getSwitchLocaleUrl('nl')} class:list={[
-      'px-4 py-2 rounded-full text-sm transition-all',
-      lang === 'nl' ? 'bg-white text-[#1CABB0] font-semibold' : 'bg-white/10 text-white/80'
-    ]}>
-      NL
-    </a>
-  </div>
-</div>
-
-
+        <nav class="flex flex-col gap-6 pt-8">
+          {navLinks.map((item) => (
+            <a
+              href={getRelativeLocaleUrl(item.href)}
+              class="mobile-nav-link font-neucha text-4xl text-white transition-all duration-500 translate-x-8 opacity-0 hover:text-white/70"
+            >
+              {item.text}
+            </a>
+          ))}
+        </nav>
 
         <!-- Bottom-right language switcher -->
         <div class="flex justify-end mt-auto">

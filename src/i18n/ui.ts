@@ -111,33 +111,60 @@ export const ui = {
 
 
     ///for brands
-    'forBrands.hero.subtitle': 'Tailor-made travel plan',
-'forBrands.hero.titleTop': 'Australia',
-'forBrands.hero.titleBottom': 'Discovery',
+'forBrands.title': 'For Brands | MAY WAY Socials',
 
-  'forBrands.title': 'Travel Advice | MAYWAY Travels',
+'forBrands.hero.eyebrow': 'Content · Social media · Creator partnerships',
+'forBrands.hero.title1': 'MAY WAY',
+'forBrands.hero.title2': 'Socials',
+'forBrands.hero.line1': 'Together, we bring your brand to life.',
+'forBrands.hero.line2': 'With authentic content, strong socials and creator partnerships that truly resonate with a travel-loving audience.',
+'forBrands.hero.ctaPrimary': 'Book an intro call',
+'forBrands.hero.ctaSecondary': 'Explore services',
+'forBrands.hero.location': 'Australia · Sydney',
 
-'forBrands.hero.title1': 'What will be your next adventure?',
+'forBrands.nav.services': 'Services',
+'forBrands.nav.creator': 'My socials',
+'forBrands.nav.partners': 'Partners',
+'forBrands.nav.contact': 'Contact',
 
-'forBrands.hero.buybtn': 'Start your travel planning',
-'forBrands.hero.previewbtn': 'Learn more',
+'forBrands.services.eyebrow': 'What we do',
+'forBrands.services.title': 'Three ways to work together',
+'forBrands.services.intro': 'From a single content day to a long-term partnership: choose what fits your brand, or combine them.',
+'forBrands.services.1.title': 'Content & brand experiences',
+'forBrands.services.1.desc': 'From content days to unique brand experiences. I capture experiences, events and stories in authentic short-form videos that bring your brand experience to life.',
+'forBrands.services.1.tags': 'Content days|Events|Short-form video',
+'forBrands.services.2.title': 'Social media management',
+'forBrands.services.2.desc': 'From strategy and content planning to community management. I help brands strengthen their social media channels with creative content, a recognisable look and an engaged online community.',
+'forBrands.services.2.tags': 'Strategy|Content planning|Community management',
+'forBrands.services.3.title': 'Creator partnerships',
+'forBrands.services.3.desc': 'Collaborations through my own Instagram and TikTok, creative campaigns and long-term brand partnerships. Together we put your brand in the spotlight for my community in an authentic way.',
+'forBrands.services.3.tags': 'Instagram|TikTok|Campaigns',
+'forBrands.services.3.more': 'More about my socials',
 
+'forBrands.creator.eyebrow': '03 · Creator partnerships',
+'forBrands.creator.title': 'Your brand in the spotlight, the authentic way',
+'forBrands.creator.p1': 'The most beautiful travel stories are not created alone. That is why MAY WAY collaborates with destinations, (travel) brands and hospitality companies that perfectly align with our adventurous audience.',
+'forBrands.creator.p2': 'Every month we reach thousands of adventurers across the Netherlands and Belgium with our adventurous posts. We also share our experiences with enthusiasm with more than 18,500 engaged followers on Instagram via @maywaytravels and @mayraaltink.',
+'forBrands.creator.p3': 'From creative campaigns and UGC content to long-term partnerships: we love to think along on concept, strategy and execution to create real impact with a travel-loving audience.',
+'forBrands.creator.stat1.value': '18,500+',
+'forBrands.creator.stat1.label': 'engaged followers on Instagram',
+'forBrands.creator.stat2.value': 'NL & BE',
+'forBrands.creator.stat2.label': 'thousands of adventurers reached every month',
+'forBrands.creator.stat3.value': '4',
+'forBrands.creator.stat3.label': 'channels on Instagram & TikTok',
+'forBrands.creator.mail1': 'Got an idea or want to explore the possibilities? Send an email to',
+'forBrands.creator.mail2': 'We look forward to an inspiring collaboration.',
 
-'forBrands.features.title': 'What’s included in your personalised travel plan?',
-'forBrands.features.desc': 'Everything you need to start your Australia adventure fully prepared and with confidence.',
+'forBrands.socials.title': 'Follow along',
+'forBrands.socials.maywaytravels': 'Travel inspiration & adventures',
+'forBrands.socials.mayraaltink': 'My personal account',
+'forBrands.socials.maywaysocials': 'Content & social media for brands',
+'forBrands.socials.tiktok': 'Short-form travel videos',
 
-'forBrands.features.1': 'Personal video call to fully tailor your travel plan',
-'forBrands.features.2': 'A day-by-day overview of your personalised travel itinerary',
-'forBrands.features.3': 'Local tips, must-see hotspots and hidden gems per destination, including personal favourites',
-'forBrands.features.4': 'Two carefully selected accommodation options per location',
-'forBrands.features.5': 'Best transport options including advice on flights, buses and other routes',
-'forBrands.features.6': 'Practical preparation tips, from visas to useful apps',
-'forBrands.features.7': 'E-guide with 8 educational modules on living, working and travelling in Australia',
-    
-
-   'forBrands.cta.badge': 'Your adventure begins here',
-'forBrands.cta.title': 'Ready to start?',
-'forBrands.cta.btn': 'Contact me',
+'forBrands.cta.badge': 'Ready to get started?',
+'forBrands.cta.title': "Let's create something beautiful together",
+'forBrands.cta.text': "Tell me about your brand and your ideas, and I'd love to think along with you.",
+'forBrands.cta.btn': 'Get in touch',
 
 
 
@@ -584,7 +611,7 @@ fiji_intro_cta: "Start planning your trip",
 
 
   /////collab
-'collaboration.previousTitle': 'Eerdere samenwerkingen',
+'collaboration.previousTitle': 'Previous collaborations',
 
      //////////footer
     
@@ -717,12 +744,57 @@ fiji_intro_cta: "Start planning your trip",
 
     //for brands ///////////////////////////////////////////////////////////
 
-    'forBrands.hero.subtitle': 'Persoonlijk reisplan op maat',
-'forBrands.hero.titleBottom': 'Ontdekken',
-'forBrands.hero.title1': 'Stap uit je comfortzone',
+'forBrands.title': 'For Brands | MAY WAY Socials',
 
+'forBrands.hero.eyebrow': 'Content · Social media · Creator partnerships',
+'forBrands.hero.title1': 'MAY WAY',
+'forBrands.hero.title2': 'Socials',
+'forBrands.hero.line1': 'Samen brengen we jouw merk tot leven.',
+'forBrands.hero.line2': 'Met authentieke content, sterke socials en creator-samenwerkingen die écht binnenkomen bij een reislustig publiek.',
+'forBrands.hero.ctaPrimary': 'Plan een kennismaking',
+'forBrands.hero.ctaSecondary': 'Bekijk de services',
+'forBrands.hero.location': 'Australië · Sydney',
 
-'forBrands.title': 'E-gidsen | MAY WAY Travels',
+'forBrands.nav.services': 'Services',
+'forBrands.nav.creator': 'Mijn socials',
+'forBrands.nav.partners': 'Partners',
+'forBrands.nav.contact': 'Contact',
+
+'forBrands.services.eyebrow': 'Wat we doen',
+'forBrands.services.title': 'Drie manieren om samen te werken',
+'forBrands.services.intro': 'Van één contentdag tot een langdurig partnership: kies wat bij jouw merk past, of combineer ze.',
+'forBrands.services.1.title': 'Content & brand experiences',
+'forBrands.services.1.desc': "Van contentdagen tot bijzondere merkbelevingen. Ik leg ervaringen, events en verhalen vast in authentieke short-form video's die de beleving van jouw merk tot leven brengen.",
+'forBrands.services.1.tags': 'Contentdagen|Events|Short-form video',
+'forBrands.services.2.title': 'Social media management',
+'forBrands.services.2.desc': 'Van strategie en contentplanning tot community management. Ik help merken hun socialmediakanalen versterken met creatieve content, een herkenbare uitstraling en een betrokken online community.',
+'forBrands.services.2.tags': 'Strategie|Contentplanning|Community management',
+'forBrands.services.3.title': 'Creator partnerships',
+'forBrands.services.3.desc': 'Samenwerkingen via mijn eigen Instagram en TikTok, creatieve campagnes en langdurige merkpartnerschappen. Samen brengen we jouw merk op een authentieke manier onder de aandacht van mijn community.',
+'forBrands.services.3.tags': 'Instagram|TikTok|Campagnes',
+'forBrands.services.3.more': 'Meer over mijn socials',
+
+'forBrands.creator.eyebrow': '03 · Creator partnerships',
+'forBrands.creator.title': 'Jouw merk authentiek onder de aandacht',
+'forBrands.creator.p1': 'De mooiste reisverhalen ontstaan niet alleen. Daarom werkt MAY WAY samen met bestemmingen, (reis)merken en hospitalitybedrijven die perfect aansluiten bij onze avontuurlijke doelgroep.',
+'forBrands.creator.p2': 'Wij bereiken maandelijks duizenden avonturiers in Nederland en België met onze avontuurlijke posts. Ook delen wij onze ervaringen vol enthousiasme met ruim 18.500 betrokken volgers op Instagram via @maywaytravels en @mayraaltink.',
+'forBrands.creator.p3': 'Van creatieve campagnes en UGC-content tot langdurige partnerships: wij denken graag mee over concept, strategie en uitvoering om samen impact te maken bij een reislustig publiek.',
+'forBrands.creator.stat1.value': '18.500+',
+'forBrands.creator.stat1.label': 'betrokken volgers op Instagram',
+'forBrands.creator.stat2.value': 'NL & BE',
+'forBrands.creator.stat2.label': 'maandelijks duizenden avonturiers bereikt',
+'forBrands.creator.stat3.value': '4',
+'forBrands.creator.stat3.label': 'kanalen op Instagram & TikTok',
+'forBrands.creator.mail1': 'Heb je een leuk idee of wil je sparren over de mogelijkheden? Stuur gerust een mailtje naar',
+'forBrands.creator.mail2': 'We kijken uit naar een inspirerende samenwerking.',
+
+'forBrands.socials.title': 'Volg mee',
+'forBrands.socials.maywaytravels': 'Reisinspiratie & avonturen',
+'forBrands.socials.mayraaltink': 'Mijn persoonlijke account',
+'forBrands.socials.maywaysocials': 'Content & social media voor merken',
+'forBrands.socials.tiktok': "Short-form reisvideo's",
+
+'forBrands.cta.text': 'Vertel me over je merk en je ideeën, dan denk ik graag met je mee.',
 
 'travelAdvice.hero.desc': `Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.
 
@@ -734,26 +806,8 @@ Met MAY WAY wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verle
 
 
 
-'forBrands.features.title': 'Wat krijg je bij jouw persoonlijke reisplan?',
-'forBrands.features.desc': 'Alles wat je nodig hebt om goed voorbereid en vol vertrouwen aan jouw Australië-avontuur te beginnen.',
-
-'forBrands.features.1': 'Persoonlijk videogesprek om jouw reis volledig op maat samen te stellen',
-'forBrands.features.2': 'Een dag-tot-dag overzicht van jouw persoonlijke reisroute',
-'forBrands.features.3': 'Lokale tips, must-see hotspots en hidden gems per bestemming, inclusief persoonlijke favorieten',
-'forBrands.features.4': 'Twee zorgvuldig geselecteerde accommodaties per locatie',
-'forBrands.features.5': 'De beste transportoptie inclusief advies voor vluchten, bussen en andere routes',
-'forBrands.features.6': 'Praktische voorbereidingstips, van visa tot handige apps',
-'forBrands.features.7': 'E-gids met 8 leerzame modules over wonen, werken en reizen in Australië',
-
-
-
-
-
-
-
-
-   'forBrands.cta.badge': 'Jouw avontuur begint hier',
-'forBrands.cta.title': 'Laten we dit avontuur aangaan',
+'forBrands.cta.badge': 'Klaar om te beginnen?',
+'forBrands.cta.title': 'Laten we samen iets moois maken',
 'forBrands.cta.btn': 'Neem contact op',
  
 

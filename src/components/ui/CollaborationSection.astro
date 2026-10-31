@@ -5,6 +5,9 @@ import { ui, defaultLang } from '../../i18n/ui';
 
 const lang = Astro.currentLocale || defaultLang;
 
+// showStory={false} toont alleen de logo-carousel (gebruikt op For Brands)
+const { showStory = true } = Astro.props;
+
 function t(key: keyof typeof ui[typeof defaultLang]) {
   return ui[lang as keyof typeof ui][key];
 }
@@ -32,7 +35,7 @@ const logos = [
 ];
 ---
 
-<section class="relative z-0 w-full bg-white pt-30 pb-12">
+<section class:list={["relative z-0 w-full bg-white pb-12", showStory ? "pt-30" : "pt-20"]}>
   <div class="mx-auto max-w-7xl px-6 lg:px-12">
 
     <div class="flex justify-center">
@@ -40,6 +43,7 @@ const logos = [
       <!-- CONTENT -->
       <div class="w-full self-start pt-0 lg:pt-2">
 
+        {showStory && (<>
         <!-- PREHEADER -->
         <p class="mb-3 text-center text-xs font-medium uppercase tracking-[0.25em] text-[#5CC2BF]">
           {t('collaboration.preheader')}
@@ -94,9 +98,10 @@ const logos = [
           </p>
 
         </div>
+        </>)}
 
         <!-- PARTNER LOGO CAROUSEL -->
-        <div class="relative mt-16 w-full">
+        <div class:list={["relative w-full", { "mt-16": showStory }]}>
 
           <!-- CAROUSEL TITLE -->
           <h3 class="mb-8 text-center text-3xl font-semibold tracking-[-0.02em] text-black md:text-4xl">

@@ -10,7 +10,7 @@ export const ui = {
     // homepage and menu /////////////////////////////////////////////
    'nav.home': 'Home',
    'nav.destinations': 'Destinations',
-   'nav.traveladvice': 'For brands',
+   'nav.forbrands': 'For brands',
    'nav.community': 'Community',
    'nav.about': 'About Me',
    'nav.collaborate': 'Collaborate',
@@ -110,81 +110,37 @@ export const ui = {
 
 
 
-    ///traveladvice 
-    'travelAdvice.hero.subtitle': 'Tailor-made travel plan',
-'travelAdvice.hero.titleTop': 'Australia',
-'travelAdvice.hero.titleBottom': 'Discovery',
+    ///for brands
+    'forBrands.hero.subtitle': 'Tailor-made travel plan',
+'forBrands.hero.titleTop': 'Australia',
+'forBrands.hero.titleBottom': 'Discovery',
 
-  'travelAdvice.title': 'Travel Advice | MAYWAY Travels',
+  'forBrands.title': 'Travel Advice | MAYWAY Travels',
 
-'travelAdvice.hero.title1': 'What will be your next adventure?',
+'forBrands.hero.title1': 'What will be your next adventure?',
 
-'travelAdvice.hero.buybtn': 'Start your travel planning',
-'travelAdvice.hero.previewbtn': 'Learn more',
+'forBrands.hero.buybtn': 'Start your travel planning',
+'forBrands.hero.previewbtn': 'Learn more',
 
 
-'travelAdvice.features.title': 'What’s included in your personalised travel plan?',
-'travelAdvice.features.desc': 'Everything you need to start your Australia adventure fully prepared and with confidence.',
+'forBrands.features.title': 'What’s included in your personalised travel plan?',
+'forBrands.features.desc': 'Everything you need to start your Australia adventure fully prepared and with confidence.',
 
-'travelAdvice.features.1': 'Personal video call to fully tailor your travel plan',
-'travelAdvice.features.2': 'A day-by-day overview of your personalised travel itinerary',
-'travelAdvice.features.3': 'Local tips, must-see hotspots and hidden gems per destination, including personal favourites',
-'travelAdvice.features.4': 'Two carefully selected accommodation options per location',
-'travelAdvice.features.5': 'Best transport options including advice on flights, buses and other routes',
-'travelAdvice.features.6': 'Practical preparation tips, from visas to useful apps',
-'travelAdvice.features.7': 'E-guide with 8 educational modules on living, working and travelling in Australia',
+'forBrands.features.1': 'Personal video call to fully tailor your travel plan',
+'forBrands.features.2': 'A day-by-day overview of your personalised travel itinerary',
+'forBrands.features.3': 'Local tips, must-see hotspots and hidden gems per destination, including personal favourites',
+'forBrands.features.4': 'Two carefully selected accommodation options per location',
+'forBrands.features.5': 'Best transport options including advice on flights, buses and other routes',
+'forBrands.features.6': 'Practical preparation tips, from visas to useful apps',
+'forBrands.features.7': 'E-guide with 8 educational modules on living, working and travelling in Australia',
     
-    'eguides.modules.badge': 'Contents',
-    'eguides.modules.title': '8 modules',
-    'eguides.modules.desc': 'From preparation to practical tools, built on 2.5 years of real experience living, working and travelling across Australia.',
-    'eguides.mod1.title': 'Preparation',
-    'eguides.mod1.desc': 'Visa, insurance, packing and timeline — quietly prepared for departure.',
-    'eguides.mod2.title': 'Why Australia',
-    'eguides.mod2.desc': 'Climate, culture and what you can really expect.',
-    'eguides.mod3.title': 'Working Holiday',
-    'eguides.mod3.desc': 'Application, tips and pitfalls for your WHV.',
-    'eguides.mod4.title': 'Housing',
-    'eguides.mod4.desc': 'Hostels, rentals and first nights — practical and fair.',
-    'eguides.mod5.title': 'Work',
-    'eguides.mod5.desc': 'Jobs, network and how to start smart.',
-    'eguides.mod6.title': 'Budget',
-    'eguides.mod6.desc': 'Cost, save and track without stress.',
-    'eguides.mod7.title': 'Sydney & Melbourne',
-    'eguides.mod7.desc': 'Routes, hotspots and hidden gems in two iconic cities.',
-    'eguides.mod8.title': 'Resources',
-    'eguides.mod8.desc': 'Links, downloads and tools that I use myself.',
 
-   'travelAdvice.cta.badge': 'Your adventure begins here',
-'travelAdvice.cta.title': 'Ready to start?',
-'travelAdvice.cta.btn': 'Contact me',
+   'forBrands.cta.badge': 'Your adventure begins here',
+'forBrands.cta.title': 'Ready to start?',
+'forBrands.cta.btn': 'Contact me',
 
 
 
-////Travel advice Fiji 
-//// Travel Advice Fiji - EN
-
-'travelAdviceFiji.hero.subtitle': 'Personalised travel plan',
-'travelAdviceFiji.hero.titleBottom': 'Explore',
-'travelAdviceFiji.hero.title1': 'Your tailor-made Fiji adventure',
-
-'travelAdviceFiji.title': 'Fiji Travel Plans | MAY WAY Travels',
-
-'travelAdviceFiji.hero.desc': `Want the freedom to book your own Fiji adventure at your own pace while still benefiting from my personal experience, insider knowledge and local tips?
-
-With a unique, tailor-made travel plan, you'll explore Fiji feeling confident, well-prepared and stress-free. At MAY WAY, we begin with a personal video call to discuss your travel style, interests and budget. Whether you already have an itinerary in mind or have no idea where to start, we'll create the perfect Fiji adventure together.`,
-
-
-
-'travelAdviceFiji.features.title': 'What’s included in your personalised travel plan?',
-'travelAdviceFiji.features.desc': 'Everything you need to explore Fiji with confidence and make the most of your adventure.',
-
-'travelAdviceFiji.features.1': 'A personal video call to design your trip around your travel style and wishes',
-'travelAdviceFiji.features.2': 'A personalised day-by-day itinerary',
-'travelAdviceFiji.features.3': 'Local recommendations, must-see highlights and hidden gems for every destination, including my personal favourites',
-'travelAdviceFiji.features.4': 'Two carefully selected accommodation recommendations for each destination',
-'travelAdviceFiji.features.5': 'The best transport options, including advice on ferries, domestic flights and island transfers',
-'travelAdviceFiji.features.6': 'Practical travel tips, from entry requirements to useful travel apps',
-'travelAdviceFiji.features.7': 'A comprehensive Fiji e-guide packed with everything you need to know before your trip', 
     
 'collaboration.title': 'Collaborations',
 
@@ -759,14 +715,14 @@ fiji_intro_cta: "Start planning your trip",
 'collaboration.titleHighlight': 'MAY WAY',
 
 
-    // travel advice ///////////////////////////////////////////////////////////
+    //for brands ///////////////////////////////////////////////////////////
 
-    'travelAdvice.hero.subtitle': 'Persoonlijk reisplan op maat',
-'travelAdvice.hero.titleBottom': 'Ontdekken',
-'travelAdvice.hero.title1': 'Stap uit je comfortzone',
+    'forBrands.hero.subtitle': 'Persoonlijk reisplan op maat',
+'forBrands.hero.titleBottom': 'Ontdekken',
+'forBrands.hero.title1': 'Stap uit je comfortzone',
 
 
-'travelAdvice.title': 'E-gidsen | MAY WAY Travels',
+'forBrands.title': 'E-gidsen | MAY WAY Travels',
 
 'travelAdvice.hero.desc': `Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.
 
@@ -778,74 +734,30 @@ Met MAY WAY wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verle
 
 
 
-'travelAdvice.features.title': 'Wat krijg je bij jouw persoonlijke reisplan?',
-'travelAdvice.features.desc': 'Alles wat je nodig hebt om goed voorbereid en vol vertrouwen aan jouw Australië-avontuur te beginnen.',
+'forBrands.features.title': 'Wat krijg je bij jouw persoonlijke reisplan?',
+'forBrands.features.desc': 'Alles wat je nodig hebt om goed voorbereid en vol vertrouwen aan jouw Australië-avontuur te beginnen.',
 
-'travelAdvice.features.1': 'Persoonlijk videogesprek om jouw reis volledig op maat samen te stellen',
-'travelAdvice.features.2': 'Een dag-tot-dag overzicht van jouw persoonlijke reisroute',
-'travelAdvice.features.3': 'Lokale tips, must-see hotspots en hidden gems per bestemming, inclusief persoonlijke favorieten',
-'travelAdvice.features.4': 'Twee zorgvuldig geselecteerde accommodaties per locatie',
-'travelAdvice.features.5': 'De beste transportoptie inclusief advies voor vluchten, bussen en andere routes',
-'travelAdvice.features.6': 'Praktische voorbereidingstips, van visa tot handige apps',
-'travelAdvice.features.7': 'E-gids met 8 leerzame modules over wonen, werken en reizen in Australië',
-
-
+'forBrands.features.1': 'Persoonlijk videogesprek om jouw reis volledig op maat samen te stellen',
+'forBrands.features.2': 'Een dag-tot-dag overzicht van jouw persoonlijke reisroute',
+'forBrands.features.3': 'Lokale tips, must-see hotspots en hidden gems per bestemming, inclusief persoonlijke favorieten',
+'forBrands.features.4': 'Twee zorgvuldig geselecteerde accommodaties per locatie',
+'forBrands.features.5': 'De beste transportoptie inclusief advies voor vluchten, bussen en andere routes',
+'forBrands.features.6': 'Praktische voorbereidingstips, van visa tot handige apps',
+'forBrands.features.7': 'E-gids met 8 leerzame modules over wonen, werken en reizen in Australië',
 
 
 
 
 
 
-   'travelAdvice.cta.badge': 'Jouw avontuur begint hier',
-'travelAdvice.cta.title': 'Laten we dit avontuur aangaan',
-'travelAdvice.cta.btn': 'Neem contact op',
-  
- // STEPS
-    'travelAdvice.steps.title': 'Jouw reisplan in 5 stappen',
-    'travelAdvice.steps.desc': 'Zo creëren we jouw persoonlijke reiservaring',
-
-    'travelAdvice.steps.step1.title': 'Vul je reiswensen in',
-    'travelAdvice.steps.step1.text': 'Deel je reisstijl, budget en interesses.',
-
-    'travelAdvice.steps.step2.title': 'Persoonlijk videogesprek',
-    'travelAdvice.steps.step2.text': 'We bespreken jouw wensen live.',
-
-    'travelAdvice.steps.step3.title': 'Reisplan maken',
-    'travelAdvice.steps.step3.text': 'Ik maak jouw route en planning.',
-
-    'travelAdvice.steps.step4.title': 'Ontvang je reisplan',
-    'travelAdvice.steps.step4.text': 'Je krijgt een compleet reisplan op maat.',
-
-    'travelAdvice.steps.step5.title': 'Laatste check',
-    'travelAdvice.steps.step5.text': 'We finetunen alles samen.',
 
 
+   'forBrands.cta.badge': 'Jouw avontuur begint hier',
+'forBrands.cta.title': 'Laten we dit avontuur aangaan',
+'forBrands.cta.btn': 'Neem contact op',
+ 
 
 
-    ////travel advice fiji 
-
-'travelAdviceFiji.hero.subtitle': 'Persoonlijk reisplan op maat',
-'travelAdviceFiji.hero.titleBottom': 'Ontdekken',
-'travelAdviceFiji.hero.title1': 'Jouw reis op maat',
-
-'travelAdviceFiji.title': 'E-gidsen | MAY WAY Travels',
-
-'travelAdviceFiji.hero.desc': `Wil je zelf de touwtjes in handen houden bij het boeken van jouw Australië-reis, in je eigen tempo, maar toch profiteren van mijn kennis, ervaring en tips? 
-
-Met een uniek, op maat gemaakt reisplan ga je zorgeloos, vol vertrouwen en goed voorbereid op avontuur. Bij MAY WAY starten we met een persoonlijk videogesprek om jouw wensen, interesses en budget te bespreken. Of je nu al een route in gedachten hebt of nog niet precies weet waar je heen wilt, samen ontdekken we jouw perfecte reis.`,
-
-
-
-'travelAdviceFiji.features.title': 'Wat krijg je bij jouw persoonlijke reisplan?',
-'travelAdviceFiji.features.desc': 'Alles wat je nodig hebt om goed voorbereid en vol vertrouwen aan jouw Australië-avontuur te beginnen.',
-
-'travelAdviceFiji.features.1': 'Persoonlijk videogesprek om jouw reis volledig op maat samen te stellen',
-'travelAdviceFiji.features.2': 'Een dag-tot-dag overzicht van jouw persoonlijke reisroute',
-'travelAdviceFiji.features.3': 'Lokale tips, must-see hotspots en hidden gems per bestemming, inclusief persoonlijke favorieten',
-'travelAdviceFiji.features.4': 'Twee zorgvuldig geselecteerde accommodaties per locatie',
-'travelAdviceFiji.features.5': 'De beste transportoptie inclusief advies voor vluchten, bussen en andere routes',
-'travelAdviceFiji.features.6': 'Praktische voorbereidingstips, van visa tot handige apps',
-'travelAdviceFiji.features.7': 'E-gids met 8 leerzame modules over wonen, werken en reizen in Australië',
 
 
 // community

@@ -1,9 +1,7 @@
 ---
-// src/components/ui/TravelAdviceContent.astro
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { ui, defaultLang } from '../../../i18n/ui';
-
-import CollaborationSection from "../CollaborationSection.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ui, defaultLang } from '../../i18n/ui';
+import CollaborationSection from './CollaborationSection.astro';
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -11,28 +9,9 @@ function t(key: string) {
   const dict = ui[lang as keyof typeof ui] as Record<string, string>;
   return dict[key] ?? key;
 }
-
-const destinations = [
-  {
-    name: "Australië",
-    description:
-      "Roadtrips, surfstranden, nationale parken en bruisende steden. Jouw persoonlijke reisplan voor Australië.",
-    image: "/images/travel-plan/Sydney.jpg",
-    url: `/${lang}/travel-advice/australia`,
-    highlight: "Sydney · Roadtrip · East Coast",
-  },
-  {
-    name: "Fiji",
-    description:
-      "Tropische eilanden, snorkelen, witte stranden en ultieme relax vibes. Ontdek Fiji op maat.",
-    image: "/images/travel-plan/Fiji.jpg",
-    url: `/${lang}/travel-advice/fiji`,
-    highlight: "Eilanden · Snorkelen · Paradise",
-  },
-];
 ---
 
-<BaseLayout title={t('travelAdvice.title')}>
+<BaseLayout title="For Brands | MAY WAY">
   <div class="bg-[#FFFDFA]">
 
   <section class="relative h-screen flex items-center justify-center overflow-hidden -mt-16 rounded-b-[80px]">
@@ -88,7 +67,7 @@ MAY WAY </span>
     href={`/${lang}/route-planner?country=australia`}
     class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a] hover:text-white"
   >
-    {t('travelAdvice.hero.buybtn')}
+    {t('forBrands.hero.buybtn')}
 
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
@@ -112,7 +91,7 @@ MAY WAY </span>
     href="#features"
     class="inline-flex items-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white"
   >
-    {t('travelAdvice.hero.previewbtn')}
+    {t('forBrands.hero.previewbtn')}
 
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
@@ -154,11 +133,11 @@ MAY WAY </span>
         <div class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
 
   <p class="font-semibold text-gray-900">
-    {t('eguides.hero.descBold')}
+    {t('forBrands.hero.descBold')}
   </p>
 
   <p class="mt-6">
-    {t('eguides.hero.descNormal')}
+    {t('forBrands.hero.descNormal')}
   </p>
 
 </div>
@@ -168,7 +147,7 @@ MAY WAY </span>
         
         <div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
           <div class="absolute -right-2 -top-3 z-10 rotate-2 rounded-full bg-[#E6F6F6] px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#1CABB0] shadow-lg">
-            {t('travelAdvice.hero.badge2')}
+            {t('forBrands.hero.badge2')}
           </div>
           <div class="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#E8FAF9] to-[#d4f3f1] p-4 shadow-2xl ring-1 ring-black/5">
             <div class="overflow-hidden rounded-2xl shadow-inner">
@@ -176,8 +155,8 @@ MAY WAY </span>
               <img src="/images/pexels-1320686.jpeg" alt="Interactive guide Australia" class="aspect-[4/3] w-full object-cover">
             </div>
             <div class="absolute bottom-5 left-5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-              <p class="text-xs font-semibold uppercase tracking-wide text-[#1CABB0]">{t('travelAdvice.hero.included')}</p>
-              <p class="text-lg font-bold text-gray-900">{t('travelAdvice.hero.modules')}</p>
+              <p class="text-xs font-semibold uppercase tracking-wide text-[#1CABB0]">{t('forBrands.hero.included')}</p>
+              <p class="text-lg font-bold text-gray-900">{t('forBrands.hero.modules')}</p>
             </div>
           </div>
         </div>
@@ -237,11 +216,11 @@ MAY WAY </span>
 <div>
 
   <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">
-    {t('travelAdvice.features.title')}
+    {t('forBrands.features.title')}
   </h2>
 
   <p class="mt-5 text-lg leading-relaxed text-gray-600">
-    {t('travelAdvice.features.desc')}
+    {t('forBrands.features.desc')}
   </p>
 
   <!-- FEATURES -->
@@ -317,11 +296,11 @@ MAY WAY </span>
 <section class="border-t border-white/10 bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] py-20 text-center text-white">
   <div class="mx-auto max-w-2xl px-6">
     <span class="inline-block rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-wider">
-      {t('travelAdvice.cta.badge')}
+      {t('forBrands.cta.badge')}
     </span>
 
     <h2 class="mt-6 font-libre text-3xl font-semibold md:text-4xl">
-      {t('travelAdvice.cta.title')}
+      {t('forBrands.cta.title')}
     </h2>
 
     <div class="mt-10 flex flex-col items-center gap-3">
@@ -331,7 +310,7 @@ MAY WAY </span>
           : '/en/route-planner?country=australia'}
         class="inline-flex items-center justify-center px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 bg-white text-[#1CABB0] hover:bg-[#E6F6F6] hover:text-[#15939a] shadow-xl"
       >
-        {t('travelAdvice.cta.btn')}
+        {t('forBrands.cta.btn')}
       </a>
     </div>
   </div>
@@ -339,6 +318,6 @@ MAY WAY </span>
 
 </div>
 
-  
+</CollaborationSection>
 </BaseLayout>
 

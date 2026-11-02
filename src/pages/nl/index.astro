@@ -9,11 +9,12 @@ const t = ui.nl;
 import AboutMeHome from '../../components/ui/AboutMeHome.astro';
 import OceaniaHighlight from '../../components/ui/OceaniaHighlight.astro';
 import ServiceCards from '../../components/ui/ServiceCards.astro';
+import Portfolio from '../../components/ui/Portfolio.astro';
 ---
 
 
 
-<BaseLayout title="Home | MAYWAY travels">
+<BaseLayout title="Home | MAY WAYS travels">
   
   <!-- Pass the Dutch text as props to the reusable Hero component -->
   <Hero 
@@ -28,6 +29,7 @@ import ServiceCards from '../../components/ui/ServiceCards.astro';
   />
 <ServiceCards />
   <AboutMeHome />
+  <Portfolio variant="home" />
  
 <OceaniaHighlight />
  

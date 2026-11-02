@@ -17,7 +17,7 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="rounded-t-3xl border-t border-black/5 bg-[#FFFDFA]">
-  <div class="mx-auto max-w-6xl px-6 pt-10 pb-5 md:pt-12">
+  <div class="mx-auto max-w-6xl px-6 pt-12 pb-6 md:pt-16">
 
     <!-- Desktop: logo en titel even hoog, zodat beide teksten op dezelfde lijn beginnen; knoppen onderaan -->
     <div class="grid grid-cols-1 gap-12 text-center md:grid-cols-3 md:items-start md:gap-10 md:text-left">
@@ -25,7 +25,7 @@ const year = new Date().getFullYear();
       <!-- LINKS: logo + omschrijving -->
       <div class="flex flex-col items-center md:items-start">
         <a href={`/${lang}`} class="font-neucha text-4xl font-bold leading-none tracking-tight text-[#4ED2CE]">
-          MAY WAY
+          MAY WAY<span class="ml-[0.04em] text-[0.93em]">S</span>
         </a>
         <p class="mt-4 max-w-xs text-sm leading-relaxed text-gray-600">
           {t('footer.description')}
@@ -75,7 +75,7 @@ const year = new Date().getFullYear();
 
     <!-- ONDERBALK -->
     <div class="mt-10 flex flex-col items-center gap-2 md:mt-20 border-t border-black/5 pt-5 text-xs text-gray-500 md:flex-row md:justify-between">
-      <p>© {year} MAY WAY · {t('footer.copyright')}</p>
+      <p>© {year} MAY WAYS · {t('footer.copyright')}</p>
       <a href="mailto:maywaytravels1@gmail.com" class="transition hover:text-[#1CABB0]">maywaytravels1@gmail.com</a>
     </div>
   </div>

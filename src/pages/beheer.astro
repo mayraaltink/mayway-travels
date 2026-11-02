@@ -1,0 +1,135 @@
+---
+// Beheerpagina voor "Jullie momenten": inzendingen goedkeuren of verwijderen.
+// Beveiligd met ADMIN_PASSWORD (in te stellen in Cloudflare). Niet gelinkt vanaf de site.
+import '../styles/global.css';
+---
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Beheer | MAY WAYS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Zain:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="min-h-screen bg-[#FFFDFA] text-gray-900">
+    <main class="mx-auto max-w-5xl px-6 py-12">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="font-neucha text-3xl font-bold text-[#4ED2CE]">MAY WAYS</p>
+          <h1 class="mt-1 text-2xl font-semibold">Jullie momenten – beheer</h1>
+        </div>
+        <button id="logout" type="button" class="hidden rounded-full border border-black/10 px-5 py-2 text-sm transition hover:border-[#1CABB0]">Uitloggen</button>
+      </div>
+
+      <!-- Inloggen -->
+      <form id="login" class="mt-10 max-w-sm">
+        <label class="text-sm text-gray-600" for="password">Wachtwoord</label>
+        <input id="password" type="password" required class="mt-2 w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-[#1CABB0]" />
+        <button type="submit" class="mt-4 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a]">Inloggen</button>
+        <p id="login-error" class="mt-3 hidden text-sm text-red-600">Wachtwoord klopt niet.</p>
+      </form>
+
+      <!-- Overzicht -->
+      <section id="panel" class="mt-10 hidden">
+        <div class="flex gap-2">
+          <button type="button" data-tab="pending" class="tab rounded-full px-5 py-2 text-sm font-semibold">Wacht op goedkeuring</button>
+          <button type="button" data-tab="approved" class="tab rounded-full px-5 py-2 text-sm font-semibold">Op de site</button>
+        </div>
+        <p id="empty" class="mt-10 hidden text-gray-500">Niets te zien hier.</p>
+        <div id="list" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </section>
+    </main>
+
+    <script is:inline>
+      const login = document.getElementById('login');
+      const panel = document.getElementById('panel');
+      const list = document.getElementById('list');
+      const empty = document.getElementById('empty');
+      const logout = document.getElementById('logout');
+      let password = sessionStorage.getItem('mw-admin') || '';
+      let tab = 'pending';
+
+      const escape = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const api = (url, options = {}) => fetch(url, { ...options, headers: { ...(options.headers || {}), authorization: `Bearer ${password}` } });
+
+      async function load() {
+        const res = await api(`/api/admin/moments?status=${tab}`);
+        if (res.status === 401) {
+          sessionStorage.removeItem('mw-admin');
+          document.getElementById('login-error').classList.remove('hidden');
+          showLogin();
+          return;
+        }
+        const items = await res.json();
+        document.querySelectorAll('.tab').forEach((b) => {
+          const active = b.dataset.tab === tab;
+          b.classList.toggle('bg-[#1CABB0]', active);
+          b.classList.toggle('text-white', active);
+          b.classList.toggle('bg-gray-100', !active);
+        });
+        empty.classList.toggle('hidden', items.length > 0);
+        list.innerHTML = items.map((m) => `
+          <article class="overflow-hidden rounded-2xl bg-white shadow-md">
+            <img src="/api/photo/${encodeURIComponent(m.photo_key)}?token=${encodeURIComponent(password)}" alt="" class="aspect-[4/3] w-full object-cover" />
+            <div class="p-5">
+              <p class="text-xs uppercase tracking-wider text-[#1CABB0]">${escape(m.location)}</p>
+              <p class="mt-2 text-sm leading-relaxed">${escape(m.story)}</p>
+              <p class="mt-3 text-sm font-semibold">${escape(m.name)}${m.instagram ? ` · @${escape(m.instagram)}` : ''}</p>
+              <p class="mt-1 text-xs text-gray-400">${new Date(m.created_at).toLocaleString('nl-NL')}</p>
+              <div class="mt-4 flex gap-2">
+                ${tab === 'pending' ? `<button data-action="approve" data-id="${m.id}" class="flex-1 rounded-full bg-[#1CABB0] px-4 py-2 text-sm font-semibold text-white hover:bg-[#15939a]">Goedkeuren</button>` : ''}
+                <button data-action="delete" data-id="${m.id}" class="flex-1 rounded-full border border-red-200 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50">Verwijderen</button>
+              </div>
+            </div>
+          </article>`).join('');
+      }
+
+      function showLogin() {
+        login.classList.remove('hidden');
+        panel.classList.add('hidden');
+        logout.classList.add('hidden');
+      }
+
+      function showPanel() {
+        login.classList.add('hidden');
+        panel.classList.remove('hidden');
+        logout.classList.remove('hidden');
+        load();
+      }
+
+      login.addEventListener('submit', (e) => {
+        e.preventDefault();
+        password = document.getElementById('password').value;
+        sessionStorage.setItem('mw-admin', password);
+        document.getElementById('login-error').classList.add('hidden');
+        showPanel();
+      });
+
+      logout.addEventListener('click', () => {
+        sessionStorage.removeItem('mw-admin');
+        password = '';
+        showLogin();
+      });
+
+      document.querySelectorAll('.tab').forEach((b) => b.addEventListener('click', () => { tab = b.dataset.tab; load(); }));
+
+      list.addEventListener('click', async (e) => {
+        const btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+        if (btn.dataset.action === 'delete' && !window.confirm('Weet je zeker dat je dit moment wilt verwijderen?')) return;
+        btn.disabled = true;
+        await api('/api/admin/moments', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ id: btn.dataset.id, action: btn.dataset.action }),
+        });
+        load();
+      });
+
+      if (password) showPanel();
+    </script>
+  </body>
+</html>

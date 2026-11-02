@@ -18,11 +18,22 @@ export const ui = {
 
     'button.book': 'Book Now',
 
-    'oceania.title.before': 'Discover the diversity of',
-'oceania.title.bold': 'Australia',
+    'oceania.title.before': 'Discover the diversity',
+'oceania.title.bold': 'of Australia',
 'oceania.description': 'From unforgettable road trips along the East Coast to the rugged beauty of the Outback, the vibrant city life of Sydney and Melbourne, hiking through the untouched wilderness of the Daintree Rainforest, and diving at the Great Barrier Reef.',
 'oceania.card.title': 'Australia',
 'oceania.card.button': 'Go to destination',
+'oceania.eyebrow': 'Destination highlight',
+'oceania.h1.title': 'Road trip along the East Coast',
+'oceania.h1.sub': 'Sydney · Byron Bay · Noosa · Whitsundays',
+'oceania.h2.title': 'The rugged Outback',
+'oceania.h2.sub': 'Uluru · Kata Tjuta · Kings Canyon',
+'oceania.h3.title': 'Vibrant cities',
+'oceania.h3.sub': 'Sydney · Melbourne',
+'oceania.h4.title': 'Great Barrier Reef',
+'oceania.h4.sub': 'Diving & snorkelling',
+'oceania.h5.title': 'Daintree Rainforest',
+'oceania.h5.sub': 'Hiking through the jungle',
 
 'home.about.preheader': 'About me',
 
@@ -31,7 +42,7 @@ export const ui = {
 'hero.subtitle': 'Personal travel advice & hidden gems',
 
 // home services
-'homeServices.subtitle': 'About MAY WAY',
+'homeServices.subtitle': 'About MAY WAYS',
 'homeServices.title': 'What we can do for you',
 'homeServices.desc':
   'Turn your dream trip into reality with real travel experiences, personalized guidance, and endless inspiration every step of the way.',
@@ -61,13 +72,13 @@ export const ui = {
 
 'about.intro.p1': 'Over the years, I’ve learned that the best memories are often created outside your comfort zone: when you dare to explore the unknown and stay open to whatever comes your way.',
 
-'about.intro.p2': 'What started as curiosity has grown into a lifestyle full of adventure, freedom, and new experiences. From traveling through Tanzania and Peru to backpacking across Asia and building a life in Australia: every step has shaped the story behind MAY WAY.',
+'about.intro.p2': 'What started as curiosity has grown into a lifestyle full of adventure, freedom, and new experiences. From traveling through Tanzania and Peru to backpacking across Asia and building a life in Australia: every step has shaped the story behind MAY WAYS.',
 
-'about.intro.p3': 'With MAY WAY, I want to inspire you to take the leap, explore, and write your own story: your way.',
+'about.intro.p3': 'With MAY WAYS, I want to inspire you to take the leap, explore, and write your own story: your way.',
 
 'about.follow': 'Travel with us on Instagram',
 
-'about.preheader': 'About MAY WAY',
+'about.preheader': 'About MAY WAYS',
 
 'about.titlePart1': 'This is',
 
@@ -77,9 +88,51 @@ export const ui = {
  'community.preheader': 'Community',
     'community.titlePart1': 'Get',
     'community.titleHighlight': 'inspired',
+'community.title': 'Community',
+'community.hero.line': 'Together we live moments that stay with you.',
+'community.hero.location': 'Australia · Uluru',
+'moments.title': 'MAY WAY Moments',
+'moments.intro': 'Experiences that stayed with me. I take you along to the moments that made my adventures unforgettable.',
+'moments.prev': 'Previous moments',
+'moments.next': 'Next moments',
+'cmoments.title': 'Your moments',
+'cmoments.intro': 'Share your favourite travel moment and inspire other adventurers. Once approved, your moment will appear here.',
+'cmoments.cta': 'Share your moment',
+'cmoments.empty.title': 'No moments shared yet',
+'cmoments.empty.text': 'Be the first and inspire others with your adventure.',
+'cmoments.form.title': 'Share your moment',
+'cmoments.form.intro': 'Tell us where you were and what made this moment so special. I personally review every submission.',
+'cmoments.form.photo': 'Choose a photo',
+'cmoments.form.photoHint': 'JPG, PNG or WEBP, max. 5 MB',
+'cmoments.form.name': 'Your name',
+'cmoments.form.location': 'Where was this?',
+'cmoments.form.story': 'Your story (max. 600 characters)',
+'cmoments.form.instagram': 'Instagram (optional), e.g. @yourname',
+'cmoments.form.consent': 'I give MAY WAYS permission to publish my photo, name and story on the website. The photo is mine or I am allowed to share it.',
+'cmoments.form.submit': 'Send my moment',
+'cmoments.form.sending': 'Sending...',
+'cmoments.form.error': 'Something went wrong. Please try again later.',
+'cmoments.form.errorSize': 'This photo is too large. Please choose a photo under 5 MB.',
+'cmoments.form.close': 'Close',
+'cmoments.thanks.title': 'Thank you for sharing!',
+'cmoments.thanks.text': 'Your moment has been received. Once approved, it will appear on the Community page.',
+'community.dest.eyebrow': 'Discover your next adventure',
+'community.dest.title': 'Where will your journey take you?',
+'community.dest.au.name': 'Australia',
+'community.dest.au.tags': 'Road trips|Surf|Outback',
+'community.dest.au.desc': 'Endless road trips, surf beaches, the red Outback and vibrant cities. Discover Australia your way.',
+'community.dest.au.cta': 'Discover Australia',
+'community.dest.nz.name': 'New Zealand',
+'community.dest.nz.tags': 'Fjords|Mountains|Adrenaline',
+'community.dest.nz.desc': 'Rugged fjords, snow-capped peaks and adrenaline in Queenstown. The land of endless views.',
+'community.dest.nz.cta': 'Discover New Zealand',
+'community.intro.title': 'Step out of your comfort zone',
+'community.intro.descBold': 'The best adventures often begin the moment you do something that feels exciting. Travelling solo, moving abroad, meeting new people or finally taking that step you have been thinking about for so long.',
+'community.intro.descNormal': 'By exploring the world, you learn that you do not need to know everything in advance to get started. I want to inspire you to stay curious, try new things, create special moments and push your boundaries.',
+'community.intro.badge': 'Your next adventure',
     'community.subtitle': 'Discover blogs, webinars, events and stories from the community.',
     'community.ctaBlogs': 'View blogs',
-    'community.ctaEvents': 'Events & webinars',
+    'community.ctaEvents': 'MAY WAY Moments',
     'community.navBlogs': 'Blogs',
     'community.navWebinars': 'Webinars & events',
     'community.navSocials': 'Socials',
@@ -90,7 +143,7 @@ export const ui = {
 
 
     // contact
-    'contact.title': 'Contact | MAYWAY Travels',
+    'contact.title': 'Contact | MAY WAYS Travels',
     'contact.heading': "Let's connect",
     'contact.intro': 'Do you have a question about collaborations, upcoming events and webinars, our community, or would you like to chat things through? I’d love to help you further.',
     'contact.intake.title': 'Ready for the next step?',
@@ -123,6 +176,7 @@ export const ui = {
 
 'forBrands.services.title1': 'Together, we bring',
 'forBrands.services.title2': 'your brand to life.',
+'forBrands.services.mission': 'We believe in the power of real experiences and stepping out of your comfort zone. We capture that feeling for your brand.',
 'forBrands.services.more': 'Learn more',
 'forBrands.services.eyebrow': 'Services',
 'forBrands.services.heading': 'This is how we make an impact',
@@ -147,7 +201,7 @@ export const ui = {
 
 'forBrands.creator.eyebrow': 'Collaborate · Creator partnerships',
 'forBrands.creator.title': 'From brand experience to online reach',
-'forBrands.creator.p1': 'The best stories and adventures are never created alone. That is why MAY WAY works with destinations, (travel) brands, events and hospitality businesses that match our audience.',
+'forBrands.creator.p1': 'The best stories and adventures are never created alone. That is why MAY WAYS works with destinations, (travel) brands, events and hospitality businesses that match our audience.',
 'forBrands.creator.p2': 'By making brands part of real experiences, we create authentic content that inspires, connects and gets people moving. Last year our content on TikTok and Instagram already reached hundreds of thousands of adventure seekers. Got a fun idea or want to explore the possibilities together?',
 'forBrands.creator.cta': "Let's talk",
 
@@ -162,6 +216,7 @@ export const ui = {
 'portfolio.photos': 'Photos',
 'portfolio.cta': 'See more on Instagram',
 'portfolio.contact': 'Get in touch',
+'portfolio.all': 'View more projects',
 
 
 
@@ -170,7 +225,7 @@ export const ui = {
 'collaboration.title': 'Collaborations',
 
 'collaboration.text1':
-  'The most beautiful travel stories are not created alone. That is why MAY WAY collaborates with destinations, (travel) brands, and hospitality companies that perfectly align with our adventurous audience.',
+  'The most beautiful travel stories are not created alone. That is why MAY WAYS collaborates with destinations, (travel) brands, and hospitality companies that perfectly align with our adventurous audience.',
 
 'collaboration.text2':
   'We reach thousands of travelers across the Netherlands and Belgium every month with our personal travel posts and tips. We also share our experiences with enthusiasm with more than {followers} engaged followers on Instagram via {ig1} and {ig2}.',
@@ -183,7 +238,7 @@ export const ui = {
 'collaboration.preheader': 'Collaboration',
 
 'collaboration.titlePart1': 'Work together with ',
-'collaboration.titleHighlight': 'MAY WAY',
+'collaboration.titleHighlight': 'MAY WAYS',
 
 ///FAQ 
   faq_title: "Frequently asked questions about Australia",
@@ -457,7 +512,7 @@ faq_sim_a_f:
 
 
     // destinations ////////////////////////////////////////////////////////////////////////
-    'destinations.title': 'Destinations | MAYWAY Travels',
+    'destinations.title': 'Destinations | MAY WAYS Travels',
     'destinations.heading': 'Where do you want to go?',
     'destinations.subheading': 'Click or hover over a marker on the map to explore',
     
@@ -622,13 +677,13 @@ fiji_intro_cta: "Start planning your trip",
 
 'eguides.hero.descBold': 'Do you want to stay in control of booking your Australia trip at your own pace, while still benefiting from my knowledge, experience, and tips?',
 
-'eguides.hero.descNormal': 'At MAY WAY, we start with a personal video call to discuss your wishes, interests, and budget. Whether you already have a route in mind or have no idea where to begin yet, together we’ll create your perfect journey.',
+'eguides.hero.descNormal': 'At MAY WAYS, we start with a personal video call to discuss your wishes, interests, and budget. Whether you already have a route in mind or have no idea where to begin yet, together we’ll create your perfect journey.',
 
 // ENGLISH
-'home.about.title': "Meet Mayra",
-'home.about.p1': "Ever since I was young, I’ve been fascinated by travel. Planning unique routes, discovering hidden places, and seeking experiences beyond the beaten path.",
-'home.about.p2': "With a curious perspective on the world, I’m always searching for the true local experience. After more than 2.5 years of living in Australia, I’ve discovered what makes an adventure truly special: unexpected encounters, authentic places, and the courage to step outside your comfort zone.",
-'home.about.cta': "Get to know me better"
+'home.about.title': "Hi, I'm Mayra!",
+'home.about.p1': "Ever since I was young, I've been capturing special experiences. With my camera I discover hidden places and catch moments that bring people together and inspire them.",
+'home.about.p2': "I turn my creativity into authentic content that captures the feeling behind an experience and brings your brand to life. After more than 2.5 years of living in Australia, I bring my adventurous eye into all of my creative work.",
+'home.about.cta': "Get to know me better",
 
 
 
@@ -646,18 +701,29 @@ fiji_intro_cta: "Start planning your trip",
 
     'button.book': 'Boek Nu',
 
-    'home.about.preheader': 'Over MAY WAY',
+    'home.about.preheader': 'Over MAY WAYS',
 
     'hero.title1': 'Jouw avontuur',
 'hero.title2': 'YOUR WAY.',
 'hero.subtitle': 'Beleven. Creëren. Inspireren.',
 
 
-    'oceania.title.before': 'Ontdek de diversiteit van',
-'oceania.title.bold': 'Australië',
-'oceania.description': 'Van onvergetelijke roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in Sydney en Melbourne,  hiken door de ongerepte natuur van Daintree en duiken bij het Great Barrier Reef.',
+    'oceania.title.before': 'Ontdek de diversiteit',
+'oceania.title.bold': 'van Australië',
+'oceania.description': 'Van onvergetelijke roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in Sydney en Melbourne, hiken door de ongerepte natuur van Daintree en duiken bij het Great Barrier Reef.',
 'oceania.card.title': 'Australië',
 'oceania.card.button': 'Naar bestemming',
+'oceania.eyebrow': 'Bestemming uitgelicht',
+'oceania.h1.title': 'Roadtrip langs de oostkust',
+'oceania.h1.sub': 'Sydney · Byron Bay · Noosa · Whitsundays',
+'oceania.h2.title': 'De ruige Outback',
+'oceania.h2.sub': 'Uluru · Kata Tjuta · Kings Canyon',
+'oceania.h3.title': 'Bruisende steden',
+'oceania.h3.sub': 'Sydney · Melbourne',
+'oceania.h4.title': 'Great Barrier Reef',
+'oceania.h4.sub': 'Duiken & snorkelen',
+'oceania.h5.title': 'Daintree Rainforest',
+'oceania.h5.sub': 'Hiken door de jungle',
 
     // carousel
     'carousel.subtitle': 'Hotspots',
@@ -670,7 +736,7 @@ fiji_intro_cta: "Start planning your trip",
     'carousel.next': 'Volgende',
 
     // home services (NL)
-'homeServices.subtitle': 'Over MAY WAY',
+'homeServices.subtitle': 'Over MAY WAYS',
 'homeServices.title': 'Wat wij voor jou kunnen betekenen',
 'homeServices.desc':
   'Van creatieve content tot community building. We creëren momenten die verbinden, verhalen die blijven hangen en samenwerkingen die impact maken.',
@@ -683,14 +749,14 @@ fiji_intro_cta: "Start planning your trip",
 
 'about.intro.p1': 'Door de jaren heen heb ik geleerd dat de mooiste herinneringen vaak ontstaan buiten je comfortzone: wanneer je het onbekende durft op te zoeken en je openstelt voor wat er op je pad komt.',
 
-'about.intro.p2': 'Wat begon met nieuwsgierigheid is uitgegroeid tot een levensstijl vol avontuur, vrijheid en nieuwe ervaringen. Van reizen door Tanzania en Peru tot backpacken door Azië en het opbouwen van een leven in Australië: elke stap heeft bijgedragen aan het verhaal achter MAY WAY.',
+'about.intro.p2': 'Wat begon met nieuwsgierigheid is uitgegroeid tot een levensstijl vol avontuur, vrijheid en nieuwe ervaringen. Van reizen door Tanzania en Peru tot backpacken door Azië en het opbouwen van een leven in Australië: elke stap heeft bijgedragen aan het verhaal achter MAY WAYS.',
 
-'about.intro.p3': 'Met MAY WAY wil ik je inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven — op jouw manier.',
+'about.intro.p3': 'Met MAY WAYS wil ik je inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven — op jouw manier.',
 
 'about.follow': 'Reis mee op Instagram',
 
 
-'about.preheader': 'Over MAY WAY',
+'about.preheader': 'Over MAY WAYS',
 
 'about.titlePart1': 'Dit is',
 
@@ -699,7 +765,7 @@ fiji_intro_cta: "Start planning your trip",
 'partners.title': 'Eerdere samenwerkingen', 
 
     // contact
-    'contact.title': 'Contact | MAYWAY Travels',    
+    'contact.title': 'Contact | MAY WAYS Travels',    
     'contact.heading': "Laten we kennismaken",
     'contact.intro': 'Heb je een vraag over een samenwerking, opkomende events en webinars, onze commmunity of wil je even overleggen? Ik help je graag verder.',
     'contact.intake.title': 'Klaar voor de volgende stap?',
@@ -719,7 +785,7 @@ fiji_intro_cta: "Start planning your trip",
     'collaboration.title': 'Samenwerken',
 
 'collaboration.text1':
-  'De mooiste reisverhalen ontstaan niet alleen. Daarom werkt MAY WAY samen met bestemmingen, (reis)merken en hospitalitybedrijven die perfect aansluiten bij onze avontuurlijke doelgroep.',
+  'De mooiste reisverhalen ontstaan niet alleen. Daarom werkt MAY WAYS samen met bestemmingen, (reis)merken en hospitalitybedrijven die perfect aansluiten bij onze avontuurlijke doelgroep.',
 
 'collaboration.text2':
   'Wij bereiken maandelijks duizenden avonturisten in Nederland en België met onze persoonlijke reis posts en tips. Ook delen wij onze ervaringen vol enthousiasme met ruim {followers} betrokken volgers op Instagram via {ig1} en {ig2}.',
@@ -732,7 +798,7 @@ fiji_intro_cta: "Start planning your trip",
 'collaboration.preheader': 'Samenwerken',
 
 'collaboration.titlePart1': 'Werk met ',
-'collaboration.titleHighlight': 'MAY WAY',
+'collaboration.titleHighlight': 'MAY WAYS',
 
 
     //for brands ///////////////////////////////////////////////////////////
@@ -749,6 +815,7 @@ fiji_intro_cta: "Start planning your trip",
 
 'forBrands.services.title1': 'Samen brengen we',
 'forBrands.services.title2': 'jouw merk tot leven.',
+'forBrands.services.mission': 'Wij geloven in de kracht van échte ervaringen en het stappen uit je comfortzone. Wij leggen dit gevoel vast voor jouw merk.',
 'forBrands.services.more': 'Meer info',
 'forBrands.services.eyebrow': 'Services',
 'forBrands.services.heading': 'Dit is hoe we impact maken',
@@ -773,7 +840,7 @@ fiji_intro_cta: "Start planning your trip",
 
 'forBrands.creator.eyebrow': 'Samenwerken · Creator partnerships',
 'forBrands.creator.title': 'Van merkbeleving naar online bereik',
-'forBrands.creator.p1': 'De mooiste verhalen en avonturen ontstaan niet alleen. Daarom werkt MAY WAY samen met bestemmingen, (reis)merken, events en hospitalitybedrijven die aansluiten bij onze doelgroep.',
+'forBrands.creator.p1': 'De mooiste verhalen en avonturen ontstaan niet alleen. Daarom werkt MAY WAYS samen met bestemmingen, (reis)merken, events en hospitalitybedrijven die aansluiten bij onze doelgroep.',
 'forBrands.creator.p2': 'Door merken onderdeel te maken van échte ervaringen, creëren we authentieke content die inspireert, verbindt en mensen in beweging brengt. Afgelopen jaar bereikten we met onze content op TikTok en Instagram al honderdduizenden adventure seekers. Heb je een leuk idee of wil je sparren over de mogelijkheden?',
 'forBrands.creator.cta': "Let's talk",
 
@@ -788,13 +855,14 @@ fiji_intro_cta: "Start planning your trip",
 'portfolio.photos': "Foto's",
 'portfolio.cta': 'Bekijk meer op Instagram',
 'portfolio.contact': 'Neem contact op',
+'portfolio.all': 'Bekijk meer projecten',
 
 
 'travelAdvice.hero.desc': `Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.
 
 Ik heb zelf ervaren hoeveel er kan veranderen wanneer je de sprong waagt. Door de wereld te ontdekken, heb ik geleerd dat je niet alles van tevoren hoeft te weten om ergens aan te beginnen. Juist de onverwachte momenten, bijzondere ontmoetingen en uitdagingen maken een avontuur onvergetelijk.
 
-Met MAY WAY wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verleggen en te kiezen voor wat je écht wilt. Of dat nu een groot avontuur ver weg is of een kleine uitdaging dichter bij huis.`,
+Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verleggen en te kiezen voor wat je écht wilt. Of dat nu een groot avontuur ver weg is of een kleine uitdaging dichter bij huis.`,
 
 
 
@@ -809,6 +877,44 @@ Met MAY WAY wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verle
     'community.preheader': 'Community',
     'community.titlePart1': 'Wat wordt jouw',
     'community.titleHighlight': 'volgende avontuur?',
+'community.title': 'Community',
+'community.hero.line': 'Samen beleven we momenten die bijblijven.',
+'community.hero.location': 'Australië · Uluru',
+'moments.title': 'MAY WAY Moments',
+'moments.intro': 'Ervaringen die me zijn bijgebleven. Ik neem je mee naar de momenten die mijn avonturen onvergetelijk maakten.',
+'moments.prev': 'Vorige momenten',
+'moments.next': 'Volgende momenten',
+'cmoments.title': 'Jullie momenten',
+'cmoments.intro': 'Deel jouw mooiste reismoment en inspireer andere avonturiers. Na goedkeuring verschijnt jouw moment hier.',
+'cmoments.cta': 'Deel jouw moment',
+'cmoments.empty.title': 'Nog geen momenten gedeeld',
+'cmoments.empty.text': 'Wees de eerste en inspireer anderen met jouw avontuur.',
+'cmoments.form.title': 'Deel jouw moment',
+'cmoments.form.intro': 'Vertel waar je was en wat dit moment zo bijzonder maakte. Ik bekijk elke inzending persoonlijk.',
+'cmoments.form.photo': 'Kies een foto',
+'cmoments.form.photoHint': 'JPG, PNG of WEBP, max. 5 MB',
+'cmoments.form.name': 'Je naam',
+'cmoments.form.location': 'Waar was dit?',
+'cmoments.form.story': 'Jouw verhaal (max. 600 tekens)',
+'cmoments.form.instagram': 'Instagram (optioneel), bijv. @jouwnaam',
+'cmoments.form.consent': 'Ik geef MAY WAYS toestemming om mijn foto, naam en verhaal op de website te plaatsen. De foto is van mij of ik mag hem delen.',
+'cmoments.form.submit': 'Verstuur mijn moment',
+'cmoments.form.sending': 'Bezig met versturen...',
+'cmoments.form.error': 'Er ging iets mis. Probeer het later nog eens.',
+'cmoments.form.errorSize': 'Deze foto is te groot. Kies een foto kleiner dan 5 MB.',
+'cmoments.form.close': 'Sluiten',
+'cmoments.thanks.title': 'Bedankt voor het delen!',
+'cmoments.thanks.text': 'Je moment is ontvangen. Na goedkeuring verschijnt het op de Community-pagina.',
+'community.dest.eyebrow': 'Ontdek jouw volgende avontuur',
+'community.dest.title': 'Waar gaat jouw reis naartoe?',
+'community.dest.au.name': 'Australië',
+'community.dest.au.tags': 'Roadtrips|Surf|Outback',
+'community.dest.au.desc': 'Eindeloze roadtrips, surfstranden, de rode Outback en bruisende steden. Ontdek Australië op jouw manier.',
+'community.dest.au.cta': 'Ontdek Australië',
+'community.dest.nz.name': 'Nieuw-Zeeland',
+'community.dest.nz.tags': 'Fjorden|Bergen|Adrenaline',
+'community.dest.nz.desc': 'Ruige fjorden, besneeuwde bergtoppen en adrenaline in Queenstown. Het land van eindeloze uitzichten.',
+'community.dest.nz.cta': 'Ontdek Nieuw-Zeeland',
     'community.ctaBlogs': 'Bestemmingen',
     'community.ctaEvents': 'MAY WAY Moments',
     'community.navBlogs': 'Blogs',
@@ -817,10 +923,8 @@ Met MAY WAY wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verle
 // COMMUNITY INTRO
 'community.intro.title': 'Stap uit je comfortzone',
 'community.intro.descBold': 'Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.',
-'community.intro.descNormal': 'Door de wereld te ontdekken, leer je78 dat je juist niet alles van tevoren hoeft te weten om ergens aan te beginnen. Ik wil je inspireren om nieuwsgierig te blijven, nieuwe dingen te proberen, bijzondere momenten te creëren en je grenzen te verleggen.',
+'community.intro.descNormal': 'Door de wereld te ontdekken, leer je dat je juist niet alles van tevoren hoeft te weten om ergens aan te beginnen. Ik wil je inspireren om nieuwsgierig te blijven, nieuwe dingen te proberen, bijzondere momenten te creëren en je grenzen te verleggen.',
 'community.intro.badge': 'Jouw volgende avontuur',
-'community.intro.included': 'Laat je inspireren',
-'community.intro.modules': 'Ontdek. Beleef. Ervaar.',
   
 ///hotspots 
 'hotspots_title_line1': 'Ontdek Hotspots',
@@ -915,7 +1019,7 @@ Met MAY WAY wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verle
 
 
     // destinations /////////////////////////////////////////////////////////////////////////
-    'destinations.title': 'Bestemmingen | MAY WAY Travels',
+    'destinations.title': 'Bestemmingen | MAY WAYS Travels',
     'destinations.heading': 'Waar wil je naartoe?',
     'destinations.subheading': 'Klik of hover over een marker op de kaart om meer te zien',
     
@@ -1191,9 +1295,9 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'footer.copyright': 'Alle rechten voorbehouden',
 
 // DUTCH
-'home.about.title': "Hi, Ik ben Mayra!",
-'home.about.p1': "Vanaf jongs af aan leg ik bijzondere ervaringen vast. Met mijn camera ontdek ik verborgen plekken en vang ik momenten die mensen samenbrengen en inspireren. ",
-'home.about.p2': "Mijn creativiteit vertaal ik naar authentieke content die het gevoel achter een ervaring vastlegt en jouw merk tot leven brengt. Na ruim 2,5 jaar in Australië te hebben gewoond, neem ik mijn avontuurlijke blik mee in mijn creatieve werk. ",
+'home.about.title': "Hi, ik ben Mayra!",
+'home.about.p1': "Vanaf jongs af aan leg ik bijzondere ervaringen vast. Met mijn camera ontdek ik verborgen plekken en vang ik momenten die mensen samenbrengen en inspireren.",
+'home.about.p2': "Mijn creativiteit vertaal ik naar authentieke content die het gevoel achter een ervaring vastlegt en jouw merk tot leven brengt. Na ruim 2,5 jaar in Australië te hebben gewoond, neem ik mijn avontuurlijke blik mee in mijn creatieve werk.",
 'home.about.cta': "Leer mij beter kennen",
 
 

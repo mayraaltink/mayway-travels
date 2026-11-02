@@ -1,11 +1,16 @@
 ---
 // src/components/ui/Portfolio.astro
 // Mini-portfolio: uitgelichte video's + meer content, elke kaart linkt naar de Instagram-post.
-// Coverbeelden: zet ze in public/images/portfolio/ met de bestandsnaam uit `cover` hieronder.
+// Projecten staan in src/data/portfolio.ts.
+// variant="full" (For Brands): alles. variant="home" (homepagina): de 3 met home: true + knop naar For Brands.
 // Ontbreekt een cover, dan toont de kaart een turquoise placeholder met de merknaam.
 import fs from 'node:fs';
 import path from 'node:path';
 import { ui, defaultLang } from '../../i18n/ui';
+import { featured as allFeatured, more as allMore } from '../../data/portfolio';
+
+const { variant = 'full' } = Astro.props as { variant?: 'full' | 'home' };
+const isHome = variant === 'home';
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -19,22 +24,18 @@ function coverSrc(file: string) {
   return exists ? `/images/portfolio/${file}` : null;
 }
 
-const featured = [
-  { brand: 'AJ Hackett', title: 'Jump into a new chapter', href: 'https://www.instagram.com/p/DZfxVNqNaAi/', cover: 'aj-hackett.jpg' },
-  { brand: 'Mojo Surf', title: 'Wavy week', href: 'https://www.instagram.com/p/DVnsul6EX6v/', cover: 'mojo-surf.jpg' },
-  { brand: 'HeliWorks', title: 'Helicopter above Queenstown', href: 'https://www.instagram.com/p/DdRcLkDthSo/', cover: 'heliworks.jpg' },
-  { brand: 'Pure Milford', title: "Into New Zealand's fjords", href: 'https://www.instagram.com/p/DZZD31-xcip/', cover: 'pure-milford.jpg' },
-].map((item) => ({ ...item, src: coverSrc(item.cover) }));
+const featured = (isHome ? allFeatured.filter((item) => item.home).slice(0, 3) : allFeatured)
+  .map((item) => ({ ...item, src: coverSrc(item.cover) }));
 
-const more = [
-  { type: 'video', href: 'https://www.instagram.com/p/DCYxUT1yiOm/', cover: 'more-1.jpg' },
-  { type: 'video', href: 'https://www.instagram.com/p/C2o0BYNPXaP/', cover: 'more-2.jpg' },
-  { type: 'photos', href: 'https://www.instagram.com/p/CzT0FervoKb/', cover: 'more-3.jpg' },
-].map((item) => ({ ...item, src: coverSrc(item.cover) }));
+const more = isHome ? [] : allMore.map((item) => ({ ...item, src: coverSrc(item.cover) }));
+
+// Vaste classnames zodat Tailwind ze vindt
+const featuredCols = { 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-cols-5' }[featured.length] ?? 'lg:grid-cols-4';
+const moreCols = more.length >= 4 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3';
 ---
 
-<section id="portfolio" class="scroll-mt-20 bg-[#0F7C82] py-20 text-white md:py-28">
-  <div class="mx-auto max-w-6xl px-6">
+<section id={isHome ? 'projects' : 'portfolio'} class="scroll-mt-20 bg-[#0F7C82] py-20 text-white md:py-28">
+  <div class:list={['mx-auto px-6', isHome ? 'max-w-5xl' : 'max-w-6xl']}>
 
     <!-- Kop -->
     <div>
@@ -42,14 +43,14 @@ const more = [
       <h2 class="mt-3 text-3xl font-semibold leading-[1.0] tracking-tight md:text-[2.5rem]">{t('portfolio.title')}</h2>
     </div>
 
-    <!-- Uitgelichte video's (staand, zoals Reels) -->
-    <div class="mt-12 grid grid-cols-2 gap-3 md:mt-14 md:gap-4 lg:grid-cols-4">
+    <!-- Uitgelichte video's (staand, zoals Reels). Mobiel: swipen, desktop: rij -->
+    <div class:list={['portfolio-track -mx-6 mt-12 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 md:mt-14 md:gap-4 lg:mx-0 lg:grid lg:overflow-visible lg:px-0 lg:pb-0', featuredCols]}>
       {featured.map((item, i) => (
         <a
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          class:list={['group relative block aspect-[9/16] overflow-hidden rounded-[1.5rem] bg-[#0B5F64]', { 'lg:translate-y-8': i % 2 === 1 }]}
+          class:list={['group relative block aspect-[9/16] w-[62%] shrink-0 snap-start overflow-hidden rounded-[1.5rem] bg-[#0B5F64] sm:w-[40%] lg:w-auto', { 'lg:translate-y-8': i % 2 === 1 }]}
         >
           {item.src ? (
             <img src={item.src} alt={`${item.brand} – ${item.title}`} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
@@ -77,11 +78,12 @@ const more = [
       ))}
     </div>
 
-    <!-- Meer content -->
+    <!-- Meer content (alleen For Brands) -->
+    {more.length > 0 && (
     <div class="mt-20 md:mt-24">
       <p class="text-xs uppercase tracking-[0.2em] text-white/80">{t('portfolio.more')}</p>
 
-      <div class="mt-6 grid grid-cols-3 gap-3 md:gap-4">
+      <div class:list={['mt-6 grid gap-3 md:gap-4', moreCols]}>
         {more.map((item) => (
           <a
             href={item.href}
@@ -108,9 +110,19 @@ const more = [
         ))}
       </div>
     </div>
+    )}
 
     <!-- CTA -->
-    <div class="mt-14 flex flex-wrap items-center justify-center gap-4">
+    <div class:list={['flex flex-wrap items-center justify-center gap-4', isHome ? 'mt-12 lg:mt-20' : 'mt-14']}>
+      {isHome ? (
+        <a
+          href={`/${lang}/for-brands#portfolio`}
+          class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#15939a] transition hover:bg-[#E6F6F6]"
+        >
+          {t('portfolio.all')}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      ) : (
       <a
         href="https://www.instagram.com/mayraaltink/"
         target="_blank"
@@ -120,6 +132,7 @@ const more = [
         {t('portfolio.cta')}
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
       </a>
+      )}
       <a
         href={`/${lang}/contact`}
         class="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
@@ -129,3 +142,12 @@ const more = [
     </div>
   </div>
 </section>
+
+<style>
+  .portfolio-track {
+    scrollbar-width: none;
+  }
+  .portfolio-track::-webkit-scrollbar {
+    display: none;
+  }
+</style>

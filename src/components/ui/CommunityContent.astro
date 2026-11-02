@@ -3,10 +3,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import headerImg from "../../assets/Header.avif";
 import WorkingHoliday from '../../components/destinations/WorkingHoliday.astro';
 import { ui, defaultLang } from '../../i18n/ui';
+import fs from 'node:fs';
+import path from 'node:path';
 
 
 
 import MayWayMoments from "./MayWayMoments.astro";
+import CommunityMoments from './CommunityMoments.astro';
 
 const pathLang = Astro.url.pathname.split('/')[1];
 
@@ -15,17 +18,35 @@ const lang =
     ? pathLang
     : defaultLang;
 
-function t(key: keyof typeof ui[typeof defaultLang]) {
-  const dict = ui[lang as keyof typeof ui] ?? ui[defaultLang];
-  return dict[key];
+function t(key: string) {
+  const dict = (ui[lang as keyof typeof ui] ?? ui[defaultLang]) as Record<string, string>;
+  return dict[key] ?? key;
 }
+
+function imageSrc(src: string) {
+  return fs.existsSync(path.join(process.cwd(), 'public', src)) ? src : null;
+}
+
+// Bestemmingen (foto's hier te vervangen; ontbreekt een foto, dan toont de kaart een turquoise vlak)
+const destinations = [
+  { key: 'au', image: '/images/travel-plan/Sydney.jpg', href: `/${lang}/destinations/australia/`, coords: '25.27° S · 133.77° E' },
+  { key: 'nz', image: '/images/destinations/new-zealand.jpg', href: `/${lang}/destinations/`, coords: '40.90° S · 174.88° E' },
+].map((d) => ({
+  ...d,
+  src: imageSrc(d.image),
+  name: t(`community.dest.${d.key}.name`),
+  tags: t(`community.dest.${d.key}.tags`).split('|'),
+  desc: t(`community.dest.${d.key}.desc`),
+  cta: t(`community.dest.${d.key}.cta`),
+}));
 ---
 
 <BaseLayout>
   <section class="relative bg-[#FFFDFA]">
 
     <!-- HERO -->
-    <div class="relative h-screen flex items-center justify-center overflow-hidden -mt-16 rounded-b-[80px]">
+    <!-- Zelfde afmetingen als de hero op For Brands, zodat de titel op exact dezelfde plek staat -->
+    <div class="relative flex min-h-[640px] h-[100svh] items-center justify-center overflow-hidden rounded-b-[48px] md:rounded-b-[80px]">
 
       <!-- GRADIENT -->
       <div class="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/30 to-transparent z-10"></div>
@@ -39,28 +60,26 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
 
       <!-- CONTENT -->
-      <div class="relative z-20 text-center text-white max-w-3xl px-6">
-
-        <!-- PREHEADER -->
-        <p class="uppercase tracking-[0.2em] text-xs md:text-xs text-white/80 mb-4">
-          {t('community.preheader')}
-        </p>
+      <div class="relative z-20 mx-auto max-w-3xl px-6 text-center text-white">
 
         <!-- TITLE -->
-        <h1 class="flex flex-col leading-[0.85] tracking-[-0.03em]">
-
-          <span class="text-xl md:text-5xl font-medium text-white">
-            {t('community.titlePart1')}
+        <!-- Zelfde opbouw als "MAY WAY / Socials" op For Brands -->
+        <h1 class="flex flex-col items-center leading-[0.85] tracking-[-0.03em]" style="text-shadow: 0 3px 15px rgba(0,0,0,0.65);">
+          <span class="font-neucha text-5xl font-bold text-[#4ED2CE] md:text-6xl">
+            MAY WAY
           </span>
-
-          <span class="text-3xl md:text-5xl font-semibold text-white">
-            {t('community.titleHighlight')}
+          <span class="text-3xl font-medium text-white md:text-4xl">
+            {t('community.title')}
           </span>
-
         </h1>
 
+        <!-- Zin onder de titel (zelfde stijl als For Brands) -->
+        <p class="mt-4 text-base font-medium tracking-[0.02em] text-white md:text-lg" style="text-shadow: 0 3px 15px rgba(0,0,0,0.4);">
+          {t('community.hero.line')}
+        </p>
+
         <!-- CTA'S -->
-        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center sm:items-center">
+        <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
           <!-- PRIMARY -->
          
@@ -89,7 +108,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
           <!-- SECONDARY -->
           <a
-            href="#webinars"
+            href="#moments"
             class="inline-flex items-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white"
           >
             {t('community.ctaEvents')}
@@ -105,6 +124,12 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
         </div>
 
       </div>
+
+      <!-- Locatie (zelfde als For Brands) -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Uluru,+Northern+Territory,+Australia" target="_blank" rel="noopener noreferrer" title="Google Maps" class="absolute bottom-10 left-10 z-20 flex items-center gap-2 rounded-full bg-black/35 px-4 py-2 backdrop-blur-sm transition hover:bg-black/55">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span class="text-xs uppercase tracking-wide text-white/90">{t('community.hero.location')}</span>
+      </a>
     </div>
   </section>
 
@@ -136,17 +161,9 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
         </div>
         
         <div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
-          <div class="absolute -right-2 -top-3 z-10 rotate-2 rounded-full bg-[#E6F6F6] px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#1CABB0] shadow-lg">
-            {t('travelAdvice.hero.badge2')}
-          </div>
           <div class="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#E8FAF9] to-[#d4f3f1] p-4 shadow-2xl ring-1 ring-black/5">
             <div class="overflow-hidden rounded-2xl shadow-inner">
-              <!-- Note: Change this src to the correct image in your public/images folder! -->
-              <img src="/images/pexels-1320686.jpeg" alt="Interactive guide Australia" class="aspect-[4/3] w-full object-cover">
-            </div>
-            <div class="absolute bottom-5 left-5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-              <p class="text-xs font-semibold uppercase tracking-wide text-[#1CABB0]">{t('travelAdvice.hero.included')}</p>
-              <p class="text-lg font-bold text-gray-900">{t('travelAdvice.hero.modules')}</p>
+              <img src="/images/about/great-ocean-road.jpg" alt="Great Ocean Road" class="aspect-[4/3] w-full object-cover">
             </div>
           </div>
         </div>
@@ -155,114 +172,62 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
 
  
-<section id="reisplan" class="py-24 bg-[#FFFDFA]">
-  <div class="max-w-6xl mx-auto px-6">
+  <!-- BESTEMMINGEN: turquoise blok met twee grote kaarten -->
+  <section id="reisplan" class="bg-[#FFFDFA] px-3 pt-6 pb-16 md:px-6 md:pt-10 md:pb-24">
+    <div class="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#0F7C82] px-5 py-14 text-white md:rounded-[3.5rem] md:px-12 md:py-20">
 
-  
-  <!-- DESTINATIONS -->
-  <section class="bg-[#FFFDFA] px-6 py-20 md:py-28">
-    <div class="mx-auto max-w-7xl">
-
-      <!-- SECTION HEADER -->
-      <div class="mb-12 text-center">
-        <p class="mb-3 text-xs uppercase tracking-[0.2em] text-[#1CABB0]">
-          Ontdek jouw volgende avontuur
-        </p>
-
-        <h2 class="text-3xl font-semibold tracking-tight text-gray-900 md:text-5xl">
-          Waar gaat jouw reis naartoe?
-        </h2>
-
-        <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-600">
-          Van roadtrips door Australië tot tropische eilanden in Fiji.
-          Laat je inspireren en ontdek wat bij jouw manier van reizen past.
-        </p>
+      <!-- Kop -->
+      <div class="mx-auto max-w-4xl md:flex md:items-end md:justify-between md:gap-10">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-white/80">{t('community.dest.eyebrow')}</p>
+          <h2 class="mt-3 text-3xl font-semibold leading-[1.0] tracking-tight md:text-[2.5rem]">{t('community.dest.title')}</h2>
+        </div>
       </div>
 
-      <!-- DESTINATION CARDS -->
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <!-- Kaarten -->
+      <div class="mx-auto mt-12 grid max-w-4xl gap-5 md:mt-14 md:grid-cols-2 md:gap-6">
+        {destinations.map((d, i) => (
+          <a
+            href={d.href}
+            class:list={['group relative block aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_30px_60px_rgba(0,0,0,0.25)]', { 'md:translate-y-10': i === 1 }]}
+          >
+            {d.src ? (
+              <img src={d.src} alt={d.name} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+            ) : (
+              <div class="absolute inset-0 bg-gradient-to-br from-[#0B5F64] to-[#084649]"></div>
+            )}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/20"></div>
 
-        <!-- AUSTRALIA -->
-        <a
-  href={`/${lang}/destinations/australia/`}
-  class="group relative isolate min-h-[420px] overflow-hidden rounded-3xl"
->
-          <img
-            src="/images/travel-plan/Sydney.jpg"
-            alt="Sydney, Australië"
-            loading="lazy"
-            class="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+            <!-- Boven: sfeerlabels + coördinaten -->
+            <div class="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-5 md:p-7">
+              <ul class="flex flex-wrap gap-2">
+                {d.tags.map((tag) => (
+                  <li class="rounded-full bg-white/15 px-3 py-1 text-xs backdrop-blur-sm">{tag}</li>
+                ))}
+              </ul>
+              <span class="hidden shrink-0 text-[0.65rem] uppercase tracking-[0.2em] text-white/70 sm:block">{d.coords}</span>
+            </div>
 
-          <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-
-          <div class="absolute inset-x-0 bottom-0 p-7 text-white md:p-10">
-            <p class="mb-3 text-xs uppercase tracking-[0.18em] text-white/80">
-              Sydney · Roadtrip · East Coast
-            </p>
-
-            <h3 class="text-3xl font-semibold md:text-4xl">
-              Australië
-            </h3>
-
-            <p class="mt-3 max-w-md text-sm leading-relaxed text-white/90 md:text-base">
-              Roadtrips, surfstranden, nationale parken en bruisende steden.
-              Ontdek Australië op jouw manier.
-            </p>
-
-            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
-              Ontdek Australië
-              <span class="transition-transform duration-300 group-hover:translate-x-1">
-                →
+            <!-- Onder: nummer, naam, tekst, knop -->
+            <div class="absolute inset-x-0 bottom-0 p-6 md:p-9">
+              <h3 class="text-3xl font-semibold leading-none tracking-tight md:text-4xl">{d.name}</h3>
+              <p class="mt-4 max-w-sm text-[15px] leading-relaxed text-white/85 md:text-base">{d.desc}</p>
+              <span class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-[#0F7C82] transition group-hover:bg-[#1CABB0] group-hover:text-white">
+                {d.cta}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </span>
-            </span>
-          </div>
-        </a>
-
-        <!-- FIJI -->
- <a
-  href={`/${lang}/destinations/fiji/`}
-  class="group relative isolate min-h-[420px] overflow-hidden rounded-3xl"
->
-          <img
-            src="/images/travel-plan/Fiji.jpg"
-            alt="Tropische eilanden van Fiji"
-            loading="lazy"
-            class="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-
-          <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-
-          <div class="absolute inset-x-0 bottom-0 p-7 text-white md:p-10">
-            <p class="mb-3 text-xs uppercase tracking-[0.18em] text-white/80">
-              Eilanden · Snorkelen · Paradise
-            </p>
-
-            <h3 class="text-3xl font-semibold md:text-4xl">
-              Fiji
-            </h3>
-
-            <p class="mt-3 max-w-md text-sm leading-relaxed text-white/90 md:text-base">
-              Tropische eilanden, snorkelen, witte stranden en ultieme relax vibes.
-              Ontdek het paradijs in de Stille Oceaan.
-            </p>
-
-            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
-              Ontdek Fiji
-              <span class="transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </span>
-          </div>
-        </a>
-
+            </div>
+          </a>
+        ))}
       </div>
+      <div class="hidden md:block md:h-10"></div>
     </div>
   </section>
  
 
 
   <MayWayMoments />
+  <CommunityMoments />
   <WorkingHoliday />
 
 </BaseLayout>

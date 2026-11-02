@@ -1,85 +1,106 @@
-
 ---
-const moments = Array.from({ length: 15 }, (_, i) => ({
-  image: `/images/community/moment${(i % 5) + 1}.jpg`,
-  title: `Moment ${i + 1}`,
-  caption: "A special memory from the road.",
-  description:
-    "Here you can write a longer story about this moment. Share what happened, why this place was special or give travel tips related to the location."
+// src/components/ui/MayWayMoments.astro
+// Jouw eigen favoriete momenten als swipe. De momenten staan in src/data/moments.ts.
+import fs from 'node:fs';
+import path from 'node:path';
+import { ui, defaultLang } from '../../i18n/ui';
+import { moments as allMoments } from '../../data/moments';
+
+const lang = (Astro.currentLocale || defaultLang) as 'nl' | 'en';
+
+function t(key: string) {
+  const dict = ui[lang] as Record<string, string>;
+  return dict[key] ?? key;
+}
+
+const moments = allMoments.map((m) => ({
+  src: fs.existsSync(path.join(process.cwd(), 'public', m.image)) ? m.image : null,
+  title: m.title[lang],
+  location: m.location,
+  text: m.text?.[lang],
 }));
 ---
 
-<section class="py-20 bg-[#FFFDFA] overflow-hidden">
+<section id="moments" class="scroll-mt-20 overflow-hidden bg-[#FFFDFA] py-20 md:py-28">
+  <div class="moments-swipe">
 
-  <!-- HEADER -->
-  <div class="max-w-3xl mx-auto text-center px-6 mb-12">
+    <!-- Kop + pijltjes -->
+    <div class="mx-auto flex max-w-6xl items-end justify-between gap-6 px-6">
+      <div>
+        <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">{t('moments.title')}</h2>
+        <p class="mt-4 max-w-md text-[15px] leading-relaxed text-gray-600 md:text-base">{t('moments.intro')}</p>
+      </div>
+      <div class="hidden shrink-0 gap-2 md:flex">
+        <button type="button" class="moments-prev flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-gray-900 transition hover:border-[#1CABB0] hover:text-[#1CABB0] disabled:opacity-30" aria-label={t('moments.prev')}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+        </button>
+        <button type="button" class="moments-next flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-gray-900 transition hover:border-[#1CABB0] hover:text-[#1CABB0] disabled:opacity-30" aria-label={t('moments.next')}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+      </div>
+    </div>
 
-    <p class="uppercase tracking-[0.2em] text-[#1CABB0] text-sm mb-3">
-      Community
-    </p>
-
-    <h2 class="text-4xl font-semibold mb-4 text-gray-900">
-      MAY WAY Moments
-    </h2>
-
-    <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">
-      Deel jouw MAY WAY momenten en laat je inspireren door verhalen, bestemmingen en herinneringen van reizigers.
-    </p>
-
-  </div>
-
-  <!-- FULL-WIDTH SWIPE SLIDER -->
-  <div
-    class="w-full overflow-x-auto overflow-y-hidden pl-6 md:pl-10 pr-6 pb-6 snap-x snap-mandatory scrollbar-hide"
-  >
-    <div class="flex gap-5 md:gap-6 w-max">
-
+    <!-- Swipe: begint uitgelijnd met de kop en loopt door tot de rand van het scherm -->
+    <div class="moments-track mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-6 pb-2 md:mt-12 md:gap-5 xl:px-[calc((100vw-72rem)/2+1.5rem)]">
       {moments.map((moment) => (
-        <article
-          class="group flex-shrink-0 w-[75vw] sm:w-[42vw] lg:w-[calc((100vw-10rem)/4)] lg:max-w-[340px] snap-start rounded-3xl overflow-hidden bg-white shadow-md hover:shadow-xl transition duration-300"
-        >
+        <article class="moment-card group relative aspect-[4/5] w-[72vw] shrink-0 snap-start overflow-hidden rounded-[1.75rem] bg-[#0B5F64] sm:w-[42vw] md:w-[30vw] lg:w-[22rem]">
+          {moment.src ? (
+            <img src={moment.src} alt={moment.title} loading="lazy" draggable="false" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+          ) : (
+            <div class="absolute inset-0 bg-gradient-to-br from-[#0F7C82] to-[#084649]"></div>
+          )}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
 
-          <div class="h-64 md:h-72 overflow-hidden">
-            <img
-              src={moment.image}
-              alt={moment.title}
-              loading="lazy"
-              class="h-full w-full object-cover group-hover:scale-105 transition duration-500"
-            />
-          </div>
-
-          <div class="p-5 md:p-6 text-left">
-            <h3 class="text-lg font-semibold mb-2 text-gray-900">
-              {moment.title}
-            </h3>
-
-            <p class="text-gray-500 text-sm leading-relaxed">
-              {moment.caption}
+          <div class="absolute inset-x-0 bottom-0 p-5 text-white md:p-6">
+            <p class="flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-white/80">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              {moment.location}
             </p>
+            <h3 class="mt-2 text-xl font-semibold leading-tight tracking-tight md:text-2xl">{moment.title}</h3>
+            {moment.text && <p class="mt-2 text-sm leading-relaxed text-white/85">{moment.text}</p>}
           </div>
-
         </article>
       ))}
-
     </div>
   </div>
-
-  <!-- SWIPE INDICATOR -->
-  <p class="text-center text-sm text-gray-500 mt-2">
-    <span class="text-[#1CABB0]">←</span>
-    &nbsp; Swipe om meer momenten te ontdekken &nbsp;
-    <span class="text-[#1CABB0]">→</span>
-  </p>
-
 </section>
 
-<style>
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+<script>
+  function initMomentsSwipe() {
+    const root = document.querySelector<HTMLElement>('.moments-swipe');
+    const track = root?.querySelector<HTMLElement>('.moments-track');
+    const prev = root?.querySelector<HTMLButtonElement>('.moments-prev');
+    const next = root?.querySelector<HTMLButtonElement>('.moments-next');
+    if (!track) return;
+
+    const step = () => {
+      const card = track.querySelector<HTMLElement>('.moment-card');
+      return card ? card.offsetWidth + 20 : track.clientWidth;
+    };
+
+    const update = () => {
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    };
+
+    prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    track.addEventListener('scroll', update, { passive: true });
+    update();
   }
 
-  .scrollbar-hide {
-    -ms-overflow-style: none;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMomentsSwipe);
+  } else {
+    initMomentsSwipe();
+  }
+</script>
+
+<style>
+  .moments-track {
     scrollbar-width: none;
+  }
+  .moments-track::-webkit-scrollbar {
+    display: none;
   }
 </style>

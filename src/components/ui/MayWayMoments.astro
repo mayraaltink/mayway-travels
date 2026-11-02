@@ -25,18 +25,18 @@ const moments = allMoments.map((m) => ({
   <div class="moments-swipe mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#E6F6F6] py-14 md:rounded-[3.5rem] md:py-20">
 
     <!-- Kop -->
-    <div class="mx-auto max-w-6xl px-6">
+    <div class="mx-auto px-6 md:px-10">
       <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">{t('moments.title')}</h2>
       <p class="mt-4 max-w-md text-[15px] leading-relaxed text-gray-600 md:text-base">{t('moments.intro')}</p>
     </div>
 
     <!-- Swipe in dezelfde stijl als de logo-carousel (Eerdere samenwerkingen) -->
-    <div class="relative mx-auto mt-10 max-w-6xl px-6 md:mt-12">
+    <div class="relative mx-auto mt-10 px-6 md:mt-12 md:px-10">
       <div class="moments-track flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth md:gap-5" style="scrollbar-width: none; -ms-overflow-style: none;">
       {moments.map((moment) => (
         <button
           type="button"
-          class="moment-card group relative block aspect-[4/5] w-[72%] shrink-0 snap-start overflow-hidden rounded-[1.75rem] bg-[#0B5F64] text-left sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2.5rem)/3)]"
+          class="moment-card group relative block aspect-[4/5] w-full shrink-0 snap-center sm:snap-start overflow-hidden rounded-[1.75rem] bg-[#0B5F64] text-left sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2.5rem)/3)]"
           data-src={moment.src ?? ''}
           data-title={moment.title}
           data-location={moment.location}
@@ -66,8 +66,8 @@ const moments = allMoments.map((m) => ({
       </div>
 
       <!-- Pijlen links en rechts (zelfde als de logo-carousel) -->
-      <button type="button" class="moments-prev absolute left-1 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30 md:left-1" aria-label={t('moments.prev')}>←</button>
-      <button type="button" class="moments-next absolute right-1 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30 md:right-1" aria-label={t('moments.next')}>→</button>
+      <button type="button" class="moments-prev absolute left-1 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30 md:left-5" aria-label={t('moments.prev')}>←</button>
+      <button type="button" class="moments-next absolute right-1 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30 md:right-5" aria-label={t('moments.next')}>→</button>
     </div>
 
     <!-- Bolletjes -->

@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import headerImg from "../../assets/Header.avif";
-import WorkingHoliday from '../../components/destinations/WorkingHoliday.astro';
 import { ui, defaultLang } from '../../i18n/ui';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -137,11 +136,11 @@ const destinations = [
     <section class="relative overflow-hidden pt-28 pb-16 md:pb-24">
       <div class="pointer-events-none absolute -right-24 top-24 h-96 w-96 rounded-full bg-[#4ED2CE]/10 blur-3xl"></div>
       <div class="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-[#1CABB0]/10 blur-3xl"></div>
-      
+
       <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         <div>
-         
-         
+
+
 <h1 class="text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
   <span class="font-libre">
     {t('community.intro.title')}
@@ -157,9 +156,9 @@ const destinations = [
     {t('community.intro.descNormal')}
   </p>
 </div>
-          
+
         </div>
-        
+
         <div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
           <div class="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#E8FAF9] to-[#d4f3f1] p-4 shadow-2xl ring-1 ring-black/5">
             <div class="overflow-hidden rounded-2xl shadow-inner">
@@ -173,7 +172,7 @@ const destinations = [
 
  
   <!-- BESTEMMINGEN: turquoise blok met twee grote kaarten -->
-  <section id="reisplan" class="bg-[#FFFDFA] px-3 pt-6 pb-16 md:px-6 md:pt-10 md:pb-24">
+  <section id="reisplan" class="bg-[#FFFDFA] px-3 pt-6 md:px-6 md:pt-10">
     <div class="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#0F7C82] px-5 py-14 text-white md:rounded-[3.5rem] md:px-12 md:py-20">
 
       <!-- Kop -->
@@ -228,6 +227,5 @@ const destinations = [
 
   <MayWayMoments />
   <CommunityMoments />
-  <WorkingHoliday />
 
 </BaseLayout>

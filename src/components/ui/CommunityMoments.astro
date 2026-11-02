@@ -20,37 +20,78 @@ const messages = {
 };
 ---
 
-<section id="community-moments" class="scroll-mt-20 bg-[#F4FBFB] py-20 md:py-28">
-  <div class="mx-auto max-w-6xl px-6">
+<section id="community-moments" class="scroll-mt-20 bg-[#FFFDFA] px-3 py-16 md:px-6 md:py-24">
+  <!-- Wit vlak, zoals een Instagram-feed -->
+  <div class="mx-auto max-w-7xl rounded-[2.5rem] bg-white py-14 shadow-[0_20px_60px_rgba(0,0,0,0.06)] ring-1 ring-black/5 md:rounded-[3.5rem] md:py-20">
+  <div class="mx-auto max-w-4xl px-4 md:px-6">
 
-    <!-- Kop -->
-    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-      <div>
-        <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">{t('cmoments.title')}</h2>
-        <p class="mt-4 max-w-md text-[15px] leading-relaxed text-gray-600 md:text-base">{t('cmoments.intro')}</p>
+    <!-- Profielkop in Instagram-stijl -->
+    <div class="flex flex-col items-center gap-6 border-b border-black/10 pb-8 text-center md:flex-row md:items-center md:gap-10 md:pb-10 md:text-left">
+      <!-- Avatar met turquoise ring -->
+      <div class="shrink-0 rounded-full bg-gradient-to-tr from-[#1CABB0] via-[#4ED2CE] to-[#B8EDEB] p-[3px]">
+        <div class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-white bg-white md:h-28 md:w-28">
+          <span class="font-neucha text-2xl font-bold leading-none text-[#4ED2CE] md:text-3xl">MW</span>
+        </div>
       </div>
+
+      <div class="flex-1">
+        <div class="flex flex-col items-center gap-3 md:flex-row md:gap-5">
+          <h2 class="text-2xl font-semibold tracking-tight text-black md:text-3xl">{t('cmoments.title')}</h2>
+          <button
+            type="button"
+            data-open-share
+            class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#15939a]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+            {t('cmoments.cta')}
+          </button>
+        </div>
+        <p class="mt-2 text-sm text-gray-500">
+          <span id="cmoments-count" class="font-semibold text-gray-900">0</span> {t('cmoments.count')} · #maywaymoments
+        </p>
+        <p class="mt-3 max-w-md text-[15px] leading-relaxed text-gray-600 md:text-base">{t('cmoments.intro')}</p>
+      </div>
+    </div>
+
+    <!-- Feed: "+"-tegel eerst, daarna de momenten (worden geladen) -->
+    <div id="cmoments-grid" class="mt-1 grid grid-cols-3 gap-1 md:mt-2 md:gap-2">
       <button
         type="button"
         data-open-share
-        class="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a] md:self-auto"
+        class="group flex aspect-square flex-col items-center justify-center gap-2 bg-[#E6F6F6] text-[#1CABB0] transition hover:bg-[#D2EFED] md:gap-3"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
-        {t('cmoments.cta')}
+        <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#1CABB0] transition group-hover:scale-110 md:h-14 md:w-14">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+        </span>
+        <span class="px-2 text-xs font-semibold md:text-sm">{t('cmoments.cta')}</span>
       </button>
+
+      <!-- Plaatshouders zolang er nog niets is goedgekeurd -->
+      {Array.from({ length: 5 }).map(() => (
+        <div data-placeholder class="flex aspect-square items-center justify-center bg-[#F4FBFB]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1CABB0" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"></path></svg>
+        </div>
+      ))}
     </div>
 
-    <!-- Momenten (worden geladen) -->
-    <div id="cmoments-grid" class="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4"></div>
-
-    <!-- Lege staat -->
-    <div id="cmoments-empty" class="mt-12 rounded-[1.75rem] border-2 border-dashed border-[#1CABB0]/25 px-6 py-14 text-center" hidden>
-      <p class="text-lg font-semibold text-gray-900">{t('cmoments.empty.title')}</p>
-      <p class="mt-2 text-[15px] text-gray-600">{t('cmoments.empty.text')}</p>
-      <button type="button" data-open-share class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a]">
-        {t('cmoments.cta')}
-      </button>
-    </div>
+    <p id="cmoments-empty" class="mt-6 text-center text-sm text-gray-500">{t('cmoments.empty.text')}</p>
   </div>
+  </div>
+
+  <!-- Moment groot bekijken -->
+  <dialog id="moment-dialog" class="m-auto w-[calc(100%-2rem)] max-w-3xl overflow-hidden rounded-[1.5rem] p-0 backdrop:bg-black/70 backdrop:backdrop-blur-sm">
+    <div class="grid md:grid-cols-[1.2fr_1fr]">
+      <img id="moment-photo" alt="" class="aspect-square w-full bg-gray-100 object-cover" />
+      <div class="relative flex flex-col p-6 md:p-7">
+        <button type="button" data-close-moment class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition hover:bg-gray-200" aria-label={t('cmoments.form.close')}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+        </button>
+        <p id="moment-name" class="pr-10 font-semibold text-gray-900"></p>
+        <p id="moment-location" class="mt-0.5 text-xs uppercase tracking-[0.15em] text-[#1CABB0]"></p>
+        <p id="moment-story" class="mt-5 whitespace-pre-line text-[15px] leading-relaxed text-gray-700"></p>
+      </div>
+    </div>
+  </dialog>
 
   <!-- Formulier (pop-up) -->
   <dialog id="share-dialog" class="m-auto w-[calc(100%-2rem)] max-w-lg rounded-[1.75rem] p-0 backdrop:bg-black/50 backdrop:backdrop-blur-sm">
@@ -126,25 +167,46 @@ const messages = {
 
   const escape = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-  // Goedgekeurde momenten laden
+  // Goedgekeurde momenten laden en als feed-tegels tonen (na de "+"-tegel)
+  const momentDialog = document.getElementById('moment-dialog');
+  let moments = [];
+
   fetch('/api/moments')
     .then((r) => (r.ok ? r.json() : []))
     .catch(() => [])
     .then((items) => {
-      if (!Array.isArray(items) || items.length === 0) {
-        empty.hidden = false;
-        return;
-      }
-      grid.innerHTML = items.map((m) => `
-        <article class="break-inside-avoid overflow-hidden rounded-[1.5rem] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-          <img src="${escape(m.photo)}" alt="${escape(m.location)}" loading="lazy" class="w-full object-cover" />
-          <div class="p-5">
-            <p class="text-xs uppercase tracking-[0.15em] text-[#1CABB0]">${escape(m.location)}</p>
-            <p class="mt-2 text-[15px] leading-relaxed text-gray-700">${escape(m.story)}</p>
-            <p class="mt-3 text-sm font-semibold text-gray-900">${escape(m.name)}${m.instagram ? ` <a href="https://www.instagram.com/${encodeURIComponent(m.instagram)}/" target="_blank" rel="noopener noreferrer" class="font-normal text-[#1CABB0] hover:underline">@${escape(m.instagram)}</a>` : ''}</p>
-          </div>
-        </article>`).join('');
+      if (!Array.isArray(items) || items.length === 0) return;
+      moments = items;
+
+      grid.querySelectorAll('[data-placeholder]').forEach((el) => el.remove());
+      empty.hidden = true;
+      document.getElementById('cmoments-count').textContent = items.length;
+
+      grid.insertAdjacentHTML('beforeend', items.map((m, i) => `
+        <button type="button" data-moment="${i}" class="group relative block aspect-square overflow-hidden bg-gray-100">
+          <img src="${escape(m.photo)}" alt="${escape(m.location)}" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <span class="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/0 p-3 text-center text-white opacity-0 transition group-hover:bg-black/45 group-hover:opacity-100">
+            <span class="text-xs uppercase tracking-[0.15em]">${escape(m.location)}</span>
+            <span class="text-sm font-semibold">${escape(m.name)}</span>
+          </span>
+        </button>`).join(''));
     });
+
+  // Moment groot openen
+  grid.addEventListener('click', (e) => {
+    const tile = e.target.closest('[data-moment]');
+    if (!tile) return;
+    const m = moments[Number(tile.dataset.moment)];
+    document.getElementById('moment-photo').src = m.photo;
+    document.getElementById('moment-location').textContent = m.location;
+    document.getElementById('moment-story').textContent = m.story;
+    document.getElementById('moment-name').innerHTML = escape(m.name) + (m.instagram
+      ? ` <a href="https://www.instagram.com/${encodeURIComponent(m.instagram)}/" target="_blank" rel="noopener noreferrer" class="font-normal text-[#1CABB0] hover:underline">@${escape(m.instagram)}</a>`
+      : '');
+    momentDialog.showModal();
+  });
+  momentDialog.querySelector('[data-close-moment]').addEventListener('click', () => momentDialog.close());
+  momentDialog.addEventListener('click', (e) => { if (e.target === momentDialog) momentDialog.close(); });
 
   // Pop-up openen en sluiten
   document.querySelectorAll('[data-open-share]').forEach((btn) => btn.addEventListener('click', () => dialog.showModal()));

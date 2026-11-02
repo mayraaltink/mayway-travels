@@ -12,30 +12,33 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
   return ui[lang as keyof typeof ui][key];
 }
 
-const logos = [
-  { src: '/images/logo/Mojo.png', alt: 'Mojo' },
-  { src: '/images/logo/adventurerental.png', alt: 'Adventure Rentals' },
-   { src: '/images/logo/nzone.jfif', alt: 'NZone' },
-  { src: '/images/logo/bridgeclimb.png', alt: 'BridgeClimb' },
-     { src: '/images/logo/colorful.png', alt: 'Colorful' },
-  { src: '/images/logo/bungee.png', alt: 'Bungee' },
-  { src: '/images/logo/cooinda.jfif', alt: 'Cooinda' },
-  { src: '/images/logo/discovery.png', alt: 'Discovery' },
-  { src: '/images/logo/drifter.png', alt: 'Drifter' },
-  { src: '/images/logo/heliworks.png', alt: 'HeliWorks' },
-  { src: '/images/logo/kakadu.png', alt: 'Kakadu' },
-    { src: '/images/logo/nomads.png', alt: 'Nomads' },
-  { src: '/images/logo/kayak.jfif', alt: 'Kayak' },
-  { src: '/images/logo/lylo.jfif', alt: 'Lylo' },
-  { src: '/images/logo/milford.jfif', alt: 'Milford' },
-  { src: '/images/logo/puri.png', alt: 'Puri' },
-  { src: '/images/logo/utang.jfif', alt: 'Utang' },
-  { src: '/images/logo/watershed.png', alt: 'Watershed' },
-    { src: '/images/logo/byron.png', alt: 'Byron Bay' },
+// href (optioneel): link naar de Instagram van het bedrijf
+const logos: { src: string; alt: string; href?: string }[] = [
+  { src: '/images/logo/Mojo.png', alt: 'Mojo', href: 'https://www.instagram.com/mojo.surf/' },
+  { src: '/images/logo/adventurerental.png', alt: 'Adventure Rentals', href: 'https://www.instagram.com/adventurerentalsaustralia/' },
+  { src: '/images/logo/nzone.jfif', alt: 'NZone', href: 'https://www.instagram.com/nzoneskydive/' },
+  { src: '/images/logo/bridgeclimb.png', alt: 'BridgeClimb', href: 'https://www.instagram.com/bridgeclimb/' },
+  { src: '/images/logo/colorful.png', alt: 'Colourful Collective', href: 'https://www.instagram.com/colourfulcollectivetravel/' },
+  { src: '/images/logo/bungee.png', alt: 'AJ Hackett Bungy', href: 'https://www.instagram.com/ajhackettbungynz/' },
+  { src: '/images/logo/cooinda.jfif', alt: 'Cooinda Lodge', href: 'https://www.instagram.com/cooindalodgekakadu/' },
+  { src: '/images/logo/discovery.png', alt: 'Discovery Parks', href: 'https://www.instagram.com/discoveryparksandresorts/' },
+  { src: '/images/logo/drifter.png', alt: 'The Hotel Drifter', href: 'https://www.instagram.com/thehoteldrifter/' },
+  { src: '/images/logo/heliworks.png', alt: 'HeliWorks', href: 'https://www.instagram.com/heliworks/' },
+  { src: '/images/logo/kakadu.png', alt: 'Kakadu Tourism', href: 'https://www.instagram.com/kakadutourism/' },
+  { src: '/images/logo/nomads.png', alt: 'Nomads Hostels', href: 'https://www.instagram.com/nomadshostels/' },
+  { src: '/images/logo/kayak.jfif', alt: 'Sydney Kayak', href: 'https://www.instagram.com/sydneykayakx/' },
+  { src: '/images/logo/lylo.jfif', alt: 'Lylo', href: 'https://www.instagram.com/staylylo/' },
+  { src: '/images/logo/milford.jfif', alt: 'Pure Milford', href: 'https://www.instagram.com/puremilfordnz/' },
+  { src: '/images/logo/puri.png', alt: 'Puri Garden Hotel', href: 'https://www.instagram.com/purigardenhotel/' },
+  { src: '/images/logo/utang.jfif', alt: 'Sumatra Orangutan Trekking', href: 'https://www.instagram.com/sumatraorangutantrekking/' },
+  { src: '/images/logo/watershed.png', alt: 'Watershed Saunas', href: 'https://www.instagram.com/watershedsaunas/' },
+  { src: '/images/logo/byron.png', alt: 'Cape Byron Kayaks', href: 'https://www.instagram.com/cape_byron_kayaks/' },
+  { src: '/images/logo/movement.png', alt: 'Movement', href: 'https://www.instagram.com/movement_oz/' },
+  { src: '/images/logo/zoo.png', alt: 'Taronga Zoo', href: 'https://www.instagram.com/tarongazoo/' },
 ];
 ---
 
-<section class:list={["relative z-0 w-full bg-white pb-12", showStory ? "pt-30" : "pt-20"]}>
+<section class:list={["relative z-0 w-full bg-white pb-12", showStory ? "pt-30" : "pt-8"]}>
   <div class="mx-auto max-w-7xl px-6 lg:px-12">
 
     <div class="flex justify-center">
@@ -122,19 +125,33 @@ const logos = [
         class="partner-item min-w-[calc((100%-3rem)/4)] snap-start md:min-w-[calc((100%-4rem)/5)]"
       >
 
-        <div
-          class="flex h-28 w-full items-center justify-center bg-white md:h-32"
-        >
-
-          <img
-            src={logo.src}
-            alt={logo.alt}
-            loading="lazy"
-            draggable="false"
-            class="max-h-20 w-auto max-w-[95%] select-none object-contain md:max-h-24"
-          />
-
-        </div>
+        {logo.href ? (
+          <a
+            href={logo.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${logo.alt} op Instagram`}
+            class="flex h-28 w-full items-center justify-center bg-white transition hover:scale-105 hover:opacity-80 md:h-32"
+          >
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              loading="lazy"
+              draggable="false"
+              class="max-h-20 w-auto max-w-[95%] select-none object-contain md:max-h-24"
+            />
+          </a>
+        ) : (
+          <div class="flex h-28 w-full items-center justify-center bg-white md:h-32">
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              loading="lazy"
+              draggable="false"
+              class="max-h-20 w-auto max-w-[95%] select-none object-contain md:max-h-24"
+            />
+          </div>
+        )}
 
       </div>
     ))}

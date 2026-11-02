@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { ui, defaultLang } from '../../i18n/ui';
 import CollaborationSection from './CollaborationSection.astro';
+import Portfolio from './Portfolio.astro';
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -10,7 +11,6 @@ function t(key: string) {
   return dict[key] ?? key;
 }
 
-const email = 'maywaytravels1@gmail.com';
 
 // id="service-1" t/m 3: de fotokaarten op de homepagina linken hiernaartoe
 // Per service een grote en een kleine foto (hier te vervangen)
@@ -26,16 +26,10 @@ const services = [
 }));
 
 const socials = [
-  { platform: 'instagram', handle: '@maywaytravels', href: 'https://www.instagram.com/maywaytravels', desc: t('forBrands.socials.maywaytravels') },
-  { platform: 'instagram', handle: '@mayraaltink', href: 'https://www.instagram.com/mayraaltink', desc: t('forBrands.socials.mayraaltink') },
-  { platform: 'instagram', handle: '@maywaysocials', href: 'https://www.instagram.com/maywaysocials', desc: t('forBrands.socials.maywaysocials') },
-  { platform: 'tiktok', handle: '@mayraxaltink', href: 'https://www.tiktok.com/@mayraxaltink', desc: t('forBrands.socials.tiktok') },
+  { platform: 'instagram', handle: '@mayraaltink', href: 'https://www.instagram.com/mayraaltink', followers: '18.4K' },
+  { platform: 'tiktok', handle: '@mayraxaltink', href: 'https://www.tiktok.com/@mayraxaltink', followers: '10.6K' },
 ];
 
-const stats = [1, 2, 3].map((num) => ({
-  value: t(`forBrands.creator.stat${num}.value`),
-  label: t(`forBrands.creator.stat${num}.label`),
-}));
 ---
 
 <BaseLayout title={t('forBrands.title')}>
@@ -53,20 +47,16 @@ const stats = [1, 2, 3].map((num) => ({
 
       <div class="relative z-20 mx-auto max-w-3xl px-6 text-center text-white">
 
-        <p class="mb-4 text-xs uppercase tracking-[0.2em] text-white/80">
-          {t('forBrands.hero.eyebrow')}
-        </p>
-
-        <h1 class="flex flex-col items-center leading-[0.9] tracking-[-0.03em]">
-          <span class="font-neucha text-4xl font-bold text-[#4ED2CE] md:text-6xl">
+        <h1 class="flex flex-col items-center leading-[0.85] tracking-[-0.03em]" style="text-shadow: 0 3px 15px rgba(0,0,0,0.65);">
+          <span class="font-neucha text-5xl font-bold text-[#4ED2CE] md:text-6xl">
             {t('forBrands.hero.title1')}
           </span>
-          <span class="text-4xl font-semibold text-white md:text-6xl">
+          <span class="text-3xl font-medium text-white md:text-4xl">
             {t('forBrands.hero.title2')}
           </span>
         </h1>
 
-        <p class="mt-5 text-lg font-medium text-white/95 md:text-2xl">
+        <p class="mt-4 text-base font-medium tracking-[0.02em] text-white md:text-lg" style="text-shadow: 0 3px 15px rgba(0,0,0,0.4);">
           {t('forBrands.hero.line1')}
         </p>
 
@@ -182,14 +172,8 @@ const stats = [1, 2, 3].map((num) => ({
     </section>
 
 
-    <!-- MIJN PROJECTEN: eerdere samenwerkingen -->
-    <div id="partners" class="scroll-mt-20">
-      <CollaborationSection showStory={false} />
-    </div>
-
-
     <!-- SAMENWERKEN: creator partnerships -->
-    <section id="creator" class="scroll-mt-20 bg-[#F4FBFB] py-20 md:py-28">
+    <section id="creator" class="scroll-mt-20 bg-[#F4FBFB] pt-20 pb-14 md:pt-28">
       <div class="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
 
         <!-- Verhaal -->
@@ -200,24 +184,15 @@ const stats = [1, 2, 3].map((num) => ({
           <div class="mt-8 space-y-5 text-lg leading-relaxed text-gray-700">
             <p>{t('forBrands.creator.p1')}</p>
             <p>{t('forBrands.creator.p2')}</p>
-            <p>{t('forBrands.creator.p3')}</p>
           </div>
 
-          <dl class="mt-10 grid grid-cols-3 gap-4 border-t border-[#1CABB0]/15 pt-8">
-            {stats.map((stat) => (
-              <div>
-                <dt class="sr-only">{stat.label}</dt>
-                <dd class="text-2xl font-semibold text-[#1CABB0] md:text-3xl">{stat.value}</dd>
-                <dd class="mt-1 text-sm leading-snug text-gray-600">{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
-
-          <p class="mt-10 text-base leading-relaxed text-gray-700">
-            {t('forBrands.creator.mail1')}{' '}
-            <a href={`mailto:${email}?subject=Collaboration%20MAY%20WAY`} class="font-semibold text-[#1CABB0] underline decoration-[#1CABB0]/30 underline-offset-4 transition hover:decoration-[#1CABB0]">{email}</a>.
-            {' '}{t('forBrands.creator.mail2')}
-          </p>
+          <a
+            href={`/${lang}/contact`}
+            class="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a]"
+          >
+            {t('forBrands.creator.cta')}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
         </div>
 
         <!-- Socials -->
@@ -244,7 +219,7 @@ const stats = [1, 2, 3].map((num) => ({
                   <span class="min-w-0 flex-1">
                     <span class="block text-base font-semibold text-gray-900">{social.handle}</span>
                     <span class="block text-sm text-gray-500">
-                      {social.platform === 'instagram' ? 'Instagram' : 'TikTok'} · {social.desc}
+                      {social.platform === 'instagram' ? 'Instagram' : 'TikTok'} · <span class="font-semibold text-[#1CABB0]">{social.followers}</span> {t('forBrands.socials.followers')}
                     </span>
                   </span>
 
@@ -258,28 +233,14 @@ const stats = [1, 2, 3].map((num) => ({
     </section>
 
 
-    <!-- AFSLUITENDE CTA -->
-    <section id="contact" class="scroll-mt-20 bg-gradient-to-br from-[#1CABB0] via-[#1ba9ae] to-[#15939a] py-20 text-center text-white md:py-24">
-      <div class="mx-auto max-w-2xl px-6">
-        <span class="inline-block rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-wider">
-          {t('forBrands.cta.badge')}
-        </span>
-        <h2 class="mt-6 text-3xl font-semibold tracking-tight md:text-5xl">{t('forBrands.cta.title')}</h2>
-        <p class="mx-auto mt-4 max-w-lg text-lg text-white/85">{t('forBrands.cta.text')}</p>
+    <!-- EERDERE SAMENWERKINGEN: logo's -->
+    <div id="partners" class="scroll-mt-20">
+      <CollaborationSection showStory={false} />
+    </div>
 
-        <div class="mt-10 flex flex-col items-center gap-4">
-          <a
-            href={`/${lang}/contact`}
-            class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 font-semibold text-[#1CABB0] shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#E6F6F6] hover:text-[#15939a]"
-          >
-            {t('forBrands.cta.btn')}
-          </a>
-          <a href={`mailto:${email}?subject=Collaboration%20MAY%20WAY`} class="text-sm text-white/80 underline-offset-4 transition hover:text-white hover:underline">
-            {email}
-          </a>
-        </div>
-      </div>
-    </section>
+
+    <!-- MIJN PROJECTEN: mini-portfolio -->
+    <Portfolio />
 
   </div>
 </BaseLayout>

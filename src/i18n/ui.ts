@@ -113,7 +113,6 @@ export const ui = {
     ///for brands
 'forBrands.title': 'For Brands | MAY WAY Socials',
 
-'forBrands.hero.eyebrow': 'Content · Social media · Creator partnerships',
 'forBrands.hero.title1': 'MAY WAY',
 'forBrands.hero.title2': 'Socials',
 'forBrands.hero.line1': 'Together, we bring your brand to life.',
@@ -126,7 +125,7 @@ export const ui = {
 'forBrands.services.title2': 'your brand to life.',
 'forBrands.services.more': 'Learn more',
 'forBrands.services.eyebrow': 'Services',
-'forBrands.services.heading': 'What I can do for your brand',
+'forBrands.services.heading': 'This is how we make an impact',
 'forBrands.services.offerTitle': 'What I offer',
 'forBrands.services.cta': 'Discuss the possibilities',
 
@@ -147,29 +146,23 @@ export const ui = {
 'forBrands.services.3.more': 'More about my socials',
 
 'forBrands.creator.eyebrow': 'Collaborate · Creator partnerships',
-'forBrands.creator.title': 'Your brand in the spotlight, the authentic way',
-'forBrands.creator.p1': 'The most beautiful travel stories are not created alone. That is why MAY WAY collaborates with destinations, (travel) brands and hospitality companies that perfectly align with our adventurous audience.',
-'forBrands.creator.p2': 'Every month we reach thousands of adventurers across the Netherlands and Belgium with our adventurous posts. We also share our experiences with enthusiasm with more than 18,500 engaged followers on Instagram via @maywaytravels and @mayraaltink.',
-'forBrands.creator.p3': 'From creative campaigns and UGC content to long-term partnerships: we love to think along on concept, strategy and execution to create real impact with a travel-loving audience.',
-'forBrands.creator.stat1.value': '18,500+',
-'forBrands.creator.stat1.label': 'engaged followers on Instagram',
-'forBrands.creator.stat2.value': 'NL & BE',
-'forBrands.creator.stat2.label': 'thousands of adventurers reached every month',
-'forBrands.creator.stat3.value': '4',
-'forBrands.creator.stat3.label': 'channels on Instagram & TikTok',
-'forBrands.creator.mail1': 'Got an idea or want to explore the possibilities? Send an email to',
-'forBrands.creator.mail2': 'We look forward to an inspiring collaboration.',
+'forBrands.creator.title': 'From brand experience to online reach',
+'forBrands.creator.p1': 'The best stories and adventures are never created alone. That is why MAY WAY works with destinations, (travel) brands, events and hospitality businesses that match our audience.',
+'forBrands.creator.p2': 'By making brands part of real experiences, we create authentic content that inspires, connects and gets people moving. Last year our content on TikTok and Instagram already reached hundreds of thousands of adventure seekers. Got a fun idea or want to explore the possibilities together?',
+'forBrands.creator.cta': "Let's talk",
 
 'forBrands.socials.title': 'Follow along',
-'forBrands.socials.maywaytravels': 'Travel inspiration & adventures',
-'forBrands.socials.mayraaltink': 'My personal account',
-'forBrands.socials.maywaysocials': 'Content & social media for brands',
-'forBrands.socials.tiktok': 'Short-form travel videos',
+'forBrands.socials.followers': 'followers',
 
-'forBrands.cta.badge': 'Ready to get started?',
-'forBrands.cta.title': "Let's create something beautiful together",
-'forBrands.cta.text': "Tell me about your brand and your ideas, and I'd love to think along with you.",
-'forBrands.cta.btn': 'Get in touch',
+// portfolio
+'portfolio.eyebrow': 'Portfolio',
+'portfolio.title': 'My projects',
+'portfolio.view': 'View on Instagram',
+'portfolio.more': 'More content',
+'portfolio.photos': 'Photos',
+'portfolio.cta': 'See more on Instagram',
+'portfolio.contact': 'Get in touch',
+
 
 
 
@@ -620,14 +613,9 @@ fiji_intro_cta: "Start planning your trip",
 
      //////////footer
     
-    'footer.description': 'Your travel platform for unique routes, hidden gems and real travel inspiration.',
-    'footer.nav.australia': 'Australia',
-    'footer.nav.traveladvice': 'Travel Advice',
-    'footer.nav.community': 'Community',
-    'footer.nav.about': 'About me',
-    'footer.nav.contact': 'Contact',
-    'footer.followTitle': 'Travel with me?',
-    'footer.followText': 'Follow my journeys on social media and discover daily inspiration, tips and hidden places.',
+    'footer.description': 'We bring brands to life with creative content, unique brand experiences and authentic stories that inspire, connect and make an impact.',
+    'footer.followTitle': 'Want to join the adventure?',
+    'footer.followText': 'Follow my experiences on social media and discover daily inspiration, tips and hidden places.',
     'footer.copyright': 'All rights reserved',
 
 
@@ -751,7 +739,6 @@ fiji_intro_cta: "Start planning your trip",
 
 'forBrands.title': 'For Brands | MAY WAY Socials',
 
-'forBrands.hero.eyebrow': 'Content · Social media · Creator partnerships',
 'forBrands.hero.title1': 'MAY WAY',
 'forBrands.hero.title2': 'Socials',
 'forBrands.hero.line1': 'Samen brengen we jouw merk tot leven.',
@@ -764,7 +751,7 @@ fiji_intro_cta: "Start planning your trip",
 'forBrands.services.title2': 'jouw merk tot leven.',
 'forBrands.services.more': 'Meer info',
 'forBrands.services.eyebrow': 'Services',
-'forBrands.services.heading': 'Wat ik voor jouw merk kan doen',
+'forBrands.services.heading': 'Dit is hoe we impact maken',
 'forBrands.services.offerTitle': 'Wat ik aanbied',
 'forBrands.services.cta': 'Bespreek de mogelijkheden',
 
@@ -785,26 +772,23 @@ fiji_intro_cta: "Start planning your trip",
 'forBrands.services.3.more': 'Meer over mijn socials',
 
 'forBrands.creator.eyebrow': 'Samenwerken · Creator partnerships',
-'forBrands.creator.title': 'Jouw merk authentiek onder de aandacht',
-'forBrands.creator.p1': 'De mooiste reisverhalen ontstaan niet alleen. Daarom werkt MAY WAY samen met bestemmingen, (reis)merken en hospitalitybedrijven die perfect aansluiten bij onze avontuurlijke doelgroep.',
-'forBrands.creator.p2': 'Wij bereiken maandelijks duizenden avonturiers in Nederland en België met onze avontuurlijke posts. Ook delen wij onze ervaringen vol enthousiasme met ruim 18.500 betrokken volgers op Instagram via @maywaytravels en @mayraaltink.',
-'forBrands.creator.p3': 'Van creatieve campagnes en UGC-content tot langdurige partnerships: wij denken graag mee over concept, strategie en uitvoering om samen impact te maken bij een reislustig publiek.',
-'forBrands.creator.stat1.value': '18.500+',
-'forBrands.creator.stat1.label': 'betrokken volgers op Instagram',
-'forBrands.creator.stat2.value': 'NL & BE',
-'forBrands.creator.stat2.label': 'maandelijks duizenden avonturiers bereikt',
-'forBrands.creator.stat3.value': '4',
-'forBrands.creator.stat3.label': 'kanalen op Instagram & TikTok',
-'forBrands.creator.mail1': 'Heb je een leuk idee of wil je sparren over de mogelijkheden? Stuur gerust een mailtje naar',
-'forBrands.creator.mail2': 'We kijken uit naar een inspirerende samenwerking.',
+'forBrands.creator.title': 'Van merkbeleving naar online bereik',
+'forBrands.creator.p1': 'De mooiste verhalen en avonturen ontstaan niet alleen. Daarom werkt MAY WAY samen met bestemmingen, (reis)merken, events en hospitalitybedrijven die aansluiten bij onze doelgroep.',
+'forBrands.creator.p2': 'Door merken onderdeel te maken van échte ervaringen, creëren we authentieke content die inspireert, verbindt en mensen in beweging brengt. Afgelopen jaar bereikten we met onze content op TikTok en Instagram al honderdduizenden adventure seekers. Heb je een leuk idee of wil je sparren over de mogelijkheden?',
+'forBrands.creator.cta': "Let's talk",
 
 'forBrands.socials.title': 'Volg mee',
-'forBrands.socials.maywaytravels': 'Reisinspiratie & avonturen',
-'forBrands.socials.mayraaltink': 'Mijn persoonlijke account',
-'forBrands.socials.maywaysocials': 'Content & social media voor merken',
-'forBrands.socials.tiktok': "Short-form reisvideo's",
+'forBrands.socials.followers': 'volgers',
 
-'forBrands.cta.text': 'Vertel me over je merk en je ideeën, dan denk ik graag met je mee.',
+// portfolio
+'portfolio.eyebrow': 'Portfolio',
+'portfolio.title': 'Mijn projecten',
+'portfolio.view': 'Bekijk op Instagram',
+'portfolio.more': 'Meer content',
+'portfolio.photos': "Foto's",
+'portfolio.cta': 'Bekijk meer op Instagram',
+'portfolio.contact': 'Neem contact op',
+
 
 'travelAdvice.hero.desc': `Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.
 
@@ -816,9 +800,6 @@ Met MAY WAY wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verle
 
 
 
-'forBrands.cta.badge': 'Klaar om te beginnen?',
-'forBrands.cta.title': 'Laten we samen iets moois maken',
-'forBrands.cta.btn': 'Neem contact op',
  
 
 
@@ -1201,16 +1182,11 @@ fiji_intro_cta: "Begin met het plannen van je reis",
   
 ///////Footer 
     
-  'footer.description':'Jouw reisplatform voor unieke routes, verborgen plekken en echte travel-inspiratie. Voor reizigers die vrijheid willen, maar wel met een goed plan.',
+'footer.description': 'Wij brengen merken tot leven met creatieve content, bijzondere merkbelevingen en authentieke verhalen die inspireren, verbinden en impact maken.',
 
-'footer.nav.australia': 'Australië',
-'footer.nav.traveladvice': 'Reisadvies',
-'footer.nav.community': 'Community',
-'footer.nav.about': 'Over mij',
-'footer.nav.contact': 'Contact',
 
-'footer.followTitle': 'Reis je met ons mee?',
-'footer.followText': 'Volg mijn reizen via social media en ontdek dagelijkse inspiratie, tips en verborgen plekken.',
+'footer.followTitle': 'Ga je mee op avontuur?',
+'footer.followText': 'Volg mijn ervaringen via social media en ontdek dagelijkse inspiratie, tips en verborgen plekken.',
 
 'footer.copyright': 'Alle rechten voorbehouden',
 

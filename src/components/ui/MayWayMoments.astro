@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ui, defaultLang } from '../../i18n/ui';
 import { moments as allMoments } from '../../data/moments';
+import CarouselControls from './CarouselControls.astro';
 
 const lang = (Astro.currentLocale || defaultLang) as 'nl' | 'en';
 
@@ -21,18 +22,18 @@ const moments = allMoments.map((m) => ({
 }));
 ---
 
-<section id="moments" class="scroll-mt-20 bg-[#FFFDFA] px-3 pt-16 md:px-6 md:pt-24">
-  <div class="moments-swipe mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#E6F6F6] py-14 md:rounded-[3.5rem] md:py-20">
+<section id="moments" class="mt-16 scroll-mt-20 bg-[#E6F6F6] py-16 md:mt-24 md:py-24">
+  <div data-carousel class="mx-auto max-w-7xl">
 
     <!-- Kop -->
-    <div class="mx-auto px-6 md:px-10">
+    <div class="mx-auto px-6 text-center md:px-10 md:text-left">
       <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">{t('moments.title')}</h2>
-      <p class="mt-4 max-w-md text-[15px] leading-relaxed text-gray-600 md:text-base">{t('moments.intro')}</p>
+      <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-gray-600 md:mx-0 md:text-base">{t('moments.intro')}</p>
     </div>
 
-    <!-- Swipe in dezelfde stijl als de logo-carousel (Eerdere samenwerkingen) -->
-    <div class="relative mx-auto mt-10 px-6 md:mt-12 md:px-10">
-      <div class="moments-track flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth md:gap-5" style="scrollbar-width: none; -ms-overflow-style: none;">
+    <!-- Swipe (bediening: CarouselControls, zelfde stijl op de hele site) -->
+    <div class="mx-auto mt-10 px-6 md:mt-12 md:px-10">
+      <div data-carousel-track class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth md:gap-5">
       {moments.map((moment) => (
         <button
           type="button"
@@ -64,14 +65,9 @@ const moments = allMoments.map((m) => ({
         </button>
       ))}
       </div>
-
-      <!-- Pijlen links en rechts (zelfde als de logo-carousel) -->
-      <button type="button" class="moments-prev absolute left-1 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30 md:left-5" aria-label={t('moments.prev')}>←</button>
-      <button type="button" class="moments-next absolute right-1 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30 md:right-5" aria-label={t('moments.next')}>→</button>
     </div>
 
-    <!-- Bolletjes -->
-    <div class="moments-dots mt-6 flex justify-center gap-2"></div>
+    <CarouselControls />
   </div>
 
   <!-- Moment met verhaal (opent bij klikken) -->
@@ -92,64 +88,14 @@ const moments = allMoments.map((m) => ({
 </section>
 
 <script>
-  function initMomentsSwipe() {
-    const root = document.querySelector<HTMLElement>('.moments-swipe');
-    const track = root?.querySelector<HTMLElement>('.moments-track');
-    const prev = root?.querySelector<HTMLButtonElement>('.moments-prev');
-    const next = root?.querySelector<HTMLButtonElement>('.moments-next');
-    const dotsContainer = root?.querySelector<HTMLElement>('.moments-dots');
-    if (!track || !prev || !next || !dotsContainer) return;
-
-    const step = () => {
-      const card = track.querySelector<HTMLElement>('.moment-card');
-      const gap = parseFloat(getComputedStyle(track).columnGap || '0');
-      return card ? card.offsetWidth + gap : track.clientWidth;
-    };
-    const maxIndex = () => Math.max(0, Math.round((track.scrollWidth - track.clientWidth) / step()));
-    const index = () => Math.round(track.scrollLeft / step());
-    // Aantal kaarten dat tegelijk in beeld is = één "pagina"; één bolletje per pagina
-    const perPage = () => Math.max(1, Math.round(track.clientWidth / step()));
-    const goTo = (i: number) => track.scrollTo({ left: Math.min(Math.max(i, 0), maxIndex()) * step(), behavior: 'smooth' });
-
-    const createDots = () => {
-      dotsContainer.innerHTML = '';
-      const pages = Math.ceil(maxIndex() / perPage()) + 1;
-      for (let p = 0; p < pages; p++) {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'moments-dot h-2 w-2 rounded-full transition-all duration-300';
-        dot.setAttribute('aria-label', `${p + 1}`);
-        dot.addEventListener('click', () => goTo(p * perPage()));
-        dotsContainer.appendChild(dot);
-      }
-      update();
-    };
-
-    const update = () => {
-      const dots = dotsContainer.querySelectorAll<HTMLElement>('.moments-dot');
-      const active = index() >= maxIndex() ? dots.length - 1 : Math.round(index() / perPage());
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('bg-[#5CC2BF]', i === active);
-        dot.classList.toggle('scale-125', i === active);
-        dot.classList.toggle('bg-gray-300', i !== active);
-      });
-      prev.disabled = index() <= 0;
-      next.disabled = index() >= maxIndex();
-    };
-
-    prev.addEventListener('click', () => goTo(index() - perPage()));
-    next.addEventListener('click', () => goTo(index() + perPage()));
-    track.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', createDots);
-    createDots();
-
-    // Moment openen met het verhaal
+  // Moment openen met het verhaal (de swipe zelf regelt CarouselControls)
+  function initMomentStories() {
     const dialog = document.querySelector<HTMLDialogElement>('.moment-story');
     if (!dialog) return;
     const photo = dialog.querySelector<HTMLImageElement>('[data-story-photo]')!;
     const set = (selector: string, value: string) => { dialog.querySelector(selector)!.textContent = value; };
 
-    track.querySelectorAll<HTMLElement>('.moment-card').forEach((card) => {
+    document.querySelectorAll<HTMLElement>('.moment-card').forEach((card) => {
       card.addEventListener('click', () => {
         const { src = '', title = '', location = '', story = '' } = card.dataset;
         photo.classList.toggle('hidden', !src);
@@ -165,14 +111,8 @@ const moments = allMoments.map((m) => ({
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMomentsSwipe);
+    document.addEventListener('DOMContentLoaded', initMomentStories);
   } else {
-    initMomentsSwipe();
+    initMomentStories();
   }
 </script>
-
-<style>
-  .moments-track::-webkit-scrollbar {
-    display: none;
-  }
-</style>

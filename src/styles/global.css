@@ -21,6 +21,14 @@ body {
   font-family: "Zain", sans-serif; /* default font for body text */
 }
 
+/* Swipes (zie src/scripts/carousel.ts): geen zichtbare scrollbalk */
+[data-carousel-track] {
+  scrollbar-width: none;
+}
+[data-carousel-track]::-webkit-scrollbar {
+  display: none;
+}
+
 
 
 

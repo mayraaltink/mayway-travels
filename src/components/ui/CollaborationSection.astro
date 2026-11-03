@@ -2,6 +2,7 @@
 // src/components/ui/CollaborationSection.astro
 
 import { ui, defaultLang } from '../../i18n/ui';
+import CarouselControls from './CarouselControls.astro';
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -104,7 +105,7 @@ const logos: { src: string; alt: string; href?: string }[] = [
         </>)}
 
         <!-- PARTNER LOGO CAROUSEL -->
-        <div class:list={["relative w-full", { "mt-16": showStory }]}>
+        <div data-carousel class:list={["relative w-full", { "mt-16": showStory }]}>
 
           <!-- CAROUSEL TITLE -->
           <h3 class="mb-8 text-center text-3xl font-semibold tracking-[-0.02em] text-black md:text-4xl">
@@ -115,9 +116,8 @@ const logos: { src: string; alt: string; href?: string }[] = [
 <div class="relative">
 
   <div
-    id="partner-track"
+    data-carousel-track
     class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2"
-    style="scrollbar-width: none; -ms-overflow-style: none;"
   >
 
     {logos.map((logo) => (
@@ -158,36 +158,9 @@ const logos: { src: string; alt: string; href?: string }[] = [
 
   </div>
 
-
-            <!-- LEFT ARROW -->
-            <button
-              id="partner-prev"
-              type="button"
-              aria-label="Vorige partners"
-              class="absolute -left-5 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30"
-            >
-              ←
-            </button>
-
-            <!-- RIGHT ARROW -->
-            <button
-              id="partner-next"
-              type="button"
-              aria-label="Volgende partners"
-              class="absolute -right-5 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:scale-105 disabled:pointer-events-none disabled:opacity-30"
-            >
-              →
-            </button>
-
           </div>
 
-          <!-- DOTS -->
-          <div
-            id="partner-dots"
-            class="mt-6 flex justify-center gap-2"
-            aria-label="Partner carousel navigatie"
-          >
-          </div>
+          <CarouselControls />
 
         </div>
 
@@ -198,234 +171,3 @@ const logos: { src: string; alt: string; href?: string }[] = [
   </div>
 </section>
 
-<script>
-  function initPartnerCarousel() {
-    const track = document.querySelector<HTMLElement>('#partner-track');
-    const prev = document.querySelector<HTMLButtonElement>('#partner-prev');
-    const next = document.querySelector<HTMLButtonElement>('#partner-next');
-    const dotsContainer = document.querySelector<HTMLElement>('#partner-dots');
-
-    if (!track || !prev || !next || !dotsContainer) return;
-
-    const items = Array.from(
-      track.querySelectorAll<HTMLElement>('.partner-item')
-    );
-
-    if (!items.length) return;
-
-    // Aantal logo's per stap
-    const STEP = 4;
-
-    const getItemWidth = () => {
-      const item = items[0];
-
-      if (!item) return 0;
-
-      const styles = window.getComputedStyle(track);
-
-      const gap = parseFloat(
-        styles.columnGap || styles.gap || '0'
-      );
-
-      return item.offsetWidth + gap;
-    };
-
-    const getMaxIndex = () => {
-      const itemWidth = getItemWidth();
-
-      if (!itemWidth) return 0;
-
-      return Math.max(
-        0,
-        Math.round(
-          (track.scrollWidth - track.clientWidth) / itemWidth
-        )
-      );
-    };
-
-    const getIndex = () => {
-      const itemWidth = getItemWidth();
-
-      if (!itemWidth) return 0;
-
-      return Math.round(
-        track.scrollLeft / itemWidth
-      );
-    };
-
-    const scrollToIndex = (i: number) => {
-      const maxIndex = getMaxIndex();
-
-      const index = Math.min(
-        Math.max(i, 0),
-        maxIndex
-      );
-
-      track.scrollTo({
-        left: index * getItemWidth(),
-        behavior: 'smooth'
-      });
-    };
-
-    const createDots = () => {
-      dotsContainer.innerHTML = '';
-
-      const maxIndex = getMaxIndex();
-
-      // Eén dot per 4 logo's
-      const dotCount =
-        Math.ceil(maxIndex / STEP) + 1;
-
-      for (let i = 0; i < dotCount; i++) {
-
-        const dot = document.createElement('button');
-
-        dot.type = 'button';
-
-        dot.setAttribute(
-          'aria-label',
-          `Ga naar partner groep ${i + 1}`
-        );
-
-        dot.className =
-          'partner-dot h-2 w-2 rounded-full transition-all duration-300';
-
-        dot.addEventListener('click', () => {
-
-          scrollToIndex(i * STEP);
-
-          setTimeout(
-            updateDots,
-            250
-          );
-
-        });
-
-        dotsContainer.appendChild(dot);
-      }
-
-      updateDots();
-    };
-
-    const updateDots = () => {
-
-      const dots =
-        dotsContainer.querySelectorAll<HTMLButtonElement>(
-          '.partner-dot'
-        );
-
-      const currentIndex = getIndex();
-
-      const activeDot = Math.min(
-        Math.round(currentIndex / STEP),
-        dots.length - 1
-      );
-
-      dots.forEach((dot, i) => {
-
-        if (i === activeDot) {
-
-          dot.classList.remove(
-            'bg-gray-300'
-          );
-
-          dot.classList.add(
-            'bg-[#5CC2BF]',
-            'scale-125'
-          );
-
-        } else {
-
-          dot.classList.remove(
-            'bg-[#5CC2BF]',
-            'scale-125'
-          );
-
-          dot.classList.add(
-            'bg-gray-300'
-          );
-
-        }
-
-      });
-
-      prev.disabled = currentIndex <= 0;
-
-      next.disabled =
-        currentIndex >= getMaxIndex();
-    };
-
-    next.addEventListener('click', () => {
-
-      scrollToIndex(
-        Math.min(
-          getIndex() + STEP,
-          getMaxIndex()
-        )
-      );
-
-      setTimeout(
-        updateDots,
-        250
-      );
-
-    });
-
-    prev.addEventListener('click', () => {
-
-      scrollToIndex(
-        Math.max(
-          getIndex() - STEP,
-          0
-        )
-      );
-
-      setTimeout(
-        updateDots,
-        250
-      );
-
-    });
-
-    // Dots automatisch aanpassen tijdens swipen
-    track.addEventListener(
-      'scroll',
-      updateDots,
-      { passive: true }
-    );
-
-    // Opnieuw berekenen bij resize
-    window.addEventListener(
-      'resize',
-      () => {
-        createDots();
-      }
-    );
-
-    createDots();
-  }
-
-  if (document.readyState === 'loading') {
-
-    document.addEventListener(
-      'DOMContentLoaded',
-      initPartnerCarousel
-    );
-
-  } else {
-
-    initPartnerCarousel();
-
-  }
-</script>
-
-<style>
-  #partner-track::-webkit-scrollbar {
-    display: none;
-  }
-
-  #partner-track {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-</style>

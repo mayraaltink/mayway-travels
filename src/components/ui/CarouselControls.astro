@@ -1,0 +1,38 @@
+---
+// src/components/ui/CarouselControls.astro
+// De ‹ • • • › bediening onder elke swipe op de site (één stijl overal).
+// Plaats binnen een [data-carousel]-wrapper; de logica staat in src/scripts/carousel.ts.
+import { defaultLang } from '../../i18n/ui';
+
+// tone="light": witte bediening voor op een donkere/turquoise achtergrond
+const { class: className = '', tone = 'teal' } = Astro.props as { class?: string; tone?: 'teal' | 'light' };
+const lang = Astro.currentLocale || defaultLang;
+const labels = lang === 'en' ? { prev: 'Previous', next: 'Next' } : { prev: 'Vorige', next: 'Volgende' };
+const light = tone === 'light';
+const arrow = light ? 'text-white hover:text-white/70' : 'text-[#1CABB0] hover:text-[#15939a]';
+---
+
+<div
+  data-carousel-controls
+  data-dot-active={light ? 'bg-white' : 'bg-[#1CABB0]'}
+  data-dot-inactive={light ? 'bg-white/35' : 'bg-[#1CABB0]/25'}
+  class:list={['mt-6 flex items-center justify-center gap-4', className]}
+>
+  <button type="button" data-carousel-prev aria-label={labels.prev} class:list={['flex h-8 w-8 items-center justify-center transition disabled:opacity-30', arrow]}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+  </button>
+  <div data-carousel-dots class="flex items-center gap-2"></div>
+  <button type="button" data-carousel-next aria-label={labels.next} class:list={['flex h-8 w-8 items-center justify-center transition disabled:opacity-30', arrow]}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+  </button>
+</div>
+
+<script>
+  import { initCarousels } from '../../scripts/carousel';
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousels);
+  } else {
+    initCarousels();
+  }
+</script>

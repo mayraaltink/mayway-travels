@@ -68,7 +68,7 @@ export const ui = {
 
    // about
 'about.title': 'Hi! I’m Mayra.',
-'about.location': 'Great Ocean Road — Australia',
+'about.location': 'Sydney — Australia',
 
 'about.heading': 'Hi, I’m Mayra!',
 
@@ -1038,7 +1038,7 @@ fiji_intro_cta: "Start planning your trip",
 'homeServices.cta': 'Ontdek meer',
 
     // about
-'about.location': 'Great Ocean Road — Australië',
+'about.location': 'Sydney — Australië',
 
 'about.title': 'Hi, Ik ben Mayra!',
 

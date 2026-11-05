@@ -40,11 +40,11 @@ export const chapters: StoryChapter[] = [
     title: { nl: 'Marketeer met een reisvirus', en: 'A marketer with a travel bug' },
     paragraphs: {
       nl: [
-        'Als afgestudeerd marketeer trok ik de wereld over met mijn camera. Ik ging op zoek naar de bijzonderste verhalen en ervaringen. Onderweg ontstonden mijn eerste samenwerkingen met onder andere Urang Utan Trekking op Sumatra, The Gibbon Experience in Laos en Palawan Camping op de Filipijnen.',
+        'Als afgestudeerd marketeer trok ik de wereld over met mijn camera. Ik ging op zoek naar de bijzonderste verhalen en ervaringen. Onderweg ontstonden mijn eerste projecten met onder andere Urang Utan Trekking op Sumatra, The Gibbon Experience in Laos en Palawan Camping op de Filipijnen.',
         'Daar ontdekte ik hoe bijzonder het is om échte ervaringen te vertalen naar verhalen die mensen inspireren en merken op een authentieke manier zichtbaar maken.',
       ],
       en: [
-        'As a marketing graduate, I travelled the world with my camera, searching for the most special stories and experiences. Along the way my first collaborations came about, including Urang Utan Trekking on Sumatra, The Gibbon Experience in Laos and Palawan Camping in the Philippines.',
+        'As a marketing graduate, I travelled the world with my camera, searching for the most special stories and experiences. Along the way my first projects came about, including Urang Utan Trekking on Sumatra, The Gibbon Experience in Laos and Palawan Camping in the Philippines.',
         'That is where I discovered how special it is to turn real experiences into stories that inspire people and make brands visible in an authentic way.',
       ],
     },

@@ -3,24 +3,22 @@
 // Blog "Voorbereidingen Working Holiday".
 // Checklists zijn echt aan te vinken; wat je aanvinkt wordt in je eigen browser onthouden.
 // Teksten per taal hieronder; <b> = dikgedrukt, links staan als <a> in de tekst.
-// Foto bij Klimaat: /public/images/blogs/klimaat.jpg (ontbreekt die, dan toont het vlak een turquoise placeholder).
-import fs from 'node:fs';
-import path from 'node:path';
 
 const lang = (Astro.currentLocale === 'en' ? 'en' : 'nl') as 'nl' | 'en';
-
-const climatePhoto = fs.existsSync(path.join(process.cwd(), 'public', '/images/blogs/klimaat.jpg')) ? '/images/blogs/klimaat.jpg' : null;
-
 
 const ext = (href: string, label: string, light = false) =>
   `<a href="${href}" target="_blank" rel="noopener noreferrer" class="font-semibold underline underline-offset-4 transition ${light ? 'text-white decoration-white/50 hover:decoration-white' : 'text-[#1CABB0] decoration-[#1CABB0]/40 hover:text-[#0F7C82]'}">${label}</a>`;
 const jump = (id: string, label: string) =>
   `<a href="#${id}" class="font-normal italic underline decoration-white/50 underline-offset-4 hover:decoration-white">${label}</a>`;
 
-const URL_ANWB = 'https://www.anwb.nl';
+const URL_ANWB = 'https://www.anwb.nl/auto/rijbewijs/het-rijbewijs/internationaal-rijbewijs';
 const URL_ALLIANZ = 'https://allianzretailportal.com/nl/#/b2b2c/APN/travel-module/trip-details';
+const URL_MEDICARE = 'https://www.servicesaustralia.gov.au/reciprocal-health-care-agreements-visiting-from-netherlands?context=22481';
 const URL_CBA = 'https://www.commbank.com.au/digital/eosmartaccess/ntb';
+const URL_OPTUS = 'https://www.optus.com.au/deals#prepaid';
 const URL_FELIX = 'https://felixmobile.com.au/plan';
+const URL_WHISTLEOUT = 'https://www.whistleout.com.au/MobilePhones/Guides/what-is-esim';
+const URL_FINDER = 'https://www.finder.com.au/mobile-plans/esim';
 
 const content = {
   nl: {
@@ -32,7 +30,6 @@ const content = {
       { id: 'zorgverzekering', label: 'Zorgverzekering' },
       { id: 'betaalmiddelen', label: 'Betaalmiddelen' },
       { id: 'simkaart', label: 'Simkaart' },
-      { id: 'klimaat', label: 'Klimaat' },
       { id: 'kleding', label: 'Kleding' },
       { id: 'apps', label: 'Handige apps' },
     ],
@@ -50,19 +47,24 @@ const content = {
     insuranceTitle: 'Zorgverzekering in Australië',
     insuranceSub: 'Working Holiday visum',
     insurance: [
-      'Ga je met een Working Holiday visum naar Australië? Dan heb je als Nederlandse reiziger recht op <b>Medicare</b> via het <b>Reciprocal Health Care Agreement</b>. Dit betekent dat medisch noodzakelijke zorg, zoals een bezoek aan de huisarts of behandeling in een openbaar ziekenhuis, wordt vergoed. Zodra je aankomt in Australië kun je Medicare zelf aanvragen via de officiële overheidswebsite.',
-      'Houd er rekening mee dat de dekking beperkt is: <b>ambulance, tandarts, fysiotherapie, repatriëring</b> en <b>werk- of reisgerelateerde ongevallen</b> vallen hier niet onder. Het is daarom slim om Medicare te combineren met een <b>langdurige reisverzekering met werkdekking</b>, inclusief de medische kostenoptie, zodat je voor repatriëring, ambulance en spoedeisende hulp goed beschermd bent.',
-      `Er zijn speciale verzekeringen voor reizen én werken, zoals de ${ext(URL_ALLIANZ, 'Globetrotter Verzekering van Allianz Global Assistance')}. Die biedt deze dekking voor reizen tot <b>24 maanden</b>, inclusief werken, medische kosten en andere extra's.`,
+      '<p>Verzekerd naar het buitenland gaan is echt mega, mega belangrijk. Een ongeluk zit in een klein hoekje: een val met surfen, een blessure tijdens je farmwerk of gewoon een flinke griep. Zonder goede verzekering kan een ziekenhuisbezoek in Australië je zomaar <b>duizenden dollars</b> kosten. Het goede nieuws: ga je met een Working Holiday visum naar Australië, dan kun je als Nederlander gebruikmaken van <b>Medicare</b>.</p>',
+      '<h3>Wat is Medicare?</h3><p>Medicare is het publieke zorgstelsel van Australië, een beetje te vergelijken met onze basisverzekering. Het zorgt ervoor dat Australiërs goedkoop of gratis naar de huisarts en het openbare ziekenhuis kunnen. Nederland en Australië hebben een <b>Reciprocal Health Care Agreement</b>, en daardoor kun jij als Nederlander ook gebruikmaken van Medicare. Voorwaarde: je hebt een geldige Nederlandse basisverzekering. Medicare loopt zolang je Nederlandse zorgverzekering, je EHIC-pas en je visum geldig zijn.</p>',
+      '<h3>Wat vergoedt Medicare?</h3><p>Medicare vergoedt medisch noodzakelijke zorg, zoals:</p><ul><li>een bezoek aan de huisarts (GP)</li><li>behandeling als publieke patiënt in een openbaar ziekenhuis</li><li>een deel van de medicijnen op recept</li></ul>',
+      `<h3>Zo vraag je Medicare aan</h3><p>Download het ${ext(URL_MEDICARE, 'inschrijvingsformulier')} en stuur het in volgens de instructies op het formulier. Je hebt nodig:</p><ul><li>je paspoort</li><li>je visum</li><li>een bewijs van je Nederlandse zorgverzekering, of je EHIC-pas (de blauwe pas met “NL”)</li></ul>`,
+      `<h3>Let op: Medicare dekt niet alles</h3><p>Medicare vergoedt geen <b>ambulance, tandarts, fysiotherapie, privéziekenhuizen of repatriëring</b>. Combineer het daarom met een <b>langdurige reisverzekering met werkdekking én medische kosten</b>, zoals de ${ext(URL_ALLIANZ, 'Globetrotter van Allianz Global Assistance')}. Die geldt voor reizen tot <b>24 maanden</b>, inclusief werken en medische kosten.</p>`,
     ],
     paymentTitle: 'Betaalmiddelen',
     payment: 'Het is uiteraard handig om je credit- en debitkaarten te regelen voordat je naar Australië komt. Voor reizen, wonen of werken kun je een <b>Wise</b> en/of <b>Revolut</b> kaart aanschaffen. Een lokale bankrekening bij de <b>Commonwealth Bank of Australia</b> is een handige must als je hier langere tijd, bijvoorbeeld 6 maanden, gaat werken. Zo kun je gemakkelijk in Australische dollars betalen en geld ontvangen.',
     revolutTitle: 'Revolut & Wise',
+    revolutBadge: 'Altijd handig!',
     revolut: [
-      'Ga je reizen, wonen en/of werken in Australië, dan is het handig om een Revolut en/of Wise account aan te maken. Je kunt de kaarten toevoegen aan de wallet op je telefoon, waarmee je contactloos betaalt.',
-      'Het grootste voordeel is dat je via deze apps gemakkelijk euro\'s omzet naar Australische dollars (AUD), tegen <b>lage transactiekosten</b> en een <b>gunstige wisselkoers</b>. Binnen enkele seconden zet je geld via iDEAL op je account, waarna je het direct omzet naar AUD om in lokale valuta te betalen.',
-      'Daarnaast kun je eenvoudig geld naar vrienden of collega\'s sturen, veilig online betalen en al je uitgaven overzichtelijk bijhouden in de app.',
+      '<p>Ga je reizen, wonen of werken in Australië? Dan is een Revolut- of Wise-account (of allebei!) echt een aanrader. Met deze apps betaal je makkelijk en goedkoop in Australische dollars, zonder de hoge kosten die je bij een gewone Nederlandse bank betaalt.</p>',
+      '<h4>Waarom zijn ze zo handig?</h4><ul><li><b>Gunstige wisselkoers en lage kosten:</b> je zet euro’s met een paar tikken om naar Australische dollars (AUD), tegen een veel betere koers dan bij de meeste banken.</li><li><b>Contactloos betalen:</b> voeg je kaart toe aan Apple Pay of Google Pay en betaal gewoon met je telefoon. In Australië kan dat bijna overal.</li><li><b>Alles in één overzicht:</b> je ziet direct wat je uitgeeft, en zo houd je je budget goed in de gaten.</li><li><b>Australische rekeninggegevens bij Wise:</b> je krijgt een BSB en een rekeningnummer, zodat je ook geld in AUD kunt ontvangen, bijvoorbeeld je salaris.</li></ul>',
+      '<h4>Zo zet je geld op je kaart en wissel je het om naar AUD</h4><ol><li><b>Geld storten:</b> open de Revolut- of Wise-app, kies voor “geld toevoegen” en betaal via iDEAL met je Nederlandse bankrekening. Binnen een paar seconden tot minuten staan je euro’s op je account.</li><li><b>Omzetten naar AUD:</b> kies in de app voor “wisselen” of “converteren”, vul het bedrag in en zet je euro’s om naar Australische dollars. Dat gaat direct, en je ziet vooraf precies welke koers en kosten je betaalt.</li><li><b>Betalen:</b> betaal gewoon met je kaart of telefoon. De app gebruikt automatisch je AUD-saldo.</li></ol>',
+      '<p>Houd wel rekening met de <b>verwerkingstijd</b>. Storten via iDEAL gaat meestal razendsnel, maar een gewone overboeking vanaf je bank kan soms tot een werkdag duren. Stuur je geld vanuit Wise of Revolut naar een Australische bankrekening, dan kan dat tot twee werkdagen duren. Houd hier rekening mee.</p>',
     ],
     cbaTitle: 'Commonwealth Bank',
+    cbaBadge: '+3 maanden',
     cba: [
       'Ben je echt van plan om langer dan 3 maanden in Australië te wonen en te werken? Dan raad ik je aan om een Commonwealth account te openen. De <b>Commonwealth Bank of Australia</b> is een van de grootste en bekendste banken van Australië, vergelijkbaar met de ING of ABN AMRO in Nederland.',
       'Een groot voordeel van een Australische bankrekening is dat je eenvoudig geld van werkgevers ontvangt, Australische bankoverschrijvingen doet en minder afhankelijk bent van internationale transacties.',
@@ -76,26 +78,15 @@ const content = {
     ],
     simTitle: 'Simkaart regelen',
     sim: [
-      'Je kunt een prepaid simkaart (fysiek of eSIM) eenvoudig aanschaffen bij aankomst in Australië, bijvoorbeeld op de luchthaven bij de kiosken van <b>Telstra</b>, <b>Optus</b> of <b>Vodafone</b>.',
-      'Ik heb destijds een deal bij Optus op het vliegveld van Sydney afgesloten: voor <b>$39 AUD (€23)</b> per maand kreeg ik 40 GB data, onbeperkt bellen en sms\'en binnen Australië en 400 internationale belminuten. Tegenwoordig heb je Optus al voor <b>$13 AUD</b> in de eerste maand. Ik ben tevreden over Optus en vond het fijn dat ze alles ter plekke voor me installeerden en regelden.',
-      `Tegenwoordig is er ook een sterke deal bij ${ext(URL_FELIX, 'Felix Mobile')}: <b>$20 AUD per maand</b> voor onbeperkt internet, bellen en sms'en binnen Australië, de eerste 6 maanden. Je kiest bij Felix Mobile tussen een eSIM of een fysieke simkaart. De fysieke simkaart ontvang je binnen 5 werkdagen. Een eSIM kun je al van tevoren aanschaffen, maar activeren en gebruiken kan pas zodra je in Australië bent.`,
+      '<p>Een Australische simkaart is echt onmisbaar tijdens je working holiday. Het makkelijkst regel je die direct bij aankomst: op het vliegveld vind je kiosken van <b>Telstra, Optus en Vodafone</b>. Over alle drie hoor je goede verhalen, dus volgens mij kun je het beste gewoon voor de scherpste deal gaan.</p>',
+      `<p>Ik heb destijds een deal bij Optus op het vliegveld van Sydney afgesloten: voor $39 AUD (€23) per maand kreeg ik 40 GB data, onbeperkt bellen en sms'en binnen Australië en 400 internationale belminuten. Ik vond het superfijn dat ze alles ter plekke voor me installeerden en regelden, zo kon ik meteen aan de slag. Wel een tip: online ben je vaak goedkoper uit dan op het vliegveld. Bij ${ext(URL_OPTUS, 'Optus')} betaal je online nu bijvoorbeeld maar $13 AUD voor de eerste 28 dagen.</p>`,
+      `<h3>Liever een eSIM?</h3><p>Steeds meer mensen kiezen voor een eSIM, die je van tevoren al zelf kunt installeren. Een sterke deal vind je bij ${ext(URL_FELIX, 'Felix Mobile')}: de eerste 6 maanden betaal je $20 AUD per maand voor onbeperkt internet, bellen en sms'en binnen Australië. Je kiest bij Felix tussen een eSIM en een fysieke simkaart. De fysieke simkaart ontvang je binnen 5 werkdagen. Een eSIM kun je al vóór vertrek kopen, maar activeren en gebruiken kan pas zodra je in Australië bent.</p>`,
+      `<p>Andere aanraders zijn <b>Boost Mobile</b> en <b>Amaysim</b>. Boost gebruikt het netwerk van Telstra en heeft daardoor het beste bereik buiten de steden. Dat is ideaal als je je regionale werk op een farm gaat doen, want daar heb je met andere netwerken soms nauwelijks bereik. Amaysim gebruikt het netwerk van Optus en heeft vaak scherpe prijzen. Vergelijk de actuele deals even op ${ext(URL_WHISTLEOUT, 'WhistleOut')} of ${ext(URL_FINDER, 'Finder')}.</p>`,
+      "<h3>Waarom een travel-eSIM geen goed idee is</h3><p>Je komt ze vast tegen: travel-eSIMs van bijvoorbeeld Airalo of Holafly. Voor een vakantie zijn ze top, maar voor een working holiday raad ik ze af. Dit is waarom:</p><ul><li><b>Je krijgt geen Australisch telefoonnummer.</b> Je hebt meestal alleen data. Juist dat nummer heb je overal voor nodig: om een bankrekening te openen, voor je TFN (belastingnummer), om te solliciteren en om bereikbaar te zijn voor werkgevers en huisbazen.</li><li><b>Werkgevers bellen je.</b> In Australië wordt veel telefonisch geregeld. Kunnen ze je niet bellen of sms'en, dan gaat de baan gewoon naar iemand anders.</li><li><b>Je mist sms-codes.</b> Australische banken en apps sturen verificatiecodes per sms naar een Australisch nummer. Zonder lokaal nummer loop je daar steeds op vast.</li><li><b>Op de lange termijn veel duurder.</b> Travel-eSIMs zijn bedoeld voor een paar dagen of weken. Voor een heel jaar betaal je per GB flink meer dan bij een lokale provider.</li></ul>",
+      '<p>Een travel-eSIM kan wel handig zijn als overbrugging voor de eerste dag of twee, maar regel zo snel mogelijk een lokaal abonnement.</p>',
     ],
-    climateTitle: 'Klimaat',
-    climateLeft: [
-      'Toen ik aan Australië dacht, dacht ik vooral aan zonnige, warme temperaturen. Toch is het handig om voor vertrek te weten in welk seizoen je aankomt. Australië heeft namelijk <b>tegenovergestelde seizoenen</b> ten opzichte van Europa en het <b>klimaat verschilt sterk per regio</b>. Wanneer in Nederland de zomer begint, start hier in het grootste deel van het land juist de winter.',
-      'In het grootste deel van het land zijn er namelijk <b>vier seizoenen</b>:',
-    ],
-    seasons: ['<b>zomer</b> (december–februari)', '<b>herfst</b> (maart–mei)', '<b>winter</b> (juni–augustus)', '<b>lente</b> (september–november)'],
-    climateLeft2: 'Het <b>tropische noorden</b>, rondom Darwin en Cairns, vormt hierop een uitzondering. Daar liggen de temperaturen het <b>hele jaar</b> tussen de <b>25 en 32°C</b> en kent het klimaat <b>twee seizoenen</b>: een <b>nat seizoen</b> (november–april) met veel tropische buien en hoge luchtvochtigheid, en een <b>droog seizoen</b> (mei–oktober) met zonnig en droog weer. Kortom: Australië is een bestemming waar je het hele jaar door in de zon kunt leven.',
-    climateRight: [
-      'In de <b>zomer</b> wordt het in Australië warm, met temperaturen tussen de <b>25 en 40°C</b>. Ook in oktober en november voelt het vaak al zomers aan, net als in maart en april, wanneer de warmte nog lang blijft hangen.',
-      'Rond juni begint het wat af te koelen. Hoe <b>zuidelijker</b> je reist, hoe <b>kouder</b> het wordt in de winter, al zijn dit geen extreme temperaturen zoals in Europa.',
-      'In <b>Sydney</b> liggen de temperaturen in de winter (juni–augustus) meestal tussen de <b>8 en 15°C</b>. Elk jaar is anders: mijn eerste jaar hier bestond vooral uit zonnige dagen, terwijl het \'s ochtends en \'s avonds flink kon afkoelen. Afgelopen jaar was juist natter, met name in juni en augustus. In <b>Melbourne en Tasmanië</b> is het over het algemeen wat koeler en wisselvalliger. Daar liggen de temperaturen gemiddeld tussen de <b>6 en 13°C</b> en heb je vaker te maken met wind en regen.',
-      'Wat veel mensen verrast, is dat <b>huizen in Australië</b> vaak <b>slecht geïsoleerd</b> zijn. Daardoor kan het binnen soms zelfs kouder aanvoelen dan buiten. Een warme trui en een goede jas zijn dus geen overbodige luxe in de wintermaanden.',
-    ],
-    sunTitle: 'Heads up! Zonsterkte...',
-    sunText: 'De zon in Australië is extreem sterk. UV-waarden kunnen in de zomer oplopen tot <b>13+</b>. Goed insmeren met <b>SPF 50</b> is hier echt een must.',
     clothesTitle: 'Wat voor kleding neem je mee?',
+    climateMore: 'Bekijk per regio en seizoen hoe warm het is',
     clothesIntro: 'In Australië kun je kleding prima vergelijken met Nederland: er zijn <b>talloze leuke merken</b> en vooral veel sport- en zwemkledingmerken. In de grote steden vind je <b>Westfield Malls</b> en grote ketens zoals H&M, Zara en Cotton On. Voor de zomer en lente neem je de essentiële items mee, en in de winter vul je dit aan met een paar dikke truien en een (bomber)jas.',
     lists: [
       {
@@ -151,7 +142,6 @@ const content = {
       { id: 'zorgverzekering', label: 'Health insurance' },
       { id: 'betaalmiddelen', label: 'Payments' },
       { id: 'simkaart', label: 'SIM card' },
-      { id: 'klimaat', label: 'Climate' },
       { id: 'kleding', label: 'Clothing' },
       { id: 'apps', label: 'Useful apps' },
     ],
@@ -169,19 +159,24 @@ const content = {
     insuranceTitle: 'Health insurance in Australia',
     insuranceSub: 'Working Holiday visa',
     insurance: [
-      'Going to Australia on a Working Holiday visa? As a Dutch traveller you are entitled to <b>Medicare</b> through the <b>Reciprocal Health Care Agreement</b>. This means medically necessary care, such as a GP visit or treatment in a public hospital, is covered. Once you arrive in Australia you can apply for Medicare yourself on the official government website.',
-      'Keep in mind that the cover is limited: <b>ambulance, dentist, physiotherapy, repatriation</b> and <b>work- or travel-related accidents</b> are not included. So it is smart to combine Medicare with <b>long-term travel insurance with work cover</b>, including the medical expenses option, so you are well protected for repatriation, ambulance and emergency care.',
-      `There are special insurances for travelling and working, such as the ${ext(URL_ALLIANZ, 'Globetrotter insurance from Allianz Global Assistance')}. It offers this cover for trips of up to <b>24 months</b>, including working, medical costs and other extras.`,
+      '<p>Going abroad insured is really, really important. Accidents happen in an instant: a fall while surfing, an injury during your farm work or just a nasty flu. Without good insurance a hospital visit in Australia can easily cost you <b>thousands of dollars</b>. The good news: if you go to Australia on a Working Holiday visa, as a Dutch citizen you can use <b>Medicare</b>.</p>',
+      '<h3>What is Medicare?</h3><p>Medicare is the public health care system of Australia, a bit like our Dutch basic health insurance. It makes sure Australians can see a GP and go to a public hospital cheaply or for free. The Netherlands and Australia have a <b>Reciprocal Health Care Agreement</b>, which means that as a Dutch citizen you can use Medicare too. Condition: you have valid Dutch basic health insurance. Medicare runs as long as your Dutch health insurance, your EHIC card and your visa are valid.</p>',
+      '<h3>What does Medicare cover?</h3><p>Medicare covers medically necessary care, such as:</p><ul><li>a visit to the doctor (GP)</li><li>treatment as a public patient in a public hospital</li><li>part of your prescription medicines</li></ul>',
+      `<h3>How to apply for Medicare</h3><p>Download the ${ext(URL_MEDICARE, 'enrolment form')} and submit it following the instructions on the form. You will need:</p><ul><li>your passport</li><li>your visa</li><li>proof of your Dutch health insurance, or your EHIC card (the blue card with “NL”)</li></ul>`,
+      `<h3>Please note: Medicare does not cover everything</h3><p>Medicare does not cover <b>ambulance, dentist, physiotherapy, private hospitals or repatriation</b>. So combine it with <b>long-term travel insurance with work cover and medical expenses</b>, such as the ${ext(URL_ALLIANZ, 'Globetrotter from Allianz Global Assistance')}. It is valid for trips of up to <b>24 months</b>, including working and medical expenses.</p>`,
     ],
     paymentTitle: 'Payments',
     payment: 'It is of course handy to sort out your credit and debit cards before you come to Australia. For travelling, living or working you can get a <b>Wise</b> and/or <b>Revolut</b> card. A local bank account with the <b>Commonwealth Bank of Australia</b> is a handy must if you are going to work here for a longer time, for example 6 months. That way you can easily pay and receive money in Australian dollars.',
     revolutTitle: 'Revolut & Wise',
+    revolutBadge: 'Always handy!',
     revolut: [
-      'If you are going to travel, live and/or work in Australia, it is handy to create a Revolut and/or Wise account. You can add the cards to the wallet on your phone and pay contactless.',
-      'The biggest advantage is that these apps let you easily convert euros to Australian dollars (AUD) with <b>low transaction fees</b> and a <b>good exchange rate</b>. Within seconds you can top up your account via iDEAL and convert it straight to AUD to pay in local currency.',
-      'You can also easily send money to friends or colleagues, pay safely online and keep track of all your spending in the app.',
+      '<p>Going to travel, live or work in Australia? Then a Revolut or Wise account (or both!) is a real must. With these apps you pay easily and cheaply in Australian dollars, without the high fees a regular Dutch bank charges.</p>',
+      '<h4>Why are they so handy?</h4><ul><li><b>Good exchange rate and low fees:</b> convert euros to Australian dollars (AUD) in a few taps, at a much better rate than most banks.</li><li><b>Contactless payments:</b> add your card to Apple Pay or Google Pay and simply pay with your phone. In Australia that works almost everywhere.</li><li><b>Everything in one overview:</b> you see straight away what you spend, so you can keep a close eye on your budget.</li><li><b>Australian account details with Wise:</b> you get a BSB and an account number, so you can also receive money in AUD, for example your salary.</li></ul>',
+      '<h4>How to top up your card and convert to AUD</h4><ol><li><b>Add money:</b> open the Revolut or Wise app, choose “add money” and pay via iDEAL from your Dutch bank account. Within seconds to minutes your euros are in your account.</li><li><b>Convert to AUD:</b> choose “exchange” or “convert” in the app, enter the amount and convert your euros to Australian dollars. It happens instantly, and you see the exact rate and fees in advance.</li><li><b>Pay:</b> just pay with your card or phone. The app automatically uses your AUD balance.</li></ol>',
+      '<p>Do keep the <b>processing time</b> in mind. Topping up via iDEAL is usually lightning fast, but a regular transfer from your bank can sometimes take up to a working day. If you send money from Wise or Revolut to an Australian bank account, it can take up to two working days. Keep this in mind.</p>',
     ],
     cbaTitle: 'Commonwealth Bank',
+    cbaBadge: '3+ months',
     cba: [
       'Are you really planning to live and work in Australia for more than 3 months? Then I recommend opening a Commonwealth account. The <b>Commonwealth Bank of Australia</b> is one of the largest and best-known banks in Australia, comparable to ING or ABN AMRO in the Netherlands.',
       'A big advantage of an Australian bank account is that you can easily receive money from employers, make Australian bank transfers and depend less on international transactions.',
@@ -195,26 +190,15 @@ const content = {
     ],
     simTitle: 'Getting a SIM card',
     sim: [
-      'You can easily buy a prepaid SIM card (physical or eSIM) when you arrive in Australia, for example at the airport kiosks of <b>Telstra</b>, <b>Optus</b> or <b>Vodafone</b>.',
-      'Back then I got a deal from Optus at Sydney airport: for <b>$39 AUD (€23)</b> a month I got 40 GB of data, unlimited calls and texts within Australia and 400 international minutes. These days you can get Optus for just <b>$13 AUD</b> in the first month. I am happy with Optus and liked that they installed and set everything up for me on the spot.',
-      `These days there is also a great deal at ${ext(URL_FELIX, 'Felix Mobile')}: <b>$20 AUD a month</b> for unlimited data, calls and texts within Australia for the first 6 months. At Felix Mobile you choose between an eSIM or a physical SIM. The physical SIM arrives within 5 working days. You can buy an eSIM in advance, but you can only activate and use it once you are in Australia.`,
+      '<p>An Australian SIM card is truly essential during your working holiday. The easiest way is to sort it out right when you arrive: at the airport you will find kiosks of <b>Telstra, Optus and Vodafone</b>. You hear good stories about all three, so I think you are best off just going for the sharpest deal.</p>',
+      `<p>Back then I signed up for a deal with Optus at Sydney airport: for $39 AUD (€23) a month I got 40 GB of data, unlimited calls and texts within Australia and 400 international minutes. I loved that they installed and set up everything for me on the spot, so I could get going straight away. One tip though: online is often cheaper than at the airport. At ${ext(URL_OPTUS, 'Optus')}, for example, you now pay only $13 AUD online for the first 28 days.</p>`,
+      `<h3>Prefer an eSIM?</h3><p>More and more people choose an eSIM, which you can install yourself in advance. You will find a great deal at ${ext(URL_FELIX, 'Felix Mobile')}: for the first 6 months you pay $20 AUD a month for unlimited data, calls and texts within Australia. At Felix you choose between an eSIM and a physical SIM card. The physical SIM arrives within 5 working days. You can buy an eSIM before you leave, but you can only activate and use it once you are in Australia.</p>`,
+      `<p>Other good options are <b>Boost Mobile</b> and <b>Amaysim</b>. Boost uses the Telstra network and therefore has the best coverage outside the cities. That is ideal if you are going to do your regional work on a farm, because other networks sometimes have hardly any coverage there. Amaysim uses the Optus network and often has sharp prices. Compare the current deals on ${ext(URL_WHISTLEOUT, 'WhistleOut')} or ${ext(URL_FINDER, 'Finder')}.</p>`,
+      "<h3>Why a travel eSIM is not a good idea</h3><p>You will probably come across them: travel eSIMs from Airalo or Holafly, for example. They are great for a holiday, but for a working holiday I would not recommend them. Here is why:</p><ul><li><b>You do not get an Australian phone number.</b> You usually only get data. And you need that number for everything: to open a bank account, for your TFN (tax file number), to apply for jobs and to be reachable for employers and landlords.</li><li><b>Employers call you.</b> A lot is arranged by phone in Australia. If they cannot call or text you, the job simply goes to someone else.</li><li><b>You miss SMS codes.</b> Australian banks and apps send verification codes by text to an Australian number. Without a local number you keep getting stuck.</li><li><b>Much more expensive in the long run.</b> Travel eSIMs are meant for a few days or weeks. For a whole year you pay a lot more per GB than with a local provider.</li></ul>",
+      '<p>A travel eSIM can be handy as a bridge for the first day or two, but get a local plan as soon as possible.</p>',
     ],
-    climateTitle: 'Climate',
-    climateLeft: [
-      'When I thought of Australia, I mostly thought of sunny, warm weather. Still, it is handy to know which season you arrive in before you leave. Australia has <b>opposite seasons</b> to Europe and the <b>climate varies greatly by region</b>. When summer starts in the Netherlands, winter starts in most of Australia.',
-      'Most of the country has <b>four seasons</b>:',
-    ],
-    seasons: ['<b>summer</b> (December–February)', '<b>autumn</b> (March–May)', '<b>winter</b> (June–August)', '<b>spring</b> (September–November)'],
-    climateLeft2: 'The <b>tropical north</b>, around Darwin and Cairns, is an exception. Temperatures there are between <b>25 and 32°C</b> <b>all year round</b> and the climate has <b>two seasons</b>: a <b>wet season</b> (November–April) with lots of tropical showers and high humidity, and a <b>dry season</b> (May–October) with sunny, dry weather. In short: Australia is a destination where you can live in the sun all year round.',
-    climateRight: [
-      'In <b>summer</b> it gets hot in Australia, with temperatures between <b>25 and 40°C</b>. October and November often already feel like summer, as do March and April, when the warmth lingers.',
-      'Around June it starts to cool down. The further <b>south</b> you go, the <b>colder</b> the winter, although the temperatures are not as extreme as in Europe.',
-      'In <b>Sydney</b> winter temperatures (June–August) are usually between <b>8 and 15°C</b>. Every year is different: my first year here was mostly sunny days, while mornings and evenings could get quite chilly. Last year was wetter, especially in June and August. <b>Melbourne and Tasmania</b> are generally cooler and more changeable, with average temperatures between <b>6 and 13°C</b> and more wind and rain.',
-      'What surprises many people is that <b>houses in Australia</b> are often <b>poorly insulated</b>. So it can sometimes feel colder inside than outside. A warm jumper and a good jacket are no luxury in the winter months.',
-    ],
-    sunTitle: 'Heads up! The sun...',
-    sunText: 'The sun in Australia is extremely strong. UV levels can reach <b>13+</b> in summer. Applying <b>SPF 50</b> properly is a real must here.',
     clothesTitle: 'What clothes do you bring?',
+    climateMore: 'See how warm it is per region and season',
     clothesIntro: 'Clothing in Australia is very similar to the Netherlands: there are <b>loads of great brands</b> and especially lots of sports and swimwear brands. In the big cities you find <b>Westfield malls</b> and big chains like H&M, Zara and Cotton On. For summer and spring bring the essentials, and in winter add a few thick jumpers and a (bomber) jacket.',
     lists: [
       {
@@ -287,10 +271,10 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
     </header>
 
     <!-- Checklist: wat neem je mee -->
-    <section id="meenemen" class="mt-12 scroll-mt-28 rounded-[2.5rem] bg-[#5FCDD0] px-5 py-10 text-white md:mt-16 md:rounded-[3.5rem] md:px-16 md:py-14">
+    <section id="meenemen" class="mt-12 scroll-mt-28 rounded-[2.5rem] bg-[#7DD6D8] px-5 py-10 text-white md:mt-16 md:rounded-[3.5rem] md:px-16 md:py-14">
       <div class="mx-auto max-w-2xl">
-        <h2 class="text-center text-3xl font-semibold leading-tight tracking-tight md:text-[2.5rem]">{content.checkTitle}</h2>
-        <p class="mt-4 text-center text-[15px] leading-relaxed text-white/90 md:text-base">{content.checkIntro}</p>
+        <h2 class="text-center text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.5rem]">{content.checkTitle}</h2>
+        <p class="mt-4 text-center text-[15px] leading-relaxed text-black/80 md:text-base">{content.checkIntro}</p>
         <ul class="mt-8 space-y-3">
           {content.checklist.map((item, i) => (
             <li>
@@ -308,8 +292,8 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
     <!-- Zorgverzekering -->
     <section id="zorgverzekering" class="mx-auto mt-20 max-w-3xl scroll-mt-28 md:mt-28">
       <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.insuranceTitle}</h2>
-      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900">
-        {content.insurance.map((p) => <p set:html={p} />)}
+      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900 [&_h3]:pt-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-black [&_li]:marker:text-[#1CABB0] [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
+        {content.insurance.map((block) => <div class="space-y-3" set:html={block} />)}
       </div>
     </section>
 
@@ -322,20 +306,25 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 
       <!-- Revolut & Wise en Commonwealth onder elkaar; het stappenplan zit in het Commonwealth-blok -->
       <div class="mt-10 space-y-6">
-        <div class="rounded-[2rem] bg-[#E6F6F6] p-7 md:p-10">
+        <div class="relative rounded-[2rem] bg-[#E6F6F6] p-7 md:p-10">
+          <span class="mb-4 inline-flex rounded-full bg-[#1CABB0] px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-lg rotate-6 md:absolute md:-right-4 md:-top-1 md:mb-0 md:rotate-12">{content.revolutBadge}</span>
+          <div class="mx-auto max-w-3xl">
           <h3 class="text-2xl font-semibold tracking-tight text-black">{content.revolutTitle}</h3>
-          <div class="mt-4 max-w-3xl space-y-4 text-[15px] leading-relaxed text-gray-700 [&_b]:text-gray-900">
-            {content.revolut.map((p) => <p set:html={p} />)}
+          <div class="mt-4 space-y-5 text-[15px] leading-relaxed text-gray-700 [&_b]:text-gray-900 [&_h4]:mb-3 [&_h4]:pt-2 [&_h4]:text-lg [&_h4]:font-semibold [&_h4]:tracking-tight [&_h4]:text-black [&_li]:marker:font-semibold [&_li]:marker:text-[#1CABB0] [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
+            {content.revolut.map((block) => <div set:html={block} />)}
+          </div>
           </div>
         </div>
 
-        <div class="rounded-[2rem] bg-[#0F7C82] p-7 text-white md:p-10">
+        <div class="relative rounded-[2rem] bg-[#0F7C82] p-7 text-white md:p-10">
+          <span class="mb-4 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-[#0F7C82] shadow-lg rotate-6 md:absolute md:-right-4 md:-top-1 md:mb-0 md:rotate-12">{content.cbaBadge}</span>
+          <div class="mx-auto max-w-3xl">
           <h3 class="text-2xl font-semibold tracking-tight">{content.cbaTitle}</h3>
-          <div class="mt-4 max-w-3xl space-y-4 text-[15px] leading-relaxed text-white/85">
+          <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-white/85">
             {content.cba.map((p) => <p set:html={p} />)}
           </div>
 
-          <div class="mt-8 rounded-[1.5rem] bg-white/10 p-6 md:p-8">
+          <div class="mt-8 rounded-[1.5rem] bg-white/10 p-6 md:-mx-8 md:p-8">
             <h4 class="text-lg font-semibold tracking-tight md:text-xl">{content.cbaStepsTitle}</h4>
             <ol class="mt-5 space-y-4">
               {content.cbaSteps.map((step, i) => (
@@ -346,6 +335,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
               ))}
             </ol>
           </div>
+          </div>
         </div>
       </div>
     </section>
@@ -353,53 +343,22 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
     <!-- Simkaart -->
     <section id="simkaart" class="mx-auto mt-20 max-w-3xl scroll-mt-28 md:mt-28">
       <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.simTitle}</h2>
-      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900">
-        {content.sim.map((p) => <p set:html={p} />)}
+      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900 [&_h3]:mb-3 [&_h3]:pt-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-black [&_li]:marker:text-[#1CABB0] [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
+        {content.sim.map((block) => <div set:html={block} />)}
       </div>
     </section>
 
-    <!-- Klimaat -->
-    <section id="klimaat" class="mt-20 scroll-mt-28 md:mt-28">
-      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.climateTitle}</h2>
-      <div class="mt-6 grid gap-8 text-[15px] leading-relaxed text-gray-700 md:grid-cols-2 md:gap-12 md:text-base [&_b]:text-gray-900">
-        <div class="space-y-5">
-          {content.climateLeft.map((p) => <p set:html={p} />)}
-          <ul class="space-y-1.5 pl-1">
-            {content.seasons.map((s) => (
-              <li class="flex items-center gap-3">
-                <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[#1CABB0]" aria-hidden="true"></span>
-                <span set:html={s} />
-              </li>
-            ))}
-          </ul>
-          <p set:html={content.climateLeft2} />
-        </div>
-        <div class="space-y-5">
-          {content.climateRight.map((p) => <p set:html={p} />)}
-        </div>
-      </div>
-
-      <!-- Zonsterkte + foto: rechthoekig, niet te hoog -->
-      <div class="mt-12 grid gap-6 md:grid-cols-2 md:items-stretch">
-        <div class="flex flex-col justify-center rounded-[2rem] bg-[#5FCDD0] px-8 py-7 text-white md:px-10">
-          <h3 class="text-2xl font-semibold leading-tight tracking-tight md:text-3xl">{content.sunTitle}</h3>
-          <p class="mt-3 text-[15px] font-medium leading-relaxed text-white/95" set:html={content.sunText} />
-        </div>
-        <div class="overflow-hidden rounded-[2rem]">
-          {climatePhoto ? (
-            <img src={climatePhoto} alt={content.climateTitle} loading="lazy" class="aspect-[16/9] h-full w-full object-cover" />
-          ) : (
-            <div class="aspect-[16/9] h-full w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
-          )}
-        </div>
-      </div>
-    </section>
 
     <!-- Kleding -->
     <section id="kleding" class="mt-20 scroll-mt-28 rounded-[2.5rem] bg-[#B6E8E7] px-4 py-10 md:mt-28 md:rounded-[3.5rem] md:px-8 md:py-14">
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.5rem]">{content.clothesTitle}</h2>
         <p class="mt-4 text-[15px] leading-relaxed text-gray-700 [&_b]:text-gray-900" set:html={content.clothesIntro} />
+        <!-- Doorverwijzing naar de blog over het beste reisseizoen -->
+        <a href={`/${lang}/blogs/beste-reisseizoen`} class="mt-5 inline-flex items-center gap-2 text-[15px] font-semibold text-[#0F7C82] underline decoration-[#0F7C82]/40 underline-offset-4 transition hover:decoration-[#0F7C82]">
+          {content.climateMore}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2 md:items-start">
         {content.lists.map((list) => (

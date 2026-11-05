@@ -1,0 +1,324 @@
+---
+// src/components/ui/blogs/ClimateMap.astro
+// Klimaatkaart van Australië: kies een seizoen en een plek en zie de gemiddelde min/max temperatuur.
+// Temperaturen zijn afgeronde gemiddelden (°C) per seizoen; x/y zijn posities op australia-shape.svg.
+import fs from 'node:fs';
+import path from 'node:path';
+
+const lang = (Astro.currentLocale === 'en' ? 'en' : 'nl') as 'nl' | 'en';
+
+const svgRaw = fs.readFileSync(path.join(process.cwd(), 'public/images/australia/australia-shape.svg'), 'utf8');
+const landPaths = [...svgRaw.matchAll(/\sd="([^"]+)"/g)].map((m) => m[1]);
+const viewBox = svgRaw.match(/viewBox="([^"]+)"/)?.[1] ?? '0 0 600 600';
+
+type Season = 'summer' | 'autumn' | 'winter' | 'spring';
+
+const seasons: { key: Season; label: { nl: string; en: string }; months: { nl: string; en: string } }[] = [
+  { key: 'summer', label: { nl: 'Zomer', en: 'Summer' }, months: { nl: 'dec–feb', en: 'Dec–Feb' } },
+  { key: 'autumn', label: { nl: 'Herfst', en: 'Autumn' }, months: { nl: 'mrt–mei', en: 'Mar–May' } },
+  { key: 'winter', label: { nl: 'Winter', en: 'Winter' }, months: { nl: 'jun–aug', en: 'Jun–Aug' } },
+  { key: 'spring', label: { nl: 'Lente', en: 'Spring' }, months: { nl: 'sep–nov', en: 'Sep–Nov' } },
+];
+
+const places: {
+  key: string;
+  name: { nl: string; en: string };
+  x: number;
+  y: number;
+  /** label links van de pin in plaats van rechts */
+  left?: boolean;
+  temps: Record<Season, [number, number]>;
+  note: { nl: string; en: string };
+}[] = [
+  {
+    key: 'darwin', name: { nl: 'Darwin', en: 'Darwin' }, x: 467, y: 86,
+    temps: { summer: [25, 32], autumn: [24, 32], winter: [20, 31], spring: [24, 33] },
+    note: { nl: 'Tropisch: nat seizoen (nov–apr) met tropische buien, droog en zonnig seizoen (mei–okt).', en: 'Tropical: wet season (Nov–Apr) with tropical storms, dry and sunny season (May–Oct).' },
+  },
+  {
+    key: 'cairns', name: { nl: 'Cairns', en: 'Cairns' }, x: 698, y: 166, left: true,
+    temps: { summer: [24, 31], autumn: [22, 29], winter: [18, 26], spring: [20, 29] },
+    note: { nl: 'Tropisch: warm en vochtig in het natte seizoen (nov–apr), heerlijk droog van mei tot oktober.', en: 'Tropical: warm and humid in the wet season (Nov–Apr), lovely and dry from May to October.' },
+  },
+  {
+    key: 'airlie', name: { nl: 'Airlie Beach', en: 'Airlie Beach' }, x: 743, y: 229, left: true,
+    temps: { summer: [23, 30], autumn: [20, 27], winter: [15, 23], spring: [18, 27] },
+    note: { nl: 'Het hele jaar warm. De winter is ideaal om te zeilen door de Whitsundays.', en: 'Warm all year round. Winter is ideal for sailing through the Whitsundays.' },
+  },
+  {
+    key: 'uluru', name: { nl: 'Uluru', en: 'Uluru' }, x: 462, y: 324,
+    temps: { summer: [22, 38], autumn: [14, 29], winter: [5, 21], spring: [14, 31] },
+    note: { nl: 'Woestijnklimaat: hete dagen en koude nachten. In de winter kan het ’s nachts bijna vriezen.', en: 'Desert climate: hot days and cold nights. In winter it can get close to freezing at night.' },
+  },
+  {
+    key: 'byron', name: { nl: 'Byron Bay', en: 'Byron Bay' }, x: 802, y: 385, left: true,
+    temps: { summer: [20, 28], autumn: [17, 25], winter: [11, 20], spring: [15, 24] },
+    note: { nl: 'Subtropisch: milde winters en warme, vochtige zomers.', en: 'Subtropical: mild winters and warm, humid summers.' },
+  },
+  {
+    key: 'sydney', name: { nl: 'Sydney', en: 'Sydney' }, x: 757, y: 482, left: true,
+    temps: { summer: [19, 26], autumn: [15, 23], winter: [8, 17], spring: [13, 23] },
+    note: { nl: 'Gematigd: warme zomers en milde winters, met koele ochtenden en avonden.', en: 'Temperate: warm summers and mild winters, with cool mornings and evenings.' },
+  },
+  {
+    key: 'melbourne', name: { nl: 'Melbourne', en: 'Melbourne' }, x: 663, y: 553, left: true,
+    temps: { summer: [14, 26], autumn: [11, 20], winter: [6, 14], spring: [9, 20] },
+    note: { nl: 'Wisselvallig: vier seizoenen op één dag is hier heel normaal.', en: 'Changeable: four seasons in one day is perfectly normal here.' },
+  },
+  {
+    key: 'tasmania', name: { nl: 'Tasmanië (Hobart)', en: 'Tasmania (Hobart)' }, x: 684, y: 645, left: true,
+    temps: { summer: [12, 22], autumn: [9, 17], winter: [4, 12], spring: [7, 17] },
+    note: { nl: 'Het koelste deel van Australië, met vaker wind en regen. Neem laagjes mee.', en: 'The coolest part of Australia, with more wind and rain. Bring layers.' },
+  },
+  {
+    key: 'broome', name: { nl: 'Broome', en: 'Broome' }, x: 333, y: 186,
+    temps: { summer: [26, 33], autumn: [22, 33], winter: [14, 29], spring: [21, 32] },
+    note: { nl: 'Tropisch: heet en vochtig in het natte seizoen (nov–apr), zonnig en droog van mei tot oktober.', en: 'Tropical: hot and humid in the wet season (Nov–Apr), sunny and dry from May to October.' },
+  },
+  {
+    key: 'exmouth', name: { nl: 'Exmouth', en: 'Exmouth' }, x: 202, y: 258,
+    temps: { summer: [23, 37], autumn: [19, 32], winter: [13, 25], spring: [17, 30] },
+    note: { nl: 'Warm en droog. Van maart tot juli kun je bij Ningaloo Reef met walvishaaien zwemmen.', en: 'Warm and dry. From March to July you can swim with whale sharks at Ningaloo Reef.' },
+  },
+  {
+    key: 'noosa', name: { nl: 'Noosa', en: 'Noosa' }, x: 798, y: 343, left: true,
+    temps: { summer: [21, 29], autumn: [18, 26], winter: [11, 22], spring: [16, 26] },
+    note: { nl: 'Subtropisch: het hele jaar aangenaam, met warme zomers en zachte winters.', en: 'Subtropical: pleasant all year round, with warm summers and mild winters.' },
+  },
+  {
+    key: 'adelaide', name: { nl: 'Adelaide', en: 'Adelaide' }, x: 570, y: 503, left: true,
+    temps: { summer: [16, 29], autumn: [12, 23], winter: [8, 16], spring: [11, 22] },
+    note: { nl: 'Mediterraan: warme, droge zomers met soms hittegolven, en koele, nattere winters.', en: 'Mediterranean: warm, dry summers with the odd heatwave, and cool, wetter winters.' },
+  },
+  {
+    key: 'perth', name: { nl: 'Perth', en: 'Perth' }, x: 221, y: 446,
+    temps: { summer: [18, 31], autumn: [14, 26], winter: [8, 19], spring: [12, 23] },
+    note: { nl: 'Mediterraan: hete, droge zomers en milde, nattere winters.', en: 'Mediterranean: hot, dry summers and mild, wetter winters.' },
+  },
+];
+
+const labels = {
+  nl: { title: 'Temperatuur per regio', intro: 'Gemiddelde minimum- en maximumtemperatuur per seizoen. Kies een seizoen en klik op een plek.', min: 'min', max: 'max', note: 'Afgeronde gemiddelden; het weer kan per jaar verschillen.' },
+  en: { title: 'Temperature by region', intro: 'Average minimum and maximum temperature per season. Choose a season and click a place.', min: 'min', max: 'max', note: 'Rounded averages; the weather can vary from year to year.' },
+}[lang];
+
+// kleur van een pin op basis van de maximumtemperatuur
+function heat(max: number) {
+  if (max <= 17) return '#7FB3D5';
+  if (max <= 22) return '#4ED2CE';
+  if (max <= 27) return '#F4C15D';
+  if (max <= 32) return '#F08A4B';
+  return '#D9534F';
+}
+
+const SCALE_MIN = 0;
+const SCALE_MAX = 40;
+const pct = (t: number) => ((t - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100;
+
+const clientPlaces = places.map((p) => ({ key: p.key, temps: p.temps }));
+const initialSeason: Season = 'summer';
+const initialPlace = 'sydney';
+---
+
+<div class="climate-map mt-8 rounded-[2rem] border border-gray-100 bg-white p-5 shadow-[0_30px_60px_rgba(15,124,130,0.08)] md:p-8" data-climate>
+  <script type="application/json" data-climate-json set:html={JSON.stringify(clientPlaces)} />
+
+  <div>
+    <!-- Seizoenen -->
+    <div class="flex flex-wrap gap-2" role="tablist" aria-label={labels.title}>
+      {seasons.map((s) => (
+        <button type="button" role="tab" class="season-tab" data-season={s.key} aria-selected={String(s.key === initialSeason)}>
+          <span class="font-semibold">{s.label[lang]}</span>
+          <span class="season-months">{s.months[lang]}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <div class="mt-8 grid items-center gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-10">
+
+    <!-- Kaart -->
+    <svg class="block h-auto w-full" viewBox={viewBox} role="group" aria-label={labels.title}>
+      <g class="land">
+        {landPaths.map((d) => <path d={d} />)}
+      </g>
+      {places.map((p) => {
+        const [, max] = p.temps[initialSeason];
+        return (
+          <g
+            class:list={['place', p.key === initialPlace && 'is-active']}
+            data-place={p.key}
+            transform={`translate(${p.x} ${p.y})`}
+            tabindex="0"
+            role="button"
+            aria-label={p.name[lang]}
+          >
+            <circle class="place-ring" r="15" />
+            <circle class="place-dot" r="9" fill={heat(max)} data-dot />
+            <text
+              class="place-label"
+              x={p.left ? -16 : 16}
+              dy="5"
+              text-anchor={p.left ? 'end' : 'start'}
+            >
+              <tspan class="place-name">{p.name[lang].replace(/ \(.*\)/, '')}</tspan>
+              <tspan class="place-temp" dx="6" data-temp>{max}°</tspan>
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+
+    <!-- Details per plek -->
+    <div>
+      {places.map((p) => (
+        <div data-detail={p.key} hidden={p.key !== initialPlace}>
+          <h4 class="text-2xl font-semibold tracking-tight text-black">{p.name[lang]}</h4>
+          <p class="mt-2 text-sm leading-relaxed text-gray-600">{p.note[lang]}</p>
+
+          <ul class="mt-6 space-y-4">
+            {seasons.map((s) => {
+              const [min, max] = p.temps[s.key];
+              return (
+                <li class="season-row" data-row={s.key} aria-current={String(s.key === initialSeason)}>
+                  <div class="flex items-baseline justify-between gap-3 text-sm">
+                    <span class="text-gray-800"><span class="font-semibold">{s.label[lang]}</span> <span class="text-gray-400">{s.months[lang]}</span></span>
+                    <span class="tabular-nums text-gray-600">{min}° – <span class="font-semibold text-gray-900">{max}°</span></span>
+                  </div>
+                  <div class="relative mt-2 h-2 rounded-full bg-gray-100">
+                    <div
+                      class="absolute inset-y-0 rounded-full bg-gradient-to-r from-[#7FB3D5] via-[#F4C15D] to-[#F08A4B]"
+                      style={`left:${pct(min)}%;width:${pct(max) - pct(min)}%`}
+                    ></div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))}
+      <p class="mt-6 text-xs text-gray-400">{labels.note}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .land path {
+    fill: #eaf7f7;
+    stroke: white;
+    stroke-width: 1;
+  }
+
+  .season-tab {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    background: white;
+    padding: 0.7rem 1.25rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #374151;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .season-tab:hover { border-color: #1cabb0; }
+  .season-tab[aria-selected='true'] {
+    background: #1cabb0;
+    border-color: #1cabb0;
+    color: white;
+  }
+  .season-months {
+    margin-top: 0.15rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+
+  .place {
+    cursor: pointer;
+    outline: none;
+  }
+  .place-ring {
+    fill: #1cabb0;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .place.is-active .place-ring,
+  .place:focus-visible .place-ring { opacity: 0.2; }
+  .place-dot {
+    stroke: white;
+    stroke-width: 3;
+    transition: fill 0.3s;
+  }
+  .place-label {
+    font-size: 17px;
+    paint-order: stroke;
+    stroke: #fffdfa;
+    stroke-width: 5px;
+    stroke-linejoin: round;
+  }
+  .place-name {
+    fill: #374151;
+    font-weight: 600;
+  }
+  .place-temp {
+    fill: #111827;
+    font-weight: 700;
+  }
+  .place.is-active .place-name { fill: #0f7c82; }
+
+  .season-row { opacity: 0.55; transition: opacity 0.2s; }
+  .season-row[aria-current='true'] { opacity: 1; }
+</style>
+
+<script>
+  type Season = 'summer' | 'autumn' | 'winter' | 'spring';
+  type Place = { key: string; temps: Record<Season, [number, number]> };
+
+  function heat(max: number) {
+    if (max <= 17) return '#7FB3D5';
+    if (max <= 22) return '#4ED2CE';
+    if (max <= 27) return '#F4C15D';
+    if (max <= 32) return '#F08A4B';
+    return '#D9534F';
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-climate]').forEach((root) => {
+    const places: Place[] = JSON.parse(root.querySelector('[data-climate-json]')?.textContent ?? '[]');
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[data-season]')];
+    const pins = [...root.querySelectorAll<SVGGElement>('[data-place]')];
+    const details = [...root.querySelectorAll<HTMLElement>('[data-detail]')];
+
+    const setSeason = (season: Season) => {
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.season === season)));
+      pins.forEach((pin) => {
+        const place = places.find((p) => p.key === pin.dataset.place);
+        if (!place) return;
+        const max = place.temps[season][1];
+        pin.querySelector('[data-dot]')?.setAttribute('fill', heat(max));
+        const temp = pin.querySelector('[data-temp]');
+        if (temp) temp.textContent = `${max}°`;
+      });
+      root.querySelectorAll<HTMLElement>('[data-row]').forEach((row) => {
+        row.setAttribute('aria-current', String(row.dataset.row === season));
+      });
+    };
+
+    const setPlace = (key: string) => {
+      pins.forEach((pin) => pin.classList.toggle('is-active', pin.dataset.place === key));
+      details.forEach((d) => (d.hidden = d.dataset.detail !== key));
+    };
+
+    tabs.forEach((t) => t.addEventListener('click', () => setSeason(t.dataset.season as Season)));
+    pins.forEach((pin) => {
+      const go = () => setPlace(pin.dataset.place ?? '');
+      pin.addEventListener('click', go);
+      pin.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          go();
+        }
+      });
+    });
+  });
+</script>

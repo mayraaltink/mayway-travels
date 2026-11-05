@@ -1,6 +1,6 @@
 // "Dit is mijn verhaal" op de Over mij-pagina (component StorySections.astro).
 // Vier stops, van begin tot nu: passie → achtergrond → samenkomst → out of the box.
-// - label: korte naam van de stop      - highlight: feitje op de foto
+// - label: korte naam van de stop
 // - title: kop boven de tekst          - paragraphs: alinea's
 // - image: foto uit /public/images
 
@@ -10,7 +10,6 @@ export type StoryChapter = {
   id: string;
   image: string;
   label: Text;
-  highlight: Text;
   title: Text;
   paragraphs: { nl: string[]; en: string[] };
 };
@@ -20,7 +19,6 @@ export const chapters: StoryChapter[] = [
     id: 'passie',
     image: '/images/about/sydney-opera.jpg',
     label: { nl: 'Passie voor avontuur', en: 'A passion for adventure' },
-    highlight: { nl: '35+ landen ontdekt', en: '35+ countries explored' },
     title: { nl: 'Waar mijn avontuur begon', en: 'Where my adventure began' },
     paragraphs: {
       nl: [
@@ -39,7 +37,6 @@ export const chapters: StoryChapter[] = [
     id: 'achtergrond',
     image: '/images/about/reis-specialist.jpg',
     label: { nl: 'Achtergrond', en: 'Background' },
-    highlight: { nl: 'Marketing & social media', en: 'Marketing & social media' },
     title: { nl: 'Marketeer met een reisvirus', en: 'A marketer with a travel bug' },
     paragraphs: {
       nl: [
@@ -56,18 +53,17 @@ export const chapters: StoryChapter[] = [
     id: 'outofthebox',
     image: '/images/australia/surf-boys.jpg',
     label: { nl: 'Internationale ervaring', en: 'International experience' },
-    highlight: { nl: '2,5 jaar in Australië', en: '2.5 years in Australia' },
-    title: { nl: 'Out of the box', en: 'Out of the box' },
+    title: { nl: 'Grenzen verleggen', en: 'Pushing boundaries' },
     paragraphs: {
       nl: [
-        'Ik geloof in actie, kansen grijpen en buiten je comfortzone durven gaan om iets bijzonders te creëren.',
-        'Dat is ook hoe ik mijn eigen pad heb gevolgd. Na mijn reis door Azië kwam ik in 2024 terecht in Australië, waar ik uiteindelijk 2,5 jaar heb gewoond en gewerkt. Daar deed ik marketing- en saleservaring op in de toerismebranche, een wereld waarin alles draait om beleving, mensen en onvergetelijke ervaringen.',
-        'Deze internationale ervaring, ondernemende mindset en creatieve blik neem ik mee in alles wat ik voor jouw merk doe.',
+        "Begin 2024 kwam ik na een reis door Azië terecht in Sydney. Ik werd verliefd op de sfeer van de stad en besloot er een tijdje te wonen en werken. Dat 'tijdje' groeide uiteindelijk uit tot 2,5 jaar avontuur in Australië.",
+        'Daar deed ik marketing- en saleservaring op in de toerismebranche, een wereld waarin alles draait om beleving, mensen en onvergetelijke ervaringen.',
+        'In die jaren reisde ik van stad naar stad en land naar land om bijzondere ervaringen vast te leggen, van Indonesië tot Nieuw-Zeeland. De internationale ervaring, ondernemende mindset en creatieve blik neem ik mee in mijn werk.',
       ],
       en: [
-        'I believe in action, seizing opportunities and daring to step outside your comfort zone to create something special.',
-        'That is also how I followed my own path. After my trip through Asia, I ended up in Australia in 2024, where I lived and worked for 2.5 years. There I gained marketing and sales experience in the tourism industry, a world that revolves around experiences, people and unforgettable moments.',
-        'I bring this international experience, entrepreneurial mindset and creative eye to everything I do for your brand.',
+        "In early 2024, after a trip through Asia, I ended up in Sydney. I fell in love with the vibe of the city and decided to live and work there for a while. That 'while' eventually grew into 2.5 years of adventure in Australia.",
+        'There I gained marketing and sales experience in the tourism industry, a world that revolves around experiences, people and unforgettable moments.',
+        'During those years I travelled from city to city and country to country to capture special experiences, from Indonesia to New Zealand. I bring this international experience, entrepreneurial mindset and creative eye to my work.',
       ],
     },
   },

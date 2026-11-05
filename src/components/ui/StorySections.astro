@@ -19,7 +19,6 @@ const items = chapters.map((c, i) => ({
   num: String(i + 1).padStart(2, '0'),
   image: c.image,
   label: c.label[lang],
-  highlight: c.highlight[lang],
   title: c.title[lang],
   paragraphs: c.paragraphs[lang],
 }));
@@ -53,9 +52,8 @@ const items = chapters.map((c, i) => ({
             ))}
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-            <!-- Feitje + voortgang -->
-            <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
-              <span data-story-highlight class="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-[#0F7C82]">{items[0].highlight}</span>
+            <!-- Voortgang -->
+            <div class="absolute inset-x-0 bottom-0 flex items-end justify-end gap-4 p-6">
               <div class="flex gap-1.5" aria-hidden="true">
                 {items.map((_, i) => (
                   <span data-story-bar={i} class:list={['h-1 w-6 rounded-full transition-colors duration-500', i === 0 ? 'bg-[#4ED2CE]' : 'bg-white/30']}></span>
@@ -78,12 +76,11 @@ const items = chapters.map((c, i) => ({
 
       <ol class="space-y-16 lg:space-y-24">
         {items.map((c, i) => (
-          <li data-story-chapter={i} data-highlight={c.highlight} class="story-chapter">
+          <li data-story-chapter={i} class="story-chapter">
             <div>
               <!-- Mobiel: foto bij het hoofdstuk -->
               <div class="relative mb-8 overflow-hidden rounded-[2rem] lg:hidden">
                 <img src={c.image} alt={c.label} loading="lazy" class="aspect-[4/5] w-full object-cover" />
-                <span class="absolute bottom-4 left-4 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-[#0F7C82]">{c.highlight}</span>
               </div>
 
               <!-- Stop op de route: stip op de lijn + lijntje naar de titel -->
@@ -136,7 +133,6 @@ const items = chapters.map((c, i) => ({
     const chaptersEls = root.querySelectorAll<HTMLElement>('[data-story-chapter]');
     const images = root.querySelectorAll<HTMLElement>('[data-story-image]');
     const bars = root.querySelectorAll<HTMLElement>('[data-story-bar]');
-    const highlight = root.querySelector<HTMLElement>('[data-story-highlight]');
 
     function activate(index: number) {
       chaptersEls.forEach((el, i) => el.toggleAttribute('data-active', i === index));
@@ -150,7 +146,6 @@ const items = chapters.map((c, i) => ({
         bar.classList.toggle('bg-[#4ED2CE]', i <= index);
         bar.classList.toggle('bg-white/30', i > index);
       });
-      if (highlight) highlight.textContent = chaptersEls[index].dataset.highlight ?? '';
     }
 
     activate(0);

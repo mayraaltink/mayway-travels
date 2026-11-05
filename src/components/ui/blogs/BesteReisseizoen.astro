@@ -1,0 +1,260 @@
+---
+// src/components/ui/blogs/BesteReisseizoen.astro
+// Blog "Welk seizoen is het beste om te reizen?".
+// Opbouw: vooral tekst, met twee visuele blokken ertussen:
+// intro → de vier seizoenen → het tropische noorden → klimaatkaart → waar ga je per seizoen naartoe (tabel)
+// → winter in het zuiden → de kracht van de zon (+ motto als accentregel) → doorverwijzing.
+// In de teksten: <b> = dikgedrukt.
+import ClimateMap from './ClimateMap.astro';
+
+const lang = (Astro.currentLocale === 'en' ? 'en' : 'nl') as 'nl' | 'en';
+const nextHref = `/${lang}/blogs/voorbereidingen`;
+
+const content = {
+  nl: {
+    title: 'Welk seizoen is het beste om te reizen?',
+    intro: [
+      'Toen ik aan Australië dacht, dacht ik vooral aan zonnige, warme temperaturen. Toch is het handig om vóór vertrek te weten in welk seizoen je aankomt. Australië heeft namelijk <b>tegenovergestelde seizoenen</b> ten opzichte van Europa, en het klimaat verschilt sterk per regio. Wanneer in Nederland de zomer begint, start in het grootste deel van Australië juist de winter.',
+      'Het goede nieuws: omdat het land zo groot is, is er altijd wel een plek waar het heerlijk weer is. Het beste seizoen hangt dus vooral af van <b>waar</b> je naartoe wilt.',
+    ],
+    seasonsTitle: 'De vier seizoenen',
+    seasonsIntro: 'In het grootste deel van het land, van Perth en Uluru tot Sydney, Melbourne en Tasmanië, heb je vier seizoenen:',
+    seasons: [
+      '<b>zomer</b> (december–februari)',
+      '<b>herfst</b> (maart–mei)',
+      '<b>winter</b> (juni–augustus)',
+      '<b>lente</b> (september–november)',
+    ],
+    seasonsText: [
+      'In de zomer wordt het in Australië warm, met temperaturen tussen de <b>25 en 40°C</b>. Ook in oktober en november voelt het vaak al zomers aan, net als in maart en april, wanneer de warmte nog lang blijft hangen. De herfst en lente zijn daardoor heerlijke seizoenen om te reizen: overal aangenaam weer, en minder drukte dan in de zomervakantie.',
+    ],
+    tropicsTitle: 'Het tropische noorden',
+    tropics: [
+      'Het tropische noorden, rondom <b>Darwin, Cairns en de Whitsundays</b>, vormt hierop een uitzondering. Daar liggen de temperaturen het hele jaar tussen de <b>25 en 32°C</b> en kent het klimaat maar twee seizoenen: een <b>nat seizoen</b> (november–april) met veel tropische buien en een hoge luchtvochtigheid, en een <b>droog seizoen</b> (mei–oktober) met zonnig en droog weer.',
+      'In het natte seizoen is het ook stinger-seizoen. Zwem dan alleen in afgezette zones of met een stinger suit. Kortom: Australië is een bestemming waar je het hele jaar door in de zon kunt leven, als je maar weet waar je moet zijn.',
+    ],
+    mapTitle: 'Hoe warm is het waar?',
+    mapIntro: 'Omdat het klimaat zo verschilt per regio, heb ik de populairste plekken op een kaart gezet. Kies een seizoen en klik op een plek om de gemiddelde minimum- en maximumtemperatuur te zien.',
+    whereTitle: 'Waar ga je in welk seizoen naartoe?',
+    whereIntro: 'Twijfel je nog wanneer je waarheen gaat? Dit is in het kort waar je per seizoen het beste zit, en welke plekken je dan beter kunt overslaan.',
+    where: [
+      { season: 'Zomer', months: 'dec – feb', go: 'Sydney, Melbourne, de Great Ocean Road en Tasmanië', skip: 'het tropische noorden (nat seizoen) en de Outback (extreem heet)' },
+      { season: 'Herfst', months: 'mrt – mei', go: 'bijna overal: de oostkust, Perth en vanaf april ook Uluru', skip: 'Tasmanië wordt in mei al flink fris' },
+      { season: 'Winter', months: 'jun – aug', go: 'Darwin, Cairns, de Whitsundays, Uluru, Broome en Exmouth', skip: 'Melbourne en Tasmanië als je van warmte houdt' },
+      { season: 'Lente', months: 'sep – nov', go: 'Uluru, de wildbloemen van West-Australië en walvissen spotten aan de oostkust', skip: 'het noorden vanaf november, dan begint het natte seizoen' },
+    ],
+    goLabel: 'Ga naar',
+    skipLabel: 'Minder handig',
+    winterTitle: 'Winter in het zuiden',
+    winter: [
+      'Rond juni begint het af te koelen. Hoe zuidelijker je reist, hoe kouder het wordt, al zijn het geen extreme temperaturen zoals in Europa. In <b>Sydney</b> liggen de temperaturen in de winter meestal tussen de <b>8 en 15°C</b>. Elk jaar is anders: mijn eerste jaar bestond vooral uit zonnige dagen, terwijl het ’s ochtends en ’s avonds flink kon afkoelen. Afgelopen jaar was juist natter, vooral in juni en augustus.',
+      'In <b>Melbourne en Tasmanië</b> is het over het algemeen koeler en wisselvalliger, met gemiddeld <b>6 tot 13°C</b> en vaker wind en regen.',
+      'Wat veel mensen verrast: huizen in Australië zijn vaak <b>slecht geïsoleerd</b>. Daardoor kan het binnen soms zelfs kouder aanvoelen dan buiten. Een warme trui en een goede jas zijn in de wintermaanden dus geen overbodige luxe.',
+    ],
+    sunTitle: 'De kracht van de zon',
+    sun: [
+      'Wat je in Australië echt niet moet onderschatten, is de kracht van de zon. De UV-straling is hier veel intenser dan in Europa. Dat komt onder andere door de <b>dunnere ozonlaag</b> boven het zuidelijk halfrond, de heldere, schone lucht en het feit dat de aarde in de Australische zomer (rond januari) het dichtst bij de zon staat.',
+      'In de zomer komt de UV-index regelmatig boven de <b>11</b>, wat als “extreem” geldt. Op zo’n dag kun je al binnen <b>10 tot 15 minuten</b> verbranden. Ook in de winter en op bewolkte dagen kan de UV-index boven de 3 uitkomen, dus ook dan is bescherming nodig. Niet voor niets heeft Australië een van de hoogste aantallen huidkankergevallen ter wereld.',
+    ],
+    mottoTitle: 'Heads up! Slip, Slop, Slap, Seek, Slide',
+    mottoIntro: 'De Australiërs nemen het serieus met hun bekende motto:',
+    motto: [
+      '<b>Slip</b> – trek een shirt aan',
+      '<b>Slop</b> – smeer je in met zonnebrand (minimaal SPF 50)',
+      '<b>Slap</b> – zet een hoed op',
+      '<b>Seek</b> – zoek de schaduw op',
+      '<b>Slide</b> – draag een zonnebril',
+    ],
+    nextTitle: 'Klaar om je reis voor te bereiden?',
+    next: 'Lees alles over je voorbereidingen',
+  },
+  en: {
+    title: 'Which season is best to travel?',
+    intro: [
+      'When I thought of Australia, I mostly thought of sunny, warm weather. Still, it is handy to know which season you arrive in before you leave. Australia has <b>opposite seasons</b> to Europe, and the climate varies a lot per region. When summer starts in the Netherlands, winter begins in most of Australia.',
+      'The good news: because the country is so big, there is always somewhere with lovely weather. So the best season mostly depends on <b>where</b> you want to go.',
+    ],
+    seasonsTitle: 'The four seasons',
+    seasonsIntro: 'Most of the country, from Perth and Uluru to Sydney, Melbourne and Tasmania, has four seasons:',
+    seasons: [
+      '<b>summer</b> (December–February)',
+      '<b>autumn</b> (March–May)',
+      '<b>winter</b> (June–August)',
+      '<b>spring</b> (September–November)',
+    ],
+    seasonsText: [
+      'In summer it gets warm in Australia, with temperatures between <b>25 and 40°C</b>. October and November often already feel like summer, as do March and April, when the warmth lingers for a long time. That makes autumn and spring lovely seasons to travel: pleasant weather everywhere, and fewer crowds than during the summer holidays.',
+    ],
+    tropicsTitle: 'The tropical north',
+    tropics: [
+      'The tropical north, around <b>Darwin, Cairns and the Whitsundays</b>, is an exception. Temperatures there are between <b>25 and 32°C</b> all year round and the climate has only two seasons: a <b>wet season</b> (November–April) with lots of tropical storms and high humidity, and a <b>dry season</b> (May–October) with sunny, dry weather.',
+      'The wet season is also stinger season. Only swim in netted areas or with a stinger suit. In short: Australia is a destination where you can live in the sun all year round, as long as you know where to be.',
+    ],
+    mapTitle: 'How warm is it where?',
+    mapIntro: 'Because the climate varies so much per region, I put the most popular places on a map. Choose a season and click a place to see the average minimum and maximum temperature.',
+    whereTitle: 'Where to go in which season?',
+    whereIntro: 'Still not sure when to go where? Here is, in short, where you are best off in each season, and which places you would rather skip then.',
+    where: [
+      { season: 'Summer', months: 'Dec – Feb', go: 'Sydney, Melbourne, the Great Ocean Road and Tasmania', skip: 'the tropical north (wet season) and the Outback (extremely hot)' },
+      { season: 'Autumn', months: 'Mar – May', go: 'almost everywhere: the east coast, Perth and from April also Uluru', skip: 'Tasmania already gets quite chilly in May' },
+      { season: 'Winter', months: 'Jun – Aug', go: 'Darwin, Cairns, the Whitsundays, Uluru, Broome and Exmouth', skip: 'Melbourne and Tasmania if you love warmth' },
+      { season: 'Spring', months: 'Sep – Nov', go: 'Uluru, the wildflowers of Western Australia and whale watching on the east coast', skip: 'the north from November, when the wet season starts' },
+    ],
+    goLabel: 'Go to',
+    skipLabel: 'Less ideal',
+    winterTitle: 'Winter in the south',
+    winter: [
+      'Around June it starts to cool down. The further south you travel, the colder it gets, although the temperatures are not as extreme as in Europe. In <b>Sydney</b>, winter temperatures are usually between <b>8 and 15°C</b>. Every year is different: my first year was mostly sunny, while mornings and evenings could get quite cold. Last year was wetter, especially in June and August.',
+      'In <b>Melbourne and Tasmania</b> it is generally cooler and more changeable, with an average of <b>6 to 13°C</b> and more wind and rain.',
+      'What surprises many people: houses in Australia are often <b>poorly insulated</b>. That is why it can sometimes feel colder inside than outside. A warm jumper and a good jacket are no luxury in the winter months.',
+    ],
+    sunTitle: 'The power of the sun',
+    sun: [
+      'What you really should not underestimate in Australia is the power of the sun. UV radiation here is much more intense than in Europe. That is partly due to the <b>thinner ozone layer</b> over the southern hemisphere, the clear, clean air and the fact that the earth is closest to the sun during the Australian summer (around January).',
+      'In summer the UV index regularly goes above <b>11</b>, which counts as “extreme”. On a day like that you can burn within <b>10 to 15 minutes</b>. Even in winter and on cloudy days the UV index can rise above 3, so you need protection then too. It is no coincidence that Australia has one of the highest rates of skin cancer in the world.',
+    ],
+    mottoTitle: 'Heads up! Slip, Slop, Slap, Seek, Slide',
+    mottoIntro: 'Australians take it seriously with their well-known motto:',
+    motto: [
+      '<b>Slip</b> – on a shirt',
+      '<b>Slop</b> – on sunscreen (at least SPF 50)',
+      '<b>Slap</b> – on a hat',
+      '<b>Seek</b> – shade',
+      '<b>Slide</b> – on sunglasses',
+    ],
+    nextTitle: 'Ready to prepare your trip?',
+    next: 'Read all about your preparations',
+  },
+}[lang];
+
+const h2 = 'text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]';
+const body = 'mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base';
+---
+
+<article class="bg-[#FFFDFA] px-6 pb-24 pt-32 md:pb-32 md:pt-40 [&_b]:font-semibold [&_b]:text-gray-900">
+  <div class="mx-auto max-w-5xl">
+
+    <!-- Intro met de kaart van Australië op de achtergrond -->
+    <section class="relative">
+      <div class="australia-shape pointer-events-none absolute -right-4 -top-10 hidden h-[26rem] w-[26rem] bg-[#E6F6F6] md:block" aria-hidden="true"></div>
+      <div class="relative max-w-3xl">
+        <h1 class="text-4xl font-semibold leading-[1.0] tracking-tight text-black md:text-5xl">{content.title}</h1>
+        <div class="mt-8 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
+          {content.intro.map((p) => <p set:html={p} />)}
+        </div>
+      </div>
+    </section>
+
+    <!-- De vier seizoenen + het tropische noorden: gewone tekst -->
+    <div class="mx-auto mt-16 grid max-w-5xl gap-12 md:mt-24 md:grid-cols-2 md:gap-14">
+      <section>
+        <h2 class={h2}>{content.seasonsTitle}</h2>
+        <div class={body}>
+          <p>{content.seasonsIntro}</p>
+          <ul class="space-y-1.5 pl-1">
+            {content.seasons.map((s) => (
+              <li class="flex items-center gap-3">
+                <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[#1CABB0]" aria-hidden="true"></span>
+                <span set:html={s} />
+              </li>
+            ))}
+          </ul>
+          {content.seasonsText.map((p) => <p set:html={p} />)}
+        </div>
+      </section>
+
+      <section>
+        <h2 class={h2}>{content.tropicsTitle}</h2>
+        <div class={body}>
+          {content.tropics.map((p) => <p set:html={p} />)}
+        </div>
+      </section>
+    </div>
+
+    <!-- Klimaatkaart met inleiding -->
+    <section class="mt-16 md:mt-24">
+      <div class="max-w-3xl">
+        <h2 class={h2}>{content.mapTitle}</h2>
+        <p class="mt-6 text-[15px] leading-relaxed text-gray-700 md:text-base">{content.mapIntro}</p>
+      </div>
+      <ClimateMap />
+    </section>
+
+    <!-- Waar ga je per seizoen naartoe -->
+    <section class="mt-16 md:mt-24">
+      <div class="max-w-3xl">
+        <h2 class={h2}>{content.whereTitle}</h2>
+        <p class="mt-6 text-[15px] leading-relaxed text-gray-700 md:text-base">{content.whereIntro}</p>
+      </div>
+      <div class="mt-8 divide-y divide-gray-100 overflow-hidden rounded-[1.5rem] border border-gray-100 bg-white">
+        {content.where.map((w) => (
+          <div class="grid gap-2 px-5 py-4 md:grid-cols-[8.5rem_minmax(0,1fr)_minmax(0,1fr)] md:items-start md:gap-6 md:px-6">
+            <p class="flex items-baseline gap-2">
+              <span class="font-semibold text-black">{w.season}</span>
+              <span class="text-xs text-[#1CABB0]">{w.months}</span>
+            </p>
+            <p class="flex gap-2.5 text-sm leading-snug text-gray-700">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1CABB0]/10 text-[#1CABB0]" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+              <span><b>{content.goLabel}:</b> {w.go}</span>
+            </p>
+            <p class="flex gap-2.5 text-sm leading-snug text-gray-700">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-400" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+              </span>
+              <span><b>{content.skipLabel}:</b> {w.skip}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Winter in het zuiden + zonsterkte als accentregel -->
+    <section class="mx-auto mt-16 max-w-3xl md:mt-24">
+      <h2 class={h2}>{content.winterTitle}</h2>
+      <div class={body}>
+        {content.winter.map((p) => <p set:html={p} />)}
+      </div>
+
+    </section>
+
+    <!-- De kracht van de zon + het motto als accentregel -->
+    <section class="mx-auto mt-16 max-w-3xl md:mt-24">
+      <h2 class={h2}>{content.sunTitle}</h2>
+      <div class={body}>
+        {content.sun.map((p) => <p set:html={p} />)}
+      </div>
+
+      <div class="mt-10 border-l-4 border-[#4ED2CE] pl-5 md:pl-6">
+        <h3 class="text-xl font-semibold tracking-tight text-black">{content.mottoTitle}</h3>
+        <p class="mt-2 text-[15px] leading-relaxed text-gray-700 md:text-base">{content.mottoIntro}</p>
+        <ul class="mt-3 space-y-1.5 text-[15px] leading-relaxed text-gray-700 md:text-base">
+          {content.motto.map((m) => (
+            <li class="flex items-center gap-3">
+              <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[#1CABB0]" aria-hidden="true"></span>
+              <span set:html={m} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Doorverwijzing naar de Voorbereidingen-blog -->
+    <div class="mt-16 flex flex-col items-center border-t border-gray-200 pt-12 text-center md:mt-24 md:pt-16">
+      <h2 class="text-2xl font-semibold tracking-tight text-black md:text-3xl">{content.nextTitle}</h2>
+      <a href={nextHref} class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a]">
+        {content.next}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  /* Silhouet van Australië, ingekleurd met de achtergrondkleur van het element */
+  .australia-shape {
+    -webkit-mask: url('/images/australia/australia-shape.svg') center / contain no-repeat;
+    mask: url('/images/australia/australia-shape.svg') center / contain no-repeat;
+  }
+</style>

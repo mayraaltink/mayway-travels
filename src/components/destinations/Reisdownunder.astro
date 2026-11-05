@@ -13,13 +13,12 @@ function t(key: string) {
 const mistakes = [1, 2, 3, 4, 5, 6].map((n) => t(`australia.intro.mistake${n}`));
 ---
 
-<section class="bg-[#FFFDFA] py-20 md:py-28">
+<section class="bg-[#FFFDFA] pb-10 pt-20 md:pb-12 md:pt-28">
   <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
 
     <!-- Verhaal -->
     <div>
-      <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('australia.intro.label')}</p>
-      <h2 class="mt-3 text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
+      <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
         {t('australia.intro.title')}
       </h2>
       <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
@@ -29,15 +28,15 @@ const mistakes = [1, 2, 3, 4, 5, 6].map((n) => t(`australia.intro.mistake${n}`))
     </div>
 
     <!-- Veelgemaakte fouten -->
-    <div class="relative overflow-hidden rounded-[2rem] bg-[#0F7C82] p-7 text-white shadow-[0_30px_60px_rgba(15,124,130,0.25)] md:p-10">
+    <div class="relative overflow-hidden rounded-[2rem] bg-[#EAF7F7] p-7 text-black shadow-[0_30px_60px_rgba(15,124,130,0.08)] md:p-10">
       <h3 class="relative text-2xl font-semibold leading-tight tracking-tight md:text-[1.75rem]">
         {t('australia.intro.mistakesTitle')}
       </h3>
 
       <ul class="relative mt-8 space-y-4">
         {mistakes.map((m) => (
-          <li class="flex items-start gap-4 text-[15px] leading-snug text-white/90">
-            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 text-[#4ED2CE]" aria-hidden="true">
+          <li class="flex items-start gap-4 text-[15px] leading-snug text-gray-600">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[#1CABB0]" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
             </span>
             <span class="pt-0.5">{m}</span>

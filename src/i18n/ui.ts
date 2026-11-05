@@ -508,22 +508,42 @@ faq_sim_a_f:
 },
 
     "routes.readMore": "Read more",
-    "routes.close": "Close", 
+    "routes.close": "Close",
+    "routes.stop": "Stop",
+    "routes.stops": "stops",
+    "routes.highlights": "Highlights",
+    "routes.section.label": "Travel routes",
+    "routes.hint": "Tap a stop on the map or swipe through the photos",
+    "routes.prev": "Previous stop",
+    "routes.next": "Next stop",
 
 
-"routes.west.title": "West Coast",
-"routes.west.subtitle": "Perth to Exmouth & Esperance",
+"routes.west.title": "North West Coast",
+"routes.west.subtitle": "Perth to Exmouth",
 "routes.west.tagline":
   "A wild and remote coastline perfect for long road trips and freedom seekers.",
 "routes.west.expand": {
-  route: "Route: Perth to Esperance & Perth to Exmouth",
-  
-  distance: "Distance: ±3,200 km",
+  route: "Route: Perth to Exmouth",
+
+  distance: "Distance: ±1,250 km",
   highlights: [
     "Less touristy & more adventurous",
     "Coral Coast & Ningaloo Reef",
     "Rottnest Island quokkas",
     "Endless beaches & road freedom"
+  ]
+},
+
+"routes.south.title": "South West Coast",
+"routes.south.subtitle": "Perth to Esperance",
+"routes.south.expand": {
+  route: "Route: Perth to Esperance",
+  distance: "Distance: ±1,100 km",
+  highlights: [
+    "Margaret River wine & surf",
+    "Giant tingle trees near Denmark",
+    "Whale watching in Albany",
+    "Kangaroos on the beach at Lucky Bay"
   ]
 },
 
@@ -1167,7 +1187,7 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 'workingholiday.description':
   'Altijd al gedroomd van een avontuur aan de andere kant van de wereld? Met een Working Holiday-visum kun je één tot drie jaar wonen, werken en reizen door Australië. Dit visum biedt reizigers de vrijheid om niet alleen rond te trekken, maar ook tijdelijk te werken om hun avontuur te financieren. Je kunt aan de slag in uiteenlopende sectoren, waardoor je het land op een unieke manier leert kennen en tegelijkertijd je reis bekostigt.',
 
-'workingholiday.button': 'Working Holiday reisadvies', 
+'workingholiday.button': 'Eerste Working Holiday aanvragen', 
 
 
     // destinations /////////////////////////////////////////////////////////////////////////
@@ -1292,13 +1312,25 @@ faq_sim_a_f:
 
     "routes.readMore": "Lees meer",
     "routes.close": "Sluiten",
+    "routes.stop": "Stop",
+    "routes.stops": "stops",
+    "routes.highlights": "Highlights",
+    "routes.section.label": "Reisroutes",
+    "routes.hint": "Klik op een stop op de kaart of swipe door de foto's",
+    "routes.prev": "Vorige stop",
+    "routes.next": "Volgende stop",
 
-    "routes.west.title": "Westkust",
-"routes.west.subtitle": "Perth naar Exmouth & Esperance",
+    "routes.west.title": "Noord-West kust",
+"routes.west.subtitle": "Perth naar Exmouth",
 "routes.west.tagline":
   "Een ruige en rustige kustlijn, perfect voor lange roadtrips en vrijheid.",
 "routes.west.expand":
-  "Route: Perth naar Esperance\nAfstand: ±3.200 km\n\nHighlights:\n• Minder toeristisch en avontuurlijk\n• Coral Coast & Ningaloo Reef\n• Rottnest Island quokka’s\n• Eindeloze stranden en vrijheid",
+  "Route: Perth naar Exmouth\nAfstand: ±1.250 km\n\nHighlights:\n• Minder toeristisch en avontuurlijk\n• Coral Coast & Ningaloo Reef\n• Rottnest Island quokka’s\n• Eindeloze stranden en vrijheid",
+
+"routes.south.title": "Zuid-West kust",
+"routes.south.subtitle": "Perth naar Esperance",
+"routes.south.expand":
+  "Route: Perth naar Esperance\nAfstand: ±1.100 km\n\nHighlights:\n• Margaret River wijn & surf\n• Reuzenbomen bij Denmark\n• Walvissen spotten in Albany\n• Kangoeroes op het strand van Lucky Bay",
 
 "routes.red.title": "Red Centre",
 "routes.red.subtitle": "Uluru",

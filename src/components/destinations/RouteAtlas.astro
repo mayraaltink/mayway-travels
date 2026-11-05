@@ -1,0 +1,665 @@
+---
+import fs from "node:fs";
+import path from "node:path";
+import { ui } from "../../i18n/ui";
+
+const lang = (Astro.currentLocale as "nl" | "en") ?? "nl";
+const t = ui[lang];
+
+// Kaart van Australië (zelfde coördinatenstelsel als de stops hieronder)
+const svgRaw = fs.readFileSync(
+  path.join(process.cwd(), "public/images/australia/australia-shape.svg"),
+  "utf8"
+);
+const landPaths = [...svgRaw.matchAll(/\sd="([^"]+)"/g)].map((m) => m[1]);
+
+const MAP = { x: 176.64, y: 48.55, w: 634.05, h: 616.89 };
+const RATIO = MAP.w / MAP.h;
+const overview = [MAP.x - 10, MAP.y - 10, MAP.w + 20, MAP.h + 20];
+
+type Stop = { name: string; img: string; x: number; y: number };
+
+// Stops staan in reisvolgorde, x/y zijn posities op de kaart
+const routeDefs = [
+  {
+    key: "east",
+    title: t["routes.east.title"],
+    subtitle: t["routes.east.subtitle"],
+    expand: t["routes.east.expand"],
+    stops: [
+      { name: "Sydney", img: "/images/australia/routes/east-1.jpg", x: 757, y: 482 },
+      { name: "Byron Bay", img: "/images/australia/routes/east-2.jpg", x: 802, y: 385 },
+      { name: "Noosa", img: "/images/australia/routes/east-3.jpg", x: 798, y: 343 },
+      { name: "Fraser Island", img: "/images/australia/routes/east-5.jpg", x: 804, y: 322 },
+      { name: "Whitsundays", img: "/images/australia/routes/east-4.jpg", x: 743, y: 229 },
+      { name: "Cairns", img: "/images/australia/routes/east-7.jpg", x: 698, y: 166 },
+      { name: "Daintree", img: "/images/australia/routes/east-6.jpg", x: 692, y: 152 },
+    ],
+  },
+  {
+    key: "west",
+    title: t["routes.west.title"],
+    subtitle: t["routes.west.subtitle"],
+    expand: t["routes.west.expand"],
+    stops: [
+      { name: "Perth", img: "/images/australia/routes/west-1.jpg", x: 221, y: 446 },
+      { name: "Rottnest Island", img: "/images/australia/routes/west-2.jpg", x: 209, y: 450 },
+      { name: "Kalbarri", img: "/images/australia/routes/west-3.jpg", x: 199, y: 367 },
+      { name: "Monkey Mia", img: "/images/australia/routes/west-7.jpg", x: 194, y: 333 },
+      { name: "Coral Bay", img: "/images/australia/routes/west-6.jpg", x: 196, y: 283 },
+      { name: "Ningaloo Reef", img: "/images/australia/routes/west-5.jpg", x: 189, y: 270 },
+      { name: "Exmouth", img: "/images/australia/routes/west-4.jpg", x: 202, y: 258 },
+    ],
+  },
+  {
+    key: "south",
+    title: t["routes.south.title"],
+    subtitle: t["routes.south.subtitle"],
+    expand: t["routes.south.expand"],
+    stops: [
+      { name: "Perth", img: "/images/australia/routes/south-1.jpg", x: 221, y: 446 },
+      { name: "Margaret River", img: "/images/australia/routes/south-2.jpg", x: 210, y: 484 },
+      { name: "Pemberton", img: "/images/australia/routes/south-3.jpg", x: 223, y: 492 },
+      { name: "Denmark", img: "/images/australia/routes/south-4.jpg", x: 239, y: 500 },
+      { name: "Albany", img: "/images/australia/routes/south-5.jpg", x: 250, y: 501 },
+      { name: "Bremer Bay", img: "/images/australia/routes/south-6.jpg", x: 270, y: 490 },
+      { name: "Esperance", img: "/images/australia/routes/south-7.jpg", x: 309, y: 481 },
+      { name: "Cape Le Grand", img: "/images/australia/routes/south-8.jpg", x: 319, y: 480 },
+    ],
+  },
+  {
+    key: "red",
+    title: t["routes.red.title"],
+    subtitle: t["routes.red.subtitle"],
+    expand: t["routes.red.expand"],
+    stops: [
+      { name: "Devils Marbles", img: "/images/australia/routes/red-6.jpg", x: 516, y: 234 },
+      { name: "Outback Roads", img: "/images/australia/routes/red-7.jpg", x: 511, y: 262 },
+      { name: "Alice Springs", img: "/images/australia/routes/red-3.jpg", x: 507, y: 293 },
+      { name: "MacDonnell Ranges", img: "/images/australia/routes/red-5.jpg", x: 490, y: 288 },
+      { name: "Kings Canyon", img: "/images/australia/routes/red-4.jpg", x: 469, y: 303 },
+      { name: "Kata Tjuta", img: "/images/australia/routes/red-2.jpg", x: 452, y: 320 },
+      { name: "Uluru", img: "/images/australia/routes/red-1.jpg", x: 462, y: 324 },
+      { name: "Desert Stars", img: "/images/australia/routes/red-8.jpg", x: 482, y: 318 },
+    ],
+  },
+  {
+    key: "top",
+    title: t["routes.top.title"],
+    subtitle: t["routes.top.subtitle"],
+    expand: t["routes.top.expand"],
+    stops: [
+      { name: "Darwin", img: "/images/australia/routes/top-1.jpg", x: 467, y: 86 },
+      { name: "Crocodiles River", img: "/images/australia/routes/top-7.jpg", x: 484, y: 89 },
+      { name: "Kakadu National Park", img: "/images/australia/routes/top-2.jpg", x: 502, y: 91 },
+      { name: "Gunlom Falls", img: "/images/australia/routes/top-4.jpg", x: 498, y: 105 },
+      { name: "Nitmiluk Gorge", img: "/images/australia/routes/top-6.jpg", x: 494, y: 119 },
+      { name: "Florence Falls", img: "/images/australia/routes/top-5.jpg", x: 476, y: 104 },
+      { name: "Litchfield National Park", img: "/images/australia/routes/top-3.jpg", x: 469, y: 99 },
+    ],
+  },
+];
+
+// NL heeft de expand-tekst als string, EN als object: beide omzetten naar hetzelfde formaat
+function normalizeExpand(expand: unknown) {
+  if (typeof expand !== "string") {
+    const e = expand as { route?: string; distance?: string; highlights?: string[] };
+    return { route: e.route ?? "", distance: e.distance ?? "", highlights: e.highlights ?? [] };
+  }
+  const lines = expand.split("\n").map((l) => l.trim()).filter(Boolean);
+  return {
+    route: lines.find((l) => l.startsWith("Route")) ?? "",
+    distance: lines.find((l) => /^(Afstand|Distance)/.test(l)) ?? "",
+    highlights: lines.filter((l) => l.startsWith("•")).map((l) => l.replace(/^•\s*/, "")),
+  };
+}
+
+// Vloeiende lijn door alle stops (Catmull-Rom → bezier)
+function smoothPath(pts: Stop[]) {
+  let d = `M${pts[0].x},${pts[0].y}`;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i - 1] ?? pts[i];
+    const p1 = pts[i];
+    const p2 = pts[i + 1];
+    const p3 = pts[i + 2] ?? p2;
+    const c1x = p1.x + (p2.x - p0.x) / 6;
+    const c1y = p1.y + (p2.y - p0.y) / 6;
+    const c2x = p2.x - (p3.x - p1.x) / 6;
+    const c2y = p2.y - (p3.y - p1.y) / 6;
+    d += ` C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${p2.x},${p2.y}`;
+  }
+  return d;
+}
+
+// Uitsnede van de kaart waar naartoe ingezoomd wordt per route
+const PAD = 34;
+const MIN_W = 160;
+
+const routes = routeDefs.map((r) => {
+  const xs = r.stops.map((s) => s.x);
+  const ys = r.stops.map((s) => s.y);
+  const minX = Math.min(...xs);
+  const minY = Math.min(...ys);
+  const bw = Math.max(...xs) - minX;
+  const bh = Math.max(...ys) - minY;
+  const w = Math.max(bw + PAD * 2, (bh + PAD * 2) * RATIO, MIN_W);
+  const h = w / RATIO;
+  const cx = minX + bw / 2;
+  const cy = minY + bh / 2;
+  // schaal zodat pins op elk zoomniveau even groot ogen
+  const s = w / MAP.w;
+
+  return {
+    ...r,
+    info: normalizeExpand(r.expand),
+    d: smoothPath(r.stops),
+    vb: [cx - w / 2, cy - h / 2, w, h].map((n) => +n.toFixed(2)),
+    s,
+    cx,
+  };
+});
+
+const clientData = routes.map((r) => ({
+  vb: r.vb,
+  stops: r.stops.map((s) => ({ name: s.name, img: s.img })),
+}));
+---
+
+<section class="bg-[#FFFDFA] pb-10 pt-20 md:pb-12 md:pt-28" data-route-atlas>
+  <script type="application/json" data-atlas-json set:html={JSON.stringify(clientData)} />
+
+  <div class="mx-auto max-w-6xl px-6">
+
+    <!-- Titel -->
+    <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t["routes.section.label"]}</p>
+    <h2 class="mt-3 text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
+      {t["routes.section.title"]}
+    </h2>
+    <p class="mt-6 max-w-2xl text-[15px] leading-relaxed text-gray-600 md:text-base">
+      {t["routes.section.subtitle"]}
+    </p>
+
+    <!-- Routekeuze -->
+    <div class="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-5" role="tablist">
+      {routes.map((r, i) => (
+        <button
+          type="button"
+          role="tab"
+          aria-selected="false"
+          class="route-tab rounded-2xl border border-gray-100 bg-white p-5 text-left shadow-[0_20px_40px_rgba(15,124,130,0.06)]"
+          data-route-btn={i}
+        >
+          <span class="block text-lg font-semibold leading-tight tracking-tight text-black">{r.title}</span>
+          <span class="mt-1 block text-sm text-gray-500">{r.subtitle}</span>
+          <span class="mt-3 block text-xs text-gray-400">{r.stops.length} {t["routes.stops"]}</span>
+        </button>
+      ))}
+    </div>
+
+    <div class="mt-12 grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
+
+      <!-- Kaart -->
+      <div>
+        <svg
+          class="atlas-map block h-auto w-full"
+          viewBox={overview.join(" ")}
+          role="group"
+          aria-label={t["routes.section.title"]}
+        >
+          <g class="land">
+            {landPaths.map((d) => <path d={d} />)}
+          </g>
+
+          <!-- alle routes vaag op de achtergrond -->
+          <g>
+            {routes.map((r) => (
+              <path class="ghost" d={r.d} vector-effect="non-scaling-stroke" />
+            ))}
+          </g>
+
+          {routes.map((r, ri) => (
+            <g class="route-layer" data-layer={ri}>
+              <path class="route-line" d={r.d} pathLength="1" stroke-width={2.5 * r.s} />
+              {r.stops.map((st, i) => {
+                const left = st.x > r.cx;
+                return (
+                  <g
+                    class="pin"
+                    data-stop={i}
+                    tabindex="-1"
+                    role="button"
+                    aria-label={st.name}
+                    transform={`translate(${st.x} ${st.y})`}
+                    style={`--i:${i}`}
+                  >
+                    <circle class="pin-pulse" r={9 * r.s} />
+                    <circle class="pin-dot" r={7 * r.s} stroke-width={1.75 * r.s} />
+                    <text class="pin-num" font-size={7.5 * r.s} dy={2.6 * r.s} text-anchor="middle">
+                      {i + 1}
+                    </text>
+                    <text
+                      class="pin-label"
+                      font-size={10.5 * r.s}
+                      x={(left ? -11 : 11) * r.s}
+                      dy={3.6 * r.s}
+                      text-anchor={left ? "end" : "start"}
+                      stroke-width={3.5 * r.s}
+                    >
+                      {st.name}
+                    </text>
+                  </g>
+                );
+              })}
+            </g>
+          ))}
+        </svg>
+        <p class="mt-4 text-center text-xs text-gray-400">{t["routes.hint"]}</p>
+      </div>
+
+      <!-- Stopkaart + info -->
+      <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_30px_60px_rgba(15,124,130,0.10)] md:p-7">
+        <div class="stop-card" data-stop-card>
+          <div class="photo relative aspect-[4/3] overflow-hidden rounded-xl bg-[#EAF7F7]">
+            <div class="absolute inset-0 grid place-items-center px-6 text-center text-2xl font-semibold tracking-tight text-[#1CABB0]/60" data-fallback></div>
+            <img class="absolute inset-0 h-full w-full object-cover" alt="" data-photo />
+          </div>
+
+          <div class="mt-5 flex items-end justify-between gap-4">
+            <div class="min-w-0">
+              <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]" aria-live="polite">
+                {t["routes.stop"]} <span data-counter-i>01</span> / <span data-counter-n>01</span>
+              </p>
+              <p class="mt-2 truncate text-2xl font-semibold leading-tight tracking-tight text-black md:text-[1.75rem]" data-stop-name></p>
+            </div>
+            <div class="flex shrink-0 gap-2">
+              <button type="button" class="nav-btn" data-prev aria-label={t["routes.prev"]}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+              </button>
+              <button type="button" class="nav-btn" data-next aria-label={t["routes.next"]}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info per route -->
+        {routes.map((r, ri) => (
+          <div class="mt-6 border-t border-gray-100 pt-6" data-info={ri} hidden>
+            <ol class="flex flex-wrap gap-2">
+              {r.stops.map((st, i) => (
+                <li>
+                  <button type="button" class="stop-chip" data-chip={i}>{st.name}</button>
+                </li>
+              ))}
+            </ol>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              {r.info.route && <span class="meta-chip">{r.info.route}</span>}
+              {r.info.distance && <span class="meta-chip">{r.info.distance}</span>}
+            </div>
+
+            {r.info.highlights.length > 0 && (
+              <>
+                <h3 class="mt-6 text-lg font-semibold tracking-tight text-black">{t["routes.highlights"]}</h3>
+                <ul class="mt-4 space-y-3">
+                  {r.info.highlights.map((h) => (
+                    <li class="flex items-start gap-3 text-sm leading-snug text-gray-600">
+                      <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1CABB0]/10 text-[#1CABB0]" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                      </span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ---------- routekeuze ---------- */
+  .route-tab {
+    cursor: pointer;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .route-tab:hover { transform: translateY(-2px); }
+  .route-tab[aria-selected="true"] {
+    border-color: #1cabb0;
+    box-shadow: 0 20px 40px rgba(15, 124, 130, 0.14);
+  }
+
+  /* ---------- kaart ---------- */
+  .land path {
+    fill: #eaf7f7;
+    stroke: white;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .ghost {
+    fill: none;
+    stroke: #1cabb0;
+    stroke-width: 1.25;
+    stroke-dasharray: 2 4;
+    opacity: 0.3;
+  }
+
+  .route-layer {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+  .route-layer.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .route-line {
+    fill: none;
+    stroke: #1cabb0;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  .route-layer.is-active .route-line {
+    transition: stroke-dashoffset 1.6s ease-in-out 0.6s;
+    stroke-dashoffset: 0;
+  }
+
+  .pin {
+    cursor: pointer;
+    opacity: 0;
+    outline: none;
+  }
+  .route-layer.is-active .pin {
+    opacity: 1;
+    transition: opacity 0.35s calc(0.7s + var(--i) * 0.18s);
+  }
+  .pin-dot {
+    fill: white;
+    stroke: #1cabb0;
+    transition: fill 0.25s, stroke 0.25s;
+  }
+  .pin-num {
+    fill: #1cabb0;
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .pin.is-visited .pin-dot { fill: #7fd3d5; stroke: #7fd3d5; }
+  .pin.is-current .pin-dot { fill: #0f7c82; stroke: #0f7c82; }
+  .pin.is-visited .pin-num,
+  .pin.is-current .pin-num { fill: white; }
+  .pin-pulse {
+    fill: #1cabb0;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .pin.is-current .pin-pulse { animation: pulse 2s ease-out infinite; }
+  .pin-label {
+    fill: #111827;
+    stroke: #fffdfa;
+    paint-order: stroke;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  .pin:hover .pin-label,
+  .pin:focus-visible .pin-label,
+  .pin.is-current .pin-label { opacity: 1; }
+
+  @keyframes pulse {
+    0% { transform: scale(0.7); opacity: 0.35; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+
+  /* ---------- stopkaart ---------- */
+  .stop-card {
+    cursor: pointer;
+    user-select: none;
+    touch-action: pan-y;
+  }
+  .photo img.is-broken { opacity: 0; }
+
+  .nav-btn {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    color: #1cabb0;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+  .nav-btn:hover {
+    border-color: #1cabb0;
+    background: rgb(28 171 176 / 0.06);
+  }
+
+  .stop-chip {
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    font-size: 0.8rem;
+    color: #4b5563;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .stop-chip:hover { border-color: #1cabb0; }
+  .stop-chip[aria-current="true"] {
+    background: #1cabb0;
+    border-color: #1cabb0;
+    color: white;
+  }
+
+  .meta-chip {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    background: rgb(28 171 176 / 0.1);
+    color: #0f7c82;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .route-layer.is-active .route-line,
+    .route-layer.is-active .pin { transition: none; }
+    .pin.is-current .pin-pulse { animation: none; }
+  }
+</style>
+
+<script>
+  type RouteData = {
+    vb: number[];
+    stops: { name: string; img: string }[];
+  };
+
+  document.querySelectorAll<HTMLElement>("[data-route-atlas]").forEach((root) => {
+    const routes: RouteData[] = JSON.parse(
+      root.querySelector("[data-atlas-json]")?.textContent ?? "[]"
+    );
+    const svg = root.querySelector<SVGSVGElement>(".atlas-map")!;
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>("[data-route-btn]")];
+    const layers = [...root.querySelectorAll<SVGGElement>("[data-layer]")];
+    const infos = [...root.querySelectorAll<HTMLElement>("[data-info]")];
+    const card = root.querySelector<HTMLElement>("[data-stop-card]")!;
+    const photo = root.querySelector<HTMLImageElement>("[data-photo]")!;
+    const fallback = root.querySelector<HTMLElement>("[data-fallback]")!;
+    const stopName = root.querySelector<HTMLElement>("[data-stop-name]")!;
+    const counterI = root.querySelector<HTMLElement>("[data-counter-i]")!;
+    const counterN = root.querySelector<HTMLElement>("[data-counter-n]")!;
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let routeIdx = -1;
+    let stopIdx = 0;
+
+    // ---------- kaart "vliegt" naar een route ----------
+    const overview = svg.getAttribute("viewBox")!.split(/\s+/).map(Number);
+    const ratio = overview[2] / overview[3];
+    let view = [...overview];
+    let raf = 0;
+
+    const setView = (v: number[]) => {
+      view = v;
+      svg.setAttribute("viewBox", v.map((n) => n.toFixed(2)).join(" "));
+    };
+
+    const flyTo = (target: number[]) => {
+      cancelAnimationFrame(raf);
+      if (reduceMotion) return setView(target);
+
+      const from = [...view];
+      const fromC = [from[0] + from[2] / 2, from[1] + from[3] / 2];
+      const toC = [target[0] + target[2] / 2, target[1] + target[3] / 2];
+      // tussen twee routes even uitzoomen, zoals een vlucht
+      const lift = Math.max(0, overview[2] * 0.75 - Math.max(from[2], target[2]));
+      const start = performance.now();
+      const duration = 1300;
+
+      const step = (now: number) => {
+        const p = Math.min(1, (now - start) / duration);
+        const e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        const w = from[2] + (target[2] - from[2]) * e + Math.sin(Math.PI * e) * lift;
+        const h = w / ratio;
+        const cx = fromC[0] + (toC[0] - fromC[0]) * e;
+        const cy = fromC[1] + (toC[1] - fromC[1]) * e;
+        setView([cx - w / 2, cy - h / 2, w, h]);
+        if (p < 1) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    };
+
+    // ---------- foto's ----------
+    photo.addEventListener("error", () => photo.classList.add("is-broken"));
+    photo.addEventListener("load", () => photo.classList.remove("is-broken"));
+
+    const setStop = (i: number, animate = true) => {
+      const route = routes[routeIdx];
+      if (!route) return;
+      const n = route.stops.length;
+      stopIdx = (i + n) % n;
+      const stop = route.stops[stopIdx];
+
+      layers[routeIdx].querySelectorAll<SVGGElement>(".pin").forEach((pin, pi) => {
+        pin.classList.toggle("is-current", pi === stopIdx);
+        pin.classList.toggle("is-visited", pi < stopIdx);
+      });
+      infos[routeIdx].querySelectorAll<HTMLButtonElement>("[data-chip]").forEach((chip, ci) => {
+        chip.setAttribute("aria-current", String(ci === stopIdx));
+      });
+
+      counterI.textContent = String(stopIdx + 1).padStart(2, "0");
+      counterN.textContent = String(n).padStart(2, "0");
+      stopName.textContent = stop.name;
+      fallback.textContent = stop.name;
+      photo.alt = stop.name;
+      photo.classList.remove("is-broken");
+      photo.src = stop.img;
+
+      if (animate && !reduceMotion) {
+        card.animate(
+          [
+            { opacity: 0, transform: "translateY(8px)" },
+            { opacity: 1, transform: "none" },
+          ],
+          { duration: 400, easing: "cubic-bezier(.2,.8,.2,1)" }
+        );
+      }
+    };
+
+    const setRoute = (ri: number) => {
+      if (ri === routeIdx) return;
+      routeIdx = ri;
+
+      tabs.forEach((tab, ti) => tab.setAttribute("aria-selected", String(ti === ri)));
+      infos.forEach((info, ii) => (info.hidden = ii !== ri));
+      layers.forEach((layer, li) => {
+        layer.classList.remove("is-active");
+        layer.querySelectorAll<SVGGElement>(".pin").forEach((pin) => {
+          pin.setAttribute("tabindex", li === ri ? "0" : "-1");
+        });
+      });
+      // reflow zodat de lijn opnieuw getekend wordt
+      void svg.getBoundingClientRect();
+      layers[ri].classList.add("is-active");
+
+      flyTo(routes[ri].vb);
+      setStop(0);
+    };
+
+    // ---------- events ----------
+    tabs.forEach((tab, ti) => tab.addEventListener("click", () => setRoute(ti)));
+
+    layers.forEach((layer) => {
+      layer.querySelectorAll<SVGGElement>(".pin").forEach((pin) => {
+        const go = () => setStop(Number(pin.dataset.stop));
+        pin.addEventListener("click", go);
+        pin.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            go();
+          }
+        });
+      });
+    });
+
+    infos.forEach((info) => {
+      info.querySelectorAll<HTMLButtonElement>("[data-chip]").forEach((chip) => {
+        chip.addEventListener("click", () => setStop(Number(chip.dataset.chip)));
+      });
+    });
+
+    root.querySelector("[data-prev]")?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setStop(stopIdx - 1);
+    });
+    root.querySelector("[data-next]")?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setStop(stopIdx + 1);
+    });
+
+    // klik op de foto = volgende stop, swipen = vorige/volgende
+    let startX = 0;
+    let swiped = false;
+    card.addEventListener("pointerdown", (e) => {
+      startX = e.clientX;
+      swiped = false;
+    });
+    card.addEventListener("pointerup", (e) => {
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 40) {
+        swiped = true;
+        setStop(stopIdx + (dx < 0 ? 1 : -1));
+      }
+    });
+    card.addEventListener("click", () => {
+      if (!swiped) setStop(stopIdx + 1);
+    });
+
+    root.addEventListener("keydown", (e) => {
+      if ((e.target as HTMLElement).closest("[data-route-btn]")) return;
+      if (e.key === "ArrowRight") setStop(stopIdx + 1);
+      if (e.key === "ArrowLeft") setStop(stopIdx - 1);
+    });
+
+    // eerst het hele continent, inzoomen zodra de sectie in beeld komt
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            io.disconnect();
+            setRoute(0);
+          }
+        },
+        { threshold: 0.35 }
+      );
+      io.observe(svg);
+    } else {
+      setRoute(0);
+    }
+  });
+</script>

@@ -1,172 +1,136 @@
 ---
 // src/components/ui/blogs/tips-australia.astro
-// Blog "Stap in een reismentaliteit": intro + onderwerpen met een inhoudsopgave bovenaan.
-// Zelfde opbouw als VisaAus.astro. Blok-types: p = alinea, quote = uitgelichte zin.
+// Blog "Stap in een reismentaliteit".
+// Opbouw: intro met de kaart van Australië op de achtergrond → "Go with the flow" in een licht turquoise
+// blok met twee kolommen → "Nieuwe mensen ontmoeten" met een foto links → doorverwijzing naar de Working Holiday blog.
+// In de teksten: <b> = dikgedrukt, <i> = schuin.
+// Foto bij "Nieuwe mensen ontmoeten": /public/images/blogs/nieuwe-mensen.jpg (ontbreekt die, dan een turquoise vlak).
+import fs from 'node:fs';
+import path from 'node:path';
 
 const lang = (Astro.currentLocale === 'en' ? 'en' : 'nl') as 'nl' | 'en';
 
-type Block = { type: 'p'; text: string } | { type: 'quote'; text: string };
-type Section = { id: string; title: string; blocks: Block[] };
+const peoplePhoto = fs.existsSync(path.join(process.cwd(), 'public', '/images/blogs/nieuwe-mensen.jpg')) ? '/images/blogs/nieuwe-mensen.jpg' : null;
 
-const content: Record<'nl' | 'en', { eyebrow: string; title: string; intro: Block[]; tocTitle: string; back: string; ctaTitle: string; cta: string; sections: Section[] }> = {
+const content = {
   nl: {
-    eyebrow: 'Blog · Australië',
     title: 'Stap in een reismentaliteit',
-    tocTitle: 'Spring naar',
-    back: 'Terug naar boven',
+    intro: [
+      'De stap zetten om naar Australië te vertrekken is spannend, bijzonder en soms ook best overweldigend. Naar mijn mening is het een spoedcursus leren <b>anticiperen</b>, <b>zelfredzaamheid</b> en nog beter <b>vertrouwen op je gevoel</b>. Het is dan ook heel normaal dat je door verschillende emoties heen gaat. Misschien ga je je leven in Nederland juist meer waarderen, of merk je dat je vrienden en familie ineens dichterbij voelen dan ooit.',
+      'Je stapt het vliegtuig in en denkt misschien: <i>"Waar ben ik in hemelsnaam aan begonnen?"</i> of <i>"Waarom doe ik dit ook alweer?"</i>. Je doet iets wat buiten je comfortzone ligt, en dat is zeker niet vanzelfsprekend!',
+      'Hier zit dan ook de groei. Je leert omgaan met onbekende situaties en leert steeds meer op jezelf vertrouwen. Hoe vaak je het ook doet, geloof mij: dat spannende gevoel blijft. Uit je comfortzone stappen (zeker zo ver van huis) went nooit helemaal. Wees daarom niet te streng voor jezelf als je gevoelens ervaart zoals nervositeit, onzekerheid of twijfel. Die gevoelens zijn er niet om je tegen te houden, maar om je te beschermen.',
+      'Probeer je open te stellen voor alles wat komt. Zodra je die reismentaliteit omarmt, ga je merken dat het avontuur juist begint waar je comfortzone eindigt. En onthoud: thuis is nooit zo ver weg als het soms voelt. Zoals we hier vaak zeggen: <i>\'NL is only 2 flights away\'</i>.',
+    ],
+    flowTitle: 'Go with the flow',
+    flowLeft: [
+      'Iets waar we in Europa misschien wel het beste in zijn, is vooruit plannen. Werden bij jou ook maandelijks de <b>Datumprikkers</b> in de groepschat gegooid, en kwam je vervolgens uit op een datum… over twee maanden?! In Australië kun je die app in ieder geval van je telefoon verwijderen, want <b>vooruit plannen</b> is hier gewoon <b>geen ding</b>.',
+      'Mensen leven hier met de dag. Ze kijken wat het weekend brengt, zonder agenda\'s vol afspraken of weken vooruit plannen. Eerlijk is eerlijk, in het begin kan dat vreemd voelen, want je zult wellicht denken: <i>"Maar als ik niks plan, hoe ontmoet ik dan überhaupt mensen?"</i>',
+    ],
+    flowRight: [
+      'Hoogstens worden er plannen gesmeed voor het aankomende weekend, en dan kan iedereen er gewoon bij aansluiten. Zo werkt het hier zodra je je mensen hebt ontmoet. Als je nog niet op dat punt bent en net aan de start van jouw avontuur staat, is het logisch dat je in eerste instantie wel wat verder vooruit plant.',
+      'Door je open te stellen voor spontane uitnodigingen en zelf initiatief te nemen, breid je langzaam je kring uit. Via deze nieuwe mensen kom je vaak weer in contact met een hele andere groep. Zo heb ik het zelf de afgelopen jaren ook ervaren.',
+      'Wat hier echt het verschil maakt, is <b>flexibiliteit</b>. Niet alles willen controleren, maar durven vertrouwen dat de juiste mensen en momenten vanzelf op je pad komen. Juist door minder vast te plannen, ontstaat er ruimte voor onverwachte ervaringen.',
+    ],
+    peopleTitle: 'Nieuwe mensen ontmoeten',
+    people: [
+      'We zijn misschien een klein land, maar we zijn overal, en ja, ook in Australië is er een grote Nederlandse community. Het kan je helpen om je alvast aan te sluiten bij <b>Nederlandse WhatsApp-groepen</b>, zoals <i>"Dutchies in Australië"</i>, of bij internationale reisgroepen. Zo bouw je vóór vertrek al een sociaal vangnet op. Veel mensen sturen simpelweg een berichtje in de groep om nieuwe contacten te leggen, want iedereen zit in hetzelfde schuitje. Het is heel normaal om te vragen: <i>"Wie gaat er vanavond naar Bondi?"</i> of <i>"Heeft iemand zin in een coastal walk morgenochtend?"</i>',
+      'Als je in Australië wilt werken en wonen, is het altijd leuk en aan te raden om lid te worden van een <b>running club, sportteam of sportschool</b> met groepslessen. Dit geeft je een makkelijke manier om nieuwe mensen te ontmoeten buiten je werk of huis. Van nieuwe huisgenoten tot collega\'s op je werk: zo kun je stap voor stap een sociaal leven opbouwen en je netwerk uitbreiden.',
+      'Als je vooral komt om te reizen, werkt het net iets anders. Voor solo travellers is het vaak het makkelijkst om in <b>hostels</b> te verblijven, met een <b>hop-on hop-off bus</b> te reizen en deel te nemen aan groepsactiviteiten of tours. Door je open te stellen en simpelweg een praatje te maken, ontstaan vaak de leukste connecties en spontane plannen. Soms leidt een gesprek tijdens het ontbijt of een strandwandeling tot een groep waarmee je ineens wekenlang verder reist.',
+    ],
     ctaTitle: 'Klaar om de stap te zetten?',
     cta: 'Leer meer over Working Holiday in Australië',
-    intro: [
-      { type: 'p', text: 'De stap zetten om naar Australië te vertrekken is spannend, bijzonder en soms ook best overweldigend. Naar mijn mening is het een spoedcursus leren anticiperen, zelfredzaamheid en nog beter vertrouwen op je gevoel. Het is dan ook heel normaal dat je door verschillende emoties heen gaat. Misschien ga je je leven in Nederland juist meer waarderen, of merk je dat je vrienden en familie ineens dichterbij voelen dan ooit.' },
-      { type: 'p', text: 'Je stapt het vliegtuig in en denkt misschien: "Waar ben ik in hemelsnaam aan begonnen?" of "Waarom doe ik dit ook alweer?". Je doet iets wat buiten je comfortzone ligt, en dat is zeker niet vanzelfsprekend!' },
-      { type: 'p', text: 'Hier zit dan ook de groei. Je leert omgaan met onbekende situaties en leert steeds meer op jezelf vertrouwen. Hoe vaak je het ook doet, geloof mij: dat spannende gevoel blijft. Uit je comfortzone stappen (zeker zo ver van huis) went nooit helemaal. Wees daarom niet te streng voor jezelf als je gevoelens ervaart zoals nervositeit, onzekerheid of twijfel. Die gevoelens zijn er niet om je tegen te houden, maar om je te beschermen.' },
-      { type: 'p', text: 'Probeer je open te stellen voor alles wat komt. Zodra je die reismentaliteit omarmt, ga je merken dat het avontuur juist begint waar je comfortzone eindigt. En onthoud: thuis is nooit zo ver weg als het soms voelt. Zoals we hier vaak zeggen:' },
-      { type: 'quote', text: 'NL is only 2 flights away.' },
-    ],
-    sections: [
-      {
-        id: 'go-with-the-flow',
-        title: 'Go with the flow',
-        blocks: [
-          { type: 'p', text: 'Iets waar we in Europa misschien wel het beste in zijn, is vooruit plannen. Werden bij jou ook maandelijks de Datumprikkers in de groepschat gegooid, en kwam je vervolgens uit op een datum… over twee maanden?! In Australië kun je die app in ieder geval van je telefoon verwijderen, want vooruit plannen is hier gewoon geen ding.' },
-          { type: 'p', text: 'Mensen leven hier met de dag. Ze kijken wat het weekend brengt, zonder agenda\'s vol afspraken of weken vooruit plannen. Eerlijk is eerlijk, in het begin kan dat vreemd voelen, want je zult wellicht denken: "Maar als ik niks plan, hoe ontmoet ik dan überhaupt mensen?"' },
-          { type: 'p', text: 'Hoogstens worden er plannen gesmeed voor het aankomende weekend, en dan kan iedereen er gewoon bij aansluiten. Zo werkt het hier zodra je je mensen hebt ontmoet. Als je nog niet op dat punt bent en net aan de start van jouw avontuur staat, is het logisch dat je in eerste instantie wel wat verder vooruit plant.' },
-          { type: 'p', text: 'Door je open te stellen voor spontane uitnodigingen en zelf initiatief te nemen, breid je langzaam je kring uit. Via deze nieuwe mensen kom je vaak weer in contact met een hele andere groep. Zo heb ik het zelf de afgelopen jaren ook ervaren.' },
-          { type: 'quote', text: 'Wat hier echt het verschil maakt, is flexibiliteit.' },
-          { type: 'p', text: 'Niet alles willen controleren, maar durven vertrouwen dat de juiste mensen en momenten vanzelf op je pad komen. Juist door minder vast te plannen, ontstaat er ruimte voor onverwachte ervaringen.' },
-        ],
-      },
-      {
-        id: 'nieuwe-mensen-ontmoeten',
-        title: 'Nieuwe mensen ontmoeten',
-        blocks: [
-          { type: 'p', text: 'We zijn misschien een klein land, maar we zijn overal, en ja, ook in Australië is er een grote Nederlandse community. Het kan je helpen om je alvast aan te sluiten bij Nederlandse WhatsApp-groepen, zoals "Dutchies in Australië", of bij internationale reisgroepen. Zo bouw je vóór vertrek al een sociaal vangnet op. Veel mensen sturen simpelweg een berichtje in de groep om nieuwe contacten te leggen, want iedereen zit in hetzelfde schuitje. Het is heel normaal om te vragen: "Wie gaat er vanavond naar Bondi?" of "Heeft iemand zin in een coastal walk morgenochtend?"' },
-          { type: 'p', text: 'Als je in Australië wilt werken en wonen, is het altijd leuk en aan te raden om lid te worden van een running club, sportteam of sportschool met groepslessen. Dit geeft je een makkelijke manier om nieuwe mensen te ontmoeten buiten je werk of huis. Van nieuwe huisgenoten tot collega\'s op je werk: zo kun je stap voor stap een sociaal leven opbouwen en je netwerk uitbreiden.' },
-          { type: 'p', text: 'Als je vooral komt om te reizen, werkt het net iets anders. Voor solo travellers is het vaak het makkelijkst om in hostels te verblijven, met een hop-on hop-off bus te reizen en deel te nemen aan groepsactiviteiten of tours. Door je open te stellen en simpelweg een praatje te maken, ontstaan vaak de leukste connecties en spontane plannen. Soms leidt een gesprek tijdens het ontbijt of een strandwandeling tot een groep waarmee je ineens wekenlang verder reist.' },
-        ],
-      },
-    ],
   },
   en: {
-    eyebrow: 'Blog · Australia',
     title: 'Step into a travel mindset',
-    tocTitle: 'Jump to',
-    back: 'Back to top',
+    intro: [
+      'Taking the step to move to Australia is exciting, special and sometimes quite overwhelming. In my opinion it is a crash course in <b>anticipating</b>, <b>self-reliance</b> and <b>trusting your gut</b> even more. So it is completely normal to go through all kinds of emotions. Maybe you start to appreciate your life in the Netherlands more, or you notice that your friends and family suddenly feel closer than ever.',
+      'You get on the plane and might think: <i>"What on earth have I got myself into?"</i> or <i>"Why am I doing this again?"</i>. You are doing something outside your comfort zone, and that is never a given!',
+      'This is exactly where the growth is. You learn to deal with unfamiliar situations and to trust yourself more and more. No matter how often you do it, believe me: that exciting feeling stays. Stepping out of your comfort zone (especially so far from home) never fully becomes normal. So do not be too hard on yourself when you feel nervous, unsure or doubtful. Those feelings are not there to hold you back, but to protect you.',
+      'Try to open yourself up to whatever comes your way. Once you embrace that travel mindset, you will notice that the adventure begins exactly where your comfort zone ends. And remember: home is never as far away as it sometimes feels. As we often say here: <i>\'NL is only 2 flights away\'</i>.',
+    ],
+    flowTitle: 'Go with the flow',
+    flowLeft: [
+      'Something we Europeans might be best at is planning ahead. Did your group chat also get a <b>scheduling poll</b> every month, only to end up with a date… two months from now?! In Australia you can delete that app from your phone, because <b>planning ahead</b> simply is <b>not a thing</b> here.',
+      'People here live day by day. They see what the weekend brings, without calendars full of appointments or planning weeks ahead. To be honest, that can feel strange at first, because you might think: <i>"But if I do not plan anything, how will I ever meet people?"</i>',
+    ],
+    flowRight: [
+      'At most, plans are made for the coming weekend, and then everyone can simply join in. That is how it works here once you have found your people. If you are not at that point yet and are just starting your adventure, it makes sense to plan a little further ahead at first.',
+      'By being open to spontaneous invitations and taking the initiative yourself, you slowly grow your circle. Through these new people you often get in touch with a whole new group. That is exactly how I experienced it over the past years.',
+      'What really makes the difference here is <b>flexibility</b>. Not wanting to control everything, but daring to trust that the right people and moments will come your way. It is precisely by planning less that there is room for unexpected experiences.',
+    ],
+    peopleTitle: 'Meeting new people',
+    people: [
+      'We may be a small country, but we are everywhere, and yes, there is a big Dutch community in Australia too. It can help to join <b>Dutch WhatsApp groups</b> like <i>"Dutchies in Australia"</i>, or international travel groups, before you leave. That way you build a social safety net before you even go. Many people simply post a message in the group to meet new people, because everyone is in the same boat. It is completely normal to ask: <i>"Who is going to Bondi tonight?"</i> or <i>"Anyone up for a coastal walk tomorrow morning?"</i>',
+      'If you want to live and work in Australia, joining a <b>running club, sports team or gym</b> with group classes is always fun and highly recommended. It gives you an easy way to meet new people outside your work or home. From new housemates to colleagues at work: step by step you build a social life and grow your network.',
+      'If you mainly come to travel, it works a little differently. For solo travellers it is often easiest to stay in <b>hostels</b>, travel with a <b>hop-on hop-off bus</b> and join group activities or tours. By being open and simply striking up a conversation, the best connections and spontaneous plans often happen. Sometimes a chat over breakfast or a walk on the beach leads to a group you end up travelling with for weeks.',
+    ],
     ctaTitle: 'Ready to take the leap?',
     cta: 'Learn more about a Working Holiday in Australia',
-    intro: [
-      { type: 'p', text: 'Taking the step to move to Australia is exciting, special and sometimes quite overwhelming. In my opinion it is a crash course in anticipating, being self-reliant and trusting your gut even more. So it is completely normal to go through all kinds of emotions. Maybe you start to appreciate your life in the Netherlands more, or you notice that your friends and family suddenly feel closer than ever.' },
-      { type: 'p', text: 'You get on the plane and might think: "What on earth have I got myself into?" or "Why am I doing this again?". You are doing something outside your comfort zone, and that is never a given!' },
-      { type: 'p', text: 'This is exactly where the growth is. You learn to deal with unfamiliar situations and to trust yourself more and more. No matter how often you do it, believe me: that exciting feeling stays. Stepping out of your comfort zone (especially so far from home) never fully becomes normal. So do not be too hard on yourself when you feel nervous, unsure or doubtful. Those feelings are not there to hold you back, but to protect you.' },
-      { type: 'p', text: 'Try to open yourself up to whatever comes your way. Once you embrace that travel mindset, you will notice that the adventure begins exactly where your comfort zone ends. And remember: home is never as far away as it sometimes feels. As we often say here:' },
-      { type: 'quote', text: 'NL is only 2 flights away.' },
-    ],
-    sections: [
-      {
-        id: 'go-with-the-flow',
-        title: 'Go with the flow',
-        blocks: [
-          { type: 'p', text: 'Something we Europeans might be best at is planning ahead. Did your group chat also get a scheduling poll every month, only to end up with a date… two months from now?! In Australia you can delete that app from your phone, because planning ahead simply is not a thing here.' },
-          { type: 'p', text: 'People here live day by day. They see what the weekend brings, without calendars full of appointments or planning weeks ahead. To be honest, that can feel strange at first, because you might think: "But if I do not plan anything, how will I ever meet people?"' },
-          { type: 'p', text: 'At most, plans are made for the coming weekend, and then everyone can simply join in. That is how it works here once you have found your people. If you are not at that point yet and are just starting your adventure, it makes sense to plan a little further ahead at first.' },
-          { type: 'p', text: 'By being open to spontaneous invitations and taking the initiative yourself, you slowly grow your circle. Through these new people you often get in touch with a whole new group. That is exactly how I experienced it over the past years.' },
-          { type: 'quote', text: 'What really makes the difference here is flexibility.' },
-          { type: 'p', text: 'Not wanting to control everything, but daring to trust that the right people and moments will come your way. It is precisely by planning less that there is room for unexpected experiences.' },
-        ],
-      },
-      {
-        id: 'nieuwe-mensen-ontmoeten',
-        title: 'Meeting new people',
-        blocks: [
-          { type: 'p', text: 'We may be a small country, but we are everywhere, and yes, there is a big Dutch community in Australia too. It can help to join Dutch WhatsApp groups like "Dutchies in Australia", or international travel groups, before you leave. That way you build a social safety net before you even go. Many people simply post a message in the group to meet new people, because everyone is in the same boat. It is completely normal to ask: "Who is going to Bondi tonight?" or "Anyone up for a coastal walk tomorrow morning?"' },
-          { type: 'p', text: 'If you want to live and work in Australia, joining a running club, sports team or gym with group classes is always fun and highly recommended. It gives you an easy way to meet new people outside your work or home. From new housemates to colleagues at work: step by step you build a social life and grow your network.' },
-          { type: 'p', text: 'If you mainly come to travel, it works a little differently. For solo travellers it is often easiest to stay in hostels, travel with a hop-on hop-off bus and join group activities or tours. By being open and simply striking up a conversation, the best connections and spontaneous plans often happen. Sometimes a chat over breakfast or a walk on the beach leads to a group you end up travelling with for weeks.' },
-        ],
-      },
-    ],
   },
-};
+}[lang];
 
-const c = content[lang];
 const workingHolidayHref = `/${lang}/blogs/VisaAus`;
 ---
 
-<article class="bg-[#FFFDFA]">
+<article class="bg-[#FFFDFA] px-6 pb-24 pt-32 md:pb-32 md:pt-40 [&_b]:font-semibold [&_b]:text-gray-900">
+  <div class="mx-auto max-w-5xl">
 
-  <!-- Kop + intro -->
-  <header id="top" class="px-6 pb-12 pt-32 md:pb-16 md:pt-40">
-    <div class="mx-auto max-w-3xl">
-      <div class="text-center">
-        <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{c.eyebrow}</p>
-        <h1 class="mt-3 text-4xl font-semibold leading-[1.0] tracking-tight text-black md:text-5xl">{c.title}</h1>
+    <!-- Intro met de kaart van Australië op de achtergrond -->
+    <section class="relative">
+      <div class="australia-shape pointer-events-none absolute -right-4 -top-10 hidden h-[26rem] w-[26rem] bg-[#E6F6F6] md:block" aria-hidden="true"></div>
+      <div class="relative max-w-3xl">
+        <h1 class="text-4xl font-semibold leading-[1.0] tracking-tight text-black md:text-5xl">{content.title}</h1>
+        <div class="mt-8 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
+          {content.intro.map((p) => <p set:html={p} />)}
+        </div>
       </div>
+    </section>
 
-      <div class="mt-10 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
-        {c.intro.map((b) => (
-          b.type === 'quote' ? (
-            <p class="py-2 text-center text-2xl font-semibold tracking-tight text-[#1CABB0] md:text-3xl">'{b.text}'</p>
-          ) : (
-            <p>{b.text}</p>
-          )
-        ))}
+    <!-- Go with the flow -->
+    <section class="mt-16 rounded-[2rem] bg-[#E6F6F6] px-6 py-10 md:mt-24 md:rounded-[2.5rem] md:px-12 md:py-14">
+      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.flowTitle}</h2>
+      <div class="mt-6 grid gap-5 text-[15px] leading-relaxed text-gray-700 md:grid-cols-2 md:gap-12 md:text-base">
+        <div class="space-y-5">
+          {content.flowLeft.map((p) => <p set:html={p} />)}
+        </div>
+        <div class="space-y-5">
+          {content.flowRight.map((p) => <p set:html={p} />)}
+        </div>
       </div>
+    </section>
 
-      <!-- Inhoudsopgave -->
-      <nav aria-label={c.tocTitle} class="mt-12 rounded-[2rem] bg-[#E6F6F6] p-6 md:p-8">
-        <p class="text-xs uppercase tracking-[0.2em] text-[#0F7C82]">{c.tocTitle}</p>
-        <ol class="mt-4 grid gap-3 sm:grid-cols-2">
-          {c.sections.map((s, i) => (
-            <li>
-              <a href={`#${s.id}`} class="group flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-gray-900 transition hover:bg-[#1CABB0] hover:text-white">
-                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#E6F6F6] text-xs text-[#1CABB0] transition group-hover:bg-white/20 group-hover:text-white">{i + 1}</span>
-                {s.title}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Onderwerpen -->
-  <div class="px-6 pb-24 md:pb-32">
-    <div class="mx-auto max-w-3xl space-y-16 md:space-y-20">
-      {c.sections.map((s, i) => (
-        <section id={s.id} class="scroll-mt-28">
-          <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{String(i + 1).padStart(2, '0')}</p>
-          <h2 class="mt-2 text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{s.title}</h2>
-
-          <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
-            {s.blocks.map((b) => (
-              b.type === 'quote' ? (
-                <p class="border-l-4 border-[#1CABB0] pl-5 text-xl font-semibold leading-snug tracking-tight text-[#0F7C82] md:text-2xl">{b.text}</p>
-              ) : (
-                <p>{b.text}</p>
-              )
-            ))}
-          </div>
-
-          <a href="#top" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#1CABB0] transition hover:text-[#0F7C82]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>
-            {c.back}
-          </a>
-        </section>
-      ))}
-
-      <!-- Doorverwijzing naar de Working Holiday blog -->
-      <div class="rounded-[2rem] bg-[#0F7C82] p-8 text-center text-white md:p-12">
-        <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">{c.ctaTitle}</h2>
-        <a href={workingHolidayHref} class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0F7C82] transition hover:bg-[#E6F6F6]">
-          {c.cta}
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-        </a>
+    <!-- Nieuwe mensen ontmoeten: foto links, tekst rechts -->
+    <section class="mt-16 grid gap-10 md:mt-24 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center md:gap-14">
+      <div class="overflow-hidden rounded-[2rem]">
+        {peoplePhoto ? (
+          <img src={peoplePhoto} alt={content.peopleTitle} loading="lazy" class="aspect-[4/5] w-full object-cover" />
+        ) : (
+          <div class="aspect-[4/5] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
+        )}
       </div>
+      <div>
+        <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.peopleTitle}</h2>
+        <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
+          {content.people.map((p) => <p set:html={p} />)}
+        </div>
+      </div>
+    </section>
+
+    <!-- Doorverwijzing naar de Working Holiday blog -->
+    <div class="mt-16 rounded-[2rem] bg-[#0F7C82] p-8 text-center text-white md:mt-24 md:p-12">
+      <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">{content.ctaTitle}</h2>
+      <a href={workingHolidayHref} class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0F7C82] transition hover:bg-[#E6F6F6]">
+        {content.cta}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
     </div>
   </div>
 </article>
 
-<style is:global>
-  html {
-    scroll-behavior: smooth;
+<style>
+  /* Silhouet van Australië, ingekleurd met de achtergrondkleur van het element */
+  .australia-shape {
+    -webkit-mask: url('/images/australia/australia-shape.svg') center / contain no-repeat;
+    mask: url('/images/australia/australia-shape.svg') center / contain no-repeat;
   }
 </style>

@@ -22,7 +22,7 @@ const content = {
       'Toen ik besloot om in Australië te wonen en werken, vroeg ik vanuit Nieuw-Zeeland mijn eerste Working Holiday (<b>subclass 417</b>) aan. Met een Working Holiday Visum kun je <b>tot 12 maanden</b> in Australië <b>wonen, werken en reizen</b>.',
       'Het is in de basis bedoeld voor reizigers die niet alleen willen rondreizen, maar ook tijdelijk geld willen verdienen om hun avontuur te financieren. Het visum geeft je de vrijheid om in allerlei sectoren te werken, zolang je de voorwaarden volgt.',
     ],
-    tocTitle: 'Spring naar',
+    tocTitle: 'Ga snel naar',
     toc: [
       { id: 'belangrijkste-punten', label: 'De belangrijkste punten' },
       { id: 'aanvraag', label: 'Het proces van aanvraag' },
@@ -71,6 +71,8 @@ const content = {
       },
     ],
     back: 'Terug naar boven',
+    nextTitle: 'Visum geregeld? Tijd om in te pakken!',
+    next: 'Voorbereidingen Working Holiday',
     disclaimer: 'Regels, kosten en voorwaarden kunnen veranderen. Check altijd de actuele informatie op de officiële website van de Australische overheid.',
   },
   en: {
@@ -129,6 +131,8 @@ const content = {
       },
     ],
     back: 'Back to top',
+    nextTitle: 'Visa sorted? Time to pack!',
+    next: 'Preparing for your Working Holiday',
     disclaimer: 'Rules, costs and conditions can change. Always check the latest information on the official Australian government website.',
   },
 }[lang];
@@ -153,12 +157,13 @@ const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22
     </header>
 
     <!-- Inhoudsopgave -->
-    <nav aria-label={content.tocTitle} class="mt-12 md:mt-16">
+    <!-- Knoppen naast elkaar in het midden; "Ga snel naar" links erboven, boven de eerste knop -->
+    <nav aria-label={content.tocTitle} class="mx-auto mt-12 w-fit max-w-full md:mt-16">
       <p class="text-xs uppercase tracking-[0.2em] text-gray-500">{content.tocTitle}</p>
       <ol class="mt-4 flex flex-wrap gap-2">
         {content.toc.map((item, i) => (
           <li>
-            <a href={`#${item.id}`} class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white">
+            <a href={`#${item.id}`} class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white">
               <span class="text-[#1CABB0] transition">{i + 1}.</span>
               {item.label}
             </a>
@@ -169,8 +174,8 @@ const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22
 
     <!-- Checklist -->
     <section id="belangrijkste-punten" class="mt-12 scroll-mt-28 rounded-[2.5rem] bg-[#B6E8E7] px-6 py-10 md:mt-16 md:rounded-[3.5rem] md:px-14 md:py-14">
-      <h2 class="max-w-xl text-2xl font-semibold leading-tight tracking-tight text-black md:text-[2rem]">{content.pointsTitle}</h2>
-      <ul class="mt-8 space-y-4">
+      <h2 class="mx-auto max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-black md:text-[2rem]">{content.pointsTitle}</h2>
+      <ul class="mx-auto mt-8 max-w-3xl space-y-4">
         {content.points.map((p) => (
           <li class="flex items-start gap-4 text-[15px] leading-relaxed text-gray-800 md:text-base">
             <span class="mt-0.5 shrink-0 text-[#0F7C82]" set:html={checkIcon} />
@@ -194,8 +199,8 @@ const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22
 
     <!-- Medische check: blok in een andere kleur -->
     <section id="medische-check" class="mt-16 scroll-mt-28 rounded-[2.5rem] bg-[#0F7C82] px-6 py-10 text-white md:mt-20 md:rounded-[3.5rem] md:px-14 md:py-14 [&_b]:text-white">
-      <h2 class="text-2xl font-semibold leading-tight tracking-tight md:text-[2rem]">{content.medicalTitle}</h2>
-      <div class="mt-6 max-w-3xl space-y-5 text-[15px] leading-relaxed text-white/85 md:text-base">
+      <h2 class="mx-auto max-w-3xl text-2xl font-semibold leading-tight tracking-tight md:text-[2rem]">{content.medicalTitle}</h2>
+      <div class="mx-auto mt-6 max-w-3xl space-y-5 text-[15px] leading-relaxed text-white/85 md:text-base">
         {content.medical.map((p) => <p set:html={p} />)}
       </div>
     </section>
@@ -220,6 +225,15 @@ const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22
         {content.back}
       </a>
     </section>
+
+    <!-- Doorverwijzing naar de volgende blog -->
+    <div class="mt-16 rounded-[2rem] bg-[#0F7C82] p-8 text-center text-white md:p-12">
+      <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">{content.nextTitle}</h2>
+      <a href={`/${lang}/blogs/voorbereidingen`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0F7C82] transition hover:bg-[#E6F6F6]">
+        {content.next}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
 
     <p class="mt-16 border-t border-black/10 pt-8 text-sm leading-relaxed text-gray-500">{content.disclaimer}</p>
   </div>

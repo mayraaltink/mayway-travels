@@ -55,9 +55,9 @@ export const chapters: StoryChapter[] = [
   {
     id: 'outofthebox',
     image: '/images/australia/surf-boys.jpg',
-    label: { nl: 'Out of the box', en: 'Out of the box' },
+    label: { nl: 'Internationale ervaring', en: 'International experience' },
     highlight: { nl: '2,5 jaar in Australië', en: '2.5 years in Australia' },
-    title: { nl: 'Out of the Box', en: 'Out of the Box' },
+    title: { nl: 'Out of the box', en: 'Out of the box' },
     paragraphs: {
       nl: [
         'Ik geloof in actie, kansen grijpen en buiten je comfortzone durven gaan om iets bijzonders te creëren.',

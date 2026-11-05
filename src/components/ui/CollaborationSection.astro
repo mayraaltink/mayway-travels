@@ -14,7 +14,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 }
 
 // href (optioneel): link naar de Instagram van het bedrijf
-const logos: { src: string; alt: string; href?: string }[] = [
+// scale: optioneel, om een logo met veel witruimte in het bestand groter te tonen
+const logos: { src: string; alt: string; href?: string; scale?: number }[] = [
   { src: '/images/logo/Mojo.png', alt: 'Mojo', href: 'https://www.instagram.com/mojo.surf/' },
   { src: '/images/logo/adventurerental.png', alt: 'Adventure Rentals', href: 'https://www.instagram.com/adventurerentalsaustralia/' },
   { src: '/images/logo/nzone.jfif', alt: 'NZone', href: 'https://www.instagram.com/nzoneskydive/' },
@@ -32,6 +33,7 @@ const logos: { src: string; alt: string; href?: string }[] = [
   { src: '/images/logo/milford.jfif', alt: 'Pure Milford', href: 'https://www.instagram.com/puremilfordnz/' },
   { src: '/images/logo/puri.png', alt: 'Puri Garden Hotel', href: 'https://www.instagram.com/purigardenhotel/' },
   { src: '/images/logo/utang.jfif', alt: 'Sumatra Orangutan Trekking', href: 'https://www.instagram.com/sumatraorangutantrekking/' },
+  { src: '/images/logo/gibbon.png', alt: 'The Gibbon Experience', href: 'https://www.instagram.com/gibbonexperience/', scale: 1.4 },
   { src: '/images/logo/watershed.png', alt: 'Watershed Saunas', href: 'https://www.instagram.com/watershedsaunas/' },
   { src: '/images/logo/byron.png', alt: 'Cape Byron Kayaks', href: 'https://www.instagram.com/cape_byron_kayaks/' },
   { src: '/images/logo/movement.png', alt: 'Movement', href: 'https://www.instagram.com/movement_oz/' },
@@ -139,6 +141,7 @@ const logos: { src: string; alt: string; href?: string }[] = [
               loading="lazy"
               draggable="false"
               class="max-h-20 w-auto max-w-[95%] select-none object-contain md:max-h-24"
+              style={logo.scale ? `transform: scale(${logo.scale})` : undefined}
             />
           </a>
         ) : (
@@ -149,6 +152,7 @@ const logos: { src: string; alt: string; href?: string }[] = [
               loading="lazy"
               draggable="false"
               class="max-h-20 w-auto max-w-[95%] select-none object-contain md:max-h-24"
+              style={logo.scale ? `transform: scale(${logo.scale})` : undefined}
             />
           </div>
         )}

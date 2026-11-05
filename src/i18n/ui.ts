@@ -70,11 +70,11 @@ export const ui = {
 
 'about.heading': 'Hi, I’m Mayra!',
 
-'about.intro.p1': 'Over the years, I’ve learned that the best memories are often created outside your comfort zone: when you dare to explore the unknown and stay open to whatever comes your way.',
+'about.intro.p1': 'I believe the best stories come from staying curious, seizing opportunities and thinking off the beaten track. That mindset has not only taken me to extraordinary places, it is also the foundation of how I approach the creative process of making content.',
 
-'about.intro.p2': 'What started as curiosity has grown into a lifestyle full of adventure, freedom, and new experiences. From traveling through Tanzania and Peru to backpacking across Asia and building a life in Australia: every step has shaped the story behind MAY WAYS.',
+'about.intro.p2': 'After 2.5 years of living out of the box in Australia, MAY WAYS brings together my love for adventure, creating and marketing.',
 
-'about.intro.p3': 'With MAY WAYS, I want to inspire you to take the leap, explore, and write your own story: your way.',
+'about.intro.p3': 'All with one goal: to inspire you to take the leap, and to help brands tell their story by turning real experiences into authentic content that inspires, connects and sticks.',
 
 'about.follow': 'Travel with us on Instagram',
 
@@ -177,7 +177,7 @@ export const ui = {
 
 'forBrands.services.title1': 'Together, we bring',
 'forBrands.services.title2': 'your brand to life.',
-'forBrands.services.mission': 'We believe in the power of real experiences and stepping out of your comfort zone. We capture that feeling for your brand.',
+'forBrands.services.mission': 'We believe in the power of real experiences. In discovering new places, pushing boundaries and living moments that stay with you.',
 'forBrands.services.more': 'Learn more',
 'forBrands.services.eyebrow': 'Services',
 'forBrands.services.heading': 'What I do for <em>your brand</em>',
@@ -771,11 +771,11 @@ fiji_intro_cta: "Start planning your trip",
 
 'about.title': 'Hi, Ik ben Mayra!',
 
-'about.intro.p1': 'Door de jaren heen heb ik geleerd dat de mooiste herinneringen vaak ontstaan buiten je comfortzone: wanneer je het onbekende durft op te zoeken en je openstelt voor wat er op je pad komt.',
+'about.intro.p1': 'Ik geloof dat de mooiste verhalen ontstaan door nieuwsgierig te blijven, kansen te grijpen en buiten de gebaande paden te denken. Die instelling heeft me niet alleen op bijzondere plekken gebracht, maar vormt ook de basis van hoe ik naar het creatieve proces van content maken kijk.',
 
-'about.intro.p2': 'Wat begon met nieuwsgierigheid is uitgegroeid tot een levensstijl vol avontuur, vrijheid en nieuwe ervaringen. Van reizen door Tanzania en Peru tot backpacken door Azië en het opbouwen van een leven in Australië: elke stap heeft bijgedragen aan het verhaal achter MAY WAYS.',
+'about.intro.p2': 'Na 2,5 jaar out of the box leven in Australië breng ik met MAY WAYS mijn liefde voor avontuur, creëren en marketing samen.',
 
-'about.intro.p3': 'Met MAY WAYS wil ik je inspireren om te durven gaan, te ontdekken en je eigen verhaal te schrijven — op jouw manier.',
+'about.intro.p3': 'Alles met het doel om jou te inspireren om te durven gaan, en merken te helpen hun verhaal te vertellen door échte ervaringen te vertalen naar authentieke content die inspireert, verbindt en bijblijft.',
 
 'about.follow': 'Reis mee op Instagram',
 
@@ -840,7 +840,7 @@ fiji_intro_cta: "Start planning your trip",
 
 'forBrands.services.title1': 'Samen brengen we',
 'forBrands.services.title2': 'jouw merk tot leven.',
-'forBrands.services.mission': 'Wij geloven in de kracht van échte ervaringen en het stappen uit je comfortzone. Wij leggen dit gevoel vast voor jouw merk.',
+'forBrands.services.mission': 'Wij geloven in de kracht van échte ervaringen. In nieuwe plekken ontdekken, grenzen verleggen en momenten beleven die je bijblijven.',
 'forBrands.services.more': 'Meer info',
 'forBrands.services.eyebrow': 'Services',
 'forBrands.services.heading': 'Wat ik voor <em>jouw merk</em> doe',

@@ -21,15 +21,17 @@ export const chapters: StoryChapter[] = [
     image: '/images/about/sydney-opera.jpg',
     label: { nl: 'Passie voor avontuur', en: 'A passion for adventure' },
     highlight: { nl: '35+ landen ontdekt', en: '35+ countries explored' },
-    title: { nl: 'Avontuur zit in mijn bloed', en: 'Adventure runs in my blood' },
+    title: { nl: 'Waar mijn avontuur begon', en: 'Where my adventure began' },
     paragraphs: {
       nl: [
-        'Het begon al toen ik klein was. Reizen met mijn familie naar India en Zuid-Korea maakten me nieuwsgierig naar de wereld, en die nieuwsgierigheid is nooit meer weggegaan.',
-        'Sindsdien trek ik eropuit wanneer het maar kan. Van een solo backpackreis door Peru, diep de Amazone in, tot maanden door Zuidoost-Azië en met een camper door Nieuw-Zeeland. Inmiddels staat de teller op meer dan 35 landen.',
+        'Mijn liefde voor avontuur en het ontdekken van de wereld begon al op jonge leeftijd. De reizen die ik met mijn familie maakte naar India en Zuid-Korea wakkerden mijn nieuwsgierigheid naar de wereld aan. Die nieuwsgierigheid vormde de basis voor mijn eigen avontuur, dat begon toen ik achttien was.',
+        'Mijn eerste grote reis bracht me naar Tanzania, waar ik vrijwilligerswerk deed binnen een childcareproject. Twee jaar later keerde ik terug om drie maanden lang mee te bouwen aan een project dat straatkinderen toegang gaf tot onderwijs. Niet veel later volgde mijn eerste solobackpackreis door Peru, inclusief een meerdaagse tocht diep door de Amazone.',
+        'Inmiddels heb ik meer dan 35 landen bezocht. Iedere reis heeft mijn blik op de wereld verbreed en me ervaringen en verhalen gegeven die ik graag met anderen deel.',
       ],
       en: [
-        'It started when I was little. Family trips to India and South Korea made me curious about the world, and that curiosity never left.',
-        'Ever since, I head out whenever I can. From a solo backpacking trip through Peru, deep into the Amazon, to months in Southeast Asia and a campervan through New Zealand. The counter now stands at more than 35 countries.',
+        'My love for adventure and discovering the world started at a young age. The trips I made with my family to India and South Korea sparked my curiosity about the world. That curiosity laid the foundation for my own adventure, which began when I was eighteen.',
+        'My first big trip took me to Tanzania, where I volunteered in a childcare project. Two years later I returned to spend three months helping to build a project that gave street children access to education. Not long after came my first solo backpacking trip through Peru, including a multi-day trek deep into the Amazon.',
+        'By now I have visited more than 35 countries. Every trip has broadened my view of the world and given me experiences and stories that I love to share with others.',
       ],
     },
   },
@@ -41,29 +43,12 @@ export const chapters: StoryChapter[] = [
     title: { nl: 'Marketeer met een reisvirus', en: 'A marketer with a travel bug' },
     paragraphs: {
       nl: [
-        'Naast het reizen koos ik voor marketing. Ik ben afgestudeerd marketeer en specialiseerde me in marketing en social media: hoe je een merk neerzet, wat een doelgroep raakt en hoe je van volgers een betrokken community maakt.',
-        'Als reisspecialist hielp ik daarna honderden reizigers aan hun droomreis. Zo leerde ik van dichtbij wat mensen écht laat dromen.',
+        'Als afgestudeerd marketeer trok ik de wereld over met mijn camera. Ik ging op zoek naar de bijzonderste verhalen en ervaringen. Onderweg ontstonden mijn eerste samenwerkingen met onder andere Urang Utan Trekking op Sumatra, The Gibbon Experience in Laos en Palawan Camping op de Filipijnen.',
+        'Daar ontdekte ik hoe bijzonder het is om échte ervaringen te vertalen naar verhalen die mensen inspireren en merken op een authentieke manier zichtbaar maken.',
       ],
       en: [
-        'Alongside travelling, I chose marketing. I graduated as a marketer and specialised in marketing and social media: how to position a brand, what moves an audience and how to turn followers into an engaged community.',
-        'As a travel specialist I then helped hundreds of travellers plan their dream trip. That showed me up close what truly makes people dream.',
-      ],
-    },
-  },
-  {
-    id: 'vastleggen',
-    image: '/images/about/Mayra-foto.jpg',
-    label: { nl: 'Beleven en vastleggen', en: 'Living and capturing' },
-    highlight: { nl: 'Avontuur × beeld', en: 'Adventure × visuals' },
-    title: { nl: 'Waar alles samenkomt', en: 'Where it all comes together' },
-    paragraphs: {
-      nl: [
-        'Op een gegeven moment viel alles op zijn plek. Mijn liefde voor avontuur en mijn kennis van social media bleken de perfecte combinatie.',
-        'Nu leg ik de vetste avonturen vast, en vooral het gevoel dat erbij hoort. Want een mooi beeld is leuk, maar content die je laat voelen alsof je er zelf bij bent: daar draait het om.',
-      ],
-      en: [
-        'At some point everything fell into place. My love for adventure and my knowledge of social media turned out to be the perfect match.',
-        'Now I capture the most epic adventures, and above all the feeling that comes with them. A beautiful shot is nice, but content that makes you feel like you are right there: that is what it is all about.',
+        'As a marketing graduate, I travelled the world with my camera, searching for the most special stories and experiences. Along the way my first collaborations came about, including Urang Utan Trekking on Sumatra, The Gibbon Experience in Laos and Palawan Camping in the Philippines.',
+        'That is where I discovered how special it is to turn real experiences into stories that inspire people and make brands visible in an authentic way.',
       ],
     },
   },
@@ -72,15 +57,17 @@ export const chapters: StoryChapter[] = [
     image: '/images/australia/surf-boys.jpg',
     label: { nl: 'Out of the box', en: 'Out of the box' },
     highlight: { nl: '2,5 jaar in Australië', en: '2.5 years in Australia' },
-    title: { nl: 'Out of the box moves blijven maken', en: 'Making out of the box moves' },
+    title: { nl: 'Out of the Box', en: 'Out of the Box' },
     paragraphs: {
       nl: [
-        'Ik denk soms heel letterlijk out of the box. Zo draaide ik in Tanzania mee in vrijwilligersprojecten: eerst in de kinderopvang en later drie maanden lang aan een project dat straatkinderen naar school hielp. En ik woonde tweeënhalf jaar in Australië.',
-        'Stilzitten is niks voor mij. Ik houd van actie en van de gekste ideeën, want daar ontstaan de mooiste verhalen. Die energie neem ik mee in alles wat ik maak.',
+        'Ik geloof in actie, kansen grijpen en buiten je comfortzone durven gaan om iets bijzonders te creëren.',
+        'Dat is ook hoe ik mijn eigen pad heb gevolgd. Na mijn reis door Azië kwam ik in 2024 terecht in Australië, waar ik uiteindelijk 2,5 jaar heb gewoond en gewerkt. Daar deed ik marketing- en saleservaring op in de toerismebranche, een wereld waarin alles draait om beleving, mensen en onvergetelijke ervaringen.',
+        'Deze internationale ervaring, ondernemende mindset en creatieve blik neem ik mee in alles wat ik voor jouw merk doe.',
       ],
       en: [
-        'Sometimes I think quite literally out of the box. In Tanzania I worked on volunteer projects: first in childcare, and later for three months on a project that helped street children go to school. And I lived in Australia for two and a half years.',
-        'Sitting still is not for me. I love action and the craziest ideas, because that is where the best stories begin. I bring that energy to everything I create.',
+        'I believe in action, seizing opportunities and daring to step outside your comfort zone to create something special.',
+        'That is also how I followed my own path. After my trip through Asia, I ended up in Australia in 2024, where I lived and worked for 2.5 years. There I gained marketing and sales experience in the tourism industry, a world that revolves around experiences, people and unforgettable moments.',
+        'I bring this international experience, entrepreneurial mindset and creative eye to everything I do for your brand.',
       ],
     },
   },

@@ -1,7 +1,8 @@
 ---
 // src/components/ui/StorySections.astro
-// "Dit is mijn verhaal" als reisroute: vier stops langs een lijn, met een vliegtuig
-// dat tijdens het scrollen van stop naar stop vliegt.
+// "Dit is mijn verhaal": donker turquoise blok (zelfde stijl als de bestemmingen op Community).
+// Desktop: links een foto die meeschuift en wisselt per hoofdstuk, rechts de hoofdstukken.
+// Mobiel: per hoofdstuk eerst de foto, dan de tekst.
 // Teksten en foto's aanpassen: src/data/story.ts
 import { ui, defaultLang } from '../../i18n/ui';
 import { chapters } from '../../data/story';
@@ -21,143 +22,188 @@ const items = chapters.map((c, i) => ({
   highlight: c.highlight[lang],
   title: c.title[lang],
   paragraphs: c.paragraphs[lang],
-  flip: i % 2 === 1,
 }));
 ---
 
-<section class="bg-[#F8FDFC] px-6 py-16 md:py-24">
+<section data-story class="bg-[#FFFDFA] px-3 py-10 md:px-6 md:py-16">
+  <div class="mx-auto max-w-7xl rounded-[2.5rem] bg-[#E6F6F6] px-5 py-14 text-gray-900 md:rounded-[3.5rem] md:px-12 md:py-20">
 
-  <!-- Kop -->
-  <div class="mb-14 text-center md:mb-20">
-    <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#5CC2BF]">
-      {t('about.preheader')}
-    </p>
-    <h2 class="text-3xl leading-[1.1] tracking-[-0.03em] text-black md:text-5xl">
-      <span class="font-normal">{t('about.titlePart1')}</span>
-      <span class="font-semibold">{t('about.titleHighlight')}</span>
-    </h2>
-  </div>
-
-  <!-- Route -->
-  <div data-route class="relative mx-auto max-w-5xl">
-
-    <!-- Lijn (mobiel links, desktop in het midden) -->
-    <div class="absolute bottom-5 left-5 top-0 w-px bg-[#1CABB0]/25 md:left-1/2" aria-hidden="true"></div>
-
-    <!-- Afgelegde route: groeit mee met het vliegtuig -->
-    <div data-trail class="absolute left-5 top-0 h-0 w-[2px] -translate-x-[0.5px] bg-[#1CABB0] md:left-1/2" aria-hidden="true"></div>
-
-    <!-- Vliegtuig -->
-    <div data-plane class="absolute left-5 top-0 z-20 md:left-1/2" aria-hidden="true">
-      <span class="flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#0F7C82] text-white shadow-[0_0_0_6px_#F8FDFC,0_10px_25px_rgba(15,124,130,0.3)]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rotate-[135deg]"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
-      </span>
+    <!-- Kop -->
+    <div class="mx-auto max-w-5xl text-center lg:text-left">
+      <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('about.preheader')}</p>
+      <h2 class="mt-3 text-4xl font-semibold leading-[1.0] tracking-tight text-black md:text-5xl">
+        {t('about.titlePart1')} <em>{t('about.titleHighlight')}</em>
+      </h2>
     </div>
 
-    <ol class="space-y-20 md:space-y-32">
-      {items.map((c) => (
-        <li class="story-stop relative grid items-center gap-8 pl-14 md:grid-cols-2 md:gap-28 md:pl-0">
+    <div class="mx-auto mt-12 grid max-w-5xl gap-16 md:mt-16 lg:grid-cols-2 lg:gap-20">
 
-          <!-- Stop op de lijn -->
-          <span data-stop-marker class="absolute left-5 top-0 z-10 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border border-[#1CABB0] bg-[#F8FDFC] text-xs font-semibold text-[#1CABB0] transition-colors duration-300 data-reached:bg-[#1CABB0] data-reached:text-white md:left-1/2 md:top-1/2 md:-translate-y-1/2">
-            {c.num}
-          </span>
+      <!-- Desktop: foto die meeschuift -->
+      <div class="hidden lg:block">
+        <div class="sticky top-28">
+          <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#d4f0ef] shadow-[0_30px_60px_rgba(15,124,130,0.15)]">
+            {items.map((c, i) => (
+              <img
+                src={c.image}
+                alt={c.label}
+                data-story-image={i}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                class:list={['absolute inset-0 h-full w-full object-cover transition duration-700', i === 0 ? 'scale-100 opacity-100' : 'scale-105 opacity-0']}
+              />
+            ))}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-          <!-- Foto -->
-          <div class:list={['relative overflow-hidden rounded-[2rem]', { 'md:order-2': c.flip }]}>
-            <img src={c.image} alt={c.label} loading="lazy" class="aspect-[4/5] w-full object-cover md:aspect-[5/6]" />
-            <span class="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-xs font-semibold text-[#0F7C82] backdrop-blur-sm">
-              {c.highlight}
-            </span>
-          </div>
-
-          <!-- Verhaal -->
-          <div class:list={[{ 'md:order-1': c.flip }]}>
-            <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{c.num} · {c.label}</p>
-            <h3 class="mt-3 text-2xl font-semibold leading-tight tracking-tight text-black md:text-[2rem]">{c.title}</h3>
-            <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
-              {c.paragraphs.map((p) => <p>{p}</p>)}
+            <!-- Feitje + voortgang -->
+            <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+              <span data-story-highlight class="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-[#0F7C82]">{items[0].highlight}</span>
+              <div class="flex gap-1.5" aria-hidden="true">
+                {items.map((_, i) => (
+                  <span data-story-bar={i} class:list={['h-1 w-6 rounded-full transition-colors duration-500', i === 0 ? 'bg-[#4ED2CE]' : 'bg-white/30']}></span>
+                ))}
+              </div>
             </div>
           </div>
-        </li>
-      ))}
-    </ol>
+        </div>
+      </div>
 
-    <!-- Eindpunt -->
-    <div class="relative mt-20 flex md:mt-32 md:justify-center">
-      <span data-stop-marker class="relative z-10 flex h-9 w-9 translate-x-[2px] items-center justify-center rounded-full border border-[#1CABB0] bg-[#F8FDFC] text-[#1CABB0] transition-colors duration-300 data-reached:bg-[#1CABB0] data-reached:text-white md:translate-x-0" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-      </span>
+      <!-- Hoofdstukken, met links een route waarlangs het vliegtuigje meevliegt -->
+      <div data-story-route class="relative pl-10 md:pl-14">
+        <div data-story-line class="absolute bottom-0 left-3 top-0 w-px bg-[#1CABB0]/25 md:left-4" aria-hidden="true"></div>
+        <div data-story-trail class="absolute left-3 top-0 h-0 w-[2px] -translate-x-[0.5px] rounded-full bg-[#1CABB0] md:left-4" aria-hidden="true"></div>
+        <div data-story-plane class="absolute left-3 top-0 z-10 md:left-4" aria-hidden="true">
+          <span class="flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#1CABB0] text-white shadow-[0_0_0_5px_#E6F6F6,0_10px_25px_rgba(15,124,130,0.3)] md:h-10 md:w-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rotate-[135deg]"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
+          </span>
+        </div>
+
+      <ol class="space-y-16 lg:space-y-24">
+        {items.map((c, i) => (
+          <li data-story-chapter={i} data-highlight={c.highlight} class="story-chapter">
+            <div>
+              <!-- Mobiel: foto bij het hoofdstuk -->
+              <div class="relative mb-8 overflow-hidden rounded-[2rem] lg:hidden">
+                <img src={c.image} alt={c.label} loading="lazy" class="aspect-[4/5] w-full object-cover" />
+                <span class="absolute bottom-4 left-4 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-[#0F7C82]">{c.highlight}</span>
+              </div>
+
+              <!-- Stop op de route: stip op de lijn + lijntje naar de titel -->
+              <div class="relative">
+                <span class="absolute -left-7 top-1/2 h-px w-5 bg-[#1CABB0]/40 md:-left-10 md:w-8" aria-hidden="true"></span>
+                <span data-story-dot class="absolute -left-7 top-1/2 z-[5] h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#1CABB0] bg-[#E6F6F6] transition-colors duration-300 data-reached:bg-[#1CABB0] md:-left-10" aria-hidden="true"></span>
+                <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{c.label}</p>
+              </div>
+              <h3 class="mt-3 text-3xl font-semibold leading-tight tracking-tight text-black md:text-4xl">{c.title}</h3>
+              <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
+                {c.paragraphs.map((p) => <p>{p}</p>)}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+        <!-- Eindbestemming: hier landt het vliegtuigje -->
+        <div class="relative mt-16 lg:mt-24">
+          <span class="absolute -left-7 top-[1.1rem] h-px w-5 bg-[#1CABB0]/40 md:-left-10 md:top-[1.25rem] md:w-8" aria-hidden="true"></span>
+          <span data-story-end class="absolute -left-7 top-[1.1rem] z-[5] flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-[#1CABB0] bg-[#E6F6F6] text-[#1CABB0] md:-left-10 md:top-[1.25rem] md:h-10 md:w-10" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </span>
+          <h3 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-4xl">{t('about.story.outro')}</h3>
+          <a href={`/${lang}/contact`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a]">
+            {t('forBrands.creator.cta')}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  /* Stops komen rustig in beeld tijdens het scrollen */
-  @media (prefers-reduced-motion: no-preference) {
-    .story-stop {
-      transition: opacity 0.7s ease, transform 0.7s ease;
+  /* Desktop: het hoofdstuk dat je leest is helder, de rest gedimd */
+  @media (min-width: 1024px) {
+    .story-chapter {
+      opacity: 0.35;
+      transition: opacity 0.5s ease;
     }
-    .story-stop.is-hidden {
-      opacity: 0;
-      transform: translateY(30px);
+    .story-chapter[data-active] {
+      opacity: 1;
     }
   }
 </style>
 
 <script>
-  const stops = document.querySelectorAll<HTMLElement>('.story-stop');
-  if ('IntersectionObserver' in window) {
-    stops.forEach((stop) => stop.classList.add('is-hidden'));
+  document.querySelectorAll<HTMLElement>('[data-story]').forEach((root) => {
+    const chaptersEls = root.querySelectorAll<HTMLElement>('[data-story-chapter]');
+    const images = root.querySelectorAll<HTMLElement>('[data-story-image]');
+    const bars = root.querySelectorAll<HTMLElement>('[data-story-bar]');
+    const highlight = root.querySelector<HTMLElement>('[data-story-highlight]');
+
+    function activate(index: number) {
+      chaptersEls.forEach((el, i) => el.toggleAttribute('data-active', i === index));
+      images.forEach((img, i) => {
+        img.classList.toggle('opacity-100', i === index);
+        img.classList.toggle('scale-100', i === index);
+        img.classList.toggle('opacity-0', i !== index);
+        img.classList.toggle('scale-105', i !== index);
+      });
+      bars.forEach((bar, i) => {
+        bar.classList.toggle('bg-[#4ED2CE]', i <= index);
+        bar.classList.toggle('bg-white/30', i > index);
+      });
+      if (highlight) highlight.textContent = chaptersEls[index].dataset.highlight ?? '';
+    }
+
+    activate(0);
+
+    // Hoofdstuk in het midden van het scherm wordt actief
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('is-hidden');
-            observer.unobserve(entry.target);
-          }
+          if (entry.isIntersecting) activate(Number((entry.target as HTMLElement).dataset.storyChapter));
         });
       },
-      { threshold: 0.2 }
+      { rootMargin: '-45% 0px -45% 0px' }
     );
-    stops.forEach((stop) => observer.observe(stop));
-  }
+    chaptersEls.forEach((el) => observer.observe(el));
 
-  // Vliegtuig volgt de scroll: het staat steeds iets onder het midden van het scherm,
-  // laat een doorgetrokken lijn achter en kleurt de stops in die het al gepasseerd is.
-  const route = document.querySelector<HTMLElement>('[data-route]');
-  const plane = route?.querySelector<HTMLElement>('[data-plane]');
-  const trail = route?.querySelector<HTMLElement>('[data-trail]');
-  const markers = route ? [...route.querySelectorAll<HTMLElement>('[data-stop-marker]')] : [];
+    // Vliegtuigje vliegt tijdens het scrollen langs de route en laat een spoor achter
+    const route = root.querySelector<HTMLElement>('[data-story-route]');
+    const plane = root.querySelector<HTMLElement>('[data-story-plane]');
+    const trail = root.querySelector<HTMLElement>('[data-story-trail]');
+    if (!route || !plane || !trail) return;
+    const dots = root.querySelectorAll<HTMLElement>('[data-story-dot]');
+    const endPin = root.querySelector<HTMLElement>('[data-story-end]');
+    const line = root.querySelector<HTMLElement>('[data-story-line]');
 
-  if (route && plane && trail && markers.length) {
     let ticking = false;
-
     function update() {
       ticking = false;
       const box = route!.getBoundingClientRect();
-      const centers = markers.map((m) => {
-        const r = m.getBoundingClientRect();
-        return r.top + r.height / 2 - box.top;
-      });
-      const start = centers[0];
-      const end = centers[centers.length - 1];
-      const y = Math.min(end, Math.max(start, window.innerHeight * 0.55 - box.top));
-
+      // De route loopt tot de eindbestemming; daar landt het vliegtuigje
+      let endY = box.height;
+      if (endPin) {
+        const r = endPin.getBoundingClientRect();
+        endY = r.top + r.height / 2 - box.top;
+      }
+      if (line) line.style.height = `${endY}px`;
+      const y = Math.min(endY, Math.max(0, window.innerHeight * 0.5 - box.top));
+      endPin?.toggleAttribute('data-reached', y >= endY - 1);
       plane!.style.transform = `translateY(${y}px)`;
       trail!.style.height = `${y}px`;
-      markers.forEach((m, i) => m.toggleAttribute('data-reached', centers[i] <= y + 1));
+      // Stops die het vliegtuigje al gepasseerd is kleuren in
+      dots.forEach((dot) => {
+        const r = dot.getBoundingClientRect();
+        dot.toggleAttribute('data-reached', r.top + r.height / 2 - box.top <= y);
+      });
     }
-
     function requestUpdate() {
       if (!ticking) {
         ticking = true;
         requestAnimationFrame(update);
       }
     }
-
     window.addEventListener('scroll', requestUpdate, { passive: true });
     window.addEventListener('resize', requestUpdate);
     update();
-  }
+  });
 </script>

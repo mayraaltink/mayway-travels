@@ -78,11 +78,12 @@ export const ui = {
 
 'about.follow': 'Travel with us on Instagram',
 
-'about.preheader': 'About MAY WAYS',
+'about.preheader': 'About MAY',
 
 'about.titlePart1': 'This is',
 
 'about.titleHighlight': 'my story',
+'about.story.outro': 'Ready for your adventure?',
 
  
  'community.preheader': 'Community',
@@ -779,11 +780,12 @@ fiji_intro_cta: "Start planning your trip",
 'about.follow': 'Reis mee op Instagram',
 
 
-'about.preheader': 'Over MAY WAYS',
+'about.preheader': 'Over MAY',
 
 'about.titlePart1': 'Dit is',
 
-'about.titleHighlight': 'mijn verhaal', 
+'about.titleHighlight': 'mijn verhaal',
+'about.story.outro': 'Klaar voor jouw avontuur?',
 ///////////partners 
 'partners.title': 'Eerdere samenwerkingen', 
 

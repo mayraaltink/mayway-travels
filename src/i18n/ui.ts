@@ -37,9 +37,11 @@ export const ui = {
 
 'home.about.preheader': 'About me',
 
-'hero.title1': 'Your adventure',
+'hero.title1': 'On an adventure',
 'hero.title2': 'YOUR WAY.',
 'hero.subtitle': 'Personal travel advice & hidden gems',
+'hero.cta.primary': 'Discover more',
+'hero.cta.secondary': 'View destinations',
 
 // home services
 'homeServices.subtitle': 'About MAY WAYS',
@@ -994,9 +996,11 @@ fiji_intro_cta: "Start planning your trip",
 
     'home.about.preheader': 'Over MAY WAYS',
 
-    'hero.title1': 'Jouw avontuur',
+    'hero.title1': 'Op avontuur',
 'hero.title2': 'YOUR WAY.',
 'hero.subtitle': 'Beleven. Creëren. Inspireren.',
+'hero.cta.primary': 'Ontdek meer',
+'hero.cta.secondary': 'Bekijk bestemmingen',
 
 
     'oceania.title.before': 'Ontdek de diversiteit',

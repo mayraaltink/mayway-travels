@@ -1,97 +1,144 @@
 ---
+// src/components/ui/Hero.astro
+// Homepagina-header: grote foto, tekst linksonder, twee knoppen en een locatielabel.
+// Kies de foto met `photo` (zie `photos` hieronder).
 import { Image } from 'astro:assets';
 import { ui, defaultLang } from '../../i18n/ui';
-import backgroundImage from '../../assets/Header.jpg';
+import kayak from '../../assets/Header.jpg';
+import moalboal from '../../assets/moalboal_drone_1.webp';
 
-const lang = Astro.currentLocale || defaultLang;
+const lang = (Astro.currentLocale || defaultLang) as keyof typeof ui;
 
 function t(key: keyof typeof ui[typeof defaultLang]) {
-  return ui[lang as keyof typeof ui][key];
+  return ui[lang][key];
 }
 
-
+const photos = {
+  kayak: {
+    src: kayak,
+    position: 'object-[center_30%]',
+    alt: 'Twee suppers op turquoise water bij Margaret River',
+    location: 'Margaret River, Western Australia',
+    maps: 'Margaret+River,+Western+Australia',
+  },
+  moalboal: {
+    src: moalboal,
+    position: 'object-center',
+    alt: 'Dronebeeld van een turquoise rivier door de jungle bij Moalboal',
+    location: 'Moalboal, Cebu, Philippines',
+    maps: 'Moalboal,+Cebu,+Philippines',
+  },
+};
 
 interface Props {
-  heroImage: ImageMetadata; 
-  titleLine1: string;
-  titleLine2: string;
-  subtitle: string;
-  primaryButtonText: string;
-  secondaryButtonText: string;
-  primaryButtonLink: string;
-  secondaryButtonLink: string;
+  photo?: keyof typeof photos;
 }
 
-const { 
-  heroImage,
-  titleLine1, 
-  titleLine2, 
-  subtitle, 
-  primaryButtonText, 
-  secondaryButtonText,
-  primaryButtonLink,
-  secondaryButtonLink 
-} = Astro.props;
+const { photo = 'kayak' } = Astro.props;
+const p = photos[photo];
 ---
 
-<section class="relative min-h-[110vh] flex items-center justify-center overflow-hidden -mt-16 rounded-b-[80px]">
-  <!-- Video Overlay Gradient -->
-  <div class="absolute inset-0 bg-gradient-to-b from-gray-900/40 via-gray-900/20 to-transparent z-10"></div>
-  
-  <!-- Background Video -->
-  <!-- <video class="absolute inset-0 z-0 h-full w-full object-cover motion-reduce:hidden" autoplay loop muted playsinline poster="/images/pexels-1320686.jpeg">
-    <source src="https://cdn.coverr.co/videos/surfer-catching-a-wave-z9d2tcquzp/1080p.mp4" type="video/mp4">
-  </video> -->
+<section class="hero relative -mt-16 flex min-h-[100svh] overflow-hidden rounded-b-[60px] md:rounded-b-[80px]">
 
-  <!-- Background Image (replaces video above) -->
-<Image  
-  src={backgroundImage}  
-  alt="Breathtaking aerial view of a tropical coastline"  
-  class="absolute inset-0 z-0 h-full w-full object-cover object-[center_65%] saturate-125" 
-  loading="eager" 
-  quality="mid" 
-/>
-<!-- Subtle dark overlay -->
-<div class="absolute inset-0 bg-black/5 z-10"></div>
-  <!-- LOCATION (bottom left badge) -->
-<a
-  href="https://www.google.com/maps/search/?api=1&query=Margaret+River,+Western+Australia"
-  target="_blank"
-  rel="noopener noreferrer"
-  title="Bekijk op Google Maps"
-  class="absolute bottom-10 left-10 flex items-center gap-2 rounded-full bg-transparant px-4 py-2 text-sm text-white backdrop-blur-sm z-20 transition hover:bg-black/30"
->
+  <!-- Foto -->
+  <Image
+    src={p.src}
+    alt={p.alt}
+    class:list={['hero-photo absolute inset-0 h-full w-full object-cover', p.position]}
+    loading="eager"
+    fetchpriority="high"
+    widths={[828, 1280, 1920, 2560]}
+    sizes="100vw"
+    quality="high"
+  />
 
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-    <circle cx="12" cy="10" r="3"></circle>
-  </svg>
+  <!-- Verloop: bovenin voor het menu, linksonder voor de tekst -->
+  <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/20 to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-tr from-[#04282A]/45 via-[#04282A]/10 to-transparent"></div>
 
-  <span class="uppercase text-xs tracking-wide text-white/90">
-    Margaret River, Western Australia
-  </span>
+  <!-- Inhoud -->
+  <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center justify-center px-6 pb-24 pt-32 text-center">
+    <div class="hero-content max-w-2xl">
+      <h1 class="hero-shadow text-white">
+        <span class="block text-3xl font-semibold leading-[0.95] tracking-tight md:text-4xl">
+          {t('hero.title1')}
+        </span>
+        <span class="font-neucha mt-1 block text-4xl leading-[0.95] text-[#4ED2CE] md:text-5xl">
+          {t('hero.title2')}
+        </span>
+      </h1>
 
-</a>
+      <p class="hero-tagline mx-auto mt-4 max-w-md text-sm font-medium italic leading-relaxed tracking-[0.04em] text-white md:text-base">
+        {t('hero.subtitle')}
+      </p>
 
-  <!-- Content -->
-  <div class="relative z-20 text-center px-6 max-w-4xl mx-auto">
-<h1
-  class="flex flex-col text-center leading-[0.85] tracking-[-0.03em]"
-  style="text-shadow: 0 3px 15px rgba(0,0,0,0.65);"
->
-<span class="text-3xl md:text-4xl font-medium text-white">
-  {t('hero.title1')}
-</span>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a
+          href="#ontdek"
+          class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-[#1CABB0] bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#15939a] hover:bg-[#15939a]"
+        >
+          {t('hero.cta.primary')}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+        </a>
+        <a
+          href={`/${lang}/destinations`}
+          class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-white hover:bg-white/10"
+        >
+          {t('hero.cta.secondary')}
+        </a>
+      </div>
 
-<span class="font-neucha text-5xl font-bold text-[#4ED2CE] md:text-6xl">
-  {t('hero.title2')}
-</span>
-</h1>
+    </div>
+  </div>
 
-<p 
-  class="mt-4 text-base md:text-lg text-white font-medium tracking-[0.02em]" 
-  style="text-shadow: 0 3px 15px rgba(0,0,0,0.4);"
->
-  {t('hero.subtitle')}
-</p>
-  
+  <!-- Locatie van de foto -->
+  <a
+    href={`https://www.google.com/maps/search/?api=1&query=${p.maps}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="absolute bottom-8 right-8 z-10 hidden items-center gap-2 rounded-full bg-black/20 px-4 py-2 text-white/90 backdrop-blur-md transition hover:bg-black/35 md:flex"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+      <circle cx="12" cy="10" r="3"></circle>
+    </svg>
+    <span class="text-[11px] uppercase tracking-[0.2em]">{p.location}</span>
+  </a>
+  <!-- doel van "Ontdek meer" -->
+  <span id="ontdek" class="absolute bottom-0" aria-hidden="true"></span>
+</section>
+
+<style>
+  /* langzaam inzoomen van de foto en tekst die omhoog komt */
+  .hero-photo {
+    animation: hero-zoom 14s ease-out both;
+  }
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+  .hero-shadow {
+    text-shadow: 0 2px 18px rgba(4, 40, 42, 0.35);
+  }
+  /* tagline: dunne donkere rand + schaduw zodat hij op licht water leesbaar blijft */
+  .hero-tagline {
+    text-shadow:
+      0 0 1px rgba(4, 40, 42, 0.6),
+      0 1px 3px rgba(4, 40, 42, 0.45),
+      0 2px 14px rgba(4, 40, 42, 0.4);
+  }
+  .hero-content {
+    animation: hero-up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
+  }
+  @keyframes hero-zoom {
+    from { transform: scale(1.08); }
+    to { transform: scale(1); }
+  }
+  @keyframes hero-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-photo,
+    .hero-content { animation: none; }
+  }
+</style>

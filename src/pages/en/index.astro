@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/ui/Hero.astro';
-import backgroundImage from '../../assets/moalboal_drone_2.webp';
 import HomeCarousel from '../../components/ui/HomeCarousel.astro';
 import AboutMeHome from '../../components/ui/AboutMeHome.astro';
 import OceaniaHighlight from '../../components/ui/OceaniaHighlight.astro';
@@ -19,16 +18,7 @@ import Portfolio from '../../components/ui/Portfolio.astro';
 <BaseLayout title="Home | MAY WAYS travels">
   
 
-  <Hero 
-    heroImage={backgroundImage}
-    titleLine1="your adventure,"
-    titleLine2="YOUR WAY"
-    subtitle="Personal travel experiences & custom routes"
-    primaryButtonText="Plan your trip"
-    primaryButtonLink="/en/contact"
-    secondaryButtonText="View e-guides"
-    secondaryButtonLink="/en/e-guides"
-  />
+  <Hero />
   <ServiceCards />
   <AboutMeHome />
   <Portfolio variant="home" />

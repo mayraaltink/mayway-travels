@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/ui/Hero.astro';
-import backgroundImage from '../../assets/moalboal_drone_2.webp';
 import HomeCarousel from '../../components/ui/HomeCarousel.astro';
 // import backgroundImage from '../../assets/pexels-1320686.jpeg';
 import { ui } from '../../i18n/ui';
@@ -16,17 +15,7 @@ import Portfolio from '../../components/ui/Portfolio.astro';
 
 <BaseLayout title="Home | MAY WAYS travels">
   
-  <!-- Pass the Dutch text as props to the reusable Hero component -->
-  <Hero 
-    heroImage={backgroundImage}
-    titleLine1="jouw avontuur,"
-    titleLine2="YOUR WAY"
-    subtitle="Personal travel experiences & custom routes"
-    primaryButtonText="Plan jouw reis"
-    primaryButtonLink="/nl/contact"
-    secondaryButtonText="Bekijk e-gidsen"
-    secondaryButtonLink="/nl/e-gidsen"
-  />
+  <Hero />
 <ServiceCards />
   <AboutMeHome />
   <Portfolio variant="home" />

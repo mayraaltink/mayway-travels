@@ -1,142 +1,163 @@
 ---
+// src/components/ui/StorySections.astro
+// "Dit is mijn verhaal" als reisroute: vier stops langs een lijn, met een vliegtuig
+// dat tijdens het scrollen van stop naar stop vliegt.
+// Teksten en foto's aanpassen: src/data/story.ts
 import { ui, defaultLang } from '../../i18n/ui';
+import { chapters } from '../../data/story';
 
-const lang = Astro.currentLocale || defaultLang;
+const lang = (Astro.currentLocale || defaultLang) as 'nl' | 'en';
 
 function t(key: string) {
   const dict = ui[lang as keyof typeof ui] as Record<string, string>;
   return dict[key] ?? key;
 }
+
+const items = chapters.map((c, i) => ({
+  id: c.id,
+  num: String(i + 1).padStart(2, '0'),
+  image: c.image,
+  label: c.label[lang],
+  highlight: c.highlight[lang],
+  title: c.title[lang],
+  paragraphs: c.paragraphs[lang],
+  flip: i % 2 === 1,
+}));
 ---
-<section
-  class="rounded-[40px] bg-[#F8FDFC] px-8 py-16"
->
 
-<!-- HEADER (blijft exact zoals jij hebt) -->
-<div class="mb-12 text-center">
+<section class="bg-[#F8FDFC] px-6 py-16 md:py-24">
 
-  <!-- PREHEADER -->
-  <p class="mb-3 text-xs uppercase tracking-[0.25em] text-[#5CC2BF] font-medium">
-    {t('about.preheader')}
-  </p>
-
-  <!-- TITLE -->
-  <h2 class="text-3xl md:text-5xl tracking-[-0.03em] text-black leading-[1.1]">
-
-    <span class="font-normal">
-      {t('about.titlePart1')}
-    </span>
-
-    <span class="font-semibold">
-      {t('about.titleHighlight')}
-    </span>
-
-  </h2>
-
-</div>
-
-
-
-<!-- STORY SECTION -->
-<div class="mx-auto mt-24 max-w-6xl px-6 space-y-20">
-
-  <!-- BLOCK 1: TRAVEL STORY -->
-  <div class="grid items-center gap-10 md:grid-cols-2">
-
-    <!-- TEXT -->
-    <div class="max-w-md md:max-w-lg">
-      <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-        {t('about.travelStory.title')}
-      </h3>
-
-      <p class="mt-6 text-sm md:text-base text-gray-600 leading-7">
-        {t('about.travelStory.p1')}
-      </p>
-
-      <p class="mt-4 text-sm md:text-base text-gray-600 leading-7">
-        {t('about.travelStory.p2')}
-      </p>
-
-      <p class="mt-4 text-sm md:text-base text-gray-600 leading-7">
-        {t('about.travelStory.p3')}
-      </p>
-    </div>
-
-    <!-- IMAGE -->
-    <div class="overflow-hidden rounded-3xl">
-      <img
-        src="/images/about/sydney-opera.jpg"
-        alt="Travel story"
-        class="h-[420px] w-full object-cover transition-transform duration-500 hover:scale-105"
-      />
-    </div>
-
+  <!-- Kop -->
+  <div class="mb-14 text-center md:mb-20">
+    <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#5CC2BF]">
+      {t('about.preheader')}
+    </p>
+    <h2 class="text-3xl leading-[1.1] tracking-[-0.03em] text-black md:text-5xl">
+      <span class="font-normal">{t('about.titlePart1')}</span>
+      <span class="font-semibold">{t('about.titleHighlight')}</span>
+    </h2>
   </div>
 
-<!-- BLOCK 2: WORK STORY (REVERSED) -->
-<div class="grid items-center gap-10 md:grid-cols-2">
+  <!-- Route -->
+  <div data-route class="relative mx-auto max-w-5xl">
 
-  <!-- IMAGE (LEFT THIS TIME) -->
-  <div class="order-2 overflow-hidden rounded-3xl md:order-1">
-    <img 
-      src="/images/about/reis-specialist.jpg"
-      alt="Great Ocean Road, Australië"
-      class="h-[420px] w-full object-cover transition-transform duration-500 hover:scale-105"
-    />
-  </div>
+    <!-- Lijn (mobiel links, desktop in het midden) -->
+    <div class="absolute bottom-5 left-5 top-0 w-px bg-[#1CABB0]/25 md:left-1/2" aria-hidden="true"></div>
 
-    <!-- TEXT (RIGHT THIS TIME) -->
-    <div class="order-1 md:order-2">
-      <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-        {t('about.workStory.title')}
-      </h3>
+    <!-- Afgelegde route: groeit mee met het vliegtuig -->
+    <div data-trail class="absolute left-5 top-0 h-0 w-[2px] -translate-x-[0.5px] bg-[#1CABB0] md:left-1/2" aria-hidden="true"></div>
 
-      <p class="mt-6 text-sm md:text-base text-gray-600 leading-7">
-        {t('about.workStory.p1')}
-      </p>
-
-      <p class="mt-4 text-sm md:text-base text-gray-600 leading-7">
-        {t('about.workStory.p2')}
-      </p>
-
-      <p class="mt-4 text-sm md:text-base text-gray-600 leading-7">
-        {t('about.workStory.p3')}
-      </p>
+    <!-- Vliegtuig -->
+    <div data-plane class="absolute left-5 top-0 z-20 md:left-1/2" aria-hidden="true">
+      <span class="flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#0F7C82] text-white shadow-[0_0_0_6px_#F8FDFC,0_10px_25px_rgba(15,124,130,0.3)]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rotate-[135deg]"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
+      </span>
     </div>
 
-  </div>
+    <ol class="space-y-20 md:space-y-32">
+      {items.map((c) => (
+        <li class="story-stop relative grid items-center gap-8 pl-14 md:grid-cols-2 md:gap-28 md:pl-0">
 
-</div>
+          <!-- Stop op de lijn -->
+          <span data-stop-marker class="absolute left-5 top-0 z-10 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border border-[#1CABB0] bg-[#F8FDFC] text-xs font-semibold text-[#1CABB0] transition-colors duration-300 data-reached:bg-[#1CABB0] data-reached:text-white md:left-1/2 md:top-1/2 md:-translate-y-1/2">
+            {c.num}
+          </span>
+
+          <!-- Foto -->
+          <div class:list={['relative overflow-hidden rounded-[2rem]', { 'md:order-2': c.flip }]}>
+            <img src={c.image} alt={c.label} loading="lazy" class="aspect-[4/5] w-full object-cover md:aspect-[5/6]" />
+            <span class="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-xs font-semibold text-[#0F7C82] backdrop-blur-sm">
+              {c.highlight}
+            </span>
+          </div>
+
+          <!-- Verhaal -->
+          <div class:list={[{ 'md:order-1': c.flip }]}>
+            <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{c.num} · {c.label}</p>
+            <h3 class="mt-3 text-2xl font-semibold leading-tight tracking-tight text-black md:text-[2rem]">{c.title}</h3>
+            <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
+              {c.paragraphs.map((p) => <p>{p}</p>)}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <!-- Eindpunt -->
+    <div class="relative mt-20 flex md:mt-32 md:justify-center">
+      <span data-stop-marker class="relative z-10 flex h-9 w-9 translate-x-[2px] items-center justify-center rounded-full border border-[#1CABB0] bg-[#F8FDFC] text-[#1CABB0] transition-colors duration-300 data-reached:bg-[#1CABB0] data-reached:text-white md:translate-x-0" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      </span>
+    </div>
+  </div>
+</section>
 
 <style>
-.story-card {
-  padding: 26px;
-  border-radius: 24px;
-
-  /* glass turquoise effect */
-  background: rgba(92, 194, 191, 0.08);
-
-  border: 1px solid rgba(92, 194, 191, 0.18);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  cursor: pointer;
-  transition: all 0.35s ease;
-
-  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
-}
-
-/* hover = more glow, more depth */
-.story-card:hover {
-  transform: translateY(-6px);
-  background: rgba(92, 194, 191, 0.14);
-  border-color: rgba(92, 194, 191, 0.35);
-  box-shadow: 0 16px 40px rgba(92, 194, 191, 0.18);
-}
-
-/* content stays soft */
-.story-card h3 {
-  letter-spacing: -0.02em;
-}
+  /* Stops komen rustig in beeld tijdens het scrollen */
+  @media (prefers-reduced-motion: no-preference) {
+    .story-stop {
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .story-stop.is-hidden {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
 </style>
+
+<script>
+  const stops = document.querySelectorAll<HTMLElement>('.story-stop');
+  if ('IntersectionObserver' in window) {
+    stops.forEach((stop) => stop.classList.add('is-hidden'));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('is-hidden');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    stops.forEach((stop) => observer.observe(stop));
+  }
+
+  // Vliegtuig volgt de scroll: het staat steeds iets onder het midden van het scherm,
+  // laat een doorgetrokken lijn achter en kleurt de stops in die het al gepasseerd is.
+  const route = document.querySelector<HTMLElement>('[data-route]');
+  const plane = route?.querySelector<HTMLElement>('[data-plane]');
+  const trail = route?.querySelector<HTMLElement>('[data-trail]');
+  const markers = route ? [...route.querySelectorAll<HTMLElement>('[data-stop-marker]')] : [];
+
+  if (route && plane && trail && markers.length) {
+    let ticking = false;
+
+    function update() {
+      ticking = false;
+      const box = route!.getBoundingClientRect();
+      const centers = markers.map((m) => {
+        const r = m.getBoundingClientRect();
+        return r.top + r.height / 2 - box.top;
+      });
+      const start = centers[0];
+      const end = centers[centers.length - 1];
+      const y = Math.min(end, Math.max(start, window.innerHeight * 0.55 - box.top));
+
+      plane!.style.transform = `translateY(${y}px)`;
+      trail!.style.height = `${y}px`;
+      markers.forEach((m, i) => m.toggleAttribute('data-reached', centers[i] <= y + 1));
+    }
+
+    function requestUpdate() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }
+
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+    update();
+  }
+</script>

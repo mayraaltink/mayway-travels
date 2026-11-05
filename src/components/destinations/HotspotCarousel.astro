@@ -7,6 +7,14 @@ import path from 'node:path';
 import { useTranslations } from '../../i18n/ui';
 import CarouselControls from '../ui/CarouselControls.astro';
 
+export interface Props {
+  /** sleutels in ui.ts: `${key}_badge`, `_title`, `_text`, `_story` */
+  hotspots?: string[];
+  /** foto per hotspot; zonder foto wordt /images/<key>.jpg gezocht */
+  photos?: Record<string, string>;
+  descKey?: string;
+}
+
 const lang = (Astro.currentLocale ?? 'nl') as 'nl' | 'en';
 const t = useTranslations(lang);
 const get = (k: string) => t(k as any) as string;
@@ -15,7 +23,7 @@ function imageSrc(src: string) {
   return fs.existsSync(path.join(process.cwd(), 'public', src)) ? src : null;
 }
 
-const hotspots = [
+const australiaHotspots = [
   'whitsundays',
   'fraser',
   'julian_rocks',
@@ -34,11 +42,17 @@ const hotspots = [
 ];
 
 // Foto's die al op de site staan; de rest zoekt naar /images/<naam>.jpg
-const photos: Record<string, string> = {
+const australiaPhotos: Record<string, string> = {
   reef: '/images/australia/unnamed.jpg',
   uluru: '/images/australia/aus_main.jpg',
   great_ocean: '/images/about/great-ocean-road.jpg',
 };
+
+const {
+  hotspots = australiaHotspots,
+  photos = australiaPhotos,
+  descKey = 'hotspots_desc',
+} = Astro.props;
 
 const items = hotspots.map((key) => ({
   key,
@@ -49,7 +63,7 @@ const items = hotspots.map((key) => ({
   story: get(`${key}_story`),
 }));
 
-const desc = get('hotspots_desc');
+const desc = get(descKey);
 ---
 
 <section class="bg-[#F4FBFB] px-6 pb-10 pt-20 md:pb-12 md:pt-28">

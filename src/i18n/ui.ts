@@ -245,7 +245,7 @@ export const ui = {
 'forBrands.creator.title': 'From brand experience to online reach',
 'forBrands.creator.p1': 'The best stories and adventures are never created alone. That is why MAY WAYS works with destinations, (travel) brands, events and hospitality businesses that match our audience.',
 'forBrands.creator.p2': 'By making brands part of real experiences, we create authentic content that inspires, connects and gets people moving. Last year our content on TikTok and Instagram already reached hundreds of thousands of adventure seekers. Got a fun idea or want to explore the possibilities together?',
-'forBrands.creator.cta': "Let's talk",
+'forBrands.creator.cta': "Let's connect",
 
 'forBrands.socials.title': 'Follow along',
 'forBrands.socials.followers': 'followers',
@@ -781,6 +781,201 @@ fiji_intro_cta: "Start planning your trip",
 'home.about.p2': "I turn my creativity into authentic content that captures the feeling behind an experience and brings your brand to life. After more than 2.5 years of living in Australia, I bring my adventurous eye into all of my creative work.",
 'home.about.cta': "Get to know me better",
 
+// New Zealand ////////////////////////////////////////////////////////////////
+'nz.page.title': 'New Zealand',
+'nz.page.desc': 'Discover rugged mountains, deep blue fjords, rolling green hills and the freedom of a road trip through the land of the Kiwis.',
+'nz.page.capital': 'Wellington',
+'nz.page.language': 'English and Māori',
+'nz.page.currency': 'New Zealand dollar (NZD)',
+'nz.page.flightTime': '26-30 hours',
+
+'nz.intro.title': 'Road tripping through New Zealand',
+'nz.intro.text1': 'New Zealand is the ultimate road trip country. The North Island has active volcanoes, geothermal springs, subtropical beaches and a strong Māori culture. The South Island is wilder: snow-capped Alps, glaciers, turquoise lakes and the fjords of Fiordland. Within a few hours of driving the landscape changes completely.',
+'nz.intro.text2': 'The country is about six times the size of the Netherlands, yet has only five million inhabitants. Roads are often narrow and winding, so distances take longer than you expect. With a campervan or rental car and a good plan you get the most out of your trip, from Cape Reinga in the north to the Catlins in the south.',
+'nz.intro.mistakesTitle': "Common 'mistakes' when travelling New Zealand",
+'nz.intro.mistake1': 'Underestimating driving times on narrow, winding roads',
+'nz.intro.mistake2': 'Trying to see both islands in too little time',
+'nz.intro.mistake3': 'Not preparing for quickly changing weather',
+'nz.intro.mistake4': 'Freedom camping without checking whether it is allowed',
+'nz.intro.mistake5': 'Booking the ferry between the islands too late',
+'nz.intro.mistake6': 'Not reserving popular hikes and campsites in summer',
+
+'routes.nz.subtitle': 'Discover the most beautiful routes through New Zealand – from volcanoes on the North Island to fjords in the far south.',
+
+'routes.nz.north.title': 'North Island',
+'routes.nz.north.subtitle': 'Auckland to Wellington',
+'routes.nz.north.expand': {
+  route: 'Route: Auckland to Wellington',
+  distance: 'Distance: ±1,000 km',
+  highlights: [
+    'Cathedral Cove & Hot Water Beach',
+    'The Hobbiton movie set',
+    'Geothermal parks in Rotorua',
+    'Tongariro Alpine Crossing'
+  ]
+},
+'routes.nz.northland.title': 'Northland',
+'routes.nz.northland.subtitle': 'Auckland to Cape Reinga',
+'routes.nz.northland.expand': {
+  route: 'Route: Auckland to Cape Reinga',
+  distance: 'Distance: ±450 km',
+  highlights: [
+    'Sailing and dolphins in the Bay of Islands',
+    'Waitangi Treaty Grounds',
+    'Sandboarding on the Te Paki dunes',
+    'Cape Reinga lighthouse, where two oceans meet'
+  ]
+},
+'routes.nz.west.title': 'South Island West Coast',
+'routes.nz.west.subtitle': 'Picton to Queenstown',
+'routes.nz.west.expand': {
+  route: 'Route: Picton to Queenstown',
+  distance: 'Distance: ±1,050 km',
+  highlights: [
+    'Kayaking in Abel Tasman National Park',
+    'Pancake Rocks at Punakaiki',
+    'The Franz Josef glacier',
+    'Over Haast Pass to Wānaka'
+  ]
+},
+'routes.nz.south.title': 'Fiordland & Otago',
+'routes.nz.south.subtitle': 'Queenstown to Dunedin',
+'routes.nz.south.expand': {
+  route: 'Route: Queenstown to Dunedin',
+  distance: 'Distance: ±850 km',
+  highlights: [
+    'A boat cruise through Milford Sound',
+    'Adrenaline in Queenstown',
+    'Waterfalls and sea lions in the Catlins',
+    'Albatrosses and penguins near Dunedin'
+  ]
+},
+'routes.nz.canterbury.title': 'Canterbury & Mount Cook',
+'routes.nz.canterbury.subtitle': 'Kaikōura to Aoraki / Mount Cook',
+'routes.nz.canterbury.expand': {
+  route: 'Route: Kaikōura to Aoraki / Mount Cook',
+  distance: 'Distance: ±700 km',
+  highlights: [
+    'Whale watching in Kaikōura',
+    'French vibes in Akaroa',
+    'Starry skies above Lake Tekapo',
+    'Hooker Valley Track to Mount Cook'
+  ]
+},
+
+'hotspots_descNZ': 'From fjords and glaciers to volcanoes and glow-worm caves: swipe through the most special experiences New Zealand has to offer.',
+
+'nz_milford_badge': 'Fjord • Waterfalls • Cruise',
+'nz_milford_title': 'Milford Sound',
+'nz_milford_text': 'Steep cliffs, thundering waterfalls and deep dark water in the most famous fjord of New Zealand.',
+'nz_milford_story': 'Milford Sound lies deep in Fiordland National Park. Take a cruise or kayak between cliffs that rise straight out of the water, past waterfalls and seals. Rain makes it even better: hundreds of extra waterfalls appear. The drive there via the Milford Road is an experience in itself.',
+'nz_tongariro_badge': 'Volcanoes • Hike • Craters',
+'nz_tongariro_title': 'Tongariro Crossing',
+'nz_tongariro_text': 'A 19.4 km day hike past volcanic craters and the bright Emerald Lakes.',
+'nz_tongariro_story': 'The Tongariro Alpine Crossing is seen as one of the best day hikes in the world. You walk between active volcanoes, past the Red Crater and the bright green Emerald Lakes. Start early, book a shuttle in advance and always check the weather: on the mountain it can change in minutes.',
+'nz_hobbiton_badge': 'Movie set • Shire • Tour',
+'nz_hobbiton_title': 'Hobbiton',
+'nz_hobbiton_text': 'Walk through the Shire from The Lord of the Rings and The Hobbit.',
+'nz_hobbiton_story': 'Near Matamata lies the movie set of Hobbiton, with 44 hobbit holes, colourful gardens and the Green Dragon Inn. You can only visit with a guided tour, so book ahead in high season. The tour ends with a drink in the inn – a must for fans, and charming for everyone else.',
+'nz_rotorua_badge': 'Geothermal • Māori culture • Spa',
+'nz_rotorua_title': 'Rotorua',
+'nz_rotorua_text': 'Bubbling mud pools, geysers and the heart of Māori culture.',
+'nz_rotorua_story': 'In Rotorua you smell the earth: steam rises from the ground and geysers shoot meters into the air. Visit the colourful pools of Wai-O-Tapu, relax in a hot spring and experience a traditional hāngī dinner with a Māori cultural performance.',
+'nz_waitomo_badge': 'Caves • Glow-worms • Adventure',
+'nz_waitomo_title': 'Waitomo Caves',
+'nz_waitomo_text': 'Thousands of glow-worms light up the caves like a starry sky.',
+'nz_waitomo_story': 'In the Waitomo Caves you glide by boat beneath a ceiling full of glow-worms – it looks like a starry night underground. Looking for more adventure? Go black water rafting: on a tube through the dark underground rivers.',
+'nz_abel_tasman_badge': 'Beaches • Kayaking • Hiking',
+'nz_abel_tasman_title': 'Abel Tasman',
+'nz_abel_tasman_text': 'Golden beaches and turquoise bays in New Zealand’s smallest national park.',
+'nz_abel_tasman_story': 'Abel Tasman National Park is perfect for kayaking and hiking. Paddle past golden bays, spot seals and walk part of the Coast Track. With a water taxi you easily combine walking and kayaking in one day.',
+'nz_franz_josef_badge': 'Glacier • Heli-hike • Rainforest',
+'nz_franz_josef_title': 'Franz Josef Glacier',
+'nz_franz_josef_text': 'A glacier that flows down into the rainforest.',
+'nz_franz_josef_story': 'The Franz Josef Glacier flows from the Southern Alps almost down to the rainforest of the West Coast. Walk to the viewpoint in the valley or take a helicopter flight and land on the ice. Afterwards, warm up in the hot pools of the village.',
+'nz_queenstown_badge': 'Adrenaline • Lake • Mountains',
+'nz_queenstown_title': 'Queenstown',
+'nz_queenstown_text': 'The adventure capital of the world on the shores of Lake Wakatipu.',
+'nz_queenstown_story': 'Queenstown is the place for bungy jumping, jetboating, skydiving and skiing. Prefer a slower pace? Take the gondola for the view, eat the famous Fergburger and drive the beautiful road along the lake to Glenorchy.',
+'nz_tekapo_badge': 'Stars • Lake • Lupins',
+'nz_tekapo_title': 'Lake Tekapo',
+'nz_tekapo_text': 'A milky turquoise lake under one of the clearest night skies in the world.',
+'nz_tekapo_story': 'Lake Tekapo lies in the Aoraki Mackenzie Dark Sky Reserve. By day you admire the turquoise water and the Church of the Good Shepherd, at night the Milky Way. Visit in late spring and the shores are full of colourful lupins.',
+'nz_cathedral_cove_badge': 'Beach • Rock arch • Coromandel',
+'nz_cathedral_cove_title': 'Cathedral Cove',
+'nz_cathedral_cove_text': 'An iconic rock arch on a white beach on the Coromandel Peninsula.',
+'nz_cathedral_cove_story': 'Cathedral Cove is famous for its huge natural rock arch. Walk, kayak or take a boat to the bay. Combine it with Hot Water Beach nearby: at low tide you dig your own hot pool in the sand.',
+
+// Fiji ///////////////////////////////////////////////////////////////////////
+'fiji.intro.title': 'Island hopping in Fiji',
+'fiji.intro.text1': "Fiji consists of more than 300 islands in the South Pacific. Think white beaches, turquoise lagoons, coral reefs full of life and villages where you are welcomed with a warm 'Bula!'. Most of the country lies on the main islands Viti Levu and Vanua Levu, but the real island magic is in the Mamanuca and Yasawa Islands.",
+'fiji.intro.text2': 'Because the islands are spread out, a trip through Fiji is all about smart planning: you hop from island to island by boat or small plane. Whether you want to snorkel with manta rays, dive in the Somosomo Strait or just relax in a hammock, the right route helps you make the most of your time.',
+'fiji.intro.mistakesTitle': "Common 'mistakes' when travelling Fiji",
+'fiji.intro.mistake1': 'Trying to see too many islands in one trip',
+'fiji.intro.mistake2': 'Not checking boat times and the last ferry of the day',
+'fiji.intro.mistake3': 'Ignoring the wet season (November to April) in your planning',
+'fiji.intro.mistake4': 'Assuming every island has an ATM or a shop',
+'fiji.intro.mistake5': 'Not respecting village etiquette, such as covered shoulders and knees',
+'fiji.intro.mistake6': 'Only staying in resorts and missing the local culture',
+
+'routes.fiji.subtitle': 'From island hopping in the Mamanucas and Yasawas to the rainforests of Taveuni – every route shows a different side of Fiji.',
+
+'routes.fiji.mamanuca.title': 'Mamanuca Islands',
+'routes.fiji.mamanuca.subtitle': 'From Port Denarau',
+'routes.fiji.mamanuca.expand': {
+  route: 'Route: Port Denarau to Monuriki',
+  distance: 'Distance: 30–90 minutes by boat',
+  highlights: [
+    'Snorkelling in clear lagoon water',
+    'Cloud 9, the floating bar',
+    'Monuriki, the island from Cast Away',
+    'Surfing at Cloudbreak'
+  ]
+},
+'routes.fiji.yasawa.title': 'Yasawa Islands',
+'routes.fiji.yasawa.subtitle': 'Island hopping by ferry',
+'routes.fiji.yasawa.expand': {
+  route: 'Route: Port Denarau to Sawa-i-Lau',
+  distance: 'Distance: ±5 hours by boat (whole chain)',
+  highlights: [
+    'Swimming with manta rays near Naviti',
+    'The Blue Lagoon',
+    'The Sawa-i-Lau caves',
+    'Backpacker resorts and local villages'
+  ]
+},
+'routes.fiji.coral.title': 'Viti Levu & Coral Coast',
+'routes.fiji.coral.subtitle': 'Nadi to Suva',
+'routes.fiji.coral.expand': {
+  route: 'Route: Nadi to Suva',
+  distance: 'Distance: ±200 km',
+  highlights: [
+    'Natadola Beach',
+    'Sigatoka Sand Dunes National Park',
+    'Shark diving in Beqa Lagoon',
+    'Markets and museums in Suva'
+  ]
+},
+'routes.fiji.taveuni.title': 'Taveuni & Vanua Levu',
+'routes.fiji.taveuni.subtitle': 'Savusavu to Taveuni',
+'routes.fiji.taveuni.expand': {
+  route: 'Route: Savusavu to Taveuni',
+  distance: 'Distance: ±80 km (partly by ferry)',
+  highlights: [
+    'Diving on Rainbow Reef',
+    'Standing on the 180° meridian',
+    'Tavoro Waterfalls in Bouma National Park',
+    'Lavena Coastal Walk'
+  ]
+},
+
+'mamanuca_story': 'The Mamanuca Islands are only a short boat ride from Port Denarau. Snorkel in crystal-clear lagoons, have a drink at Cloud 9, the floating bar, and visit Monuriki, where the film Cast Away was shot. Ideal if you have little time but still want the ultimate island feeling.',
+'yasawa_story': 'The Yasawa Islands are a chain of volcanic islands north-west of Viti Levu. With the ferry you hop from island to island, sleep in simple beach resorts and visit traditional villages. Highlights are the Blue Lagoon, the Sawa-i-Lau caves and swimming with manta rays.',
+'nadi_story': 'Almost every trip to Fiji starts in Nadi. Visit the colourful Sri Siva Subramaniya Temple, stroll across the local market and soak in the warm mud pools of Sabeto. From Port Denarau you easily take the boat to the islands.',
+'coral_coast_story': 'The Coral Coast runs along the south side of Viti Levu. Swim at Natadola Beach, climb the Sigatoka Sand Dunes and visit a traditional village for a kava ceremony. Near Pacific Harbour you can dive with sharks in Beqa Lagoon.',
+'taveuni_story': 'Taveuni is called the Garden Island of Fiji. Hike to the Tavoro Waterfalls, walk the Lavena Coastal Walk and stand with one foot on either side of the 180° meridian. Divers come for Rainbow Reef, one of the best soft coral reefs in the world.',
+'suva_story': 'Suva is the lively capital of Fiji. Discover the Fiji Museum, the huge municipal market and the colonial buildings along the waterfront. Here you get to know the city life of Fiji – a nice contrast with the islands.',
+
 
 
   
@@ -980,7 +1175,7 @@ fiji_intro_cta: "Start planning your trip",
 'forBrands.creator.title': 'Van merkbeleving naar online bereik',
 'forBrands.creator.p1': 'De mooiste verhalen en avonturen ontstaan niet alleen. Daarom werkt MAY WAYS samen met bestemmingen, (reis)merken, events en hospitalitybedrijven die aansluiten bij onze doelgroep.',
 'forBrands.creator.p2': 'Door merken onderdeel te maken van échte ervaringen, creëren we authentieke content die inspireert, verbindt en mensen in beweging brengt. Afgelopen jaar bereikten we met onze content op TikTok en Instagram al honderdduizenden adventure seekers. Heb je een leuk idee of wil je sparren over de mogelijkheden?',
-'forBrands.creator.cta': "Let's talk",
+'forBrands.creator.cta': "Let's connect",
 
 'forBrands.socials.title': 'Volg mee',
 'forBrands.socials.followers': 'volgers',
@@ -1483,6 +1678,201 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'home.about.p1': "Vanaf jongs af aan leg ik bijzondere ervaringen vast. Met mijn camera ontdek ik verborgen plekken en vang ik momenten die mensen samenbrengen en inspireren.",
 'home.about.p2': "Mijn creativiteit vertaal ik naar authentieke content die het gevoel achter een ervaring vastlegt en jouw merk tot leven brengt. Na ruim 2,5 jaar in Australië te hebben gewoond, neem ik mijn avontuurlijke blik mee in mijn creatieve werk.",
 'home.about.cta': "Leer mij beter kennen",
+
+// Nieuw-Zeeland ///////////////////////////////////////////////////////////////
+'nz.page.title': 'Nieuw-Zeeland',
+'nz.page.desc': "Ontdek ruige bergen, diepblauwe fjorden, groene heuvels en de vrijheid van een roadtrip door het land van de Kiwi's.",
+'nz.page.capital': 'Wellington',
+'nz.page.language': 'Engels en Māori',
+'nz.page.currency': 'Nieuw-Zeelandse dollar (NZD)',
+'nz.page.flightTime': '26-30 uur',
+
+'nz.intro.title': 'Roadtrippen door Nieuw-Zeeland',
+'nz.intro.text1': 'Nieuw-Zeeland is hét roadtrip-land. Op het Noordereiland vind je actieve vulkanen, geothermische bronnen, subtropische stranden en een sterke Māori-cultuur. Het Zuidereiland is ruiger: besneeuwde Alpen, gletsjers, turquoise meren en de fjorden van Fiordland. Binnen een paar uur rijden verandert het landschap compleet.',
+'nz.intro.text2': 'Het land is ongeveer zes keer zo groot als Nederland, maar heeft maar vijf miljoen inwoners. Wegen zijn vaak smal en bochtig, dus afstanden kosten meer tijd dan je verwacht. Met een campervan of huurauto en een goed plan haal je het meeste uit je reis, van Cape Reinga in het noorden tot de Catlins in het zuiden.',
+'nz.intro.mistakesTitle': "Veelgemaakte 'fouten' bij een reis door Nieuw-Zeeland",
+'nz.intro.mistake1': 'Rijtijden onderschatten op smalle, bochtige wegen',
+'nz.intro.mistake2': 'Beide eilanden in te weinig tijd willen zien',
+'nz.intro.mistake3': 'Geen rekening houden met snel wisselend weer',
+'nz.intro.mistake4': 'Vrijkamperen zonder te checken of het mag',
+'nz.intro.mistake5': 'De ferry tussen de eilanden te laat boeken',
+'nz.intro.mistake6': 'Populaire hikes en campings in de zomer niet reserveren',
+
+'routes.nz.subtitle': 'Ontdek de mooiste routes door Nieuw-Zeeland – van vulkanen op het Noordereiland tot fjorden in het diepe zuiden.',
+
+'routes.nz.north.title': 'Noordereiland',
+'routes.nz.north.subtitle': 'Auckland naar Wellington',
+'routes.nz.north.expand': {
+  route: 'Route: Auckland naar Wellington',
+  distance: 'Afstand: ±1.000 km',
+  highlights: [
+    'Cathedral Cove & Hot Water Beach',
+    'De filmset van Hobbiton',
+    'Geothermische parken in Rotorua',
+    'Tongariro Alpine Crossing'
+  ]
+},
+'routes.nz.northland.title': 'Northland',
+'routes.nz.northland.subtitle': 'Auckland naar Cape Reinga',
+'routes.nz.northland.expand': {
+  route: 'Route: Auckland naar Cape Reinga',
+  distance: 'Afstand: ±450 km',
+  highlights: [
+    'Zeilen en dolfijnen in de Bay of Islands',
+    'Waitangi Treaty Grounds',
+    'Sandboarden op de duinen van Te Paki',
+    'Vuurtoren van Cape Reinga, waar twee oceanen samenkomen'
+  ]
+},
+'routes.nz.west.title': 'Westkust Zuidereiland',
+'routes.nz.west.subtitle': 'Picton naar Queenstown',
+'routes.nz.west.expand': {
+  route: 'Route: Picton naar Queenstown',
+  distance: 'Afstand: ±1.050 km',
+  highlights: [
+    'Kajakken in Abel Tasman National Park',
+    'Pancake Rocks bij Punakaiki',
+    'De gletsjer van Franz Josef',
+    'Over de Haast Pass naar Wānaka'
+  ]
+},
+'routes.nz.south.title': 'Fiordland & Otago',
+'routes.nz.south.subtitle': 'Queenstown naar Dunedin',
+'routes.nz.south.expand': {
+  route: 'Route: Queenstown naar Dunedin',
+  distance: 'Afstand: ±850 km',
+  highlights: [
+    'Bootcruise door Milford Sound',
+    'Adrenaline in Queenstown',
+    'Watervallen en zeeleeuwen in de Catlins',
+    'Albatrossen en pinguïns bij Dunedin'
+  ]
+},
+'routes.nz.canterbury.title': 'Canterbury & Mount Cook',
+'routes.nz.canterbury.subtitle': 'Kaikōura naar Aoraki / Mount Cook',
+'routes.nz.canterbury.expand': {
+  route: 'Route: Kaikōura naar Aoraki / Mount Cook',
+  distance: 'Afstand: ±700 km',
+  highlights: [
+    'Walvissen spotten in Kaikōura',
+    'Franse sfeer in Akaroa',
+    'Sterrenhemel boven Lake Tekapo',
+    'Hooker Valley Track naar Mount Cook'
+  ]
+},
+
+'hotspots_descNZ': 'Van fjorden en gletsjers tot vulkanen en glimwormgrotten: swipe door de bijzonderste ervaringen die Nieuw-Zeeland te bieden heeft.',
+
+'nz_milford_badge': 'Fjord • Watervallen • Cruise',
+'nz_milford_title': 'Milford Sound',
+'nz_milford_text': 'Steile kliffen, donderende watervallen en diep donker water in de bekendste fjord van Nieuw-Zeeland.',
+'nz_milford_story': 'Milford Sound ligt diep in Fiordland National Park. Maak een cruise of kajaktocht tussen kliffen die recht uit het water omhoog rijzen, langs watervallen en zeehonden. Regen maakt het juist mooier: dan verschijnen er honderden extra watervallen. De rit erheen over de Milford Road is al een belevenis op zich.',
+'nz_tongariro_badge': 'Vulkanen • Hike • Kraters',
+'nz_tongariro_title': 'Tongariro Crossing',
+'nz_tongariro_text': 'Een dagwandeling van 19,4 km langs vulkaankraters en de felgekleurde Emerald Lakes.',
+'nz_tongariro_story': 'De Tongariro Alpine Crossing geldt als een van de mooiste dagwandelingen ter wereld. Je loopt tussen actieve vulkanen door, langs de Red Crater en de felgroene Emerald Lakes. Begin vroeg, boek je shuttle op tijd en check altijd het weer: op de berg kan het binnen een paar minuten omslaan.',
+'nz_hobbiton_badge': 'Filmset • Shire • Tour',
+'nz_hobbiton_title': 'Hobbiton',
+'nz_hobbiton_text': 'Wandel door de Shire uit The Lord of the Rings en The Hobbit.',
+'nz_hobbiton_story': 'Bij Matamata ligt de filmset van Hobbiton, met 44 hobbithollen, kleurrijke tuintjes en de Green Dragon Inn. Je kunt alleen met een rondleiding naar binnen, dus boek in het hoogseizoen op tijd. De tour eindigt met een drankje in de herberg – een must voor fans, en ook zonder fan te zijn heel sfeervol.',
+'nz_rotorua_badge': 'Geothermisch • Māori-cultuur • Spa',
+'nz_rotorua_title': 'Rotorua',
+'nz_rotorua_text': 'Borrelende modderpoelen, geisers en het hart van de Māori-cultuur.',
+'nz_rotorua_story': 'In Rotorua ruik je de aarde: overal stijgt stoom op en geisers spuiten meters de lucht in. Bezoek de kleurrijke poelen van Wai-O-Tapu, ontspan in een warmwaterbron en beleef een traditioneel hāngī-diner met een Māori-voorstelling.',
+'nz_waitomo_badge': 'Grotten • Glimwormen • Avontuur',
+'nz_waitomo_title': 'Waitomo Caves',
+'nz_waitomo_text': 'Duizenden glimwormen laten de grotten oplichten als een sterrenhemel.',
+'nz_waitomo_story': 'In de Waitomo Caves glijd je met een bootje onder een plafond vol glimwormen door – het lijkt een sterrenhemel onder de grond. Zin in meer avontuur? Ga black water raften: op een band door de donkere ondergrondse rivieren.',
+'nz_abel_tasman_badge': 'Stranden • Kajakken • Hiken',
+'nz_abel_tasman_title': 'Abel Tasman',
+'nz_abel_tasman_text': 'Goudgele stranden en turquoise baaien in het kleinste nationale park van Nieuw-Zeeland.',
+'nz_abel_tasman_story': 'Abel Tasman National Park is perfect om te kajakken en te wandelen. Peddel langs goudgele baaien, spot zeehonden en loop een stuk van de Coast Track. Met een watertaxi combineer je makkelijk wandelen en kajakken op één dag.',
+'nz_franz_josef_badge': 'Gletsjer • Heli-hike • Regenwoud',
+'nz_franz_josef_title': 'Franz Josef Glacier',
+'nz_franz_josef_text': 'Een gletsjer die tot in het regenwoud naar beneden stroomt.',
+'nz_franz_josef_story': 'De Franz Josef Glacier stroomt vanaf de Zuidelijke Alpen bijna tot in het regenwoud van de westkust. Wandel naar het uitzichtpunt in de vallei of maak een helikoptervlucht en land op het ijs. Daarna warm je op in de hot pools van het dorp.',
+'nz_queenstown_badge': 'Adrenaline • Meer • Bergen',
+'nz_queenstown_title': 'Queenstown',
+'nz_queenstown_text': 'De avonturenhoofdstad van de wereld aan het meer Wakatipu.',
+'nz_queenstown_story': 'Queenstown is dé plek voor bungeejumpen, jetboaten, skydiven en skiën. Liever rustiger aan? Neem de gondel voor het uitzicht, eet de beroemde Fergburger en rijd de prachtige weg langs het meer naar Glenorchy.',
+'nz_tekapo_badge': 'Sterren • Meer • Lupines',
+'nz_tekapo_title': 'Lake Tekapo',
+'nz_tekapo_text': 'Een melkachtig turquoise meer onder een van de helderste sterrenhemels ter wereld.',
+'nz_tekapo_story': 'Lake Tekapo ligt in het Aoraki Mackenzie Dark Sky Reserve. Overdag bewonder je het turquoise water en de Church of the Good Shepherd, ’s nachts de Melkweg. Ga je eind lente, dan staan de oevers vol kleurrijke lupines.',
+'nz_cathedral_cove_badge': 'Strand • Rotsboog • Coromandel',
+'nz_cathedral_cove_title': 'Cathedral Cove',
+'nz_cathedral_cove_text': 'Een iconische rotsboog op een wit strand op het Coromandel-schiereiland.',
+'nz_cathedral_cove_story': 'Cathedral Cove is beroemd om de enorme natuurlijke rotsboog. Wandel, kajak of neem een boot naar de baai. Combineer het met Hot Water Beach vlakbij: bij eb graaf je daar je eigen warme badje in het zand.',
+
+// Fiji ////////////////////////////////////////////////////////////////////////
+'fiji.intro.title': 'Eilandhoppen in Fiji',
+'fiji.intro.text1': "Fiji bestaat uit meer dan 300 eilanden in de Zuidelijke Stille Oceaan. Denk aan witte stranden, turquoise lagunes, koraalriffen vol leven en dorpjes waar je met een warm 'Bula!' wordt begroet. Het grootste deel van het land ligt op de hoofdeilanden Viti Levu en Vanua Levu, maar de echte eilandmagie vind je op de Mamanuca- en Yasawa-eilanden.",
+'fiji.intro.text2': 'Omdat de eilanden verspreid liggen, draait een reis door Fiji om slim plannen: met de boot of een klein vliegtuig hop je van eiland naar eiland. Of je nu wilt snorkelen met mantaroggen, wilt duiken in de Somosomo Strait of gewoon wilt ontspannen in een hangmat, met de juiste route haal je het meeste uit je tijd.',
+'fiji.intro.mistakesTitle': "Veelgemaakte 'fouten' bij een reis door Fiji",
+'fiji.intro.mistake1': 'Te veel eilanden in één reis willen zien',
+'fiji.intro.mistake2': 'Boottijden en de laatste ferry van de dag niet checken',
+'fiji.intro.mistake3': 'Het regenseizoen (november t/m april) niet meenemen in je planning',
+'fiji.intro.mistake4': 'Denken dat er op elk eiland een pinautomaat of winkel is',
+'fiji.intro.mistake5': 'Geen rekening houden met dorpsetiquette, zoals bedekte schouders en knieën',
+'fiji.intro.mistake6': 'Alleen in resorts blijven en de lokale cultuur missen',
+
+'routes.fiji.subtitle': "Van eilandhoppen in de Mamanuca's en Yasawa's tot de regenwouden van Taveuni – elke route laat een andere kant van Fiji zien.",
+
+'routes.fiji.mamanuca.title': 'Mamanuca-eilanden',
+'routes.fiji.mamanuca.subtitle': 'Vanaf Port Denarau',
+'routes.fiji.mamanuca.expand': {
+  route: 'Route: Port Denarau naar Monuriki',
+  distance: 'Afstand: 30–90 minuten varen',
+  highlights: [
+    'Snorkelen in helder lagunewater',
+    'Cloud 9, de drijvende bar',
+    'Monuriki, het eiland uit Cast Away',
+    'Surfen bij Cloudbreak'
+  ]
+},
+'routes.fiji.yasawa.title': 'Yasawa-eilanden',
+'routes.fiji.yasawa.subtitle': 'Eilandhoppen met de ferry',
+'routes.fiji.yasawa.expand': {
+  route: 'Route: Port Denarau naar Sawa-i-Lau',
+  distance: 'Afstand: ±5 uur varen (hele keten)',
+  highlights: [
+    'Zwemmen met mantaroggen bij Naviti',
+    'De Blue Lagoon',
+    'De grotten van Sawa-i-Lau',
+    'Backpackersresorts en lokale dorpen'
+  ]
+},
+'routes.fiji.coral.title': 'Viti Levu & Coral Coast',
+'routes.fiji.coral.subtitle': 'Nadi naar Suva',
+'routes.fiji.coral.expand': {
+  route: 'Route: Nadi naar Suva',
+  distance: 'Afstand: ±200 km',
+  highlights: [
+    'Natadola Beach',
+    'Sigatoka Sand Dunes National Park',
+    'Duiken met haaien in Beqa Lagoon',
+    'Markten en musea in Suva'
+  ]
+},
+'routes.fiji.taveuni.title': 'Taveuni & Vanua Levu',
+'routes.fiji.taveuni.subtitle': 'Savusavu naar Taveuni',
+'routes.fiji.taveuni.expand': {
+  route: 'Route: Savusavu naar Taveuni',
+  distance: 'Afstand: ±80 km (deels per ferry)',
+  highlights: [
+    'Duiken op Rainbow Reef',
+    'Op de 180° meridiaan staan',
+    'Tavoro Waterfalls in Bouma National Park',
+    'Lavena Coastal Walk'
+  ]
+},
+
+'mamanuca_story': 'De Mamanuca-eilanden liggen op een korte boottocht van Port Denarau. Snorkel in kristalheldere lagunes, drink iets op Cloud 9, de drijvende bar, en bezoek Monuriki, waar de film Cast Away werd opgenomen. Ideaal als je weinig tijd hebt en toch het ultieme eilandgevoel wilt.',
+'yasawa_story': 'De Yasawa-eilanden zijn een keten van vulkanische eilanden ten noordwesten van Viti Levu. Met de ferry hop je van eiland naar eiland, slaap je in eenvoudige strandresorts en bezoek je traditionele dorpen. Hoogtepunten zijn de Blue Lagoon, de grotten van Sawa-i-Lau en zwemmen met mantaroggen.',
+'nadi_story': 'Bijna elke reis door Fiji begint in Nadi. Bezoek de kleurrijke Sri Siva Subramaniya-tempel, struin over de lokale markt en neem een warm modderbad in de Sabeto Mud Pools. Vanaf Port Denarau stap je makkelijk op de boot naar de eilanden.',
+'coral_coast_story': 'De Coral Coast loopt langs de zuidkant van Viti Levu. Zwem bij Natadola Beach, beklim de Sigatoka Sand Dunes en bezoek een traditioneel dorp voor een kava-ceremonie. Bij Pacific Harbour kun je duiken met haaien in Beqa Lagoon.',
+'taveuni_story': 'Taveuni wordt het Garden Island van Fiji genoemd. Wandel naar de Tavoro Waterfalls, loop de Lavena Coastal Walk en sta met één voet aan elke kant van de 180° meridiaan. Duikers komen voor Rainbow Reef, een van de mooiste zachte koraalriffen ter wereld.',
+'suva_story': 'Suva is de levendige hoofdstad van Fiji. Ontdek het Fiji Museum, de enorme gemeentelijke markt en de koloniale gebouwen langs de boulevard. Hier leer je het stadsleven van Fiji kennen – een mooi contrast met de eilanden.',
 
 
 'eguides.hero.descBold': ' Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.',

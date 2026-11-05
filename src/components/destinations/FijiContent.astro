@@ -1,8 +1,9 @@
 ---
 import DestinationContent from "./DestinationContent.astro";
-import ReisFiji from "./ReisFiji.astro";
-import FaqFiji from "./FaqFiji.astro";
-import HotspotFiji from "./HotspotFiji.astro";
+import DestinationIntro from './DestinationIntro.astro';
+import RouteAtlas from './RouteAtlas.astro';
+import HotspotCarousel from './HotspotCarousel.astro';
+import { fijiRoutes } from '../../data/routes';
 import { ui, defaultLang } from '../../i18n/ui';
 
 // Get current language
@@ -13,6 +14,8 @@ const lang = (Astro.currentLocale || (currentPath.startsWith('/en') ? 'en' : def
 function t(key: keyof typeof ui[typeof lang]) {
   return ui[lang][key];
 }
+
+const hotspots = ['mamanuca', 'yasawa', 'nadi', 'coral_coast', 'taveuni', 'suva'];
 ---
 
 <DestinationContent
@@ -28,12 +31,13 @@ function t(key: keyof typeof ui[typeof lang]) {
     ? '/nl/route-planner?country=fiji'
     : '/en/route-planner?country=fiji'}
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
-
 >
-  <!-- The carousel gets injected into the <slot /> of DestinationContent -->
-   <ReisFiji />
-         <HotspotFiji />
-  
-  <FaqFiji />
-
+  <DestinationIntro prefix="fiji" />
+  <RouteAtlas
+    map="/images/fiji/fiji-shape.svg"
+    routes={fijiRoutes}
+    subtitleKey="routes.fiji.subtitle"
+    minZoom={0.15}
+  />
+  <HotspotCarousel hotspots={hotspots} photos={{}} descKey="hotspots_descFiji" />
 </DestinationContent>

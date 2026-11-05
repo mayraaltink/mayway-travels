@@ -1,8 +1,14 @@
 ---
-// src/components/destinations/Reisdownunder.astro
-// Intro van de Australië-pagina: links het verhaal, rechts een turquoise kaart met veelgemaakte fouten.
+// src/components/destinations/DestinationIntro.astro
+// Intro van een bestemmingspagina: links het verhaal, rechts een kaart met veelgemaakte fouten.
+// Teksten komen uit ui.ts: `${prefix}.intro.title`, `.text1`, `.text2`, `.mistakesTitle`, `.mistake1` t/m `.mistake6`.
 import { ui, defaultLang } from '../../i18n/ui';
 
+export interface Props {
+  prefix: string;
+}
+
+const { prefix } = Astro.props;
 const lang = (Astro.currentLocale || defaultLang) as keyof typeof ui;
 
 function t(key: string) {
@@ -10,7 +16,7 @@ function t(key: string) {
   return dict[key] ?? key;
 }
 
-const mistakes = [1, 2, 3, 4, 5, 6].map((n) => t(`australia.intro.mistake${n}`));
+const mistakes = [1, 2, 3, 4, 5, 6].map((n) => t(`${prefix}.intro.mistake${n}`));
 ---
 
 <section class="bg-[#FFFDFA] pb-10 pt-20 md:pb-12 md:pt-28">
@@ -19,18 +25,18 @@ const mistakes = [1, 2, 3, 4, 5, 6].map((n) => t(`australia.intro.mistake${n}`))
     <!-- Verhaal -->
     <div>
       <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
-        {t('australia.intro.title')}
+        {t(`${prefix}.intro.title`)}
       </h2>
       <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
-        <p>{t('australia.intro.text1')}</p>
-        <p>{t('australia.intro.text2')}</p>
+        <p>{t(`${prefix}.intro.text1`)}</p>
+        <p>{t(`${prefix}.intro.text2`)}</p>
       </div>
     </div>
 
     <!-- Veelgemaakte fouten -->
     <div class="relative overflow-hidden rounded-[2rem] bg-[#EAF7F7] p-7 text-black shadow-[0_30px_60px_rgba(15,124,130,0.08)] md:p-10">
       <h3 class="relative text-2xl font-semibold leading-tight tracking-tight md:text-[1.75rem]">
-        {t('australia.intro.mistakesTitle')}
+        {t(`${prefix}.intro.mistakesTitle`)}
       </h3>
 
       <ul class="relative mt-8 space-y-4">

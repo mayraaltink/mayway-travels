@@ -3,8 +3,9 @@ import DestinationContent from "./DestinationContent.astro";
 import HotspotCarousel from './HotspotCarousel.astro';
 import RouteAtlas from './RouteAtlas.astro';
 import WorkingHoliday from './WorkingHoliday.astro';
-import Reisdownunder from './Reisdownunder.astro';
+import DestinationIntro from './DestinationIntro.astro';
 import BlogGrid from '../ui/BlogGrid.astro';
+import { australiaRoutes } from '../../data/routes';
 import { ui, defaultLang } from '../../i18n/ui';
 
 // Get current language
@@ -30,9 +31,9 @@ function t(key: keyof typeof ui[typeof lang]) {
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
 >
   <!-- The carousel gets injected into the <slot /> of DestinationContent -->
-   <Reisdownunder />
+   <DestinationIntro prefix="australia" />
    <BlogGrid lang={lang} />
-   <RouteAtlas />
+   <RouteAtlas map="/images/australia/australia-shape.svg" routes={australiaRoutes} />
    <HotspotCarousel />
   
   

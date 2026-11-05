@@ -1,104 +1,37 @@
 ---
+// Interactieve routekaart: zoomt per route in, tekent de route en toont per stop een foto.
+// Gebruik: <RouteAtlas map="/images/australia/australia-shape.svg" routes={australiaRoutes} />
 import fs from "node:fs";
 import path from "node:path";
 import { ui } from "../../i18n/ui";
+import type { RouteDef, RouteStop } from "../../data/routes";
+
+export interface Props {
+  /** kaart-svg in /public; stops in `routes` gebruiken het coördinatenstelsel van deze svg */
+  map: string;
+  routes: RouteDef[];
+  /** vertaalsleutel voor de tekst onder de titel */
+  subtitleKey?: string;
+  /** kleinste uitsnede bij inzoomen, als deel van de kaartbreedte */
+  minZoom?: number;
+}
+
+const { map, routes: routeDefs, subtitleKey = "routes.section.subtitle", minZoom = 0.25 } = Astro.props;
 
 const lang = (Astro.currentLocale as "nl" | "en") ?? "nl";
 const t = ui[lang];
+const dict = ui[lang] as Record<string, unknown>;
+const text = (key: string) => (dict[key] as string | undefined) ?? "";
 
-// Kaart van Australië (zelfde coördinatenstelsel als de stops hieronder)
-const svgRaw = fs.readFileSync(
-  path.join(process.cwd(), "public/images/australia/australia-shape.svg"),
-  "utf8"
-);
+const svgRaw = fs.readFileSync(path.join(process.cwd(), "public", map), "utf8");
 const landPaths = [...svgRaw.matchAll(/\sd="([^"]+)"/g)].map((m) => m[1]);
+const [mx, my, mw, mh] = (svgRaw.match(/viewBox="([^"]+)"/)?.[1] ?? "0 0 600 600").split(/\s+/).map(Number);
 
-const MAP = { x: 176.64, y: 48.55, w: 634.05, h: 616.89 };
+const MAP = { x: mx, y: my, w: mw, h: mh };
 const RATIO = MAP.w / MAP.h;
 const overview = [MAP.x - 10, MAP.y - 10, MAP.w + 20, MAP.h + 20];
 
-type Stop = { name: string; img: string; x: number; y: number };
-
-// Stops staan in reisvolgorde, x/y zijn posities op de kaart
-const routeDefs = [
-  {
-    key: "east",
-    title: t["routes.east.title"],
-    subtitle: t["routes.east.subtitle"],
-    expand: t["routes.east.expand"],
-    stops: [
-      { name: "Sydney", img: "/images/australia/routes/east-1.jpg", x: 757, y: 482 },
-      { name: "Byron Bay", img: "/images/australia/routes/east-2.jpg", x: 802, y: 385 },
-      { name: "Noosa", img: "/images/australia/routes/east-3.jpg", x: 798, y: 343 },
-      { name: "Fraser Island", img: "/images/australia/routes/east-5.jpg", x: 804, y: 322 },
-      { name: "Whitsundays", img: "/images/australia/routes/east-4.jpg", x: 743, y: 229 },
-      { name: "Cairns", img: "/images/australia/routes/east-7.jpg", x: 698, y: 166 },
-      { name: "Daintree", img: "/images/australia/routes/east-6.jpg", x: 692, y: 152 },
-    ],
-  },
-  {
-    key: "west",
-    title: t["routes.west.title"],
-    subtitle: t["routes.west.subtitle"],
-    expand: t["routes.west.expand"],
-    stops: [
-      { name: "Perth", img: "/images/australia/routes/west-1.jpg", x: 221, y: 446 },
-      { name: "Rottnest Island", img: "/images/australia/routes/west-2.jpg", x: 209, y: 450 },
-      { name: "Kalbarri", img: "/images/australia/routes/west-3.jpg", x: 199, y: 367 },
-      { name: "Monkey Mia", img: "/images/australia/routes/west-7.jpg", x: 194, y: 333 },
-      { name: "Coral Bay", img: "/images/australia/routes/west-6.jpg", x: 196, y: 283 },
-      { name: "Ningaloo Reef", img: "/images/australia/routes/west-5.jpg", x: 189, y: 270 },
-      { name: "Exmouth", img: "/images/australia/routes/west-4.jpg", x: 202, y: 258 },
-    ],
-  },
-  {
-    key: "south",
-    title: t["routes.south.title"],
-    subtitle: t["routes.south.subtitle"],
-    expand: t["routes.south.expand"],
-    stops: [
-      { name: "Perth", img: "/images/australia/routes/south-1.jpg", x: 221, y: 446 },
-      { name: "Margaret River", img: "/images/australia/routes/south-2.jpg", x: 210, y: 484 },
-      { name: "Pemberton", img: "/images/australia/routes/south-3.jpg", x: 223, y: 492 },
-      { name: "Denmark", img: "/images/australia/routes/south-4.jpg", x: 239, y: 500 },
-      { name: "Albany", img: "/images/australia/routes/south-5.jpg", x: 250, y: 501 },
-      { name: "Bremer Bay", img: "/images/australia/routes/south-6.jpg", x: 270, y: 490 },
-      { name: "Esperance", img: "/images/australia/routes/south-7.jpg", x: 309, y: 481 },
-      { name: "Cape Le Grand", img: "/images/australia/routes/south-8.jpg", x: 319, y: 480 },
-    ],
-  },
-  {
-    key: "red",
-    title: t["routes.red.title"],
-    subtitle: t["routes.red.subtitle"],
-    expand: t["routes.red.expand"],
-    stops: [
-      { name: "Devils Marbles", img: "/images/australia/routes/red-6.jpg", x: 516, y: 234 },
-      { name: "Outback Roads", img: "/images/australia/routes/red-7.jpg", x: 511, y: 262 },
-      { name: "Alice Springs", img: "/images/australia/routes/red-3.jpg", x: 507, y: 293 },
-      { name: "MacDonnell Ranges", img: "/images/australia/routes/red-5.jpg", x: 490, y: 288 },
-      { name: "Kings Canyon", img: "/images/australia/routes/red-4.jpg", x: 469, y: 303 },
-      { name: "Kata Tjuta", img: "/images/australia/routes/red-2.jpg", x: 452, y: 320 },
-      { name: "Uluru", img: "/images/australia/routes/red-1.jpg", x: 462, y: 324 },
-      { name: "Desert Stars", img: "/images/australia/routes/red-8.jpg", x: 482, y: 318 },
-    ],
-  },
-  {
-    key: "top",
-    title: t["routes.top.title"],
-    subtitle: t["routes.top.subtitle"],
-    expand: t["routes.top.expand"],
-    stops: [
-      { name: "Darwin", img: "/images/australia/routes/top-1.jpg", x: 467, y: 86 },
-      { name: "Crocodiles River", img: "/images/australia/routes/top-7.jpg", x: 484, y: 89 },
-      { name: "Kakadu National Park", img: "/images/australia/routes/top-2.jpg", x: 502, y: 91 },
-      { name: "Gunlom Falls", img: "/images/australia/routes/top-4.jpg", x: 498, y: 105 },
-      { name: "Nitmiluk Gorge", img: "/images/australia/routes/top-6.jpg", x: 494, y: 119 },
-      { name: "Florence Falls", img: "/images/australia/routes/top-5.jpg", x: 476, y: 104 },
-      { name: "Litchfield National Park", img: "/images/australia/routes/top-3.jpg", x: 469, y: 99 },
-    ],
-  },
-];
+type Stop = RouteStop;
 
 // NL heeft de expand-tekst als string, EN als object: beide omzetten naar hetzelfde formaat
 function normalizeExpand(expand: unknown) {
@@ -132,8 +65,10 @@ function smoothPath(pts: Stop[]) {
 }
 
 // Uitsnede van de kaart waar naartoe ingezoomd wordt per route
-const PAD = 34;
-const MIN_W = 160;
+const PAD = MAP.w * 0.054;
+const MIN_W = MAP.w * minZoom;
+// pins/lijnen ogen op elke kaart even groot (Australië-kaart is 634 breed)
+const BASE_W = 634;
 
 const routes = routeDefs.map((r) => {
   const xs = r.stops.map((s) => s.x);
@@ -147,17 +82,23 @@ const routes = routeDefs.map((r) => {
   const cx = minX + bw / 2;
   const cy = minY + bh / 2;
   // schaal zodat pins op elk zoomniveau even groot ogen
-  const s = w / MAP.w;
+  const s = w / BASE_W;
 
   return {
     ...r,
-    info: normalizeExpand(r.expand),
+    title: text(`${r.key}.title`),
+    subtitle: text(`${r.key}.subtitle`),
+    info: normalizeExpand(dict[`${r.key}.expand`] ?? ""),
     d: smoothPath(r.stops),
     vb: [cx - w / 2, cy - h / 2, w, h].map((n) => +n.toFixed(2)),
     s,
     cx,
   };
 });
+
+// vaste classes zodat Tailwind ze vindt
+const tabCols =
+  routes.length >= 5 ? "md:grid-cols-3 lg:grid-cols-5" : routes.length === 4 ? "lg:grid-cols-4" : "md:grid-cols-3";
 
 const clientData = routes.map((r) => ({
   vb: r.vb,
@@ -176,11 +117,11 @@ const clientData = routes.map((r) => ({
       {t["routes.section.title"]}
     </h2>
     <p class="mt-6 max-w-2xl text-[15px] leading-relaxed text-gray-600 md:text-base">
-      {t["routes.section.subtitle"]}
+      {text(subtitleKey)}
     </p>
 
     <!-- Routekeuze -->
-    <div class="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-5" role="tablist">
+    <div class:list={["mt-10 grid grid-cols-2 gap-3 md:gap-4", tabCols]} role="tablist">
       {routes.map((r, i) => (
         <button
           type="button"

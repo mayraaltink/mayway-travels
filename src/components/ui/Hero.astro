@@ -68,7 +68,7 @@ const p = photos[photo];
         </span>
       </h1>
 
-      <p class="hero-tagline mx-auto mt-4 max-w-md text-sm font-medium italic leading-relaxed tracking-[0.04em] text-white md:text-base">
+      <p class="hero-shadow mx-auto mt-4 max-w-md text-sm font-medium italic leading-relaxed tracking-[0.04em] text-white md:text-base">
         {t('hero.subtitle')}
       </p>
 
@@ -118,13 +118,6 @@ const p = photos[photo];
   }
   .hero-shadow {
     text-shadow: 0 2px 18px rgba(4, 40, 42, 0.35);
-  }
-  /* tagline: dunne donkere rand + schaduw zodat hij op licht water leesbaar blijft */
-  .hero-tagline {
-    text-shadow:
-      0 0 1px rgba(4, 40, 42, 0.6),
-      0 1px 3px rgba(4, 40, 42, 0.45),
-      0 2px 14px rgba(4, 40, 42, 0.4);
   }
   .hero-content {
     animation: hero-up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;

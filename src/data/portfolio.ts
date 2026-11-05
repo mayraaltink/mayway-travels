@@ -2,6 +2,8 @@
 // - featured: video's voor bedrijven (For Brands toont ze allemaal, liefst 5)
 // - home: true → deze video staat ook op de homepagina (kies er 3)
 // - more: overige content (3 à 4)
+// - more: worden getoond als kleinere reels (9:16) onder de uitgelichte video's
+// - photoProjects: staat momenteel niet op de site (bewaard voor later)
 // - cover: bestandsnaam in public/images/portfolio/ (staand 9:16 voor video's, 4:5 voor overige content)
 
 export type FeaturedProject = {
@@ -29,4 +31,24 @@ export const more: MoreProject[] = [
   { type: 'video', href: 'https://www.instagram.com/p/DCYxUT1yiOm/', cover: 'more-1.jpg' },
   { type: 'video', href: 'https://www.instagram.com/p/C2o0BYNPXaP/', cover: 'more-2.jpg' },
   { type: 'photos', href: 'https://www.instagram.com/p/CzT0FervoKb/', cover: 'more-3.jpg' },
+];
+
+export type PhotoProject = {
+  brand?: string;
+  location: { nl: string; en: string };
+  href?: string;
+  images: string[];
+};
+
+export const photoProjects: PhotoProject[] = [
+  {
+    brand: 'Jungle Trekking',
+    location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' },
+    href: 'https://www.instagram.com/sumatraorangutantrekking/',
+    images: ['indonesia/monkey-sit.jpg', 'indonesia/jungle.jpg', 'indonesia/monkey-stand.jpg', 'indonesia/jungle-man.jpg'],
+  },
+  {
+    location: { nl: 'Marokko', en: 'Morocco' },
+    images: ['marokko/street.jpg', 'marokko/marktstreet.jpg'],
+  },
 ];

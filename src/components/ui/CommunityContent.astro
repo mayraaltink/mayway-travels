@@ -8,7 +8,7 @@ import path from 'node:path';
 
 
 import MayWayMoments from "./MayWayMoments.astro";
-import CommunityMoments from './CommunityMoments.astro';
+// import CommunityMoments from './CommunityMoments.astro'; // tijdelijk uit, zie onderaan
 
 const pathLang = Astro.url.pathname.split('/')[1];
 
@@ -226,6 +226,7 @@ const destinations = [
 
 
   <MayWayMoments />
-  <CommunityMoments />
+  <!-- YOUR Moments staat tijdelijk uit; weer aanzetten door de regel hieronder terug te zetten -->
+  <!-- <CommunityMoments /> -->
 
 </BaseLayout>

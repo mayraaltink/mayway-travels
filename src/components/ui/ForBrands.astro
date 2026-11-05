@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { ui, defaultLang } from '../../i18n/ui';
 import CollaborationSection from './CollaborationSection.astro';
 import Portfolio from './Portfolio.astro';
+import ThroughMyLens from './ThroughMyLens.astro';
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -245,6 +246,7 @@ const socials = [
 
     <!-- MIJN PROJECTEN: mini-portfolio -->
     <Portfolio />
+    <ThroughMyLens />
 
   </div>
 </BaseLayout>

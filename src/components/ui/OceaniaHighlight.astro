@@ -1,9 +1,7 @@
 ---
 // src/components/ui/OceaniaHighlight.astro
-// Highlights van Australië: één grote tegel + vier kleinere, elk linkt naar de bestemmingspagina.
-// Foto's hieronder te vervangen. Ontbreekt een foto, dan toont de tegel een turquoise placeholder.
-import fs from 'node:fs';
-import path from 'node:path';
+// Uitgelichte bestemming: één grote fotobanner met de tekst en knop in het midden.
+// Foto hieronder te vervangen (bestand in /public).
 import { ui, defaultLang } from '../../i18n/ui';
 
 const lang = Astro.currentLocale || defaultLang;
@@ -13,79 +11,34 @@ function t(key: string) {
   return dict[key] ?? key;
 }
 
-function imageSrc(src: string) {
-  return fs.existsSync(path.join(process.cwd(), 'public', src)) ? src : null;
-}
-
 const href = `/${lang}/destinations/australia`;
-
-const highlights = [
-  { num: 1, image: '/images/australia/surf-boys.jpg' },
-  { num: 2, image: '/images/australia/aus_main.webp' },
-  { num: 3, image: '/images/travel-plan/Sydney.jpg' },
-  { num: 4, image: '/images/australia/unnamed.jpg' },
-  { num: 5, image: '/images/highlights/daintree.jpg' },
-].map((h) => ({
-  ...h,
-  src: imageSrc(h.image),
-  title: t(`oceania.h${h.num}.title`),
-  sub: t(`oceania.h${h.num}.sub`),
-}));
+const image = '/images/australia/aus_main.jpg';
 ---
 
-<section class="py-20 md:py-28">
-  <div class="mx-auto max-w-6xl px-6">
+<section class="px-3 py-10 md:px-6 md:py-16">
+  <div class="relative flex min-h-[560px] items-center justify-center overflow-hidden rounded-[2.5rem] md:h-[85vh] md:max-h-[820px] md:rounded-[3.5rem]">
 
-    <!-- Kop -->
-    <div class="grid gap-6 md:grid-cols-2 md:items-end md:gap-12">
-      <div>
-        <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('oceania.eyebrow')}</p>
-        <h2 class="mt-3 text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
-          <span class="block">{t('oceania.title.before')}</span>
-          <span class="block">{t('oceania.title.bold')}</span>
-        </h2>
-      </div>
-      <div>
-        <p class="text-[15px] leading-relaxed text-gray-600 md:text-base">{t('oceania.description')}</p>
-        <a
-          href={href}
-          class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a]"
-        >
-          {t('oceania.card.button')}
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-        </a>
-      </div>
-    </div>
+    <!-- Foto -->
+    <img src={image} alt={t('oceania.card.title')} loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/35 to-black/45"></div>
 
-    <!-- Highlights: grote tegel links, vier kleine rechts -->
-    <div class="mt-12 grid auto-rows-[11rem] grid-cols-2 gap-3 md:mt-16 md:auto-rows-[15rem] md:gap-4 lg:grid-cols-4">
-      {highlights.map((h, i) => (
-        <a
-          href={href}
-          class:list={[
-            'group relative block overflow-hidden rounded-[1.5rem] bg-[#0B5F64]',
-            { 'col-span-2 row-span-2': i === 0 }
-          ]}
-        >
-          {h.src ? (
-            <img src={h.src} alt={h.title} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-          ) : (
-            <div class="absolute inset-0 bg-gradient-to-br from-[#0F7C82] to-[#084649]"></div>
-          )}
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-
-          <span class="absolute left-4 top-4 rounded-full bg-white/20 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm md:left-5 md:top-5">
-            0{h.num}
-          </span>
-
-          <div class:list={['absolute inset-x-0 bottom-0 text-white', i === 0 ? 'p-5 md:p-8' : 'p-4 md:p-5']}>
-            <h3 class:list={['font-semibold leading-tight tracking-tight', i === 0 ? 'text-2xl md:text-4xl' : 'text-base md:text-xl']}>
-              {h.title}
-            </h3>
-            <p class:list={['mt-1 text-white/80', i === 0 ? 'text-sm md:text-base' : 'text-xs md:text-sm']}>{h.sub}</p>
-          </div>
-        </a>
-      ))}
+    <!-- Tekst -->
+    <div class="relative z-10 mx-auto max-w-3xl px-6 py-20 text-center text-white">
+      <p class="text-xs uppercase tracking-[0.2em] text-white/90">{t('oceania.eyebrow')}</p>
+      <h2 class="mt-3 text-3xl font-semibold leading-[1.0] tracking-tight md:text-[2.5rem]" style="text-shadow: 0 3px 15px rgba(0,0,0,0.35);">
+        <span class="block">{t('oceania.title.before')}</span>
+        <span class="block">{t('oceania.title.bold')}</span>
+      </h2>
+      <p class="mx-auto mt-6 max-w-2xl text-[15px] font-medium leading-relaxed text-white/90 md:text-base" style="text-shadow: 0 2px 10px rgba(0,0,0,0.35);">
+        {t('oceania.description')}
+      </p>
+      <a
+        href={href}
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a]"
+      >
+        {t('oceania.card.button')}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
     </div>
   </div>
 </section>

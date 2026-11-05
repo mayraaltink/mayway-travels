@@ -1,34 +1,232 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
+// src/components/ui/blogs/VisaAus.astro
+// Blog "Eerste Working Holiday in Australië".
+// Opbouw: intro (titel links, tekst rechts) → inhoudsopgave → checklist-blok → aanvraagproces
+// → blok over de medische check → stappenplan medische check.
+// Teksten per taal hieronder; <b> = dikgedrukt, links staan als <a> in de tekst.
+
+const lang = (Astro.currentLocale === 'en' ? 'en' : 'nl') as 'nl' | 'en';
+
+const link = (href: string, label: string) =>
+  `<a href="${href}" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#1CABB0] underline decoration-[#1CABB0]/40 underline-offset-4 transition hover:text-[#0F7C82]">${label}</a>`;
+
+const URL_VISA = 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417';
+const URL_OUTSIDE = 'https://immi.homeaffairs.gov.au/help-support/contact-us/offices-and-locations/offices-outside-australia';
+const URL_INSIDE = 'https://www.bupa.com.au/bupamvs';
+
+const content = {
+  nl: {
+    eyebrow: 'Blog · Australië',
+    title: 'Aanvraag: Eerste <b>Working Holiday</b> in Australië',
+    intro: [
+      'Toen ik besloot om in Australië te wonen en werken, vroeg ik vanuit Nieuw-Zeeland mijn eerste Working Holiday (<b>subclass 417</b>) aan. Met een Working Holiday Visum kun je <b>tot 12 maanden</b> in Australië <b>wonen, werken en reizen</b>.',
+      'Het is in de basis bedoeld voor reizigers die niet alleen willen rondreizen, maar ook tijdelijk geld willen verdienen om hun avontuur te financieren. Het visum geeft je de vrijheid om in allerlei sectoren te werken, zolang je de voorwaarden volgt.',
+    ],
+    tocTitle: 'Spring naar',
+    toc: [
+      { id: 'belangrijkste-punten', label: 'De belangrijkste punten' },
+      { id: 'aanvraag', label: 'Het proces van aanvraag' },
+      { id: 'medische-check', label: 'Over een medische check' },
+      { id: 'stappenplan', label: 'Stappenplan medische check' },
+    ],
+    pointsTitle: 'De belangrijkste punten over een Working Holiday visum',
+    points: [
+      'Als je als Nederlander een eerste Working Holiday-visum aanvraagt, dan vraag je altijd het Working Holiday Visa (<b>subclass 417</b>) aan.',
+      'Je vraagt dit <b>eerste</b> visum altijd <b>buiten Australië</b> aan.',
+      'Je moet tussen de <b>18 en 35 jaar</b> zijn op het moment van <b>aanvragen</b>.',
+      'Het visum gaat pas in op het moment dat je Australië <b>binnenkomt</b>, niet op de datum waarop je visum wordt goedgekeurd.',
+      'Je mag <b>maximaal 6 maanden bij één werkgever</b> werken (met uitzondering voor specified work in bepaalde regio\'s).',
+      'Je mag <b>meerdere werkgevers</b> hebben, dus je kunt makkelijk van baan wisselen of meerdere banen hebben.',
+      'Je kunt het visum ook verlengen met een <b>tweede</b> of zelfs <b>derde jaar</b> door verplicht een aantal maanden specified work te doen in erkende gebieden.',
+    ],
+    processTitle: 'Het proces van aanvraag',
+    process: [
+      `Je kunt het visum aanvragen via de officiële website van het ${link(URL_VISA, 'Australian Government Department of Home Affairs')}.`,
+      'Maak hiervoor een <b>ImmiAccount</b> aan met een eigen gebruikersnaam en wachtwoord. Zodra je het visum hebt aangevraagd, kun je in jouw ImmiAccount de status van je aanvraag volgen. De aanvraag van het visum kost <b>$670 AUD</b>, omgerekend zo\'n <b>€385</b>.',
+      'Gemiddeld duurt het aanvragen van het visum <b>7 tot 14 dagen</b>, hoewel ongeveer <b>50%</b> van de aanvragen al <b>binnen één dag</b> wordt goedgekeurd. Soms duurt het proces iets langer, bijvoorbeeld wanneer er extra documenten nodig zijn. Dit kan een scan van je paspoortgegevens zijn, een financieel bewijs dat je jezelf kunt onderhouden (<b>meer dan $5.000 AUD</b>) en/of een medische check. Zodra er extra documenten nodig zijn, ontvang je hierover een e-mail en een update in je ImmiAccount.',
+    ],
+    toMedical: 'Lees hieronder meer over de medische check',
+    medicalTitle: 'Over een medische check',
+    medical: [
+      'Zodra je het visum aanvraagt, kun je een e-mail ontvangen waarin staat dat er een medische check nodig is. Geen stress, dit overkwam mij ook twee keer.',
+      'Een medische check wordt gevraagd als je de afgelopen <b>5 jaar</b> meer dan <b>3 maanden</b> in een land met een verhoogd risico op <b>tuberculose (TB)</b> hebt verbleven. Voor de meeste landen in Azië geldt dit. Daarom heb ik voor mijn eerste visum in Nieuw-Zeeland en mijn tweede visum in Bali een medische keuring moeten doen.',
+      'Zodra je het visum hebt aangevraagd, ontvang je een brief (PDF) in je e-mail. In deze brief en in jouw ImmiAccount zie je duidelijk welke medical assessments je moet doen. De meest voorkomende zijn: <b>Medical Examination (501)</b> en <b>Chest X-ray (502)</b>. Lees hieronder stap voor stap hoe je zo\'n medische check regelt.',
+    ],
+    stepsTitle: 'Stappenplan medische check',
+    steps: [
+      {
+        title: 'Bepaal de locatie van je visumaanvraag',
+        text: [
+          `Vraag je jouw visum <b>buiten Australië</b> aan? ${link(URL_OUTSIDE, 'Klik dan hier')} voor het regelen van een medische check buiten Australië. Dit geldt vrijwel altijd voor een eerste Working Holiday visum.`,
+          `Vraag je jouw visum <b>binnen Australië</b> aan? ${link(URL_INSIDE, 'Klik dan hier')} voor het regelen van een medische check binnen Australië. Dit kan van toepassing zijn bij een tweede of derde Working Holiday visum.`,
+        ],
+      },
+      {
+        title: 'Maak een afspraak',
+        text: ['Kies een gewenste datum en tijd voor je afspraak bij een erkende medische kliniek. Doorloop vervolgens alle stappen en vink de juiste <b>Medical Assessments</b> aan die gevraagd worden voor jouw visumaanvraag.'],
+      },
+      {
+        title: 'Medische check afgerond',
+        text: ['Na de afspraak stuurt de kliniek jouw resultaten direct door naar het <b>Department of Home Affairs</b>, zodat je visumaanvraag verder verwerkt kan worden. De status van je aanvraag kun je vervolgens volgen via jouw ImmiAccount.'],
+      },
+    ],
+    back: 'Terug naar boven',
+    disclaimer: 'Regels, kosten en voorwaarden kunnen veranderen. Check altijd de actuele informatie op de officiële website van de Australische overheid.',
+  },
+  en: {
+    eyebrow: 'Blog · Australia',
+    title: 'Application: First <b>Working Holiday</b> in Australia',
+    intro: [
+      'When I decided to live and work in Australia, I applied for my first Working Holiday visa (<b>subclass 417</b>) from New Zealand. With a Working Holiday visa you can <b>live, work and travel</b> in Australia for <b>up to 12 months</b>.',
+      'It is basically meant for travellers who do not only want to travel around, but also want to earn money temporarily to fund their adventure. The visa gives you the freedom to work in all kinds of industries, as long as you follow the conditions.',
+    ],
+    tocTitle: 'Jump to',
+    toc: [
+      { id: 'belangrijkste-punten', label: 'The key points' },
+      { id: 'aanvraag', label: 'The application process' },
+      { id: 'medische-check', label: 'About a medical check' },
+      { id: 'stappenplan', label: 'Medical check step by step' },
+    ],
+    pointsTitle: 'The key points of a Working Holiday visa',
+    points: [
+      'As a Dutch citizen applying for your first Working Holiday visa, you always apply for the Working Holiday visa (<b>subclass 417</b>).',
+      'You always apply for this <b>first</b> visa <b>outside Australia</b>.',
+      'You must be between <b>18 and 35 years old</b> at the time you <b>apply</b>.',
+      'The visa only starts when you <b>enter</b> Australia, not on the date your visa is granted.',
+      'You can work a <b>maximum of 6 months for one employer</b> (except for specified work in certain regions).',
+      'You can have <b>multiple employers</b>, so you can easily switch jobs or have more than one job.',
+      'You can also extend the visa with a <b>second</b> or even <b>third year</b> by completing a required number of months of specified work in eligible areas.',
+    ],
+    processTitle: 'The application process',
+    process: [
+      `You can apply for the visa through the official website of the ${link(URL_VISA, 'Australian Government Department of Home Affairs')}.`,
+      'To do this, create an <b>ImmiAccount</b> with your own username and password. Once you have applied, you can follow the status of your application in your ImmiAccount. The visa costs <b>$670 AUD</b>, which is about <b>€385</b>.',
+      'On average the application takes <b>7 to 14 days</b>, although about <b>50%</b> of applications are approved <b>within one day</b>. Sometimes it takes a little longer, for example when extra documents are needed. This can be a scan of your passport details, financial proof that you can support yourself (<b>more than $5,000 AUD</b>) and/or a medical check. If extra documents are needed, you will receive an email and an update in your ImmiAccount.',
+    ],
+    toMedical: 'Read more about the medical check below',
+    medicalTitle: 'About a medical check',
+    medical: [
+      'Once you apply for the visa, you may receive an email stating that a medical check is required. No stress, this happened to me twice as well.',
+      'A medical check is requested if you have stayed for more than <b>3 months</b> in a country with a higher risk of <b>tuberculosis (TB)</b> in the past <b>5 years</b>. This applies to most countries in Asia. That is why I had to do a medical examination for my first visa in New Zealand and my second visa in Bali.',
+      'Once you have applied, you will receive a letter (PDF) by email. In this letter and in your ImmiAccount you can clearly see which medical assessments you need to do. The most common are: <b>Medical Examination (501)</b> and <b>Chest X-ray (502)</b>. Read below, step by step, how to arrange a medical check.',
+    ],
+    stepsTitle: 'Medical check step by step',
+    steps: [
+      {
+        title: 'Determine where you apply from',
+        text: [
+          `Applying for your visa <b>outside Australia</b>? ${link(URL_OUTSIDE, 'Click here')} to arrange a medical check outside Australia. This almost always applies to a first Working Holiday visa.`,
+          `Applying for your visa <b>inside Australia</b>? ${link(URL_INSIDE, 'Click here')} to arrange a medical check inside Australia. This may apply to a second or third Working Holiday visa.`,
+        ],
+      },
+      {
+        title: 'Make an appointment',
+        text: ['Choose a date and time for your appointment at an approved medical clinic. Then go through all the steps and tick the correct <b>Medical Assessments</b> requested for your visa application.'],
+      },
+      {
+        title: 'Medical check completed',
+        text: ['After the appointment, the clinic sends your results directly to the <b>Department of Home Affairs</b>, so your visa application can be processed further. You can then follow the status of your application in your ImmiAccount.'],
+      },
+    ],
+    back: 'Back to top',
+    disclaimer: 'Rules, costs and conditions can change. Always check the latest information on the official Australian government website.',
+  },
+}[lang];
+
+const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>';
 ---
 
-<BaseLayout>
+<article class="bg-[#FFFDFA] px-6 pb-24 pt-32 md:pb-32 md:pt-40 [&_b]:font-semibold [&_b]:text-gray-900">
+  <div class="mx-auto max-w-5xl">
 
-<section class="max-w-3xl mx-auto px-6 py-24">
+    <!-- Intro: titel links, tekst rechts -->
+    <header id="top" class="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-14">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{content.eyebrow}</p>
+        <h1 class="mt-3 text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl [&_b]:font-bold [&_b]:text-black">
+          <Fragment set:html={content.title} />
+        </h1>
+      </div>
+      <div class="space-y-5 text-[15px] leading-relaxed text-gray-700 md:pt-7 md:text-base">
+        {content.intro.map((p) => <p set:html={p} />)}
+      </div>
+    </header>
 
-  <h1 class="text-5xl font-bold mb-6">
-    How Much Money Do You Need for Travel?
-  </h1>
+    <!-- Inhoudsopgave -->
+    <nav aria-label={content.tocTitle} class="mt-12 md:mt-16">
+      <p class="text-xs uppercase tracking-[0.2em] text-gray-500">{content.tocTitle}</p>
+      <ol class="mt-4 flex flex-wrap gap-2">
+        {content.toc.map((item, i) => (
+          <li>
+            <a href={`#${item.id}`} class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white">
+              <span class="text-[#1CABB0] transition">{i + 1}.</span>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
 
-  <img
-    src="/images/blogs/money.jpg"
-    alt="Travel budget"
-    class="rounded-3xl w-full h-[420px] object-cover mb-10"
-  />
+    <!-- Checklist -->
+    <section id="belangrijkste-punten" class="mt-12 scroll-mt-28 rounded-[2.5rem] bg-[#B6E8E7] px-6 py-10 md:mt-16 md:rounded-[3.5rem] md:px-14 md:py-14">
+      <h2 class="max-w-xl text-2xl font-semibold leading-tight tracking-tight text-black md:text-[2rem]">{content.pointsTitle}</h2>
+      <ul class="mt-8 space-y-4">
+        {content.points.map((p) => (
+          <li class="flex items-start gap-4 text-[15px] leading-relaxed text-gray-800 md:text-base">
+            <span class="mt-0.5 shrink-0 text-[#0F7C82]" set:html={checkIcon} />
+            <span set:html={p} />
+          </li>
+        ))}
+      </ul>
+    </section>
 
-  <p class="text-gray-700 leading-relaxed mb-6">
-    Your travel budget depends heavily on your destination, style of travel, and how long you stay.
-  </p>
+    <!-- Aanvraagproces -->
+    <section id="aanvraag" class="mx-auto mt-20 max-w-3xl scroll-mt-28 md:mt-28">
+      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.processTitle}</h2>
+      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
+        {content.process.map((p) => <p set:html={p} />)}
+      </div>
+      <a href="#medische-check" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#1CABB0] transition hover:gap-3 hover:text-[#0F7C82]">
+        {content.toMedical}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+      </a>
+    </section>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-3">1. Budget travellers</h2>
-  <p class="text-gray-700">Expect €40–€80 per day in cheap countries, more in Australia/NZ.</p>
+    <!-- Medische check: blok in een andere kleur -->
+    <section id="medische-check" class="mt-16 scroll-mt-28 rounded-[2.5rem] bg-[#0F7C82] px-6 py-10 text-white md:mt-20 md:rounded-[3.5rem] md:px-14 md:py-14 [&_b]:text-white">
+      <h2 class="text-2xl font-semibold leading-tight tracking-tight md:text-[2rem]">{content.medicalTitle}</h2>
+      <div class="mt-6 max-w-3xl space-y-5 text-[15px] leading-relaxed text-white/85 md:text-base">
+        {content.medical.map((p) => <p set:html={p} />)}
+      </div>
+    </section>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-3">2. Mid-range travellers</h2>
-  <p class="text-gray-700">€80–€150 per day for comfort, activities and private rooms.</p>
+    <!-- Stappenplan -->
+    <section id="stappenplan" class="mt-20 scroll-mt-28 md:mt-28">
+      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.stepsTitle}</h2>
+      <ol class="mt-8 grid gap-5 md:grid-cols-3">
+        {content.steps.map((step, i) => (
+          <li class="rounded-[2rem] bg-white p-7 shadow-[0_20px_50px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#1CABB0] text-sm font-semibold text-white">{i + 1}</span>
+            <h3 class="mt-5 text-lg font-semibold leading-snug tracking-tight text-black">{step.title}</h3>
+            <div class="mt-3 space-y-3 text-[15px] leading-relaxed text-gray-700">
+              {step.text.map((p) => <p set:html={p} />)}
+            </div>
+          </li>
+        ))}
+      </ol>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-3">3. Big factor: flights</h2>
-  <p class="text-gray-700">Long-haul flights often make up 30–50% of your total budget.</p>
+      <a href="#top" class="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-[#1CABB0] transition hover:text-[#0F7C82]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>
+        {content.back}
+      </a>
+    </section>
 
-</section>
+    <p class="mt-16 border-t border-black/10 pt-8 text-sm leading-relaxed text-gray-500">{content.disclaimer}</p>
+  </div>
+</article>
 
-</BaseLayout> 
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

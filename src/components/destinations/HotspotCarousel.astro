@@ -1,201 +1,164 @@
-
 ---
+// src/components/destinations/HotspotCarousel.astro
+// "Ontdek Hotspots": swipebare kaarten met de bijzonderste ervaringen van Australië.
+// Foto's: /public/images/<naam>.jpg (bijv. whitsundays.jpg). Ontbreekt een foto, dan toont de kaart een turquoise vlak.
+import fs from 'node:fs';
+import path from 'node:path';
 import { useTranslations } from '../../i18n/ui';
+import CarouselControls from '../ui/CarouselControls.astro';
 
 const lang = (Astro.currentLocale ?? 'nl') as 'nl' | 'en';
 const t = useTranslations(lang);
-const get = (k: string) => t(k as any);
+const get = (k: string) => t(k as any) as string;
+
+function imageSrc(src: string) {
+  return fs.existsSync(path.join(process.cwd(), 'public', src)) ? src : null;
+}
 
 const hotspots = [
   'whitsundays',
   'fraser',
+  'julian_rocks',
   'reef',
-  'uluru',
   'daintree',
-   'great_ocean',
-  'magnetic',
+  'blue_mountains',
   'hunter_valley',
+  'jervis_bay',
+  'mackay',
+  'great_ocean',
+  'kangaroo_island',
+  'magnetic',
+  'uluru',
   'kakadu',
   'ningaloo',
- 
 ];
+
+// Foto's die al op de site staan; de rest zoekt naar /images/<naam>.jpg
+const photos: Record<string, string> = {
+  reef: '/images/australia/unnamed.jpg',
+  uluru: '/images/australia/aus_main.jpg',
+  great_ocean: '/images/about/great-ocean-road.jpg',
+};
+
+const items = hotspots.map((key) => ({
+  key,
+  src: imageSrc(photos[key] ?? `/images/${key}.jpg`),
+  badge: get(`${key}_badge`),
+  title: get(`${key}_title`),
+  text: get(`${key}_text`),
+  story: get(`${key}_story`),
+}));
+
+const desc = get('hotspots_desc');
 ---
 
-<section class="py-24 px-6 bg-[#F3FBFA]" data-carousel-wrapper>
-  <div class="max-w-6xl mx-auto">
+<section class="bg-[#F4FBFB] px-6 py-20 md:py-28">
+  <div data-carousel class="mx-auto max-w-6xl">
 
-<!-- HEADER -->
-<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-14 ml-4">
+    <!-- Kop -->
+    <div class="grid gap-6 md:grid-cols-2 md:items-end md:gap-12">
+      <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
+        {t('hotspots_title_line1')}
+      </h2>
+      {desc && desc.length > 1 && (
+        <p class="text-[15px] leading-relaxed text-gray-600 md:text-base">{desc}</p>
+      )}
+    </div>
 
-  <!-- LEFT -->
-  <h2 class="max-w-xl leading-[0.95]">
+    <!-- Kaarten: mobiel 1, tablet 2, desktop 4 per keer -->
+    <div data-carousel-track class="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth md:mt-14">
+      {items.map((h) => (
+        <article class="relative h-[440px] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_20px_45px_rgba(0,0,0,0.12)] sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-4.5rem)/4)]">
+          {h.src ? (
+            <img src={h.src} alt={h.title} loading="lazy" draggable="false" class="absolute inset-0 h-full w-full object-cover" />
+          ) : (
+            <div class="absolute inset-0 bg-gradient-to-br from-[#0F7C82] to-[#084649]"></div>
+          )}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10"></div>
 
-    <span class="block text-3xl md:text-4xl font-bold   text-gray-800 ">
-      {t('hotspots_title_line1')}
-    </span>
-
- 
-
-  </h2>
-
-  <!-- RIGHT -->
-  <p class="lg:max-w-md lg:text-left text-base text-gray-600 leading-relaxed lg:pt-2">
-    {t('hotspots_desc')}
-  </p>
-
-</div>
-    <!-- TRACK -->
-    <div
-      data-carousel-track
-      class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-    >
-      {hotspots.map((key) => (
-        <article class="relative flex-shrink-0 w-[280px] snap-start rounded-3xl overflow-hidden shadow-lg h-[420px]">
-
-          <img
-            src={`/images/${key}.jpg`}
-            class="absolute inset-0 w-full h-full object-cover"
-          />
-
-          <div class="absolute inset-0 bg-black/40"></div>
-
-      <div class="absolute inset-0 flex flex-col justify-end p-5 text-white text-center items-center">
-
-            <!-- BADGE -->
-            <p class="text-[11px] uppercase tracking-[0.2em] opacity-90 mb-2">
-       {get(`${key}_badge`)}
-            </p>
-
-            <!-- TITLE -->
-            <h3 class="text-2xl font-bold mb-2">
-              {get(`${key}_title`)}
-            </h3>
-
-            <!-- TEXT -->
-            <p class="text-sm opacity-80 line-clamp-2 mb-4">
-              {get(`${key}_text`)}
-            </p>
-
-            <!-- BUTTON -->
-            <button class="inline-flex items-center gap-2 rounded-full border-2 border-white px-5 py-2.5 text-sm hover:bg-white/15">
+          <div class="absolute inset-0 flex flex-col items-center justify-end p-6 text-center text-white">
+            <p class="text-[11px] uppercase tracking-[0.2em] text-white/90">{h.badge}</p>
+            <h3 class="mt-2 text-2xl font-semibold leading-tight tracking-tight">{h.title}</h3>
+            <p class="mt-2 line-clamp-2 text-sm text-white/80">{h.text}</p>
+            <!-- Opent het verhaal van deze plek -->
+            <button
+              type="button"
+              data-hotspot-open
+              data-title={h.title}
+              data-badge={h.badge}
+              data-story={h.story}
+              data-src={h.src ?? ''}
+              class="mt-5 inline-flex items-center gap-2 rounded-full border-2 border-white/70 px-5 py-2 text-sm font-semibold transition hover:border-white hover:bg-white hover:text-[#0F7C82]"
+            >
               {t('hotspot_btn')}
             </button>
-
-  
-    </div>
+          </div>
         </article>
       ))}
     </div>
 
-    <!-- CONTROLS -->
-<div class="flex items-center justify-center gap-6 mt-8">
-
-  <!-- LEFT -->
-  <button data-carousel-prev class="text-2xl text-[#4ED2CE]">
-    ‹
-  </button>
-
-  <!-- DOTS -->
-  <div class="flex gap-2">
-    {hotspots.map((_, i) => (
-      <button
-        type="button"
-        data-carousel-dot
-        class={`h-2.5 rounded-full transition-all ${
-          i === 0 ? 'w-8 bg-[#4ED2CE]' : 'w-2.5 bg-gray-300'
-        }`}
-      />
-    ))}
+    <CarouselControls />
   </div>
 
-  <!-- RIGHT -->
-  <button data-carousel-next class="text-2xl text-[#4ED2CE]">
-    ›
-  </button>
+  <!-- Verhaal-popup -->
+  <dialog id="hotspot-story" class="hotspot-story m-auto w-[min(92vw,34rem)] overflow-hidden rounded-[2rem] bg-white p-0 shadow-2xl">
+    <div class="relative">
+      <div data-story-media class="aspect-[16/10] w-full bg-gradient-to-br from-[#0F7C82] to-[#084649]">
+        <img data-story-image alt="" class="hidden h-full w-full object-cover" />
+      </div>
+      <button type="button" data-story-close aria-label={lang === 'nl' ? 'Sluiten' : 'Close'} class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow transition hover:bg-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+    </div>
+    <div class="p-7 md:p-9">
+      <p data-story-badge class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]"></p>
+      <h3 data-story-title class="mt-2 text-2xl font-semibold leading-tight tracking-tight text-black md:text-3xl"></h3>
+      <p data-story-text class="mt-4 text-[15px] leading-relaxed text-gray-600 md:text-base"></p>
+    </div>
+  </dialog>
+</section>
 
-</div>
-<script>
-  function initHotspotCarousel() {
-    const wrapper = document.querySelector('[data-carousel-wrapper]');
-    if (!wrapper) return;
-
-   const track = wrapper.querySelector('[data-carousel-track]') as HTMLElement;
-const next = wrapper.querySelector('[data-carousel-next]') as HTMLButtonElement;
-const prev = wrapper.querySelector('[data-carousel-prev]') as HTMLButtonElement;
-const dots = Array.from(
-  wrapper.querySelectorAll('[data-carousel-dot]')
-) as HTMLElement[];
-    if (!track || !next || !prev || !dots.length) return;
-
-    const gap = 24;
-
-const getItemWidth = () =>
-  ((track.firstElementChild as HTMLElement)?.offsetWidth ?? 0) + gap;
-
-    const getMaxIndex = () => {
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      return Math.max(0, Math.round(maxScroll / getItemWidth()));
-    };
-
-    const getIndex = () => {
-      return Math.round(track.scrollLeft / getItemWidth());
-    };
-
-    const updateDots = () => {
-      const index = getIndex();
-      const maxIndex = getMaxIndex();
-
-      dots.forEach((dot, i) => {
-        // verberg overtollige dots
-        if (i > maxIndex) {
-          dot.style.display = 'none';
-          return;
-        }
-
-        dot.style.display = 'block';
-
-        if (i === index) {
-          dot.classList.add('bg-[#4ED2CE]', 'w-4');
-          dot.classList.remove('bg-gray-300', 'w-2.5');
-        } else {
-          dot.classList.remove('bg-[#4ED2CE]', 'w-4');
-          dot.classList.add('bg-gray-300', 'w-2.5');
-        }
-      });
-    };
-
-   const scrollToIndex = (i: number) => {
-  track.scrollTo({
-    left: i * getItemWidth(),
-    behavior: 'smooth'
-  });
-};
-
-    next.addEventListener('click', () => {
-      scrollToIndex(Math.min(getIndex() + 1, getMaxIndex()));
-      setTimeout(updateDots, 250);
-    });
-
-    prev.addEventListener('click', () => {
-      scrollToIndex(Math.max(getIndex() - 1, 0));
-      setTimeout(updateDots, 250);
-    });
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        scrollToIndex(i);
-        setTimeout(updateDots, 250);
-      });
-    });
-
-    track.addEventListener('scroll', updateDots, { passive: true });
-
-    updateDots();
+<style>
+  .hotspot-story::backdrop {
+    background: rgba(8, 70, 73, 0.55);
+    backdrop-filter: blur(4px);
   }
+  .hotspot-story[open] {
+    animation: hotspot-in 0.3s ease both;
+  }
+  @keyframes hotspot-in {
+    from { opacity: 0; transform: translateY(16px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+</style>
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHotspotCarousel);
-  } else {
-    initHotspotCarousel();
+<script>
+  const dialog = document.getElementById('hotspot-story') as HTMLDialogElement | null;
+  if (dialog) {
+    const img = dialog.querySelector<HTMLImageElement>('[data-story-image]')!;
+    const badge = dialog.querySelector<HTMLElement>('[data-story-badge]')!;
+    const title = dialog.querySelector<HTMLElement>('[data-story-title]')!;
+    const text = dialog.querySelector<HTMLElement>('[data-story-text]')!;
+
+    document.querySelectorAll<HTMLElement>('[data-hotspot-open]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const { src, badge: b, title: tt, story } = btn.dataset;
+        img.classList.toggle('hidden', !src);
+        if (src) {
+          img.src = src;
+          img.alt = tt ?? '';
+        }
+        badge.textContent = b ?? '';
+        title.textContent = tt ?? '';
+        text.textContent = story ?? '';
+        dialog.showModal();
+      });
+    });
+
+    dialog.querySelector('[data-story-close]')?.addEventListener('click', () => dialog.close());
+    // Klik naast de popup sluit hem ook
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
   }
 </script>

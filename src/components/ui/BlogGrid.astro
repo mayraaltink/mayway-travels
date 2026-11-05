@@ -3,17 +3,22 @@ const { lang = "en" } = Astro.props;
 
 const blogs = [
   {
-    title: "Visa Australia",
-    image: "/images/blogs/nz.jpg",
-    slug: "VisaAus"
-  },
-  {
-    title: "tips before travelling Australia",
+    title: lang === "nl" ? "Stap in een reismentaliteit" : "Step into a travel mindset",
     image: "/images/blogs/australia.jpg",
     slug: "tips-australia"
   },
   {
-    title: "How much money do you need?",
+    title: lang === "nl" ? "Aanvraag: Eerste Working Holiday in Australië" : "Application: First Working Holiday in Australia",
+    image: "/images/blogs/nz.jpg",
+    slug: "VisaAus"
+  },
+  {
+    title: lang === "nl" ? "Voorbereidingen Working Holiday" : "Preparing for your Working Holiday",
+    image: "/images/blogs/voorbereidingen.jpg",
+    slug: "voorbereidingen"
+  },
+  {
+    title: lang === "nl" ? "Het leven in Australië" : "Life in Australia",
     image: "/images/blogs/money.jpg",
     slug: "travel-budget"
   }

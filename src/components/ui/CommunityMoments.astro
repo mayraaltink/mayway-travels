@@ -16,65 +16,80 @@ function t(key: string) {
 const messages = {
   sending: t('cmoments.form.sending'),
   error: t('cmoments.form.error'),
-  size: t('cmoments.form.errorSize'),
+  photo: t('cmoments.form.errorPhoto'),
+  isNew: t('cmoments.new'),
+};
+
+// Melding per mail bij een nieuwe inzending (zelfde Web3Forms-sleutel als het contactformulier)
+const notify = {
+  accessKey: '026a1614-327e-4e4b-bdb4-d41e59fe8520',
+  adminUrl: `${Astro.url.origin}/beheer`,
 };
 ---
 
 <section id="community-moments" class="scroll-mt-20 bg-[#FFFDFA] px-3 py-16 md:px-6 md:py-24">
-  <!-- Wit vlak, zoals een Instagram-feed -->
-  <div class="mx-auto max-w-7xl rounded-[2.5rem] bg-white py-14 shadow-[0_20px_60px_rgba(0,0,0,0.06)] ring-1 ring-black/5 md:rounded-[3.5rem] md:py-20">
-  <div class="mx-auto max-w-4xl px-4 md:px-6">
+  <!-- Wit vlak (relative: de iPhone hangt over de overgang met MAY Moments erboven) -->
+  <div class="relative mx-auto max-w-7xl rounded-[2.5rem] bg-white pb-12 pt-52 shadow-[0_20px_60px_rgba(0,0,0,0.06)] ring-1 ring-black/5 md:rounded-[3.5rem] md:py-16">
 
-    <!-- Profielkop in Instagram-stijl -->
-    <div class="flex flex-col items-center gap-6 border-b border-black/10 pb-8 text-center md:flex-row md:items-center md:gap-10 md:pb-10 md:text-left">
-      <!-- Avatar met turquoise ring -->
-      <div class="shrink-0 rounded-full bg-gradient-to-tr from-[#1CABB0] via-[#4ED2CE] to-[#B8EDEB] p-[3px]">
-        <div class="flex h-24 w-24 items-center justify-center rounded-full border-4 border-white bg-white md:h-28 md:w-28">
-          <span class="font-neucha text-2xl font-bold leading-none text-[#4ED2CE] md:text-3xl">MW</span>
-        </div>
-      </div>
+    <!-- iPhone als knop om te delen, half over de overgang -->
+    <button type="button" data-open-share aria-label={t('cmoments.cta')} class="group absolute left-1/2 -top-32 z-20 flex -translate-x-1/2 items-center gap-4 md:-top-44 md:left-auto md:right-10 md:translate-x-0 lg:right-16">
+      <span class="hidden text-lg font-semibold leading-tight text-[#1CABB0] md:mt-24 md:block md:text-right">{t('cmoments.cta')}<br />→</span>
 
-      <div class="flex-1">
-        <div class="flex flex-col items-center gap-3 md:flex-row md:gap-5">
-          <h2 class="text-2xl font-semibold tracking-tight text-black md:text-3xl">{t('cmoments.title')}</h2>
-          <button
-            type="button"
-            data-open-share
-            class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#15939a]"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
-            {t('cmoments.cta')}
-          </button>
-        </div>
-        <p class="mt-2 text-sm text-gray-500">
-          <span id="cmoments-count" class="font-semibold text-gray-900">0</span> {t('cmoments.count')} · #maywaymoments
-        </p>
-        <p class="mt-3 max-w-md text-[15px] leading-relaxed text-gray-600 md:text-base">{t('cmoments.intro')}</p>
-      </div>
+      <span class="relative block rotate-6 rounded-[2rem] bg-gray-900 p-2 shadow-[0_30px_50px_rgba(15,124,130,0.35)] transition duration-300 group-hover:rotate-0 group-hover:scale-105">
+        <span class="relative flex h-[19rem] w-[9.5rem] flex-col overflow-hidden rounded-[1.5rem] bg-white">
+          <span class="absolute left-1/2 top-1.5 h-3 w-12 -translate-x-1/2 rounded-full bg-gray-900"></span>
+          <span class="pt-6 text-center text-[0.6rem] font-semibold text-gray-900">maywaycommunity</span>
+          <span class="mt-2 flex items-center gap-2 px-2.5">
+            <span class="shrink-0 rounded-full bg-gradient-to-tr from-[#1CABB0] via-[#4ED2CE] to-[#B8EDEB] p-[2px]">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-white font-neucha text-[0.6rem] font-bold text-[#4ED2CE]">MW</span>
+            </span>
+            <span class="text-[0.6rem] font-semibold leading-tight text-gray-900">YOUR Moments</span>
+          </span>
+          <span class="mx-2.5 mt-2.5 rounded-md bg-[#1CABB0] py-1.5 text-center text-[0.6rem] font-semibold text-white transition group-hover:bg-[#15939a]">+ {t('cmoments.cta')}</span>
+          <span class="mt-2.5 grid grid-cols-3 gap-px border-t border-black/10">
+            <span class="flex aspect-square items-center justify-center bg-[#E6F6F6] text-sm font-bold text-[#1CABB0]">+</span>
+            <img src="/images/australia/surf-boys.jpg" alt="" class="aspect-square w-full object-cover" />
+            <img src="/images/about/great-ocean-road.jpg" alt="" class="aspect-square w-full object-cover" />
+            <img src="/images/australia/unnamed.jpg" alt="" class="aspect-square w-full object-cover" />
+            <img src="/images/travel-plan/Sydney.jpg" alt="" class="aspect-square w-full object-cover" />
+            <img src="/images/australia/aus_main.webp" alt="" class="aspect-square w-full object-cover" />
+            <img src="/images/about/sydney-opera.jpg" alt="" class="aspect-square w-full object-cover" />
+            <img src="/images/about/Mayra-foto.jpg" alt="" class="aspect-square w-full object-cover" />
+            <img src="/images/about/reis-specialist.jpg" alt="" class="aspect-square w-full object-cover" />
+          </span>
+        </span>
+      </span>
+    </button>
+
+  <div class="mx-auto max-w-5xl px-4 md:px-8">
+
+    <!-- Kop -->
+    <div class="text-center md:pr-64 md:text-left lg:pr-72">
+      <h2 class="text-4xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">{t('cmoments.title')}</h2>
+      <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-gray-600 md:mx-0 md:text-base">{t('cmoments.intro')}</p>
     </div>
 
-    <!-- Feed: "+"-tegel eerst, daarna de momenten (worden geladen) -->
-    <div id="cmoments-grid" class="mt-1 grid grid-cols-3 gap-1 md:mt-2 md:gap-2">
+    <!-- Fotofeed: "+"-tegel eerst, daarna de momenten (worden geladen) -->
+    <div id="cmoments-grid" class="mt-10 grid grid-cols-3 gap-2 sm:grid-cols-4 md:mt-12 md:gap-3 lg:grid-cols-6">
       <button
         type="button"
         data-open-share
-        class="group flex aspect-square flex-col items-center justify-center gap-2 bg-[#E6F6F6] text-[#1CABB0] transition hover:bg-[#D2EFED] md:gap-3"
+        class="group flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-[#1CABB0]/40 bg-[#E6F6F6] text-[#1CABB0] transition hover:border-[#1CABB0] hover:bg-[#D2EFED]"
       >
-        <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#1CABB0] transition group-hover:scale-110 md:h-14 md:w-14">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+        <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#1CABB0] transition group-hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
         </span>
-        <span class="px-2 text-xs font-semibold md:text-sm">{t('cmoments.cta')}</span>
+        <span class="px-1 text-center text-xs font-semibold">{t('cmoments.card.you')}</span>
       </button>
 
-      <!-- Plaatshouders zolang er nog niets is goedgekeurd -->
-      {Array.from({ length: 5 }).map(() => (
-        <div data-placeholder class="flex aspect-square items-center justify-center bg-[#F4FBFB]">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1CABB0" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"></path></svg>
+      <!-- Plaatshouders zolang er nog niets is goedgekeurd (vullen precies één rij) -->
+      {Array.from({ length: 5 }).map((_, i) => (
+        <div data-placeholder class:list={['aspect-square items-center justify-center rounded-2xl bg-[#F4FBFB]', i < 2 ? 'flex' : i === 2 ? 'hidden sm:flex' : 'hidden lg:flex']}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1CABB0" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"></path></svg>
         </div>
       ))}
     </div>
-
-    <p id="cmoments-empty" class="mt-6 text-center text-sm text-gray-500">{t('cmoments.empty.text')}</p>
+    <p id="cmoments-empty" class="mt-5 text-center text-sm text-gray-500">{t('cmoments.empty.text')}</p>
   </div>
   </div>
 
@@ -112,7 +127,7 @@ const messages = {
             <span class="font-semibold text-gray-900">{t('cmoments.form.photo')}</span>
             <span class="text-xs">{t('cmoments.form.photoHint')}</span>
           </span>
-          <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" required class="sr-only" />
+          <input type="file" name="photo" accept="image/*" required class="sr-only" />
         </label>
 
         <div class="mt-4 grid gap-3 sm:grid-cols-2">
@@ -152,7 +167,7 @@ const messages = {
   </dialog>
 </section>
 
-<script define:vars={{ messages }}>
+<script define:vars={{ messages, notify }}>
   const grid = document.getElementById('cmoments-grid');
   const empty = document.getElementById('cmoments-empty');
   const dialog = document.getElementById('share-dialog');
@@ -180,20 +195,18 @@ const messages = {
 
       grid.querySelectorAll('[data-placeholder]').forEach((el) => el.remove());
       empty.hidden = true;
-      document.getElementById('cmoments-count').textContent = items.length;
 
+      // Momenten van de afgelopen 7 dagen krijgen een "Nieuw"-label
+      const WEEK = 7 * 24 * 60 * 60 * 1000;
       grid.insertAdjacentHTML('beforeend', items.map((m, i) => `
-        <button type="button" data-moment="${i}" class="group relative block aspect-square overflow-hidden bg-gray-100">
+        <button type="button" data-moment="${i}" class="moment-pop group relative block aspect-square overflow-hidden rounded-2xl bg-gray-100" style="animation-delay: ${Math.min(i, 12) * 70}ms">
           <img src="${escape(m.photo)}" alt="${escape(m.location)}" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-          <span class="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/0 p-3 text-center text-white opacity-0 transition group-hover:bg-black/45 group-hover:opacity-100">
-            <span class="text-xs uppercase tracking-[0.15em]">${escape(m.location)}</span>
-            <span class="text-sm font-semibold">${escape(m.name)}</span>
-          </span>
+          ${m.approvedAt && Date.now() - new Date(m.approvedAt).getTime() < WEEK ? `<span class="absolute left-2 top-2 z-10 rounded-full bg-[#1CABB0] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-white shadow">${escape(messages.isNew)}</span>` : ''}
         </button>`).join(''));
     });
 
   // Moment groot openen
-  grid.addEventListener('click', (e) => {
+  const openMoment = (e) => {
     const tile = e.target.closest('[data-moment]');
     if (!tile) return;
     const m = moments[Number(tile.dataset.moment)];
@@ -204,7 +217,8 @@ const messages = {
       ? ` <a href="https://www.instagram.com/${encodeURIComponent(m.instagram)}/" target="_blank" rel="noopener noreferrer" class="font-normal text-[#1CABB0] hover:underline">@${escape(m.instagram)}</a>`
       : '');
     momentDialog.showModal();
-  });
+  };
+  grid.addEventListener('click', openMoment);
   momentDialog.querySelector('[data-close-moment]').addEventListener('click', () => momentDialog.close());
   momentDialog.addEventListener('click', (e) => { if (e.target === momentDialog) momentDialog.close(); });
 
@@ -231,6 +245,30 @@ const messages = {
     photoLabel.classList.add('hidden');
   });
 
+  // Foto verkleinen in de browser (max. 1600 px, JPEG), zodat ook grote telefoonfoto's werken
+  async function shrinkPhoto(file) {
+    const MAX = 1600;
+    const url = URL.createObjectURL(file);
+    try {
+      const img = await new Promise((resolve, reject) => {
+        const el = new Image();
+        el.onload = () => resolve(el);
+        el.onerror = reject;
+        el.src = url;
+      });
+      const scale = Math.min(1, MAX / Math.max(img.naturalWidth, img.naturalHeight));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(img.naturalWidth * scale);
+      canvas.height = Math.round(img.naturalHeight * scale);
+      canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+      return await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.82));
+    } catch {
+      return null;
+    } finally {
+      URL.revokeObjectURL(url);
+    }
+  }
+
   // Versturen
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -240,17 +278,38 @@ const messages = {
       form.reportValidity();
       return;
     }
-    if (form.photo.files[0].size > 5 * 1024 * 1024) {
-      errorBox.textContent = messages.size;
-      errorBox.classList.remove('hidden');
-      return;
-    }
 
     submit.disabled = true;
     submit.textContent = messages.sending;
     try {
-      const res = await fetch('/api/moments', { method: 'POST', body: new FormData(form) });
+      const photo = await shrinkPhoto(form.photo.files[0]);
+      if (!photo) {
+        errorBox.textContent = messages.photo;
+        errorBox.classList.remove('hidden');
+        return;
+      }
+
+      const data = new FormData(form);
+      data.set('photo', photo, 'moment.jpg');
+      const res = await fetch('/api/moments', { method: 'POST', body: data });
       if (!res.ok) throw new Error();
+
+      // Mail naar Mayra (mag mislukken zonder dat de inzending misgaat)
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: notify.accessKey,
+          subject: 'Nieuw moment ingestuurd voor YOUR Moments',
+          from_name: 'MAY WAYS website',
+          Naam: data.get('name'),
+          Plek: data.get('location'),
+          Verhaal: data.get('story'),
+          Instagram: data.get('instagram') || '-',
+          Goedkeuren: notify.adminUrl,
+        }),
+      }).catch(() => {});
+
       fields.classList.add('hidden');
       thanks.classList.remove('hidden');
     } catch {
@@ -262,3 +321,14 @@ const messages = {
     }
   });
 </script>
+
+<style is:global>
+  /* Speelse binnenkomst van de momenten in de feed */
+  @keyframes moment-pop {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .moment-pop {
+    animation: moment-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+</style>

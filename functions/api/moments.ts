@@ -12,7 +12,7 @@ const PHOTO_TYPES: Record<string, string> = {
 
 export async function onRequestGet({ env }: Context) {
   const { results } = await env.DB
-    .prepare("SELECT id, name, location, story, instagram, photo_key FROM moments WHERE status = 'approved' ORDER BY approved_at DESC LIMIT 60")
+    .prepare("SELECT id, name, location, story, instagram, photo_key, approved_at FROM moments WHERE status = 'approved' ORDER BY approved_at DESC LIMIT 60")
     .all<MomentRow>();
 
   return json(results.map((m) => ({
@@ -22,6 +22,7 @@ export async function onRequestGet({ env }: Context) {
     story: m.story,
     instagram: m.instagram,
     photo: `/api/photo/${m.photo_key}`,
+    approvedAt: m.approved_at,
   })));
 }
 

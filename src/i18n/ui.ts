@@ -37,8 +37,8 @@ export const ui = {
 
 'home.about.preheader': 'About me',
 
-'hero.title1': 'On an adventure',
-'hero.title2': 'YOUR WAY.',
+'hero.title1': 'The power of real experiences',
+'hero.title2': 'IN YOUR WAY',
 'hero.subtitle': 'Personal travel advice & hidden gems',
 'hero.cta.primary': 'Discover more',
 'hero.cta.secondary': 'View destinations',
@@ -996,8 +996,8 @@ fiji_intro_cta: "Start planning your trip",
 
     'home.about.preheader': 'Over MAY WAYS',
 
-    'hero.title1': 'Op avontuur',
-'hero.title2': 'YOUR WAY.',
+    'hero.title1': 'De kracht van échte ervaringen',
+'hero.title2': 'IN YOUR WAY',
 'hero.subtitle': 'Beleven. Creëren. Inspireren.',
 'hero.cta.primary': 'Ontdek meer',
 'hero.cta.secondary': 'Bekijk bestemmingen',

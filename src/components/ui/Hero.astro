@@ -1,81 +1,50 @@
 ---
 // src/components/ui/Hero.astro
-// Homepagina-header: grote foto, tekst linksonder, twee knoppen en een locatielabel.
-// Kies de foto met `photo` (zie `photos` hieronder).
-import { Image } from 'astro:assets';
+// Homepagina-header: foto over de volle breedte met een teal laag, tekst in het midden, twee knoppen.
+// Foto: /public/images/australia/surf-boys.jpg (tijdelijk, tot er een betere foto is; wordt ook elders gebruikt).
 import { ui, defaultLang } from '../../i18n/ui';
-import kayak from '../../assets/Header.jpg';
-import moalboal from '../../assets/moalboal_drone_1.webp';
 
 const lang = (Astro.currentLocale || defaultLang) as keyof typeof ui;
 
 function t(key: keyof typeof ui[typeof defaultLang]) {
   return ui[lang][key];
 }
-
-const photos = {
-  kayak: {
-    src: kayak,
-    position: 'object-[center_30%]',
-    alt: 'Twee suppers op turquoise water bij Margaret River',
-    location: 'Margaret River, Western Australia',
-    maps: 'Margaret+River,+Western+Australia',
-  },
-  moalboal: {
-    src: moalboal,
-    position: 'object-center',
-    alt: 'Dronebeeld van een turquoise rivier door de jungle bij Moalboal',
-    location: 'Moalboal, Cebu, Philippines',
-    maps: 'Moalboal,+Cebu,+Philippines',
-  },
-};
-
-interface Props {
-  photo?: keyof typeof photos;
-}
-
-const { photo = 'kayak' } = Astro.props;
-const p = photos[photo];
 ---
 
-<section class="hero relative -mt-16 flex min-h-[100svh] overflow-hidden rounded-b-[60px] md:rounded-b-[80px]">
+<section class="hero relative -mt-16 flex min-h-[100svh] overflow-hidden rounded-b-[60px] bg-[#0F7C82] md:rounded-b-[80px]">
 
   <!-- Foto -->
-  <Image
-    src={p.src}
-    alt={p.alt}
-    class:list={['hero-photo absolute inset-0 h-full w-full object-cover', p.position]}
+  <img
+    src="/images/australia/surf-boys.jpg"
+    alt="Twee surfers op de rotsen bij de golven"
+    class="hero-photo absolute inset-0 h-full w-full object-cover object-center"
     loading="eager"
     fetchpriority="high"
-    widths={[828, 1280, 1920, 2560]}
-    sizes="100vw"
-    quality="high"
   />
 
-  <!-- Verloop: bovenin voor het menu, linksonder voor de tekst -->
-  <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/20 to-transparent"></div>
-  <div class="absolute inset-0 bg-gradient-to-tr from-[#04282A]/45 via-[#04282A]/10 to-transparent"></div>
+  <!-- Verloop: gelijkmatig teal voor de tekst in het midden, licht bovenin voor het menu -->
+  <div class="absolute inset-0 bg-[#0F7C82]/35"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,124,130,0.3),transparent_70%)]"></div>
+  <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/25 to-transparent"></div>
 
   <!-- Inhoud -->
   <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center justify-center px-6 pb-24 pt-32 text-center">
-    <div class="hero-content max-w-2xl">
-      <h1 class="hero-shadow text-white">
-        <span class="block text-3xl font-semibold leading-[0.95] tracking-tight md:text-4xl">
+    <div class="hero-content max-w-4xl">
+      <h1 class="hero-shadow flex flex-col items-center text-white">
+        <!-- hoofdboodschap, gecentreerd -->
+        <span class="block max-w-[16ch] text-4xl font-semibold leading-[1.05] tracking-tight [text-wrap:balance] md:text-5xl">
           {t('hero.title1')}
         </span>
-        <span class="font-neucha mt-1 block text-4xl leading-[0.95] text-[#4ED2CE] md:text-5xl">
+        <!-- handgeschreven regel, gecentreerd onder de titel -->
+        <span class="font-neucha mt-3 text-2xl leading-none text-[#E8FAF9] md:mt-4 md:text-4xl">
           {t('hero.title2')}
         </span>
       </h1>
 
-      <p class="hero-shadow mx-auto mt-4 max-w-md text-sm font-medium italic leading-relaxed tracking-[0.04em] text-white md:text-base">
-        {t('hero.subtitle')}
-      </p>
-
       <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
         <a
           href="#ontdek"
-          class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-[#1CABB0] bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#15939a] hover:bg-[#15939a]"
+          class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-sm font-semibold text-[#0F7C82] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E6F6F6]"
         >
           {t('hero.cta.primary')}
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
@@ -87,43 +56,43 @@ const p = photos[photo];
           {t('hero.cta.secondary')}
         </a>
       </div>
-
     </div>
   </div>
 
   <!-- Locatie van de foto -->
   <a
-    href={`https://www.google.com/maps/search/?api=1&query=${p.maps}`}
+    href="https://www.google.com/maps/search/?api=1&query=Bondi+Beach,+Sydney,+Australia"
     target="_blank"
     rel="noopener noreferrer"
-    class="absolute bottom-5 right-5 z-10 flex items-center gap-2 rounded-full bg-black/20 px-3 py-1.5 md:bottom-8 md:right-8 md:px-4 md:py-2 text-white/90 backdrop-blur-md transition hover:bg-black/35 md:flex"
+    class="absolute bottom-5 right-5 z-10 flex items-center gap-2 rounded-full bg-black/20 px-3 py-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/35 md:bottom-8 md:right-8 md:px-4 md:py-2"
   >
     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
       <circle cx="12" cy="10" r="3"></circle>
     </svg>
-    <span class="text-[10px] uppercase tracking-wide md:text-sm">{p.location}</span>
+    <span class="text-[10px] uppercase tracking-wide md:text-sm">Bondi Beach, Sydney</span>
   </a>
+
   <!-- doel van "Ontdek meer" -->
   <span id="ontdek" class="absolute bottom-0" aria-hidden="true"></span>
 </section>
 
 <style>
   /* langzaam inzoomen van de foto en tekst die omhoog komt */
-  .hero-photo {
-    animation: hero-zoom 14s ease-out both;
-  }
   :global(html) {
     scroll-behavior: smooth;
   }
   .hero-shadow {
     text-shadow: 0 2px 18px rgba(4, 40, 42, 0.35);
   }
+  .hero-photo {
+    animation: hero-zoom 14s ease-out both;
+  }
   .hero-content {
     animation: hero-up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
   }
   @keyframes hero-zoom {
-    from { transform: scale(1.08); }
+    from { transform: scale(1.06); }
     to { transform: scale(1); }
   }
   @keyframes hero-up {

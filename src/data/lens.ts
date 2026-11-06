@@ -9,7 +9,6 @@ export type LensPhoto = {
 
 export const lensPhotos: LensPhoto[] = [
   { file: 'portfolio/indonesia/monkey-sit.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },
-  { file: 'Header.jpg', location: { nl: 'Margaret River, West-Australië', en: 'Margaret River, Western Australia' } },
   { file: 'portfolio/marokko/street.jpg', location: { nl: 'Marokko', en: 'Morocco' } },
   { file: 'portfolio/indonesia/jungle.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },
   { file: 'portfolio/indonesia/monkey-stand.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },

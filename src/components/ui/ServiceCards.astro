@@ -19,8 +19,8 @@ const services = [
   ...s,
   href: `/${lang}/for-brands#service-${s.num}`,
   title: t(`forBrands.services.${s.num}.title`),
-  // Kernpunten die verschijnen bij hover (teksten in ui.ts, gescheiden door |)
-  points: t(`home.services.${s.num}.points`).split('|'),
+  // Twee kernzinnen die verschijnen bij hover (teksten in ui.ts)
+  text: t(`home.services.${s.num}.text`),
 }));
 ---
 
@@ -53,14 +53,9 @@ const services = [
 
             <div class="grid transition-all duration-500 md:grid-rows-[0fr] md:opacity-0 md:group-hover:grid-rows-[1fr] md:group-hover:opacity-100 md:group-focus-visible:grid-rows-[1fr] md:group-focus-visible:opacity-100">
               <div class="overflow-hidden">
-                <ul class="mt-5 space-y-2 text-sm leading-snug text-white/90 md:text-[15px]">
-                  {service.points.map((point) => (
-                    <li class="flex items-center justify-center gap-2">
-                      <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[#4ED2CE]" aria-hidden="true"></span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                <p class="mx-auto mt-5 max-w-xs text-sm leading-relaxed text-white/90 md:text-[15px]">
+                  {service.text}
+                </p>
                 <span class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15939a]">
                   {t('home.services.more')}
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>

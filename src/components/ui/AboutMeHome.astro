@@ -1,6 +1,5 @@
 ---
 import { ui, defaultLang } from '../../i18n/ui';
-import CarouselControls from './CarouselControls.astro';
 
 const lang = Astro.currentLocale || defaultLang;
 
@@ -9,35 +8,21 @@ function t(key: string) {
   return dict[key] ?? key;
 }
 
-// Foto's in de swipe (hier toevoegen of vervangen, staande foto's werken het mooist)
-const photos = [
-  { src: '/images/about/Mayra-foto.jpg', alt: 'Mayra' },
-  { src: '/images/about/reis-specialist.jpg', alt: 'Mayra' },
-  { src: '/images/about/sydney-opera.jpg', alt: 'Sydney' },
-  { src: '/images/about/great-ocean-road.jpg', alt: 'Great Ocean Road' },
-];
+// Foto naast de tekst (staande foto's werken het mooist)
+const photo = { src: '/images/about/great-ocean-road.jpg', alt: 'Great Ocean Road' };
 ---
 
 <section class="bg-gradient-to-b from-[#F3FBFB] to-[#FFFDFA] py-12 md:py-16">
   <div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-20">
 
-    <!-- Foto-swipe -->
-    <div data-carousel class="mx-auto w-full min-w-0 max-w-sm lg:max-w-[24rem]">
-      <div class="relative">
-        <div data-carousel-track class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth rounded-[2rem] shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
-          {photos.map((photo, i) => (
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              draggable="false"
-              class="aspect-[4/5] w-full shrink-0 snap-center object-cover"
-            />
-          ))}
-        </div>
-      </div>
-
-      <CarouselControls />
+    <!-- Foto -->
+    <div class="mx-auto w-full min-w-0 max-w-sm lg:max-w-[24rem]">
+      <img
+        src={photo.src}
+        alt={photo.alt}
+        loading="lazy"
+        class="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-[0_25px_60px_rgba(0,0,0,0.15)]"
+      />
     </div>
 
     <!-- Tekst -->

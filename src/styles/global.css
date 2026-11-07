@@ -21,6 +21,14 @@ body {
   font-family: "Zain", sans-serif; /* default font for body text */
 }
 
+/* Hele site op 80% vanaf tablet: tekst, ruimtes en breedtes (rem) schalen mee, zoals browserzoom op 80%.
+   Op telefoons blijft het 100% zodat tekst leesbaar blijft. */
+@media (min-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+}
+
 /* Swipes (zie src/scripts/carousel.ts): geen zichtbare scrollbalk */
 [data-carousel-track] {
   scrollbar-width: none;

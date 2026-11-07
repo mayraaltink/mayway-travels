@@ -1,7 +1,8 @@
 ---
 // src/components/ui/Hero.astro
-// Homepagina-header: foto over de volle breedte met een teal laag, tekst in het midden, twee knoppen.
-// Foto: /public/images/australia/surf-boys.jpg (tijdelijk, tot er een betere foto is; wordt ook elders gebruikt).
+// Homepagina-header: foto over de volle breedte met een donker verloop, tekst links, twee knoppen.
+// Foto: /public/images/hero/header-6.jpg (webversie van src/assets/header 6.JPG, staand, 1920px breed).
+// De suppers staan in het midden van de foto, dus de uitsnede is gecentreerd.
 import { ui, defaultLang } from '../../i18n/ui';
 
 const lang = (Astro.currentLocale || defaultLang) as keyof typeof ui;
@@ -11,37 +12,40 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 }
 ---
 
-<section class="hero relative -mt-16 flex min-h-[100svh] overflow-hidden rounded-b-[60px] bg-[#0F7C82] md:rounded-b-[80px]">
+<section class="hero relative -mt-16 flex min-h-[90svh] overflow-hidden rounded-b-[60px] bg-[#0F7C82] md:rounded-b-[80px]">
 
   <!-- Foto -->
   <img
-    src="/images/australia/surf-boys.jpg"
-    alt="Twee surfers op de rotsen bij de golven"
+    src="/images/hero/header-6.jpg"
+    alt="Luchtfoto van twee suppers op helder turquoise water met een rog eronder, Margaret River"
     class="hero-photo absolute inset-0 h-full w-full object-cover object-center"
     loading="eager"
     fetchpriority="high"
   />
 
-  <!-- Verloop: gelijkmatig teal voor de tekst in het midden, licht bovenin voor het menu -->
-  <div class="absolute inset-0 bg-[#0F7C82]/35"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,124,130,0.3),transparent_70%)]"></div>
+  <!-- Donkere laag: lichte basis, sterker aan de linkerkant achter de tekst en bovenin voor het menu -->
+  <div class="absolute inset-0 bg-black/10"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-transparent"></div>
   <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/25 to-transparent"></div>
 
   <!-- Inhoud -->
-  <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center justify-center px-6 pb-24 pt-32 text-center">
-    <div class="hero-content max-w-4xl">
-      <h1 class="hero-shadow flex flex-col items-center text-white">
-        <!-- hoofdboodschap, gecentreerd -->
-        <span class="block max-w-[16ch] text-4xl font-semibold leading-[1.05] tracking-tight [text-wrap:balance] md:text-5xl">
-          {t('hero.title1')}
-        </span>
-        <!-- handgeschreven regel, gecentreerd onder de titel -->
-        <span class="font-neucha mt-3 text-2xl leading-none text-[#E8FAF9] md:mt-4 md:text-4xl">
-          {t('hero.title2')}
-        </span>
+  <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-24 pt-32 text-left md:px-12">
+    <div class="hero-content max-w-2xl">
+      <!-- handgeschreven accent boven de titel -->
+      <p class="font-neucha mb-4 flex items-center gap-3 text-xl leading-none text-[#8EE3DF] md:text-2xl">
+        <span class="h-px w-10 bg-[#8EE3DF]" aria-hidden="true"></span>
+        {t('hero.title2')}
+      </p>
+
+      <h1 class="hero-shadow text-5xl font-bold leading-[1.02] tracking-tight text-white [text-wrap:balance] md:text-7xl">
+        {t('hero.title1')}
       </h1>
 
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+      <p class="mt-6 max-w-md text-base text-white/85 md:text-lg">
+        {t('hero.subtitle')}
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-3">
         <a
           href="#ontdek"
           class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-sm font-semibold text-[#0F7C82] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E6F6F6]"
@@ -61,7 +65,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
   <!-- Locatie van de foto -->
   <a
-    href="https://www.google.com/maps/search/?api=1&query=Bondi+Beach,+Sydney,+Australia"
+    href="https://www.google.com/maps/search/?api=1&query=Margaret+River,+Western+Australia"
     target="_blank"
     rel="noopener noreferrer"
     class="absolute bottom-5 right-5 z-10 flex items-center gap-2 rounded-full bg-black/20 px-3 py-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/35 md:bottom-8 md:right-8 md:px-4 md:py-2"
@@ -70,7 +74,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
       <circle cx="12" cy="10" r="3"></circle>
     </svg>
-    <span class="text-[10px] uppercase tracking-wide md:text-sm">Bondi Beach, Sydney</span>
+    <span class="text-[10px] uppercase tracking-wide md:text-sm">Margaret River, Australia</span>
   </a>
 
   <!-- doel van "Ontdek meer" -->
@@ -78,7 +82,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 </section>
 
 <style>
-  /* langzaam inzoomen van de foto en tekst die omhoog komt */
+  /* foto beweegt als een drone-shot (langzaam stijgen, draaien en zweven), tekst komt omhoog */
   :global(html) {
     scroll-behavior: smooth;
   }
@@ -86,14 +90,18 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
     text-shadow: 0 2px 18px rgba(4, 40, 42, 0.35);
   }
   .hero-photo {
-    animation: hero-zoom 14s ease-out both;
+    transform-origin: 50% 50%;
+    will-change: transform;
+    animation: hero-drone 40s ease-in-out infinite alternate both;
   }
   .hero-content {
     animation: hero-up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
   }
-  @keyframes hero-zoom {
-    from { transform: scale(1.06); }
-    to { transform: scale(1); }
+  /* schaal blijft minimaal 1.05 zodat de randen bij draaien en verschuiven nooit zichtbaar worden */
+  @keyframes hero-drone {
+    0%   { transform: scale(1.12) rotate(-1deg) translate(0.5%, 0.5%); }
+    50%  { transform: scale(1.08) rotate(0deg) translate(0, -0.25%); }
+    100% { transform: scale(1.05) rotate(1deg) translate(-0.5%, -0.5%); }
   }
   @keyframes hero-up {
     from { opacity: 0; transform: translateY(24px); }

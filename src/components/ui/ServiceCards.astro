@@ -1,7 +1,6 @@
 ---
 // src/components/ui/ServiceCards.astro
-// Drie servicekaarten zonder foto's: nummer, icoon, titel, twee kernzinnen en "Ontdek meer".
-// Elke kaart linkt naar het blok op de For Brands-pagina; bij hover kleurt de kaart turquoise.
+// Fotokaarten van de drie services; elke kaart linkt naar het blok op de For Brands-pagina
 import { ui, defaultLang } from '../../i18n/ui';
 
 const lang = Astro.currentLocale || defaultLang;
@@ -11,65 +10,80 @@ function t(key: string) {
   return dict[key] ?? key;
 }
 
-// Iconen (lijnstijl, 24x24): camera, telefoon, twee mensen
-const icons: Record<number, string> = {
-  1: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
-  2: '<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M9 7h6"/><path d="M9 11h4"/>',
-  3: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
-};
-
-const services = [1, 2, 3].map((num) => ({
-  num,
-  icon: icons[num],
-  href: `/${lang}/for-brands#service-${num}`,
-  title: t(`forBrands.services.${num}.title`),
-  // Twee kernzinnen (teksten in ui.ts)
-  text: t(`home.services.${num}.text`),
+// Foto's kun je hier vervangen
+const services = [
+  { num: 1, image: '/images/australia/surf-boys.jpg' },
+  { num: 2, image: '/images/about/reis-specialist.jpg' },
+  { num: 3, image: '/images/about/Mayra-foto.jpg' },
+].map((s) => ({
+  ...s,
+  href: `/${lang}/for-brands#service-${s.num}`,
+  title: t(`forBrands.services.${s.num}.title`),
+  // Twee kernzinnen die verschijnen bij hover (teksten in ui.ts)
+  text: t(`home.services.${s.num}.text`),
 }));
 ---
 
-<section class="py-20 md:py-28">
+<!-- Licht beige (zelfde als de paginakleur) -->
+<section class="bg-[#FFFDFA] py-20 md:py-28">
   <div class="mx-auto max-w-6xl px-4 md:px-6">
 
-    <!-- Kop in hetzelfde raster als de kaarten: titel boven kaart 1, alinea boven kaart 3 -->
-    <div class="grid gap-5 px-2 md:grid-cols-3 md:items-start md:gap-3 md:px-0">
-      <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:col-span-2 md:text-[2.5rem]">
-        <span class="block">{t('forBrands.services.title1')}</span>
-        <span class="block">{t('forBrands.services.title2')}</span>
-      </h2>
-      <p class="text-[15px] leading-relaxed text-gray-600 md:text-base">{t('forBrands.services.mission')}</p>
-    </div>
+    <!-- Kop -->
+    <h2 class="px-2 text-3xl font-semibold leading-[1.0] tracking-tight text-black md:px-0 md:text-[2.5rem]">
+      <span class="block">{t('forBrands.services.title1')}</span>
+      <span class="block">{t('forBrands.services.title2')}</span>
+    </h2>
 
-    <div class="mt-12 grid gap-4 md:mt-16 md:grid-cols-3 md:gap-5">
+    <!-- Titel in beeld; tekst + knop klappen open bij hover (desktop) of als de kaart midden in beeld
+         gescrold is (telefoon/tablet, via .is-active uit het script hieronder). De titel schuift dan omhoog. -->
+    <div class="mt-12 grid gap-4 md:mt-16 md:grid-cols-3 md:gap-3">
       {services.map((service) => (
-        <a
-          href={service.href}
-          class="group flex flex-col rounded-[2rem] border border-[#4ED2CE]/25 bg-[#F3FBFB] p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-transparent hover:bg-[#1CABB0] hover:shadow-[0_25px_50px_rgba(28,171,176,0.3)] focus-visible:-translate-y-1.5 focus-visible:bg-[#1CABB0] md:p-10"
-        >
-          <!-- nummer + icoon -->
-          <div class="flex items-start justify-between">
-            <span class="font-neucha text-5xl leading-none text-[#4ED2CE] transition-colors duration-500 group-hover:text-white/70 group-focus-visible:text-white/70">
-              0{service.num}
-            </span>
-            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-white text-[#1CABB0] shadow-sm transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white group-focus-visible:bg-white/15 group-focus-visible:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={service.icon} />
-            </span>
+        <a href={service.href} data-service-card class="group relative block aspect-[4/3] overflow-hidden rounded-[2rem] md:aspect-[5/6]">
+          <img
+            src={service.image}
+            alt=""
+            loading="lazy"
+            class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 group-[.is-active]:scale-105"
+          />
+          <div class="absolute inset-0 bg-gray-900/30 transition duration-500 group-hover:bg-gray-900/60 group-focus-visible:bg-gray-900/60 group-[.is-active]:bg-gray-900/60"></div>
+
+          <div class="relative flex h-full flex-col items-center justify-center px-6 text-center text-white md:px-8">
+            <!-- vanaf tablet altijd twee regels hoog, tekst verticaal gecentreerd, zodat het midden van titels van 1 en 2 regels op één lijn ligt -->
+            <h3 class="text-2xl font-semibold leading-tight tracking-tight md:flex md:min-h-[2.5em] md:items-center md:justify-center md:text-3xl">{service.title}</h3>
+
+            <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-500 group-hover:grid-rows-[1fr] group-hover:opacity-100 group-focus-visible:grid-rows-[1fr] group-focus-visible:opacity-100 group-[.is-active]:grid-rows-[1fr] group-[.is-active]:opacity-100">
+              <div class="overflow-hidden">
+                <p class="mx-auto mt-5 max-w-xs text-[15px] leading-relaxed text-white/90 md:text-base">
+                  {service.text}
+                </p>
+                <span class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15939a]">
+                  {t('home.services.more')}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </span>
+              </div>
+            </div>
           </div>
-
-          <h3 class="mt-10 text-2xl font-semibold leading-tight tracking-tight text-black transition-colors duration-500 group-hover:text-white group-focus-visible:text-white md:text-[1.7rem]">
-            {service.title}
-          </h3>
-          <p class="mb-10 mt-4 text-[15px] leading-relaxed text-gray-600 transition-colors duration-500 group-hover:text-white/85 group-focus-visible:text-white/85 md:text-base">
-            {service.text}
-          </p>
-
-          <!-- Ontdek meer, onderaan uitgelijnd -->
-          <span class="mt-auto flex items-center justify-between border-t border-[#4ED2CE]/30 pt-6 text-sm font-semibold text-[#1CABB0] transition-colors duration-500 group-hover:border-white/25 group-hover:text-white group-focus-visible:border-white/25 group-focus-visible:text-white">
-            {t('home.services.more')}
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-          </span>
         </a>
       ))}
     </div>
   </div>
 </section>
+
+<script>
+  // Apparaten zonder muis (telefoon/tablet): kaart klapt open zodra hij midden in beeld staat,
+  // en weer dicht als je verder scrolt. Met muis gebeurt dit via hover.
+  const cards = document.querySelectorAll<HTMLElement>('[data-service-card]');
+
+  if (window.matchMedia('(hover: none)').matches) {
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach((e) => e.target.classList.toggle('is-active', e.isIntersecting)),
+        // alleen de middelste strook van het scherm telt
+        { rootMargin: '-35% 0px -35% 0px' },
+      );
+      cards.forEach((card) => observer.observe(card));
+    } else {
+      cards.forEach((card) => card.classList.add('is-active'));
+    }
+  }
+</script>

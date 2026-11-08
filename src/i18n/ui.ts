@@ -42,6 +42,7 @@ export const ui = {
 'hero.subtitle': 'Personal travel advice & hidden gems',
 'hero.cta.primary': 'Discover more',
 'hero.cta.secondary': 'View destinations',
+'hero.location': 'Margaret River, Australia',
 
 // home services
 'homeServices.subtitle': 'About MAY WAYS',
@@ -1001,6 +1002,7 @@ fiji_intro_cta: "Start planning your trip",
 'hero.subtitle': 'Beleven. Creëren. Inspireren.',
 'hero.cta.primary': 'Ontdek meer',
 'hero.cta.secondary': 'Bekijk bestemmingen',
+'hero.location': 'Margaret River, Australië',
 
 
     'oceania.title.before': 'Ontdek de diversiteit',

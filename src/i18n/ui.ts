@@ -193,10 +193,10 @@ export const ui = {
 
 'forBrands.services.title1': 'Together, we bring',
 'forBrands.services.title2': 'your brand to life.',
-'forBrands.services.mission': 'We believe in the power of real experiences. In discovering new places, pushing boundaries and living moments that stay with you.',
+'forBrands.services.mission': 'I believe in the power of real experiences: discovering new places, stepping out of your comfort zone and simply daring to go.',
 'forBrands.services.more': 'Learn more',
 'home.services.more': 'Discover more',
-'home.services.1.text': 'I capture your location, event or activity the way your guests experience it. Authentic short-form videos that bring your brand to life.',
+'home.services.1.text': 'I capture the atmosphere of your location, event or activity. With authentic content that shows what makes your brand special.',
 'home.services.2.text': 'I take the management of your socials completely off your hands. From strategy and content calendar to posting and replying.',
 'home.services.3.text': 'Through my Instagram and TikTok I take my followers along to your brand. Not standard advertising, but an honest story.',
 'forBrands.services.eyebrow': 'Services',
@@ -779,8 +779,8 @@ fiji_intro_cta: "Start planning your trip",
 
 // ENGLISH
 'home.about.title': "Hi, I'm Mayra!",
-'home.about.p1': "Ever since I was young, I've been capturing special experiences. With my camera I discover hidden places and catch moments that bring people together and inspire them.",
-'home.about.p2': "I turn my creativity into authentic content that captures the feeling behind an experience and brings your brand to life. After more than 2.5 years of living in Australia, I bring my adventurous eye into all of my creative work.",
+'home.about.p1': "Ever since I was young, I've been capturing special moments. Whether it's a surprising hotspot, a unique activity or a brand that dares to be just a little different: I love discovering the story behind it and turning it into content that inspires and brings people together.",
+'home.about.p2': "After more than 2.5 years in Australia, I bring my adventurous eye into everything I create.",
 'home.about.cta': "Get to know me better",
 
 // New Zealand ////////////////////////////////////////////////////////////////
@@ -1125,10 +1125,10 @@ fiji_intro_cta: "Start planning your trip",
 
 'forBrands.services.title1': 'Samen brengen we',
 'forBrands.services.title2': 'jouw merk tot leven.',
-'forBrands.services.mission': 'Wij geloven in de kracht van échte ervaringen. In nieuwe plekken ontdekken, grenzen verleggen en momenten beleven die je bijblijven.',
+'forBrands.services.mission': 'Ik geloof in de kracht van échte ervaringen: nieuwe plekken ontdekken, buiten je comfortzone stappen en gewoon durven gaan.',
 'forBrands.services.more': 'Meer info',
 'home.services.more': 'Ontdek meer',
-'home.services.1.text': "Ik leg jouw locatie, event of activiteit vast zoals je gasten het beleven. Authentieke short-form video's die jouw merk tot leven brengen.",
+'home.services.1.text': "Ik breng de sfeer van jouw locatie, event of activiteit in beeld. Met authentieke content die laat zien wat jouw merk bijzonder maakt.",
 'home.services.2.text': 'Ik neem het beheer van je socials volledig uit handen. Van strategie en contentkalender tot posten en reageren.',
 'home.services.3.text': 'Via mijn Instagram en TikTok neem ik mijn volgers mee naar jouw merk. Geen standaard reclame, maar een eerlijk verhaal.',
 'forBrands.services.eyebrow': 'Services',
@@ -1679,8 +1679,8 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 
 // DUTCH
 'home.about.title': "Hi, ik ben Mayra!",
-'home.about.p1': "Vanaf jongs af aan leg ik bijzondere ervaringen vast. Met mijn camera ontdek ik verborgen plekken en vang ik momenten die mensen samenbrengen en inspireren.",
-'home.about.p2': "Mijn creativiteit vertaal ik naar authentieke content die het gevoel achter een ervaring vastlegt en jouw merk tot leven brengt. Na ruim 2,5 jaar in Australië te hebben gewoond, neem ik mijn avontuurlijke blik mee in mijn creatieve werk.",
+'home.about.p1': "Van jongs af aan leg ik bijzondere momenten vast. Of het nu een verrassende hotspot is, een unieke activiteit of een merk dat nét even anders durft: ik ontdek graag het verhaal erachter en vertaal het naar content die inspireert en mensen samenbrengt.",
+'home.about.p2': "Na ruim 2,5 jaar in Australië neem ik mijn avontuurlijke blik mee in alles wat ik maak.",
 'home.about.cta': "Leer mij beter kennen",
 
 // Nieuw-Zeeland ///////////////////////////////////////////////////////////////

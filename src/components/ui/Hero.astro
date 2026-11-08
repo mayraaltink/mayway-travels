@@ -29,11 +29,12 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
   <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/25 to-transparent"></div>
 
   <!-- Inhoud -->
-  <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-24 pt-32 text-left md:px-12">
-    <div class="hero-content max-w-2xl">
-      <!-- handgeschreven accent boven de titel -->
-      <p class="font-neucha mb-4 flex items-center gap-3 text-xl leading-none text-[#8EE3DF] md:text-2xl">
-        <span class="h-px w-10 bg-[#8EE3DF]" aria-hidden="true"></span>
+  <!-- Op mobiel gecentreerd, vanaf tablet links uitgelijnd -->
+  <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-24 pt-32 text-center md:px-12 md:text-left">
+    <div class="hero-content mx-auto max-w-2xl md:mx-0">
+      <!-- handgeschreven accent boven de titel (lijntje alleen bij links uitlijnen) -->
+      <p class="font-neucha mb-4 flex items-center justify-center gap-3 text-xl leading-none text-[#8EE3DF] md:justify-start md:text-2xl">
+        <span class="hidden h-px w-10 bg-[#8EE3DF] md:block" aria-hidden="true"></span>
         {t('hero.title2')}
       </p>
 
@@ -41,11 +42,11 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
         {t('hero.title1')}
       </h1>
 
-      <p class="mt-6 max-w-md text-base text-white/85 md:text-lg">
+      <p class="mx-auto mt-6 max-w-md text-base text-white/85 md:mx-0 md:text-lg">
         {t('hero.subtitle')}
       </p>
 
-      <div class="mt-10 flex flex-wrap items-center gap-3">
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">
         <a
           href="#ontdek"
           class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-sm font-semibold text-[#0F7C82] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E6F6F6]"

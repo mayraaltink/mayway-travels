@@ -2,7 +2,6 @@
 import DestinationContent from "./DestinationContent.astro";
 import HotspotCarousel from './HotspotCarousel.astro';
 import RouteAtlas from './RouteAtlas.astro';
-import WorkingHoliday from './WorkingHoliday.astro';
 import DestinationIntro from './DestinationIntro.astro';
 import BlogGrid from '../ui/BlogGrid.astro';
 import { australiaRoutes } from '../../data/routes';
@@ -35,7 +34,4 @@ function t(key: keyof typeof ui[typeof lang]) {
    <BlogGrid lang={lang} />
    <RouteAtlas map="/images/australia/australia-shape.svg" routes={australiaRoutes} />
    <HotspotCarousel />
-  
-  
-  <WorkingHoliday />
 </DestinationContent>

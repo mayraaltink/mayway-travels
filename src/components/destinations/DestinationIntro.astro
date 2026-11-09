@@ -24,7 +24,7 @@ const titleBoldKey = `${prefix}.intro.titleBold`;
 const titleBold = t(titleBoldKey) === titleBoldKey ? '' : t(titleBoldKey);
 ---
 
-<section class:list={["bg-[#FFFDFA] pb-10 md:pb-12", tight ? "pt-4 md:pt-8" : "pt-20 md:pt-28"]}>
+<section class:list={["bg-white pb-10 md:pb-12", tight ? "pt-4 md:pt-14" : "pt-20 md:pt-28"]}>
   <!-- Op desktop beginnen tekst en foutenkaart op dezelfde hoogte -->
   <div class="mx-auto grid max-w-6xl items-center lg:items-start gap-12 px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
 
@@ -47,7 +47,7 @@ const titleBold = t(titleBoldKey) === titleBoldKey ? '' : t(titleBoldKey);
 
       <ul class="relative mt-8 space-y-4">
         {mistakes.map((m) => (
-          <li class="flex items-start gap-4 text-[15px] leading-snug text-gray-600">
+          <li class="flex items-start gap-4 text-[15px] leading-snug text-gray-600 md:text-base">
             <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[#1CABB0]" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
             </span>

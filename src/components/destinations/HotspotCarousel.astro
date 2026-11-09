@@ -23,28 +23,25 @@ function imageSrc(src: string) {
   return fs.existsSync(path.join(process.cwd(), 'public', src)) ? src : null;
 }
 
+// Volgorde zoals ze op de site staan (teksten in ui.ts)
 const australiaHotspots = [
+  'reef',
   'whitsundays',
   'fraser',
-  'julian_rocks',
-  'reef',
-  'daintree',
+  'atherton',
+  'cape_tribulation',
+  'magnetic',
+  'great_ocean',
+  'kakadu',
   'blue_mountains',
   'hunter_valley',
-  'jervis_bay',
-  'mackay',
-  'great_ocean',
-  'kangaroo_island',
-  'magnetic',
-  'uluru',
-  'kakadu',
-  'ningaloo',
+  'julian_rocks',
 ];
 
 // Foto's die al op de site staan; de rest zoekt naar /images/<naam>.jpg
 const australiaPhotos: Record<string, string> = {
   reef: '/images/australia/unnamed.jpg',
-  uluru: '/images/australia/aus_main.jpg',
+  kakadu: '/images/australia/aus_main.jpg',
   great_ocean: '/images/about/great-ocean-road.jpg',
 };
 
@@ -70,19 +67,20 @@ const desc = get(descKey);
   <div data-carousel class="mx-auto max-w-6xl">
 
     <!-- Kop -->
-    <div class="grid gap-6 md:grid-cols-2 md:items-end md:gap-12">
-      <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
-        {t('hotspots_title_line1')}
+    <!-- Gecentreerd; zelfde grootte als "Avontuur in Down Under" -->
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl">
+        {lang === 'nl' ? 'Ontdek' : 'Discover'} <b class="font-semibold">Hotspots</b>
       </h2>
       {desc && desc.length > 1 && (
-        <p class="text-[15px] leading-relaxed text-gray-600 md:text-base">{desc}</p>
+        <p class="mt-6 text-[15px] leading-relaxed text-gray-600 md:text-base">{desc}</p>
       )}
     </div>
 
-    <!-- Kaarten: mobiel 1, tablet 2, desktop 4 per keer -->
+    <!-- Kaarten: mobiel 1, tablet 2, desktop 3 per keer -->
     <div data-carousel-track class="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth md:mt-14">
       {items.map((h) => (
-        <article class="relative h-[440px] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_20px_45px_rgba(0,0,0,0.12)] sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-4.5rem)/4)]">
+        <article class="relative h-[440px] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_20px_45px_rgba(0,0,0,0.12)] sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]">
           {h.src ? (
             <img src={h.src} alt={h.title} loading="lazy" draggable="false" class="absolute inset-0 h-full w-full object-cover" />
           ) : (
@@ -93,7 +91,8 @@ const desc = get(descKey);
           <div class="absolute inset-0 flex flex-col items-center justify-end p-6 text-center text-white">
             <p class="text-[11px] uppercase tracking-[0.2em] text-white/90">{h.badge}</p>
             <h3 class="mt-2 text-2xl font-semibold leading-tight tracking-tight">{h.title}</h3>
-            <p class="mt-2 line-clamp-2 text-sm text-white/80">{h.text}</p>
+            <!-- Altijd 2 regels hoog, zodat titels op elke kaart op dezelfde hoogte staan -->
+            <p class="mt-2 line-clamp-2 min-h-[2.5rem] text-sm text-white/80">{h.text}</p>
             <!-- Opent het verhaal van deze plek -->
             <button
               type="button"
@@ -127,7 +126,8 @@ const desc = get(descKey);
     <div class="p-7 md:p-9">
       <p data-story-badge class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]"></p>
       <h3 data-story-title class="mt-2 text-2xl font-semibold leading-tight tracking-tight text-black md:text-3xl"></h3>
-      <p data-story-text class="mt-4 text-[15px] leading-relaxed text-gray-600 md:text-base"></p>
+      <!-- whitespace-pre-line: een witregel (\n\n) in de tekst wordt een nieuwe alinea -->
+      <p data-story-text class="mt-4 whitespace-pre-line text-[15px] leading-relaxed text-gray-600 md:text-base"></p>
     </div>
   </dialog>
 </section>

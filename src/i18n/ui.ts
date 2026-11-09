@@ -344,29 +344,29 @@ faq_sim_a_f:
 
 ////hotspots 
 'hotspots_title_line1': 'Discover Hotspots',
-'hotspots_desc': 'From tropical islands and the largest coral reef in the world to the red Outback: swipe through the most special experiences Australia has to offer.',
-'whitsundays_story': 'The Whitsundays are 74 tropical islands in the heart of the Great Barrier Reef. Sail past secluded bays, snorkel among colourful coral and walk on the bright white sand of Whitehaven Beach, one of the most beautiful beaches in the world. Day trips and multi-day sailing tours leave from Airlie Beach.',
-'fraser_story': 'K\'gari (Fraser Island) is the largest sand island in the world. Drive a 4WD along 75 Mile Beach, swim in crystal-clear Lake McKenzie and spot wild dingoes. A true adventure for anyone who loves rugged nature.',
-'reef_story': 'The Great Barrier Reef is the largest coral reef in the world, stretching more than 2,300 kilometres along the coast of Queensland. Snorkel or dive among turtles, reef sharks and thousands of species of fish. Cairns and Port Douglas are the perfect base.',
+'hotspots_desc': 'From sand islands and coral reefs to rainforests, vineyards and wilderness: these are a few of my favourite hotspots in Australia.',
+'whitsundays_story': 'The Whitsundays are 74 tropical islands in the heart of the Great Barrier Reef. Sail past secluded bays, snorkel among colourful coral and walk on the bright white sand of Whitehaven Beach, one of the most beautiful beaches in the world. Day trips and multi-day sailing tours leave from Airlie Beach.\n\nYou can also experience the Whitsundays from the air. Jump out of a plane above the Great Barrier Reef on one of the most beautiful skydives in Australia, or take a scenic flight and spot the famous Heart Reef from above.',
+'fraser_story': 'K’gari (Fraser Island) is the largest sand island in the world. There is no asphalt, so a regular car will not get you far here. In a 4WD you drive along 75 Mile Beach, swim in crystal-clear Lake McKenzie and spot wild dingoes.\n\nThe island is known as the place for the ultimate camping trip, and most travellers stay 3 days and 2 nights. From Noosa or Rainbow Beach you drive to Inskip Point, where the barge takes you to the island in just a few minutes.',
+'reef_story': 'The Great Barrier Reef is the largest coral reef in the world, stretching more than 2,300 kilometres along the coast of Queensland. Snorkel or dive among turtles, reef sharks and more than 1,500 species of fish.\n\nBoats leave Cairns and Port Douglas for the reef every day. For the best experience, choose the Outer Reef: further offshore, with clearer water and more colourful coral. Go for a day, or stay a few nights on board a liveaboard. Never dived before? An introductory dive is a great first experience. Want more? You can get your PADI certification right here.',
 'uluru_story': 'In the middle of the red Outback rises Uluru: a sacred place for the Anangu, the traditional owners of the land. At sunrise and sunset the rock changes from orange to deep red. Combine your visit with the domes of Kata Tjuta and a hike through Kings Canyon.',
 'daintree_story': 'The Daintree Rainforest is the oldest tropical rainforest in the world, even older than the Amazon. At Cape Tribulation the jungle meets the reef. Hike through the jungle, spot crocodiles on a river cruise and look out for the rare cassowary.',
-'great_ocean_story': 'The Great Ocean Road is one of the most beautiful coastal drives in the world, winding more than 240 kilometres along the south coast of Victoria. Along the way you will see the Twelve Apostles, surf beaches and rainforests, and spot koalas in the eucalyptus trees.',
-'magnetic_story': 'Magnetic Island is a short ferry ride from Townsville and feels like a tropical secret. Walk the Forts Walk and spot wild koalas, snorkel in calm bays and enjoy the sunset at Horseshoe Bay.',
-'hunter_valley_story': 'The Hunter Valley is Australia\'s oldest wine region, about two hours\' drive from Sydney. Taste wine at local wineries, enjoy regional produce and float above the vineyards in a hot air balloon at sunrise.',
-'kakadu_story': 'Kakadu National Park in the Northern Territory is the largest national park in Australia. Discover waterfalls, ancient Aboriginal rock art and wetlands full of birds and crocodiles. A place where nature and culture come together.',
+'great_ocean_story': 'The Great Ocean Road is one of the most beautiful coastal drives in the world, winding more than 240 kilometres along the south coast of Victoria. Most travellers start in Melbourne. From there it is about 1.5 hours to Torquay, where the route officially begins. Along the way you will see the Twelve Apostles, surf beaches and rainforests, and spot koalas in the eucalyptus trees. You can drive it in one day, but with at least one night along the way you will get much more out of it.',
+'magnetic_story': 'Magnetic Island is just a 20-minute ferry ride from Townsville and feels like a tropical paradise. Walk the Forts Walk and spot wild koalas, snorkel in calm bays and enjoy the sunset at Horseshoe Bay. The ultimate place to unwind.',
+'hunter_valley_story': 'The Hunter Valley is Australia’s oldest wine region, about a two-hour drive north of Sydney. The region is known for its crisp Semillon and its Shiraz. Stop by local wineries for a tasting, or book a tour and learn all about winemaking and the story behind the vineyard.\n\nYou can easily spend a whole weekend here, for example in an Airbnb. Short on time? Book a day tour from Sydney that takes you to three boutique wineries.',
+'kakadu_story': 'Kakadu National Park in the Northern Territory is the largest national park in Australia. From Darwin it is about a 2-hour drive. Discover waterfalls, ancient Aboriginal rock art and wetlands full of birds and crocodiles. A place where nature and culture come together.',
 'ningaloo_story': 'Ningaloo Reef on the west coast lies so close to shore that you can snorkel straight from the beach. Between March and July you can swim with whale sharks here, the largest fish in the world. One of the most special experiences Australia has to offer.',
 'skydive_airlie_badge': 'Skydiving • Adrenaline • Views',
 'skydive_airlie_title': 'Skydiving Airlie Beach',
 'skydive_airlie_text': 'Jump out of a plane above the turquoise islands of the Whitsundays...',
 'skydive_airlie_story': 'Skydiving over Airlie Beach is pure adrenaline with a view you will never forget. During the free fall you see the Whitsundays, the Great Barrier Reef and the turquoise sea below you. You land right on the beach, in the heart of Airlie Beach.',
-'julian_rocks_badge': 'Diving • Turtles • Byron Bay',
+'julian_rocks_badge': 'Diving • Leopard sharks • Byron Bay',
 'julian_rocks_title': 'Julian Rocks',
 'julian_rocks_text': 'Julian Rocks near Byron Bay is one of the best dive and snorkel spots in Australia...',
-'julian_rocks_story': 'Just off the coast of Byron Bay lies Julian Rocks, a protected marine reserve and one of the best dive and snorkel spots in Australia. Swim among sea turtles, rays and harmless leopard sharks. In winter you can even see whales passing by from the boat.',
+'julian_rocks_story': 'Just off the coast of Byron Bay lies Julian Rocks, a protected marine reserve and one of the best dive and snorkel spots in Australia. Swim among sea turtles, rays and harmless leopard sharks. In winter you can even see whales passing by from the boat. Tours leave in both the morning and the afternoon and take about 2 hours.',
 'blue_mountains_badge': 'Hiking • Views • Waterfalls',
 'blue_mountains_title': 'Blue Mountains',
 'blue_mountains_text': 'A few hours from Sydney lie the Blue Mountains, full of canyons, waterfalls and endless views...',
-'blue_mountains_story': 'A few hours from Sydney lie the Blue Mountains, a world of deep canyons, waterfalls and vast eucalyptus forests that give the mountains their blue glow. Hike to the Three Sisters, descend into the Grand Canyon Walk and enjoy views that seem endless.',
+'blue_mountains_story': 'The Blue Mountains are about a 1.5-hour drive west of Sydney. They are known for the iconic Three Sisters, endless views, waterfalls and vast eucalyptus forests that give the mountains their blue glow.\n\nThe area is full of great hikes, from short walks of a few hours to longer full-day treks. A day trip works perfectly well, but if you stay for a weekend you can easily fit in several walks.',
 'kangaroo_island_badge': 'Wildlife • Nature • Road trip',
 'kangaroo_island_title': 'Kangaroo Island',
 'kangaroo_island_text': 'Kangaroo Island is a paradise for animal lovers, with kangaroos, koalas and sea lions...',
@@ -384,7 +384,7 @@ faq_sim_a_f:
 'whitsundays_title': 'The Whitsundays',
 'whitsundays_text': 'The Whitsundays are a paradise of white beaches and turquoise waters...',
 
-'fraser_badge': 'Camping • Dingoes • 4WD adventure',
+'fraser_badge': 'Camping • Dingoes • 4WD',
 'fraser_title': 'Fraser Island',
 'fraser_text': 'Fraser Island (K’gari) is the largest sand island in the world...',
 
@@ -392,7 +392,7 @@ faq_sim_a_f:
 'reef_title': 'Great Barrier Reef',
 'reef_text': 'The Great Barrier Reef is the largest coral reef system in the world...',
 
-'magnetic_badge': 'Koalas • Hiking • Sunsets',
+'magnetic_badge': 'Koalas • Tropical • Bays',
 'magnetic_title': 'Magnetic Island',
 'magnetic_text': 'Magnetic Island combines nature, wildlife and relaxed beaches...',
 
@@ -416,9 +416,19 @@ faq_sim_a_f:
 'kakadu_title': 'Kakadu National Park',
 'kakadu_text': 'Kakadu is one of Australia’s largest and most diverse national parks...',
 
-'hunter_valley_badge': 'Wine Region • Tastings • Getaway',
+'hunter_valley_badge': 'Wine Region • Tastings • Sydney getaway',
 'hunter_valley_title': 'Hunter Valley',
 'hunter_valley_text': 'Hunter Valley is Australia’s oldest wine region with stunning landscapes...',
+
+'atherton_badge': 'Waterfalls • Lakes • Wildlife',
+'atherton_title': 'Atherton Tablelands',
+'atherton_text': 'Green hills, waterfalls and crater lakes just inland from Cairns...',
+'atherton_story': 'Just inland from Cairns lie the Atherton Tablelands: green hills, cool air and one waterfall after another. Drive the Waterfalls Circuit past Millaa Millaa Falls, swim in the crater lakes Lake Eacham and Lake Barrine and spot platypus in the wild at Yungaburra.',
+
+'cape_tribulation_badge': 'Rainforest • Beaches • Crocodiles',
+'cape_tribulation_title': 'Cape Tribulation',
+'cape_tribulation_text': 'The place where the rainforest meets the reef...',
+'cape_tribulation_story': 'Cape Tribulation is about a 2.5-hour drive north of Cairns. It is the only place in the world where two World Heritage sites meet: the Daintree Rainforest runs all the way down to the beach, with the Great Barrier Reef just off the coast. That makes for a truly unique ecosystem.\n\nWalk the boardwalks through the jungle, look out for the rare cassowary, spot crocodiles on a river cruise and enjoy the deserted beaches. As beautiful as they are, a swim in the sea is not a good idea here: crocodiles and jellyfish got there first.',
 
 'hotspot_btn': 'Explore more',
 
@@ -683,22 +693,22 @@ faq_sim_a_f:
   'Common mistakes when travelling through Australia',
 
 'australia.intro.mistake1':
-  'Trying to see too much in one trip',
+  'Wanting to see the whole country in one trip',
 
 'australia.intro.mistake2':
-  "Underestimating Australia's huge distances",
+  'Seriously underestimating the distances',
 
 'australia.intro.mistake3':
-  'Ignoring the different seasons across the country',
+  'Forgetting that every region has its own season',
 
 'australia.intro.mistake4':
-  'Booking accommodation without planning your route',
+  'Booking places to stay without a clear route',
 
 'australia.intro.mistake5':
-  'Booking popular destinations last minute during peak season',
+  'Arranging popular hotspots last minute in peak season',
 
 'australia.intro.mistake6':
-  'Thinking Australia is similar to backpacking through Southeast Asia',
+  'Thinking it works like backpacking in Asia',
 
 'australia.intro.cta':
   'Discover personalised travel advice',
@@ -1271,29 +1281,29 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
   
 ///hotspots 
 'hotspots_title_line1': 'Ontdek Hotspots',
-'hotspots_desc': 'Van tropische eilanden en het grootste koraalrif ter wereld tot de rode Outback: swipe door de bijzonderste ervaringen die Australië te bieden heeft.',
-'whitsundays_story': 'De Whitsundays zijn 74 tropische eilanden midden in het Great Barrier Reef. Zeil langs verlaten baaien, snorkel tussen kleurrijk koraal en loop over het spierwitte zand van Whitehaven Beach, een van de mooiste stranden ter wereld. Vanuit Airlie Beach vertrekken dagtrips en meerdaagse zeiltochten.',
-'fraser_story': 'K\'gari (Fraser Island) is het grootste zandeiland ter wereld. Met een 4WD rijd je over 75 Mile Beach, zwem je in het kristalheldere Lake McKenzie en spot je wilde dingo\'s. Een echt avontuur voor wie van ruige natuur houdt.',
-'reef_story': 'Het Great Barrier Reef is het grootste koraalrif ter wereld en strekt zich uit over ruim 2.300 kilometer langs de kust van Queensland. Snorkel of duik tussen schildpadden, rifhaaien en duizenden soorten vissen. Cairns en Port Douglas zijn de perfecte uitvalsbasis.',
+'hotspots_desc': 'Van zandeilanden en koraalriffen tot regenwouden, wijngaarden en wildernis: dit zijn een paar van mijn favoriete hotspots in Australië.',
+'whitsundays_story': 'De Whitsundays zijn 74 tropische eilanden midden in het Great Barrier Reef. Zeil langs verlaten baaien, snorkel tussen kleurrijk koraal en loop over het spierwitte zand van Whitehaven Beach, een van de mooiste stranden ter wereld. Vanuit Airlie Beach vertrekken dagtrips en meerdaagse zeiltochten.\n\nOok vanuit de lucht kun je de Whitsundays beleven. Spring uit een vliegtuig boven het Great Barrier Reef tijdens een van de mooiste skydives van Australië, of maak een rondvlucht en spot het beroemde Heart Reef van bovenaf.',
+'fraser_story': 'K’gari (Fraser Island) is het grootste zandeiland ter wereld. Geen asfalt dus, en met een gewone auto kom je hier niet ver. Met een 4WD rijd je over 75 Mile Beach, zwem je in het kristalheldere Lake McKenzie en spot je wilde dingo’s.\n\nHet eiland staat bekend als dé plek voor een ultieme kampeertrip, en de meeste reizigers blijven 3 dagen en 2 nachten. Vanuit Noosa of Rainbow Beach rijd je naar Inskip Point, waar de pont je in een paar minuten naar het eiland brengt.',
+'reef_story': 'Het Great Barrier Reef is het grootste koraalrif ter wereld en strekt zich uit over ruim 2.300 kilometer langs de kust van Queensland. Snorkel of duik tussen schildpadden, rifhaaien en ruim 1.500 soorten vissen.\n\nVanuit Cairns en Port Douglas vertrekken dagelijks boten naar het rif. Ga je voor de mooiste ervaring, kies dan voor het Outer Reef: verder uit de kust, met helderder water en kleurrijker koraal. Je gaat voor een dag, of je blijft een paar nachten aan boord van een liveaboard. Nog nooit gedoken? Dan is een introductieduik een mooie eerste ervaring. Smaakt dat naar meer, dan kun je hier meteen je PADI-brevet halen.',
 'uluru_story': 'Midden in de rode Outback rijst Uluru op: een heilige plek voor de Anangu, de traditionele eigenaren van het land. Bij zonsopkomst en zonsondergang kleurt de rots van oranje naar diep rood. Combineer je bezoek met de rotskoepels van Kata Tjuta en een wandeling door Kings Canyon.',
 'daintree_story': 'Het Daintree Rainforest is het oudste tropische regenwoud ter wereld, nog ouder dan de Amazone. Bij Cape Tribulation ontmoet de jungle het rif. Hike door de jungle, spot krokodillen tijdens een riviercruise en zoek naar de zeldzame kasuaris.',
-'great_ocean_story': 'De Great Ocean Road is een van de mooiste kustroutes ter wereld en slingert ruim 240 kilometer langs de zuidkust van Victoria. Onderweg zie je de Twelve Apostles, surfstranden en regenwouden, en spot je koala\'s in de eucalyptusbomen.',
-'magnetic_story': 'Magnetic Island ligt op een korte boottocht van Townsville en voelt als een tropisch geheim. Loop de Forts Walk en spot koala\'s in het wild, snorkel in rustige baaien en geniet van de zonsondergang aan Horseshoe Bay.',
-'hunter_valley_story': 'De Hunter Valley is de oudste wijnregio van Australië, op zo\'n twee uur rijden van Sydney. Proef wijn bij lokale wijnhuizen, geniet van streekproducten en zweef bij zonsopkomst in een luchtballon boven de wijngaarden.',
-'kakadu_story': 'Kakadu National Park in het Northern Territory is het grootste nationale park van Australië. Ontdek watervallen, eeuwenoude Aboriginal rotstekeningen en wetlands vol vogels en krokodillen. Een plek waar natuur en cultuur samenkomen.',
+'great_ocean_story': 'De Great Ocean Road is een van de mooiste kustroutes ter wereld en slingert ruim 240 kilometer langs de zuidkust van Victoria. De meeste reizigers starten in Melbourne. Vanaf daar ben je in zo’n 1,5 uur in Torquay, waar de route officieel begint. Onderweg zie je de Twelve Apostles, surfstranden en regenwouden, en spot je koala’s in de eucalyptusbomen. De rit is in één dag te doen, maar met minstens één overnachting onderweg haal je er veel meer uit.',
+'magnetic_story': 'Magnetic Island ligt op slechts 20 minuten varen van Townsville en voelt als een tropisch paradijs. Loop de Forts Walk en spot koala’s in het wild, snorkel in rustige baaien en geniet van de zonsondergang aan Horseshoe Bay. De ultieme plek om even tot rust te komen.',
+'hunter_valley_story': 'De Hunter Valley is de oudste wijnregio van Australië, op zo’n twee uur rijden ten noorden van Sydney. De regio staat bekend om de frisse Semillon en de Shiraz. Ga langs bij lokale wijnhuizen voor een proeverij, of boek een rondleiding en leer alles over het wijnmaken en het verhaal achter de wijngaard.\n\nJe kunt hier makkelijk een heel weekend blijven, bijvoorbeeld in een Airbnb. Weinig tijd? Boek dan een dagtour vanuit Sydney, waarbij je langs drie boetiekwijnhuizen gaat.',
+'kakadu_story': 'Kakadu National Park in het Northern Territory is het grootste nationale park van Australië. Vanuit Darwin rijd je er in zo’n 2 uur naartoe. Ontdek watervallen, eeuwenoude Aboriginal rotstekeningen en wetlands vol vogels en krokodillen. Een plek waar natuur en cultuur samenkomen.',
 'ningaloo_story': 'Het Ningaloo Reef aan de westkust ligt zo dicht bij de kust dat je direct vanaf het strand kunt snorkelen. Tussen maart en juli zwem je hier met walvishaaien, de grootste vissen ter wereld. Een van de meest bijzondere ervaringen die Australië te bieden heeft.',
 'skydive_airlie_badge': 'Skydiven • Adrenaline • Uitzicht',
 'skydive_airlie_title': 'Skydiven Airlie Beach',
 'skydive_airlie_text': 'Spring uit een vliegtuig boven de turquoise eilanden van de Whitsundays...',
 'skydive_airlie_story': 'Skydiven boven Airlie Beach is pure adrenaline met een uitzicht dat je nooit vergeet. Tijdens de vrije val zie je de Whitsundays, het Great Barrier Reef en de turquoise zee onder je. Je landt direct op het strand, midden in Airlie Beach.',
-'julian_rocks_badge': 'Duiken • Schildpadden • Byron Bay',
+'julian_rocks_badge': 'Duiken • Luipaardhaaien • Byron Bay',
 'julian_rocks_title': 'Julian Rocks',
 'julian_rocks_text': 'Julian Rocks bij Byron Bay is een van de beste duik- en snorkelplekken van Australië...',
-'julian_rocks_story': 'Vlak voor de kust van Byron Bay ligt Julian Rocks, een beschermd zeereservaat en een van de beste duik- en snorkelplekken van Australië. Hier zwem je tussen zeeschildpadden, roggen en ongevaarlijke luipaardhaaien. In de winter zie je vanaf de boot zelfs walvissen voorbijtrekken.',
+'julian_rocks_story': 'Vlak voor de kust van Byron Bay ligt Julian Rocks, een beschermd zeereservaat en een van de beste duik- en snorkelplekken van Australië. Hier zwem je tussen zeeschildpadden, roggen en ongevaarlijke luipaardhaaien. In de winter zie je vanaf de boot zelfs walvissen voorbijtrekken. Tours vertrekken zowel ’s ochtends als ’s middags en duren ongeveer 2 uur.',
 'blue_mountains_badge': 'Hiken • Uitzichten • Watervallen',
 'blue_mountains_title': 'Blue Mountains',
 'blue_mountains_text': 'Op een paar uur van Sydney liggen de Blue Mountains, vol kloven, watervallen en eindeloze uitzichten...',
-'blue_mountains_story': 'Op een paar uur van Sydney liggen de Blue Mountains, een wereld van diepe kloven, watervallen en uitgestrekte eucalyptusbossen die de bergen hun blauwe gloed geven. Hike naar de Three Sisters, daal af in de Grand Canyon Walk en geniet van uitzichten die eindeloos lijken.',
+'blue_mountains_story': 'De Blue Mountains liggen op ongeveer 1,5 uur rijden ten westen van Sydney. Ze staan bekend om de iconische Three Sisters, eindeloze uitzichten, watervallen en uitgestrekte eucalyptusbossen die de bergen hun blauwe gloed geven.\n\nHet gebied zit vol vette hikes, van korte wandelingen van een paar uur tot langere tochten van een hele dag. Je kunt er prima een dagtrip van maken, maar blijf je een weekend, dan kun je makkelijk meerdere wandelingen meepakken.',
 'kangaroo_island_badge': 'Wildlife • Natuur • Roadtrip',
 'kangaroo_island_title': 'Kangaroo Island',
 'kangaroo_island_text': 'Kangaroo Island is een paradijs voor dierenliefhebbers, met kangoeroes, koala\'s en zeeleeuwen...',
@@ -1312,7 +1322,7 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 'whitsundays_title': 'The Whitsundays',
 'whitsundays_text': 'De Whitsundays zijn een paradijs van witte stranden en turquoise wateren...',
 
-'fraser_badge': 'Camping • Dingo’s • 4WD avontuur',
+'fraser_badge': 'Camping • Dingo’s • 4WD',
 'fraser_title': 'Fraser Island',
 'fraser_text': 'Fraser Island (K’gari) is het grootste zandeiland ter wereld...',
 
@@ -1320,7 +1330,7 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 'reef_title': 'Great Barrier Reef',
 'reef_text': 'Het Great Barrier Reef is het grootste koraalrif ter wereld...',
 
-'magnetic_badge': 'Koala’s • Wandelen • Zonsondergangen',
+'magnetic_badge': 'Koala’s • Tropisch • Baaien',
 'magnetic_title': 'Magnetic Island',
 'magnetic_text': 'Magnetic Island combineert natuur, wildlife en relaxte stranden...',
 
@@ -1344,9 +1354,19 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 'kakadu_title': 'Kakadu National Park',
 'kakadu_text': 'Kakadu is een van de grootste en meest diverse nationale parken van Australië...',
 
-'hunter_valley_badge': 'Wijnstreek • Proeverij • Getaway',
+'hunter_valley_badge': 'Wijnstreek • Proeverij • Sydney getaway',
 'hunter_valley_title': 'Hunter Valley',
 'hunter_valley_text': 'Hunter Valley is Australië’s oudste wijnregio met prachtige landschappen...',
+
+'atherton_badge': 'Watervallen • Meren • Wildlife',
+'atherton_title': 'Atherton Tablelands',
+'atherton_text': 'Groene heuvels, watervallen en kratermeren vlak achter Cairns...',
+'atherton_story': 'Vlak landinwaarts van Cairns liggen de Atherton Tablelands: groene heuvels, koele lucht en de ene waterval na de andere. Rijd het Waterfalls Circuit langs Millaa Millaa Falls, zwem in de kratermeren Lake Eacham en Lake Barrine en spot vogelbekdieren in het wild bij Yungaburra.',
+
+'cape_tribulation_badge': 'Regenwoud • Stranden • Krokodillen',
+'cape_tribulation_title': 'Cape Tribulation',
+'cape_tribulation_text': 'De plek waar het regenwoud het rif ontmoet...',
+'cape_tribulation_story': 'Cape Tribulation ligt zo’n 2,5 uur rijden ten noorden van Cairns. Het is de enige plek ter wereld waar twee werelderfgoederen elkaar raken: het Daintree Rainforest loopt hier tot aan het strand, met het Great Barrier Reef vlak voor de kust. Dat zorgt voor een heel bijzonder ecosysteem.\n\nLoop over de boardwalks door de jungle, zoek naar de zeldzame kasuaris, spot krokodillen tijdens een riviercruise en geniet van de verlaten stranden. Hoe mooi ze ook zijn, een duik in zee is hier geen goed idee: krokodillen en kwallen zijn je voor.',
 
 'hotspot_btn': 'Ontdek meer',
 
@@ -1588,22 +1608,22 @@ faq_sim_a_f:
   "Veelgemaakte 'fouten' bij een reis door Australië",
 
 'australia.intro.mistake1':
-  'Te veel te snel willen zien in één reis',
+  'Heel het land willen zien in één reis',
 
 'australia.intro.mistake2':
-  'De enorme afstanden onderschatten',
+  'De afstanden flink onderschatten',
 
 'australia.intro.mistake3':
-  'Geen rekening houden met de verschillende seizoenen per regio',
+  'Vergeten dat elke regio een eigen seizoen heeft',
 
 'australia.intro.mistake4':
-  'Accommodaties boeken zonder een duidelijke route',
+  'Slaapplekken boeken zonder duidelijke route',
 
 'australia.intro.mistake5':
-  'Populaire plekken in het hoogseizoen last minute boeken',
+  'Populaire hotspots in het hoogseizoen last minute regelen',
 
 'australia.intro.mistake6':
-  'Denken dat Australië hetzelfde werkt als backpacken in Azië',
+  'Denken dat het werkt als backpacken in Azië',
 
 'australia.intro.cta':
   'Ontdek persoonlijk reisadvies', 

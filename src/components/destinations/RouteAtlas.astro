@@ -67,8 +67,8 @@ function smoothPath(pts: Stop[]) {
 // Uitsnede van de kaart waar naartoe ingezoomd wordt per route (krappe rand = verder ingezoomd, hele route blijft in beeld)
 const PAD = MAP.w * 0.025;
 // mobiel: staande kaart (breedte / hoogte) met iets meer rand voor de grotere plaatsnamen
-const M_RATIO = 0.8;
-const M_PAD = MAP.w * 0.03;
+const M_RATIO = 0.6;
+const M_PAD = MAP.w * 0.012;
 const mobileOverview = (() => {
   const w = overview[2];
   const h = w / M_RATIO;
@@ -92,7 +92,7 @@ const routes = routeDefs.map((r) => {
   // schaal zodat pins op elk zoomniveau even groot ogen
   const s = w / BASE_W;
   // mobiel: staande uitsnede, zodat lange routes (oost-/westkust) veel verder inzoomen
-  const mw = Math.max(bw + M_PAD * 2, (bh + M_PAD * 2) * M_RATIO, MIN_W * 0.8);
+  const mw = Math.max(bw + M_PAD * 2, (bh + M_PAD * 2) * M_RATIO, MIN_W * 0.5);
   const mh = mw / M_RATIO;
 
   return {
@@ -155,7 +155,7 @@ const clientData = routes.map((r) => ({
     <div class="mt-12 grid items-center gap-12 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-12">
 
       <!-- Kaart (op mobiel tot bijna aan de schermrand) -->
-      <div class="-mx-4 md:mx-0">
+      <div class="-mx-6 md:mx-0">
         <svg
           class="atlas-map block h-auto w-full"
           viewBox={overview.join(" ")}
@@ -458,11 +458,12 @@ const clientData = routes.map((r) => ({
     const counterN = root.querySelector<HTMLElement>("[data-counter-n]")!;
     const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Op smalle schermen is de kaart klein: vergroot pins en plaatsnamen dan extra (max 1,8x).
+    // Op smalle schermen is de kaart klein: vergroot pins en plaatsnamen dan extra (max 2,8x).
     // Via het SVG-attribuut, zodat er rond het midden van de pin geschaald wordt.
     const pinBodies = svg.querySelectorAll<SVGGElement>(".pin-body");
     const updatePinScale = () => {
-      const k = Math.min(1.8, Math.max(1, 560 / (svg.clientWidth || 560)));
+      const small = matchMedia("(max-width: 767px)").matches;
+      const k = small ? Math.min(2.8, Math.max(1, 960 / (svg.clientWidth || 960))) : 1;
       pinBodies.forEach((body) => body.setAttribute("transform", `scale(${k.toFixed(2)})`));
     };
     updatePinScale();

@@ -612,16 +612,14 @@ const clientData = routes.map((r) => ({
       let nw: number;
       let nc = c;
       if (dir === "in") {
-        nw = Math.max(w / ZOOM_STEP, overview[2] * 0.08);
-        // Mobiel (geen verslepen): inzoomen schuift terug naar de gekozen route,
-        // zodat je na uitzoomen met de plus vanzelf weer bij de route uitkomt
+        // Mobiel (geen verslepen): ben je verder uitgezoomd dan de route,
+        // dan brengt de plus je in één keer terug naar de reisroute
         const route = routes[routeIdx];
         if (isMobile && route) {
           const rv = targetOf(route);
-          const rc = [rv[0] + rv[2] / 2, rv[1] + rv[3] / 2];
-          const t = w > rv[2] ? Math.min(1, (w - nw) / (w - rv[2])) : 1;
-          nc = [c[0] + (rc[0] - c[0]) * t, c[1] + (rc[1] - c[1]) * t];
+          if (w > rv[2] * 1.01) return flyTo(rv, false);
         }
+        nw = Math.max(w / ZOOM_STEP, overview[2] * 0.08);
       } else {
         nw = Math.min(w * ZOOM_STEP, overview[2]);
         const t = overview[2] - w > 0 ? (nw - w) / (overview[2] - w) : 1;

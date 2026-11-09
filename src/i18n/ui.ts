@@ -1408,7 +1408,7 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
     'destinations.fiji.name': 'Fiji', // Fiji
     'destinations.fiji.desc': 'Ervaar tropische eilanden, eeuwenoude tempels en een rijke, warme cultuur.',
     
-    'destinations.btn': 'Naar bestemmming',
+    'destinations.btn': 'Naar bestemming',
 
 
     // buttons

@@ -1,70 +1,100 @@
 ---
-const { lang = "en" } = Astro.props;
+// src/components/ui/BlogGrid.astro
+// Blogs op de Australië-pagina.
+// Mobiel: per categorie een swipe met grote fotokaarten. Desktop: alle blogs door elkaar in een mozaïek.
+import CarouselControls from './CarouselControls.astro';
 
+const { lang = "en" } = Astro.props;
+const nl = lang === "nl";
+
+// Categorieën in deze volgorde op mobiel
+const categories = [
+  { id: "working-holiday", name: "Working Holiday" },
+  { id: "over", name: nl ? "Over Australië" : "About Australia" },
+  { id: "reizen", name: nl ? "Reizen naar Australië" : "Travelling to Australia" },
+];
+
+// Volgorde hier = volgorde in het mozaïek op desktop (de eerste kaart is de grote)
 const blogs = [
   {
-    title: lang === "nl" ? "Stap in een reismentaliteit" : "Step into a travel mindset",
+    title: nl ? "Stap in een reismentaliteit" : "Step into a travel mindset",
     image: "/images/blogs/australia.jpg",
-    slug: "tips-australia"
+    slug: "tips-australia",
+    category: "reizen",
   },
   {
-    title: lang === "nl" ? "Aanvraag: Eerste Working Holiday in Australië" : "Application: First Working Holiday in Australia",
+    title: nl ? "Aanvraag: Eerste Working Holiday in Australië" : "Application: First Working Holiday in Australia",
     image: "/images/blogs/nz.jpg",
-    slug: "VisaAus"
+    slug: "VisaAus",
+    category: "working-holiday",
   },
   {
-    title: lang === "nl" ? "Voorbereidingen Working Holiday" : "Preparing for your Working Holiday",
+    title: nl ? "Voorbereidingen Working Holiday" : "Preparing for your Working Holiday",
     image: "/images/blogs/voorbereidingen.jpg",
-    slug: "voorbereidingen"
+    slug: "voorbereidingen",
+    category: "working-holiday",
   },
   {
-    title: lang === "nl" ? "Het leven in Australië" : "Life in Australia",
+    title: nl ? "Het leven in Australië" : "Life in Australia",
     image: "/images/blogs/money.jpg",
-    slug: "travel-budget"
+    slug: "travel-budget",
+    category: "over",
   },
   {
-    title: lang === "nl" ? "Welk seizoen is het beste om te reizen?" : "Which season is best to travel?",
+    title: nl ? "Welk seizoen is het beste om te reizen?" : "Which season is best to travel?",
     image: "/images/blogs/seizoenen.jpg",
-    slug: "beste-reisseizoen"
-  }
-];
+    slug: "beste-reisseizoen",
+    category: "reizen",
+  },
+].map((b) => ({
+  ...b,
+  href: `/${lang}/blogs/${b.slug}`,
+  categoryName: categories.find((c) => c.id === b.category)?.name ?? "",
+}));
 ---
 
 <section class="bg-[#FFFDFA] py-16 md:py-20">
-<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-5xl mx-auto px-4 md:px-6">
 
   <!-- Intro -->
-  <div class="max-w-3xl mx-auto mb-12 text-center">
+  <div class="max-w-3xl mx-auto mb-10 md:mb-12 text-center">
     <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">Blogs</p>
     <h2 class="mt-3 text-4xl md:text-5xl font-normal tracking-tight text-black">
-      {lang === "nl" ? "Reistips" : "Travel tips"} <b class="font-semibold">{lang === "nl" ? "voor Australië" : "for Australia"}</b>
+      {nl ? "Reistips" : "Travel tips"} <b class="font-semibold">{nl ? "voor Australië" : "for Australia"}</b>
     </h2>
   </div>
 
-  <!-- Blog cards -->
-  <div class="flex flex-wrap justify-center gap-6">
-
-    {blogs.map((blog) => (
-      <a
-       href={`/${lang}/blogs/${blog.slug}`}
-        class="group w-[290px] rounded-3xl overflow-hidden shadow-lg bg-white transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-      >
-
-        <img
-          src={blog.image}
-          alt={blog.title}
-          class="aspect-[4/3] w-full object-cover group-hover:scale-105 transition duration-500"
-        />
-
-        <div class="p-5">
-          <h3 class="text-lg font-semibold leading-snug text-gray-900">
-            {blog.title}
-          </h3>
+  <!-- Mobiel: categorieën onder elkaar, per categorie swipen -->
+  <div class="flex flex-col gap-12 md:hidden">
+    {categories.map((cat) => (
+      <div data-carousel>
+        <h3 class="mb-4 px-1 text-2xl font-semibold tracking-tight text-black">{cat.name}</h3>
+        <div data-carousel-track class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth">
+          {blogs.filter((b) => b.category === cat.id).map((blog) => (
+            <a href={blog.href} class="relative aspect-[4/5] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-lg">
+              <img src={blog.image} alt={blog.title} loading="lazy" draggable="false" class="absolute inset-0 h-full w-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+              <h4 class="absolute inset-x-0 bottom-0 p-6 text-2xl font-bold leading-tight text-white">{blog.title}</h4>
+            </a>
+          ))}
         </div>
+        <CarouselControls />
+      </div>
+    ))}
+  </div>
 
+  <!-- Desktop: alle blogs door elkaar in een mozaïek, de eerste kaart is breed -->
+  <div class="hidden md:grid grid-cols-3 auto-rows-[19.5rem] gap-3">
+    {blogs.map((blog, i) => (
+      <a href={blog.href} class:list={["group relative overflow-hidden rounded-2xl bg-[#0B5F64]", { "col-span-2": i === 0 }]}>
+        <img src={blog.image} alt={blog.title} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5 lg:p-6">
+          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/85">{blog.categoryName}</p>
+          <h3 class="mt-1 text-lg font-bold leading-snug text-white lg:text-xl">{blog.title}</h3>
+        </div>
       </a>
     ))}
-
   </div>
 
 </div>

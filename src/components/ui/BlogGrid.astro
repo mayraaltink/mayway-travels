@@ -17,12 +17,6 @@ const categories = [
 // Volgorde hier = volgorde in het mozaïek op desktop (de eerste kaart is de grote)
 const blogs = [
   {
-    title: nl ? "Stap in een reismentaliteit" : "Step into a travel mindset",
-    image: "/images/blogs/australia.jpg",
-    slug: "tips-australia",
-    category: "reizen",
-  },
-  {
     title: nl ? "Aanvraag: Eerste Working Holiday in Australië" : "Application: First Working Holiday in Australia",
     image: "/images/blogs/nz.jpg",
     slug: "VisaAus",
@@ -54,7 +48,7 @@ const blogs = [
 ---
 
 <section class="bg-[#FFFDFA] py-16 md:py-20">
-<div class="max-w-5xl mx-auto px-4 md:px-6">
+<div class="max-w-6xl mx-auto px-4 md:px-6">
 
   <!-- Intro -->
   <div class="max-w-3xl mx-auto mb-10 md:mb-12 text-center">
@@ -83,15 +77,16 @@ const blogs = [
     ))}
   </div>
 
-  <!-- Desktop: alle blogs door elkaar in een mozaïek, de eerste kaart is breed -->
-  <div class="hidden md:grid grid-cols-3 auto-rows-[19.5rem] gap-3">
+  <!-- Desktop: één blok. Links de eerste blog groot (2 rijen hoog),
+       rechts de tweede breed bovenin en de derde en vierde eronder naast elkaar -->
+  <div class="hidden md:grid grid-cols-4 auto-rows-[15rem] lg:auto-rows-[18rem] gap-3 lg:gap-4">
     {blogs.map((blog, i) => (
-      <a href={blog.href} class:list={["group relative overflow-hidden rounded-2xl bg-[#0B5F64]", { "col-span-2": i === 0 }]}>
+      <a href={blog.href} class:list={["group relative overflow-hidden rounded-2xl bg-[#0B5F64]", { "col-span-2 row-span-2": i === 0, "col-span-2": i === 1 }]}>
         <img src={blog.image} alt={blog.title} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
         <div class="absolute inset-x-0 bottom-0 p-5 lg:p-6">
           <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/85">{blog.categoryName}</p>
-          <h3 class="mt-1 text-lg font-bold leading-snug text-white lg:text-xl">{blog.title}</h3>
+          <h3 class:list={["mt-1 font-bold leading-snug text-white", i === 0 ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"]}>{blog.title}</h3>
         </div>
       </a>
     ))}

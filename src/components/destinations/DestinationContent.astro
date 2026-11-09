@@ -48,7 +48,7 @@ function t(key: keyof typeof ui[typeof lang]) {
 <BaseLayout title={title}>
 <!-- Mobiel: foto bovenaan, loopt door achter de menubalk (op desktop staat de foto naast de tekst) -->
 <div class="bg-[#1CABB0] lg:hidden">
-  <div class="relative h-[65svh] min-h-[420px] overflow-hidden rounded-b-[48px]">
+  <div class="relative h-[65svh] min-h-[420px] overflow-hidden">
     <img src={imageSrc} alt={imageAlt} class="absolute inset-0 h-full w-full object-cover" loading="eager" fetchpriority="high" />
     <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/30 to-transparent"></div>
 
@@ -67,7 +67,7 @@ function t(key: keyof typeof ui[typeof lang]) {
 <div class="bg-[#1CABB0] pt-10 lg:pt-32 pb-24 px-6 font-zain overflow-hidden relative">
     
     <!-- Background decorative blur -->
-    <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-[#E8FAF9] rounded-full blur-3xl opacity-60 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <div class="hidden lg:block absolute top-0 left-0 w-[500px] h-[500px] bg-[#E8FAF9] rounded-full blur-3xl opacity-60 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
     <div class="max-w-6xl mx-auto relative z-10">
       
@@ -148,7 +148,7 @@ function t(key: keyof typeof ui[typeof lang]) {
 
           <!-- Mobiel: knoppen naar de secties verderop -->
           {links.length > 0 && (
-            <div class="mt-8 flex flex-wrap gap-3 lg:hidden">
+            <div class="mt-8 flex flex-wrap justify-center gap-3 lg:hidden">
               {links.map((l) => (
                 <a href={l.href} class="rounded-full bg-[#0F7C82] px-6 py-3 text-base font-semibold text-white shadow-md transition hover:bg-[#0c6a6f]">
                   {l.label}

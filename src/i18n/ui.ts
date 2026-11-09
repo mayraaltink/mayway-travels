@@ -512,7 +512,7 @@ faq_sim_a_f:
       "Australia's east coast is without a doubt the **most popular route** among travellers. On this trip you experience the real **Aussie vibes**: vibrant cities, endless beaches, impressive nature and the relaxed **surf lifestyle** Australia is so famous for.\n\nAlong the way, lively hotspots like **Sydney**, the **Gold Coast** and **Brisbane** alternate with real surf towns such as **Byron Bay** and **Noosa**. You pass places that feel like a true mini escape, such as **Magnetic Island**, and eventually you reach the **Great Barrier Reef** and the **Whitsunday Islands**, the special places Australia is so famous for.",
 
     "routes.east.drive":
-      "The route is around 2,600 kilometres long. That adds up to about 24 to 28 hours of driving in total, but to really experience it all you'll need around **4 to 6 weeks**.\n\nTo give you an idea:\nSydney → Byron Bay = ± 8–9 hours of driving\nByron Bay → Gold Coast = ± 1 hour\nGold Coast → Brisbane = ± 1.5 hours",
+      "Distance = ± 2,600 km\nDriving time = ± 24 to 28 hours\nRecommended travel time = 4 to 6 weeks",
 
     "routes.east.expand": {
   route: "Route: Sydney to Cairns",
@@ -549,7 +549,9 @@ faq_sim_a_f:
 "routes.west.title": "North West Coast",
 "routes.west.subtitle": "Perth to Exmouth",
 "routes.west.tagline":
-  "A wild and remote coastline perfect for long road trips and freedom seekers.",
+  "The north-west coast is **rugged, remote** and still wonderfully **undiscovered**. You can drive for hours without seeing another car, and that is exactly its charm. This route is for anyone who loves true **road trip freedom** and **adventure**!\n\nIt's the ultimate road trip to do in a **campervan**. Along the way, the **Pinnacles** and the bright pink **Hutt Lagoon** alternate with the deep gorges and surreal views of **Kalbarri**. In **Shark Bay** and **Monkey Mia** you come face to face with **wild dolphins**, and you finally end up at **Ningaloo Reef**. There you snorkel straight from the beach and swim with **whale sharks**, manta rays and turtles.",
+"routes.west.drive":
+  "Direct distance = ± 1,250 km\nWith detours = ± 1,700 km\nDriving time = ± 20 hours\nRecommended travel time = 2.5 to 3 weeks",
 "routes.west.expand": {
   route: "Route: Perth to Exmouth",
 
@@ -566,7 +568,9 @@ faq_sim_a_f:
 "routes.south.title": "South West Coast",
 "routes.south.subtitle": "Perth to Esperance",
 "routes.south.tagline":
-  "Vineyards, giant trees and some of Australia's whitest beaches.",
+  "The south-west coast is one of the **most varied routes** in Australia. A route full of **adventure**, **surf spots** and amazing **campsites** to experience the real **Aussie lifestyle**.\n\nFrom Perth it's about a **3-hour** drive to the wine region of **Margaret River**. One moment you're walking through the **vineyards**, the next you're standing among **sixty-metre-tall karri trees** around **Pemberton**, and at the end of the route you share the paradise of **Lucky Bay** with **kangaroos**.",
+"routes.south.drive":
+  "Direct distance = ± 700 km\nAlong the coast = ± 1,300 km\nDriving time = ± 16 hours\nRecommended travel time = 10 to 18 days",
 "routes.south.expand": {
   route: "Route: Perth to Esperance",
   distance: "Distance: ±1,100 km",
@@ -582,7 +586,9 @@ faq_sim_a_f:
 "routes.red.title": "Red Centre",
 "routes.red.subtitle": "Alice Springs region",
 "routes.red.tagline":
-  "The spiritual heart of Australia with iconic desert landscapes.",
+  "In the middle of Australia lies **Uluru**, the sacred rock of the Aboriginal **Anangu** people. **Iconic, vast and special**, to say the least. The Red Centre is **far from everything**, so most travellers don't just drive past in their own 4WD, unless they're crossing the whole country. That's why many people choose an **organised tour** from **Alice Springs** or from **Ayers Rock Airport**, the airport right next to Uluru.\n\nA standard trip usually takes **4 days and 3 nights**. You hike along the rim of **Kings Canyon**, walk between the domes of **Kata Tjuta** and end the day with a **sunset barbecue** overlooking Uluru. At night you sleep in a **swag** or tent **under the stars**, in the middle of the outback.",
+"routes.red.drive":
+  "From Alice Springs Airport = ± 1,300 km · ± 15 hrs\nFrom Ayers Rock Airport = ± 700 km · ± 8 hrs\nRecommended travel time = 3 to 5 days",
 "routes.red.expand": {
   route: "Route: Alice Springs region",
   distance: "Distance: varies",
@@ -597,7 +603,9 @@ faq_sim_a_f:
 "routes.top.title": "Top End",
 "routes.top.subtitle": "Darwin & Kakadu",
 "routes.top.tagline":
-  "Tropical northern Australia filled with waterfalls, wildlife and national parks.",
+  "The Top End is Australia's **tropical north** and one of the coolest **outback adventures** you can have. Here, ancient **Aboriginal culture** meets the wild nature of **Kakadu**, the country's largest national park. Go in the **dry season (May to October)**, when most roads and swimming spots are open.\n\nLook out for **jumping crocodiles** on a cruise along the **Adelaide River**, swim beneath the waterfalls of **Litchfield** and at **Gunlom Falls**, take a boat trip on **Yellow Water** full of birds and crocs, and cruise or canoe through stunning **Katherine Gorge**.",
+"routes.top.drive":
+  "Total route = ± 1,000 km\nDriving time = ± 12 hours\nRecommended travel time = 7 to 10 days",
 "routes.top.expand": {
   route: "Route: Darwin region",
   distance: "Distance: regional travel",
@@ -1557,7 +1565,7 @@ faq_sim_a_f:
 
     // Turquoise blokje naast de introductie; regels met "=" worden rijen (traject = rijtijd)
     "routes.east.drive":
-      "De route is zo’n 2600 kilometer lang. Dat is zo’n 24 tot 28 uur rijden in totaal, maar om alles echt te beleven heb je zo’n **4 tot 6 weken** nodig.\n\nOm jou een idee te geven:\nSydney → Byron Bay = ± 8–9 uur rijden\nByron Bay → Gold Coast = ± 1 uur\nGold Coast → Brisbane = ± 1,5 uur",
+      "Afstand = ± 2.600 km\nRijtijd = ± 24 tot 28 uur\nAanbevolen reistijd = 4 tot 6 weken",
 
     "routes.east.expand":
       "Route: Sydney tot Cairns\nAfstand: ±2.600 km\nReistijd: 4-6 weken\n\nHighlights:\n• Opera House & Bondi Beach in Sydney\n• Surfen en de vuurtoren van Byron Bay\n• Stranden van de Gold Coast\n• Noosa National Park\n• 4WD over Fraser Island\n• Whitehaven Beach in de Whitsundays\n• Snorkelen op het Great Barrier Reef\n• Koala’s spotten op Magnetic Island\n• Watervallen in de Atherton Tablelands\n• Regenwoud tot aan zee in Cape Tribulation",
@@ -1578,28 +1586,36 @@ faq_sim_a_f:
     "routes.west.title": "Noord-West kust",
 "routes.west.subtitle": "Perth naar Exmouth",
 "routes.west.tagline":
-  "Een ruige en rustige kustlijn, perfect voor lange roadtrips en vrijheid.",
+  "De noordwestkust is **ruig, afgelegen** en nog lekker **onontdekt**. Hier rijd je urenlang zonder een andere auto tegen te komen, en dat is precies de charme. Deze route is voor wie houdt van echte **roadtrip-vrijheid** en **avontuur**!\n\nHet is dé roadtrip om met een **camper** te doen. Onderweg wisselen de **Pinnacles** en het knalroze **Hutt Lagoon** zich af met de diepe kloven en bizarre uitzichten van **Kalbarri**. In **Shark Bay** en **Monkey Mia** kom je oog in oog met **wilde dolfijnen**, en uiteindelijk eindig je bij **Ningaloo Reef**. Daar snorkel je vanaf het strand en zwem je met **walvishaaien**, manta’s en schildpadden.",
+"routes.west.drive":
+  "Afstand direct = ± 1.250 km\nMet omwegen = ± 1.700 km\nRijtijd = ± 20 uur\nAanbevolen reistijd = 2,5 tot 3 weken",
 "routes.west.expand":
   "Route: Perth naar Exmouth\nAfstand: ±1.250 km\nReistijd: 2-3 weken\n\nHighlights:\n• Minder toeristisch en avontuurlijk\n• Coral Coast & Ningaloo Reef\n• Rottnest Island quokka’s\n• Eindeloze stranden en vrijheid",
 
 "routes.south.title": "Zuid-West kust",
 "routes.south.subtitle": "Perth naar Esperance",
 "routes.south.tagline":
-  "Wijngaarden, reuzenbomen en de witste stranden van Australië.",
+  "De zuidwestkust is een van de **meest gevarieerde routes** van Australië. Een route vol **avontuur**, **surfspots** en geweldige **kampeerplekken** om de échte **Aussie lifestyle** te beleven.\n\nVanaf Perth rijd je in zo’n **3 uur** naar het wijngebied van **Margaret River**. Het ene moment loop je daar tussen de **wijngaarden**, het volgende sta je tussen de **zestig meter hoge karribomen** rond **Pemberton**, en aan het eind van de route deel je het paradijs van **Lucky Bay** met **kangoeroes**.",
+"routes.south.drive":
+  "Afstand direct = ± 700 km\nVia de kust = ± 1.300 km\nRijtijd = ± 16 uur\nAanbevolen reistijd = 10 tot 18 dagen",
 "routes.south.expand":
   "Route: Perth naar Esperance\nAfstand: ±1.100 km\nReistijd: 10-14 dagen\n\nHighlights:\n• Margaret River wijn & surf\n• Reuzenbomen bij Denmark\n• Walvissen spotten in Albany\n• Kangoeroes op het strand van Lucky Bay",
 
 "routes.red.title": "Red Centre",
 "routes.red.subtitle": "Alice Springs regio",
 "routes.red.tagline":
-  "Het spirituele hart van Australië met iconische woestijnlandschappen.",
+  "Midden in Australië ligt **Uluru**, de heilige rots van de Aboriginal **Anangu**. **Iconisch, groots en bijzonder**, dat kun je wel stellen. Het Red Centre ligt **ver van alles af**, dus de meeste reizigers komen hier niet zomaar met hun eigen 4WD langs, tenzij ze het hele land doorkruisen. Daarom kiezen veel mensen voor een **georganiseerde tour** vanuit **Alice Springs** of vanaf **Ayers Rock Airport**, het vliegveld vlak bij Uluru.\n\nEen standaardtrip duurt vaak **4 dagen en 3 nachten**. Je hiket over de rand van **Kings Canyon**, wandelt tussen de koepels van **Kata Tjuta** en sluit de dag af met een **barbecue bij zonsondergang**, met uitzicht op Uluru. ’s Nachts slaap je in een **swag** of campingtent **onder de sterrenhemel**, midden in de outback.",
+"routes.red.drive":
+  "Vanaf Alice Springs Airport = ± 1.300 km · ± 15 uur\nVanaf Ayers Rock Airport = ± 700 km · ± 8 uur\nAanbevolen reistijd = 3 tot 5 dagen",
 "routes.red.expand":
   "Route: regio Alice Springs\nAfstand: variabel\nReistijd: 4-7 dagen\n\nHighlights:\n• Uluru zonsopkomst & zonsondergang\n• Kata Tjuta rotsformaties\n• Kings Canyon hikes\n• Outback sterrenhemel",
 
 "routes.top.title": "Top End",
 "routes.top.subtitle": "Darwin & Kakadu",
 "routes.top.tagline":
-  "Tropisch Noord-Australië vol watervallen, wildlife en nationale parken.",
+  "De Top End is het **tropische noorden** van Australië en een van de vetste **outback-avonturen** die je kunt beleven. Hier komt de eeuwenoude **Aboriginal cultuur** samen met de wilde natuur van **Kakadu**, het grootste nationale park van het land. Ga in het **droge seizoen (mei t/m oktober)**, want dan zijn de meeste wegen en zwemplekken open.\n\nGa op zoek naar **springende krokodillen** tijdens een cruise over de **Adelaide River**, zwem onder de watervallen van **Litchfield** en bij **Gunlom Falls**, maak een boottocht over **Yellow Water** vol vogels en krokodillen en vaar of kano door prachtige **Katherine Gorge**.",
+"routes.top.drive":
+  "Totale route = ± 1.000 km\nRijtijd = ± 12 uur\nAanbevolen reistijd = 7 tot 10 dagen",
 "routes.top.expand":
   "Route: Darwin regio\nAfstand: regionaal reizen\nReistijd: 5-7 dagen\n\nHighlights:\n• Kakadu National Park\n• Litchfield watervallen\n• Krokodillenrivieren\n• Tropisch moessonklimaat",
 

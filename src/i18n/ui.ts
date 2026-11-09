@@ -667,13 +667,14 @@ faq_sim_a_f:
 /////////////reis down under ////////////////////
 // Australia Intro
 'australia.intro.label': 'Australia',
-'australia.intro.title': 'Adventure Down Under',
+'australia.intro.title': 'Adventure',
+'australia.intro.titleBold': 'Down Under',
 
 'australia.intro.text1':
-  'Australia is one of the most impressive and diverse countries in the world. Covering an area almost 21 times larger than the Netherlands, every region feels like a completely different destination. From tropical rainforests and white-sand beaches to vast deserts, breathtaking mountain ranges and vibrant cities, no two road trips are the same.',
+  'After 2.5 years in Australia I have seen a lot, but seen it all? Not even close! How could I, in a country more than 180 times the size of the Netherlands and incredibly diverse?',
 
 'australia.intro.text2':
-  'Because of its enormous size, Australia has 8 different climate zones and 3 time zones. A domestic flight from Perth to Sydney takes around five hours, roughly the same as flying from the Netherlands to Egypt. That enormous size and diversity are exactly what make Australia so special, but they can also make planning your trip quite overwhelming. Let yourself be inspired!',
+  'Every region feels like a new destination: tropical rainforest, pearl-white beaches, endless deserts, rugged mountains and vibrant cities. The country has 8 climate zones and 3 time zones, and a flight from Perth to Sydney easily takes 4 to 5 hours, as long as flying from the Netherlands to Egypt. That enormous size is what makes Australia so special, but it also makes planning your trip quite overwhelming. Let yourself be inspired!',
 
 'australia.intro.text3':
   "Australia's size and diversity are exactly what make it so special, but they can also make planning your trip feel overwhelming. Which route best suits your travel style? How much time do you really need? And where can you find those unique accommodations, hidden beaches and local gems that aren't in the guidebooks?",
@@ -1571,13 +1572,14 @@ faq_sim_a_f:
 ////Reis down under////////////
 // Australia Intro
 'australia.intro.label': 'Australië',
-'australia.intro.title': 'Avontuur in Down Under',
+'australia.intro.title': 'Avontuur',
+'australia.intro.titleBold': 'in Down Under',
 
 'australia.intro.text1':
-  'Australië is één van de meest indrukwekkende én veelzijdige landen ter wereld. Met een oppervlakte die bijna 21 keer groter is dan Nederland voelt iedere regio als een compleet nieuwe bestemming. Van tropische regenwouden en parelwitte stranden tot uitgestrekte woestijnen, indrukwekkende berggebieden en bruisende wereldsteden: geen enkele route is hetzelfde.',
+  'Na 2,5 jaar Australië ben ik een heel end gekomen, maar uitgekeken? Nog lang niet! Hoe kan dat ook anders, in een land dat ruim 180 keer zo groot is als Nederland én ontzettend veelzijdig?',
 
 'australia.intro.text2':
-  'Door de enorme afstanden kent Australië 8 verschillende klimaatzones en 3 tijdzones. Een binnenlandse vlucht van Perth naar Sydney duurt ongeveer vijf uur, vergelijkbaar met een vlucht van Nederland naar Egypte. Juist die enorme grootte en diversiteit maken Australië zo bijzonder, maar kunnen het plannen van je reis ook behoorlijk overweldigend maken. Laat je inspireren!',
+  'Elke regio voelt als een nieuwe bestemming: tropisch regenwoud, parelwitte stranden, eindeloze woestijnen, ruige bergen en bruisende steden. Het land telt 8 klimaatzones en 3 tijdzones, en een vlucht van Perth naar Sydney duurt al snel 4 tot 5 uur, net zo lang als van Nederland naar Egypte. Die enorme grootte maakt Australië zo bijzonder, maar het plannen van je reis ook best overweldigend. Laat je inspireren!',
 
 'australia.intro.text3':
   'Juist die enorme grootte en diversiteit maken Australië zo bijzonder, maar kunnen het plannen van je reis ook behoorlijk overweldigend maken. Welke route past het beste bij jouw reisstijl? Hoeveel tijd heb je écht nodig? En waar vind je die unieke accommodaties, verborgen stranden en lokale hotspots die je niet in de standaard reisgidsen vindt?',

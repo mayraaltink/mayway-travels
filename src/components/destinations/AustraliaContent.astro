@@ -37,7 +37,7 @@ function t(key: keyof typeof ui[typeof lang]) {
 >
   <!-- The carousel gets injected into the <slot /> of DestinationContent -->
    <div id="blogs" class="scroll-mt-16"><BlogGrid lang={lang} /></div>
-   <DestinationIntro prefix="australia" />
+   <DestinationIntro prefix="australia" tight />
    <div id="reisroutes" class="scroll-mt-16"><RouteAtlas map="/images/australia/australia-shape.svg" routes={australiaRoutes} /></div>
    <div id="hotspots" class="scroll-mt-16"><HotspotCarousel /></div>
 </DestinationContent>

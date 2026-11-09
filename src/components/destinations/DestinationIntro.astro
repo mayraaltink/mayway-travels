@@ -6,9 +6,11 @@ import { ui, defaultLang } from '../../i18n/ui';
 
 export interface Props {
   prefix: string;
+  // Minder ruimte bovenaan, als er direct een ander blok boven staat
+  tight?: boolean;
 }
 
-const { prefix } = Astro.props;
+const { prefix, tight = false } = Astro.props;
 const lang = (Astro.currentLocale || defaultLang) as keyof typeof ui;
 
 function t(key: string) {
@@ -17,15 +19,19 @@ function t(key: string) {
 }
 
 const mistakes = [1, 2, 3, 4, 5, 6].map((n) => t(`${prefix}.intro.mistake${n}`));
+// Optioneel dikgedrukt deel achter de titel (bijv. "Avontuur **in Down Under**")
+const titleBoldKey = `${prefix}.intro.titleBold`;
+const titleBold = t(titleBoldKey) === titleBoldKey ? '' : t(titleBoldKey);
 ---
 
-<section class="bg-[#FFFDFA] pb-10 pt-20 md:pb-12 md:pt-28">
-  <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
+<section class:list={["bg-[#FFFDFA] pb-10 md:pb-12", tight ? "pt-4 md:pt-8" : "pt-20 md:pt-28"]}>
+  <!-- Op desktop beginnen tekst en foutenkaart op dezelfde hoogte -->
+  <div class="mx-auto grid max-w-6xl items-center lg:items-start gap-12 px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
 
-    <!-- Verhaal -->
-    <div>
-      <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
-        {t(`${prefix}.intro.title`)}
+    <!-- Verhaal (zelfde grootte als "Reistips voor Australië"); op desktop iets lager dan de bovenkant van de kaart -->
+    <div class="lg:pt-6">
+      <h2 class:list={["text-4xl leading-[1.05] tracking-tight text-black md:text-5xl", titleBold ? "font-normal" : "font-semibold"]}>
+        {t(`${prefix}.intro.title`)} {titleBold && <b class="font-semibold">{titleBold}</b>}
       </h2>
       <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
         <p>{t(`${prefix}.intro.text1`)}</p>

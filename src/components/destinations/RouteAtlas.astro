@@ -143,9 +143,11 @@ const clientData = routes.map((r) => ({
 }));
 ---
 
-<section class="bg-white pb-10 pt-20 md:pb-12 md:pt-28" data-route-atlas>
+<section class="bg-white pb-10 md:pb-12" data-route-atlas>
   <script type="application/json" data-atlas-json set:html={JSON.stringify(clientData)} />
 
+  <!-- Bovenste deel (titel + routekeuze) op een eigen lichte achtergrond, los van het route-verhaal eronder -->
+  <div class="bg-[#F1F7F7] py-12 md:py-14">
   <div class="mx-auto max-w-6xl px-6">
 
     <!-- Titel: op mobiel gecentreerd, vanaf tablet links -->
@@ -164,7 +166,7 @@ const clientData = routes.map((r) => ({
           type="button"
           role="tab"
           aria-selected="false"
-          class="route-tab flex items-center justify-center gap-3 rounded-full border-2 border-transparent bg-[#EAF4F4] px-4 py-2 text-center md:px-4 md:py-3"
+          class="route-tab flex items-center justify-center gap-3 rounded-full border-2 border-transparent bg-white px-4 py-2 text-center md:px-4 md:py-3"
           data-route-btn={i}
         >
           <span>
@@ -174,9 +176,12 @@ const clientData = routes.map((r) => ({
         </button>
       ))}
     </div>
+  </div>
+  </div>
 
+  <div class="mx-auto max-w-6xl px-6">
     <!-- Route-info + kaart; desktop iets breder dan de tekst, zodat kaart en foto's groter worden -->
-    <div class="mt-10 md:mt-12 xl:-mx-12 2xl:-mx-24">
+    <div class="pt-14 md:pt-16 xl:-mx-12 2xl:-mx-24">
 
     <!-- Over de route: links titel + route, rechts op een rijtje wat je onderweg ziet -->
     <div data-about-wrap class="scroll-mt-20">
@@ -353,7 +358,7 @@ const clientData = routes.map((r) => ({
   }
   .route-tab:hover {
     transform: translateY(-2px);
-    background-color: #dcecec;
+    background-color: #e3f0f0;
   }
   /* gekozen route: zelfde petrol als de projecten-achtergrond */
   .route-tab[aria-selected="true"] {

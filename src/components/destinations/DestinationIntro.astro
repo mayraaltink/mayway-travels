@@ -18,7 +18,13 @@ function t(key: string) {
   return dict[key] ?? key;
 }
 
-const mistakes = [1, 2, 3, 4, 5, 6].map((n) => t(`${prefix}.intro.mistake${n}`));
+// **woord** in de tekst wordt dikgedrukt (rest wordt veilig ge-escaped)
+function withBold(s: string) {
+  const esc = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return esc.replace(/\*\*(.+?)\*\*/g, '<b class="font-semibold text-black">$1</b>');
+}
+
+const mistakes =[1, 2, 3, 4, 5, 6].map((n) => t(`${prefix}.intro.mistake${n}`));
 // Optioneel dikgedrukt deel achter de titel (bijv. "Avontuur **in Down Under**")
 const titleBoldKey = `${prefix}.intro.titleBold`;
 const titleBold = t(titleBoldKey) === titleBoldKey ? '' : t(titleBoldKey);
@@ -34,8 +40,8 @@ const titleBold = t(titleBoldKey) === titleBoldKey ? '' : t(titleBoldKey);
         {t(`${prefix}.intro.title`)} {titleBold && <b class="font-semibold">{titleBold}</b>}
       </h2>
       <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
-        <p>{t(`${prefix}.intro.text1`)}</p>
-        <p>{t(`${prefix}.intro.text2`)}</p>
+        <p set:html={withBold(t(`${prefix}.intro.text1`))} />
+        <p set:html={withBold(t(`${prefix}.intro.text2`))} />
       </div>
     </div>
 

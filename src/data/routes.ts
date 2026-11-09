@@ -83,6 +83,7 @@ export const australiaRoutes: RouteDef[] = [
       { name: "Darwin", img: au("top-1"), x: 467, y: 86 },
       { name: "Crocodiles River", img: au("top-7"), x: 484, y: 89 },
       { name: "Kakadu National Park", img: au("top-2"), x: 502, y: 91 },
+      { name: "Yellow Water", img: au("top-yellow-water"), x: 496, y: 95 },
       { name: "Gunlom Falls", img: au("top-4"), x: 498, y: 105 },
       { name: "Nitmiluk Gorge", img: au("top-6"), x: 494, y: 119 },
       { name: "Florence Falls", img: au("top-5"), x: 476, y: 104 },

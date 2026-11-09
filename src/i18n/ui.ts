@@ -580,7 +580,7 @@ faq_sim_a_f:
 },
 
 "routes.red.title": "Red Centre",
-"routes.red.subtitle": "Uluru",
+"routes.red.subtitle": "Alice Springs region",
 "routes.red.tagline":
   "The spiritual heart of Australia with iconic desert landscapes.",
 "routes.red.expand": {
@@ -1590,7 +1590,7 @@ faq_sim_a_f:
   "Route: Perth naar Esperance\nAfstand: ±1.100 km\nReistijd: 10-14 dagen\n\nHighlights:\n• Margaret River wijn & surf\n• Reuzenbomen bij Denmark\n• Walvissen spotten in Albany\n• Kangoeroes op het strand van Lucky Bay",
 
 "routes.red.title": "Red Centre",
-"routes.red.subtitle": "Uluru",
+"routes.red.subtitle": "Alice Springs regio",
 "routes.red.tagline":
   "Het spirituele hart van Australië met iconische woestijnlandschappen.",
 "routes.red.expand":
@@ -1627,10 +1627,10 @@ faq_sim_a_f:
 'australia.intro.titleBold': 'in Down Under',
 
 'australia.intro.text1':
-  'Na 2,5 jaar Australië ben ik een heel end gekomen, maar uitgekeken? Nog lang niet! Hoe kan dat ook anders, in een land dat ruim 180 keer zo groot is als Nederland én ontzettend veelzijdig?',
+  'Na **2,5 jaar Australië** ben ik een heel end gekomen, maar uitgekeken? **Nog lang niet!** Hoe kan dat ook anders, in een land dat ruim **180 keer zo groot** is als Nederland én **ontzettend veelzijdig**?',
 
 'australia.intro.text2':
-  'Elke regio voelt als een nieuwe bestemming: tropisch regenwoud, parelwitte stranden, eindeloze woestijnen, ruige bergen en bruisende steden. Het land telt 8 klimaatzones en 3 tijdzones, en een vlucht van Perth naar Sydney duurt al snel 4 tot 5 uur, net zo lang als van Nederland naar Egypte. Die enorme grootte maakt Australië zo bijzonder, maar het plannen van je reis ook best overweldigend. Laat je inspireren!',
+  'Elke regio voelt als een **nieuwe bestemming**: tropisch regenwoud, parelwitte stranden, eindeloze woestijnen, ruige bergen en bruisende steden. Het land telt **8 klimaatzones** en **3 tijdzones**, en een vlucht van Perth naar Sydney duurt al snel **4 tot 5 uur**, net zo lang als van Nederland naar Egypte. Die enorme grootte maakt Australië zo bijzonder, maar het plannen van je reis ook best overweldigend. **Laat je inspireren!**',
 
 'australia.intro.text3':
   'Juist die enorme grootte en diversiteit maken Australië zo bijzonder, maar kunnen het plannen van je reis ook behoorlijk overweldigend maken. Welke route past het beste bij jouw reisstijl? Hoeveel tijd heb je écht nodig? En waar vind je die unieke accommodaties, verborgen stranden en lokale hotspots die je niet in de standaard reisgidsen vindt?',

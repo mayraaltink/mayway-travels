@@ -460,10 +460,11 @@ const clientData = routes.map((r) => ({
 
     // Op smalle schermen is de kaart klein: vergroot pins en plaatsnamen dan extra (max 2,4x).
     // Via het SVG-attribuut, zodat er rond het midden van de pin geschaald wordt.
+    // Op desktop worden rondjes, cijfers en plaatsnamen 1,4x vergroot.
     const pinBodies = svg.querySelectorAll<SVGGElement>(".pin-body");
     const updatePinScale = () => {
       const small = matchMedia("(max-width: 767px)").matches;
-      const k = small ? Math.min(2.4, Math.max(1, 820 / (svg.clientWidth || 820))) : 1;
+      const k = small ? Math.min(2, Math.max(1, 690 / (svg.clientWidth || 690))) : 1.4;
       pinBodies.forEach((body) => body.setAttribute("transform", `scale(${k.toFixed(2)})`));
     };
     updatePinScale();

@@ -11,15 +11,9 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 }
 
 // Data for our markers (Positions are relative percentages based on the SVG map below)
+// Fiji staat er tijdelijk niet tussen; terugzetten kan met:
+// { id: 'fiji', top: '70%', left: '96%', name: t('destinations.fiji.name'), desc: t('destinations.fiji.desc'), img: '/images/fiji/fiji_main.webp' },
 const destinations = [
-{
-  id: 'fiji',
-  top: '70%',
-  left: '96%',
-  name: t('destinations.fiji.name'),
-  desc: t('destinations.fiji.desc'),
-  img: '/images/fiji/fiji_main.webp'
-},
   {
     id: 'australia',
     top: '76%', 

@@ -30,18 +30,15 @@ const blogs = [
 ];
 ---
 
-<section class="bg-[#CDEFEF] py-16 md:py-20">
+<section class="bg-[#FFFDFA] py-16 md:py-20">
 <div class="max-w-7xl mx-auto px-6">
 
   <!-- Intro -->
   <div class="max-w-3xl mx-auto mb-12 text-center">
-    <h2 class="text-4xl font-semibold mb-4">
-      Blogs
+    <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">Blogs</p>
+    <h2 class="mt-3 text-4xl md:text-5xl font-normal tracking-tight text-black">
+      {lang === "nl" ? "Reistips" : "Travel tips"} <b class="font-semibold">{lang === "nl" ? "voor Australië" : "for Australia"}</b>
     </h2>
-
-    <p class="max-w-lg mx-auto text-gray-600 leading-relaxed">
-      Laat je inspireren door handige tips en praktische zaken om goed voorbereid op avontuur te gaan!
-    </p>
   </div>
 
   <!-- Blog cards -->

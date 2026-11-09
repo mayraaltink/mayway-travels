@@ -137,7 +137,7 @@ const destinations = [
       <div class="pointer-events-none absolute -right-24 top-24 h-96 w-96 rounded-full bg-[#4ED2CE]/10 blur-3xl"></div>
       <div class="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-[#1CABB0]/10 blur-3xl"></div>
 
-      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-16">
         <div>
 
 
@@ -159,10 +159,16 @@ const destinations = [
 
         </div>
 
-        <div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
-          <div class="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#E8FAF9] to-[#d4f3f1] p-4 shadow-2xl ring-1 ring-black/5">
-            <div class="overflow-hidden rounded-2xl shadow-inner">
-              <img src="/images/about/great-ocean-road.jpg" alt="Great Ocean Road" class="aspect-[4/3] w-full object-cover">
+        <div class="relative w-full lg:translate-x-16">
+          <div>
+            <div class="relative overflow-hidden rounded-[1.75rem] shadow-xl">
+              <img src="/images/australia/aus_main.jpg" alt="Kakadu, Australia" class="aspect-[4/3] w-full object-cover">
+
+              <!-- Locatie van de foto -->
+              <a href="https://www.google.com/maps/search/?api=1&query=Kakadu+National+Park,+Northern+Territory,+Australia" target="_blank" rel="noopener noreferrer" title="Google Maps" class="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/35 px-3 py-1.5 backdrop-blur-sm transition hover:bg-black/55 md:px-4 md:py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-white/90 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="text-[10px] uppercase tracking-wide text-white/90 md:text-sm">{t('community.intro.location')}</span>
+              </a>
             </div>
           </div>
         </div>

@@ -6,10 +6,9 @@ import Footer from '../components/global/Footer.astro';
 
 const { title = "MAY WAYS TRAVELS" } = Astro.props;
 const lang = Astro.currentLocale || defaultLang;
-const isHomePage = Astro.url.pathname.split('/').filter(Boolean).length <= 1;
 ---
 
-<html lang={lang} data-home={isHomePage}>
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/m_logo.svg" />

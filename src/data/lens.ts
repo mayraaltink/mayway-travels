@@ -13,4 +13,10 @@ export const lensPhotos: LensPhoto[] = [
   { file: 'portfolio/indonesia/jungle.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },
   { file: 'portfolio/indonesia/monkey-stand.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },
   { file: 'portfolio/marokko/marktstreet.jpg', location: { nl: 'Marokko', en: 'Morocco' } },
+  { file: 'portfolio/lens/opa.jpg' },
+  { file: 'portfolio/lens/weg.jpg' },
+  { file: 'portfolio/lens/laos.jpg', location: { nl: 'Laos', en: 'Laos' } },
+  { file: 'portfolio/lens/markt.jpg' },
+  { file: 'portfolio/lens/island.jpg' },
+  { file: 'portfolio/lens/cafe.jpg' },
 ];

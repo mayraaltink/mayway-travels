@@ -36,7 +36,9 @@ const navLinks = [
 
 const path = Astro.url.pathname;
 
-const isHomePage = path === '/' || path === '/nl' || path === '/en';
+// Pagina's met een header-foto: menubalk begint doorzichtig over de foto en wordt wit bij scrollen
+const pathWithoutLang = path.replace(/^\/(nl|en)/, '').replace(/\/$/, '');
+const isTransparent = ['', '/for-brands', '/community'].includes(pathWithoutLang) || pathWithoutLang.startsWith('/destinations/');
 
 ---
 
@@ -46,7 +48,7 @@ const isHomePage = path === '/' || path === '/nl' || path === '/en';
   It starts transparent. The 'scrolled' class will be added via JS.
 -->
 <header 
-  id="main-header" class:list={["fixed top-0 w-full z-50 transition-all duration-300", { "scrolled": !isHomePage } ]}>
+  id="main-header" data-transparent={isTransparent ? 'true' : 'false'} class:list={["fixed top-0 w-full z-50 transition-all duration-300", { "scrolled": !isTransparent } ]}>
   <div class="max-w-7xl mx-auto px-6 py-2">
     <div class="flex items-center justify-between">
       
@@ -176,10 +178,10 @@ const isHomePage = path === '/' || path === '/nl' || path === '/en';
     const logoSubtitle = document.getElementById('logo-subtitle');
     
     // 1. Scroll Behavior
-    const isHomePage = document.documentElement.dataset.home === 'true';
+    const isTransparent = header?.dataset.transparent === 'true';
 
     const handleScroll = () => {
-      if (!header || !isHomePage) return;
+      if (!header || !isTransparent) return;
 
       if (window.scrollY > 50) {
         header.classList.add('scrolled');

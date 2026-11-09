@@ -509,17 +509,26 @@ faq_sim_a_f:
     "routes.east.subtitle": "Sydney to Cairns",
 
     "routes.east.tagline":
-      "The most popular route among travellers with surf towns, tropical islands and jungle hikes.",
+      "Australia's east coast is without a doubt the **most popular route** among travellers. On this trip you experience the real **Aussie vibes**: vibrant cities, endless beaches, impressive nature and the relaxed **surf lifestyle** Australia is so famous for.\n\nAlong the way, lively hotspots like **Sydney**, the **Gold Coast** and **Brisbane** alternate with real surf towns such as **Byron Bay** and **Noosa**. You pass places that feel like a true mini escape, such as **Magnetic Island**, and eventually you reach the **Great Barrier Reef** and the **Whitsunday Islands**, the special places Australia is so famous for.",
+
+    "routes.east.drive":
+      "The route is around 2,600 kilometres long. That adds up to about 24 to 28 hours of driving in total, but to really experience it all you'll need around **4 to 6 weeks**.\n\nTo give you an idea:\nSydney → Byron Bay = ± 8–9 hours of driving\nByron Bay → Gold Coast = ± 1 hour\nGold Coast → Brisbane = ± 1.5 hours",
 
     "routes.east.expand": {
   route: "Route: Sydney to Cairns",
   distance: "Distance: ±2,600 km",
+  facts: ["Travel time: 4-6 weeks"],
   highlights: [
-    "Very popular among solo travellers",
-    "Bus, campervan or fly & drive options",
-    "Byron Bay & Noosa surf towns",
-    "Whitsundays snorkeling & sailing",
-    "Daintree Rainforest jungle hikes"
+    "Opera House & Bondi Beach in Sydney",
+    "Surfing and the Byron Bay lighthouse",
+    "Gold Coast beaches",
+    "Noosa National Park",
+    "4WD across Fraser Island",
+    "Whitehaven Beach in the Whitsundays",
+    "Snorkelling the Great Barrier Reef",
+    "Koala spotting on Magnetic Island",
+    "Waterfalls in the Atherton Tablelands",
+    "Rainforest meets the sea in Cape Tribulation"
   ]
 },
 
@@ -528,7 +537,7 @@ faq_sim_a_f:
     "routes.stop": "Stop",
     "routes.stops": "stops",
     "routes.highlights": "Highlights",
-    "routes.section.label": "Travel routes",
+    "routes.section.label": "Travel route",
     "routes.hint": "Tap a stop on the map or swipe through the photos",
     "routes.prev": "Previous stop",
     "routes.next": "Next stop",
@@ -542,6 +551,7 @@ faq_sim_a_f:
   route: "Route: Perth to Exmouth",
 
   distance: "Distance: ±1,250 km",
+  facts: ["Travel time: 2-3 weeks"],
   highlights: [
     "Less touristy & more adventurous",
     "Coral Coast & Ningaloo Reef",
@@ -552,9 +562,12 @@ faq_sim_a_f:
 
 "routes.south.title": "South West Coast",
 "routes.south.subtitle": "Perth to Esperance",
+"routes.south.tagline":
+  "Vineyards, giant trees and some of Australia's whitest beaches.",
 "routes.south.expand": {
   route: "Route: Perth to Esperance",
   distance: "Distance: ±1,100 km",
+  facts: ["Travel time: 10-14 days"],
   highlights: [
     "Margaret River wine & surf",
     "Giant tingle trees near Denmark",
@@ -570,6 +583,7 @@ faq_sim_a_f:
 "routes.red.expand": {
   route: "Route: Alice Springs region",
   distance: "Distance: varies",
+  facts: ["Travel time: 4-7 days"],
   highlights: [
     "Uluru sunrise & sunset",
     "Kata Tjuta rock formations",
@@ -583,7 +597,8 @@ faq_sim_a_f:
   "Tropical northern Australia filled with waterfalls, wildlife and national parks.",
 "routes.top.expand": {
   route: "Route: Darwin region",
-  distance: "Varies",
+  distance: "Distance: regional travel",
+  facts: ["Travel time: 5-7 days"],
   highlights: [
     "Kakadu National Park",
     "Litchfield waterfalls",
@@ -1535,17 +1550,21 @@ faq_sim_a_f:
     "routes.east.subtitle": "Sydney tot Cairns",
 
     "routes.east.tagline":
-      "De populairste route onder reizigers met surf towns, tropische eilanden en jungle hikes.",
+      "De oostkust van Australië is zonder twijfel de **populairste route** onder reizigers. Tijdens deze reis ervaar je de echte **Aussie vibes**: bruisende steden, eindeloze stranden, indrukwekkende natuur en die relaxte **surf lifestyle** waar Australië zo bekend om staat.\n\nOnderweg wisselen bruisende hotspots zoals **Sydney**, **Gold Coast** en **Brisbane** zich af met échte surftowns, zoals **Byron Bay** en **Noosa**. Je doorkruist plekken die echt als een mini escape voelen, zoals **Magnetic Island**, en uiteindelijk kom je uit bij het **Great Barrier Reef** en de **Whitsunday Islands**, bijzondere plekken waar Australië zo bekend om staat.",
+
+    // Turquoise blokje naast de introductie; regels met "=" worden rijen (traject = rijtijd)
+    "routes.east.drive":
+      "De route is zo’n 2600 kilometer lang. Dat is zo’n 24 tot 28 uur rijden in totaal, maar om alles echt te beleven heb je zo’n **4 tot 6 weken** nodig.\n\nOm jou een idee te geven:\nSydney → Byron Bay = ± 8–9 uur rijden\nByron Bay → Gold Coast = ± 1 uur\nGold Coast → Brisbane = ± 1,5 uur",
 
     "routes.east.expand":
-      "Route: Sydney tot Cairns\nAfstand: ±2.600 km\n\nHighlights:\n• Populair onder solo reizigers\n• Bus, campervan of fly & drive opties\n• Byron Bay & Noosa surf towns\n• Whitsundays snorkelen & zeilen\n• Daintree Rainforest jungle hikes",
+      "Route: Sydney tot Cairns\nAfstand: ±2.600 km\nReistijd: 4-6 weken\n\nHighlights:\n• Opera House & Bondi Beach in Sydney\n• Surfen en de vuurtoren van Byron Bay\n• Stranden van de Gold Coast\n• Noosa National Park\n• 4WD over Fraser Island\n• Whitehaven Beach in de Whitsundays\n• Snorkelen op het Great Barrier Reef\n• Koala’s spotten op Magnetic Island\n• Watervallen in de Atherton Tablelands\n• Regenwoud tot aan zee in Cape Tribulation",
 
     "routes.readMore": "Lees meer",
     "routes.close": "Sluiten",
     "routes.stop": "Stop",
     "routes.stops": "stops",
     "routes.highlights": "Highlights",
-    "routes.section.label": "Reisroutes",
+    "routes.section.label": "Reisroute",
     "routes.hint": "Klik op een stop op de kaart of swipe door de foto's",
     "routes.prev": "Vorige stop",
     "routes.next": "Volgende stop",
@@ -1555,26 +1574,28 @@ faq_sim_a_f:
 "routes.west.tagline":
   "Een ruige en rustige kustlijn, perfect voor lange roadtrips en vrijheid.",
 "routes.west.expand":
-  "Route: Perth naar Exmouth\nAfstand: ±1.250 km\n\nHighlights:\n• Minder toeristisch en avontuurlijk\n• Coral Coast & Ningaloo Reef\n• Rottnest Island quokka’s\n• Eindeloze stranden en vrijheid",
+  "Route: Perth naar Exmouth\nAfstand: ±1.250 km\nReistijd: 2-3 weken\n\nHighlights:\n• Minder toeristisch en avontuurlijk\n• Coral Coast & Ningaloo Reef\n• Rottnest Island quokka’s\n• Eindeloze stranden en vrijheid",
 
 "routes.south.title": "Zuid-West kust",
 "routes.south.subtitle": "Perth naar Esperance",
+"routes.south.tagline":
+  "Wijngaarden, reuzenbomen en de witste stranden van Australië.",
 "routes.south.expand":
-  "Route: Perth naar Esperance\nAfstand: ±1.100 km\n\nHighlights:\n• Margaret River wijn & surf\n• Reuzenbomen bij Denmark\n• Walvissen spotten in Albany\n• Kangoeroes op het strand van Lucky Bay",
+  "Route: Perth naar Esperance\nAfstand: ±1.100 km\nReistijd: 10-14 dagen\n\nHighlights:\n• Margaret River wijn & surf\n• Reuzenbomen bij Denmark\n• Walvissen spotten in Albany\n• Kangoeroes op het strand van Lucky Bay",
 
 "routes.red.title": "Red Centre",
 "routes.red.subtitle": "Uluru",
 "routes.red.tagline":
   "Het spirituele hart van Australië met iconische woestijnlandschappen.",
 "routes.red.expand":
-  "Route: regio Alice Springs\nAfstand: variabel\n\nHighlights:\n• Uluru zonsopkomst & zonsondergang\n• Kata Tjuta rotsformaties\n• Kings Canyon hikes\n• Outback sterrenhemel",
+  "Route: regio Alice Springs\nAfstand: variabel\nReistijd: 4-7 dagen\n\nHighlights:\n• Uluru zonsopkomst & zonsondergang\n• Kata Tjuta rotsformaties\n• Kings Canyon hikes\n• Outback sterrenhemel",
 
 "routes.top.title": "Top End",
 "routes.top.subtitle": "Darwin & Kakadu",
 "routes.top.tagline":
   "Tropisch Noord-Australië vol watervallen, wildlife en nationale parken.",
 "routes.top.expand":
-  "Route: Darwin regio\nAfstand: regionaal reizen\n\nHighlights:\n• Kakadu National Park\n• Litchfield watervallen\n• Krokodillenrivieren\n• Tropisch moessonklimaat",
+  "Route: Darwin regio\nAfstand: regionaal reizen\nReistijd: 5-7 dagen\n\nHighlights:\n• Kakadu National Park\n• Litchfield watervallen\n• Krokodillenrivieren\n• Tropisch moessonklimaat",
 
 "routes.tas.title": "Tasmanië",
 "routes.tas.subtitle": "Hobart",

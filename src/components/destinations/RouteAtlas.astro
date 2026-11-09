@@ -33,16 +33,29 @@ const overview = [MAP.x - 10, MAP.y - 10, MAP.w + 20, MAP.h + 20];
 
 type Stop = RouteStop;
 
+// **woord** in de tekst wordt dikgedrukt (rest wordt veilig ge-escaped)
+function withBold(s: string) {
+  const esc = s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return esc.replace(/\*\*(.+?)\*\*/g, '<b class="font-semibold text-[#0B1F22]">$1</b>');
+}
+
+// "Afstand: ±1.250 km" → { label: "Afstand", value: "±1.250 km" }
+function toFact(line: string) {
+  const m = line.match(/^([^:]+):\s*(.+)$/);
+  return m ? { label: m[1].trim(), value: m[2].trim() } : { label: "", value: line };
+}
+
 // NL heeft de expand-tekst als string, EN als object: beide omzetten naar hetzelfde formaat
+// feiten = alle "Label: waarde"-regels (route, afstand, reistijd, ...), highlights = de •-regels
 function normalizeExpand(expand: unknown) {
   if (typeof expand !== "string") {
-    const e = expand as { route?: string; distance?: string; highlights?: string[] };
-    return { route: e.route ?? "", distance: e.distance ?? "", highlights: e.highlights ?? [] };
+    const e = expand as { route?: string; distance?: string; facts?: string[]; highlights?: string[] };
+    const lines = [e.route, e.distance, ...(e.facts ?? [])].filter((l): l is string => !!l);
+    return { facts: lines.map(toFact), highlights: e.highlights ?? [] };
   }
   const lines = expand.split("\n").map((l) => l.trim()).filter(Boolean);
   return {
-    route: lines.find((l) => l.startsWith("Route")) ?? "",
-    distance: lines.find((l) => /^(Afstand|Distance)/.test(l)) ?? "",
+    facts: lines.filter((l) => !l.startsWith("•") && !/^Highlights/i.test(l)).map(toFact),
     highlights: lines.filter((l) => l.startsWith("•")).map((l) => l.replace(/^•\s*/, "")),
   };
 }
@@ -101,6 +114,15 @@ const routes = routeDefs.map((r) => {
     stops: r.stops.filter((st) => !st.via),
     title: text(`${r.key}.title`),
     subtitle: text(`${r.key}.subtitle`),
+    intro: text(`${r.key}.tagline`),
+    // rijtijden-blokje: tekstregels + rijen "traject = rijtijd"
+    drive: text(`${r.key}.drive`)
+      .split("\n")
+      .map((l) => l.trim())
+      .map((l) => {
+        const [leg, ...time] = l.split("=");
+        return time.length ? { leg: leg.trim(), time: time.join("=").trim(), line: "" } : { leg: "", time: "", line: l };
+      }),
     info: normalizeExpand(dict[`${r.key}.expand`] ?? ""),
     d: smoothPath(r.stops),
     vb: [cx - w / 2, cy - h / 2, w, h].map((n) => +n.toFixed(2)),
@@ -121,40 +143,87 @@ const clientData = routes.map((r) => ({
 }));
 ---
 
-<section class="bg-[#FFFDFA] pb-10 pt-20 md:pb-12 md:pt-28" data-route-atlas>
+<section class="bg-white pb-10 pt-20 md:pb-12 md:pt-28" data-route-atlas>
   <script type="application/json" data-atlas-json set:html={JSON.stringify(clientData)} />
 
   <div class="mx-auto max-w-6xl px-6">
 
     <!-- Titel: op mobiel gecentreerd, vanaf tablet links -->
     <div class="text-center md:text-left">
-    <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t["routes.section.label"]}</p>
     <!-- Zelfde grootte als "Ontdek Hotspots" -->
-    <h2 class="mt-3 text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl">
+    <h2 class="text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl">
       {t["routes.section.titleStart"]} <b class="font-semibold">{t["routes.section.titleBold"]}</b>
     </h2>
     </div>
 
     <!-- Routekeuze: knoppen (mobiel onder elkaar, desktop naast elkaar); de gekozen route is turquoise gevuld -->
-    <div class:list={["mt-10 grid grid-cols-1 gap-2.5 md:gap-3", tabCols]} role="tablist">
+    <!-- mobiel: compacte knoppen naast elkaar (zo breed als de tekst); vanaf tablet een grid -->
+    <div class:list={["mt-8 flex flex-wrap justify-center gap-2 md:mt-10 md:grid md:gap-3", tabCols]} role="tablist">
       {routes.map((r, i) => (
         <button
           type="button"
           role="tab"
           aria-selected="false"
-          class="route-tab flex items-center justify-between gap-3 rounded-full border-2 border-[#1CABB0] bg-white px-6 py-3 text-left md:justify-center md:px-4 md:text-center"
+          class="route-tab flex items-center justify-center gap-3 rounded-full border-2 border-transparent bg-[#EAF4F4] px-4 py-2 text-center md:px-4 md:py-3"
           data-route-btn={i}
         >
           <span>
-            <span class="route-tab-title block text-base font-semibold leading-tight text-black">{r.title}</span>
-            <span class="route-tab-sub block text-xs text-gray-500">{r.subtitle}</span>
+            <span class="route-tab-title block text-sm font-semibold leading-tight text-black md:text-base">{r.title}</span>
+            <span class="route-tab-sub block text-[11px] text-gray-500 md:text-xs">{r.subtitle}</span>
           </span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="route-tab-arrow h-4 w-4 shrink-0 text-[#1CABB0] md:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
         </button>
       ))}
     </div>
 
-    <div class="mt-12 grid items-center gap-12 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-12">
+    <!-- Route-info + kaart; desktop iets breder dan de tekst, zodat kaart en foto's groter worden -->
+    <div class="mt-10 md:mt-12 xl:-mx-12 2xl:-mx-24">
+
+    <!-- Over de route: links titel + route, rechts op een rijtje wat je onderweg ziet -->
+    <div data-about-wrap class="scroll-mt-20">
+    {routes.map((r, ri) => {
+      // eerste feit = de route zelf (Sydney tot Cairns)
+      const routeFact = r.info.facts[0];
+      return (
+      <div class="grid gap-8 border-b border-gray-200 pb-12 text-[#0B1F22] lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14" data-about={ri} hidden>
+        <!-- desktop: tekst iets naar het midden -->
+        <div class="lg:pl-10 xl:pl-20">
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-[#12949A]">{t["routes.section.label"]}</p>
+          <h3 class="mt-3 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">{r.title}</h3>
+          {routeFact && (
+            <p class="mt-4 inline-flex items-center gap-2 text-base font-medium text-[#12949A] md:text-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H17a3.5 3.5 0 0 0 0-7H7a3.5 3.5 0 0 1 0-7h8.5"></path></svg>
+              {routeFact.value}
+            </p>
+          )}
+          {r.intro && (
+            <p class="mt-6 whitespace-pre-line text-[15px] leading-relaxed text-gray-600 md:text-base" set:html={withBold(r.intro)} />
+          )}
+        </div>
+
+        <!-- Tekst links blijft even breed; het blokje schuift rechts naast de tekst -->
+        <div class="lg:mt-44 lg:w-[26rem] lg:justify-self-center">
+        <!-- Rijtijden: turquoise blokje met afstand en een paar trajecten -->
+        {r.drive.some((d) => d.leg || d.line) && (
+          <div class="max-w-md rounded-2xl bg-[#0F7C82] px-5 py-4 text-white lg:max-w-none">
+            {r.drive.map((d) =>
+              d.leg ? (
+                <p class="flex items-baseline justify-between gap-3 border-b border-white/20 py-1 text-[13px] last:border-0">
+                  <span class="font-semibold">{d.leg}</span>
+                  <span class="shrink-0 text-white/85">{d.time}</span>
+                </p>
+              ) : d.line ? (
+                <p class="mb-2 text-[13px] leading-snug text-white/90 [&_b]:text-white" set:html={withBold(d.line)} />
+              ) : null
+            )}
+          </div>
+        )}
+        </div>
+      </div>
+      );
+    })}
+    </div>
+
+    <div class="mt-12 grid items-center gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-12">
 
       <!-- Kaart (op mobiel tot bijna aan de schermrand) -->
       <div class="-mx-6 md:mx-0">
@@ -218,17 +287,18 @@ const clientData = routes.map((r) => ({
         <p class="mt-4 text-center text-xs text-gray-400">{t["routes.hint"]}</p>
       </div>
 
-      <!-- Stopkaart + info -->
-      <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_30px_60px_rgba(15,124,130,0.10)] md:p-7">
+      <!-- Stopkaart: grote foto + stops naast de kaart -->
+      <div>
+        <!-- Foto per stop -->
         <div class="stop-card" data-stop-card>
-          <div class="photo relative aspect-[4/3] overflow-hidden rounded-xl bg-[#EAF7F7]">
-            <div class="absolute inset-0 grid place-items-center px-6 text-center text-2xl font-semibold tracking-tight text-[#1CABB0]/60" data-fallback></div>
+          <div class="photo relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-[#EAF7F7] shadow-[0_24px_50px_rgba(10,59,62,0.18)] lg:aspect-[4/5]">
+            <div class="absolute inset-0 grid place-items-center px-6 text-center text-2xl font-semibold tracking-tight text-[#12949A]/60" data-fallback></div>
             <img class="absolute inset-0 h-full w-full object-cover" alt="" data-photo />
           </div>
 
           <div class="mt-5 flex items-end justify-between gap-4">
             <div class="min-w-0">
-              <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]" aria-live="polite">
+              <p class="text-xs uppercase tracking-[0.2em] text-[#12949A]" aria-live="polite">
                 {t["routes.stop"]} <span data-counter-i>01</span> / <span data-counter-n>01</span>
               </p>
               <p class="mt-2 truncate text-2xl font-semibold leading-tight tracking-tight text-black md:text-[1.75rem]" data-stop-name></p>
@@ -244,7 +314,7 @@ const clientData = routes.map((r) => ({
           </div>
         </div>
 
-        <!-- Info per route -->
+        <!-- Stops per route -->
         {routes.map((r, ri) => (
           <div class="mt-6 border-t border-gray-100 pt-6" data-info={ri} hidden>
             <ol class="flex flex-wrap gap-2">
@@ -254,30 +324,11 @@ const clientData = routes.map((r) => ({
                 </li>
               ))}
             </ol>
-
-            <div class="mt-6 flex flex-wrap gap-2">
-              {r.info.route && <span class="meta-chip">{r.info.route}</span>}
-              {r.info.distance && <span class="meta-chip">{r.info.distance}</span>}
-            </div>
-
-            {r.info.highlights.length > 0 && (
-              <>
-                <h3 class="mt-6 text-lg font-semibold tracking-tight text-black">{t["routes.highlights"]}</h3>
-                <ul class="mt-4 space-y-3">
-                  {r.info.highlights.map((h) => (
-                    <li class="flex items-start gap-3 text-sm leading-snug text-gray-600">
-                      <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1CABB0]/10 text-[#1CABB0]" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                      </span>
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
           </div>
         ))}
       </div>
+    </div>
+
     </div>
   </div>
 </section>
@@ -288,10 +339,14 @@ const clientData = routes.map((r) => ({
     cursor: pointer;
     transition: background-color 0.25s, box-shadow 0.25s, transform 0.25s;
   }
-  .route-tab:hover { transform: translateY(-2px); }
+  .route-tab:hover {
+    transform: translateY(-2px);
+    background-color: #dcecec;
+  }
+  /* gekozen route: zelfde petrol als de projecten-achtergrond */
   .route-tab[aria-selected="true"] {
-    background-color: #1cabb0;
-    box-shadow: 0 12px 28px rgba(15, 124, 130, 0.18);
+    background-color: #0f7c82;
+    box-shadow: 0 12px 28px rgba(15, 124, 130, 0.22);
   }
   .route-tab[aria-selected="true"] .route-tab-title,
   .route-tab[aria-selected="true"] .route-tab-arrow { color: white; }
@@ -299,14 +354,14 @@ const clientData = routes.map((r) => ({
 
   /* ---------- kaart ---------- */
   .land path {
-    fill: #eaf7f7;
+    fill: #b5dfe0;
     stroke: white;
     stroke-width: 1;
     vector-effect: non-scaling-stroke;
   }
   .ghost {
     fill: none;
-    stroke: #1cabb0;
+    stroke: #12949a;
     stroke-width: 1.25;
     stroke-dasharray: 2 4;
     opacity: 0.3;
@@ -323,7 +378,7 @@ const clientData = routes.map((r) => ({
   }
   .route-line {
     fill: none;
-    stroke: #1cabb0;
+    stroke: #12949a;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 1;
@@ -345,11 +400,11 @@ const clientData = routes.map((r) => ({
   }
   .pin-dot {
     fill: white;
-    stroke: #1cabb0;
+    stroke: #12949a;
     transition: fill 0.25s, stroke 0.25s;
   }
   .pin-num {
-    fill: #1cabb0;
+    fill: #12949a;
     font-weight: 600;
     pointer-events: none;
   }
@@ -358,7 +413,7 @@ const clientData = routes.map((r) => ({
   .pin.is-visited .pin-num,
   .pin.is-current .pin-num { fill: white; }
   .pin-pulse {
-    fill: #1cabb0;
+    fill: #12949a;
     opacity: 0;
     transform-box: fill-box;
     transform-origin: center;
@@ -398,12 +453,12 @@ const clientData = routes.map((r) => ({
     border-radius: 9999px;
     border: 1px solid #e5e7eb;
     background: white;
-    color: #1cabb0;
+    color: #12949a;
     transition: border-color 0.2s, background-color 0.2s;
   }
   .nav-btn:hover {
-    border-color: #1cabb0;
-    background: rgb(28 171 176 / 0.06);
+    border-color: #12949a;
+    background: rgb(18 148 154 / 0.06);
   }
 
   .stop-chip {
@@ -415,19 +470,18 @@ const clientData = routes.map((r) => ({
     color: #4b5563;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
   }
-  .stop-chip:hover { border-color: #1cabb0; }
-  .stop-chip[aria-current="true"] {
-    background: #1cabb0;
-    border-color: #1cabb0;
-    color: white;
+  /* desktop: grotere stopknoppen */
+  @media (min-width: 1024px) {
+    .stop-chip {
+      padding: 0.5rem 1.1rem;
+      font-size: 0.9rem;
+    }
   }
-
-  .meta-chip {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.85rem;
-    border-radius: 9999px;
-    background: rgb(28 171 176 / 0.1);
-    color: #0f7c82;
+  .stop-chip:hover { border-color: #0a3b3e; }
+  .stop-chip[aria-current="true"] {
+    background: #0a3b3e;
+    border-color: #0a3b3e;
+    color: white;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -452,6 +506,7 @@ const clientData = routes.map((r) => ({
     const tabs = [...root.querySelectorAll<HTMLButtonElement>("[data-route-btn]")];
     const layers = [...root.querySelectorAll<SVGGElement>("[data-layer]")];
     const infos = [...root.querySelectorAll<HTMLElement>("[data-info]")];
+    const abouts = [...root.querySelectorAll<HTMLElement>("[data-about]")];
     const card = root.querySelector<HTMLElement>("[data-stop-card]")!;
     const photo = root.querySelector<HTMLImageElement>("[data-photo]")!;
     const fallback = root.querySelector<HTMLElement>("[data-fallback]")!;
@@ -561,6 +616,7 @@ const clientData = routes.map((r) => ({
 
       tabs.forEach((tab, ti) => tab.setAttribute("aria-selected", String(ti === ri)));
       infos.forEach((info, ii) => (info.hidden = ii !== ri));
+      abouts.forEach((about, ai) => (about.hidden = ai !== ri));
       layers.forEach((layer, li) => {
         layer.classList.remove("is-active");
         layer.querySelectorAll<SVGGElement>(".pin").forEach((pin) => {
@@ -576,13 +632,14 @@ const clientData = routes.map((r) => ({
     };
 
     // ---------- events ----------
-    // Klik op een routeknop: staat de kaart niet (helemaal) in beeld, scroll er dan eerst heen
+    // Klik op een routeknop: scroll naar de route-info boven de kaart (als die niet al bovenin staat)
     // en teken de route pas als je er bent, zodat je de lijn ziet verschijnen
+    const aboutWrap = root.querySelector<HTMLElement>("[data-about-wrap]")!;
     tabs.forEach((tab, ti) =>
       tab.addEventListener("click", () => {
         const headerOffset = 80;
-        const rect = svg.getBoundingClientRect();
-        const inView = rect.top >= headerOffset && rect.bottom <= window.innerHeight;
+        const rect = aboutWrap.getBoundingClientRect();
+        const inView = rect.top >= headerOffset && rect.top <= window.innerHeight / 2;
         if (inView) {
           setRoute(ti);
           return;

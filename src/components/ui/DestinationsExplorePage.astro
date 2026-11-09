@@ -37,7 +37,7 @@ const destinations = [
 <BaseLayout title={t('destinations.title')}>
 
 <!-- Mobiel: bestemmingen onder elkaar als grote afgeronde kaarten (geen wereldkaart) -->
-<div class="flex flex-col gap-6 bg-[#FFFDFA] px-4 pb-16 pt-24 md:hidden">
+<div class="flex flex-col gap-6 bg-[#FFFDFA] px-7 pb-16 pt-24 md:hidden">
   {destinations.map((dest) => (
     <a
       href={`/${lang}/destinations/${dest.id}`}
@@ -45,8 +45,8 @@ const destinations = [
     >
       <!-- Tijdelijk turquoise; later komt hier een foto -->
       <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-      <h2 class="relative text-4xl font-bold text-white drop-shadow-md">{dest.name}</h2>
-      <span class="relative mt-6 rounded-full border-2 border-white px-8 py-3 text-lg font-semibold text-white">
+      <h2 class="relative text-3xl font-semibold leading-[1.0] tracking-tight text-white drop-shadow-md">{dest.name}</h2>
+      <span class="relative mt-6 inline-flex min-w-[13rem] items-center justify-center rounded-full border-2 border-white px-8 py-3 text-sm font-semibold text-white">
         {t('destinations.btn')}
       </span>
     </a>

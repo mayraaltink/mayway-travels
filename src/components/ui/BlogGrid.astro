@@ -59,10 +59,9 @@ const blogs = [
   </div>
 
   <!-- Mobiel: categorieën onder elkaar, per categorie swipen -->
-  <div class="flex flex-col gap-12 md:hidden">
+  <div class="flex flex-col gap-4 md:hidden">
     {categories.map((cat) => (
       <div data-carousel>
-        <h3 class="mb-4 px-1 text-2xl font-semibold tracking-tight text-black">{cat.name}</h3>
         <div data-carousel-track class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth">
           {blogs.filter((b) => b.category === cat.id).map((blog) => (
             <a href={blog.href} class="relative aspect-[4/5] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-lg">
@@ -72,7 +71,7 @@ const blogs = [
             </a>
           ))}
         </div>
-        <CarouselControls />
+        <CarouselControls class="!mt-3" />
       </div>
     ))}
   </div>

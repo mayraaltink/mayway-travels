@@ -80,7 +80,7 @@ const desc = get(descKey);
     <!-- Kaarten: mobiel 1, tablet 2, desktop 3 per keer -->
     <div data-carousel-track class="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth md:mt-14">
       {items.map((h) => (
-        <article class="relative h-[440px] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_20px_45px_rgba(0,0,0,0.12)] sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]">
+        <article class="relative h-[500px] sm:h-[440px] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_20px_45px_rgba(0,0,0,0.12)] sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]">
           {h.src ? (
             <img src={h.src} alt={h.title} loading="lazy" draggable="false" class="absolute inset-0 h-full w-full object-cover" />
           ) : (

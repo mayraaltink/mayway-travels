@@ -97,6 +97,8 @@ const routes = routeDefs.map((r) => {
 
   return {
     ...r,
+    // tussenpunten (via) tellen mee voor de lijn, maar krijgen geen pin, nummer of foto
+    stops: r.stops.filter((st) => !st.via),
     title: text(`${r.key}.title`),
     subtitle: text(`${r.key}.subtitle`),
     info: normalizeExpand(dict[`${r.key}.expand`] ?? ""),

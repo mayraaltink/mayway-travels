@@ -2,7 +2,11 @@
 // `key` verwijst naar de vertalingen in ui.ts: `${key}.title`, `${key}.subtitle` en `${key}.expand`.
 // x/y zijn posities op de kaart-svg van dat land; stops staan in reisvolgorde.
 
-export type RouteStop = { name: string; img: string; x: number; y: number };
+// via: onzichtbaar tussenpunt (geen pin/nummer), alleen om de lijn over land te laten lopen
+export type RouteStop = { name: string; img: string; x: number; y: number; via?: boolean };
+
+// Na Rottnest Island terug naar het vasteland (Fremantle), zodat de lijn niet over zee loopt
+const backToMainland: RouteStop = { name: "", img: "", x: 222, y: 453, via: true };
 export type RouteDef = { key: string; stops: RouteStop[] };
 
 const au = (file: string) => `/images/australia/routes/${file}.jpg`;
@@ -15,11 +19,16 @@ export const australiaRoutes: RouteDef[] = [
     stops: [
       { name: "Sydney", img: au("east-1"), x: 757, y: 482 },
       { name: "Byron Bay", img: au("east-2"), x: 802, y: 385 },
+      { name: "Gold Coast", img: au("east-gold-coast"), x: 800, y: 373 },
+      { name: "Brisbane", img: au("east-brisbane"), x: 795, y: 362 },
       { name: "Noosa", img: au("east-3"), x: 798, y: 343 },
       { name: "Fraser Island", img: au("east-5"), x: 804, y: 322 },
-      { name: "Whitsundays", img: au("east-4"), x: 743, y: 229 },
+      { name: "1770", img: au("east-1770"), x: 785, y: 302 },
+      { name: "The Whitsundays", img: au("east-4"), x: 743, y: 229 },
+      { name: "Magnetic Island", img: au("east-magnetic-island"), x: 717, y: 208 },
+      { name: "Atherton Tablelands", img: au("east-atherton"), x: 686, y: 176 },
       { name: "Cairns", img: au("east-7"), x: 698, y: 166 },
-      { name: "Daintree", img: au("east-6"), x: 692, y: 152 },
+      { name: "Cape Tribulation", img: au("east-cape-tribulation"), x: 693, y: 149 },
     ],
   },
   {
@@ -27,24 +36,32 @@ export const australiaRoutes: RouteDef[] = [
     stops: [
       { name: "Perth", img: au("west-1"), x: 221, y: 446 },
       { name: "Rottnest Island", img: au("west-2"), x: 209, y: 450 },
-      { name: "Kalbarri", img: au("west-3"), x: 199, y: 367 },
+      backToMainland,
+      { name: "Pinnacles Desert", img: au("west-pinnacles"), x: 214, y: 420 },
+      { name: "Hutt Lagoon", img: au("west-hutt-lagoon"), x: 201, y: 376 },
+      { name: "Kalbarri National Park", img: au("west-3"), x: 199, y: 367 },
+      { name: "Shark Bay", img: au("west-shark-bay"), x: 199, y: 341 },
       { name: "Monkey Mia", img: au("west-7"), x: 194, y: 333 },
       { name: "Coral Bay", img: au("west-6"), x: 196, y: 283 },
-      { name: "Ningaloo Reef", img: au("west-5"), x: 189, y: 270 },
       { name: "Exmouth", img: au("west-4"), x: 202, y: 258 },
+      { name: "Cape Range National Park", img: au("west-cape-range"), x: 195, y: 263 },
     ],
   },
   {
     key: "routes.south",
     stops: [
       { name: "Perth", img: au("south-1"), x: 221, y: 446 },
+      { name: "Rottnest Island", img: au("south-rottnest"), x: 209, y: 450 },
+      backToMainland,
+      { name: "", img: "", x: 219, y: 470, via: true },
       { name: "Margaret River", img: au("south-2"), x: 210, y: 484 },
       { name: "Pemberton", img: au("south-3"), x: 223, y: 492 },
       { name: "Denmark", img: au("south-4"), x: 239, y: 500 },
       { name: "Albany", img: au("south-5"), x: 250, y: 501 },
       { name: "Bremer Bay", img: au("south-6"), x: 270, y: 490 },
       { name: "Esperance", img: au("south-7"), x: 309, y: 481 },
-      { name: "Cape Le Grand", img: au("south-8"), x: 319, y: 480 },
+      { name: "Cape Le Grand National Park", img: au("south-8"), x: 319, y: 480 },
+      { name: "Duke of Orleans Bay", img: au("south-duke-of-orleans"), x: 327, y: 479 },
     ],
   },
   {

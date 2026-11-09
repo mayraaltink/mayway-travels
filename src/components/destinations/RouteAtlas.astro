@@ -111,28 +111,30 @@ const clientData = routes.map((r) => ({
 
   <div class="mx-auto max-w-6xl px-6">
 
-    <!-- Titel -->
+    <!-- Titel: op mobiel gecentreerd, vanaf tablet links -->
+    <div class="text-center md:text-left">
     <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t["routes.section.label"]}</p>
-    <h2 class="mt-3 text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">
-      {t["routes.section.title"]}
+    <!-- Zelfde grootte als "Ontdek Hotspots" -->
+    <h2 class="mt-3 text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl">
+      {t["routes.section.titleStart"]} <b class="font-semibold">{t["routes.section.titleBold"]}</b>
     </h2>
-    <p class="mt-6 max-w-2xl text-[15px] leading-relaxed text-gray-600 md:text-base">
-      {text(subtitleKey)}
-    </p>
+    </div>
 
-    <!-- Routekeuze -->
-    <div class:list={["mt-10 grid grid-cols-2 gap-3 md:gap-4", tabCols]} role="tablist">
+    <!-- Routekeuze: knoppen (mobiel onder elkaar, desktop naast elkaar); de gekozen route is turquoise gevuld -->
+    <div class:list={["mt-10 grid grid-cols-1 gap-2.5 md:gap-3", tabCols]} role="tablist">
       {routes.map((r, i) => (
         <button
           type="button"
           role="tab"
           aria-selected="false"
-          class="route-tab rounded-2xl border border-gray-100 bg-white p-5 text-left shadow-[0_20px_40px_rgba(15,124,130,0.06)]"
+          class="route-tab flex items-center justify-between gap-3 rounded-full border-2 border-[#1CABB0] bg-white px-6 py-3 text-left md:justify-center md:px-4 md:text-center"
           data-route-btn={i}
         >
-          <span class="block text-lg font-semibold leading-tight tracking-tight text-black">{r.title}</span>
-          <span class="mt-1 block text-sm text-gray-500">{r.subtitle}</span>
-          <span class="mt-3 block text-xs text-gray-400">{r.stops.length} {t["routes.stops"]}</span>
+          <span>
+            <span class="route-tab-title block text-base font-semibold leading-tight text-black">{r.title}</span>
+            <span class="route-tab-sub block text-xs text-gray-500">{r.subtitle}</span>
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="route-tab-arrow h-4 w-4 shrink-0 text-[#1CABB0] md:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
         </button>
       ))}
     </div>
@@ -265,13 +267,16 @@ const clientData = routes.map((r) => ({
   /* ---------- routekeuze ---------- */
   .route-tab {
     cursor: pointer;
-    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    transition: background-color 0.25s, box-shadow 0.25s, transform 0.25s;
   }
   .route-tab:hover { transform: translateY(-2px); }
   .route-tab[aria-selected="true"] {
-    border-color: #1cabb0;
-    box-shadow: 0 20px 40px rgba(15, 124, 130, 0.14);
+    background-color: #1cabb0;
+    box-shadow: 0 12px 28px rgba(15, 124, 130, 0.18);
   }
+  .route-tab[aria-selected="true"] .route-tab-title,
+  .route-tab[aria-selected="true"] .route-tab-arrow { color: white; }
+  .route-tab[aria-selected="true"] .route-tab-sub { color: rgba(255, 255, 255, 0.85); }
 
   /* ---------- kaart ---------- */
   .land path {
@@ -533,7 +538,21 @@ const clientData = routes.map((r) => ({
     };
 
     // ---------- events ----------
-    tabs.forEach((tab, ti) => tab.addEventListener("click", () => setRoute(ti)));
+    // Klik op een routeknop: staat de kaart niet (helemaal) in beeld, scroll er dan eerst heen
+    // en teken de route pas als je er bent, zodat je de lijn ziet verschijnen
+    tabs.forEach((tab, ti) =>
+      tab.addEventListener("click", () => {
+        const headerOffset = 80;
+        const rect = svg.getBoundingClientRect();
+        const inView = rect.top >= headerOffset && rect.bottom <= window.innerHeight;
+        if (inView) {
+          setRoute(ti);
+          return;
+        }
+        window.scrollTo({ top: window.scrollY + rect.top - headerOffset, behavior: reduceMotion ? "auto" : "smooth" });
+        window.setTimeout(() => setRoute(ti), reduceMotion ? 0 : 500);
+      })
+    );
 
     layers.forEach((layer) => {
       layer.querySelectorAll<SVGGElement>(".pin").forEach((pin) => {

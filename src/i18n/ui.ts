@@ -500,6 +500,8 @@ faq_sim_a_f:
 ///////////east coast
 
 "routes.section.title": "Discover travel routes",
+"routes.section.titleStart": "Discover",
+"routes.section.titleBold": "travel routes",
 "routes.section.subtitle":
   "Discover the most beautiful routes through Australia – each with a completely different vibe.",
 
@@ -1523,6 +1525,8 @@ faq_sim_a_f:
   ////Oostkust route 
 
 "routes.section.title": "Ontdek verschillende reisroutes",
+"routes.section.titleStart": "Ontdek",
+"routes.section.titleBold": "verschillende reisroutes",
 "routes.section.subtitle":
   "Ontdek de mooiste routes door Australië – elk met een compleet andere vibe.",
 

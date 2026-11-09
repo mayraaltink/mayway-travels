@@ -226,7 +226,19 @@ const clientData = routes.map((r) => ({
     <div class="mt-12 grid items-center gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-12">
 
       <!-- Kaart (op mobiel tot bijna aan de schermrand) -->
-      <div class="-mx-6 md:mx-0">
+      <div class="relative -mx-6 md:mx-0">
+        <!-- Zoomknoppen: uitzoomen tot heel Australië om te zien waar de route ligt -->
+        <div class="absolute right-3 top-3 z-10 flex flex-col overflow-hidden rounded-xl bg-white shadow-[0_8px_24px_rgba(10,59,62,0.15)] md:right-0 md:top-0">
+          <button type="button" class="zoom-btn" data-zoom="in" aria-label={t["routes.zoomIn"]} title={t["routes.zoomIn"]}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+          </button>
+          <button type="button" class="zoom-btn border-t border-gray-100" data-zoom="out" aria-label={t["routes.zoomOut"]} title={t["routes.zoomOut"]}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg>
+          </button>
+          <button type="button" class="zoom-btn border-t border-gray-100" data-zoom="reset" aria-label={t["routes.zoomReset"]} title={t["routes.zoomReset"]}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg>
+          </button>
+        </div>
         <svg
           class="atlas-map block h-auto w-full"
           viewBox={overview.join(" ")}
@@ -351,6 +363,21 @@ const clientData = routes.map((r) => ({
   .route-tab[aria-selected="true"] .route-tab-title,
   .route-tab[aria-selected="true"] .route-tab-arrow { color: white; }
   .route-tab[aria-selected="true"] .route-tab-sub { color: rgba(255, 255, 255, 0.85); }
+
+  /* ---------- zoomknoppen ---------- */
+  .zoom-btn {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #0f7c82;
+    transition: background-color 0.2s;
+  }
+  .zoom-btn:hover { background: #eaf4f4; }
+  @media (hover: hover) {
+    .atlas-map { cursor: grab; }
+    .atlas-map.is-dragging { cursor: grabbing; }
+  }
 
   /* ---------- kaart ---------- */
   .land path {
@@ -544,7 +571,8 @@ const clientData = routes.map((r) => ({
       svg.setAttribute("viewBox", v.map((n) => n.toFixed(2)).join(" "));
     };
 
-    const flyTo = (target: number[]) => {
+    // flight: tussen twee routes even uitzoomen; uit voor de zoomknoppen
+    const flyTo = (target: number[], flight = true) => {
       cancelAnimationFrame(raf);
       if (reduceMotion) return setView(target);
 
@@ -552,12 +580,12 @@ const clientData = routes.map((r) => ({
       const fromC = [from[0] + from[2] / 2, from[1] + from[3] / 2];
       const toC = [target[0] + target[2] / 2, target[1] + target[3] / 2];
       // tussen twee routes even uitzoomen, zoals een vlucht
-      const lift = Math.max(0, overview[2] * 0.75 - Math.max(from[2], target[2]));
+      const lift = flight ? Math.max(0, overview[2] * 0.75 - Math.max(from[2], target[2])) : 0;
       // verhouding mag per route verschillen (mobiel): die schuift mee tijdens de vlucht
       const fromR = from[2] / from[3];
       const toR = target[2] / target[3];
       const start = performance.now();
-      const duration = 1300;
+      const duration = flight ? 1300 : 450;
 
       const step = (now: number) => {
         const p = Math.min(1, (now - start) / duration);
@@ -571,6 +599,59 @@ const clientData = routes.map((r) => ({
       };
       raf = requestAnimationFrame(step);
     };
+
+    // ---------- zoomknoppen ----------
+    // Uitzoomen schuift stap voor stap naar het midden van Australië, zodat je bij maximaal
+    // uitzoomen het hele land ziet en dus waar de route ligt.
+    const ZOOM_STEP = 1.6;
+    const zoomTo = (dir: "in" | "out") => {
+      const [x, y, w, h] = view;
+      const c = [x + w / 2, y + h / 2];
+      const oc = [overview[0] + overview[2] / 2, overview[1] + overview[3] / 2];
+      const ratio = h / w;
+      let nw: number;
+      let nc = c;
+      if (dir === "in") {
+        nw = Math.max(w / ZOOM_STEP, overview[2] * 0.08);
+      } else {
+        nw = Math.min(w * ZOOM_STEP, overview[2]);
+        const t = overview[2] - w > 0 ? (nw - w) / (overview[2] - w) : 1;
+        nc = [c[0] + (oc[0] - c[0]) * t, c[1] + (oc[1] - c[1]) * t];
+      }
+      const nh = nw * ratio;
+      flyTo([nc[0] - nw / 2, nc[1] - nh / 2, nw, nh], false);
+    };
+    root.querySelector('[data-zoom="in"]')?.addEventListener("click", () => zoomTo("in"));
+    root.querySelector('[data-zoom="out"]')?.addEventListener("click", () => zoomTo("out"));
+    root.querySelector('[data-zoom="reset"]')?.addEventListener("click", () => {
+      if (routes[routeIdx]) flyTo(targetOf(routes[routeIdx]), false);
+    });
+
+    // Desktop: kaart verslepen (met de muis) als je ingezoomd bent
+    let drag: { x: number; y: number; v: number[]; moved: boolean } | null = null;
+    svg.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "touch") return;
+      drag = { x: e.clientX, y: e.clientY, v: [...view], moved: false };
+    });
+    window.addEventListener("pointermove", (e) => {
+      if (!drag) return;
+      const dx = e.clientX - drag.x;
+      const dy = e.clientY - drag.y;
+      if (!drag.moved && Math.hypot(dx, dy) < 4) return;
+      drag.moved = true;
+      cancelAnimationFrame(raf);
+      const k = drag.v[2] / svg.clientWidth;
+      setView([drag.v[0] - dx * k, drag.v[1] - dy * k, drag.v[2], drag.v[3]]);
+      svg.classList.add("is-dragging");
+    });
+    window.addEventListener("pointerup", () => {
+      if (drag?.moved) {
+        // voorkom dat loslaten op een pin ook een klik wordt
+        svg.addEventListener("click", (ev) => ev.stopPropagation(), { capture: true, once: true });
+      }
+      drag = null;
+      svg.classList.remove("is-dragging");
+    });
 
     // ---------- foto's ----------
     photo.addEventListener("error", () => photo.classList.add("is-broken"));

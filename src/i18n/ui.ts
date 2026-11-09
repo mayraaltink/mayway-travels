@@ -541,6 +541,9 @@ faq_sim_a_f:
     "routes.hint": "Tap a stop on the map or swipe through the photos",
     "routes.prev": "Previous stop",
     "routes.next": "Next stop",
+    "routes.zoomIn": "Zoom in",
+    "routes.zoomOut": "Zoom out",
+    "routes.zoomReset": "Show whole route",
 
 
 "routes.west.title": "North West Coast",
@@ -1568,6 +1571,9 @@ faq_sim_a_f:
     "routes.hint": "Klik op een stop op de kaart of swipe door de foto's",
     "routes.prev": "Vorige stop",
     "routes.next": "Volgende stop",
+    "routes.zoomIn": "Inzoomen",
+    "routes.zoomOut": "Uitzoomen",
+    "routes.zoomReset": "Hele route tonen",
 
     "routes.west.title": "Noord-West kust",
 "routes.west.subtitle": "Perth naar Exmouth",

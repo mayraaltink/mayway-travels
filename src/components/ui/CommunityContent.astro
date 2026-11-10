@@ -47,8 +47,10 @@ const destinations = [
     <!-- Zelfde afmetingen als de hero op For Brands, zodat de titel op exact dezelfde plek staat -->
     <div class="relative flex min-h-[640px] h-[100svh] items-center justify-center overflow-hidden rounded-b-[48px] md:rounded-b-[80px]">
 
-      <!-- GRADIENT -->
-      <div class="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/30 to-transparent z-10"></div>
+      <!-- Donkere laag, sterker links achter de tekst en bovenin voor het menu (zoals de homepagina) -->
+      <div class="absolute inset-0 z-10 bg-black/20"></div>
+      <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/45 via-black/15 to-transparent"></div>
+      <div class="absolute inset-x-0 top-0 z-10 h-40 bg-gradient-to-b from-black/30 to-transparent"></div>
 
       <!-- IMAGE -->
 <img
@@ -58,33 +60,29 @@ const destinations = [
 />
 
 
-      <!-- CONTENT -->
-      <div class="relative z-20 mx-auto max-w-3xl px-6 text-center text-white">
+      <!-- CONTENT: zelfde opbouw als de homepagina en For Brands (accent, grote zin, uitleg, knoppen) -->
+      <div class="relative z-20 mx-auto w-full max-w-7xl px-6 text-center text-white md:px-12 md:text-left">
+       <div class="mx-auto max-w-2xl md:mx-0">
 
-        <!-- TITLE -->
-        <!-- Zelfde opbouw als "MAY WAY / Socials" op For Brands -->
-        <h1 class="flex flex-col items-center leading-[0.85] tracking-[-0.03em]" style="text-shadow: 0 3px 15px rgba(0,0,0,0.65);">
-          <span class="font-neucha text-5xl font-bold text-[#4ED2CE] md:text-6xl">
-            MAY WAY
-          </span>
-          <span class="text-3xl font-medium text-white md:text-4xl">
-            {t('community.title')}
-          </span>
+        <p class="font-neucha mb-4 flex items-center justify-center gap-3 text-xl leading-none text-[#8EE3DF] md:justify-start md:text-2xl">
+          <span class="hidden h-px w-10 bg-[#8EE3DF] md:block" aria-hidden="true"></span>
+          MAY WAY {t('community.title')}
+        </p>
+
+        <h1 class="text-5xl font-bold leading-[1.02] tracking-tight text-white [text-wrap:balance] md:text-7xl" style="text-shadow: 0 2px 18px rgba(4, 40, 42, 0.35);">
+          {t('community.hero.headline')}
         </h1>
 
-        <!-- Zin onder de titel (zelfde stijl als For Brands) -->
-        <p class="mt-4 text-base font-medium tracking-[0.02em] text-white md:text-lg" style="text-shadow: 0 3px 15px rgba(0,0,0,0.4);">
+        <p class="mx-auto mt-6 max-w-md text-base text-white/85 md:mx-0 md:text-lg">
           {t('community.hero.line')}
         </p>
 
-        <!-- CTA'S -->
-        <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <!-- CTA'S: links wit gevuld, rechts omrand -->
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row md:justify-start">
 
-          <!-- PRIMARY -->
-         
 <a
   href={`/${lang}/destinations`}
-  class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a]"
+  class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-sm font-semibold text-[#0F7C82] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E6F6F6]"
 >
   {t('community.ctaBlogs')}
 
@@ -108,7 +106,7 @@ const destinations = [
           <!-- SECONDARY -->
           <a
             href="#moments"
-            class="inline-flex items-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white"
+            class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white"
           >
             {t('community.ctaEvents')}
 
@@ -122,6 +120,7 @@ const destinations = [
 
         </div>
 
+       </div>
       </div>
 
       <!-- Locatie (zelfde als For Brands) -->

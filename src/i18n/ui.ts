@@ -551,6 +551,58 @@ faq_sim_a_f:
 "routes.west.subtitle": "Perth to Exmouth",
 "routes.west.tagline":
   "The north-west coast is **rugged, remote** and still wonderfully **undiscovered**. You can drive for hours without seeing another car, and that is exactly its charm. This route is for anyone who loves true **road trip freedom** and **adventure**!\n\nIt's the ultimate road trip to do in a **campervan**. Along the way, the **Pinnacles** and the bright pink **Hutt Lagoon** alternate with the deep gorges and surreal views of **Kalbarri**. In **Shark Bay** and **Monkey Mia** you come face to face with **wild dolphins**, and you finally end up at **Ningaloo Reef**. There you snorkel straight from the beach and swim with **whale sharks**, manta rays and turtles.",
+// East Coast
+"stop.sydney": "A vibrant city where urban energy and beach culture come together. From surfing at Bondi Beach to admiring the iconic Harbour Bridge and Opera House.",
+"stop.byron-bay": "A laid-back surf town with a bohemian vibe. Surfing, yoga, cosy markets and beautiful beaches and sunsets.",
+"stop.gold-coast": "Where endless beaches meet a buzzing city life. Surfing, going out in Surfers Paradise and enjoying the skyline by the sea.",
+"stop.brisbane": "A sunny city with a relaxed and creative atmosphere. Discover fun rooftop bars, walk along the river or take a dip at South Bank.",
+"stop.noosa": "A tropical coastal town with a laid-back yet luxurious feel. Walk through Noosa National Park, spot koalas and enjoy the beautiful beaches.",
+"stop.fraser-island": "The largest sand island in the world, full of rugged nature and adventure. Drive a 4WD along the beach, swim in Lake McKenzie and live the ultimate camping life.",
+"stop.1770": "A quiet coastal town where the real laid-back Australia comes to life. Surfing, kayaking and spectacular sunsets.",
+"stop.the-whitsundays": "A tropical paradise: 74 islands with turquoise water and white sandy beaches. Sail past tropical islands, snorkel and discover the famous Whitehaven Beach.",
+"stop.magnetic-island": "A tropical island with a relaxed, undiscovered feel. Rent a topless car, discover hidden bays and spot wild koalas.",
+"stop.atherton-tablelands": "A green region full of waterfalls, rainforests and unique nature. Visit the famous Millaa Millaa Falls, swim in natural pools and spot wildlife.",
+"stop.cairns": "The base for adventure and adrenaline. From bungee jumping and rafting on the Barron River to snorkelling the Great Barrier Reef.",
+"stop.cape-tribulation": "Where the oldest rainforest in the world meets the Great Barrier Reef. Trek through the jungle, spot crocodiles and discover deserted tropical beaches.",
+
+// North West Coast
+"stop.perth": "The sunny capital of Western Australia, with beautiful beaches like Cottesloe. The start and end point of your west coast road trip.",
+"stop.rottnest-island": "A car-free island with crystal-clear bays, reached by ferry from Fremantle. Rent a bike and take a quokka selfie.",
+"stop.pinnacles-desert": "Thousands of limestone pillars rising from a yellow sand plain in Nambung National Park. Most beautiful at sunset.",
+"stop.hutt-lagoon": "A bright pink lake right along the coast near Port Gregory. The colour comes from algae in the salty water.",
+"stop.kalbarri-national-park": "Deep red gorges, sea cliffs and the famous Nature's Window. Walk out on the Skywalk that juts out over the gorge.",
+"stop.shark-bay": "A World Heritage area full of natural wonders, like Shell Beach, made of millions of tiny shells, and the stromatolites of Hamelin Pool.",
+"stop.monkey-mia": "Every morning, wild dolphins come to the beach here. Special to see them so close.",
+"stop.coral-bay": "A small beach town where Ningaloo Reef starts right off the beach. Snorkel among the coral or swim with manta rays.",
+"stop.exmouth": "The base for swimming with whale sharks along Ningaloo Reef, which you can see from March to July.",
+"stop.cape-range-national-park": "Rugged gorges and white beaches along Ningaloo Reef. Snorkel at Turquoise Bay, one of the most beautiful beaches in Australia.",
+
+// South West Coast
+"stop.margaret-river": "Famous for its vineyards, surf spots and caves. Taste wine at the local wineries and visit the Cape Leeuwin lighthouse.",
+"stop.pemberton": "A small town in the middle of the karri forests. Walk among the giant trees of Gloucester and Warren National Park.",
+"stop.denmark": "A green coastal town near the Valley of the Giants, where you walk along a treetop walk. Swim at Greens Pool and Elephant Rocks.",
+"stop.albany": "The oldest town in Western Australia, with rugged coastal parks like The Gap and Natural Bridge. From June to October you can spot whales here.",
+"stop.bremer-bay": "A quiet coastal town with white sand and turquoise water. From January to April you can join a tour to spot orcas.",
+"stop.esperance": "Pure white beaches and crystal-clear water. Drive the Great Ocean Drive past bays like Twilight Beach.",
+"stop.cape-le-grand-national-park": "Home to Lucky Bay, with perhaps the whitest sand in Australia and kangaroos on the beach. Climb Frenchman Peak for the view.",
+"stop.duke-of-orleans-bay": "A hidden bay east of Esperance, with quiet beaches like Wharton Beach. Perfect to completely unwind.",
+
+// Red Centre
+"stop.alice-springs": "An outback town in the middle of Australia and the starting point for tours to Uluru. Also visit the gorges and waterholes of the West MacDonnell Ranges.",
+"stop.kings-canyon": "An impressive canyon with steep red walls. Walk the Rim Walk early in the morning, past the Garden of Eden.",
+"stop.mount-conner": "A flat-topped mountain often mistaken for Uluru, which is why it's nicknamed 'Fooluru'. See it from a lookout along the Lasseter Highway.",
+"stop.uluru": "The sacred rock of the Anangu, 348 metres high. Watch the colours change at sunrise and sunset and walk the Base Walk around the rock.",
+"stop.kata-tjuta": "36 red domes close to Uluru. The Valley of the Winds walk takes you right between the rocks.",
+
+// Top End
+"stop.darwin": "The tropical capital of the Northern Territory. Head to the Mindil Beach Sunset Market for food and a sunset by the sea.",
+"stop.adelaide-river": "On a cruise along this river, saltwater crocodiles leap out of the water to grab food. Thrilling and impressive!",
+"stop.kakadu-national-park": "Australia's largest national park, with ancient Aboriginal rock art at Ubirr and Nourlangie.",
+"stop.yellow-water": "A wetland in Kakadu where a boat trip shows you crocodiles, water buffalo and hundreds of birds. Most beautiful at sunrise.",
+"stop.gunlom-falls": "A waterfall with a natural swimming pool. Climb to the top for the infinity pools overlooking Kakadu.",
+"stop.katherine-gorge": "Thirteen gorges in Nitmiluk National Park. Explore them on a boat trip or rent a canoe.",
+"stop.litchfield-national-park": "Waterfalls with swimming spots like Florence Falls, Wangi Falls and Buley Rockhole, and huge termite mounds.",
+
 "routes.west.drive":
   "Direct distance = ± 1,250 km\nWith detours = ± 1,700 km\nDriving time = ± 20 hours\nRecommended travel time = 2.5 to 3 weeks",
 "routes.west.expand": {
@@ -1589,6 +1641,60 @@ faq_sim_a_f:
 "routes.west.subtitle": "Perth naar Exmouth",
 "routes.west.tagline":
   "De noordwestkust is **ruig, afgelegen** en nog lekker **onontdekt**. Hier rijd je urenlang zonder een andere auto tegen te komen, en dat is precies de charme. Deze route is voor wie houdt van echte **roadtrip-vrijheid** en **avontuur**!\n\nHet is dé roadtrip om met een **camper** te doen. Onderweg wisselen de **Pinnacles** en het knalroze **Hutt Lagoon** zich af met de diepe kloven en bizarre uitzichten van **Kalbarri**. In **Shark Bay** en **Monkey Mia** kom je oog in oog met **wilde dolfijnen**, en uiteindelijk eindig je bij **Ningaloo Reef**. Daar snorkel je vanaf het strand en zwem je met **walvishaaien**, manta’s en schildpadden.",
+// Korte tekst per stop (onder de foto in de reisroutes): "stop.<naam in kleine letters met streepjes>".
+// Zonder tekst toont de stop alleen de foto.
+// Oostkust
+"stop.sydney": "Een bruisende stad waar stadse energie en strandcultuur samenkomen. Van surfen bij Bondi Beach tot genieten van de iconische Harbour Bridge en het Opera House.",
+"stop.byron-bay": "Een relaxte surf town met een bohemian vibe. Surfen, yoga, gezellige marktjes en genieten van prachtige stranden en zonsondergangen.",
+"stop.gold-coast": "Waar eindeloze stranden en een bruisend stadsleven samenkomen. Surfen, uitgaan in Surfers Paradise en genieten van de skyline aan zee.",
+"stop.brisbane": "Een zonnige stad met een relaxte en creatieve sfeer. Ontdek leuke rooftop bars, wandel langs de rivier of neem een duik bij South Bank.",
+"stop.noosa": "Een tropisch kustplaatsje met een laidback en luxe uitstraling. Wandel door Noosa National Park, spot koala’s en geniet van de prachtige stranden.",
+"stop.fraser-island": "Het grootste zandeiland ter wereld, vol ruige natuur en avontuur. Scheur met een 4WD over het strand, zwem in Lake McKenzie en beleef het ultieme camping life.",
+"stop.1770": "Een rustig kustplaatsje waar het echte laidback Australië tot leven komt. Surfen, kajakken en genieten van spectaculaire zonsondergangen.",
+"stop.the-whitsundays": "Tropisch paradijs: 74 eilanden met turquoise water en witte zandstranden. Zeil langs tropische eilanden, snorkel en ontdek het beroemde Whitehaven Beach.",
+"stop.magnetic-island": "Een tropisch eiland met een relaxte en onontdekte sfeer. Huur een topless car, ontdek verborgen baaien en spot wilde koala’s.",
+"stop.atherton-tablelands": "Een groene regio vol watervallen, regenwouden en bijzondere natuur. Bezoek de beroemde Millaa Millaa Falls, zwem in natuurlijke waterpoelen en spot wildlife.",
+"stop.cairns": "De uitvalsbasis voor avontuur en adrenaline. Van bungeejumpen en raften over de Barron River tot snorkelen bij het Great Barrier Reef.",
+"stop.cape-tribulation": "Waar het oudste regenwoud ter wereld en het Great Barrier Reef samenkomen. Trek door de jungle, spot krokodillen en ontdek verlaten tropische stranden.",
+
+// Noord-West kust
+"stop.perth": "De zonnige hoofdstad van West-Australië, met mooie stranden zoals Cottesloe. Het start- en eindpunt van je roadtrip langs de westkust.",
+"stop.rottnest-island": "Een autovrij eiland met helderblauwe baaien, met de ferry bereikbaar vanuit Fremantle. Huur een fiets en maak een quokka-selfie.",
+"stop.pinnacles-desert": "Duizenden kalksteenpilaren midden in een gele zandvlakte in Nambung National Park. Het mooist bij zonsondergang.",
+"stop.hutt-lagoon": "Een knalroze meer vlak langs de kust bij Port Gregory. De kleur ontstaat door algen in het zoute water.",
+"stop.kalbarri-national-park": "Diepe rode kloven, kliffen aan zee en het bekende Nature’s Window. Loop over de Skywalk die boven de kloof uitsteekt.",
+"stop.shark-bay": "Werelderfgoed vol natuurwonderen, zoals Shell Beach, een strand van miljoenen kleine schelpjes, en de stromatolieten van Hamelin Pool.",
+"stop.monkey-mia": "Hier komen elke ochtend wilde dolfijnen naar het strand. Bijzonder om ze zo dichtbij te zien.",
+"stop.coral-bay": "Een klein strandplaatsje waar het Ningaloo Reef direct vanaf het strand begint. Snorkel tussen het koraal of ga zwemmen met manta’s.",
+"stop.exmouth": "De uitvalsbasis om langs het Ningaloo Reef te zwemmen met walvishaaien, die je van maart t/m juli ziet.",
+"stop.cape-range-national-park": "Ruige kloven en witte stranden langs het Ningaloo Reef. Snorkel bij Turquoise Bay, een van de mooiste stranden van Australië.",
+
+// Zuid-West kust
+"stop.margaret-river": "Bekend om de wijngaarden, surfspots en grotten. Proef wijn bij de lokale wineries en bezoek de vuurtoren van Cape Leeuwin.",
+"stop.pemberton": "Een klein dorpje midden in de karribossen. Wandel tussen de reusachtige bomen van Gloucester en Warren National Park.",
+"stop.denmark": "Een groen kustplaatsje bij de Valley of the Giants, waar je over een boomkronenpad loopt. Zwem bij Greens Pool en Elephant Rocks.",
+"stop.albany": "De oudste stad van West-Australië, met ruige kustparken als The Gap en Natural Bridge. Van juni t/m oktober spot je hier walvissen.",
+"stop.bremer-bay": "Een rustig kustplaatsje met wit zand en turquoise water. Van januari t/m april kun je hier op tour om orka’s te spotten.",
+"stop.esperance": "Spierwitte stranden en helderblauw water. Rijd de Great Ocean Drive langs baaien als Twilight Beach.",
+"stop.cape-le-grand-national-park": "Hier ligt Lucky Bay, met misschien wel het witste zand van Australië en kangoeroes op het strand. Klim naar Frenchman Peak voor het uitzicht.",
+"stop.duke-of-orleans-bay": "Een verborgen baai ten oosten van Esperance, met rustige stranden zoals Wharton Beach. Perfect om helemaal tot rust te komen.",
+
+// Red Centre
+"stop.alice-springs": "Een outbackstadje midden in Australië en het startpunt voor tours naar Uluru. Ga ook naar de kloven en waterholes van de West MacDonnell Ranges.",
+"stop.kings-canyon": "Een indrukwekkende canyon met steile rode wanden. Loop vroeg in de ochtend de Rim Walk langs de Garden of Eden.",
+"stop.mount-conner": "Een tafelberg die vaak voor Uluru wordt aangezien, daarom ook wel ‘Fooluru’ genoemd. Je ziet hem vanaf een uitkijkpunt langs de Lasseter Highway.",
+"stop.uluru": "De heilige rots van de Anangu, 348 meter hoog. Bekijk de kleuren bij zonsopkomst en zonsondergang en loop de Base Walk rond de rots.",
+"stop.kata-tjuta": "36 rode koepels vlak bij Uluru. De Valley of the Winds-wandeling brengt je midden tussen de rotsen door.",
+
+// Top End
+"stop.darwin": "De tropische hoofdstad van het Northern Territory. Ga naar de Mindil Beach Sunset Market voor eten en een zonsondergang aan zee.",
+"stop.adelaide-river": "Tijdens een cruise op deze rivier springen zoutwaterkrokodillen uit het water om eten te pakken. Spannend en indrukwekkend!",
+"stop.kakadu-national-park": "Het grootste nationale park van Australië, met eeuwenoude Aboriginal rotstekeningen bij Ubirr en Nourlangie.",
+"stop.yellow-water": "Een wetland in Kakadu waar je tijdens een boottocht krokodillen, waterbuffels en honderden vogels ziet. Het mooist bij zonsopkomst.",
+"stop.gunlom-falls": "Een waterval met een natuurlijk zwembad. Klim naar boven voor de infinity pools met uitzicht over Kakadu.",
+"stop.katherine-gorge": "Dertien kloven in Nitmiluk National Park. Verken ze met een boottocht of huur een kano.",
+"stop.litchfield-national-park": "Watervallen met zwemplekken zoals Florence Falls, Wangi Falls en Buley Rockhole, en enorme termietenheuvels.",
+
 "routes.west.drive":
   "Afstand direct = ± 1.250 km\nMet omwegen = ± 1.700 km\nRijtijd = ± 20 uur\nAanbevolen reistijd = 2,5 tot 3 weken",
 "routes.west.expand":

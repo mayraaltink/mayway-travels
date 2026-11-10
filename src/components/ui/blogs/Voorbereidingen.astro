@@ -17,6 +17,9 @@ const URL_MEDICARE = 'https://www.servicesaustralia.gov.au/reciprocal-health-car
 const URL_CBA = 'https://www.commbank.com.au/digital/eosmartaccess/ntb';
 const URL_OPTUS = 'https://www.optus.com.au/deals#prepaid';
 const URL_FELIX = 'https://felixmobile.com.au/plan';
+const URL_BOOST = 'https://boost.com.au/esims';
+const URL_AMAYSIM = 'https://www.amaysim.com.au/';
+const URL_TELSTRA = 'https://www.telstra.com.au/';
 const URL_WHISTLEOUT = 'https://www.whistleout.com.au/MobilePhones/Guides/what-is-esim';
 const URL_FINDER = 'https://www.finder.com.au/mobile-plans/esim';
 
@@ -41,8 +44,8 @@ const content = {
       'Voldoende financiële middelen om je eerste periode te overbruggen (minstens <b>$5.000 AUD</b> kunnen aantonen voor eten, drinken en verblijf)',
       'Kopieën van de belangrijkste documenten in je mail en cloud (paspoort, rijbewijs, goedkeuring visum)',
       `Internationaal rijbewijs (haal je bij de ${ext(URL_ANWB, 'ANWB', true)}, handig voor roadtrips en vanlife)`,
-      `Internationaal werkende betaalmiddelen ${jump('betaalmiddelen', '(lees hieronder meer)')}`,
-      `Goede reis- en zorgverzekering ${jump('zorgverzekering', '(lees hieronder meer)')}`,
+      `Internationaal werkende betaalmiddelen ${jump('betaalmiddelen', '(lees meer)')}`,
+      `Goede reis- en zorgverzekering ${jump('zorgverzekering', '(lees meer)')}`,
     ],
     insuranceTitle: 'Zorgverzekering in Australië',
     insuranceSub: 'Working Holiday visum',
@@ -78,28 +81,50 @@ const content = {
     ],
     simTitle: 'Simkaart regelen',
     sim: [
-      '<p>Een Australische simkaart is echt onmisbaar tijdens je working holiday. Het makkelijkst regel je die direct bij aankomst: op het vliegveld vind je kiosken van <b>Telstra, Optus en Vodafone</b>. Over alle drie hoor je goede verhalen, dus volgens mij kun je het beste gewoon voor de scherpste deal gaan.</p>',
-      `<p>Ik heb destijds een deal bij Optus op het vliegveld van Sydney afgesloten: voor $39 AUD (€23) per maand kreeg ik 40 GB data, onbeperkt bellen en sms'en binnen Australië en 400 internationale belminuten. Ik vond het superfijn dat ze alles ter plekke voor me installeerden en regelden, zo kon ik meteen aan de slag. Wel een tip: online ben je vaak goedkoper uit dan op het vliegveld. Bij ${ext(URL_OPTUS, 'Optus')} betaal je online nu bijvoorbeeld maar $13 AUD voor de eerste 28 dagen.</p>`,
-      `<h3>Liever een eSIM?</h3><p>Steeds meer mensen kiezen voor een eSIM, die je van tevoren al zelf kunt installeren. Een sterke deal vind je bij ${ext(URL_FELIX, 'Felix Mobile')}: de eerste 6 maanden betaal je $20 AUD per maand voor onbeperkt internet, bellen en sms'en binnen Australië. Je kiest bij Felix tussen een eSIM en een fysieke simkaart. De fysieke simkaart ontvang je binnen 5 werkdagen. Een eSIM kun je al vóór vertrek kopen, maar activeren en gebruiken kan pas zodra je in Australië bent.</p>`,
-      `<p>Andere aanraders zijn <b>Boost Mobile</b> en <b>Amaysim</b>. Boost gebruikt het netwerk van Telstra en heeft daardoor het beste bereik buiten de steden. Dat is ideaal als je je regionale werk op een farm gaat doen, want daar heb je met andere netwerken soms nauwelijks bereik. Amaysim gebruikt het netwerk van Optus en heeft vaak scherpe prijzen. Vergelijk de actuele deals even op ${ext(URL_WHISTLEOUT, 'WhistleOut')} of ${ext(URL_FINDER, 'Finder')}.</p>`,
+      `<p>Een Australische simkaart is echt <b>onmisbaar</b> tijdens je working holiday. Op het vliegveld in de grote steden van <b>Sydney, Melbourne en Perth</b> vind je kiosken van <b>Telstra, Optus en Vodafone</b>. Hier kun je gemakkelijk een <b>fysieke simkaart</b> laten installeren. In de steden merk je eigenlijk weinig verschil tussen de drie, dus uiteindelijk kun je het beste gewoon voor de <b>scherpste deal</b> gaan. Ga je echt <b>afgelegen</b> werken, kies dan voor ${ext(URL_TELSTRA, 'Telstra')}.</p>`,
+      `<p>Ik koos zelf voor dit gemak en sloot een deal bij Optus op het vliegveld van Sydney: voor <b>$39 AUD (€23) per maand</b> kreeg ik <b>40 GB data</b>, <b>onbeperkt bellen en sms’en</b> binnen Australië en <b>400 internationale belminuten</b>. Ik vond het superfijn dat ze alles ter plekke voor me regelden. Achteraf had ik wel <b>goedkoper uit</b> kunnen zijn: bij ${ext(URL_OPTUS, 'Optus')} betaal je online nu bijvoorbeeld maar <b>$13 AUD voor de eerste 28 dagen</b>.</p>`,
+      `<h3>Liever een eSIM?</h3><p>Steeds meer mensen kiezen voor een <b>eSIM</b>, die je van tevoren al zelf kunt installeren. Een sterke deal vind je bij ${ext(URL_FELIX, 'Felix Mobile')}: de eerste 6 maanden betaal je <b>$20 AUD per maand</b> voor <b>onbeperkt internet, bellen en sms'en</b> binnen Australië. Je kiest bij Felix tussen een eSIM en een fysieke simkaart. De fysieke simkaart ontvang je <b>binnen 5 werkdagen</b>. Een eSIM kun je al <b>vóór vertrek kopen</b>, maar activeren en gebruiken kan pas <b>zodra je in Australië bent</b>.</p>`,
+      `<p>Andere aanraders zijn ${ext(URL_BOOST, 'Boost Mobile')} en ${ext(URL_AMAYSIM, 'Amaysim')}. Boost gebruikt het netwerk van <b>Telstra</b> en heeft daardoor het <b>beste bereik buiten de steden</b>. Dat is ideaal als je je regionale werk op een <b>farm</b> gaat doen, want daar heb je met andere netwerken soms nauwelijks bereik. Amaysim gebruikt het netwerk van <b>Optus</b> en heeft vaak <b>scherpe prijzen</b>. Vergelijk de actuele deals even op ${ext(URL_WHISTLEOUT, 'WhistleOut')} of ${ext(URL_FINDER, 'Finder')}.</p>`,
       "<h3>Waarom een travel-eSIM geen goed idee is</h3><p>Je komt ze vast tegen: travel-eSIMs van bijvoorbeeld Airalo of Holafly. Voor een vakantie zijn ze top, maar voor een working holiday raad ik ze af. Dit is waarom:</p><ul><li><b>Je krijgt geen Australisch telefoonnummer.</b> Je hebt meestal alleen data. Juist dat nummer heb je overal voor nodig: om een bankrekening te openen, voor je TFN (belastingnummer), om te solliciteren en om bereikbaar te zijn voor werkgevers en huisbazen.</li><li><b>Werkgevers bellen je.</b> In Australië wordt veel telefonisch geregeld. Kunnen ze je niet bellen of sms'en, dan gaat de baan gewoon naar iemand anders.</li><li><b>Je mist sms-codes.</b> Australische banken en apps sturen verificatiecodes per sms naar een Australisch nummer. Zonder lokaal nummer loop je daar steeds op vast.</li><li><b>Op de lange termijn veel duurder.</b> Travel-eSIMs zijn bedoeld voor een paar dagen of weken. Voor een heel jaar betaal je per GB flink meer dan bij een lokale provider.</li></ul>",
       '<p>Een travel-eSIM kan wel handig zijn als overbrugging voor de eerste dag of twee, maar regel zo snel mogelijk een lokaal abonnement.</p>',
     ],
     clothesTitle: 'Wat voor kleding neem je mee?',
     climateMore: 'Bekijk per regio en seizoen hoe warm het is',
-    clothesIntro: 'In Australië kun je kleding prima vergelijken met Nederland: er zijn <b>talloze leuke merken</b> en vooral veel sport- en zwemkledingmerken. In de grote steden vind je <b>Westfield Malls</b> en grote ketens zoals H&M, Zara en Cotton On. Voor de zomer en lente neem je de essentiële items mee, en in de winter vul je dit aan met een paar dikke truien en een (bomber)jas.',
+    clothesIntro: [
+      'Je gaat voor een jaar (of misschien wel langer!) naar de andere kant van de wereld en dan wil je natuurlijk niets vergeten. Maar laat ik meteen met het belangrijkste beginnen: je kunt in Australië <b>écht alles kopen</b>.',
+      'Toen ik destijds in Australië aankwam, had ik maar <b>één backpack van 70 liter</b> bij me. Ideaal was dat achteraf niet helemaal, want ik moest mijn garderobe stap voor stap aanvullen. Ik kwam namelijk vanuit de tropische temperaturen van 30+ graden terecht in <b>Sydney</b>. En geloof me, in de maanden <b>juni en juli</b> mogen die blazers, truien en lange broeken toch echt weer uit de kast komen.',
+      'Het fijne is dat Australië qua winkelaanbod eigenlijk heel erg op Nederland lijkt. Je vindt er <b>dezelfde soort winkels en merken</b>, waardoor je jouw garderobe gemakkelijk weer kunt aanvullen met leuke kledingstukken. Je hoeft dus echt <b>niet je hele kledingkast</b> mee te slepen!',
+    ],
     lists: [
       {
         id: 'basis',
         title: 'Basis inpaklijst',
         sub: 'Essentiële items voor elke reis',
-        items: ['Korte broeken / shorts', 'Jurkjes / rokjes', 'Luchtige topjes / t-shirts', 'Lange luchtige broek / linnen broek', 'Spijkerbroek', 'Hoodie / sweater', 'Blazer / dunne jas', 'Sneakers', 'Slippers / sandalen', 'Sportschoenen'],
+        items: [] as string[],
+        groups: [
+          { title: 'Bovenkleding', items: ['Topjes / t-shirts', 'Longsleeves', 'Hoodie / sweater', 'Blazer', 'Regenjas / windjack', 'Bomberjack / warmere jas (voor de winter)'] },
+          { title: 'Onderkleding', items: ['Korte broeken / shorts', 'Jurkjes', 'Rokjes', 'Lange luchtige broek / linnen broek', 'Pantalon', 'Spijkerbroek'] },
+          { title: 'Sportkleding', items: ['Sporttopjes / sportshirts', 'Sportlegging / sportshort', 'Sportbeha', 'Sportschoenen'] },
+          { title: 'Ondergoed & nachtkleding', items: ['Ondergoed en sokken', 'Zwemkleding / bikini', 'Pyjama / slaapkleding'] },
+          { title: 'Schoenen', items: ['Sneakers', 'Slippers'] },
+          { title: 'Accessoires', items: ['Pet / zonnehoed', 'Zonnebril', 'Sieraden'] },
+        ],
       },
       {
         id: 'musthaves',
         title: 'Must haves',
         sub: 'Extra items voor een comfortabele reis',
-        items: ['Zonnebrand SPF 50 (hier kopen, dus kleine fles mee)', 'Strandlaken', 'Hoed / pet', 'Zonnebril', 'Wereldstekker (type I)', 'Navulbare waterfles', 'Boek of e-reader', 'Powerbank'],
+        items: [
+          'Zonnebrand SPF 50+ (neem een kleine fles mee en koop een grote ter plekke)',
+          'After-sun',
+          'Sneldrogende handdoek / strandlaken',
+          'Wereldstekker (type I)',
+          'Navulbare waterfles',
+          'Powerbank (in je handbagage)',
+          'Boek of e-reader',
+          'Camera (+ oplader en extra geheugenkaart)',
+          'Slotjes voor koffer of rugzak (TSA-slot)',
+        ],
       },
     ],
     appsTitle: 'Handige apps voor in Australië',
@@ -153,8 +178,8 @@ const content = {
       'Enough funds to cover your first period (be able to show at least <b>$5,000 AUD</b> for food, drinks and accommodation)',
       'Copies of your most important documents in your email and cloud (passport, driving licence, visa approval)',
       `International driving permit (get it from the ${ext(URL_ANWB, 'ANWB', true)}, handy for road trips and vanlife)`,
-      `Internationally accepted payment methods ${jump('betaalmiddelen', '(read more below)')}`,
-      `Good travel and health insurance ${jump('zorgverzekering', '(read more below)')}`,
+      `Internationally accepted payment methods ${jump('betaalmiddelen', '(read more)')}`,
+      `Good travel and health insurance ${jump('zorgverzekering', '(read more)')}`,
     ],
     insuranceTitle: 'Health insurance in Australia',
     insuranceSub: 'Working Holiday visa',
@@ -190,28 +215,50 @@ const content = {
     ],
     simTitle: 'Getting a SIM card',
     sim: [
-      '<p>An Australian SIM card is truly essential during your working holiday. The easiest way is to sort it out right when you arrive: at the airport you will find kiosks of <b>Telstra, Optus and Vodafone</b>. You hear good stories about all three, so I think you are best off just going for the sharpest deal.</p>',
-      `<p>Back then I signed up for a deal with Optus at Sydney airport: for $39 AUD (€23) a month I got 40 GB of data, unlimited calls and texts within Australia and 400 international minutes. I loved that they installed and set up everything for me on the spot, so I could get going straight away. One tip though: online is often cheaper than at the airport. At ${ext(URL_OPTUS, 'Optus')}, for example, you now pay only $13 AUD online for the first 28 days.</p>`,
-      `<h3>Prefer an eSIM?</h3><p>More and more people choose an eSIM, which you can install yourself in advance. You will find a great deal at ${ext(URL_FELIX, 'Felix Mobile')}: for the first 6 months you pay $20 AUD a month for unlimited data, calls and texts within Australia. At Felix you choose between an eSIM and a physical SIM card. The physical SIM arrives within 5 working days. You can buy an eSIM before you leave, but you can only activate and use it once you are in Australia.</p>`,
-      `<p>Other good options are <b>Boost Mobile</b> and <b>Amaysim</b>. Boost uses the Telstra network and therefore has the best coverage outside the cities. That is ideal if you are going to do your regional work on a farm, because other networks sometimes have hardly any coverage there. Amaysim uses the Optus network and often has sharp prices. Compare the current deals on ${ext(URL_WHISTLEOUT, 'WhistleOut')} or ${ext(URL_FINDER, 'Finder')}.</p>`,
+      `<p>An Australian SIM card is truly <b>essential</b> during your working holiday. At the airports of the big cities like <b>Sydney, Melbourne and Perth</b> you will find kiosks of <b>Telstra, Optus and Vodafone</b>. Here you can easily have a <b>physical SIM card</b> installed. In the cities you hardly notice any difference between the three, so in the end you are best off just going for the <b>sharpest deal</b>. Going to work somewhere really <b>remote</b>? Then choose ${ext(URL_TELSTRA, 'Telstra')}.</p>`,
+      `<p>I went for this convenience myself and signed up for a deal with Optus at Sydney airport: for <b>$39 AUD (€23) a month</b> I got <b>40 GB of data</b>, <b>unlimited calls and texts</b> within Australia and <b>400 international minutes</b>. I loved that they arranged everything for me on the spot. Looking back, I could have been <b>cheaper off</b>: at ${ext(URL_OPTUS, 'Optus')}, for example, you now pay only <b>$13 AUD for the first 28 days</b> online.</p>`,
+      `<h3>Prefer an eSIM?</h3><p>More and more people choose an <b>eSIM</b>, which you can install yourself in advance. You will find a great deal at ${ext(URL_FELIX, 'Felix Mobile')}: for the first 6 months you pay <b>$20 AUD a month</b> for <b>unlimited data, calls and texts</b> within Australia. At Felix you choose between an eSIM and a physical SIM card. The physical SIM arrives <b>within 5 working days</b>. You can <b>buy an eSIM before you leave</b>, but you can only activate and use it <b>once you are in Australia</b>.</p>`,
+      `<p>Other good options are ${ext(URL_BOOST, 'Boost Mobile')} and ${ext(URL_AMAYSIM, 'Amaysim')}. Boost uses the <b>Telstra</b> network and therefore has the <b>best coverage outside the cities</b>. That is ideal if you are going to do your regional work on a <b>farm</b>, because other networks sometimes have hardly any coverage there. Amaysim uses the <b>Optus</b> network and often has <b>sharp prices</b>. Compare the current deals on ${ext(URL_WHISTLEOUT, 'WhistleOut')} or ${ext(URL_FINDER, 'Finder')}.</p>`,
       "<h3>Why a travel eSIM is not a good idea</h3><p>You will probably come across them: travel eSIMs from Airalo or Holafly, for example. They are great for a holiday, but for a working holiday I would not recommend them. Here is why:</p><ul><li><b>You do not get an Australian phone number.</b> You usually only get data. And you need that number for everything: to open a bank account, for your TFN (tax file number), to apply for jobs and to be reachable for employers and landlords.</li><li><b>Employers call you.</b> A lot is arranged by phone in Australia. If they cannot call or text you, the job simply goes to someone else.</li><li><b>You miss SMS codes.</b> Australian banks and apps send verification codes by text to an Australian number. Without a local number you keep getting stuck.</li><li><b>Much more expensive in the long run.</b> Travel eSIMs are meant for a few days or weeks. For a whole year you pay a lot more per GB than with a local provider.</li></ul>",
       '<p>A travel eSIM can be handy as a bridge for the first day or two, but get a local plan as soon as possible.</p>',
     ],
     clothesTitle: 'What clothes do you bring?',
     climateMore: 'See how warm it is per region and season',
-    clothesIntro: 'Clothing in Australia is very similar to the Netherlands: there are <b>loads of great brands</b> and especially lots of sports and swimwear brands. In the big cities you find <b>Westfield malls</b> and big chains like H&M, Zara and Cotton On. For summer and spring bring the essentials, and in winter add a few thick jumpers and a (bomber) jacket.',
+    clothesIntro: [
+      'You are going to the other side of the world for a year (or maybe even longer!), so of course you don\'t want to forget anything. But let me start with the most important thing: you can <b>really buy everything</b> in Australia.',
+      'When I arrived in Australia, I only had <b>one 70-litre backpack</b> with me. Looking back, that wasn\'t ideal, because I had to build up my wardrobe step by step. I went from tropical temperatures of 30+ degrees straight into <b>Sydney</b>. And believe me, in <b>June and July</b> the blazers, jumpers and long trousers come out of the closet again.',
+      'The nice thing is that the shops in Australia are actually very similar to the Netherlands. You find <b>the same kind of shops and brands</b>, so you can easily add some nice pieces to your wardrobe. So there is really <b>no need to drag your whole wardrobe</b> along!',
+    ],
     lists: [
       {
         id: 'basis',
         title: 'Basic packing list',
         sub: 'Essential items for every trip',
-        items: ['Shorts', 'Dresses / skirts', 'Light tops / t-shirts', 'Long light trousers / linen trousers', 'Jeans', 'Hoodie / sweater', 'Blazer / light jacket', 'Sneakers', 'Flip-flops / sandals', 'Sports shoes'],
+        items: [] as string[],
+        groups: [
+          { title: 'Tops', items: ['Tops / t-shirts', 'Long sleeves', 'Hoodie / sweater', 'Blazer', 'Raincoat / windbreaker', 'Bomber jacket / warmer coat (for winter)'] },
+          { title: 'Bottoms', items: ['Shorts', 'Dresses', 'Skirts', 'Long light trousers / linen trousers', 'Dress trousers', 'Jeans'] },
+          { title: 'Sportswear', items: ['Sports tops / sports shirts', 'Sports leggings / sports shorts', 'Sports bra', 'Sports shoes'] },
+          { title: 'Underwear & sleepwear', items: ['Underwear and socks', 'Swimwear / bikini', 'Pyjamas / sleepwear'] },
+          { title: 'Shoes', items: ['Sneakers', 'Flip-flops'] },
+          { title: 'Accessories', items: ['Cap / sun hat', 'Sunglasses', 'Jewellery'] },
+        ],
       },
       {
         id: 'musthaves',
         title: 'Must haves',
         sub: 'Extra items for a comfortable trip',
-        items: ['Sunscreen SPF 50 (buy it here, so bring a small bottle)', 'Beach towel', 'Hat / cap', 'Sunglasses', 'Travel adapter (type I)', 'Refillable water bottle', 'Book or e-reader', 'Power bank'],
+        items: [
+          'Sunscreen SPF 50+ (bring a small bottle and buy a big one there)',
+          'After-sun',
+          'Quick-dry towel / beach towel',
+          'Travel adapter (type I)',
+          'Refillable water bottle',
+          'Power bank (in your hand luggage)',
+          'Book or e-reader',
+          'Camera (+ charger and extra memory card)',
+          'Locks for your suitcase or backpack (TSA lock)',
+        ],
       },
     ],
     appsTitle: 'Useful apps in Australia',
@@ -260,7 +307,9 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
         <Fragment set:html={content.title} />
       </h1>
       <nav aria-label={content.tocTitle} class="mt-8">
-        <ol class="flex flex-wrap justify-center gap-2">
+        <!-- zelfde label als in de Working Holiday-blog -->
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-500">{content.tocTitle}</p>
+        <ol class="mt-4 flex flex-wrap justify-center gap-2">
           {content.toc.map((item) => (
             <li>
               <a href={`#${item.id}`} class="inline-flex rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white">{item.label}</a>
@@ -271,9 +320,9 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
     </header>
 
     <!-- Checklist: wat neem je mee -->
-    <section id="meenemen" class="mt-12 scroll-mt-28 rounded-[2.5rem] bg-[#7DD6D8] px-5 py-10 text-white md:mt-16 md:rounded-[3.5rem] md:px-16 md:py-14">
+    <section id="meenemen" class="mt-12 scroll-mt-28 rounded-[2.5rem] bg-[#A8E4E5] px-5 py-10 text-white md:mt-16 md:rounded-[3.5rem] md:px-16 md:py-14">
       <div class="mx-auto max-w-2xl">
-        <h2 class="text-center text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.5rem]">{content.checkTitle}</h2>
+        <h2 class="text-center text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">{content.checkTitle}</h2>
         <p class="mt-4 text-center text-[15px] leading-relaxed text-black/80 md:text-base">{content.checkIntro}</p>
         <ul class="mt-8 space-y-3">
           {content.checklist.map((item, i) => (
@@ -281,7 +330,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
               <label class="flex cursor-pointer items-center gap-4 rounded-full bg-[#46B9BC] py-2.5 pl-3 pr-6 transition hover:bg-[#3FB0B3]">
                 <input type="checkbox" data-check={`meenemen-${i}`} class="peer sr-only" />
                 <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-transparent transition peer-checked:text-[#0F7C82] peer-focus-visible:ring-2 peer-focus-visible:ring-white" set:html={checkSvg} />
-                <span class="text-sm font-semibold leading-snug md:text-[15px] peer-checked:opacity-75" set:html={item} />
+                <span class="text-sm font-semibold leading-snug decoration-2 md:text-[15px] peer-checked:line-through peer-checked:opacity-75" set:html={item} />
               </label>
             </li>
           ))}
@@ -291,8 +340,8 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 
     <!-- Zorgverzekering -->
     <section id="zorgverzekering" class="mx-auto mt-20 max-w-3xl scroll-mt-28 md:mt-28">
-      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.insuranceTitle}</h2>
-      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900 [&_h3]:pt-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-black [&_li]:marker:text-[#1CABB0] [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
+      <h2 class="text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">{content.insuranceTitle}</h2>
+      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900 [&_h3]:pt-3 [&_h3]:text-2xl md:[&_h3]:text-[1.75rem] [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-black [&_li]:marker:text-[#1CABB0] [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
         {content.insurance.map((block) => <div class="space-y-3" set:html={block} />)}
       </div>
     </section>
@@ -300,17 +349,19 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
     <!-- Betaalmiddelen -->
     <section id="betaalmiddelen" class="mt-20 scroll-mt-28 md:mt-28">
       <div class="mx-auto max-w-3xl">
-        <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.paymentTitle}</h2>
+        <h2 class="text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">{content.paymentTitle}</h2>
         <p class="mt-6 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900" set:html={content.payment} />
       </div>
 
       <!-- Revolut & Wise en Commonwealth onder elkaar; het stappenplan zit in het Commonwealth-blok -->
       <div class="mt-10 space-y-6">
         <div class="relative rounded-[2rem] bg-[#E6F6F6] p-7 md:p-10">
-          <span class="mb-4 inline-flex rounded-full bg-[#1CABB0] px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-lg rotate-6 md:absolute md:-right-4 md:-top-1 md:mb-0 md:rotate-12">{content.revolutBadge}</span>
+          <!-- label in de kleur van het blok, twee tinten donkerder -->
+          <span class="mb-4 inline-flex rounded-full bg-[#5CC4C7] px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-lg rotate-6 md:absolute md:-right-4 md:-top-1 md:mb-0 md:rotate-12">{content.revolutBadge}</span>
           <div class="mx-auto max-w-3xl">
-          <h3 class="text-2xl font-semibold tracking-tight text-black">{content.revolutTitle}</h3>
-          <div class="mt-4 space-y-5 text-[15px] leading-relaxed text-gray-700 [&_b]:text-gray-900 [&_h4]:mb-3 [&_h4]:pt-2 [&_h4]:text-lg [&_h4]:font-semibold [&_h4]:tracking-tight [&_h4]:text-black [&_li]:marker:font-semibold [&_li]:marker:text-[#1CABB0] [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
+          <!-- zelfde grootte als de tussenkopjes bij Zorgverzekering ("Wat is Medicare?") -->
+          <h3 class="text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{content.revolutTitle}</h3>
+          <div class="mt-4 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900 [&_h4]:mb-3 [&_h4]:pt-2 [&_h4]:text-lg [&_h4]:font-semibold [&_h4]:tracking-tight [&_h4]:text-black [&_li]:marker:font-semibold [&_li]:marker:text-[#1CABB0] [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
             {content.revolut.map((block) => <div set:html={block} />)}
           </div>
           </div>
@@ -319,8 +370,8 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
         <div class="relative rounded-[2rem] bg-[#0F7C82] p-7 text-white md:p-10">
           <span class="mb-4 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-[#0F7C82] shadow-lg rotate-6 md:absolute md:-right-4 md:-top-1 md:mb-0 md:rotate-12">{content.cbaBadge}</span>
           <div class="mx-auto max-w-3xl">
-          <h3 class="text-2xl font-semibold tracking-tight">{content.cbaTitle}</h3>
-          <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-white/85">
+          <h3 class="text-2xl font-semibold tracking-tight md:text-[1.75rem]">{content.cbaTitle}</h3>
+          <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-white/85 md:text-base">
             {content.cba.map((p) => <p set:html={p} />)}
           </div>
 
@@ -328,7 +379,7 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             <h4 class="text-lg font-semibold tracking-tight md:text-xl">{content.cbaStepsTitle}</h4>
             <ol class="mt-5 space-y-4">
               {content.cbaSteps.map((step, i) => (
-                <li class="flex items-start gap-4 text-[15px] leading-relaxed text-white/85 [&_a]:text-white [&_a]:decoration-white/50 [&_b]:text-white">
+                <li class="flex items-start gap-4 text-[15px] leading-relaxed text-white/85 md:text-base [&_a]:text-white [&_a]:decoration-white/50 [&_b]:text-white">
                   <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-sm font-semibold text-[#0F7C82]">{i + 1}</span>
                   <span class="pt-1" set:html={step} />
                 </li>
@@ -342,48 +393,62 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 
     <!-- Simkaart -->
     <section id="simkaart" class="mx-auto mt-20 max-w-3xl scroll-mt-28 md:mt-28">
-      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.simTitle}</h2>
-      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900 [&_h3]:mb-3 [&_h3]:pt-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-black [&_li]:marker:text-[#1CABB0] [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
+      <h2 class="text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">{content.simTitle}</h2>
+      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900 [&_h3]:mb-3 [&_h3]:pt-3 [&_h3]:text-2xl md:[&_h3]:text-[1.75rem] [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-black [&_li]:marker:text-[#1CABB0] [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
         {content.sim.map((block) => <div set:html={block} />)}
       </div>
     </section>
 
 
-    <!-- Kleding -->
-    <section id="kleding" class="mt-20 scroll-mt-28 rounded-[2.5rem] bg-[#B6E8E7] px-4 py-10 md:mt-28 md:rounded-[3.5rem] md:px-8 md:py-14">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.5rem]">{content.clothesTitle}</h2>
-        <p class="mt-4 text-[15px] leading-relaxed text-gray-700 [&_b]:text-gray-900" set:html={content.clothesIntro} />
+    <!-- Kleding: titel + verhaal los op de pagina (zoals Simkaart), daaronder het blok met de paklijsten -->
+    <section id="kleding" class="mt-20 scroll-mt-28 md:mt-28">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">{content.clothesTitle}</h2>
+        <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base [&_b]:text-gray-900">
+          {content.clothesIntro.map((p) => <p set:html={p} />)}
+        </div>
         <!-- Doorverwijzing naar de blog over het beste reisseizoen -->
         <a href={`/${lang}/blogs/beste-reisseizoen`} class="mt-5 inline-flex items-center gap-2 text-[15px] font-semibold text-[#0F7C82] underline decoration-[#0F7C82]/40 underline-offset-4 transition hover:decoration-[#0F7C82]">
           {content.climateMore}
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         </a>
       </div>
-      <div class="mt-10 grid gap-5 md:grid-cols-2 md:items-start">
+
+      <!-- Inpaklijsten in een eigen blok -->
+      <div class="mt-10 rounded-[2.5rem] bg-[#B6E8E7] px-4 py-10 md:mt-12 md:rounded-[3.5rem] md:px-8 md:py-14">
+      <div class="grid gap-5 md:grid-cols-2 md:items-start md:gap-6">
         {content.lists.map((list) => (
-          <div class="rounded-[2rem] bg-[#5FCDD0] px-4 py-8 text-white md:px-6">
-            <h3 class="text-center text-2xl font-semibold tracking-tight">{list.title}</h3>
-            <p class="mt-1 text-center text-sm text-white/90">{list.sub}</p>
-            <ul class="mt-6 space-y-2.5">
-              {list.items.map((item, i) => (
-                <li>
-                  <label class="flex cursor-pointer items-center gap-4 rounded-full bg-[#46B9BC] py-2 pl-2.5 pr-5 transition hover:bg-[#3FB0B3]">
-                    <input type="checkbox" data-check={`${list.id}-${i}`} class="peer sr-only" />
-                    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-transparent transition peer-checked:text-[#0F7C82] peer-focus-visible:ring-2 peer-focus-visible:ring-white" set:html={checkSvg} />
-                    <span class="text-sm font-semibold leading-snug peer-checked:opacity-75">{item}</span>
-                  </label>
-                </li>
-              ))}
-            </ul>
+          <div class="rounded-[2rem] bg-[#5FCDD0] px-4 py-9 text-white md:px-8 md:py-10">
+            <h3 class="text-center text-[1.75rem] font-semibold tracking-tight md:text-[2rem]">{list.title}</h3>
+            <p class="mt-1 text-center text-[15px] text-white/90 md:text-base">{list.sub}</p>
+            <!-- Lijst met (optioneel) categorieën, bijv. Bovenkleding / Onderkleding -->
+            {('groups' in list && list.groups ? list.groups : [{ title: '', items: list.items }]).map((group, gi) => (
+              <div class="mt-7">
+                {group.title && (
+                  <h4 class="mb-3 pl-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">{group.title}</h4>
+                )}
+                <ul class="space-y-3">
+                  {group.items.map((item, i) => (
+                    <li>
+                      <label class="flex cursor-pointer items-center gap-4 rounded-full bg-[#46B9BC] py-2.5 pl-3 pr-6 transition hover:bg-[#3FB0B3]">
+                        <input type="checkbox" data-check={`${list.id}-${gi}-${i}`} class="peer sr-only" />
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-transparent transition peer-checked:text-[#0F7C82] peer-focus-visible:ring-2 peer-focus-visible:ring-white" set:html={checkSvg} />
+                        <span class="text-[15px] font-semibold leading-snug decoration-2 md:text-base peer-checked:line-through peer-checked:opacity-75">{item}</span>
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         ))}
+      </div>
       </div>
     </section>
 
     <!-- Apps -->
     <section id="apps" class="mt-20 scroll-mt-28 md:mt-28">
-      <h2 class="text-center text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.appsTitle}</h2>
+      <h2 class="text-center text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">{content.appsTitle}</h2>
       <div class="mt-10 grid gap-5 md:grid-cols-3 md:items-start">
         {content.apps.map((group) => (
           <div class="rounded-[2rem] bg-white p-7 shadow-[0_20px_50px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
@@ -391,8 +456,8 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             <ul class="mt-5 space-y-4">
               {group.items.map(([name, desc]) => (
                 <li>
-                  <p class="text-[15px] font-semibold text-gray-900">{name}</p>
-                  <p class="text-sm leading-relaxed text-gray-600">{desc}</p>
+                  <p class="text-base font-semibold text-gray-900 md:text-lg">{name}</p>
+                  <p class="text-[15px] leading-relaxed text-gray-600 md:text-base">{desc}</p>
                 </li>
               ))}
             </ul>

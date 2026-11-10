@@ -96,7 +96,7 @@ export const ui = {
 'community.hero.line': 'Together we live moments that stay with you.',
 'community.hero.location': 'Australia · Uluru',
 'moments.title': 'MAY Moments',
-'moments.intro': 'Experiences that stayed with me. I take you along to the moments that made my adventures unforgettable.',
+'moments.intro': 'A collection of moments, adventures and experiences that will always stay with me. Swipe along and discover my MAY MOMENTS.',
 'cmoments.title': 'YOUR Moments',
 'cmoments.card.you': 'Your moment',
 'cmoments.card.text': 'Become part of the MAY WAY community.',
@@ -130,7 +130,8 @@ export const ui = {
 'community.dest.nz.tags': 'Fjords|Mountains|Adrenaline',
 'community.dest.nz.desc': 'Rugged fjords, snow-capped peaks and adrenaline in Queenstown. The land of endless views.',
 'community.dest.nz.cta': 'Discover New Zealand',
-'community.intro.title': 'Step out of your comfort zone',
+'community.intro.title': 'Step out of your',
+'community.intro.titleBold': 'comfort zone',
 'community.intro.location': 'Kakadu, Australia',
 'community.intro.descBold': 'The best adventures often begin the moment you do something that feels exciting. Travelling solo, moving abroad, meeting new people or finally taking that step you have been thinking about for so long.',
 'community.intro.descNormal': 'By exploring the world, you learn that you do not need to know everything in advance to get started. I want to inspire you to stay curious, try new things, create special moments and push your boundaries.',
@@ -261,7 +262,7 @@ export const ui = {
 'portfolio.more': 'More content',
 'portfolio.photos': 'Photos',
 'portfolio.cta': 'See more on Instagram',
-'portfolio.contact': 'Get in touch',
+'portfolio.contact': "Let's connect",
 'portfolio.all': 'View more projects',
 
 
@@ -1234,7 +1235,7 @@ fiji_intro_cta: "Start planning your trip",
 'portfolio.more': 'Meer content',
 'portfolio.photos': "Foto's",
 'portfolio.cta': 'Bekijk meer op Instagram',
-'portfolio.contact': 'Neem contact op',
+'portfolio.contact': "Let's connect",
 'portfolio.all': 'Bekijk meer projecten',
 
 
@@ -1261,7 +1262,7 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 'community.hero.line': 'Samen beleven we momenten die bijblijven.',
 'community.hero.location': 'Australië · Uluru',
 'moments.title': 'MAY Moments',
-'moments.intro': 'Ervaringen die me zijn bijgebleven. Ik neem je mee naar de momenten die mijn avonturen onvergetelijk maakten.',
+'moments.intro': 'Een verzameling van momenten, avonturen en ervaringen die me altijd bijblijven. Swipe mee en ontdek mijn MAY MOMENTS.',
 'cmoments.title': 'YOUR Moments',
 'cmoments.card.you': 'Jouw moment',
 'cmoments.card.text': 'Word onderdeel van de MAY WAY community.',
@@ -1301,7 +1302,8 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
    
 
 // COMMUNITY INTRO
-'community.intro.title': 'Stap uit je comfortzone',
+'community.intro.title': 'Stap uit je',
+'community.intro.titleBold': 'comfortzone',
 'community.intro.location': 'Kakadu, Australië',
 'community.intro.descBold': 'Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.',
 'community.intro.descNormal': 'Door de wereld te ontdekken, leer je dat je juist niet alles van tevoren hoeft te weten om ergens aan te beginnen. Ik wil je inspireren om nieuwsgierig te blijven, nieuwe dingen te proberen, bijzondere momenten te creëren en je grenzen te verleggen.',

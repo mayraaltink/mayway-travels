@@ -26,9 +26,13 @@ const moments = allMoments.map((m) => ({
   <div data-carousel class="mx-auto max-w-7xl">
 
     <!-- Kop -->
-    <div class="mx-auto px-6 text-center md:px-10 md:text-left">
-      <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">{t('moments.title')}</h2>
-      <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-gray-600 md:mx-0 md:text-base">{t('moments.intro')}</p>
+    <!-- Mobiel: onder elkaar, gecentreerd. Desktop: titel links, tekst rechts -->
+    <div class="mx-auto px-6 text-center md:flex md:items-end md:justify-between md:gap-12 md:px-10 md:text-left">
+      <!-- Eerste woord (MAY) dikgedrukt, de rest normaal -->
+      <h2 class="shrink-0 md:pl-8 text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl">
+        <b class="font-semibold">{t('moments.title').split(' ')[0]}</b> {t('moments.title').split(' ').slice(1).join(' ')}
+      </h2>
+      <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-gray-600 md:mx-0 md:mt-0 md:text-base">{t('moments.intro')}</p>
     </div>
 
     <!-- Swipe (bediening: CarouselControls, zelfde stijl op de hele site) -->

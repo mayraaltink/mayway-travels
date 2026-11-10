@@ -81,7 +81,7 @@ function smoothPath(pts: Stop[]) {
 const PAD = MAP.w * 0.025;
 // mobiel: staande kaart (breedte / hoogte) met iets meer rand voor de grotere plaatsnamen
 const M_RATIO = 0.68;
-const M_PAD = MAP.w * 0.018;
+const M_PAD = MAP.w * 0.03;
 const mobileOverview = (() => {
   const w = overview[2];
   const h = w / M_RATIO;
@@ -107,6 +107,13 @@ const routes = routeDefs.map((r) => {
   // mobiel: staande uitsnede, zodat lange routes (oost-/westkust) veel verder inzoomen
   const mw = Math.max(bw + M_PAD * 2, (bh + M_PAD * 2) * M_RATIO, MIN_W * 0.6);
   const mh = mw / M_RATIO;
+  // Brede, platte routes (zoals de zuidkust) hebben in de staande uitsnede veel ruimte over.
+  // Leg die ruimte aan de landkant, zodat er geen lege zee tussen route en foto's komt:
+  // routes in de zuidelijke helft onderaan in beeld, in de noordelijke helft bovenaan.
+  const maxY = minY + bh;
+  const mExtra = mh - (bh + M_PAD * 2);
+  const my0 =
+    mExtra <= 0 ? cy - mh / 2 : cy > MAP.y + MAP.h / 2 ? maxY + M_PAD - mh : minY - M_PAD;
 
   return {
     ...r,
@@ -126,7 +133,7 @@ const routes = routeDefs.map((r) => {
     info: normalizeExpand(dict[`${r.key}.expand`] ?? ""),
     d: smoothPath(r.stops),
     vb: [cx - w / 2, cy - h / 2, w, h].map((n) => +n.toFixed(2)),
-    mvb: [cx - mw / 2, cy - mh / 2, mw, mh].map((n) => +n.toFixed(2)),
+    mvb: [cx - mw / 2, my0, mw, mh].map((n) => +n.toFixed(2)),
     s,
     cx,
   };
@@ -549,11 +556,19 @@ const clientData = routes.map((r) => ({
     // Op smalle schermen is de kaart klein: vergroot pins en plaatsnamen dan extra (max 2,4x).
     // Via het SVG-attribuut, zodat er rond het midden van de pin geschaald wordt.
     // Op desktop worden rondjes, cijfers en plaatsnamen 1,4x vergroot.
-    const pinBodies = svg.querySelectorAll<SVGGElement>(".pin-body");
+    // Mobiel: elke route heeft een eigen uitsnede, dus corrigeer per route zodat rondjes en
+    // plaatsnamen bij alle routes even groot ogen (iets kleiner dan de Zuid-West kust eerst was).
+    const M_PIN_REF = 0.955;
     const updatePinScale = () => {
       const small = matchMedia("(max-width: 767px)").matches;
       const k = small ? Math.min(2, Math.max(1, 690 / (svg.clientWidth || 690))) : 1.4;
-      pinBodies.forEach((body) => body.setAttribute("transform", `scale(${k.toFixed(2)})`));
+      layers.forEach((layer, li) => {
+        const r = routes[li];
+        const f = small && r ? r.mvb[2] / r.vb[2] / M_PIN_REF : 1;
+        layer.querySelectorAll<SVGGElement>(".pin-body").forEach((body) =>
+          body.setAttribute("transform", `scale(${(k * f).toFixed(3)})`)
+        );
+      });
     };
     updatePinScale();
     window.addEventListener("resize", updatePinScale);

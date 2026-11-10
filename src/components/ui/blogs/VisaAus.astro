@@ -2,7 +2,7 @@
 // src/components/ui/blogs/VisaAus.astro
 // Blog "Eerste Working Holiday in Australië".
 // Opbouw: intro (titel links, tekst rechts) → inhoudsopgave → checklist-blok → aanvraagproces
-// → blok over de medische check → stappenplan medische check.
+// (met verwerkingstijden) → blok over de medische check → stappenplan medische check.
 // Teksten per taal hieronder; <b> = dikgedrukt, links staan als <a> in de tekst.
 
 const lang = (Astro.currentLocale === 'en' ? 'en' : 'nl') as 'nl' | 'en';
@@ -19,17 +19,17 @@ const content = {
     eyebrow: 'Blog · Australië',
     title: 'Aanvraag: Eerste <b>Working Holiday</b> in Australië',
     intro: [
-      'Toen ik besloot om in Australië te wonen en werken, vroeg ik vanuit Nieuw-Zeeland mijn eerste Working Holiday (<b>subclass 417</b>) aan. Met een Working Holiday Visum kun je <b>tot 12 maanden</b> in Australië <b>wonen, werken en reizen</b>.',
-      'Het is in de basis bedoeld voor reizigers die niet alleen willen rondreizen, maar ook tijdelijk geld willen verdienen om hun avontuur te financieren. Het visum geeft je de vrijheid om in allerlei sectoren te werken, zolang je de voorwaarden volgt.',
+      'Met een <b>Working Holiday visum</b> (<b>subclass 417</b>) kun je <b>tot 12 maanden</b> in Australië <b>wonen, werken en reizen</b>. Het is een visum voor jonge reizigers tussen de 18 en 35 jaar die Australië niet alleen willen bezoeken, maar er ook echt een tijdje willen leven.',
+      'Het visum is bedoeld als <b>culturele uitwisseling</b>: je ontdekt het land en verdient onderweg geld om je reis te financieren. Je mag in vrijwel <b>elke sector</b> werken, van horeca en retail tot farmwerk, en je kunt tijdens je visum zo vaak <b>in- en uitreizen</b> als je wilt.',
+      'In deze blog lees je alles wat je moet weten: de belangrijkste regels, hoe de aanvraag werkt en wat je doet als er een medische check wordt gevraagd.',
     ],
     tocTitle: 'Ga snel naar',
     toc: [
-      { id: 'belangrijkste-punten', label: 'De belangrijkste punten' },
+      { id: 'belangrijkste-punten', label: 'Dit moet je weten' },
       { id: 'aanvraag', label: 'Het proces van aanvraag' },
       { id: 'medische-check', label: 'Over een medische check' },
-      { id: 'stappenplan', label: 'Stappenplan medische check' },
     ],
-    pointsTitle: 'De belangrijkste punten over een Working Holiday visum',
+    pointsTitle: 'Dit moet je weten over het Working Holiday visum',
     points: [
       'Als je als Nederlander een eerste Working Holiday-visum aanvraagt, dan vraag je altijd het Working Holiday Visa (<b>subclass 417</b>) aan.',
       'Je vraagt dit <b>eerste</b> visum altijd <b>buiten Australië</b> aan.',
@@ -42,23 +42,39 @@ const content = {
     processTitle: 'Het proces van aanvraag',
     process: [
       `Je kunt het visum aanvragen via de officiële website van het ${link(URL_VISA, 'Australian Government Department of Home Affairs')}.`,
-      'Maak hiervoor een <b>ImmiAccount</b> aan met een eigen gebruikersnaam en wachtwoord. Zodra je het visum hebt aangevraagd, kun je in jouw ImmiAccount de status van je aanvraag volgen. De aanvraag van het visum kost <b>$670 AUD</b>, omgerekend zo\'n <b>€385</b>.',
-      'Gemiddeld duurt het aanvragen van het visum <b>7 tot 14 dagen</b>, hoewel ongeveer <b>50%</b> van de aanvragen al <b>binnen één dag</b> wordt goedgekeurd. Soms duurt het proces iets langer, bijvoorbeeld wanneer er extra documenten nodig zijn. Dit kan een scan van je paspoortgegevens zijn, een financieel bewijs dat je jezelf kunt onderhouden (<b>meer dan $5.000 AUD</b>) en/of een medische check. Zodra er extra documenten nodig zijn, ontvang je hierover een e-mail en een update in je ImmiAccount.',
+      'Maak hiervoor een <b>ImmiAccount</b> aan met een eigen gebruikersnaam en wachtwoord. Zodra je het visum hebt aangevraagd, kun je in jouw ImmiAccount de status van je aanvraag volgen. De aanvraag van het visum kost <b>$840 AUD</b>, omgerekend zo\'n <b>€490</b> (afhankelijk van de wisselkoers).',
+      'Waar een aanvraag een paar jaar geleden vaak binnen een paar dagen werd goedgekeurd, duurt het nu een stuk langer. Australië heeft de verwerking van Working Holiday visa flink vertraagd. De verwerkingstijd voor een Working Holiday visum (<b>subclass 417</b> of <b>462</b>) ligt momenteel gemiddeld tussen de <b>1 en 3 maanden</b>.',
+    ],
+    stats: [
+      { value: '50%', label: 'van de aanvragen is verwerkt binnen <b>58 dagen</b>' },
+      { value: '90%', label: 'van de aanvragen is verwerkt binnen <b>80 dagen</b>' },
+    ],
+    statsSource: 'Bron: Department of Home Affairs',
+    processAfter: [
+      'Mijn advies: vraag je visum <b>ruim op tijd</b> aan, het liefst minimaal <b>3 maanden voor vertrek</b>. Het kan namelijk nog langer duren als er extra documenten nodig zijn, zoals een scan van je paspoort, een financieel bewijs dat je jezelf kunt onderhouden (<b>meer dan $5.000 AUD</b>) en/of een medische check. Dat hoor je via een e-mail en een update in je ImmiAccount.',
     ],
     toMedical: 'Lees hieronder meer over de medische check',
     medicalTitle: 'Over een medische check',
     medical: [
-      'Zodra je het visum aanvraagt, kun je een e-mail ontvangen waarin staat dat er een medische check nodig is. Geen stress, dit overkwam mij ook twee keer.',
-      'Een medische check wordt gevraagd als je de afgelopen <b>5 jaar</b> meer dan <b>3 maanden</b> in een land met een verhoogd risico op <b>tuberculose (TB)</b> hebt verbleven. Voor de meeste landen in Azië geldt dit. Daarom heb ik voor mijn eerste visum in Nieuw-Zeeland en mijn tweede visum in Bali een medische keuring moeten doen.',
-      'Zodra je het visum hebt aangevraagd, ontvang je een brief (PDF) in je e-mail. In deze brief en in jouw ImmiAccount zie je duidelijk welke medical assessments je moet doen. De meest voorkomende zijn: <b>Medical Examination (501)</b> en <b>Chest X-ray (502)</b>. Lees hieronder stap voor stap hoe je zo\'n medische check regelt.',
+      'Krijg je na je aanvraag een e-mail dat er een <b>medische check</b> nodig is? <b>Geen stress!</b> Dit gebeurt bij veel reizigers en het betekent niet dat er iets mis is met je aanvraag. Het is gewoon een standaard onderdeel van het proces.',
+      'Een medische check wordt meestal gevraagd als je de afgelopen <b>5 jaar</b> langer dan <b>3 maanden</b> in een land met een verhoogd risico op <b>tuberculose (TB)</b> bent geweest. Dat geldt voor veel landen in Azië, zoals Indonesië, Thailand en Vietnam. Ook als je in Australië in de <b>zorg</b> of met <b>kinderen</b> wilt werken, kan er een extra medische check nodig zijn.',
+      'Je ontvangt een brief (PDF) per e-mail. In die brief en in je ImmiAccount zie je precies welke onderzoeken je moet doen. De meest voorkomende zijn de <b>Medical Examination (501)</b>, een algemeen lichamelijk onderzoek, en de <b>Chest X-ray (502)</b>, een longfoto. Meestal krijg je hier <b>28 dagen</b> de tijd voor en de kosten betaal je zelf aan de kliniek.',
+      'Hieronder lees je stap voor stap hoe je de medische check regelt.',
     ],
     stepsTitle: 'Stappenplan medische check',
     steps: [
       {
         title: 'Bepaal de locatie van je visumaanvraag',
-        text: [
-          `Vraag je jouw visum <b>buiten Australië</b> aan? ${link(URL_OUTSIDE, 'Klik dan hier')} voor het regelen van een medische check buiten Australië. Dit geldt vrijwel altijd voor een eerste Working Holiday visum.`,
-          `Vraag je jouw visum <b>binnen Australië</b> aan? ${link(URL_INSIDE, 'Klik dan hier')} voor het regelen van een medische check binnen Australië. Dit kan van toepassing zijn bij een tweede of derde Working Holiday visum.`,
+        text: [],
+        options: [
+          {
+            title: 'Medische check buiten Australië',
+            text: `Vraag je jouw visum <b>buiten Australië</b> aan? ${link(URL_OUTSIDE, 'Klik dan hier')} voor het regelen van je medische check. Dit geldt vrijwel altijd voor een eerste Working Holiday visum.`,
+          },
+          {
+            title: 'Medische check binnen Australië',
+            text: `Vraag je jouw visum <b>binnen Australië</b> aan? ${link(URL_INSIDE, 'Klik dan hier')} voor het regelen van je medische check. Dit kan van toepassing zijn bij een tweede of derde Working Holiday visum.`,
+          },
         ],
       },
       {
@@ -79,17 +95,17 @@ const content = {
     eyebrow: 'Blog · Australia',
     title: 'Application: First <b>Working Holiday</b> in Australia',
     intro: [
-      'When I decided to live and work in Australia, I applied for my first Working Holiday visa (<b>subclass 417</b>) from New Zealand. With a Working Holiday visa you can <b>live, work and travel</b> in Australia for <b>up to 12 months</b>.',
-      'It is basically meant for travellers who do not only want to travel around, but also want to earn money temporarily to fund their adventure. The visa gives you the freedom to work in all kinds of industries, as long as you follow the conditions.',
+      'With a <b>Working Holiday visa</b> (<b>subclass 417</b>) you can <b>live, work and travel</b> in Australia for <b>up to 12 months</b>. It is a visa for young travellers aged 18 to 35 who don\'t just want to visit Australia, but really want to live there for a while.',
+      'The visa is meant as a <b>cultural exchange</b>: you discover the country and earn money along the way to fund your trip. You can work in almost <b>any industry</b>, from hospitality and retail to farm work, and you can <b>leave and re-enter</b> Australia as often as you like during your visa.',
+      'In this blog you\'ll read everything you need to know: the key rules, how the application works and what to do if a medical check is requested.',
     ],
     tocTitle: 'Jump to',
     toc: [
-      { id: 'belangrijkste-punten', label: 'The key points' },
+      { id: 'belangrijkste-punten', label: 'What you need to know' },
       { id: 'aanvraag', label: 'The application process' },
       { id: 'medische-check', label: 'About a medical check' },
-      { id: 'stappenplan', label: 'Medical check step by step' },
     ],
-    pointsTitle: 'The key points of a Working Holiday visa',
+    pointsTitle: 'What you need to know about the Working Holiday visa',
     points: [
       'As a Dutch citizen applying for your first Working Holiday visa, you always apply for the Working Holiday visa (<b>subclass 417</b>).',
       'You always apply for this <b>first</b> visa <b>outside Australia</b>.',
@@ -102,23 +118,39 @@ const content = {
     processTitle: 'The application process',
     process: [
       `You can apply for the visa through the official website of the ${link(URL_VISA, 'Australian Government Department of Home Affairs')}.`,
-      'To do this, create an <b>ImmiAccount</b> with your own username and password. Once you have applied, you can follow the status of your application in your ImmiAccount. The visa costs <b>$670 AUD</b>, which is about <b>€385</b>.',
-      'On average the application takes <b>7 to 14 days</b>, although about <b>50%</b> of applications are approved <b>within one day</b>. Sometimes it takes a little longer, for example when extra documents are needed. This can be a scan of your passport details, financial proof that you can support yourself (<b>more than $5,000 AUD</b>) and/or a medical check. If extra documents are needed, you will receive an email and an update in your ImmiAccount.',
+      'To do this, create an <b>ImmiAccount</b> with your own username and password. Once you have applied, you can follow the status of your application in your ImmiAccount. The visa costs <b>$840 AUD</b>, which is about <b>€490</b> (depending on the exchange rate).',
+      'Where an application used to be approved within a few days, it now takes a lot longer. Australia has significantly slowed down the processing of Working Holiday visas. The processing time for a Working Holiday visa (<b>subclass 417</b> or <b>462</b>) is currently <b>1 to 3 months</b> on average.',
+    ],
+    stats: [
+      { value: '50%', label: 'of applications processed within <b>58 days</b>' },
+      { value: '90%', label: 'of applications processed within <b>80 days</b>' },
+    ],
+    statsSource: 'Source: Department of Home Affairs',
+    processAfter: [
+      'My advice: apply for your visa <b>well in advance</b>, ideally at least <b>3 months before you leave</b>. It can take even longer if extra documents are needed, such as a scan of your passport, financial proof that you can support yourself (<b>more than $5,000 AUD</b>) and/or a medical check. You will hear about this through an email and an update in your ImmiAccount.',
     ],
     toMedical: 'Read more about the medical check below',
     medicalTitle: 'About a medical check',
     medical: [
-      'Once you apply for the visa, you may receive an email stating that a medical check is required. No stress, this happened to me twice as well.',
-      'A medical check is requested if you have stayed for more than <b>3 months</b> in a country with a higher risk of <b>tuberculosis (TB)</b> in the past <b>5 years</b>. This applies to most countries in Asia. That is why I had to do a medical examination for my first visa in New Zealand and my second visa in Bali.',
-      'Once you have applied, you will receive a letter (PDF) by email. In this letter and in your ImmiAccount you can clearly see which medical assessments you need to do. The most common are: <b>Medical Examination (501)</b> and <b>Chest X-ray (502)</b>. Read below, step by step, how to arrange a medical check.',
+      'Did you receive an email after your application saying a <b>medical check</b> is required? <b>No stress!</b> This happens to many travellers and it doesn\'t mean anything is wrong with your application. It is simply a standard part of the process.',
+      'A medical check is usually requested if you have spent more than <b>3 months</b> in a country with a higher risk of <b>tuberculosis (TB)</b> in the past <b>5 years</b>. This applies to many countries in Asia, such as Indonesia, Thailand and Vietnam. An extra medical check may also be needed if you want to work in <b>healthcare</b> or with <b>children</b> in Australia.',
+      'You will receive a letter (PDF) by email. In this letter and in your ImmiAccount you can see exactly which assessments you need to do. The most common are the <b>Medical Examination (501)</b>, a general physical exam, and the <b>Chest X-ray (502)</b>. You usually get <b>28 days</b> to complete them, and you pay the costs to the clinic yourself.',
+      'Below you can read, step by step, how to arrange the medical check.',
     ],
     stepsTitle: 'Medical check step by step',
     steps: [
       {
         title: 'Determine where you apply from',
-        text: [
-          `Applying for your visa <b>outside Australia</b>? ${link(URL_OUTSIDE, 'Click here')} to arrange a medical check outside Australia. This almost always applies to a first Working Holiday visa.`,
-          `Applying for your visa <b>inside Australia</b>? ${link(URL_INSIDE, 'Click here')} to arrange a medical check inside Australia. This may apply to a second or third Working Holiday visa.`,
+        text: [],
+        options: [
+          {
+            title: 'Medical check outside Australia',
+            text: `Applying for your visa <b>outside Australia</b>? ${link(URL_OUTSIDE, 'Click here')} to arrange your medical check. This almost always applies to a first Working Holiday visa.`,
+          },
+          {
+            title: 'Medical check inside Australia',
+            text: `Applying for your visa <b>inside Australia</b>? ${link(URL_INSIDE, 'Click here')} to arrange your medical check. This may apply to a second or third Working Holiday visa.`,
+          },
         ],
       },
       {
@@ -157,14 +189,13 @@ const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22
     </header>
 
     <!-- Inhoudsopgave -->
-    <!-- Knoppen naast elkaar in het midden; "Ga snel naar" links erboven, boven de eerste knop -->
-    <nav aria-label={content.tocTitle} class="mx-auto mt-12 w-fit max-w-full md:mt-16">
+    <!-- Links uitgelijnd met de titel erboven; "Ga snel naar" boven de knoppen -->
+    <nav aria-label={content.tocTitle} class="mt-12 md:mt-16">
       <p class="text-xs uppercase tracking-[0.2em] text-gray-500">{content.tocTitle}</p>
       <ol class="mt-4 flex flex-wrap gap-2">
-        {content.toc.map((item, i) => (
+        {content.toc.map((item) => (
           <li>
-            <a href={`#${item.id}`} class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white">
-              <span class="text-[#1CABB0] transition">{i + 1}.</span>
+            <a href={`#${item.id}`} class="inline-flex items-center whitespace-nowrap rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white">
               {item.label}
             </a>
           </li>
@@ -187,9 +218,24 @@ const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22
 
     <!-- Aanvraagproces -->
     <section id="aanvraag" class="mx-auto mt-20 max-w-3xl scroll-mt-28 md:mt-28">
-      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.processTitle}</h2>
+      <h2 class="text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">{content.processTitle}</h2>
       <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
         {content.process.map((p) => <p set:html={p} />)}
+      </div>
+
+      <!-- Verwerkingstijden in één oogopslag -->
+      <div class="mt-8 grid grid-cols-2 gap-3 md:gap-4">
+        {content.stats.map((s) => (
+          <div class="rounded-[1.5rem] bg-[#0F7C82] p-5 text-white md:p-6 [&_b]:text-white">
+            <p class="text-3xl font-bold leading-none tracking-tight md:text-4xl">{s.value}</p>
+            <p class="mt-2 text-sm leading-snug text-white/85" set:html={s.label} />
+          </div>
+        ))}
+      </div>
+      <p class="mt-2 text-xs text-gray-500">{content.statsSource}</p>
+
+      <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
+        {content.processAfter.map((p) => <p set:html={p} />)}
       </div>
       <a href="#medische-check" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#1CABB0] transition hover:gap-3 hover:text-[#0F7C82]">
         {content.toMedical}
@@ -197,34 +243,52 @@ const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22
       </a>
     </section>
 
-    <!-- Medische check: blok in een andere kleur -->
-    <section id="medische-check" class="mt-16 scroll-mt-28 rounded-[2.5rem] bg-[#0F7C82] px-6 py-10 text-white md:mt-20 md:rounded-[3.5rem] md:px-14 md:py-14 [&_b]:text-white">
-      <h2 class="mx-auto max-w-3xl text-2xl font-semibold leading-tight tracking-tight md:text-[2rem]">{content.medicalTitle}</h2>
-      <div class="mx-auto mt-6 max-w-3xl space-y-5 text-[15px] leading-relaxed text-white/85 md:text-base">
+    <!-- Medische check: lichtturquoise blok met donkere tekst -->
+    <!-- breder dan de tekstkolom: steekt op desktop aan beide kanten uit -->
+    <section id="medische-check" class="mt-16 scroll-mt-28 rounded-[2.5rem] bg-[#E6F6F6] px-6 py-10 text-black md:mt-20 md:rounded-[3.5rem] md:px-14 md:py-14 lg:-mx-16 xl:-mx-28">
+      <h2 class="mx-auto max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight md:text-5xl">{content.medicalTitle}</h2>
+      <div class="mx-auto mt-6 max-w-3xl space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
         {content.medical.map((p) => <p set:html={p} />)}
+      </div>
+
+      <!-- Stappenplan: in hetzelfde blok, zodat uitleg en stappen één geheel vormen -->
+      <div id="stappenplan" class="mt-12 scroll-mt-28 md:mt-14">
+        <h3 class="text-2xl font-semibold leading-tight tracking-tight text-black md:text-[1.75rem]">{content.stepsTitle}</h3>
+        <!-- Stappen naast elkaar over de volle breedte van het blok (mobiel onder elkaar) -->
+        <ol class="mt-8 grid gap-4 md:grid-cols-3 md:gap-5">
+          {content.steps.map((step, i) => (
+            <li class="rounded-[2rem] bg-white p-6 shadow-[0_20px_50px_rgba(15,124,130,0.08)] md:p-7">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#1CABB0] text-sm font-semibold text-white">{i + 1}</span>
+              <div class="mt-5 min-w-0">
+                <h4 class="text-xl font-semibold leading-snug tracking-tight text-black md:text-[1.4rem]">{step.title}</h4>
+                {step.text.length > 0 && (
+                  <div class="mt-2 space-y-3 text-[15px] leading-relaxed text-gray-700 md:text-base">
+                    {step.text.map((p) => <p set:html={p} />)}
+                  </div>
+                )}
+                <!-- Stap 1: twee keuzes onder elkaar, elk met een petrol tussenkopje (geen extra kaartjes,
+                     zodat stap 1 niet veel langer wordt dan stap 2 en 3) -->
+                {'options' in step && step.options && (
+                  <div class="mt-3 space-y-4">
+                    {step.options.map((o) => (
+                      <div>
+                        <p class="text-[15px] font-semibold text-[#0F7C82] md:text-base">{o.title}</p>
+                        <p class="mt-1 text-[15px] leading-relaxed text-gray-700 md:text-base" set:html={o.text} />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
 
-    <!-- Stappenplan -->
-    <section id="stappenplan" class="mt-20 scroll-mt-28 md:mt-28">
-      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.stepsTitle}</h2>
-      <ol class="mt-8 grid gap-5 md:grid-cols-3">
-        {content.steps.map((step, i) => (
-          <li class="rounded-[2rem] bg-white p-7 shadow-[0_20px_50px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#1CABB0] text-sm font-semibold text-white">{i + 1}</span>
-            <h3 class="mt-5 text-lg font-semibold leading-snug tracking-tight text-black">{step.title}</h3>
-            <div class="mt-3 space-y-3 text-[15px] leading-relaxed text-gray-700">
-              {step.text.map((p) => <p set:html={p} />)}
-            </div>
-          </li>
-        ))}
-      </ol>
-
-      <a href="#top" class="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-[#1CABB0] transition hover:text-[#0F7C82]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>
-        {content.back}
-      </a>
-    </section>
+    <a href="#top" class="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-[#1CABB0] transition hover:text-[#0F7C82]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>
+      {content.back}
+    </a>
 
     <!-- Doorverwijzing naar de volgende blog -->
     <div class="mt-16 flex flex-col items-center border-t border-gray-200 pt-12 text-center md:mt-20 md:pt-16">

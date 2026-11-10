@@ -2,8 +2,8 @@
 // src/components/ui/blogs/BesteReisseizoen.astro
 // Blog "Welk seizoen is het beste om te reizen?".
 // Opbouw: vooral tekst, met twee visuele blokken ertussen:
-// intro → de vier seizoenen → het tropische noorden → klimaatkaart → waar ga je per seizoen naartoe (tabel)
-// → winter in het zuiden → de kracht van de zon (+ motto als accentregel) → doorverwijzing.
+// intro → de vier seizoenen naast het tropische noorden → twee dingen die je niet moet onderschatten
+// (winter in het zuiden + de kracht van de zon, als twee blokken naast elkaar) → klimaatkaart → waar ga je per seizoen naartoe (tabel) → doorverwijzing.
 // In de teksten: <b> = dikgedrukt.
 import ClimateMap from './ClimateMap.astro';
 
@@ -45,6 +45,7 @@ const content = {
     ],
     goLabel: 'Ga naar',
     skipLabel: 'Minder handig',
+    underestimateTitle: 'Twee dingen die je niet moet onderschatten',
     winterTitle: 'Winter in het zuiden',
     winter: [
       'Rond juni begint het af te koelen. Hoe zuidelijker je reist, hoe kouder het wordt, al zijn het geen extreme temperaturen zoals in Europa. In <b>Sydney</b> liggen de temperaturen in de winter meestal tussen de <b>8 en 15°C</b>. Elk jaar is anders: mijn eerste jaar bestond vooral uit zonnige dagen, terwijl het ’s ochtends en ’s avonds flink kon afkoelen. Afgelopen jaar was juist natter, vooral in juni en augustus.',
@@ -102,6 +103,7 @@ const content = {
     ],
     goLabel: 'Go to',
     skipLabel: 'Less ideal',
+    underestimateTitle: 'Two things not to underestimate',
     winterTitle: 'Winter in the south',
     winter: [
       'Around June it starts to cool down. The further south you travel, the colder it gets, although the temperatures are not as extreme as in Europe. In <b>Sydney</b>, winter temperatures are usually between <b>8 and 15°C</b>. Every year is different: my first year was mostly sunny, while mornings and evenings could get quite cold. Last year was wetter, especially in June and August.',
@@ -146,8 +148,9 @@ const body = 'mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-b
     </section>
 
     <!-- De vier seizoenen + het tropische noorden: gewone tekst -->
-    <div class="mx-auto mt-16 grid max-w-5xl gap-12 md:mt-24 md:grid-cols-2 md:gap-14">
-      <section>
+    <!-- op desktop een heel dunne lijn tussen de twee kolommen -->
+    <div class="mx-auto mt-16 grid max-w-5xl gap-12 md:mt-24 md:grid-cols-2 md:gap-0">
+      <section class="md:pr-14">
         <h2 class={h2}>{content.seasonsTitle}</h2>
         <div class={body}>
           <p>{content.seasonsIntro}</p>
@@ -163,13 +166,31 @@ const body = 'mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-b
         </div>
       </section>
 
-      <section>
+      <section class="md:border-l md:border-gray-200 md:pl-14">
         <h2 class={h2}>{content.tropicsTitle}</h2>
         <div class={body}>
           {content.tropics.map((p) => <p set:html={p} />)}
         </div>
       </section>
     </div>
+
+    <!-- Twee dingen die je niet moet onderschatten: winter in het zuiden en de kracht van de zon, naast elkaar -->
+    <section class="mt-16 md:mt-24">
+      <h2 class={h2}>{content.underestimateTitle}</h2>
+      <div class="mt-8 grid gap-5 md:grid-cols-2 md:gap-6">
+        {[
+          { title: content.winterTitle, text: content.winter, bg: 'bg-[#E6F6F6]' },
+          { title: content.sunTitle, text: content.sun, bg: 'bg-[#FDF1DC]' },
+        ].map((card) => (
+          <div class:list={['rounded-[2rem] p-7 md:p-9', card.bg]}>
+            <h3 class="text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{card.title}</h3>
+            <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-gray-700 md:text-base">
+              {card.text.map((p) => <p set:html={p} />)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
     <!-- Klimaatkaart met inleiding -->
     <section class="mt-16 md:mt-24">
@@ -207,36 +228,6 @@ const body = 'mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-b
             </p>
           </div>
         ))}
-      </div>
-    </section>
-
-    <!-- Winter in het zuiden + zonsterkte als accentregel -->
-    <section class="mx-auto mt-16 max-w-3xl md:mt-24">
-      <h2 class={h2}>{content.winterTitle}</h2>
-      <div class={body}>
-        {content.winter.map((p) => <p set:html={p} />)}
-      </div>
-
-    </section>
-
-    <!-- De kracht van de zon + het motto als accentregel -->
-    <section class="mx-auto mt-16 max-w-3xl md:mt-24">
-      <h2 class={h2}>{content.sunTitle}</h2>
-      <div class={body}>
-        {content.sun.map((p) => <p set:html={p} />)}
-      </div>
-
-      <div class="mt-10 border-l-4 border-[#4ED2CE] pl-5 md:pl-6">
-        <h3 class="text-xl font-semibold tracking-tight text-black">{content.mottoTitle}</h3>
-        <p class="mt-2 text-[15px] leading-relaxed text-gray-700 md:text-base">{content.mottoIntro}</p>
-        <ul class="mt-3 space-y-1.5 text-[15px] leading-relaxed text-gray-700 md:text-base">
-          {content.motto.map((m) => (
-            <li class="flex items-center gap-3">
-              <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[#1CABB0]" aria-hidden="true"></span>
-              <span set:html={m} />
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
 

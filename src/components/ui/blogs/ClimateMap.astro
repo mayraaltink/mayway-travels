@@ -138,7 +138,8 @@ const initialPlace = 'sydney';
   <div class="mt-8 grid items-center gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-10">
 
     <!-- Kaart -->
-    <svg class="block h-auto w-full" viewBox={viewBox} role="group" aria-label={labels.title}>
+    <!-- op mobiel tot bijna aan de rand van het blok, zodat de kaart groter is -->
+    <svg class="-mx-3 block h-auto w-[calc(100%+1.5rem)] overflow-visible md:mx-0 md:w-full" viewBox={viewBox} role="group" aria-label={labels.title}>
       <g class="land">
         {landPaths.map((d) => <path d={d} />)}
       </g>
@@ -153,17 +154,20 @@ const initialPlace = 'sydney';
             role="button"
             aria-label={p.name[lang]}
           >
-            <circle class="place-ring" r="15" />
-            <circle class="place-dot" r="9" fill={heat(max)} data-dot />
-            <text
-              class="place-label"
-              x={p.left ? -16 : 16}
-              dy="5"
-              text-anchor={p.left ? 'end' : 'start'}
-            >
-              <tspan class="place-name">{p.name[lang].replace(/ \(.*\)/, '')}</tspan>
-              <tspan class="place-temp" dx="6" data-temp>{max}°</tspan>
-            </text>
+            <!-- place-body wordt op mobiel vergroot (rond het midden van de stip) -->
+            <g class="place-body">
+              <circle class="place-ring" r="15" />
+              <circle class="place-dot" r="9" fill={heat(max)} data-dot />
+              <text
+                class="place-label"
+                x={p.left ? -16 : 16}
+                dy="5"
+                text-anchor={p.left ? 'end' : 'start'}
+              >
+                <tspan class="place-name">{p.name[lang].replace(/ \(.*\)/, '')}</tspan>
+                <tspan class="place-temp" dx="6" data-temp>{max}°</tspan>
+              </text>
+            </g>
           </g>
         );
       })}
@@ -209,30 +213,36 @@ const initialPlace = 'sydney';
     stroke-width: 1;
   }
 
+  /* zelfde stijl als de routeknoppen bij Reisroutes: lichte pil, gekozen = petrol met witte tekst */
   .season-tab {
     display: inline-flex;
     flex-direction: column;
-    align-items: flex-start;
-    border-radius: 1rem;
-    border: 1px solid #e5e7eb;
-    background: white;
-    padding: 0.7rem 1.25rem;
-    font-size: 1rem;
+    align-items: center;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background: #eaf4f4;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
     line-height: 1.2;
-    color: #374151;
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    text-align: center;
+    color: #000;
+    transition: background-color 0.25s, box-shadow 0.25s, transform 0.25s, color 0.25s;
   }
-  .season-tab:hover { border-color: #1cabb0; }
+  .season-tab:hover {
+    transform: translateY(-2px);
+    background: #e3f0f0;
+  }
   .season-tab[aria-selected='true'] {
-    background: #1cabb0;
-    border-color: #1cabb0;
+    background: #0f7c82;
     color: white;
+    box-shadow: 0 12px 28px rgba(15, 124, 130, 0.22);
   }
   .season-months {
-    margin-top: 0.15rem;
-    font-size: 0.8rem;
-    opacity: 0.7;
+    margin-top: 0.1rem;
+    font-size: 0.72rem;
+    color: #6b7280;
   }
+  .season-tab[aria-selected='true'] .season-months { color: rgba(255, 255, 255, 0.85); }
 
   .place {
     cursor: pointer;
@@ -266,6 +276,11 @@ const initialPlace = 'sydney';
     font-weight: 700;
   }
   .place.is-active .place-name { fill: #0f7c82; }
+
+  /* mobiel: de kaart is klein, dus stippen, plaatsnamen en temperaturen groter */
+  @media (max-width: 767px) {
+    .place-body { transform: scale(1.45); }
+  }
 
   .season-row { opacity: 0.55; transition: opacity 0.2s; }
   .season-row[aria-current='true'] { opacity: 1; }

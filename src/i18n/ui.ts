@@ -20,7 +20,7 @@ export const ui = {
 
     'oceania.title.before': 'Discover the diversity',
 'oceania.title.bold': 'of Australia',
-'oceania.description': 'From unforgettable road trips along the East Coast to the rugged beauty of the Outback, the vibrant city life of Sydney and Melbourne, hiking through the untouched wilderness of the Daintree Rainforest, and diving at the Great Barrier Reef.',
+'oceania.description': 'From road trips along the East Coast to the rugged beauty of the Outback, the vibrant city life of Sydney and Melbourne, hiking through the nature of the Daintree Rainforest and diving at the Great Barrier Reef.',
 'oceania.card.title': 'Australia',
 'oceania.card.button': 'Go to destination',
 'oceania.eyebrow': 'Destination highlight',
@@ -189,8 +189,8 @@ export const ui = {
 
 'forBrands.hero.title1': 'MAY WAY',
 'forBrands.hero.title2': 'Socials',
-'forBrands.hero.headline': 'Content that makes people experience it',
-'forBrands.hero.line1': 'Authentic short-form videos from real experiences. Together, we bring your brand to life.',
+'forBrands.hero.headline': 'From experience to reach',
+'forBrands.hero.line1': 'We manage your social media and capture real experiences in vibrant content.',
 'forBrands.hero.ctaPrimary': 'Book an intro call',
 'forBrands.hero.ctaSecondary': 'Explore services',
 'forBrands.hero.location': 'Australia · Sydney',
@@ -233,10 +233,10 @@ export const ui = {
 'forBrands.services.cta': 'Discuss the possibilities',
 
 'forBrands.services.1.intro': "You only truly feel a brand when you experience it. I come to your location, event or activity and capture the atmosphere the way your guests experience it: spontaneous, real and full of energy. The result? Short videos and visuals that make people instantly feel why they should be there.",
-'forBrands.services.1.offer': "Content days on location, at home and abroad|Reels and TikTok videos, filmed with my iPhone & drone|Instagram takeover: I take over your stories for a day and bring your followers along live|Photos for your socials and website|Content from events, openings and launches|Editing, subtitles and music, ready to post",
+'forBrands.services.1.offer': "Content days on location, at home and abroad|Reels and TikTok videos, also with drone footage|Instagram takeover: I take over your stories for a day and bring your followers along live|Photos for your socials and website|Content from events, openings and launches|Editing, subtitles and music, ready to post",
 
 'forBrands.services.2.intro': "Social media isn't something you do on the side. It takes time, creativity and above all consistency. I take the management of your channels completely off your hands: from strategy and content calendar to creating, posting and replying. You focus on your business, and I make sure your socials look great and keep running. That is how you build a recognisable brand and an engaged community.",
-'forBrands.services.2.offer': "A clear strategy and tone of voice for your brand|Feed glow-up: I optimise your bio, highlights and feed before we start|Monthly content calendar, aligned with the strategy|Creating posts, Reels and stories|Jumping on trends and viral audio|Story and graphic design in your brand style|Catchy captions and relevant hashtags|Scheduling and publishing at peak times|Community management: replying to DMs and comments",
+'forBrands.services.2.offer': "Comprehensive content strategy and tone of voice|Feed glow-up: I optimise your bio, highlights and feed before we start|Monthly content calendar, aligned with the strategy|Creating posts, Reels and stories|Jumping on trends and viral audio|Story and graphic design in your brand style|Catchy captions and relevant hashtags|Scheduling and publishing at peak times|Community management: DMs and comments",
 
 'forBrands.services.3.intro': 'Want to show your brand to an audience that loves pushing boundaries and adventure? Through my own channels I take my followers along to your destination, product or experience. Not standard advertising, but an honest story that fits both me and your brand.',
 'forBrands.services.3.offer': '',
@@ -1103,7 +1103,7 @@ fiji_intro_cta: "Start planning your trip",
 
     'oceania.title.before': 'Ontdek de diversiteit',
 'oceania.title.bold': 'van Australië',
-'oceania.description': 'Van onvergetelijke roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in Sydney en Melbourne, hiken door de ongerepte natuur van Daintree en duiken bij het Great Barrier Reef.',
+'oceania.description': 'Van roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in Sydney en Melbourne, hiken door de natuur van Daintree en duiken bij het Great Barrier Reef.',
 'oceania.card.title': 'Australië',
 'oceania.card.button': 'Naar bestemming',
 'oceania.eyebrow': 'Bestemming uitgelicht',
@@ -1215,8 +1215,8 @@ fiji_intro_cta: "Start planning your trip",
 
 'forBrands.hero.title1': 'MAY WAY',
 'forBrands.hero.title2': 'Socials',
-'forBrands.hero.headline': 'Content die mensen laat beleven',
-'forBrands.hero.line1': 'Authentieke short-form video’s vanuit échte ervaringen. Samen brengen we jouw merk tot leven.',
+'forBrands.hero.headline': 'Van beleving naar bereik',
+'forBrands.hero.line1': 'Wij beheren jouw social media en leggen échte ervaringen vast in levendige content.',
 'forBrands.hero.ctaPrimary': 'Plan een kennismaking',
 'forBrands.hero.ctaSecondary': 'Bekijk de services',
 'forBrands.hero.location': 'Australië · Sydney',
@@ -1259,10 +1259,10 @@ fiji_intro_cta: "Start planning your trip",
 'forBrands.services.cta': 'Bespreek de mogelijkheden',
 
 'forBrands.services.1.intro': "Een merk voel je pas echt als je het beleeft. Ik kom langs op jouw locatie, event of activiteit en leg de sfeer vast zoals jouw gasten die ervaren: spontaan, echt en vol energie. Het resultaat? Korte video's en beelden waardoor mensen meteen voelen waarom ze bij jou moeten zijn.",
-'forBrands.services.1.offer': "Contentdagen op locatie, in binnen- en buitenland|Reels en TikTok-video's, gefilmd met mijn iPhone & drone|Instagram takeover: ik neem jouw stories een dag over en neem je volgers live mee|Foto's voor je socials en website|Content van events, openingen en lanceringen|Montage, ondertiteling en muziek, klaar om te posten",
+'forBrands.services.1.offer': "Contentdagen op locatie, in binnen- en buitenland|Reels en TikTok-video’s, ook met dronebeelden|Instagram takeover: ik neem een dag jouw stories over en neem je volgers live mee|Foto's voor je socials en website|Content van events, openingen en lanceringen|Montage, ondertiteling en muziek, klaar om te posten",
 
 'forBrands.services.2.intro': 'Social media doe je niet even tussendoor. Het vraagt tijd, creativiteit en vooral consistentie. Ik neem het beheer van je kanalen volledig uit handen: van strategie en contentkalender tot het maken, plaatsen en reageren. Jij focust je op je bedrijf, en ik zorg dat je socials er goed uitzien en blijven doorlopen. Zo bouw je aan een herkenbaar merk en een betrokken community.',
-'forBrands.services.2.offer': "Een heldere strategie en tone of voice voor jouw merk|Feed glow-up: ik optimaliseer je bio, highlights en feed voordat we starten|Maandelijkse contentkalender, afgestemd op de strategie|Het maken van posts, Reels en stories|Inspelen op trends en virale audio|Opmaak van stories en graphics in jouw huisstijl|Pakkende captions en relevante hashtags|Inplannen en publiceren op piekmomenten|Community management: reageren op DM's en comments",
+'forBrands.services.2.offer': "Uitgebreide contentstrategie en tone of voice|Feed glow-up: ik optimaliseer je bio, highlights en feed voordat we starten|Maandelijkse contentkalender, afgestemd op de strategie|Het maken van posts, Reels en stories|Inspelen op trends en virale audio|Opmaak van stories en graphics in jouw huisstijl|Pakkende captions en relevante hashtags|Inplannen en publiceren op piekmomenten|Community management: DM's en comments",
 
 'forBrands.services.3.intro': 'Wil je jouw merk laten zien aan een publiek dat dol is op grenzen verleggen en avontuur? Via mijn eigen kanalen neem ik mijn volgers mee naar jouw bestemming, product of ervaring. Geen standaard reclame, maar een eerlijk verhaal dat past bij mij én bij jouw merk.',
 'forBrands.services.3.offer': '',

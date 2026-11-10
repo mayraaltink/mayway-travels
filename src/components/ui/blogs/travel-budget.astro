@@ -29,7 +29,9 @@ const photos = {
   bondi: imageSrc('/images/blogs/bondi-beach.jpg'),
   coffee: imageSrc('/images/blogs/koffie.jpg'),
   barefoot: imageSrc('/images/blogs/blote-voeten.jpg'),
+  bbq: imageSrc('/images/blogs/barbie.jpg'),
   runclub: imageSrc('/images/blogs/run-club-bondi.jpg'),
+  nippers: imageSrc('/images/blogs/nippers.jpg'),
   bronte: imageSrc('/images/blogs/bronte-pools.jpg'),
 };
 
@@ -37,111 +39,290 @@ const content = {
   nl: {
     eyebrow: 'Blog · Australië',
     pageTitle: 'Het leven in Australië',
-    vibeTitle: 'Het is de <strong>vibe</strong>',
+    vibeTitle: 'Het leven <strong>in Australië</strong>',
+    tocTitle: 'Ga snel naar',
+    toc: [
+      { id: 'laid-back', label: 'Laid-back mentaliteit' },
+      { id: 'typisch-aussie', label: 'Typisch Aussie' },
+      { id: 'actief', label: 'Actieve lifestyle' },
+    ],
     vibe: [
       'Verder weg van Europa dan het leefbare continent Oceanië is bijna onmogelijk. En dan is het ook nog eens zo enorm groot. Australië is ongeveer **184 keer** zo groot als Nederland. Zodra je vanaf het oosten naar het westen vliegt, ben je ongeveer **5 tot 6 uur onderweg**. Om het in perspectief te plaatsen: dat is ongeveer dezelfde afstand als van **Nederland naar Egypte** of de **Verenigde Arabische Emiraten**. Toch wonen er \'maar\' **26 miljoen mensen**.',
       '*\'Waarom is Australië zo gigantisch populair onder toeristen en Working Holiday holders?\'* Het is de ***vibe***. Dat klinkt zo cliché, maar ik zal het je proberen uit te leggen.',
     ],
     bondiCaption: 'Bondi Beach, Sydney',
-    laidbackTitle: 'Laid-back mentaliteit',
+    laidbackTitle: '<strong>Laid-back</strong> mentaliteit',
+    cardsTitle: 'Wat is nou écht typisch <strong>Aussie</strong>?!',
     laidback: [
-      'In de afgelopen jaren ben ik erachter gekomen dat de Australische levensstijl echt een cultuur op zichzelf is. Als er één ding is waar Aussies om bekendstaan, dan is het wel hun **\'no worries\'** en **easy-going mentaliteit**.',
-      'Waar het leven in Noord-Europa steeds meer lijkt te draaien om presteren en plannen, lijkt Australië zich in een veel **rustiger ritme** te bewegen. Het voelt hier alsof de dagelijkse druk en stress die we in Europa ervaren simpelweg minder aanwezig is. Deels omdat je letterlijk op afstand bent van alle opgelegde verwachtingen en het constante gevoel van moeten, maar vooral omdat de mindset en lifestyle van Australiërs gewoon anders is. Je stapt als het ware in een **andere versnelling**.',
-      'Werk wordt in Australië zeker als belangrijk gezien, maar het lijkt je dag-tot-dag leven niet te bepalen. Wanneer je hier werkt, voelt het soms alsof je **twee dagen in één dag** leeft, omdat je voor en na werk actief bent. Je kijkt de zonsopgang of zonsondergang, gaat sporten of brengt wat tijd buiten door. Het lekkere weer speelt hierin zeker een grote rol.',
-      'Australiërs hechten over het algemeen veel waarde aan **vrije tijd en ontspanning**. Na met veel locals te hebben gesproken, ben ik gaan inzien dat het leven hier minder draait om wat je bereikt, en meer om **hoe je het ervaart**. Vrienden en vriendinnen die mij hier bezoeken zeggen vaak dat het soms voelt als een soort *"lala land"*. Op een dinsdagmiddag liggen de stranden vol en vraag je je vanzelf af: *"Werken mensen hier eigenlijk wel?"* Eerlijk gezegd is dat voor ons soms ook nog een raadsel.',
-      'To be fair: de zon maakt je misschien ook net iets minder geneigd om achter dat bureau te zitten. Deze mentaliteit werkt aanstekelijk: je wordt er vanzelf relaxter van, al vraagt het soms ook meer om discipline. Je merkt dan ook dat de Hollandse aanpakmentaliteit en "ergens hard voor willen werken" soms in botsing komt met dit ritme. De balans ligt simpelweg anders. Dat betekent niet dat er geen ruimte is om hard te werken. Die is er zeker, als jij dat zelf wilt.',
-      'De ratrace voelt als een eerlijke keuze. Het is een plek waar je echt kunt **landen in je eigen tempo**, en waar een Working Holiday soms net iets te serieus genomen wordt!',
+      'In de afgelopen jaren ben ik erachter gekomen dat de Australische levensstijl echt een **cultuur op zichzelf** is. Als er één ding is waar Aussies om bekendstaan, dan is het wel hun ***no worries***- en **easy-going mentaliteit**.',
+      'Waar het leven in Noord-Europa (soms) meer lijkt te draaien om **presteren en plannen**, beweegt Australië zich over het algemeen in een veel **rustiger ritme**. De druk en stress die we in Europa zo vaak om ons heen zien, lijken hier simpelweg minder aanwezig. Dat komt vooral doordat de **mindset en lifestyle** van Australiërs anders is. Je stapt als het ware in een **andere versnelling**.',
+    ],
+    // Onderdelen van Laid-back mentaliteit: tekst, eventueel cijfertegels (stats) of Aussie-woordjes (slang), daarna meer tekst (after)
+    laidbackParts: [
+      {
+        title: 'Vroeg op, vroeg klaar',
+        text: [
+          'Wat je meteen opvalt: de dag begint hier **vroeg**. Om **zes uur ’s ochtends** zijn de koffietentjes al open, staan de eerste surfers in het water en lopen mensen hun rondje langs de kust. Veel cafés gaan rond **twee of drie uur ’s middags** alweer dicht. Daardoor voelt het soms alsof je **twee dagen in één dag** leeft. Voor je werk kijk je de zonsopgang, en na je werk ga je sporten, zwemmen, naar het park of kijk je de zonsondergang op het strand. Het lekkere weer speelt daarin natuurlijk een grote rol, maar het is ook gewoon hoe het leven hier is ingericht: **buiten zijn hoort erbij**.',
+        ],
+      },
+      {
+        title: 'Werk is belangrijk, maar niet alles',
+        text: ['Werk wordt in Australië zeker serieus genomen, maar het bepaalt niet je hele dag. Dat zie je ook terug in de regels:'],
+        stats: [
+          { value: '38 uur', label: 'is een fulltime werkweek' },
+          { value: '4 weken', label: 'vakantie per jaar, wettelijk vastgelegd' },
+          { value: 'Right to Disconnect', label: 'na werktijd hoef je niet te reageren op mails of telefoontjes van je baas' },
+        ],
+        after: [
+          'Australiërs hechten veel waarde aan **vrije tijd en ontspanning**. Na gesprekken met veel locals ben ik gaan inzien dat het leven hier minder draait om wat je bereikt, en meer om **hoe je het ervaart**. Vrienden die mij hier bezoeken, zeggen vaak dat het voelt als een soort *“lala land”*. Op een dinsdagmiddag liggen de stranden vol en vraag je je vanzelf af: *“Werken mensen hier eigenlijk wel?”* Eerlijk gezegd is dat voor mij soms ook nog een raadsel. Al geldt dit natuurlijk niet voor iedereen.',
+        ],
+      },
+      {
+        title: 'No worries, she’ll be right',
+        text: [
+          'Je hoort de mentaliteit ook terug in de **taal**. ***No worries*** is het antwoord op bijna alles: een bedankje, een excuus of een vraag. ***She’ll be right*** betekent zoveel als “het komt wel goed”, en wordt gebruikt voor alles van een lekke band tot een gemiste deadline. Deze mentaliteit werkt **aanstekelijk**: je wordt er vanzelf relaxter van, je maakt je minder druk en denkt al snel zelf ook: *het komt wel goed*.',
+          'Toch is laid-back niet hetzelfde als lui. Het vraagt soms juist meer **discipline**, want to be fair: met die zon ben je ook niet echt geneigd om achter je bureau te kruipen. Daarnaast merk je dat de **Hollandse aanpakmentaliteit** en het “ergens hard voor willen werken” soms botsen met dit ritme. Afspraken worden wat losser genomen, een reactie op je mail kan even op zich laten wachten en *she’ll be right* is niet altijd wat je wilt horen als je iets geregeld wilt hebben. De balans ligt hier gewoon anders.',        ],
+      },
+      {
+        title: 'In je eigen tempo',
+        highlight: true,
+        text: [
+          'Het grootste verschil? De ratrace voelt hier als een **keuze** in plaats van een verplichting. Australië is een plek waar je echt kunt **landen in je eigen tempo**. En eerlijk is eerlijk: bij een Working Holiday ligt de nadruk voor veel mensen toch net iets meer op de ***holiday***.',
+        ],
+      },
     ],
     cards: [
       {
         key: 'coffee',
-        title: 'Koffie & café cultuur',
+        title: 'Koffie & cafécultuur',
         text: [
-          'In Australië heerst een **koffiecultuur**. Buiten de deur jezelf trakteren op een lekker bakkie hoort hier bij ons **dagelijks** leven, en wat is het fijn om de dag te beginnen bij je favoriete koffietent!',
-          'Onderdeel van koffie drinken in Australië is het **finetunen** van je favoriete **koffieorder**. Voorheen had ik nog nooit gehoord van een *"Latte 3/4 full skim milk"* of een *"Strong Iced Long Black with a dash of honey"*, maar hier zijn dit de standaardbestellingen. Om een idee te geven van de prijzen: een normale long black, cappuccino of flat white kost gemiddeld **$5–6** (€3,40).',
-          'Wat een beetje haaks staat op de relaxte, laid-back mentaliteit, is hoe vroeg alles hier op gang komt. Er heerst hier een enorme **ochtendcultuur**. Tussen **6:00 en 7:00** gaan de meeste cafés open en tussen **14:00 en 15:00** sluiten ze vaak alweer. Als je dus in een café voor jezelf even wilt werken of gewoon een koffietje wilt doen, is het goed om daar rekening mee te houden.',
+          'Australiërs nemen hun **koffie serieus**. Buiten de deur jezelf trakteren op een lekker bakkie hoort hier bij het **dagelijks leven**, en wat is het fijn om de dag te beginnen bij je favoriete koffietent!',
+          'Bij koffie drinken in Australië hoort ook het **finetunen** van je **vaste bestelling**. Vroeger had ik nog nooit gehoord van een *“latte, 3/4 full, skim milk”* of een *“strong iced long black with a dash of honey”*, maar hier zijn dat heel gewone bestellingen.',
+          'Australië heeft een echte **ochtendcultuur**. De meeste cafés gaan tussen **6:00 en 7:00** open en sluiten vaak alweer tussen **14:00 en 15:00**. Wil je in een café werken of gewoon rustig een koffietje doen? Houd daar dan rekening mee.',
         ],
       },
       {
         key: 'barefoot',
         title: 'Blote voeten',
         text: [
-          'Het leidt misschien wel tot een enkel bezoekje aan de **pedicure**, maar wat is het toch heerlijk om op je blote voeten te lopen. Vooral aan de **Oostkust**, in **kustplaatsjes** zoals Noosa en Byron Bay, zie je mensen overal op **blote voeten** door de supermarkt, over de boulevard en soms zelfs in restaurants lopen.',
-          'Blote voeten geven niet alleen een **gevoel van vrijheid**, maar worden ook vaak gezien als een vorm van **grounding**: letterlijk contact maken met de aarde en daardoor meer in het moment zijn.',
+          'Het levert je misschien een extra bezoekje aan de **pedicure** op, maar wat is het heerlijk om op **blote voeten** te lopen (probeer het eens!). Vooral in relaxte **kustplaatsjes** zoals Noosa, Margaret River en Byron Bay zie je mensen op blote voeten door de supermarkt, over de boulevard en soms zelfs in restaurants lopen.',
+          'Veel mensen zien het als een vorm van **grounding**: letterlijk contact maken met de aarde en daardoor meer in het moment zijn.',
+        ],
+      },
+      {
+        key: 'bbq',
+        title: 'Barbie (BBQ)',
+        text: [
+          'Een barbecue, of ***barbie***, is in Australië geen zomeractiviteit maar gewoon een **onderdeel van het leven**. In bijna elk park, aan het strand en op campings vind je **gratis openbare barbecues**. Hoe leuk zou dat zijn als we dat ook in Europa krijgen?!',
+          'Druk op de knop, wacht een paar minuten en je kunt je hamburgers, groenten of halloumi erop gooien. Je ziet er gezinnen, groepen vrienden en backpackers die **samen hun avondeten** klaarmaken.',
+          'En dan heb je natuurlijk de ***sausage sizzle***. Op zaterdag staan er bij bouwmarkt **Bunnings**, maar ook bij scholen en sportclubs, vrijwilligers worstjes te bakken voor het **goede doel**. Voor een paar dollar krijg je een worstje in een sneetje wit brood met gebakken uien en tomatensaus.',
         ],
       },
     ],
-    activeTitle: 'Actieve lifestyle',
-    activeCaptions: ['Run Club, Bondi (Sydney)', 'Bronte Pools, Sydney'],
-    active: [
-      'Het buitenleven **ís hier het leven**, en dat zie je terug in een **actieve lifestyle** die door veel mensen bewust wordt omarmd. Sta om 5:30 uur op bij Bondi Beach en je begrijpt meteen waarom: honderden mensen beginnen hun dag met een **sunrise run**, een vroege yogasessie of een rustige wandeling langs de kust. De oceaan, stranden en parken nodigen constant uit om naar buiten te gaan en in beweging te komen. **Stilzitten** voelt soms bijna onnatuurlijk.',
-      'Van baantjes trekken in ocean pools langs de kust, tot surfers in kustplaatsen door heel Australië en hardloopclubs in vrijwel elke stad: buiten sporten is hier overal onderdeel van het dagelijks leven. Sydney is hier een voorbeeld van, met meer dan **35 ocean pools** langs de kust en **ruim 50 running clubs** verspreid over de stad.',
-      'Naast hardlopen en surfen zijn er nog veel andere populaire sporten en activiteiten. Zwemmen is enorm populair. Elk jaar worden er langs de kust ocean swim races georganiseerd waar je gewoon aan mee kunt doen. Bekende voorbeelden zijn de **Cole Classic** (Northern Beaches, Sydney), de **Byron Bay Ocean Swim Classic** (Byron Bay) en de **Bondi to Bronte Ocean Swim** (Sydney).',
-      'Daarnaast is er een groot aanbod aan activiteiten waar je uit kunt kiezen. Denk aan georganiseerde groepsactiviteiten zoals **hikes** door nationale parken, **beachvolleybaltoernooien** en **bootcamps** in het park of op het strand. Ook vind je in veel parken **gratis fitnessapparaten**.',
-      'Als dat niets voor je is, kun je je eenvoudig aanmelden bij een **sportschool**. Pilates is hier echt een trend: van power en hot tot reformer pilates. Veel mensen combineren dit met **HIIT-workouts** of **yoga**, naast hun dagelijkse outdoor activiteiten. Deze lessen worden de hele dag door aangeboden. Zelf ben ik lid bij **Fitness First**, waar ze al meer dan **50 reformer pilates-lessen** per week aanbieden, van 6:00 tot 19:00.',
-    ],
+    activeTitle: '<strong>Actieve</strong> lifestyle',
+    // Actieve lifestyle, opgedeeld in stukken met foto's en blokjes ertussen
+    active: {
+      intro: [
+        'Ik moet eerlijk zijn: misschien ben ik een beetje *biased*. Een tijd lang woonde ik vlak bij **Bondi Beach**, en daar lijkt het alsof **sportkleding de officiële dresscode** is. Mensen lopen voor je gevoel de hele dag in hun leggings en sporttops rond: naar de koffietent, de supermarkt en zelfs als ze afspreken met vrienden. Op de boulevard moet je ondertussen opletten dat je niet omvergelopen wordt door een groepje hardlopers, en in het water kijk je je ogen uit naar de surfers.',
+        'Maar ook als je Bondi even wegdenkt, is me één ding opgevallen: Australiërs leven **actief**, en vooral **buiten**.',
+      ],
+      outdoors: {
+        title: 'Het buitenleven ís het leven',
+        text: [
+          'Sta om **5:30 uur** op bij Bondi Beach en je snapt meteen wat ik bedoel. Honderden mensen beginnen hun dag met een **sunrise run**, een yogasessie op het gras of een wandeling over de kust naar **Bronte** of **Coogee**. De oceaan, stranden en parken nodigen constant uit om naar buiten te gaan en te bewegen. **Stilzitten** voelt hier letterlijk bijna onnatuurlijk.',
+          'Sydney is daar het perfecte voorbeeld van. Langs de kust liggen **ocean pools**: zeewaterzwembaden in de rotsen waarin je baantjes trekt terwijl de golven over de rand slaan. Het bekendste is natuurlijk **Bondi Icebergs**, maar ook in Bronte, Coogee en langs de Northern Beaches vind je prachtige ocean pools. En met de vele **running clubs** in de stad hoef je nooit alleen te rennen; vaak eindigt de run gewoon bij een koffietentje.',
+        ],
+        stats: [
+          { value: '35+', label: 'ocean pools langs de kust van Sydney' },
+          { value: '50+', label: 'running clubs verspreid over de stad' },
+        ],
+      },
+      country: {
+        title: 'En de rest van Australië?',
+        intro: 'Het is niet alleen een Sydney-ding. Dezelfde lifestyle vind je, in een iets andere vorm, door het **hele land**:',
+        cities: [
+          { name: 'Melbourne', text: 'Misschien niet het strand voor de deur, maar wel **The Tan**: een hardlooprondje rond de Botanic Gardens waar het op elk uur van de dag druk is met hardlopers.' },
+          { name: 'Brisbane', text: 'Warm en subtropisch. Je ziet er mensen klimmen bij de **Kangaroo Point Cliffs**, sporten langs de rivier of zwemmen in de stadslagune bij **South Bank**.' },
+          { name: 'Gold Coast & Byron Bay', text: 'Hier draait alles om **surfen**. Bij Snapper Rocks of Burleigh Heads hangen de surfers ’s ochtends vroeg al als een zwerm in het water.' },
+          { name: 'Perth', text: 'Prachtige stranden zoals Cottesloe, en de bekende **Rottnest Channel Swim**: een zwemtocht van bijna 20 kilometer over open zee naar Rottnest Island.' },
+          { name: 'Kleinere plaatsen', text: 'Op het platteland draait het vaker om **teamsport**. De lokale footy- of cricketclub is het sociale hart van het dorp.' },
+        ],
+        parkrun: {
+          label: 'Overal te vinden',
+          title: 'parkrun',
+          text: 'Iets wat je echt overal tegenkomt: **parkrun**. Elke zaterdagochtend om **8:00 uur** lopen in honderden parken in het hele land mensen **5 kilometer**, van fanatieke lopers tot ouders met een kinderwagen en mensen met hun hond.',
+        },
+      },
+      swim: {
+        title: 'Zwemmen, surfen en alles daartussen',
+        text: '**Zwemmen** is enorm populair. Elk jaar worden er langs de kust **ocean swim races** georganiseerd waar je gewoon aan mee kunt doen. Bekende voorbeelden:',
+        races: [
+          ['Cole Classic', 'Northern Beaches, Sydney'],
+          ['Bondi to Bronte Ocean Swim', 'Sydney'],
+          ['Byron Bay Ocean Swim Classic', 'Byron Bay'],
+        ],
+        nippers: {
+          title: 'Surf lifesaving & Nippers',
+          text: 'Ook de **surf lifesaving clubs** zijn typisch Australisch. Vrijwilligers houden de stranden veilig, en op zondagochtend zie je honderden kinderen in felgekleurde petjes bij de ***Nippers*** leren hoe ze veilig in zee moeten zwemmen. Zo groeien Aussies op: met zand tussen de tenen en zout water in hun haar.',
+        },
+        after: 'Daarnaast is er een groot aanbod aan **georganiseerde activiteiten**. Denk aan groepshikes door nationale parken, beachvolleybaltoernooien en bootcamps in het park of op het strand. Ook staan er in veel parken **gratis fitnesstoestellen**, dus een sportschool heb je eigenlijk niet eens nodig.',
+      },
+      pilates: {
+        title: 'Pilates, en dan nog meer pilates',
+        text: 'Wil je toch binnen sporten, dan meld je je eenvoudig aan bij een **sportschool**. **Pilates** is hier echt een hype: van power en hot tot reformer pilates. Veel mensen combineren dat met **HIIT-workouts** of **yoga**, naast hun dagelijkse buitenactiviteiten. De lessen worden de hele dag door aangeboden. Zelf ben ik lid van **Fitness First**, waar ze meer dan **50 reformer pilates-lessen** per week geven, van 6:00 tot 19:00 uur.',
+      },
+      captions: { runclub: 'Run Club, Bondi (Sydney)', bronte: 'Bronte Pools, Sydney', nippers: 'Nippers op het strand' },
+    },
   },
   en: {
     eyebrow: 'Blog · Australia',
     pageTitle: 'Life in Australia',
-    vibeTitle: 'It\'s the <strong>vibe</strong>',
+    vibeTitle: 'Life <strong>in Australia</strong>',
+    tocTitle: 'Jump to',
+    toc: [
+      { id: 'laid-back', label: 'Laid-back mentality' },
+      { id: 'typisch-aussie', label: 'Typically Aussie' },
+      { id: 'actief', label: 'Active lifestyle' },
+    ],
     vibe: [
       'Getting further away from Europe than the habitable continent of Oceania is almost impossible. And on top of that it is enormous. Australia is about **184 times** the size of the Netherlands. Fly from east to west and you are travelling for about **5 to 6 hours**. To put that in perspective: that is roughly the same distance as from **the Netherlands to Egypt** or the **United Arab Emirates**. Yet \'only\' **26 million people** live here.',
       '*\'Why is Australia so hugely popular with tourists and Working Holiday makers?\'* It\'s the ***vibe***. That sounds like such a cliché, but let me try to explain.',
     ],
     bondiCaption: 'Bondi Beach, Sydney',
-    laidbackTitle: 'Laid-back mentality',
+    laidbackTitle: '<strong>Laid-back</strong> mentality',
+    cardsTitle: 'What is really typically <strong>Aussie</strong>?!',
     laidback: [
-      'Over the past years I have discovered that the Australian lifestyle really is a culture of its own. If there is one thing Aussies are known for, it is their **\'no worries\'** and **easy-going mentality**.',
-      'Where life in Northern Europe seems to revolve more and more around performing and planning, Australia seems to move at a much **calmer pace**. It feels as if the daily pressure and stress we experience in Europe are simply less present here. Partly because you are literally far away from all the expectations and the constant feeling of having to, but mostly because the mindset and lifestyle of Australians is just different. You shift into **a different gear**.',
-      'Work is definitely seen as important in Australia, but it does not seem to define your day-to-day life. When you work here, it sometimes feels like you live **two days in one**, because you are active before and after work. You watch the sunrise or sunset, work out or spend time outdoors. The lovely weather certainly plays a big part in that.',
-      'Australians generally place a lot of value on **free time and relaxation**. After talking to lots of locals, I realised that life here is less about what you achieve and more about **how you experience it**. Friends who visit me here often say it sometimes feels like a kind of *"la la land"*. On a Tuesday afternoon the beaches are packed and you naturally wonder: *"Does anyone here actually work?"* To be honest, it is sometimes still a mystery to us too.',
-      'To be fair: the sun might also make you a little less inclined to sit behind that desk. This mentality is contagious: you automatically become more relaxed, although it sometimes requires more discipline. You also notice that the Dutch get-things-done mentality and "wanting to work hard for something" sometimes clashes with this rhythm. The balance is simply different. That does not mean there is no room to work hard. There definitely is, if you want it.',
-      'The rat race feels like an honest choice. It is a place where you can truly **land at your own pace**, and where a Working Holiday is sometimes taken just a little too seriously!',
+      'Over the past years I have discovered that the Australian lifestyle really is a **culture of its own**. If there is one thing Aussies are known for, it is their ***no worries*** and **easy-going mentality**.',
+      'Where life in Northern Europe (sometimes) seems to revolve more around **performing and planning**, Australia generally moves at a much **calmer pace**. The pressure and stress we so often see around us in Europe simply seem less present here. That is mainly because the **mindset and lifestyle** of Australians is different. You shift into **a different gear**.',
+    ],
+    laidbackParts: [
+      {
+        title: 'Early to rise, early to finish',
+        text: [
+          'What you notice straight away: the day starts **early** here. At **six in the morning** the coffee spots are already open, the first surfers are in the water and people are doing their loop along the coast. Many cafés close again around **two or three in the afternoon**. That sometimes makes it feel like you live **two days in one**. Before work you watch the sunrise, and after work you go to the gym, swim, head to the park or watch the sunset on the beach. The lovely weather obviously plays a big part, but it is also simply how life is set up here: **being outdoors is part of it**.',
+        ],
+      },
+      {
+        title: 'Work matters, but it is not everything',
+        text: ['Work is definitely taken seriously in Australia, but it does not define your whole day. You can see that in the rules too:'],
+        stats: [
+          { value: '38 hours', label: 'is a full-time working week' },
+          { value: '4 weeks', label: 'of annual leave, required by law' },
+          { value: 'Right to Disconnect', label: 'after hours you don’t have to answer emails or calls from your boss' },
+        ],
+        after: [
+          'Australians place a lot of value on **free time and relaxation**. After talking to lots of locals, I realised that life here is less about what you achieve and more about **how you experience it**. Friends who visit me here often say it feels like a kind of *“la la land”*. On a Tuesday afternoon the beaches are packed and you naturally wonder: *“Does anyone here actually work?”* To be honest, it is sometimes still a mystery to me too. Although of course that does not apply to everyone.',
+        ],
+      },
+      {
+        title: 'No worries, she’ll be right',
+        text: [
+          'You hear the mentality in the **language** too. ***No worries*** is the answer to almost everything: a thank you, an apology or a question. ***She’ll be right*** means something like “it will be fine”, and is used for everything from a flat tyre to a missed deadline. This mentality is **contagious**: you automatically become more relaxed, you worry less and soon find yourself thinking: *it will be fine*.',
+          'Still, laid-back doesn’t mean lazy. It sometimes actually requires more **discipline**, because to be fair: with all that sun you’re not exactly tempted to crawl behind your desk. On top of that, you notice that the **Dutch get-things-done mentality** and “wanting to work hard for something” sometimes clash with this rhythm. Appointments are taken a bit more loosely, a reply to your email can take a while and *she’ll be right* is not always what you want to hear when you need something sorted. The balance is simply different here.',        ],
+      },
+      {
+        title: 'At your own pace',
+        highlight: true,
+        text: [
+          'The biggest difference? The rat race feels like a **choice** here instead of an obligation. Australia is a place where you can truly **land at your own pace**. And let’s be honest: on a Working Holiday, for many people the emphasis is just a little more on the ***holiday***.',
+        ],
+      },
     ],
     cards: [
       {
         key: 'coffee',
         title: 'Coffee & café culture',
         text: [
-          'Australia has a real **coffee culture**. Treating yourself to a good cup of coffee out is part of our **daily** life here, and how lovely is it to start the day at your favourite coffee spot!',
-          'Part of drinking coffee in Australia is **fine-tuning** your favourite **coffee order**. I had never heard of a *"Latte 3/4 full skim milk"* or a *"Strong Iced Long Black with a dash of honey"*, but here these are standard orders. To give you an idea of prices: a regular long black, cappuccino or flat white costs on average **$5–6** (€3.40).',
-          'What is a bit at odds with the relaxed, laid-back mentality is how early everything starts here. There is a huge **morning culture**. Most cafés open between **6:00 and 7:00** and often close again between **14:00 and 15:00**. So if you want to work from a café or just grab a coffee, it is good to keep that in mind.',
+          'Australians take their **coffee seriously**. Treating yourself to a good cup of coffee out is part of **daily life** here, and how lovely is it to start the day at your favourite coffee spot!',
+          'Drinking coffee in Australia also means **fine-tuning** your **usual order**. I had never heard of a *“latte, 3/4 full, skim milk”* or a *“strong iced long black with a dash of honey”*, but here those are completely normal orders.',
+          'Australia has a real **morning culture**. Most cafés open between **6:00 and 7:00** and often close again between **14:00 and 15:00**. Want to work from a café or just enjoy a quiet coffee? Keep that in mind.',
         ],
       },
       {
         key: 'barefoot',
         title: 'Bare feet',
         text: [
-          'It might lead to the occasional visit to the **pedicure**, but how wonderful is it to walk around barefoot. Especially on the **East Coast**, in **coastal towns** like Noosa and Byron Bay, you see people walking **barefoot** everywhere: through the supermarket, along the promenade and sometimes even in restaurants.',
-          'Bare feet not only give you a **sense of freedom**, they are also often seen as a form of **grounding**: literally connecting with the earth and being more in the moment.',
+          'It might cost you an extra visit to the **pedicure**, but how wonderful is it to walk around **barefoot** (give it a try!). Especially in relaxed **coastal towns** like Noosa, Margaret River and Byron Bay, you see people walking barefoot through the supermarket, along the promenade and sometimes even in restaurants.',
+          'Many people see it as a form of **grounding**: literally connecting with the earth and being more in the moment.',
+        ],
+      },
+      {
+        key: 'bbq',
+        title: 'Barbie (BBQ)',
+        text: [
+          'A barbecue, or ***barbie***, isn’t a summer activity in Australia but simply **part of life**. In almost every park, on the beach and at campsites you’ll find **free public barbecues**. How great would it be if we had those in Europe too?!',
+          'Press the button, wait a few minutes and you can throw on your burgers, veggies or halloumi. You’ll see families, groups of friends and backpackers making **dinner together**.',
+          'And then of course there’s the ***sausage sizzle***. On Saturdays volunteers grill sausages for **charity** outside hardware store **Bunnings**, but also at schools and sports clubs. For a few dollars you get a sausage on a slice of white bread with fried onions and tomato sauce.',
         ],
       },
     ],
-    activeTitle: 'Active lifestyle',
-    activeCaptions: ['Run Club, Bondi (Sydney)', 'Bronte Pools, Sydney'],
-    active: [
-      'The outdoors **is life here**, and you see that in an **active lifestyle** that many people consciously embrace. Get up at 5:30 at Bondi Beach and you immediately understand why: hundreds of people start their day with a **sunrise run**, an early yoga session or a relaxed walk along the coast. The ocean, beaches and parks constantly invite you to get outside and move. **Sitting still** sometimes feels almost unnatural.',
-      'From swimming laps in ocean pools along the coast to surfers in coastal towns across Australia and running clubs in almost every city: outdoor sport is part of daily life everywhere. Sydney is a great example, with more than **35 ocean pools** along the coast and **over 50 running clubs** across the city.',
-      'Besides running and surfing there are many other popular sports and activities. Swimming is hugely popular. Every year ocean swim races are organised along the coast that anyone can join. Well-known examples are the **Cole Classic** (Northern Beaches, Sydney), the **Byron Bay Ocean Swim Classic** (Byron Bay) and the **Bondi to Bronte Ocean Swim** (Sydney).',
-      'There is also a wide range of activities to choose from. Think of organised group activities like **hikes** through national parks, **beach volleyball tournaments** and **bootcamps** in the park or on the beach. Many parks also have **free outdoor gym equipment**.',
-      'If that is not for you, you can easily join a **gym**. Pilates is a real trend here: from power and hot to reformer pilates. Many people combine it with **HIIT workouts** or **yoga**, alongside their daily outdoor activities. These classes run all day long. I am a member of **Fitness First** myself, which offers more than **50 reformer pilates classes** a week, from 6:00 to 19:00.',
-    ],
+    activeTitle: '<strong>Active</strong> lifestyle',
+    active: {
+      intro: [
+        'I have to be honest: I might be a little *biased*. For a while I lived right near **Bondi Beach**, where it feels like **activewear is the official dress code**. People seem to walk around in their leggings and sports tops all day: to the coffee spot, the supermarket and even when they meet up with friends. On the promenade you have to watch out not to get knocked over by a group of runners, and in the water you can’t stop watching the surfers.',
+        'But even if you leave Bondi out of it, one thing stood out to me: Australians live **actively**, and mostly **outdoors**.',
+      ],
+      outdoors: {
+        title: 'The outdoors is life',
+        text: [
+          'Get up at **5:30** at Bondi Beach and you’ll immediately see what I mean. Hundreds of people start their day with a **sunrise run**, a yoga session on the grass or a coastal walk to **Bronte** or **Coogee**. The ocean, beaches and parks constantly invite you to get outside and move. **Sitting still** literally feels almost unnatural here.',
+          'Sydney is the perfect example. Along the coast you find **ocean pools**: seawater pools in the rocks where you swim laps while the waves crash over the edge. The most famous is of course **Bondi Icebergs**, but you also find beautiful ocean pools in Bronte, Coogee and along the Northern Beaches. And with all the **running clubs** in the city you never have to run alone; the run often simply ends at a coffee spot.',
+        ],
+        stats: [
+          { value: '35+', label: 'ocean pools along the Sydney coast' },
+          { value: '50+', label: 'running clubs across the city' },
+        ],
+      },
+      country: {
+        title: 'And the rest of Australia?',
+        intro: 'It’s not just a Sydney thing. You find the same lifestyle, in a slightly different form, across the **whole country**:',
+        cities: [
+          { name: 'Melbourne', text: 'Maybe not the beach on its doorstep, but it does have **The Tan**: a running loop around the Botanic Gardens that is busy with runners at every hour of the day.' },
+          { name: 'Brisbane', text: 'Warm and subtropical. You see people climbing at the **Kangaroo Point Cliffs**, working out along the river or swimming in the city lagoon at **South Bank**.' },
+          { name: 'Gold Coast & Byron Bay', text: 'Everything revolves around **surfing**. At Snapper Rocks or Burleigh Heads the surfers are already out in the water like a swarm early in the morning.' },
+          { name: 'Perth', text: 'Beautiful beaches like Cottesloe, and the famous **Rottnest Channel Swim**: an almost 20-kilometre swim across open sea to Rottnest Island.' },
+          { name: 'Smaller towns', text: 'In the countryside it’s more often about **team sports**. The local footy or cricket club is the social heart of the town.' },
+        ],
+        parkrun: {
+          label: 'Found everywhere',
+          title: 'parkrun',
+          text: 'Something you really find everywhere: **parkrun**. Every Saturday morning at **8:00**, people in hundreds of parks across the country run **5 kilometres**, from keen runners to parents with prams and people with their dogs.',
+        },
+      },
+      swim: {
+        title: 'Swimming, surfing and everything in between',
+        text: '**Swimming** is hugely popular. Every year **ocean swim races** are organised along the coast that anyone can join. Well-known examples:',
+        races: [
+          ['Cole Classic', 'Northern Beaches, Sydney'],
+          ['Bondi to Bronte Ocean Swim', 'Sydney'],
+          ['Byron Bay Ocean Swim Classic', 'Byron Bay'],
+        ],
+        nippers: {
+          title: 'Surf lifesaving & Nippers',
+          text: 'The **surf lifesaving clubs** are typically Australian too. Volunteers keep the beaches safe, and on Sunday mornings you see hundreds of kids in brightly coloured caps learning how to swim safely in the sea at ***Nippers***. That’s how Aussies grow up: with sand between their toes and salt water in their hair.',
+        },
+        after: 'There is also a wide range of **organised activities**. Think of group hikes through national parks, beach volleyball tournaments and bootcamps in the park or on the beach. Many parks also have **free outdoor gym equipment**, so you don’t even really need a gym.',
+      },
+      pilates: {
+        title: 'Pilates, and then even more pilates',
+        text: 'Still want to work out indoors? Then you can easily join a **gym**. **Pilates** is a real hype here: from power and hot to reformer pilates. Many people combine it with **HIIT workouts** or **yoga**, alongside their daily outdoor activities. Classes run all day long. I’m a member of **Fitness First** myself, which offers more than **50 reformer pilates classes** a week, from 6:00 to 19:00.',
+      },
+      captions: { runclub: 'Run Club, Bondi (Sydney)', bronte: 'Bronte Pools, Sydney', nippers: 'Nippers on the beach' },
+    },
   },
 }[lang];
 
-const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, barefoot: photos.barefoot };
+const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, barefoot: photos.barefoot, bbq: photos.bbq };
 ---
 
 <!-- Turquoise placeholder als een foto (nog) ontbreekt -->
 <article class="bg-[#FFFDFA] px-6 pb-24 pt-32 md:pb-32 md:pt-40">
   <div class="mx-auto max-w-5xl">
 
-    <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{content.pageTitle}</p>
-
-    <!-- Het is de vibe -->
-    <section class="mt-4 grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-14">
-      <h1 class="text-4xl font-normal leading-[1.0] tracking-tight text-black md:text-5xl [&_strong]:font-bold">
+    <!-- Intro: titel "Het leven in Australië" links, verhaal ("het is de vibe") rechts -->
+    <section class="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-14">
+      <!-- "in Australië" op een eigen regel -->
+      <h1 class="text-5xl font-normal leading-[1.0] tracking-tight text-black md:text-6xl [&_strong]:block [&_strong]:font-bold">
         <Fragment set:html={content.vibeTitle} />
       </h1>
       <div class="space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
@@ -149,7 +330,19 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       </div>
     </section>
 
-    <figure class="relative mt-12 overflow-hidden rounded-[2rem] md:mt-16 md:rounded-[2.5rem]">
+    <!-- Ga snel naar: zelfde knoppen als in de andere blogs -->
+    <nav aria-label={content.tocTitle} class="mt-12 md:mt-16">
+      <p class="text-xs uppercase tracking-[0.2em] text-gray-500">{content.tocTitle}</p>
+      <ol class="mt-4 flex flex-wrap gap-2">
+        {content.toc.map((item) => (
+          <li>
+            <a href={`#${item.id}`} class="inline-flex whitespace-nowrap rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white">{item.label}</a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <figure class="relative mt-10 overflow-hidden rounded-[2rem] md:mt-16 md:rounded-[2.5rem]">
       {photos.bondi ? (
         <img src={photos.bondi} alt={content.bondiCaption} class="aspect-[16/9] w-full object-cover md:aspect-[21/9]" />
       ) : (
@@ -160,15 +353,68 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
     </figure>
 
     <!-- Laid-back mentaliteit -->
-    <section class="mx-auto mt-20 max-w-3xl md:mt-28">
-      <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.laidbackTitle}</h2>
+    <section id="laid-back" class="mx-auto mt-20 max-w-3xl scroll-mt-28 md:mt-28">
+      <!-- "Laid-back" dikgedrukt, "mentaliteit" normaal; zelfde grootte als de hoofdtitels in de andere blogs -->
+      <h2 class="text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl [&_strong]:font-bold" set:html={content.laidbackTitle} />
       <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
         {content.laidback.map((p) => <p set:html={rich(p)} />)}
       </div>
+
+      <!-- Onderdelen met tussenkopje; cijfertegels, Aussie-woordjes en een afsluitend petrol blok -->
+      {content.laidbackParts.map((part) => (
+        part.highlight ? (
+          <div class="mt-14 rounded-[2rem] bg-[#0F7C82] p-7 text-white md:p-10 [&_strong]:text-white">
+            <h3 class="text-2xl font-semibold tracking-tight md:text-[1.75rem]">{part.title}</h3>
+            <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-white/90 md:text-base">
+              {part.text.map((p) => <p set:html={rich(p)} />)}
+            </div>
+          </div>
+        ) : (
+          <div class="mt-12 md:mt-14">
+            <h3 class="text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{part.title}</h3>
+            <div class="mt-4 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
+              {part.text.map((p) => <p set:html={rich(p)} />)}
+            </div>
+
+            {'stats' in part && part.stats && (
+              <div class="mt-6 grid gap-3 sm:grid-cols-3">
+                {part.stats.map((s) => (
+                  <div class="rounded-[1.5rem] bg-[#E6F6F6] p-5">
+                    <p class="text-2xl font-bold leading-tight tracking-tight text-[#0F7C82]">{s.value}</p>
+                    <p class="mt-2 text-sm leading-snug text-gray-700">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {'slang' in part && part.slang && (
+              <div class="mt-6 flex flex-wrap gap-2">
+                {part.slang.map(([word, meaning]) => (
+                  <span class="inline-flex items-center gap-2 rounded-full bg-[#E6F6F6] px-4 py-2 text-[15px]">
+                    <b class="font-semibold text-[#0F7C82]">{word}</b>
+                    <span class="text-gray-400" aria-hidden="true">=</span>
+                    <span class="text-gray-700">{meaning}</span>
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {'after' in part && part.after && (
+              <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
+                {part.after.map((p) => <p set:html={rich(p)} />)}
+              </div>
+            )}
+          </div>
+        )
+      ))}
     </section>
 
-    <!-- Twee kaarten naast elkaar -->
-    <section class="mt-20 grid gap-6 md:mt-28 md:grid-cols-2 md:items-start">
+    <!-- Typisch Aussie: overkoepelende titel boven de twee kaarten (Koffie & café cultuur, Blote voeten) -->
+    <section id="typisch-aussie" class="mt-20 scroll-mt-28 md:mt-28">
+      <h2 class="text-center text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl [&_strong]:font-bold" set:html={content.cardsTitle} />
+      <!-- drie kaarten naast elkaar op desktop, twee op tablet; op desktop breder dan de tekstkolom -->
+      <div class="mt-10 grid gap-6 md:grid-cols-2 md:items-start lg:-mx-16 lg:grid-cols-3 xl:-mx-32">
+
       {content.cards.map((card) => (
         <div class="rounded-[2rem] bg-white p-4 shadow-[0_20px_50px_rgba(0,0,0,0.07)] ring-1 ring-black/5 md:p-5">
           <div class="relative overflow-hidden rounded-[1.5rem]">
@@ -178,37 +424,105 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
               <div class="aspect-[4/3] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
             )}
             <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
-            <h3 class="absolute bottom-4 left-5 text-lg font-semibold text-white">{card.title}</h3>
+            <!-- zelfde grootte als de tussenkopjes bij Laid-back mentaliteit -->
+            <h3 class="absolute bottom-4 left-5 text-2xl font-semibold tracking-tight text-white md:text-[1.75rem]">{card.title}</h3>
           </div>
-          <div class="space-y-4 px-2 pb-3 pt-6 text-[15px] leading-relaxed text-gray-700">
+          <div class="space-y-4 px-2 pb-3 pt-6 text-[15px] leading-relaxed text-gray-700 md:text-base">
             {card.text.map((p) => <p set:html={rich(p)} />)}
           </div>
         </div>
       ))}
+      </div>
     </section>
 
     <!-- Actieve lifestyle -->
-    <section class="mt-20 grid gap-10 md:mt-28 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-14">
-      <div class="order-2 space-y-8 md:order-1">
-        {[photos.runclub, photos.bronte].map((src, i) => (
-          <figure>
-            <div class="overflow-hidden rounded-[1.5rem]">
-              {src ? (
-                <img src={src} alt={content.activeCaptions[i]} loading="lazy" class="aspect-[4/5] w-full object-cover" />
-              ) : (
-                <div class="aspect-[4/5] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
-              )}
-            </div>
-            <figcaption class="mt-3 text-sm font-semibold text-gray-900">{content.activeCaptions[i]}</figcaption>
-          </figure>
+    <!-- Eén kolom in delen: intro + foto, buitenleven + cijfers + foto, steden-kaartjes + parkrun-blok,
+         zwemmen + races + Nippers-blok met foto, pilates in een kaart -->
+    <section id="actief" class="mx-auto mt-20 max-w-3xl scroll-mt-28 text-[15px] leading-relaxed text-gray-700 md:mt-28 md:text-base">
+      <h2 class="text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl [&_strong]:font-bold" set:html={content.activeTitle} />
+      <div class="mt-6 space-y-5">
+        {content.active.intro.map((p) => <p set:html={rich(p)} />)}
+      </div>
+
+      <!-- Foto: Run Club -->
+      <figure class="mt-10 lg:-mx-16">
+        <div class="overflow-hidden rounded-[2rem]">
+          {photos.runclub ? (
+            <img src={photos.runclub} alt={content.active.captions.runclub} loading="lazy" class="aspect-[16/9] w-full object-cover" />
+          ) : (
+            <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
+          )}
+        </div>
+        <figcaption class="mt-3 text-sm font-semibold text-gray-900">{content.active.captions.runclub}</figcaption>
+      </figure>
+
+      <!-- Het buitenleven ís het leven -->
+      <h3 class="mt-14 text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{content.active.outdoors.title}</h3>
+      <div class="mt-4 space-y-5">
+        {content.active.outdoors.text.map((p) => <p set:html={rich(p)} />)}
+      </div>
+      <div class="mt-6 grid grid-cols-2 gap-3">
+        {content.active.outdoors.stats.map((s) => (
+          <div class="rounded-[1.5rem] bg-[#E6F6F6] p-5 md:p-6">
+            <p class="text-4xl font-bold leading-none tracking-tight text-[#0F7C82] md:text-5xl">{s.value}</p>
+            <p class="mt-2 text-sm leading-snug text-gray-700">{s.label}</p>
+          </div>
         ))}
       </div>
-      <div class="order-1 md:order-2">
-        <h2 class="text-3xl font-semibold leading-tight tracking-tight text-black md:text-[2.25rem]">{content.activeTitle}</h2>
-        <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-base">
-          {content.active.map((p) => <p set:html={rich(p)} />)}
+
+      <!-- Foto: Bronte Pools -->
+      <figure class="mt-10 lg:-mx-16">
+        <div class="overflow-hidden rounded-[2rem]">
+          {photos.bronte ? (
+            <img src={photos.bronte} alt={content.active.captions.bronte} loading="lazy" class="aspect-[16/9] w-full object-cover" />
+          ) : (
+            <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
+          )}
         </div>
-      </div>
+        <figcaption class="mt-3 text-sm font-semibold text-gray-900">{content.active.captions.bronte}</figcaption>
+      </figure>
+
+      <!-- En de rest van Australië? Rustige lijst: stad dikgedrukt, tekst erachter, dunne lijntjes ertussen -->
+      <h3 class="mt-14 text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{content.active.country.title}</h3>
+      <p class="mt-4" set:html={rich(content.active.country.intro)} />
+      <ul class="mt-4 divide-y divide-gray-200 border-y border-gray-200">
+        {content.active.country.cities.map((c) => (
+          <li class="py-4">
+            <span class="font-semibold text-gray-900">{c.name}</span>
+            <span class="text-[#1CABB0]"> · </span>
+            <span set:html={rich(c.text)} />
+          </li>
+        ))}
+      </ul>
+      <p class="mt-6" set:html={rich(content.active.country.parkrun.text)} />
+
+      <!-- Zwemmen, surfen en alles daartussen -->
+      <h3 class="mt-14 text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{content.active.swim.title}</h3>
+      <p class="mt-4" set:html={rich(content.active.swim.text)} />
+      <ul class="mt-3 list-disc space-y-1.5 pl-5 marker:text-[#1CABB0]">
+        {content.active.swim.races.map(([name, place]) => (
+          <li><span class="font-semibold text-gray-900">{name}</span> ({place})</li>
+        ))}
+      </ul>
+      <p class="mt-5" set:html={rich(content.active.swim.nippers.text)} />
+
+      <!-- Foto: Nippers -->
+      <figure class="mt-10 lg:-mx-16">
+        <div class="overflow-hidden rounded-[2rem]">
+          {photos.nippers ? (
+            <img src={photos.nippers} alt={content.active.captions.nippers} loading="lazy" class="aspect-[16/9] w-full object-cover" />
+          ) : (
+            <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
+          )}
+        </div>
+        <figcaption class="mt-3 text-sm font-semibold text-gray-900">{content.active.captions.nippers}</figcaption>
+      </figure>
+
+      <p class="mt-10" set:html={rich(content.active.swim.after)} />
+
+      <!-- Pilates -->
+      <h3 class="mt-14 text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{content.active.pilates.title}</h3>
+      <p class="mt-4" set:html={rich(content.active.pilates.text)} />
     </section>
 
   </div>

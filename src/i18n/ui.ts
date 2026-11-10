@@ -258,7 +258,7 @@ export const ui = {
 // portfolio
 'portfolio.eyebrow': 'Portfolio',
 'portfolio.title': 'My projects',
-'portfolio.view': 'View on Instagram',
+'portfolio.view': 'Watch video',
 'portfolio.more': 'More content',
 'portfolio.photos': 'Photos',
 'portfolio.cta': 'See more on Instagram',
@@ -1283,7 +1283,7 @@ fiji_intro_cta: "Start planning your trip",
 // portfolio
 'portfolio.eyebrow': 'Portfolio',
 'portfolio.title': 'Mijn projecten',
-'portfolio.view': 'Bekijk op Instagram',
+'portfolio.view': 'Bekijk video',
 'portfolio.more': 'Meer content',
 'portfolio.photos': "Foto's",
 'portfolio.cta': 'Bekijk meer op Instagram',

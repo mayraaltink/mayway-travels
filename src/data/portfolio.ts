@@ -5,12 +5,17 @@
 // - more: worden getoond als kleinere reels (9:16) onder de uitgelichte video's
 // - photoProjects: staat momenteel niet op de site (bewaard voor later)
 // - cover: bestandsnaam in public/images/portfolio/ (staand 9:16 voor video's, 4:5 voor overige content)
+// - video (optioneel): bestandsnaam in public/videos/portfolio/ (mp4). Dan speelt de kaart af als een Reel
+//   (vanzelf, zonder geluid; tik voor geluid). Zonder video linkt de kaart naar Instagram.
+// - views (optioneel): aantal weergaven, rechts op de kaart zoals bij Reels, bijv. '12,4K' of '1,2M'
 
 export type FeaturedProject = {
   brand: string;
   title: string;
   href: string;
   cover: string;
+  video?: string;
+  views?: string;
   home?: boolean;
 };
 
@@ -18,6 +23,8 @@ export type MoreProject = {
   type: 'video' | 'photos';
   href: string;
   cover: string;
+  video?: string;
+  views?: string;
 };
 
 export const featured: FeaturedProject[] = [

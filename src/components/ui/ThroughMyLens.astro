@@ -1,6 +1,7 @@
 ---
 // src/components/ui/ThroughMyLens.astro
-// "Neem een kijkje door mijn lens": mozaïek van de mooiste foto's (max 20) met lightbox.
+// "Een kijkje door mijn lens": mozaïek van de mooiste foto's (max 10) met lightbox.
+// Volgorde loopt van links naar rechts: foto's worden om en om over de kolommen verdeeld.
 // Foto's en volgorde staan in src/data/lens.ts.
 import { Image, getImage } from 'astro:assets';
 import { defaultLang } from '../../i18n/ui';
@@ -16,13 +17,27 @@ const labels = {
 const assetImages = import.meta.glob<{ default: ImageMetadata }>('../../assets/**/*.{jpg,jpeg,png,webp,avif}', { eager: true });
 
 const photos = (await Promise.all(
-  lensPhotos.slice(0, 20).map(async (p) => {
+  lensPhotos.slice(0, 10).map(async (p) => {
     const img = assetImages[`../../assets/${p.file}`]?.default;
     if (!img) return null;
     const large = await getImage({ src: img, width: 1800, format: 'webp' });
     return { img, large: large.src, location: p.location?.[lang] ?? '' };
   })
 )).filter((p): p is NonNullable<typeof p> => p !== null);
+
+// Om en om verdelen (foto 1 links, 2 midden, 3 rechts, 4 weer links…), zodat je van links naar rechts leest
+// Een onvolledige laatste rij komt in het midden te staan (bijv. 1 foto onder de middelste kolom).
+const toColumns = (n: number) => {
+  const lastRowStart = Math.floor(photos.length / n) * n;
+  const lastRowCount = photos.length - lastRowStart;
+  const offset = Math.floor((n - lastRowCount) / 2);
+  const colOf = (i: number) => (i < lastRowStart ? i % n : i - lastRowStart + offset);
+  return Array.from({ length: n }, (_, c) => photos.map((p, i) => ({ ...p, i })).filter((p) => colOf(p.i) === c));
+};
+const layouts = [
+  { cols: toColumns(2), class: 'flex md:hidden' },
+  { cols: toColumns(3), class: 'hidden md:flex' },
+];
 
 const largeList = JSON.stringify(photos.map((p) => p.large));
 const captionList = JSON.stringify(photos.map((p) => p.location));
@@ -32,34 +47,41 @@ const captionList = JSON.stringify(photos.map((p) => p.location));
 <section id="lens" class="lens scroll-mt-20 bg-[#FFFDFA] py-20 md:py-28">
   <div class="mx-auto max-w-6xl px-6">
 
-    <h2 class="text-3xl font-semibold leading-[1.0] tracking-tight text-black md:text-[2.5rem]">{labels.title}</h2>
+    <h2 class="text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">{labels.title}</h2>
 
-    <!-- Mozaïek: elke foto in zijn eigen verhouding -->
-    <div class="mt-12 columns-2 gap-3 md:mt-14 md:columns-3 md:gap-4">
-      {photos.map((p, i) => (
-        <button
-          type="button"
-          class="group relative mb-3 block w-full cursor-zoom-in overflow-hidden rounded-[1.25rem] bg-[#E6F6F6] md:mb-4"
-          data-lens-open
-          data-index={i}
-          aria-label={p.location || `${labels.title} ${i + 1}`}
-        >
-          <Image
-            src={p.img}
-            alt={p.location}
-            widths={[400, 700, 1000]}
-            sizes="(min-width: 1152px) 360px, (min-width: 768px) 33vw, 50vw"
-            loading="lazy"
-            class="block h-auto w-full transition duration-700 group-hover:scale-[1.03]"
-          />
-          {p.location && (
-            <span class="pointer-events-none absolute bottom-3 left-3 rounded-full bg-black/35 px-3 py-1 text-[10px] uppercase tracking-wide text-white opacity-0 backdrop-blur-sm transition duration-300 group-hover:opacity-100 md:text-xs">
-              {p.location}
-            </span>
-          )}
-        </button>
-      ))}
-    </div>
+    <!-- Blok: alle kolommen even hoog, foto's vullen hun vak (bijsnijden) zodat er geen gaten zijn.
+         Desktop met 4 foto's: Markt links hoog, Straat + Opa in het midden, Jungle rechts hoog. -->
+    {layouts.map((layout) => (
+      <div class:list={['mt-12 h-[30rem] items-stretch gap-3 md:mt-14 md:h-[38rem] md:gap-4', layout.class]}>
+        {layout.cols.map((col) => (
+          <div class="flex min-w-0 flex-1 flex-col gap-3 md:gap-4">
+            {col.map((p) => (
+              <button
+                type="button"
+                class="group relative block min-h-0 w-full flex-1 cursor-zoom-in overflow-hidden rounded-[1.25rem] bg-[#E6F6F6]"
+                data-lens-open
+                data-index={p.i}
+                aria-label={p.location || `${labels.title} ${p.i + 1}`}
+              >
+                <Image
+                  src={p.img}
+                  alt={p.location}
+                  widths={[400, 700, 1000]}
+                  sizes="(min-width: 1152px) 360px, (min-width: 768px) 33vw, 50vw"
+                  loading="lazy"
+                  class="block h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                />
+                {p.location && (
+                  <span class="pointer-events-none absolute bottom-3 left-3 rounded-full bg-black/35 px-3 py-1 text-[10px] uppercase tracking-wide text-white opacity-0 backdrop-blur-sm transition duration-300 group-hover:opacity-100 md:text-xs">
+                    {p.location}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+        ))}
+      </div>
+    ))}
   </div>
 
   <!-- Lightbox -->

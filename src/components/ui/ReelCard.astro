@@ -1,0 +1,129 @@
+---
+// src/components/ui/ReelCard.astro
+// Staande projectkaart in Reel-stijl. Met video: speelt vanzelf af (zonder geluid) zodra hij in beeld is,
+// tik voor geluid; de video laadt pas als de kaart in beeld komt. Zonder video: link naar de Instagram-post.
+// Rechts het aantal weergaven zoals bij Reels in de Instagram-app (optioneel, uit src/data/portfolio.ts).
+export interface Props {
+  href: string;
+  cover: string | null;
+  video: string | null;
+  views?: string;
+  brand?: string;
+  title?: string;
+  viewLabel: string;
+  size?: 'lg' | 'sm';
+  class?: string;
+}
+
+const { href, cover, video, views, brand, title, viewLabel, size = 'lg', class: className } = Astro.props;
+const lg = size === 'lg';
+const Tag = video ? 'div' : 'a';
+const linkProps = video ? {} : { href, target: '_blank', rel: 'noopener noreferrer' };
+---
+
+<Tag
+  {...linkProps}
+  data-reel={video ? '' : undefined}
+  class:list={[
+    'group relative block aspect-[9/16] overflow-hidden bg-[#0B5F64]',
+    lg ? 'rounded-[1.5rem]' : 'rounded-[1.25rem] shadow-[0_20px_45px_rgba(0,0,0,0.18)] md:rounded-[1.5rem]',
+    className,
+  ]}
+>
+  {video ? (
+    <video
+      class="absolute inset-0 h-full w-full object-cover"
+      data-src={video}
+      poster={cover ?? undefined}
+      muted
+      loop
+      playsinline
+      preload="none"
+      aria-label={brand && title ? `${brand} – ${title}` : undefined}
+    ></video>
+  ) : cover ? (
+    <img src={cover} alt={brand && title ? `${brand} – ${title}` : ''} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+  ) : (
+    <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#0B5F64] to-[#084649]">
+      {brand && <span class="font-neucha px-4 text-center text-3xl font-bold text-white/25">{brand}</span>}
+    </div>
+  )}
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+
+  <!-- Rechtsboven: geluid aan/uit (video) of play-icoon (link) -->
+  {video ? (
+    <button type="button" data-reel-sound aria-label="Geluid aan/uit" class:list={['absolute flex items-center justify-center rounded-full bg-black/35 text-white backdrop-blur-sm transition hover:bg-black/55', lg ? 'right-3 top-3 h-9 w-9' : 'right-2.5 top-2.5 h-8 w-8']}>
+      <svg data-icon-muted xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><path d="m23 9-6 6"></path><path d="m17 9 6 6"></path></svg>
+      <svg data-icon-sound class="hidden" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg>
+    </button>
+  ) : (
+    <span class:list={['absolute flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition group-hover:bg-[#1CABB0]', lg ? 'right-3 top-3 h-9 w-9' : 'right-2.5 top-2.5 h-8 w-8']}>
+      <svg xmlns="http://www.w3.org/2000/svg" width={lg ? 14 : 12} height={lg ? 14 : 12} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    </span>
+  )}
+
+  <!-- Rechts: aantal weergaven, zoals bij Reels in de Instagram-app -->
+  {views && (
+    <span class:list={['pointer-events-none absolute flex flex-col items-center gap-0.5 text-white drop-shadow', lg ? 'bottom-24 right-3 md:bottom-28' : 'bottom-3 right-2']}>
+      <svg xmlns="http://www.w3.org/2000/svg" width={lg ? 24 : 18} height={lg ? 24 : 18} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
+      <span class:list={['font-semibold', lg ? 'text-xs' : 'text-[10px]']}>{views}</span>
+    </span>
+  )}
+
+  <!-- Onderaan: merk + titel (grote kaarten) -->
+  {lg && (brand || title) && (
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 p-4 pr-14 md:p-5 md:pr-16">
+      {brand && <p class="text-[0.65rem] uppercase tracking-[0.2em] text-[#4ED2CE] md:text-xs">{brand}</p>}
+      {title && <p class="mt-1 text-base font-semibold leading-tight md:text-lg">{title}</p>}
+      {!video && (
+        <p class="mt-3 hidden items-center gap-1.5 text-xs text-white/80 opacity-0 transition duration-300 group-hover:opacity-100 md:flex">
+          {viewLabel}
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
+        </p>
+      )}
+    </div>
+  )}
+</Tag>
+
+<script>
+  // Reels: video laden + afspelen zodra de kaart grotendeels in beeld is, pauzeren als hij uit beeld gaat.
+  // Tik op de video of het luidsprekertje: geluid aan/uit (dan gaan de andere reels weer op stil).
+  const reels = document.querySelectorAll<HTMLElement>('[data-reel]:not([data-reel-ready])');
+  const videos: HTMLVideoElement[] = [];
+
+  reels.forEach((reel) => {
+    reel.dataset.reelReady = '';
+    const video = reel.querySelector('video');
+    if (!video) return;
+    videos.push(video);
+    const iconMuted = reel.querySelector('[data-icon-muted]');
+    const iconSound = reel.querySelector('[data-icon-sound]');
+    const toggleSound = () => {
+      const unmute = video.muted;
+      videos.forEach((v) => (v.muted = true));
+      document.querySelectorAll('[data-icon-muted]').forEach((i) => i.classList.remove('hidden'));
+      document.querySelectorAll('[data-icon-sound]').forEach((i) => i.classList.add('hidden'));
+      video.muted = !unmute;
+      iconMuted?.classList.toggle('hidden', unmute);
+      iconSound?.classList.toggle('hidden', !unmute);
+      if (video.paused) video.play().catch(() => {});
+    };
+    reel.addEventListener('click', toggleSound);
+  });
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) {
+          if (!video.src && video.dataset.src) video.src = video.dataset.src;
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+  videos.forEach((v) => io.observe(v));
+</script>

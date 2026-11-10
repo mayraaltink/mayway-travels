@@ -1,4 +1,5 @@
-// "Neem een kijkje door mijn lens": de mooiste foto's (max 20), in deze volgorde getoond.
+// "Een kijkje door mijn lens": max 10 foto's. De eerste is de mooiste; ze staan van links naar rechts
+// (rij voor rij) in deze volgorde. Verander de volgorde door regels te verschuiven.
 // - file: pad binnen src/assets/ (foto's worden automatisch verkleind)
 // - location: optioneel, verschijnt bij hover en in de lightbox
 
@@ -8,15 +9,8 @@ export type LensPhoto = {
 };
 
 export const lensPhotos: LensPhoto[] = [
-  { file: 'portfolio/indonesia/monkey-sit.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },
+  { file: 'portfolio/lens/markt.jpg' },
   { file: 'portfolio/marokko/street.jpg', location: { nl: 'Marokko', en: 'Morocco' } },
   { file: 'portfolio/indonesia/jungle.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },
-  { file: 'portfolio/indonesia/monkey-stand.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },
-  { file: 'portfolio/marokko/marktstreet.jpg', location: { nl: 'Marokko', en: 'Morocco' } },
   { file: 'portfolio/lens/opa.jpg' },
-  { file: 'portfolio/lens/weg.jpg' },
-  { file: 'portfolio/lens/laos.jpg', location: { nl: 'Laos', en: 'Laos' } },
-  { file: 'portfolio/lens/markt.jpg' },
-  { file: 'portfolio/lens/island.jpg' },
-  { file: 'portfolio/lens/cafe.jpg' },
 ];

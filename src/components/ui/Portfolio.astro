@@ -1,6 +1,7 @@
 ---
 // src/components/ui/Portfolio.astro
-// Mini-portfolio: uitgelichte video's + meer content, elke kaart linkt naar de Instagram-post.
+// Mini-portfolio: uitgelichte video's + meer content als Reel-kaarten (ReelCard.astro).
+// Met een eigen videobestand speelt de kaart af als een Reel; zonder linkt hij naar de Instagram-post.
 // Projecten staan in src/data/portfolio.ts.
 // variant="full" (For Brands): alles. variant="home" (homepagina): de 3 met home: true + knop naar For Brands.
 // Ontbreekt een cover, dan toont de kaart een turquoise placeholder met de merknaam.
@@ -9,6 +10,7 @@ import path from 'node:path';
 import { ui, defaultLang } from '../../i18n/ui';
 import { featured as allFeatured, more as allMore } from '../../data/portfolio';
 import CarouselControls from './CarouselControls.astro';
+import ReelCard from './ReelCard.astro';
 
 const { variant = 'full' } = Astro.props as { variant?: 'full' | 'home' };
 const isHome = variant === 'home';
@@ -25,11 +27,18 @@ function coverSrc(file: string) {
   return exists ? `/images/portfolio/${file}` : null;
 }
 
+// eigen videobestand in public/videos/portfolio/ (alleen als het bestand er echt staat)
+function videoSrc(file?: string) {
+  if (!file) return null;
+  const exists = fs.existsSync(path.join(process.cwd(), 'public/videos/portfolio', file));
+  return exists ? `/videos/portfolio/${file}` : null;
+}
+
 const featured = (isHome ? allFeatured.filter((item) => item.home).slice(0, 3) : allFeatured)
-  .map((item) => ({ ...item, src: coverSrc(item.cover) }));
+  .map((item) => ({ ...item, src: coverSrc(item.cover), videoUrl: videoSrc(item.video) }));
 
 // Overige content: kleinere reels onder de uitgelichte video's
-const more = isHome ? [] : allMore.map((item) => ({ ...item, src: coverSrc(item.cover) }));
+const more = isHome ? [] : allMore.map((item) => ({ ...item, src: coverSrc(item.cover), videoUrl: videoSrc(item.video) }));
 
 
 // Vaste classnames zodat Tailwind ze vindt
@@ -48,35 +57,16 @@ const featuredCols = { 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-col
     <!-- Uitgelichte video's (staand, zoals Reels). Mobiel: swipen, desktop: rij -->
     <div data-carousel-track class:list={['-mx-6 mt-12 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 md:mt-14 md:gap-4 lg:mx-0 lg:grid lg:overflow-visible lg:px-0 lg:pb-0', featuredCols]}>
       {featured.map((item, i) => (
-        <a
+        <ReelCard
           href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          class:list={['group relative block aspect-[9/16] w-full shrink-0 snap-center sm:w-[40%] sm:snap-start overflow-hidden rounded-[1.5rem] bg-[#0B5F64]  lg:w-auto', { 'lg:translate-y-8': i % 2 === 1 }]}
-        >
-          {item.src ? (
-            <img src={item.src} alt={`${item.brand} – ${item.title}`} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-          ) : (
-            <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#0B5F64] to-[#084649]">
-              <span class="font-neucha px-4 text-center text-3xl font-bold text-white/25">{item.brand}</span>
-            </div>
-          )}
-          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
-
-          <!-- Play -->
-          <span class="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition group-hover:bg-[#1CABB0]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
-          </span>
-
-          <div class="absolute inset-x-0 bottom-0 p-4 md:p-5">
-            <p class="text-[0.65rem] uppercase tracking-[0.2em] text-[#4ED2CE] md:text-xs">{item.brand}</p>
-            <p class="mt-1 text-base font-semibold leading-tight md:text-lg">{item.title}</p>
-            <p class="mt-3 hidden items-center gap-1.5 text-xs text-white/80 opacity-0 transition duration-300 group-hover:opacity-100 md:flex">
-              {t('portfolio.view')}
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
-            </p>
-          </div>
-        </a>
+          cover={item.src}
+          video={item.videoUrl}
+          views={item.views}
+          brand={item.brand}
+          title={item.title}
+          viewLabel={t('portfolio.view')}
+          class:list={['w-full shrink-0 snap-center sm:w-[40%] sm:snap-start lg:w-auto', { 'lg:translate-y-8': i % 2 === 1 }]}
+        />
       ))}
     </div>
     <CarouselControls tone="light" class="lg:hidden" />
@@ -85,27 +75,14 @@ const featuredCols = { 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-col
     {more.length > 0 && (
       <div class="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 md:mt-12 md:gap-5">
         {more.map((item) => (
-          <a
+          <ReelCard
             href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative block aspect-[9/16] overflow-hidden rounded-[1.25rem] bg-[#0B5F64] shadow-[0_20px_45px_rgba(0,0,0,0.18)] md:rounded-[1.5rem]"
-          >
-            {item.src ? (
-              <img src={item.src} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-            ) : (
-              <div class="absolute inset-0 bg-gradient-to-br from-[#0B5F64] to-[#084649]"></div>
-            )}
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-
-            <span class="absolute right-2.5 top-2.5 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition group-hover:bg-[#1CABB0] md:right-3 md:top-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
-            </span>
-            <p class="absolute inset-x-0 bottom-0 hidden items-center gap-1.5 p-4 text-xs text-white/85 opacity-0 transition duration-300 group-hover:opacity-100 md:flex">
-              {t('portfolio.view')}
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
-            </p>
-          </a>
+            cover={item.src}
+            video={item.videoUrl}
+            views={item.views}
+            viewLabel={t('portfolio.view')}
+            size="sm"
+          />
         ))}
       </div>
     )}

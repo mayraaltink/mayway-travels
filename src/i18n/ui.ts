@@ -42,7 +42,7 @@ export const ui = {
 'hero.subtitle': 'Personal travel advice & hidden gems',
 'hero.cta.primary': 'Discover more',
 'hero.cta.secondary': 'View destinations',
-'hero.location': 'Margaret River, Australia',
+'hero.location': 'Margaret River · Australia',
 
 // home services
 'homeServices.subtitle': 'About MAY WAYS',
@@ -69,7 +69,7 @@ export const ui = {
 
    // about
 'about.title': 'Hi! I’m Mayra.',
-'about.location': 'Sydney — Australia',
+'about.location': 'Sydney · Australia',
 
 'about.heading': 'Hi, I’m Mayra!',
 
@@ -95,7 +95,7 @@ export const ui = {
 'community.title': 'Community',
 'community.hero.headline': 'Come along and experience it yourself',
 'community.hero.line': 'Together we live moments that stay with you.',
-'community.hero.location': 'Australia · Uluru',
+'community.hero.location': 'Kakadu · Australia',
 'moments.title': 'MAY Moments',
 'moments.intro': 'A collection of moments, adventures and experiences that will always stay with me. Swipe along and discover my MAY MOMENTS.',
 'cmoments.title': 'YOUR Moments',
@@ -133,7 +133,7 @@ export const ui = {
 'community.dest.nz.cta': 'Discover New Zealand',
 'community.intro.title': 'Step out of your',
 'community.intro.titleBold': 'comfort zone',
-'community.intro.location': 'Kakadu, Australia',
+'community.intro.location': 'Kakadu · Australia',
 'community.intro.descBold': 'The best adventures often begin the moment you do something that feels exciting. Travelling solo, moving abroad, meeting new people or finally taking that step you have been thinking about for so long.',
 'community.intro.descNormal': 'By exploring the world, you learn that you do not need to know everything in advance to get started. I want to inspire you to stay curious, try new things, create special moments and push your boundaries.',
 'community.intro.badge': 'Your next adventure',
@@ -157,7 +157,7 @@ export const ui = {
     'contact.intro2': 'I\'d love to think along with you! Send me a message and who knows what we can create together.',
     'contact.packages.eyebrow': 'Social media management',
     'contact.packages.title': 'Looking for a package?',
-    'contact.packages.desc': 'Discover City Trip, Road Trip and World Tour and find out which package fits your brand.',
+    'contact.packages.desc': 'Discover City Trip and Road Trip and find out which package fits your brand.',
     'contact.packages.btn': 'View packages',
     'contact.email': 'Email',
     'contact.form.title': 'Send a message',
@@ -178,7 +178,7 @@ export const ui = {
     'contact.form.successTitle': 'Message sent!',
     'contact.form.successText': 'Thank you for your message. I will get back to you as soon as possible.',
     'contact.form.errorTitle': 'Oops, something went wrong.',
-    'contact.form.errorText': 'Please try again later or email me directly at maywaytravels1@gmail.com.',
+    'contact.form.errorText': 'Please try again later or email me directly at maywaysocials@gmail.com.',
 
 
 
@@ -193,7 +193,7 @@ export const ui = {
 'forBrands.hero.line1': 'We manage your social media and capture real experiences in vibrant content.',
 'forBrands.hero.ctaPrimary': 'Book an intro call',
 'forBrands.hero.ctaSecondary': 'Explore services',
-'forBrands.hero.location': 'Australia · Sydney',
+'forBrands.hero.location': 'Sydney · Australia',
 
 
 'forBrands.services.title1': 'Together, we bring',
@@ -225,7 +225,7 @@ export const ui = {
 'pkg.form.content.options': 'Yes, I supply all content myself|Partly, but I would like help with it|No, I would like you to create it|Not sure yet',
 'pkg.form.submit': 'Send request',
 'pkg.form.sending': 'Sending...',
-'pkg.form.error': 'Something went wrong. Please try again later or email maywaytravels1@gmail.com.',
+'pkg.form.error': 'Something went wrong. Please try again later or email maywaysocials@gmail.com.',
 'pkg.thanks.title': 'Thank you for your request!',
 'pkg.thanks.text': 'I have received your request and will get in touch within a few working days.',
 'forBrands.services.packages': 'View packages',
@@ -738,7 +738,7 @@ faq_sim_a_f:
 
     // destination pages - australia
     'aus.page.title': 'Australia',
-    'aus.page.desc': 'Australia is a land of savage beauty, vast outbacks, and pristine beaches. From the iconic Sydney Opera House to the vibrant Great Barrier Reef, it offers an adventure like no other. Whether you are surfing the Gold Coast, exploring ancient rainforests, or road-tripping the Great Ocean Road, the Land Down Under is unforgettable.',
+    'aus.page.desc': 'Australia is a land full of adventure, from rugged nature and endless outback to pristine beaches. Admire the Sydney Opera House, dive into the underwater world of the Great Barrier Reef and hike through the Daintree, one of the oldest rainforests on earth. Drive straight through the red heart of the country and camp on K’gari, the largest sand island in the world: a trip Down Under is one you will never forget.',
     'aus.page.capital': 'Canberra',
     'aus.page.language': 'English',
     'aus.page.currency': 'Australian Dollar (AUD)',
@@ -753,7 +753,7 @@ faq_sim_a_f:
 'Fiji.page.language': 'English, Fiji Hindi and Fijian',
 'Fiji.page.currency': 'Fijian Dollar (FJD)',
    'Fiji.page.flightTime': '24-26 hours',
-'aus.page.location': 'Kakadu, Australia',
+'aus.page.location': 'Kakadu · Australia',
 
 
 
@@ -1099,7 +1099,7 @@ fiji_intro_cta: "Start planning your trip",
 'hero.subtitle': 'Beleven. Creëren. Inspireren.',
 'hero.cta.primary': 'Ontdek meer',
 'hero.cta.secondary': 'Bekijk bestemmingen',
-'hero.location': 'Margaret River, Australië',
+'hero.location': 'Margaret River · Australië',
 
 
     'oceania.title.before': 'Ontdek de diversiteit',
@@ -1137,7 +1137,7 @@ fiji_intro_cta: "Start planning your trip",
 'homeServices.cta': 'Ontdek meer',
 
     // about
-'about.location': 'Sydney — Australië',
+'about.location': 'Sydney · Australië',
 
 'about.title': 'Hi, Ik ben Mayra!',
 
@@ -1167,7 +1167,7 @@ fiji_intro_cta: "Start planning your trip",
     'contact.intro2': 'Ik denk graag met je mee! Stuur me een berichtje en wie weet wat we samen kunnen creëren.',
     'contact.packages.eyebrow': 'Social media beheer',
     'contact.packages.title': 'Op zoek naar een pakket?',
-    'contact.packages.desc': 'Ontdek Citytrip, Roadtrip en Wereldreis en kijk welk pakket bij jouw merk past.',
+    'contact.packages.desc': 'Ontdek Citytrip en Roadtrip en kijk welk pakket bij jouw merk past.',
     'contact.packages.btn': 'Bekijk pakketten',
     'contact.email': 'E-mail',
     'contact.form.title': 'Stuur een bericht',
@@ -1188,7 +1188,7 @@ fiji_intro_cta: "Start planning your trip",
     'contact.form.successTitle': 'Bericht verstuurd!',
     'contact.form.successText': 'Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.',
     'contact.form.errorTitle': 'Oeps, er ging iets mis.',
-    'contact.form.errorText': 'Probeer het later opnieuw of mail me direct via maywaytravels1@gmail.com.',
+    'contact.form.errorText': 'Probeer het later opnieuw of mail me direct via maywaysocials@gmail.com.',
 
 
     'collaboration.title': 'Samenwerken',
@@ -1220,7 +1220,7 @@ fiji_intro_cta: "Start planning your trip",
 'forBrands.hero.line1': 'Wij beheren jouw social media en leggen échte ervaringen vast in levendige content.',
 'forBrands.hero.ctaPrimary': 'Plan een kennismaking',
 'forBrands.hero.ctaSecondary': 'Bekijk de services',
-'forBrands.hero.location': 'Australië · Sydney',
+'forBrands.hero.location': 'Sydney · Australië',
 
 
 'forBrands.services.title1': 'Samen brengen we',
@@ -1252,7 +1252,7 @@ fiji_intro_cta: "Start planning your trip",
 'pkg.form.content.options': 'Ja, ik lever alle content zelf aan|Deels, maar ik wil er graag hulp bij|Nee, ik wil graag dat jij het maakt|Weet ik nog niet',
 'pkg.form.submit': 'Verstuur aanvraag',
 'pkg.form.sending': 'Bezig met versturen...',
-'pkg.form.error': 'Er ging iets mis. Probeer het later nog eens of mail naar maywaytravels1@gmail.com.',
+'pkg.form.error': 'Er ging iets mis. Probeer het later nog eens of mail naar maywaysocials@gmail.com.',
 'pkg.thanks.title': 'Bedankt voor je aanvraag!',
 'pkg.thanks.text': 'Ik heb je aanvraag ontvangen en neem binnen een paar werkdagen contact met je op.',
 'forBrands.services.packages': 'Bekijk pakketten',
@@ -1318,7 +1318,7 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 'community.title': 'Community',
 'community.hero.headline': 'Reis mee en beleef het zelf',
 'community.hero.line': 'Samen beleven we momenten die bijblijven.',
-'community.hero.location': 'Australië · Uluru',
+'community.hero.location': 'Kakadu · Australië',
 'moments.title': 'MAY Moments',
 'moments.intro': 'Een verzameling van momenten, avonturen en ervaringen die me altijd bijblijven. Swipe mee en ontdek mijn MAY MOMENTS.',
 'cmoments.title': 'YOUR Moments',
@@ -1362,7 +1362,7 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 // COMMUNITY INTRO
 'community.intro.title': 'Stap uit je',
 'community.intro.titleBold': 'comfortzone',
-'community.intro.location': 'Kakadu, Australië',
+'community.intro.location': 'Kakadu · Australië',
 'community.intro.descBold': 'Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.',
 'community.intro.descNormal': 'Door de wereld te ontdekken, leer je dat je juist niet alles van tevoren hoeft te weten om ergens aan te beginnen. Ik wil je inspireren om nieuwsgierig te blijven, nieuwe dingen te proberen, bijzondere momenten te creëren en je grenzen te verleggen.',
 'community.intro.badge': 'Jouw volgende avontuur',
@@ -1588,7 +1588,7 @@ faq_sim_a_f:
 
     // destination pages - australia
     'aus.page.title': 'Australië',
-    'aus.page.desc': 'Australië is een land van ruige schoonheid, uitgestrekte outbacks en ongerepte stranden. Van het iconische Sydney Opera House tot het levendige Great Barrier Reef, het biedt een onvergelijkbaar avontuur. Of je nu surft aan de Gold Coast, oude regenwouden verkent of een roadtrip maakt over de Great Ocean Road, "Down Under" is onvergetelijk.',
+    'aus.page.desc': 'Australië is een land vol avontuur, van ruige natuur en eindeloze outback tot ongerepte stranden. Bewonder het Sydney Opera House, duik in de onderwaterwereld van het Great Barrier Reef en trek door het Daintree, een van de oudste regenwouden op aarde. Rij dwars door het rode hart van het land en kampeer op K’gari, het grootste zandeiland ter wereld: een reis naar Down Under vergeet je nooit.',
     'aus.page.capital': 'Canberra',
     'aus.page.language': 'Engels',
     'aus.page.currency': 'Australische Dollar (AUD)',
@@ -1603,7 +1603,7 @@ faq_sim_a_f:
 'Fiji.page.language': 'Engels, Fiji Hindi en Fijisch',
 'Fiji.page.currency': 'Fijische dollar (FJD)',
    'Fiji.page.flightTime': '24-26 uur',
-'aus.page.location': 'Kakadu, Australië',
+'aus.page.location': 'Kakadu · Australië',
 
 
 

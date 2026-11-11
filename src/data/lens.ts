@@ -11,6 +11,6 @@ export type LensPhoto = {
 export const lensPhotos: LensPhoto[] = [
   { file: 'portfolio/lens/markt.jpg' },
   { file: 'portfolio/marokko/street.jpg', location: { nl: 'Marokko', en: 'Morocco' } },
-  { file: 'portfolio/indonesia/jungle.jpg', location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' } },
+  { file: 'portfolio/indonesia/jungle.jpg', location: { nl: 'Sumatra · Indonesië', en: 'Sumatra · Indonesia' } },
   { file: 'portfolio/lens/opa.jpg' },
 ];

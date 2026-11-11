@@ -50,7 +50,7 @@ export type PhotoProject = {
 export const photoProjects: PhotoProject[] = [
   {
     brand: 'Jungle Trekking',
-    location: { nl: 'Sumatra, Indonesië', en: 'Sumatra, Indonesia' },
+    location: { nl: 'Sumatra · Indonesië', en: 'Sumatra · Indonesia' },
     href: 'https://www.instagram.com/sumatraorangutantrekking/',
     images: ['indonesia/monkey-sit.jpg', 'indonesia/jungle.jpg', 'indonesia/monkey-stand.jpg', 'indonesia/jungle-man.jpg'],
   },

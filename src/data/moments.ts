@@ -62,7 +62,7 @@ export const moments: Moment[] = [
   {
     image: '/images/moments/skydive-queenstown.jpg',
     title: { nl: 'Skydiven boven Queenstown', en: 'Skydiving above Queenstown' },
-    location: 'Queenstown, Nieuw-Zeeland',
+    location: 'Queenstown · Nieuw-Zeeland',
     story: {
       nl: 'Uit een vliegtuig springen boven de bergen van Queenstown. De eerste seconden vrije val waren pure adrenaline, daarna alleen maar verwondering.',
       en: 'Jumping out of a plane above the mountains of Queenstown. The first seconds of free fall were pure adrenaline, after that just wonder.',
@@ -71,7 +71,7 @@ export const moments: Moment[] = [
   {
     image: '/images/moments/bungy-queenstown.jpg',
     title: { nl: 'Mijn eerste bungyjump', en: 'My first bungy jump' },
-    location: 'Queenstown, Nieuw-Zeeland',
+    location: 'Queenstown · Nieuw-Zeeland',
     story: {
       nl: 'Met trillende benen op de rand staan en dan toch springen. Het spannendste én meest bevrijdende moment van mijn reis.',
       en: 'Standing on the edge with shaking legs and jumping anyway. The most thrilling and most freeing moment of my trip.',
@@ -80,7 +80,7 @@ export const moments: Moment[] = [
   {
     image: '/images/moments/helicopter.jpg',
     title: { nl: 'Met de helikopter over de bergen', en: 'By helicopter over the mountains' },
-    location: 'Queenstown, Nieuw-Zeeland',
+    location: 'Queenstown · Nieuw-Zeeland',
     story: {
       nl: 'Vanuit de lucht zie je pas hoe groots Nieuw-Zeeland is: besneeuwde toppen, meren en dalen zover je kunt kijken.',
       en: 'Only from the air do you see how vast New Zealand is: snowy peaks, lakes and valleys as far as the eye can see.',
@@ -89,7 +89,7 @@ export const moments: Moment[] = [
   {
     image: '/images/moments/milford-sound.jpg',
     title: { nl: 'Varen door Milford Sound', en: 'Cruising through Milford Sound' },
-    location: 'Fiordland, Nieuw-Zeeland',
+    location: 'Fiordland · Nieuw-Zeeland',
     story: {
       nl: 'Watervallen die van steile rotswanden storten en mist die tussen de bergen hangt. Milford Sound is in het echt nog mooier dan op de foto’s.',
       en: 'Waterfalls tumbling down steep cliffs and mist hanging between the mountains. Milford Sound is even more beautiful in real life than in photos.',
@@ -134,7 +134,7 @@ export const moments: Moment[] = [
   {
     image: '/images/moments/taronga.jpg',
     title: { nl: 'Dieren met uitzicht op de skyline', en: 'Wildlife with a skyline view' },
-    location: 'Taronga Zoo, Sydney',
+    location: 'Taronga Zoo · Sydney',
     story: {
       nl: 'Giraffen spotten met de skyline van Sydney op de achtergrond. Een plek waar natuur en stad op een bijzondere manier samenkomen.',
       en: 'Spotting giraffes with the Sydney skyline in the background. A place where nature and city come together in a special way.',
@@ -143,7 +143,7 @@ export const moments: Moment[] = [
   {
     image: '/images/moments/orangutans.jpg',
     title: { nl: 'Orang-oetans in de jungle', en: 'Orangutans in the jungle' },
-    location: 'Sumatra, Indonesië',
+    location: 'Sumatra · Indonesië',
     story: {
       nl: 'Diep in de jungle van Sumatra ineens oog in oog staan met een orang-oetan. Een ontmoeting die me nog steeds kippenvel geeft.',
       en: 'Deep in the Sumatran jungle, suddenly coming face to face with an orangutan. An encounter that still gives me goosebumps.',

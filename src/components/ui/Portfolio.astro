@@ -109,12 +109,14 @@ const featuredCols = { 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-col
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
       </a>
       )}
-      <a
-        href={`/${lang}/contact`}
-        class="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
-      >
-        {t('portfolio.contact')}
-      </a>
+      {!isHome && (
+        <a
+          href={`/${lang}/contact`}
+          class="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+        >
+          {t('portfolio.contact')}
+        </a>
+      )}
     </div>
   </div>
 

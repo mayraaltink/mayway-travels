@@ -157,6 +157,8 @@ const content = {
       },
     ],
     back: 'Terug naar boven',
+    nextTitle: 'Alles ingepakt? Zo ziet het leven down under eruit!',
+    next: 'Het leven in Australië',
   },
   en: {
     eyebrow: 'Blog · Australia',
@@ -291,6 +293,8 @@ const content = {
       },
     ],
     back: 'Back to top',
+    nextTitle: 'All packed? This is what life down under looks like!',
+    next: 'Life in Australia',
   },
 }[lang];
 
@@ -476,6 +480,15 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
         </a>
       </div>
     </section>
+
+    <!-- Doorverwijzing naar de volgende blog (zelfde als in de Visum-blog) -->
+    <div class="mt-16 flex flex-col items-center border-t border-gray-200 pt-12 text-center md:mt-20 md:pt-16">
+      <h2 class="text-2xl font-semibold tracking-tight text-black md:text-3xl">{content.nextTitle}</h2>
+      <a href={`/${lang}/blogs/travel-budget`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a]">
+        {content.next}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
 
   </div>
 </article>

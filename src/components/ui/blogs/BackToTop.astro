@@ -1,0 +1,26 @@
+---
+// src/components/ui/blogs/BackToTop.astro
+// Turquoise rondje rechtsonder met een pijltje omhoog; verschijnt zodra je een stuk naar beneden scrolt.
+const lang = Astro.currentLocale === 'en' ? 'en' : 'nl';
+const label = lang === 'en' ? 'Back to top' : 'Terug naar boven';
+---
+
+<button
+  type="button"
+  data-back-to-top
+  aria-label={label}
+  title={label}
+  class="pointer-events-none fixed bottom-5 right-5 z-40 flex h-10 w-10 translate-y-3 items-center justify-center rounded-full bg-[#1CABB0] text-white opacity-0 shadow-[0_10px_25px_rgba(15,124,130,0.35)] transition duration-300 hover:bg-[#15939a] data-visible:pointer-events-auto data-visible:translate-y-0 data-visible:opacity-100 md:bottom-8 md:right-8 md:h-11 md:w-11"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>
+</button>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-back-to-top]');
+  if (button) {
+    const update = () => button.toggleAttribute('data-visible', window.scrollY > 600);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+    button.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+</script>

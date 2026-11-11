@@ -30,9 +30,10 @@ const content = {
     ],
     tropicsTitle: 'Het tropische noorden',
     tropics: [
-      'Het tropische noorden, rondom <b>Darwin, Cairns en de Whitsundays</b>, vormt hierop een uitzondering. Daar liggen de temperaturen het hele jaar tussen de <b>25 en 32°C</b> en kent het klimaat maar twee seizoenen: een <b>nat seizoen</b> (november–april) met veel tropische buien en een hoge luchtvochtigheid, en een <b>droog seizoen</b> (mei–oktober) met zonnig en droog weer.',
-      'In het natte seizoen is het ook stinger-seizoen. Zwem dan alleen in afgezette zones of met een stinger suit. Kortom: Australië is een bestemming waar je het hele jaar door in de zon kunt leven, als je maar weet waar je moet zijn.',
+      'In het tropische noorden, rondom <b>Darwin, Cairns en de Whitsundays</b>, liggen de temperaturen het hele jaar tussen de <b>25 en 32°C</b>. Het klimaat kent hier maar twee seizoenen: een <b>nat seizoen</b> (november–april) met veel tropische buien en een hoge luchtvochtigheid, en een <b>droog seizoen</b> (mei–oktober) met zonnig en droog weer.',
     ],
+    // uitgelicht in een blokje onder het tropische noorden
+    tropicsHighlight: 'Australië is een bestemming waar je het hele jaar door in de zon kunt leven, als je maar weet waar je moet zijn.',
     mapTitle: 'Hoe warm is het waar?',
     mapIntro: 'Omdat het klimaat zo verschilt per regio, heb ik de populairste plekken op een kaart gezet. Kies een seizoen en klik op een plek om de gemiddelde minimum- en maximumtemperatuur te zien.',
     whereTitle: 'Waar ga je in welk seizoen naartoe?',
@@ -88,9 +89,9 @@ const content = {
     ],
     tropicsTitle: 'The tropical north',
     tropics: [
-      'The tropical north, around <b>Darwin, Cairns and the Whitsundays</b>, is an exception. Temperatures there are between <b>25 and 32°C</b> all year round and the climate has only two seasons: a <b>wet season</b> (November–April) with lots of tropical storms and high humidity, and a <b>dry season</b> (May–October) with sunny, dry weather.',
-      'The wet season is also stinger season. Only swim in netted areas or with a stinger suit. In short: Australia is a destination where you can live in the sun all year round, as long as you know where to be.',
+      'In the tropical north, around <b>Darwin, Cairns and the Whitsundays</b>, temperatures are between <b>25 and 32°C</b> all year round. The climate here has only two seasons: a <b>wet season</b> (November–April) with lots of tropical storms and high humidity, and a <b>dry season</b> (May–October) with sunny, dry weather.',
     ],
+    tropicsHighlight: 'Australia is a destination where you can live in the sun all year round, as long as you know where to be.',
     mapTitle: 'How warm is it where?',
     mapIntro: 'Because the climate varies so much per region, I put the most popular places on a map. Choose a season and click a place to see the average minimum and maximum temperature.',
     whereTitle: 'Where to go in which season?',
@@ -171,6 +172,14 @@ const body = 'mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-b
         <div class={body}>
           {content.tropics.map((p) => <p set:html={p} />)}
         </div>
+
+        <!-- Uitgelichte conclusie -->
+        <div class="mt-8 flex items-center gap-4 rounded-[1.5rem] bg-[#1CABB0] p-6 md:p-7">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E6F6F6] text-[#1CABB0]" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+          </span>
+          <p class="text-[15px] font-semibold leading-relaxed text-white md:text-base">{content.tropicsHighlight}</p>
+        </div>
       </section>
     </div>
 
@@ -180,7 +189,7 @@ const body = 'mt-6 space-y-5 text-[15px] leading-relaxed text-gray-700 md:text-b
       <div class="mt-8 grid gap-5 md:grid-cols-2 md:gap-6">
         {[
           { title: content.winterTitle, text: content.winter, bg: 'bg-[#E6F6F6]' },
-          { title: content.sunTitle, text: content.sun, bg: 'bg-[#FDF1DC]' },
+          { title: content.sunTitle, text: content.sun, bg: 'bg-[#FAF3E3]' },
         ].map((card) => (
           <div class:list={['rounded-[2rem] p-7 md:p-9', card.bg]}>
             <h3 class="text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{card.title}</h3>

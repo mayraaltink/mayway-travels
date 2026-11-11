@@ -914,52 +914,30 @@ fiji_intro_cta: "Start planning your trip",
     'Tongariro Alpine Crossing'
   ]
 },
-'routes.nz.northland.title': 'Northland',
-'routes.nz.northland.subtitle': 'Auckland to Cape Reinga',
-'routes.nz.northland.expand': {
-  route: 'Route: Auckland to Cape Reinga',
-  distance: 'Distance: ±450 km',
+'routes.nz.southisland.title': 'South Island',
+'routes.nz.southisland.subtitle': 'Christchurch to Christchurch',
+'routes.nz.southisland.expand': {
+  route: 'Route: round trip from Christchurch',
+  distance: 'Distance: ±1,800 km',
   highlights: [
-    'Sailing and dolphins in the Bay of Islands',
-    'Waitangi Treaty Grounds',
-    'Sandboarding on the Te Paki dunes',
-    'Cape Reinga lighthouse, where two oceans meet'
-  ]
-},
-'routes.nz.west.title': 'South Island West Coast',
-'routes.nz.west.subtitle': 'Picton to Queenstown',
-'routes.nz.west.expand': {
-  route: 'Route: Picton to Queenstown',
-  distance: 'Distance: ±1,050 km',
-  highlights: [
+    'Whale watching in Kaikōura',
     'Kayaking in Abel Tasman National Park',
     'Pancake Rocks at Punakaiki',
     'The Franz Josef glacier',
-    'Over Haast Pass to Wānaka'
+    'Hooker Valley Track to Mount Cook',
+    'Starry skies above Lake Tekapo'
   ]
 },
-'routes.nz.south.title': 'Fiordland & Otago',
-'routes.nz.south.subtitle': 'Queenstown to Dunedin',
-'routes.nz.south.expand': {
-  route: 'Route: Queenstown to Dunedin',
-  distance: 'Distance: ±850 km',
+'routes.nz.queenstown.title': 'Queenstown in 5 days',
+'routes.nz.queenstown.subtitle': 'Queenstown, Wānaka & Milford Sound',
+'routes.nz.queenstown.expand': {
+  route: 'Route: 5 days from Queenstown',
+  distance: 'Distance: ±800 km',
   highlights: [
-    'A boat cruise through Milford Sound',
     'Adrenaline in Queenstown',
-    'Waterfalls and sea lions in the Catlins',
-    'Albatrosses and penguins near Dunedin'
-  ]
-},
-'routes.nz.canterbury.title': 'Canterbury & Mount Cook',
-'routes.nz.canterbury.subtitle': 'Kaikōura to Aoraki / Mount Cook',
-'routes.nz.canterbury.expand': {
-  route: 'Route: Kaikōura to Aoraki / Mount Cook',
-  distance: 'Distance: ±700 km',
-  highlights: [
-    'Whale watching in Kaikōura',
-    'French vibes in Akaroa',
-    'Starry skies above Lake Tekapo',
-    'Hooker Valley Track to Mount Cook'
+    'The Lord of the Rings landscapes around Glenorchy',
+    'Lakes and mountain views in Wānaka',
+    'A boat cruise through Milford Sound'
   ]
 },
 
@@ -1905,52 +1883,30 @@ fiji_intro_cta: "Begin met het plannen van je reis",
     'Tongariro Alpine Crossing'
   ]
 },
-'routes.nz.northland.title': 'Northland',
-'routes.nz.northland.subtitle': 'Auckland naar Cape Reinga',
-'routes.nz.northland.expand': {
-  route: 'Route: Auckland naar Cape Reinga',
-  distance: 'Afstand: ±450 km',
+'routes.nz.southisland.title': 'Zuidereiland',
+'routes.nz.southisland.subtitle': 'Christchurch naar Christchurch',
+'routes.nz.southisland.expand': {
+  route: 'Route: rondreis vanuit Christchurch',
+  distance: 'Afstand: ±1.800 km',
   highlights: [
-    'Zeilen en dolfijnen in de Bay of Islands',
-    'Waitangi Treaty Grounds',
-    'Sandboarden op de duinen van Te Paki',
-    'Vuurtoren van Cape Reinga, waar twee oceanen samenkomen'
-  ]
-},
-'routes.nz.west.title': 'Westkust Zuidereiland',
-'routes.nz.west.subtitle': 'Picton naar Queenstown',
-'routes.nz.west.expand': {
-  route: 'Route: Picton naar Queenstown',
-  distance: 'Afstand: ±1.050 km',
-  highlights: [
+    'Walvissen spotten in Kaikōura',
     'Kajakken in Abel Tasman National Park',
     'Pancake Rocks bij Punakaiki',
     'De gletsjer van Franz Josef',
-    'Over de Haast Pass naar Wānaka'
+    'Hooker Valley Track naar Mount Cook',
+    'Sterrenhemel boven Lake Tekapo'
   ]
 },
-'routes.nz.south.title': 'Fiordland & Otago',
-'routes.nz.south.subtitle': 'Queenstown naar Dunedin',
-'routes.nz.south.expand': {
-  route: 'Route: Queenstown naar Dunedin',
-  distance: 'Afstand: ±850 km',
+'routes.nz.queenstown.title': 'Queenstown in 5 dagen',
+'routes.nz.queenstown.subtitle': 'Queenstown, Wānaka & Milford Sound',
+'routes.nz.queenstown.expand': {
+  route: 'Route: 5 dagen vanuit Queenstown',
+  distance: 'Afstand: ±800 km',
   highlights: [
-    'Bootcruise door Milford Sound',
     'Adrenaline in Queenstown',
-    'Watervallen en zeeleeuwen in de Catlins',
-    'Albatrossen en pinguïns bij Dunedin'
-  ]
-},
-'routes.nz.canterbury.title': 'Canterbury & Mount Cook',
-'routes.nz.canterbury.subtitle': 'Kaikōura naar Aoraki / Mount Cook',
-'routes.nz.canterbury.expand': {
-  route: 'Route: Kaikōura naar Aoraki / Mount Cook',
-  distance: 'Afstand: ±700 km',
-  highlights: [
-    'Walvissen spotten in Kaikōura',
-    'Franse sfeer in Akaroa',
-    'Sterrenhemel boven Lake Tekapo',
-    'Hooker Valley Track naar Mount Cook'
+    'De Lord of the Rings-landschappen rond Glenorchy',
+    'Meren en bergen in Wānaka',
+    'Bootcruise door Milford Sound'
   ]
 },
 

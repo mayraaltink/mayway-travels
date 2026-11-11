@@ -93,55 +93,64 @@ export const newZealandRoutes: RouteDef[] = [
     key: "routes.nz.north",
     stops: [
       { name: "Auckland", img: nz("north-1"), x: 297, y: 134 },
-      { name: "Cathedral Cove", img: nz("north-2"), x: 333, y: 133 },
+      // om de Firth of Thames heen, dan de Coromandel op
+      { name: "", img: "", x: 305, y: 150, via: true },
+      { name: "", img: "", x: 322, y: 156, via: true },
+      { name: "", img: "", x: 328, y: 144, via: true },
+      { name: "Cathedral Cove", img: nz("north-2"), x: 332, y: 135 },
       { name: "Hobbiton", img: nz("north-3"), x: 329, y: 180 },
       { name: "Rotorua", img: nz("north-4"), x: 349, y: 193 },
       { name: "Taupō", img: nz("north-5"), x: 343, y: 218 },
       { name: "Tongariro", img: nz("north-6"), x: 328, y: 238 },
+      // landinwaarts naar het zuiden, niet over de baai aan de westkant
+      { name: "", img: "", x: 322, y: 280, via: true },
+      { name: "", img: "", x: 311, y: 305, via: true },
+      { name: "", img: "", x: 304, y: 322, via: true },
       { name: "Wellington", img: nz("north-7"), x: 298, y: 336 },
     ],
   },
   {
-    key: "routes.nz.northland",
+    // Rondreis: start en eindigt in Christchurch (het laatste punt is een via, zodat de lijn sluit zonder dubbele pin)
+    key: "routes.nz.southisland",
     stops: [
-      { name: "Auckland", img: nz("northland-1"), x: 297, y: 134 },
-      { name: "Bay of Islands", img: nz("northland-2"), x: 278, y: 58 },
-      { name: "Ninety Mile Beach", img: nz("northland-3"), x: 240, y: 45 },
-      { name: "Cape Reinga", img: nz("northland-4"), x: 225, y: 23 },
-    ],
-  },
-  {
-    key: "routes.nz.west",
-    stops: [
+      { name: "Christchurch", img: nz("canterbury-2"), x: 224, y: 439 },
+      // net landinwaarts langs de oostkust
+      { name: "", img: "", x: 229, y: 422, via: true },
+      { name: "", img: "", x: 240, y: 406, via: true },
+      { name: "", img: "", x: 247, y: 397, via: true },
+      { name: "", img: "", x: 254, y: 392, via: true },
+      { name: "Kaikōura", img: nz("canterbury-1"), x: 260, y: 387 },
       { name: "Picton", img: nz("west-1"), x: 271, y: 336 },
+      // via Nelson om Tasman Bay heen
+      { name: "", img: "", x: 256, y: 345, via: true },
+      { name: "", img: "", x: 241, y: 348, via: true },
+      { name: "", img: "", x: 232, y: 335, via: true },
       { name: "Abel Tasman", img: nz("west-2"), x: 236, y: 321 },
-      { name: "Punakaiki", img: nz("west-3"), x: 178, y: 374 },
-      { name: "Hokitika", img: nz("west-4"), x: 166, y: 402 },
+      { name: "Punakaiki", img: nz("west-3"), x: 180, y: 375 },
+      // net landinwaarts, anders buigt de lijn de zee in
+      { name: "", img: "", x: 177, y: 389, via: true },
+      { name: "Hokitika", img: nz("west-4"), x: 168, y: 403 },
       { name: "Franz Josef", img: nz("west-5"), x: 139, y: 432 },
+      { name: "Fox Glacier", img: nz("west-fox-glacier"), x: 134, y: 435 },
       { name: "Wānaka", img: nz("west-6"), x: 102, y: 492 },
       { name: "Queenstown", img: nz("west-7"), x: 86, y: 507 },
-    ],
-  },
-  {
-    key: "routes.nz.south",
-    stops: [
-      { name: "Glenorchy", img: nz("south-1"), x: 77, y: 499 },
-      { name: "Queenstown", img: nz("south-2"), x: 86, y: 507 },
-      { name: "Milford Sound", img: nz("south-3"), x: 61, y: 491 },
-      { name: "Te Anau", img: nz("south-4"), x: 53, y: 525 },
-      { name: "The Catlins", img: nz("south-5"), x: 122, y: 572 },
-      { name: "Dunedin", img: nz("south-6"), x: 150, y: 546 },
-    ],
-  },
-  {
-    key: "routes.nz.canterbury",
-    stops: [
-      { name: "Kaikōura", img: nz("canterbury-1"), x: 260, y: 387 },
-      { name: "Christchurch", img: nz("canterbury-2"), x: 224, y: 439 },
-      { name: "Akaroa", img: nz("canterbury-3"), x: 235, y: 451 },
-      { name: "Lake Tekapo", img: nz("canterbury-4"), x: 149, y: 460 },
-      { name: "Lake Pukaki", img: nz("canterbury-5"), x: 138, y: 467 },
       { name: "Aoraki / Mount Cook", img: nz("canterbury-6"), x: 136, y: 448 },
+      { name: "Lake Pukaki", img: nz("canterbury-5"), x: 138, y: 467 },
+      { name: "Lake Tekapo", img: nz("canterbury-4"), x: 149, y: 460 },
+      { name: "", img: "", x: 224, y: 439, via: true },
+    ],
+  },
+  {
+    // 5 dagen vanuit Queenstown; via-punten terug naar Queenstown, zodat de lijn niet dwars over de bergen loopt
+    key: "routes.nz.queenstown",
+    stops: [
+      { name: "Queenstown", img: nz("south-2"), x: 86, y: 507 },
+      { name: "Glenorchy", img: nz("south-1"), x: 77, y: 499 },
+      { name: "", img: "", x: 86, y: 507, via: true },
+      { name: "Wānaka", img: nz("west-6"), x: 102, y: 492 },
+      { name: "", img: "", x: 86, y: 507, via: true },
+      { name: "Te Anau", img: nz("south-4"), x: 53, y: 525 },
+      { name: "Milford Sound", img: nz("south-3"), x: 61, y: 491 },
     ],
   },
 ];

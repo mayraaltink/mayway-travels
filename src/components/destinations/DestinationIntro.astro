@@ -2,6 +2,7 @@
 // src/components/destinations/DestinationIntro.astro
 // Intro van een bestemmingspagina: links het verhaal, rechts een kaart met veelgemaakte fouten.
 // Teksten komen uit ui.ts: `${prefix}.intro.title`, `.text1`, `.text2`, `.mistakesTitle`, `.mistake1` t/m `.mistake6`.
+// Optioneel: `.titleBold`, `.subheading` (kopje vóór text2) en `.text3`.
 import { ui, defaultLang } from '../../i18n/ui';
 
 export interface Props {
@@ -28,6 +29,16 @@ const mistakes =[1, 2, 3, 4, 5, 6].map((n) => t(`${prefix}.intro.mistake${n}`));
 // Optioneel dikgedrukt deel achter de titel (bijv. "Avontuur **in Down Under**")
 const titleBoldKey = `${prefix}.intro.titleBold`;
 const titleBold = t(titleBoldKey) === titleBoldKey ? '' : t(titleBoldKey);
+// Optioneel: tussenkopje vóór text2 en een derde alinea
+const optional = (key: string) => (t(key) === key ? '' : t(key));
+// Woorden met een streepje (bijv. "Nieuw-Zeeland") niet over twee regels breken
+const noBreak = (s: string) => s
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/(\S+-\S+)/g, '<span class="whitespace-nowrap">$1</span>');
+const titleHtml = noBreak(t(`${prefix}.intro.title`));
+const titleBoldHtml = noBreak(titleBold);
+const subheading = optional(`${prefix}.intro.subheading`);
+const text3 = optional(`${prefix}.intro.text3`);
 ---
 
 <section class:list={["bg-white pb-10 md:pb-12", tight ? "pt-4 md:pt-14" : "pt-20 md:pt-28"]}>
@@ -37,11 +48,13 @@ const titleBold = t(titleBoldKey) === titleBoldKey ? '' : t(titleBoldKey);
     <!-- Verhaal (zelfde grootte als "Reistips voor Australië"); op desktop iets lager dan de bovenkant van de kaart -->
     <div class="lg:pt-6">
       <h2 class:list={["text-4xl leading-[1.05] tracking-tight text-black md:text-5xl", titleBold ? "font-normal" : "font-semibold"]}>
-        {t(`${prefix}.intro.title`)} {titleBold && <b class="font-semibold">{titleBold}</b>}
+        <Fragment set:html={titleHtml} /> {titleBold && <b class="font-semibold" set:html={titleBoldHtml} />}
       </h2>
       <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
         <p set:html={withBold(t(`${prefix}.intro.text1`))} />
+        {subheading && <h3 class="pt-2 text-xl font-semibold tracking-tight text-black md:text-2xl">{subheading}</h3>}
         <p set:html={withBold(t(`${prefix}.intro.text2`))} />
+        {text3 && <p set:html={withBold(text3)} />}
       </div>
     </div>
 

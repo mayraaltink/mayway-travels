@@ -93,13 +93,15 @@ export const newZealandRoutes: RouteDef[] = [
     key: "routes.nz.north",
     stops: [
       { name: "Auckland", img: nz("north-1"), x: 297, y: 134 },
-      // om de Firth of Thames heen, dan de Coromandel op
+      // om de Firth of Thames heen, dan langs de westkant van het schiereiland omhoog
       { name: "", img: "", x: 305, y: 150, via: true },
       { name: "", img: "", x: 322, y: 156, via: true },
-      { name: "", img: "", x: 328, y: 144, via: true },
-      { name: "Cathedral Cove", img: nz("north-2"), x: 332, y: 135 },
+      { name: "", img: "", x: 326, y: 143, via: true },
+      { name: "Coromandel", img: nz("north-coromandel"), x: 323, y: 131 },
+      { name: "Cathedral Cove & Hot Water Beach", img: nz("north-2"), x: 332, y: 136 },
       { name: "Hobbiton", img: nz("north-3"), x: 329, y: 180 },
       { name: "Rotorua", img: nz("north-4"), x: 349, y: 193 },
+      { name: "Redwoods", img: nz("north-redwoods"), x: 351, y: 196 },
       { name: "Taupō", img: nz("north-5"), x: 343, y: 218 },
       { name: "Tongariro", img: nz("north-6"), x: 328, y: 238 },
       // landinwaarts naar het zuiden, niet over de baai aan de westkant
@@ -118,17 +120,21 @@ export const newZealandRoutes: RouteDef[] = [
       { name: "", img: "", x: 229, y: 422, via: true },
       { name: "", img: "", x: 240, y: 406, via: true },
       { name: "", img: "", x: 247, y: 397, via: true },
-      { name: "", img: "", x: 254, y: 392, via: true },
+      { name: "", img: "", x: 251, y: 391, via: true },
+      { name: "", img: "", x: 256, y: 388, via: true },
       { name: "Kaikōura", img: nz("canterbury-1"), x: 260, y: 387 },
+      { name: "", img: "", x: 262, y: 381, via: true },
       { name: "Picton", img: nz("west-1"), x: 271, y: 336 },
       // via Nelson om Tasman Bay heen
       { name: "", img: "", x: 256, y: 345, via: true },
       { name: "", img: "", x: 241, y: 348, via: true },
       { name: "", img: "", x: 232, y: 335, via: true },
       { name: "Abel Tasman", img: nz("west-2"), x: 236, y: 321 },
+      { name: "", img: "", x: 185, y: 370, via: true },
       { name: "Punakaiki", img: nz("west-3"), x: 180, y: 375 },
       // net landinwaarts, anders buigt de lijn de zee in
-      { name: "", img: "", x: 177, y: 389, via: true },
+      { name: "", img: "", x: 180, y: 381, via: true },
+      { name: "", img: "", x: 178.5, y: 388, via: true },
       { name: "Hokitika", img: nz("west-4"), x: 168, y: 403 },
       { name: "Franz Josef", img: nz("west-5"), x: 139, y: 432 },
       { name: "Fox Glacier", img: nz("west-fox-glacier"), x: 134, y: 435 },
@@ -147,6 +153,9 @@ export const newZealandRoutes: RouteDef[] = [
       { name: "Queenstown", img: nz("south-2"), x: 86, y: 507 },
       { name: "Glenorchy", img: nz("south-1"), x: 77, y: 499 },
       { name: "", img: "", x: 86, y: 507, via: true },
+      // Coronet Peak en Arrowtown liggen op de route over de Crown Range naar Wānaka
+      { name: "Coronet Peak", img: nz("south-coronet-peak"), x: 88, y: 501 },
+      { name: "Arrowtown", img: nz("south-arrowtown"), x: 92, y: 503 },
       { name: "Wānaka", img: nz("west-6"), x: 102, y: 492 },
       { name: "", img: "", x: 86, y: 507, via: true },
       { name: "Te Anau", img: nz("south-4"), x: 53, y: 525 },

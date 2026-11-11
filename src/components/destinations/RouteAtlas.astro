@@ -150,8 +150,13 @@ const routes = routeDefs.map((r) => {
 });
 
 // vaste classes zodat Tailwind ze vindt
+// Bij 3 routes (Nieuw-Zeeland) is elke knop op desktop even breed als bij 5 routes (Australië): de rij wordt smaller en gecentreerd
 const tabCols =
-  routes.length >= 5 ? "md:grid-cols-3 lg:grid-cols-5" : routes.length === 4 ? "lg:grid-cols-4" : "md:grid-cols-3";
+  routes.length >= 5
+    ? "md:grid-cols-3 lg:grid-cols-5"
+    : routes.length === 4
+      ? "lg:grid-cols-4"
+      : "md:grid-cols-3 lg:mx-auto lg:w-3/5";
 
 const clientData = routes.map((r) => ({
   vb: r.vb,

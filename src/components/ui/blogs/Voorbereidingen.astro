@@ -309,11 +309,11 @@ const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
       <!-- Knoppen in het midden; "Ga snel naar" links erboven, precies boven de eerste knop (zoals in de Working Holiday-blog) -->
       <nav aria-label={content.tocTitle} class="mx-auto mt-8 w-fit max-w-full text-left">
         <p class="text-xs uppercase tracking-[0.2em] text-gray-500">{content.tocTitle}</p>
-        <!-- Mobiel: 3 naast elkaar (2 rijen); vanaf tablet gewoon doorlopend -->
-        <ol class="mt-4 grid grid-cols-3 gap-1.5 sm:flex sm:flex-wrap sm:gap-2">
+        <!-- zelfde knoppen als in de Visum-blog -->
+        <ol class="mt-4 flex flex-wrap gap-2">
           {content.toc.map((item) => (
             <li>
-              <a href={`#${item.id}`} class="flex h-full items-center justify-center rounded-full border border-black/10 bg-white px-2 py-2 text-center text-[11px] font-semibold leading-tight text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white sm:inline-flex sm:px-4 sm:text-sm">{item.label}</a>
+              <a href={`#${item.id}`} class="inline-flex items-center whitespace-nowrap rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:border-[#1CABB0] hover:bg-[#1CABB0] hover:text-white">{item.label}</a>
             </li>
           ))}
         </ol>

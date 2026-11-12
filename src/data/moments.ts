@@ -74,16 +74,6 @@ export const moments: Moment[] = [
     },
   },
   {
-    image: '/images/australia/colca-canyon.jpg',
-    title: { nl: 'Hiken door de Colca Canyon', en: 'Hiking through the Colca Canyon' },
-    location: 'Colca Canyon · Peru',
-    story: {
-      nl: 'Een tweedaagse trekking door de Colca Canyon, een van de diepste kloven ter wereld. Afdalen naar de bodem, overnachten bij de rivier en de volgende ochtend weer helemaal omhoog: zwaar, maar wat een uitzichten.',
-      en: 'A two-day trek through the Colca Canyon, one of the deepest canyons in the world. Descending to the bottom, spending the night by the river and climbing all the way back up the next morning: tough, but what views.',
-    },
-  },
-
-  {
     image: '/images/australia/gibbon-boomhut.jpg',
     title: { nl: 'Slapen in een boomhut', en: 'Sleeping in a treehouse' },
     location: 'The Gibbon Experience · Laos',

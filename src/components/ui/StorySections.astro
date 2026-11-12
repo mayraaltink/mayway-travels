@@ -18,6 +18,7 @@ const items = chapters.map((c, i) => ({
   id: c.id,
   num: String(i + 1).padStart(2, '0'),
   image: c.image,
+  imagePosition: c.imagePosition ?? 'center',
   label: c.label[lang],
   title: c.title[lang],
   paragraphs: c.paragraphs[lang],
@@ -52,6 +53,7 @@ function withBold(text: string) {
                 src={c.image}
                 alt={c.label}
                 data-story-image={i}
+                style={`object-position: ${c.imagePosition}`}
                 loading={i === 0 ? 'eager' : 'lazy'}
                 class:list={['absolute inset-0 h-full w-full object-cover transition duration-700', i === 0 ? 'scale-100 opacity-100' : 'scale-105 opacity-0']}
               />
@@ -86,7 +88,7 @@ function withBold(text: string) {
             <div>
               <!-- Mobiel: foto bij het hoofdstuk -->
               <div class="relative mb-8 overflow-hidden rounded-[2rem] lg:hidden">
-                <img src={c.image} alt={c.label} loading="lazy" class="aspect-[4/5] w-full object-cover" />
+                <img src={c.image} alt={c.label} loading="lazy" style={`object-position: ${c.imagePosition}`} class="aspect-[4/5] w-full object-cover" />
               </div>
 
               <!-- Stop op de route: stip op de lijn + lijntje naar de titel -->

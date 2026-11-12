@@ -3,12 +3,14 @@
 // - label: korte naam van de stop
 // - title: kop boven de tekst          - paragraphs: alinea's (zet **woorden** tussen dubbele sterretjes voor dikgedrukt)
 // - image: foto uit /public/images
+// - imagePosition (optioneel): welk deel van de foto in beeld blijft, bijv. 'center 75%' (lager) of 'center top'
 
 type Text = { nl: string; en: string };
 
 export type StoryChapter = {
   id: string;
   image: string;
+  imagePosition?: string;
   label: Text;
   title: Text;
   paragraphs: { nl: string[]; en: string[] };
@@ -17,7 +19,7 @@ export type StoryChapter = {
 export const chapters: StoryChapter[] = [
   {
     id: 'passie',
-    image: '/images/about/sydney-opera.jpg',
+    image: '/images/africa.jpg',
     label: { nl: 'Passie voor avontuur', en: 'A passion for adventure' },
     title: { nl: 'Waar mijn avontuur begon', en: 'Where my adventure began' },
     paragraphs: {
@@ -35,7 +37,8 @@ export const chapters: StoryChapter[] = [
   },
   {
     id: 'achtergrond',
-    image: '/images/about/reis-specialist.jpg',
+    // spatie in de mapnaam als %20, zodat de link overal werkt
+    image: '/images/mijn%20verhaal/surf.jpg',
     label: { nl: 'Achtergrond', en: 'Background' },
     title: { nl: 'Marketeer met een reisvirus', en: 'A marketer with a travel bug' },
     paragraphs: {
@@ -51,7 +54,9 @@ export const chapters: StoryChapter[] = [
   },
   {
     id: 'outofthebox',
-    image: '/images/australia/surf-boys.jpg',
+    image: '/images/mijn%20verhaal/helikopter.jpg',
+    // hoge foto: uitsnede lager, zodat je van top tot teen in beeld bent
+    imagePosition: 'center 75%',
     label: { nl: 'Internationale ervaring', en: 'International experience' },
     title: { nl: 'Grenzen verleggen', en: 'Pushing boundaries' },
     paragraphs: {
@@ -69,7 +74,7 @@ export const chapters: StoryChapter[] = [
   },
   {
     id: 'groeien',
-    image: '/images/about/Camera.jpg',
+    image: '/images/mijn%20verhaal/groeien.jpg',
     label: { nl: 'Social media & partners', en: 'Social media & partners' },
     title: { nl: 'We groeien door', en: 'Still growing' },
     paragraphs: {

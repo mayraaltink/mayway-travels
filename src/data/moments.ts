@@ -82,40 +82,14 @@ export const moments: Moment[] = [
       en: 'A two-day trek through the Colca Canyon, one of the deepest canyons in the world. Descending to the bottom, spending the night by the river and climbing all the way back up the next morning: tough, but what views.',
     },
   },
+
   {
-    image: '/images/australia/Ozsnow.jpg',
-    title: { nl: 'Sneeuw in Australië', en: 'Snow in Australia' },
-    location: 'Perisher · Australië',
+    image: '/images/australia/gibbon-boomhut.jpg',
+    title: { nl: 'Slapen in een boomhut', en: 'Sleeping in a treehouse' },
+    location: 'The Gibbon Experience · Laos',
     story: {
-      nl: 'Skiën in Australië? Ja, dat kan echt! In Perisher, het grootste skigebied van het land, ruil je de zon en de surfplank even in voor sneeuw en besneeuwde bergtoppen.',
-      en: 'Skiing in Australia? Yes, really! In Perisher, the country’s biggest ski resort, you swap the sun and the surfboard for snow and snowy peaks for a while.',
-    },
-  },
-  {
-    image: '/images/australia/lighthouse.jpg',
-    title: { nl: 'Sunrise hike naar de vuurtoren', en: 'Sunrise hike to the lighthouse' },
-    location: 'Byron Bay',
-    story: {
-      nl: 'In het donker de wekker, en dan omhoog naar de vuurtoren van Cape Byron om de zon als eerste van Australië te zien opkomen. Met een beetje geluk zie je onderweg dolfijnen of walvissen in de oceaan.',
-      en: 'Alarm in the dark, then up to the Cape Byron lighthouse to watch the sun rise over Australia before anyone else. With a bit of luck you spot dolphins or whales in the ocean along the way.',
-    },
-  },
-  {
-    image: '/images/australia/kerst.jpg',
-    title: { nl: 'Kerst aan het strand', en: 'Christmas on the beach' },
-    location: 'Australië',
-    story: {
-      nl: 'Je gaat het niet geloven: op Boxing Day komt in Australië iedereen samen op het strand, helemaal in het rood! Kerstmutsen, zon, zee en een gezellige drukte. Kerst voelt hier totaal anders, en dat is precies wat het zo bijzonder maakt.',
-      en: 'You won’t believe it: on Boxing Day in Australia everyone gets together on the beach, all dressed in red! Santa hats, sun, sea and a cheerful crowd. Christmas feels completely different here, and that is exactly what makes it so special.',
-    },
-  },
-  {
-    image: '/images/australia/bridge.jpg',
-    title: { nl: 'BridgeClimb in Sydney', en: 'BridgeClimb in Sydney' },
-    location: 'Sydney · Australië',
-    story: {
-      nl: 'Stap voor stap naar de top van de Sydney Harbour Bridge, met de hele stad onder je voeten en het Opera House aan je zij. Het uitzicht was elke trede waard.',
-      en: 'Step by step to the top of the Sydney Harbour Bridge, with the whole city beneath your feet and the Opera House by your side. The view was worth every single step.',
+      nl: 'Met een zipline door de jungle naar je slaapplek: een boomhut hoog in de toppen van het regenwoud, een van de hoogste boomhutten ter wereld. ’s Ochtends word je wakker van de gibbons die door het bos roepen.',
+      en: 'Ziplining through the jungle to your bed for the night: a treehouse high in the rainforest canopy, one of the highest treehouses in the world. In the morning you wake up to the gibbons calling through the forest.',
     },
   },
 ];

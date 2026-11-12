@@ -783,7 +783,7 @@ faq_sim_a_f:
 'Fiji.page.language': 'English, Fiji Hindi and Fijian',
 'Fiji.page.currency': 'Fijian Dollar (FJD)',
    'Fiji.page.flightTime': '24-26 hours',
-'aus.page.location': 'Kakadu · Australia',
+'aus.page.location': 'Byron Bay · Australia',
 
 
 
@@ -1659,7 +1659,7 @@ faq_sim_a_f:
 'Fiji.page.language': 'Engels, Fiji Hindi en Fijisch',
 'Fiji.page.currency': 'Fijische dollar (FJD)',
    'Fiji.page.flightTime': '24-26 uur',
-'aus.page.location': 'Kakadu · Australië',
+'aus.page.location': 'Byron Bay · Australië',
 
 
 

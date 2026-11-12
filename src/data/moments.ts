@@ -15,6 +15,15 @@ export type Moment = {
 
 export const moments: Moment[] = [
   {
+    image: '/images/australia/lighthouse.jpg',
+    title: { nl: 'Sunrise hike naar de vuurtoren', en: 'Sunrise hike to the lighthouse' },
+    location: 'Byron Bay',
+    story: {
+      nl: 'In het donker de wekker, en dan omhoog naar de vuurtoren van Cape Byron om de zon als eerste van Australië te zien opkomen. Met een beetje geluk zie je onderweg dolfijnen of walvissen in de oceaan.',
+      en: 'Alarm in the dark, then up to the Cape Byron lighthouse to watch the sun rise over Australia before anyone else. With a bit of luck you spot dolphins or whales in the ocean along the way.',
+    },
+  },
+  {
     image: '/images/australia/unnamed.jpg',
     title: { nl: 'Duiken tussen het koraal', en: 'Diving among the coral' },
     location: 'Great Barrier Reef',

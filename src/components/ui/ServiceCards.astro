@@ -11,10 +11,12 @@ function t(key: string) {
 }
 
 // Foto's kun je hier vervangen
+// position (optioneel): welk deel van de foto in beeld blijft (mobiel liggend, desktop staand vak)
 const services = [
-  { num: 1, image: '/images/australia/surf-boys.jpg' },
-  { num: 2, image: '/images/about/reis-specialist.jpg' },
-  { num: 3, image: '/images/about/Mayra-foto.jpg' },
+  { num: 1, image: '/images/australia/surf-boys.jpg', position: 'object-center' },
+  // surfer onder de titel: uitsnede iets hoger, zodat hij in de onderste helft van de kaart staat
+  { num: 2, image: '/images/australia/surfer.jpg', position: 'object-[center_34%] md:object-top' },
+  { num: 3, image: '/images/about/Mayra-foto.jpg', position: 'object-center' },
 ].map((s) => ({
   ...s,
   href: `/${lang}/for-brands#service-${s.num}`,
@@ -44,7 +46,7 @@ const services = [
             src={service.image}
             alt=""
             loading="lazy"
-            class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 group-[.is-active]:scale-105"
+            class:list={['absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 group-[.is-active]:scale-105', service.position]}
           />
           <div class="absolute inset-0 bg-gray-900/30 transition duration-500 group-hover:bg-gray-900/60 group-focus-visible:bg-gray-900/60 group-[.is-active]:bg-gray-900/60"></div>
 

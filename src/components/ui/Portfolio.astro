@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ui, defaultLang } from '../../i18n/ui';
-import { featured as allFeatured, more as allMore } from '../../data/portfolio';
+import { featured as allFeatured } from '../../data/portfolio';
 import CarouselControls from './CarouselControls.astro';
 import ReelCard from './ReelCard.astro';
 
@@ -37,8 +37,8 @@ function videoSrc(file?: string) {
 const featured = (isHome ? allFeatured.filter((item) => item.home).slice(0, 3) : allFeatured)
   .map((item) => ({ ...item, src: coverSrc(item.cover), videoUrl: videoSrc(item.video) }));
 
-// Overige content: kleinere reels onder de uitgelichte video's
-const more = isHome ? [] : allMore.map((item) => ({ ...item, src: coverSrc(item.cover), videoUrl: videoSrc(item.video) }));
+// Onder de uitgelichte video's (alleen For Brands): YouTube-video, hier te vervangen door een ander video-ID
+const youtubeId = 'qBYOvEy_rAE';
 
 
 // Vaste classnames zodat Tailwind ze vindt
@@ -71,19 +71,20 @@ const featuredCols = { 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-col
     </div>
     <CarouselControls tone="light" class="lg:hidden" />
 
-    <!-- Meer content (alleen For Brands): kleinere reels -->
-    {more.length > 0 && (
-      <div class="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 md:mt-12 md:gap-5">
-        {more.map((item) => (
-          <ReelCard
-            href={item.href}
-            cover={item.src}
-            video={item.videoUrl}
-            views={item.views}
-            viewLabel={t('portfolio.view')}
-            size="sm"
-          />
-        ))}
+    <!-- Alleen For Brands: 4K-video van YouTube (privacyvriendelijke embed, laadt pas bij afspelen cookies) -->
+    {!isHome && (
+      <div class="mx-auto mt-14 max-w-3xl md:mt-20">
+        <div class="relative aspect-video overflow-hidden rounded-[1.75rem] bg-black/20 shadow-[0_30px_60px_rgba(0,0,0,0.25)] md:rounded-[2rem]">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0`}
+            title="MAY WAYS – 4K video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            class="absolute inset-0 h-full w-full"
+          ></iframe>
+        </div>
       </div>
     )}
 

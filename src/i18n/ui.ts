@@ -134,7 +134,7 @@ export const ui = {
 'community.dest.nz.cta': 'Discover New Zealand',
 'community.intro.title': 'Step out of your',
 'community.intro.titleBold': 'comfort zone',
-'community.intro.location': 'Kakadu · Australia',
+'community.intro.location': 'Queenstown · New Zealand',
 'community.intro.descBold': 'The best adventures often begin the moment you do something that feels exciting. Travelling solo, moving abroad, meeting new people or finally taking that step you have been thinking about for so long.',
 'community.intro.descNormal': 'By exploring the world, you learn that you do not need to know everything in advance to get started. I want to inspire you to stay curious, try new things, create special moments and push your boundaries.',
 'community.intro.badge': 'Your next adventure',
@@ -1420,7 +1420,7 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 // COMMUNITY INTRO
 'community.intro.title': 'Stap uit je',
 'community.intro.titleBold': 'comfortzone',
-'community.intro.location': 'Kakadu · Australië',
+'community.intro.location': 'Queenstown · Nieuw-Zeeland',
 'community.intro.descBold': 'Vaak begint het mooiste avontuur juist op het moment dat je iets doet wat je spannend vindt. Alleen op reis gaan, naar het buitenland verhuizen, nieuwe mensen ontmoeten of eindelijk die stap zetten waar je al zo lang over nadenkt.',
 'community.intro.descNormal': 'Door de wereld te ontdekken, leer je dat je juist niet alles van tevoren hoeft te weten om ergens aan te beginnen. Ik wil je inspireren om nieuwsgierig te blijven, nieuwe dingen te proberen, bijzondere momenten te creëren en je grenzen te verleggen.',
 'community.intro.badge': 'Jouw volgende avontuur',

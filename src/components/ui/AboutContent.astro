@@ -18,7 +18,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 <section class="w-screen px-6 py-10">
 
   <!-- OUTER HERO -->
-  <div class="relative w-full min-h-[90vh] overflow-hidden rounded-[50px] flex flex-col md:flex-row">
+  <!-- Mobiel: hoogte volgt de inhoud (geen leeg blauw vlak onder de tekst); desktop minimaal 90% schermhoogte -->
+  <div class="relative w-full md:min-h-[90vh] overflow-hidden rounded-[50px] flex flex-col md:flex-row">
 
     <!-- LEFT IMAGE (UNCHANGED) -->
     <div class="relative w-full md:w-1/2 min-h-[40vh] md:min-h-full">
@@ -51,7 +52,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
           Hi, ik ben Mayra
         </h1>
 
-      <div class="mb-12 text-white/90 leading-relaxed space-y-4">
+      <div class="mb-4 text-white/90 leading-relaxed space-y-4 md:mb-12">
 
   <p>{t('about.intro.p1')}</p>
   <p>{t('about.intro.p2')}</p>

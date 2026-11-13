@@ -73,11 +73,11 @@ export const ui = {
 
 'about.heading': 'Hi, I’m Mayra!',
 
-'about.intro.p1': 'I believe the best stories come from staying curious, seizing opportunities and thinking off the beaten track. That mindset has not only taken me to extraordinary places, it is also the foundation of how I approach the creative process of making content.',
+'about.intro.p1': 'I believe the best stories come from staying curious and daring to think out of the box. That mindset has not only taken me to extraordinary places, it is also the foundation of how I approach the creative process of making content.',
 
-'about.intro.p2': 'After 2.5 years of living out of the box in Australia, MAY WAYS brings together my love for adventure, creating and marketing.',
+'about.intro.p2': 'After 2.5 years in Australia, everything comes together in MAY WAYS: my love for adventure, creating and marketing. I want to inspire you to take the leap. On top of that, I help brands tell their story by turning real experiences into authentic content that inspires, connects and sticks.',
 
-'about.intro.p3': 'All with one goal: to inspire you to take the leap, and to help brands tell their story by turning real experiences into authentic content that inspires, connects and sticks.',
+'about.intro.p3': '',
 
 'about.follow': 'Travel with us on Instagram',
 
@@ -86,6 +86,7 @@ export const ui = {
 'about.titlePart1': 'This is',
 
 'about.titleHighlight': 'my story',
+'about.story.cta': "Let's connect",
 'about.story.outro': 'Ready for your adventure?',
 
  
@@ -152,7 +153,7 @@ export const ui = {
     // contact
     'contact.title': 'Contact | MAY WAYS',
     'contact.eyebrow': 'Contact',
-    'contact.heading': 'Let\'s <em>connect</em>',
+    'contact.heading': 'Let\'s <b>connect</b>',
     'contact.intro': 'Got a fun idea for a collaboration, curious about my services or just want to brainstorm?',
     'contact.intro2': 'I\'d love to think along with you! Send me a message and who knows what we can create together.',
     'contact.packages.eyebrow': 'Social media management',
@@ -1197,11 +1198,11 @@ fiji_intro_cta: "Start planning your trip",
 
 'about.title': 'Hi, Ik ben Mayra!',
 
-'about.intro.p1': 'Ik geloof dat de mooiste verhalen ontstaan door nieuwsgierig te blijven, kansen te grijpen en buiten de gebaande paden te denken. Die instelling heeft me niet alleen op bijzondere plekken gebracht, maar vormt ook de basis van hoe ik naar het creatieve proces van content maken kijk.',
+'about.intro.p1': 'Ik geloof dat de mooiste verhalen ontstaan door nieuwsgierig te blijven en out-of-the-box te durven gaan. Die instelling heeft me niet alleen op bijzondere plekken gebracht, maar vormt ook de basis van hoe ik naar het creatieve proces van content maken kijk.',
 
-'about.intro.p2': 'Na 2,5 jaar out of the box leven in Australië breng ik met MAY WAYS mijn liefde voor avontuur, creëren en marketing samen.',
+'about.intro.p2': 'Na 2,5 jaar Australië komt alles samen in MAY WAYS: mijn liefde voor avontuur, creëren, marketing. Ik wil jou inspireren om de sprong te wagen. Daarnaast help ik merken hun verhaal te vertellen, door échte ervaringen te vertalen naar authentieke content die inspireert, verbindt en bijblijft.',
 
-'about.intro.p3': 'Alles met het doel om jou te inspireren om te durven gaan, en merken te helpen hun verhaal te vertellen door échte ervaringen te vertalen naar authentieke content die inspireert, verbindt en bijblijft.',
+'about.intro.p3': '',
 
 'about.follow': 'Reis mee op Instagram',
 
@@ -1211,6 +1212,7 @@ fiji_intro_cta: "Start planning your trip",
 'about.titlePart1': 'Dit is',
 
 'about.titleHighlight': 'mijn verhaal',
+'about.story.cta': 'Laten we kennismaken',
 'about.story.outro': 'Klaar voor jouw avontuur?',
 ///////////partners 
 'partners.title': 'Eerdere samenwerkingen', 
@@ -1218,7 +1220,7 @@ fiji_intro_cta: "Start planning your trip",
     // contact
     'contact.title': 'Contact | MAY WAYS',
     'contact.eyebrow': 'Contact',
-    'contact.heading': 'Laten we <em>kennismaken</em>',
+    'contact.heading': 'Laten we <b>kennismaken</b>',
     'contact.intro': 'Heb je een leuk idee voor een samenwerking, ben je benieuwd naar mijn services of wil je gewoon eens sparren?',
     'contact.intro2': 'Ik denk graag met je mee! Stuur me een berichtje en wie weet wat we samen kunnen creëren.',
     'contact.packages.eyebrow': 'Social media beheer',

@@ -55,7 +55,7 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 
   <p>{t('about.intro.p1')}</p>
   <p>{t('about.intro.p2')}</p>
-  <p>{t('about.intro.p3')}</p>
+  {t('about.intro.p3') && <p>{t('about.intro.p3')}</p>}
 
 </div>
 

@@ -37,7 +37,8 @@ const messages = {
       <!-- Links: intro, pakketten, contactgegevens -->
       <div class="flex flex-col">
         <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('contact.eyebrow')}</p>
-        <h1 class="mt-3 text-4xl font-semibold leading-[1.0] tracking-tight text-black md:text-5xl">
+        <!-- Normaal + dikgedrukt accent, zelfde stijl als de andere titels op de site -->
+        <h1 class="mt-3 text-4xl font-normal leading-[1.0] tracking-tight text-black md:text-5xl [&_b]:font-semibold">
           <Fragment set:html={t('contact.heading')} />
         </h1>
         <p class="mt-6 max-w-md text-[15px] leading-relaxed text-gray-600 md:text-base">

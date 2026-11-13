@@ -19,6 +19,7 @@ const items = chapters.map((c, i) => ({
   num: String(i + 1).padStart(2, '0'),
   image: c.image,
   imagePosition: c.imagePosition ?? 'center',
+  location: c.location?.[lang] ?? '',
   label: c.label[lang],
   title: c.title[lang],
   paragraphs: c.paragraphs[lang],
@@ -37,8 +38,9 @@ function withBold(text: string) {
     <!-- Kop -->
     <div class="mx-auto max-w-5xl text-center lg:text-left">
       <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('about.preheader')}</p>
-      <h2 class="mt-3 text-4xl font-semibold leading-[1.0] tracking-tight text-black md:text-5xl">
-        {t('about.titlePart1')} <em>{t('about.titleHighlight')}</em>
+      <!-- Normaal + dikgedrukt accent, zelfde stijl als de andere titels op de site -->
+      <h2 class="mt-3 text-4xl font-normal leading-[1.0] tracking-tight text-black md:text-5xl">
+        {t('about.titlePart1')} <b class="font-semibold">{t('about.titleHighlight')}</b>
       </h2>
     </div>
 
@@ -53,6 +55,7 @@ function withBold(text: string) {
                 src={c.image}
                 alt={c.label}
                 data-story-image={i}
+                data-location={c.location}
                 style={`object-position: ${c.imagePosition}`}
                 loading={i === 0 ? 'eager' : 'lazy'}
                 class:list={['absolute inset-0 h-full w-full object-cover transition duration-700', i === 0 ? 'scale-100 opacity-100' : 'scale-105 opacity-0']}
@@ -60,13 +63,17 @@ function withBold(text: string) {
             ))}
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-            <!-- Voortgang -->
-            <div class="absolute inset-x-0 bottom-0 flex items-end justify-end gap-4 p-6">
+            <!-- Voortgang links, locatie van de huidige foto rechts (wisselt mee met het hoofdstuk) -->
+            <div class="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 p-6">
               <div class="flex gap-1.5" aria-hidden="true">
                 {items.map((_, i) => (
                   <span data-story-bar={i} class:list={['h-1 w-6 rounded-full transition-colors duration-500', i === 0 ? 'bg-[#4ED2CE]' : 'bg-white/30']}></span>
                 ))}
               </div>
+              <span data-story-location class:list={['flex items-center gap-2 rounded-full bg-black/35 px-4 py-2 text-white/90 backdrop-blur-sm', { hidden: !items[0].location }]}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span data-story-location-text class="text-sm uppercase tracking-wide">{items[0].location}</span>
+              </span>
             </div>
           </div>
         </div>
@@ -89,6 +96,12 @@ function withBold(text: string) {
               <!-- Mobiel: foto bij het hoofdstuk -->
               <div class="relative mb-8 overflow-hidden rounded-[2rem] lg:hidden">
                 <img src={c.image} alt={c.label} loading="lazy" style={`object-position: ${c.imagePosition}`} class="aspect-[4/5] w-full object-cover" />
+                {c.location && (
+                  <span class="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/35 px-3 py-1.5 text-white/90 backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span class="text-[10px] uppercase tracking-wide">{c.location}</span>
+                  </span>
+                )}
               </div>
 
               <!-- Stop op de route: stip op de lijn + lijntje naar de titel -->
@@ -113,7 +126,7 @@ function withBold(text: string) {
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           </span>
           <a href={`/${lang}/contact`} class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a]">
-            {t('forBrands.creator.cta')}
+            {t('about.story.cta')}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </a>
         </div>
@@ -140,8 +153,14 @@ function withBold(text: string) {
     const chaptersEls = root.querySelectorAll<HTMLElement>('[data-story-chapter]');
     const images = root.querySelectorAll<HTMLElement>('[data-story-image]');
     const bars = root.querySelectorAll<HTMLElement>('[data-story-bar]');
+    const locationBadge = root.querySelector<HTMLElement>('[data-story-location]');
+    const locationText = root.querySelector<HTMLElement>('[data-story-location-text]');
 
     function activate(index: number) {
+      // Locatielabel van de foto die nu in beeld is
+      const location = images[index]?.dataset.location ?? '';
+      if (locationText) locationText.textContent = location;
+      locationBadge?.classList.toggle('hidden', !location);
       chaptersEls.forEach((el, i) => el.toggleAttribute('data-active', i === index));
       images.forEach((img, i) => {
         img.classList.toggle('opacity-100', i === index);

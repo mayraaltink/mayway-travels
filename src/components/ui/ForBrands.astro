@@ -14,12 +14,7 @@ function t(key: string) {
 
 
 // id="service-1" t/m 3: de fotokaarten op de homepagina linken hiernaartoe
-// Per service een grote en een kleine foto (hier te vervangen)
-const services = [
-  { num: 1, image: '/images/australia/surf-boys.jpg', imageSmall: '/images/about/great-ocean-road.jpg' },
-  { num: 2, image: '/images/about/reis-specialist.jpg', imageSmall: '/images/about/sydney-opera.jpg' },
-  { num: 3, image: '/images/about/Mayra-foto.jpg', imageSmall: '/images/australia/aus_main.webp' },
-].map((s) => ({
+const services = [{ num: 1 }, { num: 2 }, { num: 3 }].map((s) => ({
   ...s,
   title: t(`forBrands.services.${s.num}.title`),
   intro: t(`forBrands.services.${s.num}.intro`),
@@ -97,69 +92,49 @@ const socials = [
 
 
     <!-- SERVICES -->
-    <section id="services" class="scroll-mt-20 py-14 md:py-28">
+    <section id="services" class="scroll-mt-20 pb-14 pt-12 md:pb-28 md:pt-20">
       <div class="mx-auto max-w-6xl px-6">
 
         <p class="text-center text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('forBrands.services.eyebrow')}</p>
-        <h2 class="mt-3 text-center text-4xl font-semibold leading-[1.05] tracking-tight text-black md:text-5xl">
+        <!-- Normaal + dikgedrukt accent ("jouw merk"), zelfde stijl als de andere titels op de site -->
+        <h2 class="mt-3 text-center text-4xl font-normal leading-[1.05] tracking-tight text-black md:text-5xl [&_b]:font-semibold">
           <Fragment set:html={t('forBrands.services.heading')} />
         </h2>
 
-        <!-- Services onder elkaar: foto-collage en tekst, om en om links/rechts -->
-        <div class="mt-16 space-y-24 md:mt-24 md:space-y-32">
-          {services.map((service) => {
-            const flip = service.num % 2 === 0;
-            return (
+        <!-- Services onder elkaar in één kolom (links uitgelijnd), met een dunne lijn ertussen -->
+        <!-- Dunne lijn ook boven de eerste service, zodat de kop een eigen blok is -->
+        <div class="mx-auto mt-8 max-w-2xl divide-y divide-black/10 border-t border-black/10 md:mt-10">
+          {services.map((service) => (
               <article
                 id={`service-${service.num}`}
-                class="scroll-mt-28 grid items-center gap-14 lg:grid-cols-2 lg:gap-20"
+                class="scroll-mt-28 py-12 text-left last:pb-0 md:py-16"
               >
-                <!-- Foto's -->
-                <div class:list={['relative mx-auto w-full max-w-md lg:max-w-none', { 'lg:order-last': flip }]}>
-                  <img
-                    src={service.image}
-                    alt=""
-                    loading="lazy"
-                    class:list={[
-                      'aspect-[4/5] w-[82%] rounded-[2rem] object-cover shadow-[0_25px_60px_rgba(0,0,0,0.15)]',
-                      { 'ml-auto': flip }
-                    ]}
-                  />
-                  <img
-                    src={service.imageSmall}
-                    alt=""
-                    loading="lazy"
-                    class:list={[
-                      'absolute -bottom-8 aspect-square w-[44%] rounded-[1.5rem] border-[6px] border-[#FFFDFA] object-cover shadow-xl',
-                      flip ? 'left-0 -rotate-3' : 'right-0 rotate-3'
-                    ]}
-                  />
+                <!-- Turquoise rondje met het nummer (zelfde stijl als voorheen) vóór de titel;
+                     titel op tussenkop-formaat (zoals in de blogs), zodat hij niet concurreert met de grote kop -->
+                <div class="flex items-center gap-4">
                   <span class:list={[
-                    'absolute -top-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#1CABB0] text-lg font-semibold text-white shadow-lg',
-                    flip ? 'right-4 rotate-6' : 'left-4 -rotate-6'
+                    'flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1CABB0] text-sm font-semibold text-white shadow-lg md:h-12 md:w-12 md:text-base',
+                    service.num % 2 === 0 ? 'rotate-6' : '-rotate-6'
                   ]}>
                     0{service.num}
                   </span>
+                  <h3 class="text-left text-2xl font-semibold leading-tight tracking-tight text-black md:text-[1.75rem]">{service.title}</h3>
                 </div>
+                <p class="mt-5 text-[15px] leading-relaxed text-gray-600 md:text-base">{service.intro}</p>
 
-                <!-- Tekst -->
-                <div>
-                  <h3 class="text-3xl font-semibold leading-[1.05] tracking-tight text-black md:text-4xl">{service.title}</h3>
-                  <p class="mt-5 text-[15px] leading-relaxed text-gray-600 md:text-base">{service.intro}</p>
-
-                  {service.offer.length > 0 && (
-                  <div class="mt-8 rounded-2xl bg-[#F4FBFB] p-6 md:p-7">
-                    <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('forBrands.services.offerTitle')}</p>
-                    <ul class="mt-4 space-y-2.5">
-                      {service.offer.map((item) => (
-                        <li class="flex items-start gap-3 text-gray-700">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1CABB0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  )}
+                {service.offer.length > 0 && (
+                <div class="mt-8 rounded-2xl bg-[#F4FBFB] p-6 md:p-7">
+                  <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('forBrands.services.offerTitle')}</p>
+                  <ul class="mt-4 space-y-2.5">
+                    {service.offer.map((item) => (
+                      <li class="flex items-start gap-3 text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1CABB0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                )}
 
                   <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
                     <!-- Social media management (02) → pakketten-pagina, de rest → contact -->
@@ -176,10 +151,8 @@ const socials = [
                       </a>
                     )}
                   </div>
-                </div>
               </article>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>

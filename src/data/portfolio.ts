@@ -2,7 +2,8 @@
 // - featured: video's voor bedrijven (For Brands toont ze allemaal, liefst 5)
 // - home: true → deze video staat ook op de homepagina (kies er 3)
 // - more: overige content (3 à 4)
-// - more: worden getoond als kleinere reels (9:16) onder de uitgelichte video's
+// - more: twee blokken rechts naast de YouTube-video (For Brands), linken naar Instagram;
+//   omslagfoto (cover) liefst liggend of vierkant, wordt passend bijgesneden
 // - photoProjects: staat momenteel niet op de site (bewaard voor later)
 // - cover: bestandsnaam in public/images/portfolio/ (staand 9:16 voor video's, 4:5 voor overige content)
 // - video (optioneel): bestandsnaam in public/videos/portfolio/ (mp4). Dan speelt de kaart af als een Reel
@@ -35,9 +36,8 @@ export const featured: FeaturedProject[] = [
 ];
 
 export const more: MoreProject[] = [
-  { type: 'video', href: 'https://www.instagram.com/p/DCYxUT1yiOm/', cover: 'more-1.jpg' },
-  { type: 'video', href: 'https://www.instagram.com/p/C2o0BYNPXaP/', cover: 'more-2.jpg' },
-  { type: 'photos', href: 'https://www.instagram.com/p/CzT0FervoKb/', cover: 'more-3.jpg' },
+  { type: 'video', href: 'https://www.instagram.com/reel/Cyd4KKUP79o/', cover: 'more-1.jpg' },
+  { type: 'video', href: 'https://www.instagram.com/reel/DcedpNguHWR/', cover: 'more-2.jpg' },
 ];
 
 export type PhotoProject = {

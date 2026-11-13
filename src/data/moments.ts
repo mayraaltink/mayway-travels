@@ -27,7 +27,7 @@ export const moments: Moment[] = [
     },
   },
   {
-    image: '/images/australia/kilimanjaro-climb.jpg',
+    image: '/images/australia/kili.jpg',
     title: { nl: 'De Kilimanjaro beklimmen', en: 'Climbing Kilimanjaro' },
     location: 'Kilimanjaro · Tanzania',
     story: {

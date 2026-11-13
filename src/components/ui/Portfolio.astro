@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ui, defaultLang } from '../../i18n/ui';
-import { featured as allFeatured } from '../../data/portfolio';
+import { featured as allFeatured, more as allMore } from '../../data/portfolio';
 import CarouselControls from './CarouselControls.astro';
 import ReelCard from './ReelCard.astro';
 
@@ -37,7 +37,10 @@ function videoSrc(file?: string) {
 const featured = (isHome ? allFeatured.filter((item) => item.home).slice(0, 3) : allFeatured)
   .map((item) => ({ ...item, src: coverSrc(item.cover), videoUrl: videoSrc(item.video) }));
 
-// Onder de uitgelichte video's (alleen For Brands): YouTube-video, hier te vervangen door een ander video-ID
+// Overige content: kleinere reels onder de uitgelichte video's (linken naar Instagram)
+const more = isHome ? [] : allMore.map((item) => ({ ...item, src: coverSrc(item.cover), videoUrl: videoSrc(item.video) }));
+
+// Daaronder (alleen For Brands): YouTube-video, hier te vervangen door een ander video-ID
 const youtubeId = 'qBYOvEy_rAE';
 
 
@@ -71,9 +74,10 @@ const featuredCols = { 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-col
     </div>
     <CarouselControls tone="light" class="lg:hidden" />
 
-    <!-- Alleen For Brands: 4K-video van YouTube (privacyvriendelijke embed, laadt pas bij afspelen cookies) -->
+    <!-- Alleen For Brands: links de 4K-video van YouTube (privacyvriendelijke embed, cookies pas bij afspelen),
+         rechts twee blokken onder elkaar die naar Instagram linken. Mobiel: blokken onder de video, naast elkaar. -->
     {!isHome && (
-      <div class="mx-auto mt-14 max-w-3xl md:mt-20">
+      <div class="mt-14 grid gap-3 md:mt-20 md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] md:gap-4">
         <div class="relative aspect-video overflow-hidden rounded-[1.75rem] bg-black/20 shadow-[0_30px_60px_rgba(0,0,0,0.25)] md:rounded-[2rem]">
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0`}
@@ -85,6 +89,29 @@ const featuredCols = { 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-col
             class="absolute inset-0 h-full w-full"
           ></iframe>
         </div>
+
+        {more.length > 0 && (
+          <div class="grid grid-cols-2 gap-3 md:grid-cols-1 md:grid-rows-2 md:gap-4">
+            {more.map((item) => (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t('portfolio.view')}
+                class="group relative block aspect-[4/5] overflow-hidden rounded-2xl bg-[#1CABB0] shadow-lg md:aspect-auto md:h-full"
+              >
+                {item.src && (
+                  <img src={item.src} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                )}
+                <div class="absolute inset-0 bg-black/20 transition group-hover:bg-black/35"></div>
+                <!-- Instagram-icoon -->
+                <span class="absolute inset-0 flex items-center justify-center text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="drop-shadow transition group-hover:scale-110"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"></circle></svg>
+                </span>
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     )}
 

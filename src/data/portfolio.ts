@@ -29,15 +29,16 @@ export type MoreProject = {
 };
 
 export const featured: FeaturedProject[] = [
-  { brand: 'AJ Hackett', title: 'Jump into a new chapter', href: 'https://www.instagram.com/p/DZfxVNqNaAi/', cover: 'aj-hackett.jpg', home: true },
-  { brand: 'Mojo Surf', title: 'Wavy week', href: 'https://www.instagram.com/p/DVnsul6EX6v/', cover: 'mojo-surf.jpg', home: true },
-  { brand: 'HeliWorks', title: 'Helicopter above Queenstown', href: 'https://www.instagram.com/p/DdRcLkDthSo/', cover: 'heliworks.jpg', home: true },
-  { brand: 'Pure Milford', title: "Into New Zealand's fjords", href: 'https://www.instagram.com/p/DZZD31-xcip/', cover: 'pure-milford.jpg' },
+  { brand: 'Pure Milford', title: "Into New Zealand's fjords", href: 'https://www.instagram.com/p/DZZD31-xcip/', cover: 'pure-milford.jpg', video: 'pure-milford.mp4', home: true },
+  // Eigen content voor mijn persoonlijke Instagram
+  { brand: '@mayraaltink', title: 'Island hopping', href: 'https://www.instagram.com/mayraaltink/', cover: 'boot-drone.jpg', video: 'boot-drone.mp4' },
+  { brand: 'AJ Hackett', title: 'Jump into a new chapter', href: 'https://www.instagram.com/p/DZfxVNqNaAi/', cover: 'aj-hackett.jpg', video: 'aj-hackett.mp4', home: true },
+  { brand: 'Mojo Surf', title: 'Wavy week', href: 'https://www.instagram.com/p/DVnsul6EX6v/', cover: 'mojo-surf.jpg', video: 'mojo-surf.mp4', home: true },
 ];
 
 export const more: MoreProject[] = [
   { type: 'video', href: 'https://www.instagram.com/reel/Cyd4KKUP79o/', cover: 'more-1.jpg' },
-  { type: 'video', href: 'https://www.instagram.com/reel/DcedpNguHWR/', cover: 'more-2.jpg' },
+  { type: 'video', href: 'https://www.tiktok.com/@mayraxaltink/video/7650003757438078241', cover: 'more-2.jpg' },
 ];
 
 export type PhotoProject = {

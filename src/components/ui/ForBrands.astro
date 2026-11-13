@@ -14,7 +14,12 @@ function t(key: string) {
 
 
 // id="service-1" t/m 3: de fotokaarten op de homepagina linken hiernaartoe
-const services = [{ num: 1 }, { num: 2 }, { num: 3 }].map((s) => ({
+// photos (optioneel): twee kleine foto's rechts naast de introtekst
+const services = [
+  { num: 1, photos: [] as string[] },
+  { num: 2, photos: [] as string[] },
+  { num: 3, photos: [] as string[] },
+].map((s) => ({
   ...s,
   title: t(`forBrands.services.${s.num}.title`),
   intro: t(`forBrands.services.${s.num}.intro`),
@@ -120,7 +125,30 @@ const socials = [
                   </span>
                   <h3 class="text-left text-2xl font-semibold leading-tight tracking-tight text-black md:text-[1.75rem]">{service.title}</h3>
                 </div>
-                <p class="mt-5 text-[15px] leading-relaxed text-gray-600 md:text-base">{service.intro}</p>
+                {service.photos.length > 0 ? (
+                  <!-- Tekst met rechts twee foto's. Vanaf tablet zweven de foto's naast de tekst (absolute),
+                       zodat de knop eronder op dezelfde afstand staat als bij de andere services. Mobiel: foto's onder de tekst. -->
+                  <div class="relative mt-5">
+                    <p class="whitespace-pre-line text-[15px] leading-[1.55] text-gray-600 sm:pr-[21rem] md:pr-[18rem] md:text-base lg:pr-40 xl:pr-24">{service.intro}</p>
+                    <!-- Twee foto's half over elkaar, schuin, als een stapeltje polaroids (achterste groter).
+                         Op grotere schermen steken ze buiten de tekstkolom uit, de lege ruimte rechts in. -->
+                    <div class="relative mt-6 h-64 w-[19rem] sm:absolute sm:right-0 sm:-top-12 sm:mt-0 md:-right-16 md:h-72 md:w-[21rem] lg:-right-48 xl:-right-64">
+                      {service.photos.map((src, i) => (
+                        <img
+                          src={src}
+                          alt=""
+                          loading="lazy"
+                          class:list={[
+                            'absolute aspect-[4/5] rounded-2xl border-4 border-[#FFFDFA] object-cover shadow-xl',
+                            i === 0 ? 'left-0 top-0 w-44 -rotate-6 md:w-48' : 'right-0 top-16 z-10 w-36 rotate-6 md:w-40'
+                          ]}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <p class="mt-5 whitespace-pre-line text-[15px] leading-[1.55] text-gray-600 md:text-base">{service.intro}</p>
+                )}
 
                 {service.offer.length > 0 && (
                 <div class="mt-8 rounded-2xl bg-[#F4FBFB] p-6 md:p-7">

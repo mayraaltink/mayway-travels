@@ -515,5 +515,16 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       <p class="mt-4" set:html={rich(content.active.pilates.text)} />
     </section>
 
+    <!-- Doorverwijzing naar de volgende blog (zelfde als in de andere blogs) -->
+    <div class="mt-16 flex flex-col items-center border-t border-gray-200 pt-12 text-center md:mt-20 md:pt-16">
+      <h2 class="text-2xl font-semibold tracking-tight text-black md:text-3xl">
+        {lang === 'en' ? 'Ready for the Aussie life? Find out when to go!' : 'Zin in het Aussie-leven? Check wanneer je het beste kunt gaan!'}
+      </h2>
+      <a href={`/${lang}/blogs/beste-reisseizoen`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#15939a]">
+        {lang === 'en' ? 'The weather in Australia' : 'Het weer in Australië'}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+
   </div>
 </article>

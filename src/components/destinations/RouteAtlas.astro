@@ -170,7 +170,8 @@ const clientData = routes.map((r) => ({
   <script type="application/json" data-atlas-json set:html={JSON.stringify(clientData)} />
 
   <!-- Bovenste deel (titel + routekeuze) op een eigen lichte achtergrond, los van het route-verhaal eronder -->
-  <div class="bg-[#F1F7F7] py-12 md:py-14">
+  <!-- zelfde kleur als de hotspots erboven, zodat ze naadloos in elkaar overlopen -->
+  <div class="bg-[#F4FBFB] py-12 md:py-14">
   <div class="mx-auto max-w-6xl px-6">
 
     <!-- Titel: op mobiel gecentreerd, vanaf tablet links -->
@@ -212,9 +213,12 @@ const clientData = routes.map((r) => ({
       // eerste feit = de route zelf (Sydney tot Cairns)
       const routeFact = r.info.facts[0];
       return (
-      <div class="grid gap-8 border-b border-gray-200 pb-12 text-[#0B1F22] lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14" data-about={ri} hidden>
-        <!-- desktop: tekst iets naar het midden -->
-        <div class="lg:pl-10 xl:pl-20">
+      <!-- Desktop: links bovenin label + titel, daaronder de alinea's; rechts het blokje, verticaal in het
+           midden van de alinea's (niet van de titel). Mobiel: alles onder elkaar. -->
+      <div class="grid border-b border-gray-200 pb-12 text-[#0B1F22] lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-x-14" data-about={ri} hidden>
+        <!-- tekst begint precies onder de titel "Ontdek verschillende reisroutes":
+             de padding heft de bredere marge van dit blok (xl:-mx-12, 2xl:-mx-24) weer op -->
+        <div class="xl:pl-12 2xl:pl-24 lg:col-start-1 lg:row-start-1">
           <!-- Route als klein label in blokletters boven de titel (zoals "OVER MAY"), bijv. PERTH — EXMOUTH, met route-icoontje ervoor -->
           {routeFact && (
             <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase leading-none tracking-[0.2em] text-[#12949A]">
@@ -225,13 +229,16 @@ const clientData = routes.map((r) => ({
             </p>
           )}
           <h3 class="mt-2 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">{r.title}</h3>
-          {r.intro && (
-            <p class="mt-4 whitespace-pre-line text-[15px] leading-relaxed text-gray-600 md:text-base" set:html={withBold(r.intro)} />
-          )}
         </div>
+        {r.intro && (
+          <p class="mt-4 whitespace-pre-line text-[15px] leading-relaxed text-gray-600 md:text-base xl:pl-12 2xl:pl-24 lg:col-start-1 lg:row-start-2" set:html={withBold(r.intro)} />
+        )}
 
-        <!-- Tekst links blijft even breed; het blokje schuift rechts naast de tekst -->
-        <div class="lg:mt-44 lg:w-[26rem] lg:justify-self-center">
+        <!-- Tekst links blijft even breed; het blokje staat rechts, met de rechterrand gelijk aan die van de
+             derde hotspotfoto erboven (dit blok is op xl/2xl breder via -mx-12/-mx-24, de hotspots via px-6 niet) -->
+        <!-- verticaal in het midden van de alinea's links (zelfde rij als de alinea's), bij elke route -->
+        <!-- breedte = één hotspotkaart: (hotspotbreedte − 2 tussenruimtes) / 3, hotspotbreedte = min(scherm − 3rem, 72rem) -->
+        <div class="mt-8 lg:col-start-2 lg:row-start-2 lg:mt-4 lg:w-[calc((min(100vw-3rem,72rem)-3rem)/3)] lg:self-center lg:justify-self-end xl:mr-6 2xl:mr-[4.5rem]">
         <!-- Rijtijden: turquoise blokje met afstand en een paar trajecten -->
         {r.drive.some((d) => d.leg || d.line) && (
           <div class="max-w-md rounded-2xl bg-[#0F7C82] px-5 py-4 text-white lg:max-w-none">

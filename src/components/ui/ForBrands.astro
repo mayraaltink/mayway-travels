@@ -97,7 +97,7 @@ const socials = [
 
 
     <!-- SERVICES -->
-    <section id="services" class="scroll-mt-20 pb-14 pt-12 md:pb-28 md:pt-20">
+    <section id="services" class="scroll-mt-20 pb-12 pt-12 md:pb-20 md:pt-20">
       <div class="mx-auto max-w-6xl px-6">
 
         <p class="text-center text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('forBrands.services.eyebrow')}</p>
@@ -187,7 +187,7 @@ const socials = [
 
 
     <!-- SAMENWERKEN: creator partnerships -->
-    <section id="creator" class="scroll-mt-20 bg-[#F4FBFB] pt-12 pb-14 md:pt-28">
+    <section id="creator" class="scroll-mt-20 bg-[#F4FBFB] pt-12 pb-12 md:pt-28 md:pb-28">
       <div class="mx-auto grid max-w-6xl gap-9 px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
 
         <!-- Verhaal -->
@@ -211,8 +211,9 @@ const socials = [
           </a>
         </div>
 
-        <!-- Socials -->
-        <div class="lg:pt-10">
+        <!-- Socials: korter en tegen de rechterkant, zodat de rechterrand gelijk valt met de meest rechtse video van Mijn projecten.
+             Verticaal in het midden naast de tekst links (past zich vanzelf aan als de tekst langer of korter wordt) -->
+        <div class="lg:w-full lg:max-w-sm lg:self-center lg:justify-self-end">
           <h3 class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{t('forBrands.socials.title')}</h3>
 
           <ul class="mt-6 space-y-4">

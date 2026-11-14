@@ -12,14 +12,15 @@ function t(key: string) {
 
 // Foto's kun je hier vervangen
 // position (optioneel): welk deel van de foto in beeld blijft (mobiel liggend, desktop staand vak)
-// zoom (optioneel): inzoomen op een punt van de foto, bijv. 'transform: scale(1.6); transform-origin: 15% 50%'
+// zoom (optioneel, alleen desktop): inzoomen op een punt van de foto, als Tailwind-classes,
+// bijv. 'md:[transform:scale(1.6)] md:[transform-origin:50%_45%]'. Op mobiel niet ingezoomd, zodat je helemaal in beeld bent.
 const services = [
   // Volgorde op de pagina: Social media beheer, Content creatie, Creator partnerships
   { num: 2, image: '/images/australia/surf-boys.jpg', position: 'object-center' },
-  // jij in de wijngaard met je camera: uitsnede zo dat je onder de titel staat, iets ingezoomd
-  { num: 1, image: '/images/australia/cammie.jpg', position: 'object-[center_45%] md:object-top', zoom: 'transform: scale(1.6); transform-origin: 50% 45%' },
-  // jij op de trappen van het Opera House: ingezoomd vanaf een punt boven je, zodat je onder de titel loopt
-  { num: 3, image: '/images/mijn%20verhaal/groeien.jpg', position: 'object-center', zoom: 'transform: scale(1.5); transform-origin: 50% 37%' },
+  // jij in de wijngaard met je camera: mobiel van top tot teen onder de titel, desktop ingezoomd
+  { num: 1, image: '/images/australia/cammie.jpg', position: 'object-[center_31%] md:object-top', zoom: 'md:[transform:scale(1.6)] md:[transform-origin:50%_45%]' },
+  // jij op de trappen van het Opera House: mobiel van top tot teen onder de titel, desktop ingezoomd
+  { num: 3, image: '/images/mijn%20verhaal/groeien.jpg', position: 'object-[center_41%] md:object-center', zoom: 'md:[transform:scale(1.5)] md:[transform-origin:50%_37%]' },
 ].map((s) => ({
   ...s,
   href: `/${lang}/for-brands#service-${s.num}`,
@@ -49,8 +50,7 @@ const services = [
             src={service.image}
             alt=""
             loading="lazy"
-            style={'zoom' in service ? service.zoom : undefined}
-            class:list={['absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 group-[.is-active]:scale-105', service.position]}
+            class:list={['absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 group-[.is-active]:scale-105', service.position, 'zoom' in service ? service.zoom : '']}
           />
           <div class="absolute inset-0 bg-gray-900/30 transition duration-500 group-hover:bg-gray-900/60 group-focus-visible:bg-gray-900/60 group-[.is-active]:bg-gray-900/60"></div>
 

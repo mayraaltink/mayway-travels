@@ -19,30 +19,36 @@ const lang = (Astro.currentLocale ?? 'nl') as 'nl' | 'en';
 const t = useTranslations(lang);
 const get = (k: string) => t(k as any) as string;
 
+// %20 in de link (spatie in de mapnaam) eerst terugvertalen voor de controle op schijf
 function imageSrc(src: string) {
-  return fs.existsSync(path.join(process.cwd(), 'public', src)) ? src : null;
+  return fs.existsSync(path.join(process.cwd(), 'public', decodeURIComponent(src))) ? src : null;
 }
 
 // Volgorde zoals ze op de site staan (teksten in ui.ts)
 const australiaHotspots = [
-  'reef',
-  'whitsundays',
-  'fraser',
-  'atherton',
   'cape_tribulation',
-  'magnetic',
-  'great_ocean',
-  'kakadu',
-  'blue_mountains',
+  'reef',
+  'fraser',
   'hunter_valley',
+  'atherton',
+  'great_ocean',
+  'whitsundays',
+  'blue_mountains',
   'julian_rocks',
 ];
 
 // Foto's die al op de site staan; de rest zoekt naar /images/<naam>.jpg
+// (map "hotspots aus" heeft een spatie in de naam, daarom %20 in de link)
+const ha = (file: string) => `/images/hotspots%20aus/${file}`;
 const australiaPhotos: Record<string, string> = {
-  reef: '/images/australia/unnamed.jpg',
-  kakadu: '/images/australia/aus_main.jpg',
-  great_ocean: '/images/about/great-ocean-road.jpg',
+  reef: ha('greatbarrier.jpg'),
+  whitsundays: ha('whitsundays.jpg'),
+  fraser: ha('fraser.jpg'),
+  atherton: ha('altheron.jpg'),
+  cape_tribulation: ha('cape.jpg'),
+  great_ocean: ha('great.jpg'),
+  hunter_valley: ha('hunter.jpg'),
+  julian_rocks: ha('rocks.jpg'),
 };
 
 const {

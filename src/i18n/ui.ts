@@ -393,6 +393,10 @@ faq_sim_a_f:
 'fraser_title': 'Fraser Island',
 'fraser_text': 'Fraser Island (K’gari) is the largest sand island in the world...',
 
+'sydney_badge': 'City • Beaches • Opera House',
+'sydney_title': 'Sydney',
+'sydney_text': 'A vibrant city where city life and beach culture come together.',
+'sydney_story': 'Sydney has it all: the iconic Opera House and Harbour Bridge, beaches like Bondi and Manly just a stone’s throw away, and neighbourhoods full of coffee spots. Walk the Bondi to Coogee coastal walk, take the ferry to Manly for the best view of the city, and end the day with a sunset by the harbour.',
 'reef_badge': 'Coral • Snorkeling • Diving',
 'reef_title': 'Great Barrier Reef',
 'reef_text': 'The Great Barrier Reef is the largest coral reef system in the world...',
@@ -1472,6 +1476,10 @@ Met MAY WAYS wil ik je inspireren om nieuwsgierig te blijven, je grenzen te verl
 'fraser_title': 'Fraser Island',
 'fraser_text': 'Fraser Island (K’gari) is het grootste zandeiland ter wereld...',
 
+'sydney_badge': 'Stad • Stranden • Opera House',
+'sydney_title': 'Sydney',
+'sydney_text': 'Een bruisende stad waar stadsleven en strandcultuur samenkomen.',
+'sydney_story': 'Sydney heeft alles: het iconische Opera House en de Harbour Bridge, stranden als Bondi en Manly op een steenworp afstand, en wijken vol koffiebarretjes. Loop de Bondi to Coogee coastal walk, neem de ferry naar Manly voor het mooiste uitzicht op de stad, en sluit de dag af met zonsondergang aan de haven.',
 'reef_badge': 'Koraal • Snorkelen • Duiken',
 'reef_title': 'Great Barrier Reef',
 'reef_text': 'Het Great Barrier Reef is het grootste koraalrif ter wereld...',

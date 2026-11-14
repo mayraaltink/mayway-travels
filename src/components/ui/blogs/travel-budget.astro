@@ -446,7 +446,7 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       </div>
 
       <!-- Foto: Run Club -->
-      <figure class="mt-10 lg:-mx-16">
+      <figure class="mt-10">
         <div class="overflow-hidden rounded-[2rem]">
           {photos.runclub ? (
             <img src={photos.runclub} alt={content.active.captions.runclub} loading="lazy" class="aspect-[16/9] w-full object-cover" />
@@ -472,7 +472,7 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       </div>
 
       <!-- Foto: Bronte Pools -->
-      <figure class="mt-10 lg:-mx-16">
+      <figure class="mt-10">
         <div class="overflow-hidden rounded-[2rem]">
           {photos.bronte ? (
             <!-- iets hoger dan de andere foto's en bovenaan uitgesneden, zodat het zwembad linksboven goed in beeld is -->
@@ -507,18 +507,6 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
         ))}
       </ul>
       <p class="mt-5" set:html={rich(content.active.swim.nippers.text)} />
-
-      <!-- Foto: Nippers -->
-      <figure class="mt-10 lg:-mx-16">
-        <div class="overflow-hidden rounded-[2rem]">
-          {photos.nippers ? (
-            <img src={photos.nippers} alt={content.active.captions.nippers} loading="lazy" class="aspect-[16/9] w-full object-cover" />
-          ) : (
-            <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
-          )}
-        </div>
-        <figcaption class="mt-3 text-sm font-semibold text-gray-900">{content.active.captions.nippers}</figcaption>
-      </figure>
 
       <p class="mt-10" set:html={rich(content.active.swim.after)} />
 

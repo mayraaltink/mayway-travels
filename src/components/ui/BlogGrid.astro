@@ -15,33 +15,44 @@ const categories = [
 ];
 
 // Volgorde hier = volgorde in het mozaïek op desktop (de eerste kaart is de grote)
+// position (optioneel): welk deel van de foto in beeld blijft, bijv. "center 60%"
+// zoom (optioneel): inzoomen, bijv. "transform: scale(1.15); transform-origin: 50% 100%"
 const blogs = [
   {
     title: nl ? "Aanvraag: Eerste Working Holiday in Australië" : "Application: First Working Holiday in Australia",
-    image: "/images/blogs/nz.jpg",
+    image: "/images/australia/voorbereiding.jpg",
+    // uitsnede iets lager in de foto, zodat de meeuw in het midden van de kaart vliegt
+    position: "center 60%",
     slug: "VisaAus",
     category: "working-holiday",
   },
   {
     title: nl ? "Voorbereidingen Working Holiday" : "Preparing for your Working Holiday",
-    image: "/images/blogs/voorbereidingen.jpg",
+    image: "/images/australia/workingholiday.jpg",
     slug: "voorbereidingen",
     category: "working-holiday",
   },
   {
     title: nl ? "Het leven in Australië" : "Life in Australia",
-    image: "/images/blogs/money.jpg",
+    image: "/images/australia/laidback.jpg",
     slug: "travel-budget",
     category: "over",
   },
   {
     title: nl ? "Welk seizoen is het beste om te reizen?" : "Which season is best to travel?",
-    image: "/images/blogs/seizoenen.jpg",
+    image: "/images/australia/seizoen.jpg",
+    // iets ingezoomd vanaf de onderkant, zodat de strook lucht bovenin wegvalt
+    zoom: "transform: scale(1.15); transform-origin: 50% 100%",
     slug: "beste-reisseizoen",
     category: "reizen",
   },
 ].map((b) => ({
   ...b,
+  // uitsnede en inzoom samen als style op de foto
+  imgStyle: [
+    'position' in b && b.position ? `object-position: ${b.position}` : '',
+    'zoom' in b && b.zoom ? b.zoom : '',
+  ].filter(Boolean).join('; ') || undefined,
   href: `/${lang}/blogs/${b.slug}`,
   categoryName: categories.find((c) => c.id === b.category)?.name ?? "",
 }));
@@ -65,7 +76,7 @@ const blogs = [
         <div data-carousel-track class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth">
           {blogs.filter((b) => b.category === cat.id).map((blog) => (
             <a href={blog.href} class="relative aspect-[4/5] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-lg">
-              <img src={blog.image} alt={blog.title} loading="lazy" draggable="false" class="absolute inset-0 h-full w-full object-cover" />
+              <img src={blog.image} alt={blog.title} loading="lazy" draggable="false" style={blog.imgStyle} class="absolute inset-0 h-full w-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
               <h4 class="absolute inset-x-0 bottom-0 p-6 text-2xl font-bold leading-tight text-white">{blog.title}</h4>
             </a>
@@ -81,7 +92,7 @@ const blogs = [
   <div class="hidden md:grid grid-cols-4 auto-rows-[15rem] lg:auto-rows-[18rem] gap-3 lg:gap-4">
     {blogs.map((blog, i) => (
       <a href={blog.href} class:list={["group relative overflow-hidden rounded-2xl bg-[#0B5F64]", { "col-span-2 row-span-2": i === 0, "col-span-2": i === 1 }]}>
-        <img src={blog.image} alt={blog.title} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+        <img src={blog.image} alt={blog.title} loading="lazy" style={blog.imgStyle} class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
         <div class="absolute inset-x-0 bottom-0 p-5 lg:p-6">
           <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/85">{blog.categoryName}</p>

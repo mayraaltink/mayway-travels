@@ -26,13 +26,13 @@ function rich(text: string) {
 }
 
 const photos = {
-  bondi: imageSrc('/images/blogs/bondi-beach.jpg'),
-  coffee: imageSrc('/images/blogs/koffie.jpg'),
-  barefoot: imageSrc('/images/blogs/blote-voeten.jpg'),
+  bondi: imageSrc('/images/australia/laidback.jpg'),
+  coffee: imageSrc('/images/australia/coffee.jpg'),
+  barefoot: imageSrc('/images/australia/voeten.jpg'),
   bbq: imageSrc('/images/blogs/barbie.jpg'),
-  runclub: imageSrc('/images/blogs/run-club-bondi.jpg'),
+  runclub: imageSrc('/images/australia/surfing.jpg'),
   nippers: imageSrc('/images/blogs/nippers.jpg'),
-  bronte: imageSrc('/images/blogs/bronte-pools.jpg'),
+  bronte: imageSrc('/images/australia/bronte.jpg'),
 };
 
 const content = {
@@ -171,7 +171,7 @@ const content = {
         title: 'Pilates, en dan nog meer pilates',
         text: 'Wil je toch binnen sporten, dan meld je je eenvoudig aan bij een **sportschool**. **Pilates** is hier echt een hype: van power en hot tot reformer pilates. Veel mensen combineren dat met **HIIT-workouts** of **yoga**, naast hun dagelijkse buitenactiviteiten. De lessen worden de hele dag door aangeboden. Zelf ben ik lid van **Fitness First**, waar ze meer dan **50 reformer pilates-lessen** per week geven, van 6:00 tot 19:00 uur. Het zit gewoon **inbegrepen in je standaard abonnement**, hoe relaxed is dat!',
       },
-      captions: { runclub: 'Run Club, Bondi (Sydney)', bronte: 'Bronte Pools, Sydney', nippers: 'Nippers op het strand' },
+      captions: { runclub: 'Surfen in Sydney', bronte: 'Bronte Pools, Sydney', nippers: 'Nippers op het strand' },
     },
   },
   en: {
@@ -307,7 +307,7 @@ const content = {
         title: 'Pilates, and then even more pilates',
         text: 'Still want to work out indoors? Then you can easily join a **gym**. **Pilates** is a real hype here: from power and hot to reformer pilates. Many people combine it with **HIIT workouts** or **yoga**, alongside their daily outdoor activities. Classes run all day long. I’m a member of **Fitness First** myself, which offers more than **50 reformer pilates classes** a week, from 6:00 to 19:00. It’s simply **included in the standard membership**, how relaxed is that!',
       },
-      captions: { runclub: 'Run Club, Bondi (Sydney)', bronte: 'Bronte Pools, Sydney', nippers: 'Nippers on the beach' },
+      captions: { runclub: 'Surfing in Sydney', bronte: 'Bronte Pools, Sydney', nippers: 'Nippers on the beach' },
     },
   },
 }[lang];
@@ -344,7 +344,8 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
 
     <figure class="relative mt-10 overflow-hidden rounded-[2rem] md:mt-16 md:rounded-[2.5rem]">
       {photos.bondi ? (
-        <img src={photos.bondi} alt={content.bondiCaption} class="aspect-[16/9] w-full object-cover md:aspect-[21/9]" />
+        <!-- uitsnede lager in de foto: de campervan en stoelen staan onderin, de lucht mag eraf -->
+        <img src={photos.bondi} alt={content.bondiCaption} class="aspect-[16/9] w-full object-cover object-[center_70%] md:aspect-[21/9]" />
       ) : (
         <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82] md:aspect-[21/9]"></div>
       )}
@@ -474,7 +475,8 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       <figure class="mt-10 lg:-mx-16">
         <div class="overflow-hidden rounded-[2rem]">
           {photos.bronte ? (
-            <img src={photos.bronte} alt={content.active.captions.bronte} loading="lazy" class="aspect-[16/9] w-full object-cover" />
+            <!-- iets hoger dan de andere foto's en bovenaan uitgesneden, zodat het zwembad linksboven goed in beeld is -->
+            <img src={photos.bronte} alt={content.active.captions.bronte} loading="lazy" class="aspect-[4/3] w-full object-cover object-left-top" />
           ) : (
             <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
           )}

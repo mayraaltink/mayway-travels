@@ -3,7 +3,8 @@
 // x/y zijn posities op de kaart-svg van dat land; stops staan in reisvolgorde.
 
 // via: onzichtbaar tussenpunt (geen pin/nummer), alleen om de lijn over land te laten lopen
-export type RouteStop = { name: string; img: string; x: number; y: number; via?: boolean };
+// pos (optioneel): welk deel van de foto in beeld blijft, bijv. "right center" of "50% 70%"
+export type RouteStop = { name: string; img: string; x: number; y: number; via?: boolean; pos?: string };
 
 // Na Rottnest Island terug naar het vasteland (Fremantle), zodat de lijn niet over zee loopt
 const backToMainland: RouteStop = { name: "", img: "", x: 222, y: 453, via: true };
@@ -17,18 +18,19 @@ export const australiaRoutes: RouteDef[] = [
   {
     key: "routes.east",
     stops: [
-      { name: "Sydney", img: au("east-1"), x: 757, y: 482 },
-      { name: "Byron Bay", img: au("east-2"), x: 802, y: 385 },
+      { name: "Sydney", img: "/images/hotspots%20aus/sydje.jpg", x: 757, y: 482 },
+      { name: "Byron Bay", img: "/images/australia/byronbay.jpg", x: 802, y: 385 },
       { name: "Gold Coast", img: au("east-gold-coast"), x: 800, y: 373 },
       { name: "Brisbane", img: au("east-brisbane"), x: 795, y: 362 },
-      { name: "Noosa", img: au("east-3"), x: 798, y: 343 },
-      { name: "Fraser Island", img: au("east-5"), x: 804, y: 322 },
-      { name: "1770", img: au("east-1770"), x: 785, y: 302 },
-      { name: "The Whitsundays", img: au("east-4"), x: 743, y: 229 },
-      { name: "Magnetic Island", img: au("east-magnetic-island"), x: 717, y: 208 },
-      { name: "Atherton Tablelands", img: au("east-atherton"), x: 686, y: 176 },
+      { name: "Noosa", img: "/images/hotspots%20aus/noosa.JPG", x: 798, y: 343 },
+      { name: "Fraser Island", img: "/images/hotspots%20aus/frasers.jpg", x: 804, y: 322 },
+      // tussenpunt (vroeger de stop 1770), zodat de lijn over land blijft lopen
+      { name: "", img: "", x: 785, y: 302, via: true },
+      { name: "The Whitsundays", img: "/images/hotspots%20aus/whitsundays.jpg", x: 743, y: 229 },
+      { name: "Magnetic Island", img: "/images/hotspots%20aus/maggie.jpg", x: 717, y: 208 },
+      { name: "Atherton Tablelands", img: "/images/hotspots%20aus/altheron.jpg", x: 686, y: 176 },
       { name: "Cairns", img: au("east-7"), x: 698, y: 166 },
-      { name: "Cape Tribulation", img: au("east-cape-tribulation"), x: 693, y: 149 },
+      { name: "Cape Tribulation", img: "/images/hotspots%20aus/cape.jpg", x: 693, y: 149 },
     ],
   },
   {

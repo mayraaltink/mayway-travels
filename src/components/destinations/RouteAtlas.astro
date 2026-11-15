@@ -162,7 +162,7 @@ const clientData = routes.map((r) => ({
   vb: r.vb,
   mvb: r.mvb,
   // korte tekst per stop (optioneel) uit ui.ts: `stop.<naam>`, bijv. stop.hutt-lagoon
-  stops: r.stops.map((s) => ({ name: s.name, img: s.img, desc: text(`stop.${stopKey(s.name)}`) })),
+  stops: r.stops.map((s) => ({ name: s.name, img: s.img, pos: s.pos ?? "", desc: text(`stop.${stopKey(s.name)}`) })),
 }));
 ---
 
@@ -666,7 +666,7 @@ const clientData = routes.map((r) => ({
   type RouteData = {
     vb: number[];
     mvb: number[];
-    stops: { name: string; img: string; desc: string }[];
+    stops: { name: string; img: string; pos: string; desc: string }[];
   };
 
   document.querySelectorAll<HTMLElement>("[data-route-atlas]").forEach((root) => {
@@ -893,6 +893,7 @@ const clientData = routes.map((r) => ({
       photo.alt = stop.name;
       photo.classList.remove("is-broken");
       photo.src = stop.img;
+      photo.style.objectPosition = stop.pos;
 
       // mobiel paneel bijwerken
       sheetI.textContent = counterI.textContent;
@@ -904,6 +905,7 @@ const clientData = routes.map((r) => ({
       sheetPhoto.alt = stop.name;
       sheetPhoto.classList.remove("is-broken");
       sheetPhoto.src = stop.img;
+      sheetPhoto.style.objectPosition = stop.pos;
       positionPop();
 
       if (animate && !reduceMotion) {

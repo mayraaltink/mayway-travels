@@ -25,7 +25,7 @@ export const australiaRoutes: RouteDef[] = [
     stops: [
       { name: "Sydney", img: "/images/hotspots%20aus/sydje.jpg", x: 757, y: 482 },
       { name: "Byron Bay", img: "/images/australia/byronbay.jpg", x: 802, y: 385 },
-      { name: "Gold Coast", img: au("east-gold-coast"), x: 800, y: 373 },
+      { name: "Gold Coast", img: "/images/hotspots%20aus/surfers.jpg", x: 800, y: 373 },
       { name: "Brisbane", img: au("east-brisbane"), x: 795, y: 362 },
       { name: "Noosa", img: "/images/hotspots%20aus/noosa.JPG", x: 798, y: 343 },
       { name: "Fraser Island", img: "/images/hotspots%20aus/fraser.jpg", x: 804, y: 322 },

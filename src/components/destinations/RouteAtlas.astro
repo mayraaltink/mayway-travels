@@ -161,6 +161,8 @@ const tabCols =
 const clientData = routes.map((r) => ({
   vb: r.vb,
   mvb: r.mvb,
+  // alleen routes met `photos: true` tonen een foto per stop; de rest alleen naam + tekst
+  photos: !!r.photos,
   // korte tekst per stop (optioneel) uit ui.ts: `stop.<naam>`, bijv. stop.hutt-lagoon
   stops: r.stops.map((s) => ({ name: s.name, img: s.img, pos: s.pos ?? "", desc: text(`stop.${stopKey(s.name)}`) })),
 }));
@@ -396,12 +398,12 @@ const clientData = routes.map((r) => ({
       <div class="hidden md:block">
         <!-- Foto per stop -->
         <div class="stop-card" data-stop-card>
-          <div class="photo relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-[#EAF7F7] shadow-[0_24px_50px_rgba(10,59,62,0.18)] lg:aspect-[4/5]">
+          <div class="photo relative mb-5 aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-[#EAF7F7] shadow-[0_24px_50px_rgba(10,59,62,0.18)] lg:aspect-[4/5]" data-photo-wrap>
             <div class="absolute inset-0 grid place-items-center px-6 text-center text-2xl font-semibold tracking-tight text-[#12949A]/60" data-fallback></div>
             <img class="absolute inset-0 h-full w-full object-cover" alt="" data-photo />
           </div>
 
-          <div class="mt-5 flex items-end justify-between gap-4">
+          <div class="flex items-end justify-between gap-4">
             <div class="min-w-0">
               <p class="text-xs uppercase tracking-[0.2em] text-[#12949A]" aria-live="polite">
                 {t["routes.stop"]} <span data-counter-i>01</span> / <span data-counter-n>01</span>
@@ -452,12 +454,12 @@ const clientData = routes.map((r) => ({
 
       <!-- zelfde staande verhouding als de foto op desktop -->
       <!-- max. 44svh breed (= 55svh hoog), zodat foto + tekst samen op het scherm passen -->
-      <div class="relative mx-auto mt-2 aspect-[4/5] w-full max-w-[44svh] overflow-hidden rounded-2xl bg-[#EAF7F7]">
+      <div class="relative mx-auto mb-5 mt-2 aspect-[4/5] w-full max-w-[44svh] overflow-hidden rounded-2xl bg-[#EAF7F7]" data-sheet-photo-wrap>
         <div class="absolute inset-0 grid place-items-center px-6 text-center text-xl font-semibold text-[#12949A]/60" data-sheet-fallback></div>
         <img class="absolute inset-0 h-full w-full object-cover" alt="" data-sheet-photo />
       </div>
 
-      <p class="mt-5 text-xs uppercase tracking-[0.2em] text-[#12949A]">
+      <p class="mt-2 text-xs uppercase tracking-[0.2em] text-[#12949A]">
         {t["routes.stop"]} <span data-sheet-i>01</span> / <span data-sheet-n>01</span>
       </p>
       <h3 id="sheet-stop-name" class="mt-1 text-2xl font-semibold leading-tight tracking-tight text-black" data-sheet-name></h3>
@@ -743,6 +745,7 @@ const clientData = routes.map((r) => ({
   type RouteData = {
     vb: number[];
     mvb: number[];
+    photos: boolean;
     stops: { name: string; img: string; pos: string; desc: string }[];
   };
 
@@ -974,9 +977,13 @@ const clientData = routes.map((r) => ({
       stopDesc.textContent = stop.desc;
       stopDesc.hidden = !stop.desc;
       fallback.textContent = stop.name;
+      // routes zonder foto's: fotovak verbergen en de afbeelding ook niet laden
+      const withPhotos = routes[routeIdx].photos;
+      photo.parentElement!.classList.toggle("hidden", !withPhotos);
+      sheetPhoto.parentElement!.classList.toggle("hidden", !withPhotos);
       photo.alt = stop.name;
       photo.classList.remove("is-broken");
-      photo.src = stop.img;
+      if (withPhotos) photo.src = stop.img;
       photo.style.objectPosition = stop.pos;
 
       // mobiel paneel bijwerken
@@ -988,7 +995,7 @@ const clientData = routes.map((r) => ({
       sheetFallback.textContent = stop.name;
       sheetPhoto.alt = stop.name;
       sheetPhoto.classList.remove("is-broken");
-      sheetPhoto.src = stop.img;
+      if (withPhotos) sheetPhoto.src = stop.img;
       sheetPhoto.style.objectPosition = stop.pos;
 
       // mobiel: balk onder de kaart bijwerken

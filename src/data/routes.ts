@@ -11,7 +11,8 @@ const backToMainland: RouteStop = { name: "", img: "", x: 222, y: 453, via: true
 // extras (optioneel): losse stops die je aan de route kunt toevoegen (kaartje linksonder bij de kaart);
 // aanklikken toont alleen een rondje met de naam op de kaart, geen foto
 export type RouteExtra = { name: string; x: number; y: number };
-export type RouteDef = { key: string; stops: RouteStop[]; extras?: RouteExtra[] };
+// photos: true = foto per stop tonen; zonder (de standaard) alleen naam + tekst, zolang de foto's nog niet uitgezocht zijn
+export type RouteDef = { key: string; stops: RouteStop[]; extras?: RouteExtra[]; photos?: boolean };
 
 const au = (file: string) => `/images/australia/routes/${file}.jpg`;
 const nz = (file: string) => `/images/new-zealand/routes/${file}.jpg`;
@@ -20,6 +21,7 @@ const fj = (file: string) => `/images/fiji/routes/${file}.jpg`;
 export const australiaRoutes: RouteDef[] = [
   {
     key: "routes.east",
+    photos: true,
     stops: [
       { name: "Sydney", img: "/images/hotspots%20aus/sydje.jpg", x: 757, y: 482 },
       { name: "Byron Bay", img: "/images/australia/byronbay.jpg", x: 802, y: 385 },

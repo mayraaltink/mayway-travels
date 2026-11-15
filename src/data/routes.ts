@@ -26,7 +26,7 @@ export const australiaRoutes: RouteDef[] = [
       { name: "Gold Coast", img: au("east-gold-coast"), x: 800, y: 373 },
       { name: "Brisbane", img: au("east-brisbane"), x: 795, y: 362 },
       { name: "Noosa", img: "/images/hotspots%20aus/noosa.JPG", x: 798, y: 343 },
-      { name: "Fraser Island", img: "/images/hotspots%20aus/frasers.jpg", x: 804, y: 322 },
+      { name: "Fraser Island", img: "/images/hotspots%20aus/fraser.jpg", x: 804, y: 322 },
       // tussenpunt (vroeger de stop 1770), zodat de lijn over land blijft lopen
       { name: "", img: "", x: 785, y: 302, via: true },
       { name: "The Whitsundays", img: "/images/hotspots%20aus/whitsundays.jpg", x: 743, y: 229 },

@@ -330,6 +330,17 @@ const clientData = routes.map((r) => ({
                   </g>
                 );
               })}
+              <!-- extra stops: pas zichtbaar na aanklikken in het kaartje "Extra stops" -->
+              {r.extras?.map((ex, ei) => (
+                <g class="extra-pin" data-extra={ei} transform={`translate(${ex.x} ${ex.y})`}>
+                  <g class="pin-body">
+                    <circle class="extra-dot" r={5.5 * r.s} stroke-width={1.6 * r.s} />
+                    <text class="extra-label" font-size={11 * r.s} x={-9.5 * r.s} dy={3.8 * r.s} text-anchor="end" stroke-width={3.8 * r.s}>
+                      {ex.name}
+                    </text>
+                  </g>
+                </g>
+              ))}
             </g>
           ))}
         </svg>
@@ -358,8 +369,27 @@ const clientData = routes.map((r) => ({
 
         <p class="mt-4 hidden text-center text-xs text-gray-400 md:block">{t["routes.hint"]}</p>
         <p class="mt-3 px-6 text-center text-xs text-gray-400 md:hidden">
-          {lang === "en" ? "Tap a stop on the map or use the arrows, then “Discover more” under the name for a photo and info" : "Tik op een stop of gebruik de pijltjes, en tik op ‘Ontdek meer’ onder de naam voor een foto en uitleg"}
+          {lang === "en" ? "Tap a stop on the map" : "Klik op een stop op de kaart"}
         </p>
+
+        <!-- Extra stops die je aan de route kunt toevoegen: onder de kaart, links uitgelijnd -->
+        {routes.map((r, ri) => r.extras?.length ? (
+          <div class="mx-6 mt-6 border-t border-[#E3EEEE] pt-5 md:mx-0" data-extras={ri} hidden>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#12949A]">
+              Extra stops
+              <span class="ml-2 font-normal normal-case tracking-normal text-gray-400">
+                {lang === "en" ? "More time? Tap one to see where it is" : "Meer tijd? Tik erop om te zien waar het ligt"}
+              </span>
+            </p>
+            <ul class="mt-3 flex flex-wrap gap-1.5">
+              {r.extras.map((ex, ei) => (
+                <li>
+                  <button type="button" class="extra-chip" data-extra-btn={ei} aria-pressed="false">+ {ex.name}</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null)}
       </div>
 
       <!-- Stopkaart: grote foto + stops naast de kaart (alleen desktop; op mobiel zit dit in het paneel) -->
@@ -616,6 +646,36 @@ const clientData = routes.map((r) => ({
     transition: opacity 0.2s;
     pointer-events: none;
   }
+  /* extra stops: stippel-rondje + naam, alleen zichtbaar als aangeklikt */
+  .extra-pin {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .route-layer.is-active .extra-pin.is-shown { opacity: 1; }
+  .extra-dot {
+    fill: #fffdfa;
+    stroke: #0f7c82;
+    stroke-dasharray: 2 1.5;
+  }
+  .extra-label {
+    fill: #111827;
+    stroke: #fffdfa;
+    paint-order: stroke;
+    font-weight: 600;
+  }
+  .extra-chip {
+    border-radius: 9999px;
+    background: #f1f7f7;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #0b1f22;
+    transition: background 0.2s, color 0.2s;
+  }
+  .extra-chip:hover { background: #e2f1f1; }
+  .extra-chip[aria-pressed="true"] { background: #0f7c82; color: white; }
+
   .pin:hover .pin-label,
   .pin:focus-visible .pin-label,
   .pin.is-current .pin-label { opacity: 1; }
@@ -950,6 +1010,28 @@ const clientData = routes.map((r) => ({
       }
     };
 
+    // Extra stop aanklikken: rondje + naam op de kaart tonen (nogmaals klikken = weer weg). Eén tegelijk.
+    let extraIdx = -1;
+    const showExtra = (ei: number) => {
+      extraIdx = ei;
+      layers.forEach((layer, li) =>
+        layer.querySelectorAll<SVGGElement>(".extra-pin").forEach((pin) =>
+          pin.classList.toggle("is-shown", li === routeIdx && pin.dataset.extra === String(ei))
+        )
+      );
+      root.querySelectorAll<HTMLElement>("[data-extras]").forEach((card) =>
+        card.querySelectorAll<HTMLButtonElement>("[data-extra-btn]").forEach((btn) =>
+          btn.setAttribute("aria-pressed", String(card.dataset.extras === String(routeIdx) && btn.dataset.extraBtn === String(ei)))
+        )
+      );
+    };
+    root.querySelectorAll<HTMLButtonElement>("[data-extra-btn]").forEach((btn) =>
+      btn.addEventListener("click", () => {
+        const ei = Number(btn.dataset.extraBtn);
+        showExtra(ei === extraIdx ? -1 : ei);
+      })
+    );
+
     const setRoute = (ri: number) => {
       if (ri === routeIdx) return;
       routeIdx = ri;
@@ -957,6 +1039,8 @@ const clientData = routes.map((r) => ({
       tabs.forEach((tab, ti) => tab.setAttribute("aria-selected", String(ti === ri)));
       infos.forEach((info, ii) => (info.hidden = ii !== ri));
       abouts.forEach((about, ai) => (about.hidden = ai !== ri));
+      root.querySelectorAll<HTMLElement>("[data-extras]").forEach((ex) => (ex.hidden = ex.dataset.extras !== String(ri)));
+      showExtra(-1);
       layers.forEach((layer, li) => {
         layer.classList.remove("is-active");
         layer.querySelectorAll<SVGGElement>(".pin").forEach((pin) => {

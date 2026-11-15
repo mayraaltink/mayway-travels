@@ -8,7 +8,10 @@ export type RouteStop = { name: string; img: string; x: number; y: number; via?:
 
 // Na Rottnest Island terug naar het vasteland (Fremantle), zodat de lijn niet over zee loopt
 const backToMainland: RouteStop = { name: "", img: "", x: 222, y: 453, via: true };
-export type RouteDef = { key: string; stops: RouteStop[] };
+// extras (optioneel): losse stops die je aan de route kunt toevoegen (kaartje linksonder bij de kaart);
+// aanklikken toont alleen een rondje met de naam op de kaart, geen foto
+export type RouteExtra = { name: string; x: number; y: number };
+export type RouteDef = { key: string; stops: RouteStop[]; extras?: RouteExtra[] };
 
 const au = (file: string) => `/images/australia/routes/${file}.jpg`;
 const nz = (file: string) => `/images/new-zealand/routes/${file}.jpg`;
@@ -31,6 +34,19 @@ export const australiaRoutes: RouteDef[] = [
       { name: "Atherton Tablelands", img: "/images/hotspots%20aus/altheron.jpg", x: 686, y: 176 },
       { name: "Cairns", img: au("east-7"), x: 698, y: 166 },
       { name: "Cape Tribulation", img: "/images/hotspots%20aus/cape.jpg", x: 693, y: 149 },
+    ],
+    extras: [
+      { name: "Port Macquarie", x: 787, y: 437 },
+      // SpotX = surfkamp bij Arrawarra
+      { name: "SpotX", x: 794, y: 411 },
+      { name: "Nimbin", x: 794, y: 386 },
+      { name: "Moreton Island", x: 801, y: 356 },
+      { name: "Rainbow Beach", x: 799, y: 334 },
+      { name: "1770", x: 785, y: 302 },
+      { name: "Eungella National Park", x: 737, y: 245 },
+      { name: "Cape Hillsborough", x: 745, y: 240 },
+      { name: "Mission Beach", x: 699, y: 186 },
+      { name: "Port Douglas", x: 692, y: 158 },
     ],
   },
   {

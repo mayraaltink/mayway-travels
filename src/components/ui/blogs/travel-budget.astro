@@ -29,15 +29,17 @@ const photos = {
   bondi: imageSrc('/images/australia/laidback.jpg'),
   coffee: imageSrc('/images/australia/coffee.jpg'),
   barefoot: imageSrc('/images/australia/voeten.jpg'),
-  bbq: imageSrc('/images/blogs/barbie.jpg'),
+  bbq: imageSrc('/images/australia/bbq.JPG'),
   runclub: imageSrc('/images/australia/surfing.jpg'),
   nippers: imageSrc('/images/blogs/nippers.jpg'),
   bronte: imageSrc('/images/australia/bronte.jpg'),
+  // foto onder "georganiseerde activiteiten"
+  sydney: imageSrc('/images/australia/run.jpg'),
 };
 
 const content = {
   nl: {
-    eyebrow: 'Blog · Australië',
+    eyebrow: 'Blog',
     pageTitle: 'Het leven in Australië',
     vibeTitle: 'Het leven <strong>in Australië</strong>',
     tocTitle: 'Ga snel naar',
@@ -50,7 +52,7 @@ const content = {
       'Verder weg van Europa dan het leefbare continent Oceanië is bijna onmogelijk. En dan is het ook nog eens zo enorm groot. Australië is ongeveer **184 keer** zo groot als Nederland. Zodra je vanaf het oosten naar het westen vliegt, ben je ongeveer **5 tot 6 uur onderweg**. Om het in perspectief te plaatsen: dat is ongeveer dezelfde afstand als van **Nederland naar Egypte** of de **Verenigde Arabische Emiraten**. Toch wonen er \'maar\' **26 miljoen mensen**.',
       '*\'Waarom is Australië zo gigantisch populair onder toeristen en Working Holiday holders?\'* Het is de ***vibe***. Dat klinkt zo cliché, maar ik zal het je proberen uit te leggen.',
     ],
-    bondiCaption: 'Bondi Beach, Sydney',
+    bondiCaption: 'Palm Beach',
     laidbackTitle: '<strong>Laid-back</strong> mentaliteit',
     cardsTitle: 'Wat is nou écht typisch <strong>Aussie</strong>?!',
     laidback: [
@@ -171,11 +173,11 @@ const content = {
         title: 'Pilates, en dan nog meer pilates',
         text: 'Wil je toch binnen sporten, dan meld je je eenvoudig aan bij een **sportschool**. **Pilates** is hier echt een hype: van power en hot tot reformer pilates. Veel mensen combineren dat met **HIIT-workouts** of **yoga**, naast hun dagelijkse buitenactiviteiten. De lessen worden de hele dag door aangeboden. Zelf ben ik lid van **Fitness First**, waar ze meer dan **50 reformer pilates-lessen** per week geven, van 6:00 tot 19:00 uur. Het zit gewoon **inbegrepen in je standaard abonnement**, hoe relaxed is dat!',
       },
-      captions: { runclub: 'Surfen in Sydney', bronte: 'Bronte Pools, Sydney', nippers: 'Nippers op het strand' },
+      captions: { runclub: 'Tamarama Beach', bronte: 'Bronte Pools', nippers: 'Nippers op het strand' },
     },
   },
   en: {
-    eyebrow: 'Blog · Australia',
+    eyebrow: 'Blog',
     pageTitle: 'Life in Australia',
     vibeTitle: 'Life <strong>in Australia</strong>',
     tocTitle: 'Jump to',
@@ -188,7 +190,7 @@ const content = {
       'Getting further away from Europe than the habitable continent of Oceania is almost impossible. And on top of that it is enormous. Australia is about **184 times** the size of the Netherlands. Fly from east to west and you are travelling for about **5 to 6 hours**. To put that in perspective: that is roughly the same distance as from **the Netherlands to Egypt** or the **United Arab Emirates**. Yet \'only\' **26 million people** live here.',
       '*\'Why is Australia so hugely popular with tourists and Working Holiday makers?\'* It\'s the ***vibe***. That sounds like such a cliché, but let me try to explain.',
     ],
-    bondiCaption: 'Bondi Beach, Sydney',
+    bondiCaption: 'Palm Beach',
     laidbackTitle: '<strong>Laid-back</strong> mentality',
     cardsTitle: 'What is really typically <strong>Aussie</strong>?!',
     laidback: [
@@ -307,7 +309,7 @@ const content = {
         title: 'Pilates, and then even more pilates',
         text: 'Still want to work out indoors? Then you can easily join a **gym**. **Pilates** is a real hype here: from power and hot to reformer pilates. Many people combine it with **HIIT workouts** or **yoga**, alongside their daily outdoor activities. Classes run all day long. I’m a member of **Fitness First** myself, which offers more than **50 reformer pilates classes** a week, from 6:00 to 19:00. It’s simply **included in the standard membership**, how relaxed is that!',
       },
-      captions: { runclub: 'Surfing in Sydney', bronte: 'Bronte Pools, Sydney', nippers: 'Nippers on the beach' },
+      captions: { runclub: 'Tamarama Beach', bronte: 'Bronte Pools', nippers: 'Nippers on the beach' },
     },
   },
 }[lang];
@@ -349,8 +351,11 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       ) : (
         <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82] md:aspect-[21/9]"></div>
       )}
-      <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
-      <figcaption class="absolute bottom-5 left-6 text-sm font-semibold text-white md:bottom-7 md:left-8">{content.bondiCaption}</figcaption>
+      <!-- Locatie rechtsonder, zelfde stijl als op de rest van de site -->
+      <figcaption class="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/35 px-3 py-1.5 text-white/90 backdrop-blur-sm md:bottom-6 md:right-6 md:px-4 md:py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span class="text-[10px] uppercase tracking-wide md:text-sm">{content.bondiCaption}</span>
+      </figcaption>
     </figure>
 
     <!-- Laid-back mentaliteit -->
@@ -446,15 +451,16 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       </div>
 
       <!-- Foto: Run Club -->
-      <figure class="mt-10">
-        <div class="overflow-hidden rounded-[2rem]">
-          {photos.runclub ? (
-            <img src={photos.runclub} alt={content.active.captions.runclub} loading="lazy" class="aspect-[16/9] w-full object-cover" />
-          ) : (
-            <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
-          )}
-        </div>
-        <figcaption class="mt-3 text-sm font-semibold text-gray-900">{content.active.captions.runclub}</figcaption>
+      <figure class="relative mt-10 overflow-hidden rounded-[2rem]">
+        {photos.runclub ? (
+          <img src={photos.runclub} alt={content.active.captions.runclub} loading="lazy" class="aspect-[16/9] w-full object-cover" />
+        ) : (
+          <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
+        )}
+        <figcaption class="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/35 px-3 py-1.5 text-white/90 backdrop-blur-sm md:px-4 md:py-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span class="text-[10px] uppercase tracking-wide md:text-sm">{content.active.captions.runclub}</span>
+        </figcaption>
       </figure>
 
       <!-- Het buitenleven ís het leven -->
@@ -472,16 +478,17 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       </div>
 
       <!-- Foto: Bronte Pools -->
-      <figure class="mt-10">
-        <div class="overflow-hidden rounded-[2rem]">
-          {photos.bronte ? (
-            <!-- iets hoger dan de andere foto's en bovenaan uitgesneden, zodat het zwembad linksboven goed in beeld is -->
-            <img src={photos.bronte} alt={content.active.captions.bronte} loading="lazy" class="aspect-[4/3] w-full object-cover object-left-top" />
-          ) : (
-            <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
-          )}
-        </div>
-        <figcaption class="mt-3 text-sm font-semibold text-gray-900">{content.active.captions.bronte}</figcaption>
+      <figure class="relative mt-10 overflow-hidden rounded-[2rem]">
+        {photos.bronte ? (
+          <!-- iets hoger dan de andere foto's en bovenaan uitgesneden, zodat het zwembad linksboven goed in beeld is -->
+          <img src={photos.bronte} alt={content.active.captions.bronte} loading="lazy" class="aspect-[4/3] w-full object-cover object-left-top" />
+        ) : (
+          <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
+        )}
+        <figcaption class="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/35 px-3 py-1.5 text-white/90 backdrop-blur-sm md:px-4 md:py-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span class="text-[10px] uppercase tracking-wide md:text-sm">{content.active.captions.bronte}</span>
+        </figcaption>
       </figure>
 
       <!-- En de rest van Australië? Rustige lijst: stad dikgedrukt, tekst erachter, dunne lijntjes ertussen -->
@@ -509,6 +516,19 @@ const cardPhotos: Record<string, string | null> = { coffee: photos.coffee, baref
       <p class="mt-5" set:html={rich(content.active.swim.nippers.text)} />
 
       <p class="mt-10" set:html={rich(content.active.swim.after)} />
+
+      <!-- Foto: Sydney (actief buiten) -->
+      <figure class="relative mt-10 overflow-hidden rounded-[2rem]">
+        {photos.sydney ? (
+          <img src={photos.sydney} alt="Sydney" loading="lazy" class="aspect-[16/9] w-full object-cover" />
+        ) : (
+          <div class="aspect-[16/9] w-full bg-gradient-to-br from-[#4ED2CE] to-[#0F7C82]"></div>
+        )}
+        <figcaption class="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/35 px-3 py-1.5 text-white/90 backdrop-blur-sm md:px-4 md:py-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span class="text-[10px] uppercase tracking-wide md:text-sm">Sydney</span>
+        </figcaption>
+      </figure>
 
       <!-- Pilates -->
       <h3 class="mt-14 text-2xl font-semibold tracking-tight text-black md:text-[1.75rem]">{content.active.pilates.title}</h3>

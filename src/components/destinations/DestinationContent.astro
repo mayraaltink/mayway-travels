@@ -12,6 +12,8 @@ export interface Props {
   flightTime: string;
   imageSrc: string;
   imageAlt: string;
+  // Optioneel: extra classes voor de foto, bijv. inzoomen: "[transform:scale(1.3)]"
+  imageClass?: string;
   planUrl: string;
   guideUrl: string;
   // Optioneel: locatie van de foto (label op de foto, alleen mobiel)
@@ -30,6 +32,7 @@ const {
   flightTime,
   imageSrc,
   imageAlt,
+  imageClass = '',
   planUrl,
   guideUrl,
   location,
@@ -49,7 +52,7 @@ function t(key: keyof typeof ui[typeof lang]) {
 <!-- Mobiel: foto bovenaan, loopt door achter de menubalk (op desktop staat de foto naast de tekst) -->
 <div class="bg-[#1CABB0] lg:hidden">
   <div class="relative h-[65svh] min-h-[420px] overflow-hidden">
-    <img src={imageSrc} alt={imageAlt} class="absolute inset-0 h-full w-full object-cover" loading="eager" fetchpriority="high" />
+    <img src={imageSrc} alt={imageAlt} class:list={["absolute inset-0 h-full w-full object-cover", imageClass]} loading="eager" fetchpriority="high" />
     <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/30 to-transparent"></div>
 
     {location && (
@@ -155,10 +158,10 @@ function t(key: keyof typeof ui[typeof lang]) {
           
           <!-- Image Wrapper -->
           <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl border-[6px] border-white z-10 bg-gray-200">
-            <img 
-              src={imageSrc} 
-              alt={imageAlt} 
-              class="w-full h-full object-cover"
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              class:list={["w-full h-full object-cover", imageClass]}
             />
           </div>
         </div>

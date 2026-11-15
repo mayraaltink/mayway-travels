@@ -28,8 +28,8 @@ function imageSrc(src: string) {
 
 // Bestemmingen (foto's hier te vervangen; ontbreekt een foto, dan toont de kaart een turquoise vlak)
 const destinations = [
-  { key: 'au', image: '/images/australia/byronbay.jpg', href: `/${lang}/destinations/australia/`, coords: '25.27° S · 133.77° E' },
-  { key: 'nz', image: '/images/australia/nz.jpg', href: `/${lang}/destinations/new-zealand/`, coords: '40.90° S · 174.88° E' },
+  { key: 'au', image: '/images/australia/mooiste.jpg', href: `/${lang}/destinations/australia/`, coords: '25.27° S · 133.77° E' },
+  { key: 'nz', image: '/images/new-zealand/meer.JPG', href: `/${lang}/destinations/new-zealand/`, coords: '40.90° S · 174.88° E' },
 ].map((d) => ({
   ...d,
   src: imageSrc(d.image),
@@ -190,7 +190,8 @@ const destinations = [
        Links en rechts gelijk met de linker- en rechterfoto van MAY Moments (zelfde zijmarges: 1.5rem / md 2.5rem, max 75rem breed) -->
   <!-- Eigen beige band rond het blok, met boven en onder evenveel ruimte -->
   <section id="reisplan" class="bg-[#FFFDFA] px-6 py-10 md:px-10 md:py-14">
-    <div class="mx-auto max-w-[75rem] overflow-hidden rounded-[2.5rem] bg-[#0F7C82] px-5 py-14 text-white md:rounded-[3.5rem] md:px-12 md:py-20">
+    <!-- Mobiel: zijkanten, ruimte tussen de kaarten en onderkant allemaal 1.5rem; bovenin meer ruimte voor de titel -->
+    <div class="mx-auto max-w-[75rem] overflow-hidden rounded-[2.5rem] bg-[#0F7C82] px-6 pb-6 pt-14 text-white md:rounded-[3.5rem] md:px-12 md:py-20">
 
       <!-- Kop, gecentreerd (ook op desktop) -->
       <div class="mx-auto max-w-4xl text-center">
@@ -201,14 +202,14 @@ const destinations = [
       </div>
 
       <!-- Kaarten -->
-      <div class="mx-auto mt-12 grid max-w-4xl gap-5 md:mt-14 md:grid-cols-2 md:gap-6">
+      <div class="mx-auto mt-12 grid max-w-4xl gap-6 md:mt-14 md:grid-cols-2">
         {destinations.map((d, i) => (
           <a
             href={d.href}
             class:list={['group relative block aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_30px_60px_rgba(0,0,0,0.25)]', { 'md:translate-y-10': i === 1 }]}
           >
             {d.src ? (
-              <img src={d.src} alt={d.name} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <img src={d.src} alt={d.name} loading="lazy" class:list={["absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105", 'zoom' in d ? d.zoom : '']} />
             ) : (
               <div class="absolute inset-0 bg-gradient-to-br from-[#0B5F64] to-[#084649]"></div>
             )}

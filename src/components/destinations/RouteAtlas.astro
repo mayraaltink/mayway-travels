@@ -333,11 +333,21 @@ const clientData = routes.map((r) => ({
             </g>
           ))}
         </svg>
-        <p class="mt-4 text-center text-xs text-gray-400">{t["routes.hint"]}</p>
+
+        <!-- Mobiel: knopje boven de gekozen stop; opent het paneel met foto en tekst (positie via positionPop in het script) -->
+        <button type="button" class="stop-pop md:hidden" data-stop-pop hidden>
+          {lang === "en" ? "Discover more" : "Ontdek meer"}
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </button>
+
+        <p class="mt-4 hidden text-center text-xs text-gray-400 md:block">{t["routes.hint"]}</p>
+        <p class="mt-4 px-6 text-center text-xs text-gray-400 md:hidden">
+          {lang === "en" ? "Tap a stop, then “Discover more” for a photo and info" : "Tik op een stop en daarna op ‘Ontdek meer’ voor een foto en uitleg"}
+        </p>
       </div>
 
-      <!-- Stopkaart: grote foto + stops naast de kaart -->
-      <div>
+      <!-- Stopkaart: grote foto + stops naast de kaart (alleen desktop; op mobiel zit dit in het paneel) -->
+      <div class="hidden md:block">
         <!-- Foto per stop -->
         <div class="stop-card" data-stop-card>
           <div class="photo relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-[#EAF7F7] shadow-[0_24px_50px_rgba(10,59,62,0.18)] lg:aspect-[4/5]">
@@ -384,9 +394,102 @@ const clientData = routes.map((r) => ({
 
     </div>
   </div>
+
+  <!-- Mobiel: paneel van onderen met grote foto, naam en tekst van de stop; bladeren met Vorige/Volgende -->
+  <div class="fixed inset-0 z-[60] md:hidden" data-sheet hidden>
+    <div class="sheet-backdrop absolute inset-0 bg-black/50" data-sheet-close></div>
+    <div class="sheet-panel absolute inset-x-0 bottom-0 max-h-[90svh] overflow-y-auto rounded-t-[2rem] bg-white px-5 pb-8 pt-3 shadow-[0_-20px_50px_rgba(0,0,0,0.25)]" role="dialog" aria-modal="true" aria-labelledby="sheet-stop-name">
+      <div class="mx-auto mb-4 h-1.5 w-12 rounded-full bg-gray-200" aria-hidden="true"></div>
+      <button type="button" class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-gray-100 text-gray-700" data-sheet-close aria-label={lang === "en" ? "Close" : "Sluiten"}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="relative mt-2 aspect-[4/3] overflow-hidden rounded-2xl bg-[#EAF7F7]">
+        <div class="absolute inset-0 grid place-items-center px-6 text-center text-xl font-semibold text-[#12949A]/60" data-sheet-fallback></div>
+        <img class="absolute inset-0 h-full w-full object-cover" alt="" data-sheet-photo />
+      </div>
+
+      <p class="mt-5 text-xs uppercase tracking-[0.2em] text-[#12949A]">
+        {t["routes.stop"]} <span data-sheet-i>01</span> / <span data-sheet-n>01</span>
+      </p>
+      <h3 id="sheet-stop-name" class="mt-1 text-2xl font-semibold leading-tight tracking-tight text-black" data-sheet-name></h3>
+      <p class="mt-3 text-[15px] leading-relaxed text-gray-600" data-sheet-desc></p>
+
+      <div class="mt-6 flex items-center justify-between gap-3">
+        <button type="button" class="sheet-nav" data-sheet-prev>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+          {lang === "en" ? "Previous" : "Vorige"}
+        </button>
+        <button type="button" class="sheet-nav sheet-nav-primary" data-sheet-next>
+          {lang === "en" ? "Next stop" : "Volgende stop"}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
+  /* ---------- mobiel: knopje boven de gekozen stop ---------- */
+  .stop-pop {
+    position: absolute;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transform: translate(-50%, calc(-100% - 14px));
+    border-radius: 9999px;
+    background: #0f7c82;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    color: white;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(10, 59, 62, 0.3);
+  }
+  /* pijltje onder het knopje, naar de stop */
+  .stop-pop::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 10px;
+    height: 10px;
+    background: #0f7c82;
+    transform: translateX(-50%) rotate(45deg);
+    border-radius: 2px;
+  }
+
+  .stop-pop[hidden] { display: none; }
+
+  /* ---------- mobiel: paneel met foto en tekst ---------- */
+  [data-sheet-photo].is-broken { opacity: 0; }
+  .sheet-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 9999px;
+    border: 2px solid #e5e7eb;
+    padding: 0.7rem 1.1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+  }
+  .sheet-nav-primary {
+    border-color: #1cabb0;
+    background: #1cabb0;
+    color: white;
+  }
+  [data-sheet]:not([hidden]) .sheet-panel { animation: sheet-in 0.32s cubic-bezier(.2,.8,.2,1); }
+  [data-sheet]:not([hidden]) .sheet-backdrop { animation: fade-in 0.25s ease-out; }
+  @keyframes sheet-in { from { transform: translateY(100%); } to { transform: none; } }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    [data-sheet]:not([hidden]) .sheet-panel,
+    [data-sheet]:not([hidden]) .sheet-backdrop { animation: none; }
+  }
+
   /* ---------- routekeuze ---------- */
   .route-tab {
     cursor: pointer;
@@ -590,9 +693,11 @@ const clientData = routes.map((r) => ({
     // Mobiel: elke route heeft een eigen uitsnede, dus corrigeer per route zodat rondjes en
     // plaatsnamen bij alle routes even groot ogen (iets kleiner dan de Zuid-West kust eerst was).
     const M_PIN_REF = 0.955;
+    // mobiel: stops (rondjes + plaatsnamen) nog iets groter, zodat ze makkelijk aan te tikken en te lezen zijn
+    const M_PIN_BOOST = 1.12;
     const updatePinScale = () => {
       const small = matchMedia("(max-width: 767px)").matches;
-      const k = small ? Math.min(2, Math.max(1, 690 / (svg.clientWidth || 690))) : 1.4;
+      const k = small ? Math.min(2, Math.max(1, 690 / (svg.clientWidth || 690))) * M_PIN_BOOST : 1.4;
       layers.forEach((layer, li) => {
         const r = routes[li];
         const f = small && r ? r.mvb[2] / r.vb[2] / M_PIN_REF : 1;
@@ -602,10 +707,59 @@ const clientData = routes.map((r) => ({
       });
     };
     updatePinScale();
-    window.addEventListener("resize", updatePinScale);
 
     let routeIdx = -1;
     let stopIdx = 0;
+
+    // ---------- mobiel: knopje boven de gekozen stop + paneel met foto en tekst ----------
+    const pop = root.querySelector<HTMLButtonElement>("[data-stop-pop]")!;
+    const sheet = root.querySelector<HTMLElement>("[data-sheet]")!;
+    const sheetPhoto = root.querySelector<HTMLImageElement>("[data-sheet-photo]")!;
+    const sheetFallback = root.querySelector<HTMLElement>("[data-sheet-fallback]")!;
+    const sheetName = root.querySelector<HTMLElement>("[data-sheet-name]")!;
+    const sheetDesc = root.querySelector<HTMLElement>("[data-sheet-desc]")!;
+    const sheetI = root.querySelector<HTMLElement>("[data-sheet-i]")!;
+    const sheetN = root.querySelector<HTMLElement>("[data-sheet-n]")!;
+    const mapBox = pop.parentElement!;
+
+    // knopje precies boven het rondje van de gekozen stop zetten (volgt mee met zoomen/vliegen)
+    const positionPop = () => {
+      if (!matchMedia("(max-width: 767px)").matches || routeIdx < 0) {
+        pop.hidden = true;
+        return;
+      }
+      const dot = layers[routeIdx]?.querySelectorAll<SVGGElement>(".pin")[stopIdx]?.querySelector(".pin-dot");
+      if (!dot) return;
+      const d = dot.getBoundingClientRect();
+      const box = mapBox.getBoundingClientRect();
+      const x = d.left + d.width / 2 - box.left;
+      const y = d.top - box.top;
+      // buiten de kaart (bijv. ver ingezoomd): knopje verbergen
+      pop.hidden = x < 0 || x > box.width || y < 0 || y > svg.getBoundingClientRect().height;
+      pop.style.left = `${x}px`;
+      pop.style.top = `${y}px`;
+    };
+
+    const openSheet = () => {
+      sheet.hidden = false;
+      document.body.style.overflow = "hidden";
+    };
+    const closeSheet = () => {
+      sheet.hidden = true;
+      document.body.style.overflow = "";
+    };
+    pop.addEventListener("click", openSheet);
+    sheet.querySelectorAll("[data-sheet-close]").forEach((el) => el.addEventListener("click", closeSheet));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !sheet.hidden) closeSheet();
+    });
+    sheetPhoto.addEventListener("error", () => sheetPhoto.classList.add("is-broken"));
+    sheetPhoto.addEventListener("load", () => sheetPhoto.classList.remove("is-broken"));
+
+    window.addEventListener("resize", () => {
+      updatePinScale();
+      positionPop();
+    });
 
     // ---------- kaart "vliegt" naar een route ----------
     // Op mobiel een staande kaart met eigen (verder ingezoomde) uitsneden
@@ -619,6 +773,7 @@ const clientData = routes.map((r) => ({
     const setView = (v: number[]) => {
       view = v;
       svg.setAttribute("viewBox", v.map((n) => n.toFixed(2)).join(" "));
+      positionPop();
     };
 
     // flight: tussen twee routes even uitzoomen; uit voor de zoomknoppen
@@ -739,6 +894,18 @@ const clientData = routes.map((r) => ({
       photo.classList.remove("is-broken");
       photo.src = stop.img;
 
+      // mobiel paneel bijwerken
+      sheetI.textContent = counterI.textContent;
+      sheetN.textContent = counterN.textContent;
+      sheetName.textContent = stop.name;
+      sheetDesc.textContent = stop.desc;
+      sheetDesc.hidden = !stop.desc;
+      sheetFallback.textContent = stop.name;
+      sheetPhoto.alt = stop.name;
+      sheetPhoto.classList.remove("is-broken");
+      sheetPhoto.src = stop.img;
+      positionPop();
+
       if (animate && !reduceMotion) {
         card.animate(
           [
@@ -791,7 +958,12 @@ const clientData = routes.map((r) => ({
 
     layers.forEach((layer) => {
       layer.querySelectorAll<SVGGElement>(".pin").forEach((pin) => {
-        const go = () => setStop(Number(pin.dataset.stop));
+        // mobiel: nog een keer tikken op de al gekozen stop opent het paneel met foto en tekst
+        const go = () => {
+          const i = Number(pin.dataset.stop);
+          if (i === stopIdx && matchMedia("(max-width: 767px)").matches) return openSheet();
+          setStop(i);
+        };
         pin.addEventListener("click", go);
         pin.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -807,6 +979,9 @@ const clientData = routes.map((r) => ({
         chip.addEventListener("click", () => setStop(Number(chip.dataset.chip)));
       });
     });
+
+    root.querySelector("[data-sheet-prev]")?.addEventListener("click", () => setStop(stopIdx - 1));
+    root.querySelector("[data-sheet-next]")?.addEventListener("click", () => setStop(stopIdx + 1));
 
     root.querySelector("[data-prev]")?.addEventListener("click", (e) => {
       e.stopPropagation();

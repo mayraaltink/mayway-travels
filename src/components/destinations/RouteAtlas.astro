@@ -334,8 +334,13 @@ const clientData = routes.map((r) => ({
           ))}
         </svg>
 
-        <!-- Mobiel: balk onder de kaart met de gekozen stop, bladeren met pijltjes en "Ontdek meer" (opent het paneel).
-             Staat onder de kaart, zodat er niets over de stops heen valt. -->
+        <!-- Mobiel: klein knopje "Ontdek meer" direct onder de naam van de gekozen stop (positie via positionMore in het script) -->
+        <button type="button" class="stop-more md:hidden" data-stop-more hidden>
+          {lang === "en" ? "Discover more" : "Ontdek meer"}
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+
+        <!-- Mobiel: balk onder de kaart met de gekozen stop en pijltjes om door de stops te bladeren -->
         <div class="mx-6 mt-4 flex items-center gap-2 rounded-2xl bg-[#F1F7F7] p-2.5 md:hidden" data-stop-bar>
           <button type="button" class="bar-arrow" data-bar-prev aria-label={t["routes.prev"]}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
@@ -346,9 +351,6 @@ const clientData = routes.map((r) => ({
             </p>
             <p class="truncate text-[15px] font-semibold leading-tight text-black" data-bar-name></p>
           </div>
-          <button type="button" class="shrink-0 rounded-full bg-[#1CABB0] px-3.5 py-2 text-xs font-semibold text-white" data-bar-open>
-            {lang === "en" ? "Discover more" : "Ontdek meer"}
-          </button>
           <button type="button" class="bar-arrow" data-bar-next aria-label={t["routes.next"]}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
           </button>
@@ -356,7 +358,7 @@ const clientData = routes.map((r) => ({
 
         <p class="mt-4 hidden text-center text-xs text-gray-400 md:block">{t["routes.hint"]}</p>
         <p class="mt-3 px-6 text-center text-xs text-gray-400 md:hidden">
-          {lang === "en" ? "Tap a stop on the map or use the arrows, then “Discover more” for a photo and info" : "Tik op een stop of gebruik de pijltjes, en tik op ‘Ontdek meer’ voor een foto en uitleg"}
+          {lang === "en" ? "Tap a stop on the map or use the arrows, then “Discover more” under the name for a photo and info" : "Tik op een stop of gebruik de pijltjes, en tik op ‘Ontdek meer’ onder de naam voor een foto en uitleg"}
         </p>
       </div>
 
@@ -446,6 +448,25 @@ const clientData = routes.map((r) => ({
 </section>
 
 <style>
+  /* ---------- mobiel: "Ontdek meer" onder de naam van de gekozen stop ---------- */
+  .stop-more {
+    position: absolute;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    border-radius: 9999px;
+    background: #0f7c82;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1;
+    color: white;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(10, 59, 62, 0.25);
+  }
+  .stop-more[hidden] { display: none; }
+
   /* ---------- mobiel: pijltjes in de balk onder de kaart ---------- */
   .bar-arrow {
     display: grid;
@@ -718,6 +739,31 @@ const clientData = routes.map((r) => ({
     const sheetDesc = root.querySelector<HTMLElement>("[data-sheet-desc]")!;
     const sheetI = root.querySelector<HTMLElement>("[data-sheet-i]")!;
     const sheetN = root.querySelector<HTMLElement>("[data-sheet-n]")!;
+    const more = root.querySelector<HTMLButtonElement>("[data-stop-more]")!;
+    const mapBox = more.parentElement!;
+
+    // "Ontdek meer" direct onder de naam van de gekozen stop zetten (volgt mee met zoomen/vliegen).
+    // Plaatsnaam staat links of rechts van het rondje; het knopje lijnt uit met de kant van de tekst.
+    const positionMore = () => {
+      if (!matchMedia("(max-width: 767px)").matches || routeIdx < 0) {
+        more.hidden = true;
+        return;
+      }
+      const label = layers[routeIdx]?.querySelectorAll<SVGGElement>(".pin")[stopIdx]?.querySelector<SVGTextElement>(".pin-label");
+      if (!label) return;
+      const r = label.getBoundingClientRect();
+      const box = mapBox.getBoundingClientRect();
+      const mapH = svg.getBoundingClientRect().height;
+      const alignRight = label.getAttribute("text-anchor") === "end";
+      const x = (alignRight ? r.right : r.left) - box.left;
+      const y = r.bottom - box.top + 3;
+      more.style.left = `${x}px`;
+      more.style.top = `${y}px`;
+      more.style.transform = alignRight ? "translateX(-100%)" : "none";
+      // buiten de kaart (bijv. ver ingezoomd): verbergen
+      more.hidden = r.width === 0 || x < 0 || x > box.width || y < 0 || y > mapH;
+    };
+    more.addEventListener("click", () => openSheet());
 
     const openSheet = () => {
       sheet.hidden = false;
@@ -727,7 +773,6 @@ const clientData = routes.map((r) => ({
       sheet.hidden = true;
       document.body.style.overflow = "";
     };
-    root.querySelector("[data-bar-open]")?.addEventListener("click", openSheet);
     sheet.querySelectorAll("[data-sheet-close]").forEach((el) => el.addEventListener("click", closeSheet));
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && !sheet.hidden) closeSheet();
@@ -735,7 +780,10 @@ const clientData = routes.map((r) => ({
     sheetPhoto.addEventListener("error", () => sheetPhoto.classList.add("is-broken"));
     sheetPhoto.addEventListener("load", () => sheetPhoto.classList.remove("is-broken"));
 
-    window.addEventListener("resize", updatePinScale);
+    window.addEventListener("resize", () => {
+      updatePinScale();
+      positionMore();
+    });
 
     // ---------- kaart "vliegt" naar een route ----------
     // Op mobiel een staande kaart met eigen (verder ingezoomde) uitsneden
@@ -749,6 +797,7 @@ const clientData = routes.map((r) => ({
     const setView = (v: number[]) => {
       view = v;
       svg.setAttribute("viewBox", v.map((n) => n.toFixed(2)).join(" "));
+      positionMore();
     };
 
     // flight: tussen twee routes even uitzoomen; uit voor de zoomknoppen
@@ -886,6 +935,9 @@ const clientData = routes.map((r) => ({
       barI.textContent = counterI.textContent;
       barN.textContent = counterN.textContent;
       barName.textContent = stop.name;
+      positionMore();
+      // na het in-animeren van de pins nog een keer, zodat het knopje precies onder de naam staat
+      window.setTimeout(positionMore, 700);
 
       if (animate && !reduceMotion) {
         card.animate(

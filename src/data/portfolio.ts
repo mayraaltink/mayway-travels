@@ -37,8 +37,10 @@ export const featured: FeaturedProject[] = [
 ];
 
 export const more: MoreProject[] = [
-  { type: 'video', href: 'https://www.instagram.com/reel/Cyd4KKUP79o/', cover: 'more-1.jpg' },
-  { type: 'video', href: 'https://www.tiktok.com/@mayraxaltink/video/7650003757438078241', cover: 'more-2.jpg' },
+  // Instagram: The Gibbon Experience
+  { type: 'video', href: 'https://www.instagram.com/reel/Cyd4KKUP79o/', cover: 'gibbon-cover.jpg' },
+  // TikTok: skydiven
+  { type: 'video', href: 'https://www.tiktok.com/@mayraxaltink/video/7650003757438078241', cover: 'skydive-cover.jpg' },
 ];
 
 export type PhotoProject = {

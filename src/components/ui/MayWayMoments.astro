@@ -15,7 +15,7 @@ function t(key: string) {
 }
 
 const moments = allMoments.map((m) => ({
-  src: fs.existsSync(path.join(process.cwd(), 'public', m.image)) ? m.image : null,
+  src: m.image && fs.existsSync(path.join(process.cwd(), 'public', m.image)) ? m.image : null,
   title: m.title[lang],
   location: m.location,
   story: m.story[lang],

@@ -34,7 +34,7 @@ export const australiaRoutes: RouteDef[] = [
       { name: "The Whitsundays", img: "/images/hotspots%20aus/whitsundays.jpg", x: 743, y: 229 },
       { name: "Magnetic Island", img: "/images/hotspots%20aus/maggie.jpg", x: 717, y: 208 },
       { name: "Atherton Tablelands", img: "/images/hotspots%20aus/altheron.jpg", x: 686, y: 176 },
-      { name: "Cairns", img: au("east-7"), x: 698, y: 166 },
+      { name: "Cairns", img: "/images/hotspots%20aus/greatbarrier.jpg", x: 698, y: 166 },
       { name: "Cape Tribulation", img: "/images/hotspots%20aus/cape.jpg", x: 693, y: 149 },
     ],
     extras: [

@@ -15,9 +15,11 @@ function t(key: string) {
 
 // id="service-1" t/m 3: de fotokaarten op de homepagina linken hiernaartoe
 // photos (optioneel): twee kleine foto's rechts naast de introtekst
+// Volgorde zoals op de homepagina: Social media beheer (2), Content creatie (1), Creator partnerships (3);
+// het nummer in het rondje volgt de volgorde op de pagina
 const services = [
-  { num: 1, photos: [] as string[] },
   { num: 2, photos: [] as string[] },
+  { num: 1, photos: [] as string[] },
   { num: 3, photos: [] as string[] },
 ].map((s) => ({
   ...s,
@@ -109,7 +111,7 @@ const socials = [
         <!-- Services onder elkaar in één kolom (links uitgelijnd), met een dunne lijn ertussen -->
         <!-- Dunne lijn ook boven de eerste service, zodat de kop een eigen blok is -->
         <div class="mx-auto mt-8 max-w-2xl divide-y divide-black/10 border-t border-black/10 md:mt-10">
-          {services.map((service) => (
+          {services.map((service, si) => (
               <article
                 id={`service-${service.num}`}
                 class="scroll-mt-28 py-12 text-left last:pb-0 md:py-16"
@@ -119,9 +121,9 @@ const socials = [
                 <div class="flex items-center gap-4">
                   <span class:list={[
                     'flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1CABB0] text-sm font-semibold text-white shadow-lg md:h-12 md:w-12 md:text-base',
-                    service.num % 2 === 0 ? 'rotate-6' : '-rotate-6'
+                    si % 2 === 1 ? 'rotate-6' : '-rotate-6'
                   ]}>
-                    0{service.num}
+                    0{si + 1}
                   </span>
                   <h3 class="text-left text-2xl font-semibold leading-tight tracking-tight text-black md:text-[1.75rem]">{service.title}</h3>
                 </div>

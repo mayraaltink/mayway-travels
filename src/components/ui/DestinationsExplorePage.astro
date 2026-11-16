@@ -44,8 +44,10 @@ const destinations = [
       href={`/${lang}/destinations/${dest.id}`}
       class="relative flex aspect-[3/4] w-full flex-col items-center justify-end overflow-hidden rounded-[2rem] bg-[#1CABB0] px-6 pb-12 text-center shadow-lg"
     >
-      <!-- Tijdelijk turquoise; later komt hier een foto -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      <!-- zelfde foto als op desktop (turquoise blijft zichtbaar als de foto niet laadt) -->
+      <img src={dest.img} alt={dest.name} class:list={["absolute inset-0 h-full w-full object-cover", 'zoom' in dest ? dest.zoom : '']} />
+      <!-- donkere verloop onderaan zodat de witte titel en knop goed leesbaar blijven -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
       <h2 class="relative text-3xl font-semibold leading-[1.0] tracking-tight text-white drop-shadow-md">{dest.name}</h2>
       <span class="relative mt-6 inline-flex min-w-[13rem] items-center justify-center rounded-full border-2 border-white px-8 py-3 text-sm font-semibold text-white">
         {t('destinations.btn')}

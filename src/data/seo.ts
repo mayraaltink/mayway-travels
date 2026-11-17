@@ -91,6 +91,18 @@ export const pageSeo: Record<string, Record<Lang, Seo>> = {
         'Looking for a content creator or creative partner for your socials? Get in touch for on-location videos, creative concepts and social media management.',
     },
   },
+  '/privacy': {
+    nl: {
+      title: 'Privacy-instellingen & cookies | MAY WAYS',
+      description:
+        'Welke cookies en gegevens MAY WAYS gebruikt, hoe je cookies uitzet in je browser en hoe je je gegevens kunt inzien, aanpassen of laten verwijderen.',
+    },
+    en: {
+      title: 'Privacy settings & cookies | MAY WAYS',
+      description:
+        'Which cookies and data MAY WAYS uses, how to turn off cookies in your browser and how to view, change or delete your personal data.',
+    },
+  },
   '/destinations': {
     nl: {
       title: 'Bestemmingen: Australië & Nieuw-Zeeland | MAY WAYS',

@@ -40,6 +40,8 @@ export const ui = {
 'hero.title1': 'The power of real experiences',
 'hero.title2': 'IN YOUR WAY',
 'hero.subtitle': 'The mobile-first social media agency for brands with a story and an experience.',
+'hero.mobileFirst.term': 'mobile-first',
+'hero.mobileFirst.definition': 'Mobile-first means content is made for the phone from the very start: vertical, short and grabbing attention in the first second, exactly the way your audience scrolls.',
 'hero.cta.primary': 'Discover more',
 'hero.cta.secondary': 'View destinations',
 'hero.location': 'Margaret River · Australia',
@@ -903,6 +905,7 @@ fiji_intro_cta: "Start planning your trip",
     'footer.followTitle': 'Want to join the adventure?',
     'footer.followText': 'Follow my experiences on social media and discover daily inspiration, tips and hidden places.',
     'footer.copyright': 'All rights reserved',
+    'footer.privacy': 'Privacy settings',
 
 
 
@@ -1158,6 +1161,8 @@ fiji_intro_cta: "Start planning your trip",
     'hero.title1': 'De kracht van échte ervaringen',
 'hero.title2': 'IN YOUR WAY',
 'hero.subtitle': 'Hét mobile-first social media bureau voor merken met een verhaal én een beleving.',
+'hero.mobileFirst.term': 'mobile-first',
+'hero.mobileFirst.definition': 'Mobile-first betekent dat content vanaf het begin voor de telefoon gemaakt wordt: verticaal, kort en binnen de eerste seconde pakkend, precies zoals jouw doelgroep scrollt.',
 'hero.cta.primary': 'Ontdek meer',
 'hero.cta.secondary': 'Bekijk bestemmingen',
 'hero.location': 'Margaret River · Australië',
@@ -1961,6 +1966,7 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'footer.followText': 'Volg mijn ervaringen via social media en ontdek dagelijkse inspiratie, tips en verborgen plekken.',
 
 'footer.copyright': 'Alle rechten voorbehouden',
+'footer.privacy': 'Privacy-instellingen',
 
 // DUTCH
 'home.about.title': "Hi, ik ben Mayra!",

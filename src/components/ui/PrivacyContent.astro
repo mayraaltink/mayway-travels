@@ -1,0 +1,188 @@
+---
+// src/components/ui/PrivacyContent.astro
+// Privacy & cookies: welke gegevens de site gebruikt en hoe je ze kunt inzien of laten verwijderen.
+// Link staat in de footer, naast © MAY WAYS. Tekst per taal hieronder; [tekst](url) wordt een link.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { defaultLang } from '../../i18n/ui';
+
+const lang = (Astro.currentLocale || defaultLang) as 'nl' | 'en';
+
+const content = {
+  nl: {
+    title: 'Privacy-instellingen | MAY WAYS',
+    eyebrow: 'Privacy',
+    heading: 'Privacy & <b>cookies</b>',
+    sections: [
+      {
+        title: 'Cookies',
+        paragraphs: [
+          'MAY WAYS gebruikt functionele en analytische cookies. Een cookie is een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen in de browser van je computer, tablet of smartphone. Functionele cookies hebben een puur technische functionaliteit: ze zorgen ervoor dat de website naar behoren werkt en dat bijvoorbeeld wat je afvinkt in een checklist onthouden wordt. Analytische cookies gebruiken we om te zien hoe de website gebruikt wordt, zodat we hem kunnen verbeteren. MAY WAYS plaatst geen cookies voor advertenties.',
+        ],
+      },
+      {
+        title: 'Cookies uitzetten in je browser',
+        paragraphs: [
+          'De meeste browsers (software die je gebruikt om websites te bezoeken) maken automatisch gebruik van cookies. Wil je dit niet? Dan kun je je browser zo instellen dat je gewaarschuwd wordt voordat een cookie wordt geplaatst, of zodat cookies geweigerd worden. Meer informatie over hoe je je browser instelt, vind je via de ‘Help’-knop van je browser of via de volgende links:',
+        ],
+        links: [
+          { text: 'Google Chrome', href: 'https://support.google.com/chrome/answer/95647?hl=nl' },
+          { text: 'Microsoft Edge', href: 'https://support.microsoft.com/nl-nl/microsoft-edge/cookies-verwijderen-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09' },
+          { text: 'Mozilla Firefox', href: 'https://support.mozilla.org/nl/kb/cookies-verwijderen-gegevens-wissen-websites-opgeslagen' },
+          { text: 'Safari', href: 'https://support.apple.com/nl-nl/guide/safari/sfri11471/mac' },
+        ],
+        after: [
+          'Als je verschillende apparaten gebruikt om deze website te bezoeken, zorg er dan voor dat je cookievoorkeur op de browser van elk apparaat is ingesteld.',
+          'Meer informatie over het beheren van cookies vind je op [allaboutcookies.org](https://www.allaboutcookies.org/manage-cookies/).',
+        ],
+      },
+      {
+        title: 'In kaart brengen websitebezoek',
+        paragraphs: [
+          'Bij het bezoeken van de website van MAY WAYS worden algemene bezoekgegevens verwerkt door onze hostingpartij, waaronder het IP-adres van je apparaat, het tijdstip van opvraging en gegevens die je browser meestuurt. Deze gegevens worden gebruikt om de website veilig en goed te laten werken. Ze worden zo veel mogelijk geanonimiseerd en niet aan andere partijen verstrekt.',
+        ],
+      },
+      {
+        title: 'Google Analytics',
+        paragraphs: [
+          'MAY WAYS maakt gebruik van Google Analytics. Deze cookies worden geplaatst door Google, waardoor wij het surfgedrag op onze website kunnen analyseren en daarmee onze website en dienstverlening kunnen verbeteren. We gebruiken deze gegevens alleen voor statistieken over het websitebezoek en niet om advertenties te tonen.',
+          'Wil je niet dat Google Analytics wordt gebruikt tijdens je bezoek? Dan kun je de [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout?hl=nl) installeren, waarmee je Google Analytics uitschakelt voor alle websites die het gebruiken.',
+        ],
+      },
+      {
+        title: 'Externe diensten',
+        paragraphs: [
+          'Voor de lettertypes op deze website gebruiken we Google Fonts. Daarbij maakt je browser verbinding met Google, waardoor Google je IP-adres ontvangt. Video’s van YouTube zijn ingesloten via de privacyvriendelijke modus: YouTube plaatst pas cookies als je een video afspeelt.',
+          'Vul je het contactformulier of het pakketformulier in? Dan wordt je bericht met je naam, e-mailadres en bedrijfsnaam per e-mail naar ons verstuurd via Web3Forms en bewaard in een beveiligd Google-overzicht, zodat we je aanvraag kunnen opvolgen. We gebruiken deze gegevens alleen om contact met je op te nemen.',
+        ],
+      },
+      {
+        title: 'Gegevens inzien, aanpassen of verwijderen',
+        paragraphs: [
+          'Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te verwijderen. Je kunt een verzoek tot inzage, correctie of verwijdering sturen naar [info@may-ways.com](mailto:info@may-ways.com). MAY WAYS reageert zo snel mogelijk, maar uiterlijk binnen vier weken, op je verzoek.',
+          'Je hebt het recht om bij de [Autoriteit Persoonsgegevens](https://www.autoriteitpersoonsgegevens.nl/) een klacht in te dienen over je persoonsgegevens. De Autoriteit Persoonsgegevens is verplicht deze klacht te behandelen.',
+        ],
+      },
+      {
+        title: 'Beveiligen',
+        paragraphs: [
+          'MAY WAYS neemt de bescherming van je gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. De website van MAY WAYS maakt gebruik van een betrouwbaar SSL-certificaat om te borgen dat je persoonsgegevens niet in verkeerde handen vallen.',
+          'Heb je de indruk dat je gegevens niet goed beveiligd zijn, zijn er aanwijzingen van misbruik of wil je meer informatie over de beveiliging van door MAY WAYS verzamelde persoonsgegevens? Neem dan contact op via [info@may-ways.com](mailto:info@may-ways.com).',
+        ],
+      },
+    ],
+  },
+  en: {
+    title: 'Privacy settings | MAY WAYS',
+    eyebrow: 'Privacy',
+    heading: 'Privacy & <b>cookies</b>',
+    sections: [
+      {
+        title: 'Cookies',
+        paragraphs: [
+          'MAY WAYS uses functional and analytical cookies. A cookie is a small text file that is stored in the browser of your computer, tablet or smartphone the first time you visit this website. Functional cookies have a purely technical purpose: they make sure the website works properly and, for example, remember what you tick off in a checklist. We use analytical cookies to see how the website is used, so we can improve it. MAY WAYS does not place advertising cookies.',
+        ],
+      },
+      {
+        title: 'Turning off cookies in your browser',
+        paragraphs: [
+          'Most browsers (the software you use to visit websites) use cookies automatically. Don’t want this? You can set your browser to warn you before a cookie is placed, or to refuse cookies. You can find more information on how to set up your browser via your browser’s ‘Help’ button or via the following links:',
+        ],
+        links: [
+          { text: 'Google Chrome', href: 'https://support.google.com/chrome/answer/95647?hl=en' },
+          { text: 'Microsoft Edge', href: 'https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09' },
+          { text: 'Mozilla Firefox', href: 'https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox' },
+          { text: 'Safari', href: 'https://support.apple.com/en-gb/guide/safari/sfri11471/mac' },
+        ],
+        after: [
+          'If you use different devices to visit this website, make sure your cookie preference is set in the browser of each device.',
+          'You can find more information about managing cookies at [allaboutcookies.org](https://www.allaboutcookies.org/manage-cookies/).',
+        ],
+      },
+      {
+        title: 'Website visits',
+        paragraphs: [
+          'When you visit the MAY WAYS website, our hosting provider processes general visit data, including the IP address of your device, the time of the request and data your browser sends along. This data is used to keep the website secure and working properly. It is anonymised as much as possible and not shared with other parties.',
+        ],
+      },
+      {
+        title: 'Google Analytics',
+        paragraphs: [
+          'MAY WAYS uses Google Analytics. These cookies are placed by Google and allow us to analyse how people use our website, so we can improve our website and services. We only use this data for statistics about website visits, not to show advertisements.',
+          'Don’t want Google Analytics to be used during your visit? You can install the [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout), which turns off Google Analytics for all websites that use it.',
+        ],
+      },
+      {
+        title: 'External services',
+        paragraphs: [
+          'For the fonts on this website we use Google Fonts. Your browser connects to Google for this, so Google receives your IP address. YouTube videos are embedded in privacy-enhanced mode: YouTube only places cookies once you play a video.',
+          'If you fill in the contact form or the package form, your message, name, email address and company name are emailed to us via Web3Forms and stored in a secure Google overview so we can follow up on your request. We only use this data to get in touch with you.',
+        ],
+      },
+      {
+        title: 'Viewing, changing or deleting your data',
+        paragraphs: [
+          'You have the right to view, correct or delete your personal data. You can send a request for access, correction or deletion to [info@may-ways.com](mailto:info@may-ways.com). MAY WAYS will respond to your request as soon as possible, and within four weeks at the latest.',
+          'You have the right to file a complaint about your personal data with the Dutch Data Protection Authority, the [Autoriteit Persoonsgegevens](https://www.autoriteitpersoonsgegevens.nl/en). The authority is obliged to handle this complaint.',
+        ],
+      },
+      {
+        title: 'Security',
+        paragraphs: [
+          'MAY WAYS takes the protection of your data seriously and takes appropriate measures to prevent misuse, loss, unauthorised access, unwanted disclosure and unauthorised changes. The MAY WAYS website uses a trusted SSL certificate to make sure your personal data does not fall into the wrong hands.',
+          'If you feel your data is not properly secured, see signs of misuse or would like more information about how MAY WAYS secures the personal data it collects, please get in touch via [info@may-ways.com](mailto:info@may-ways.com).',
+        ],
+      },
+    ],
+  },
+}[lang];
+
+// [tekst](url) → link; de rest van de tekst wordt veilig ge-escaped
+const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const linkClass = 'font-semibold text-[#1CABB0] underline underline-offset-2 hover:text-[#15939a]';
+function withLinks(text: string) {
+  return escape(text).replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+    const external = href.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : '';
+    return `<a href="${href}" class="${linkClass}"${external}>${label}</a>`;
+  });
+}
+---
+<BaseLayout title={content.title}>
+  <div class="relative z-0 flex-grow bg-[#F4FBFB] px-6 pb-20 pt-28 md:pb-28 md:pt-36">
+    <div class="mx-auto max-w-3xl">
+      <p class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]">{content.eyebrow}</p>
+      <h1 class="mt-3 text-4xl font-normal leading-[1.0] tracking-tight text-black md:text-5xl [&_b]:font-semibold">
+        <Fragment set:html={content.heading} />
+      </h1>
+
+      <div class="mt-10 space-y-10">
+        {content.sections.map((section) => (
+          <section>
+            <h2 class="text-xl font-semibold text-gray-900 md:text-2xl">{section.title}</h2>
+            {section.paragraphs.map((p) => (
+              <p class="mt-4 text-[15px] leading-relaxed text-gray-600 md:text-base" set:html={withLinks(p)} />
+            ))}
+            {section.links && (
+              <ul class="mt-4 flex flex-wrap gap-2.5">
+                {section.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#1CABB0] shadow-sm ring-1 ring-black/5 transition hover:bg-[#1CABB0] hover:text-white"
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {section.after?.map((p) => (
+              <p class="mt-4 text-[15px] leading-relaxed text-gray-600 md:text-base" set:html={withLinks(p)} />
+            ))}
+          </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

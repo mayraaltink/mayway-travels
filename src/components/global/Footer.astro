@@ -75,7 +75,10 @@ const year = new Date().getFullYear();
 
     <!-- ONDERBALK -->
     <div class="mt-10 flex flex-col items-center gap-2 md:mt-20 border-t border-black/5 pt-5 text-xs text-gray-500 md:flex-row md:justify-between">
-      <p>© {year} MAY WAYS · {t('footer.copyright')}</p>
+      <p>
+        © {year} MAY WAYS · {t('footer.copyright')} ·
+        <a href={`/${lang}/privacy`} class="transition hover:text-[#1CABB0]">{t('footer.privacy')}</a>
+      </p>
       <a href="mailto:info@may-ways.com" class="transition hover:text-[#1CABB0]">info@may-ways.com</a>
     </div>
   </div>

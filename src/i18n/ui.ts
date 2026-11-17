@@ -18,8 +18,8 @@ export const ui = {
 
     'button.book': 'Book Now',
 
-    'oceania.title.before': 'Discover the diversity',
-'oceania.title.bold': 'of Australia',
+    'oceania.title.before': 'Discover the adventure',
+'oceania.title.bold': 'in Australia',
 'oceania.description': 'From road trips along the East Coast to the rugged beauty of the Outback, the vibrant city life of Sydney and Melbourne, hiking through the nature of the Daintree Rainforest and diving at the Great Barrier Reef.',
 'oceania.card.title': 'Australia',
 'oceania.card.button': 'Go to destination',
@@ -39,7 +39,7 @@ export const ui = {
 
 'hero.title1': 'The power of real experiences',
 'hero.title2': 'IN YOUR WAY',
-'hero.subtitle': 'Personal travel advice & hidden gems',
+'hero.subtitle': 'The mobile-first social media agency for brands with a story and an experience.',
 'hero.cta.primary': 'Discover more',
 'hero.cta.secondary': 'View destinations',
 'hero.location': 'Margaret River · Australia',
@@ -75,7 +75,7 @@ export const ui = {
 
 'about.intro.p1': 'I believe the best stories come from staying curious and daring to think out of the box. That mindset has not only taken me to extraordinary places, it is also the foundation of how I approach the creative process of making content.',
 
-'about.intro.p2': 'After 2.5 years in Australia, everything comes together in MAY WAYS: my love for adventure, creating and marketing. I want to inspire you to take the leap. On top of that, I help brands tell their story by turning real experiences into authentic content that inspires, connects and sticks.',
+'about.intro.p2': 'After 2.5 years in Australia, everything comes together in MAY WAYS: my love for adventure, coming up with creative concepts and capturing them. From the first idea to the final edit, I think along with you and turn real experiences into authentic content that inspires, connects and sticks.',
 
 'about.intro.p3': '',
 
@@ -1157,14 +1157,14 @@ fiji_intro_cta: "Start planning your trip",
 
     'hero.title1': 'De kracht van échte ervaringen',
 'hero.title2': 'IN YOUR WAY',
-'hero.subtitle': 'Beleven. Creëren. Inspireren.',
+'hero.subtitle': 'Hét mobile-first social media bureau voor merken met een verhaal én een beleving.',
 'hero.cta.primary': 'Ontdek meer',
 'hero.cta.secondary': 'Bekijk bestemmingen',
 'hero.location': 'Margaret River · Australië',
 
 
-    'oceania.title.before': 'Ontdek de diversiteit',
-'oceania.title.bold': 'van Australië',
+    'oceania.title.before': 'Ontdek het avontuur',
+'oceania.title.bold': 'in Australië',
 'oceania.description': 'Van roadtrips langs de oostkust tot de ruige natuur van de Outback, het bruisende stadsleven in Sydney en Melbourne, hiken door de natuur van Daintree en duiken bij het Great Barrier Reef.',
 'oceania.card.title': 'Australië',
 'oceania.card.button': 'Naar bestemming',
@@ -1202,9 +1202,9 @@ fiji_intro_cta: "Start planning your trip",
 
 'about.title': 'Hi, Ik ben Mayra!',
 
-'about.intro.p1': 'Ik geloof dat de mooiste verhalen ontstaan door nieuwsgierig te blijven en out-of-the-box te durven gaan. Die instelling heeft me niet alleen op bijzondere plekken gebracht, maar vormt ook de basis van hoe ik naar het creatieve proces van content maken kijk.',
+'about.intro.p1': 'Ik geloof dat de mooiste verhalen ontstaan door nieuwsgierig te zijn en out-of-the-box te durven gaan. Die instelling heeft me niet alleen op bijzondere plekken gebracht, maar vormt ook de basis van hoe ik naar het creatieve proces van content maken kijk.',
 
-'about.intro.p2': 'Na 2,5 jaar Australië komt alles samen in MAY WAYS: mijn liefde voor avontuur, creëren, marketing. Ik wil jou inspireren om de sprong te wagen. Daarnaast help ik merken hun verhaal te vertellen, door échte ervaringen te vertalen naar authentieke content die inspireert, verbindt en bijblijft.',
+'about.intro.p2': 'Na 2,5 jaar Australië komt alles samen in MAY WAYS: mijn liefde voor avontuur, creatieve concepten bedenken en die vastleggen. Van het eerste idee tot de laatste edit denk ik met je mee en vertaal ik échte ervaringen naar authentieke content die inspireert, verbindt en bijblijft.',
 
 'about.intro.p3': '',
 

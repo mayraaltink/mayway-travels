@@ -33,16 +33,20 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
   <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-24 pt-44 text-center md:px-12 md:pt-32 md:text-left">
     <div class="hero-content mx-auto max-w-2xl md:mx-0">
       <!-- handgeschreven accent boven de titel (lijntje alleen bij links uitlijnen) -->
-      <p class="font-neucha mb-4 flex items-center justify-center gap-3 text-xl leading-none text-[#8EE3DF] md:justify-start md:text-2xl">
+      <p class="font-neucha mb-5 flex items-center justify-center gap-3 text-xl leading-none text-[#8EE3DF] md:justify-start md:text-2xl">
         <span class="hidden h-px w-10 bg-[#8EE3DF] md:block" aria-hidden="true"></span>
         {t('hero.title2')}
       </p>
 
-      <h1 class="hero-shadow text-5xl font-bold leading-[1.02] tracking-tight text-white [text-wrap:balance] md:text-7xl">
+      <h1 class="hero-shadow text-5xl font-bold leading-[0.95] tracking-tight text-white [text-wrap:balance] md:text-7xl">
         {t('hero.title1')}
       </h1>
+      <!-- ondertitel onder de grote titel: smal gehouden zodat hij in twee ongeveer even lange regels breekt -->
+      <p class="hero-shadow mx-auto mt-5 max-w-[22rem] whitespace-pre-line text-sm font-normal leading-relaxed text-white/90 [text-wrap:balance] md:mx-0 md:mt-6 md:max-w-[30rem] md:text-lg">
+        {t('hero.subtitle')}
+      </p>
 
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+      <div class="mt-8 flex md:mt-10 flex-wrap items-center justify-center gap-3 md:justify-start">
         <a
           href="#ontdek"
           class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-sm font-semibold text-[#0F7C82] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E6F6F6]"

@@ -25,6 +25,9 @@ const services = [
   ...s,
   title: t(`forBrands.services.${s.num}.title`),
   intro: t(`forBrands.services.${s.num}.intro`),
+  // Mobiel: "Het resultaat?" begint op een nieuwe regel en de zin erna loopt er direct achter door
+  // (desktop: regelafbreking ná "Het resultaat?", zoals in ui.ts)
+  introMobile: t(`forBrands.services.${s.num}.intro`).replace(/ (Het resultaat\?|The result\?)\n/, '\n$1 '),
   // Laat je offer leeg (''), dan verdwijnt het vak "Wat ik aanbied" bij die service
   offer: t(`forBrands.services.${s.num}.offer`).split('|').filter(Boolean),
 }));
@@ -149,7 +152,10 @@ const socials = [
                     </div>
                   </div>
                 ) : (
-                  <p class="mt-5 whitespace-pre-line text-[15px] leading-[1.55] text-gray-600 md:text-base">{service.intro}</p>
+                  <>
+                    <p class="mt-5 whitespace-pre-line text-[15px] leading-[1.55] text-gray-600 md:hidden">{service.introMobile}</p>
+                    <p class="mt-5 hidden whitespace-pre-line text-base leading-[1.55] text-gray-600 md:block">{service.intro}</p>
+                  </>
                 )}
 
                 {service.offer.length > 0 && (

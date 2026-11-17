@@ -32,8 +32,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
   <!-- Op mobiel gecentreerd, vanaf tablet links uitgelijnd -->
   <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-24 pt-44 text-center md:px-12 md:pt-32 md:text-left">
     <div class="hero-content mx-auto max-w-2xl md:mx-0">
-      <!-- handgeschreven accent boven de titel (lijntje alleen bij links uitlijnen) -->
-      <p class="font-neucha mb-5 flex items-center justify-center gap-3 text-xl leading-none text-[#8EE3DF] md:justify-start md:text-2xl">
+      <!-- handgeschreven accent boven de titel (alleen vanaf tablet; op mobiel weggelaten) -->
+      <p class="font-neucha mb-5 hidden items-center md:flex justify-center gap-3 text-xl leading-none text-[#8EE3DF] md:justify-start md:text-2xl">
         <span class="hidden h-px w-10 bg-[#8EE3DF] md:block" aria-hidden="true"></span>
         {t('hero.title2')}
       </p>

@@ -15,14 +15,14 @@ export const DEFAULT_IMAGE = '/images/hero/header-6.jpg';
 
 export const defaultSeo: Record<Lang, Seo> = {
   nl: {
-    title: 'MAY WAYS | Mobile-first social media bureau',
+    title: 'MAY WAYS',
     description:
-      'Hét mobile-first social media bureau voor merken met een verhaal én een beleving. Content creatie, social media beheer en reisinspiratie.',
+      'MAY WAYS legt merkbelevingen vast en beheert jouw socials. Gespecialiseerd in mobile-first content voor merken met een verhaal én een beleving.',
   },
   en: {
-    title: 'MAY WAYS | Mobile-first social media agency',
+    title: 'MAY WAYS',
     description:
-      'The mobile-first social media agency for brands with a story and an experience. Content creation, social media management and travel inspiration.',
+      'MAY WAYS captures brand experiences and manages your socials. Specialised in mobile-first content for brands with a story and an experience.',
   },
 };
 

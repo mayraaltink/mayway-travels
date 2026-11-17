@@ -4,6 +4,7 @@ import { defaultLang } from '../i18n/ui';
 import Header from '../components/global/Header.astro';
 import Footer from '../components/global/Footer.astro';
 import BackToTop from '../components/global/BackToTop.astro';
+import Analytics from '../components/global/Analytics.astro';
 import { SITE_URL, SITE_NAME, DEFAULT_IMAGE, defaultSeo, pageSeo } from '../data/seo';
 
 export interface Props {
@@ -113,6 +114,9 @@ const organization = {
 
   <!-- Terug-naar-boven-knop rechtsonder, op elke pagina -->
   <BackToTop />
+
+    <!-- Google Analytics + cookiebanner (GA laadt pas na toestemming) -->
+    <Analytics lang={lang} />
 
 </body>
 </html>

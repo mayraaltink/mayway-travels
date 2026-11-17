@@ -33,38 +33,38 @@ export const pageSeo: Record<string, Record<Lang, Seo>> = {
   },
   '/for-brands': {
     nl: {
-      title: 'Content creatie & social media voor merken | MAY WAYS',
+      title: 'Mobile-first content & video’s op locatie | MAY WAYS',
       description:
-        'Mobile-first short-form video, social media beheer en creator partnerships. Ik leg échte ervaringen vast op jouw locatie, zodat jouw doelgroep meteen voelt waarom ze bij jou moeten zijn.',
+        'Creatieve concepten en short-form video’s op locatie voor TikTok en Instagram. Ik leg jouw merkbeleving vast en zet jouw merk avontuurlijk op de kaart.',
     },
     en: {
-      title: 'Content creation & social media for brands | MAY WAYS',
+      title: 'Mobile-first content & on-location video | MAY WAYS',
       description:
-        'Mobile-first short-form video, social media management and creator partnerships. I capture real experiences at your location, so your audience instantly feels why they should be there.',
+        'Creative concepts and short-form videos shot on location for TikTok and Instagram. I capture your brand experience and put your brand on the map.',
     },
   },
   '/social-media': {
     nl: {
-      title: 'Social media pakketten | MAY WAYS',
+      title: 'Social media uit handen geven: pakketten | MAY WAYS',
       description:
-        'Social media beheer volledig uit handen: van contentstrategie en contentkalender tot mobile-first content, captions en community management. Bekijk de pakketten.',
+        'Je socials uit handen geven? Van contentstrategie en creatieve concepten tot mobile-first video’s, captions en community management. Bekijk de pakketten.',
     },
     en: {
-      title: 'Social media packages | MAY WAYS',
+      title: 'Social media management packages | MAY WAYS',
       description:
-        'Social media management fully taken care of: from content strategy and calendar to mobile-first content, captions and community management. View the packages.',
+        'Hand over your socials: from content strategy and creative concepts to mobile-first videos, captions and community management. View the packages.',
     },
   },
   '/about': {
     nl: {
-      title: 'Over Mayra | MAY WAYS',
+      title: 'Over Mayra: content creator & creative partner | MAY WAYS',
       description:
-        'Hi, ik ben Mayra! Na ruim 2,5 jaar Australië komt alles samen in MAY WAYS: mijn liefde voor avontuur, creatieve concepten bedenken en die vastleggen.',
+        'Hi, ik ben Mayra: content creator en creative partner voor merken. Na 2,5 jaar Australië leg ik merkbelevingen vast met een avontuurlijke, mobile-first blik.',
     },
     en: {
-      title: 'About Mayra | MAY WAYS',
+      title: 'About Mayra: content creator & creative partner | MAY WAYS',
       description:
-        'Hi, I’m Mayra! After 2.5 years in Australia, everything comes together in MAY WAYS: my love for adventure, creative concepts and capturing them.',
+        'Hi, I’m Mayra: content creator and creative partner for brands. After 2.5 years in Australia, I capture brand experiences with an adventurous, mobile-first eye.',
     },
   },
   '/community': {
@@ -81,14 +81,14 @@ export const pageSeo: Record<string, Record<Lang, Seo>> = {
   },
   '/contact': {
     nl: {
-      title: 'Contact | MAY WAYS',
+      title: 'Contact: samenwerken met MAY WAYS',
       description:
-        'Zin om samen te werken of een vraag over reizen naar Australië of Nieuw-Zeeland? Neem contact op met MAY WAYS.',
+        'Zin om samen te werken'Op zoek naar een content creator of creative partner voor je socials? Neem contact op voor video’s op locatie, creatieve concepten en social media beheer.',
     },
     en: {
-      title: 'Contact | MAY WAYS',
+      title: 'Contact: work with MAY WAYS',
       description:
-        'Want to work together or have a question about travelling to Australia or New Zealand? Get in touch with MAY WAYS.',
+        'Want to work'Looking for a content creator or creative partner for your socials? Get in touch for on-location videos, creative concepts and social media management.',
     },
   },
   '/destinations': {

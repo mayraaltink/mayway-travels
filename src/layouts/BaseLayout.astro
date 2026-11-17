@@ -4,9 +4,48 @@ import { defaultLang } from '../i18n/ui';
 import Header from '../components/global/Header.astro';
 import Footer from '../components/global/Footer.astro';
 import BackToTop from '../components/global/BackToTop.astro';
+import { SITE_URL, SITE_NAME, DEFAULT_IMAGE, defaultSeo, pageSeo } from '../data/seo';
 
-const { title = "MAY WAYS TRAVELS" } = Astro.props;
-const lang = Astro.currentLocale || defaultLang;
+export interface Props {
+  title?: string;
+  description?: string;
+  /** deelfoto (pad in /public), bijv. de grote foto van een bestemming */
+  image?: string;
+  /** true = niet in Google tonen */
+  noindex?: boolean;
+}
+
+const { title: propTitle, description: propDescription, image = DEFAULT_IMAGE, noindex = false } = Astro.props;
+const lang = (Astro.currentLocale || defaultLang) as 'nl' | 'en';
+
+// ---------- SEO ----------
+// Pad zonder taal, bijv. "/nl/destinations/australia/" → "/destinations/australia".
+// De oude adressen zonder taal (/about, /community, ...) tonen de Nederlandse pagina en verwijzen daarom naar /nl/.
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+if (segments[0] === 'nl' || segments[0] === 'en') segments.shift();
+const route = segments.length ? `/${segments.join('/')}` : '/';
+const urlFor = (l: string) => `${SITE_URL}/${l}${route === '/' ? '/' : `${route}/`}`;
+
+const seo = pageSeo[route]?.[lang];
+const title = seo?.title ?? (propTitle ? (propTitle.includes('MAY WAY') ? propTitle : `${propTitle} | ${SITE_NAME}`) : defaultSeo[lang].title);
+// Google toont ± 155 tekens; langere teksten netjes afkappen op een heel woord
+const rawDescription = seo?.description ?? propDescription ?? defaultSeo[lang].description;
+const description = rawDescription.length > 160 ? `${rawDescription.slice(0, 157).replace(/\s+\S*$/, '')}…` : rawDescription;
+const canonical = urlFor(lang);
+const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
+
+// Bedrijfsgegevens voor Google (alleen op de homepagina)
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/m_logo.svg`,
+  email: 'maywaysocials@gmail.com',
+  description: defaultSeo[lang].description,
+  founder: { '@type': 'Person', name: 'Mayra Altink' },
+  sameAs: ['https://www.instagram.com/mayraaltink/', 'https://www.tiktok.com/@mayraxaltink'],
+};
 ---
 
 <html lang={lang}>
@@ -16,6 +55,32 @@ const lang = Astro.currentLocale || defaultLang;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
 
+    <!-- SEO: teksten per pagina staan in src/data/seo.ts -->
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="nl" href={urlFor('nl')} />
+    <link rel="alternate" hreflang="en" href={urlFor('en')} />
+    <link rel="alternate" hreflang="x-default" href={urlFor('nl')} />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <meta name="theme-color" content="#0F7C82" />
+
+    <!-- Voorbeeld als de link gedeeld wordt (WhatsApp, Instagram, LinkedIn, ...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : 'en_GB'} />
+    <meta property="og:locale:alternate" content={lang === 'nl' ? 'en_GB' : 'nl_NL'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    {route === '/' && <script type="application/ld+json" set:html={JSON.stringify(organization)} />}
+
     <!-- FONTS  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,13 +88,13 @@ const lang = Astro.currentLocale || defaultLang;
 
   </head>
  <body class="color-bg text-gray-900 antialiased min-h-screen flex flex-col">
-    
+
   <div class="relative z-50">
     <Header />
   </div>
 
   <main class="flex-grow">
-    <slot /> 
+    <slot />
   </main>
 
   <Footer />

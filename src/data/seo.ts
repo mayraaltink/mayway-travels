@@ -1,0 +1,202 @@
+// SEO per pagina: de titel (tabblad + Google) en omschrijving (het grijze tekstje onder de link in Google).
+// - sleutel = het pad zonder taal, bijv. '/for-brands' voor /nl/for-brands/ en /en/for-brands/
+// - titel: maximaal ± 60 tekens, omschrijving: ± 140–160 tekens (langer wordt in Google afgekapt)
+// - Elke pagina in deze lijst komt ook in de sitemap (/sitemap.xml) waarmee Google de site vindt.
+// Pagina's die hier niet in staan krijgen de titel uit de pagina zelf en de standaard omschrijving.
+
+type Lang = 'nl' | 'en';
+type Seo = { title: string; description: string };
+
+export const SITE_URL = 'https://may-ways.com';
+export const SITE_NAME = 'MAY WAYS';
+
+// Standaard deelfoto (als een link gedeeld wordt via WhatsApp, Instagram, LinkedIn enz.)
+export const DEFAULT_IMAGE = '/images/hero/header-6.jpg';
+
+export const defaultSeo: Record<Lang, Seo> = {
+  nl: {
+    title: 'MAY WAYS | Mobile-first social media bureau',
+    description:
+      'Hét mobile-first social media bureau voor merken met een verhaal én een beleving. Content creatie, social media beheer en reisinspiratie.',
+  },
+  en: {
+    title: 'MAY WAYS | Mobile-first social media agency',
+    description:
+      'The mobile-first social media agency for brands with a story and an experience. Content creation, social media management and travel inspiration.',
+  },
+};
+
+export const pageSeo: Record<string, Record<Lang, Seo>> = {
+  '/': {
+    nl: defaultSeo.nl,
+    en: defaultSeo.en,
+  },
+  '/for-brands': {
+    nl: {
+      title: 'Content creatie & social media voor merken | MAY WAYS',
+      description:
+        'Mobile-first short-form video, social media beheer en creator partnerships. Ik leg échte ervaringen vast op jouw locatie, zodat jouw doelgroep meteen voelt waarom ze bij jou moeten zijn.',
+    },
+    en: {
+      title: 'Content creation & social media for brands | MAY WAYS',
+      description:
+        'Mobile-first short-form video, social media management and creator partnerships. I capture real experiences at your location, so your audience instantly feels why they should be there.',
+    },
+  },
+  '/social-media': {
+    nl: {
+      title: 'Social media pakketten | MAY WAYS',
+      description:
+        'Social media beheer volledig uit handen: van contentstrategie en contentkalender tot mobile-first content, captions en community management. Bekijk de pakketten.',
+    },
+    en: {
+      title: 'Social media packages | MAY WAYS',
+      description:
+        'Social media management fully taken care of: from content strategy and calendar to mobile-first content, captions and community management. View the packages.',
+    },
+  },
+  '/about': {
+    nl: {
+      title: 'Over Mayra | MAY WAYS',
+      description:
+        'Hi, ik ben Mayra! Na ruim 2,5 jaar Australië komt alles samen in MAY WAYS: mijn liefde voor avontuur, creatieve concepten bedenken en die vastleggen.',
+    },
+    en: {
+      title: 'About Mayra | MAY WAYS',
+      description:
+        'Hi, I’m Mayra! After 2.5 years in Australia, everything comes together in MAY WAYS: my love for adventure, creative concepts and capturing them.',
+    },
+  },
+  '/community': {
+    nl: {
+      title: 'Community & MAY Moments | MAY WAYS',
+      description:
+        'Mijn mooiste reismomenten, van de Kilimanjaro tot de Nevis Bungy, en reisinspiratie voor jouw volgende avontuur in Australië of Nieuw-Zeeland.',
+    },
+    en: {
+      title: 'Community & MAY Moments | MAY WAYS',
+      description:
+        'My favourite travel moments, from Kilimanjaro to the Nevis Bungy, and travel inspiration for your next adventure in Australia or New Zealand.',
+    },
+  },
+  '/contact': {
+    nl: {
+      title: 'Contact | MAY WAYS',
+      description:
+        'Zin om samen te werken of een vraag over reizen naar Australië of Nieuw-Zeeland? Neem contact op met MAY WAYS.',
+    },
+    en: {
+      title: 'Contact | MAY WAYS',
+      description:
+        'Want to work together or have a question about travelling to Australia or New Zealand? Get in touch with MAY WAYS.',
+    },
+  },
+  '/destinations': {
+    nl: {
+      title: 'Bestemmingen: Australië & Nieuw-Zeeland | MAY WAYS',
+      description:
+        'Ontdek Australië en Nieuw-Zeeland: hotspots, reisroutes en persoonlijke tips van iemand die er jaren woonde en reisde.',
+    },
+    en: {
+      title: 'Destinations: Australia & New Zealand | MAY WAYS',
+      description:
+        'Discover Australia and New Zealand: hotspots, travel routes and personal tips from someone who lived and travelled there for years.',
+    },
+  },
+  '/destinations/australia': {
+    nl: {
+      title: 'Australië: reisroutes, hotspots & tips | MAY WAYS',
+      description:
+        'Reizen door Australië: de mooiste reisroutes langs de oost- en westkust, hotspots zoals het Great Barrier Reef en K’gari, en praktische reistips.',
+    },
+    en: {
+      title: 'Australia: travel routes, hotspots & tips | MAY WAYS',
+      description:
+        'Travelling Australia: the best routes along the east and west coast, hotspots like the Great Barrier Reef and K’gari, and practical tips for your trip.',
+    },
+  },
+  '/destinations/new-zealand': {
+    nl: {
+      title: 'Nieuw-Zeeland: reisroutes, hotspots & tips | MAY WAYS',
+      description:
+        'Reizen door Nieuw-Zeeland: reisroutes over het Noorder- en Zuidereiland, hotspots als Milford Sound, Tongariro en Queenstown, en persoonlijke tips.',
+    },
+    en: {
+      title: 'New Zealand: travel routes, hotspots & tips | MAY WAYS',
+      description:
+        'Travelling New Zealand: routes across the North and South Island, hotspots like Milford Sound, Tongariro and Queenstown, and personal tips.',
+    },
+  },
+  '/route-planner': {
+    nl: {
+      title: 'Routeplanner: jouw reis op maat | MAY WAYS',
+      description:
+        'Vertel waar je naartoe wilt en hoe jouw ideale reis eruitziet. Wij vertalen jouw wensen naar een persoonlijk reisplan op maat.',
+    },
+    en: {
+      title: 'Route planner: your tailor-made trip | MAY WAYS',
+      description:
+        'Tell us where you want to go and what your ideal trip looks like. We turn your wishes into a personal, tailor-made travel plan.',
+    },
+  },
+  '/blogs/voorbereidingen': {
+    nl: {
+      title: 'Voorbereidingen Working Holiday Australië | MAY WAYS',
+      description:
+        'Wat neem je mee naar Australië? Zorgverzekering, bankrekening, simkaart, inpaklijst en handige apps: alles voor je Working Holiday op een rij.',
+    },
+    en: {
+      title: 'Preparing for your Working Holiday in Australia | MAY WAYS',
+      description:
+        'What to bring to Australia? Health insurance, bank account, SIM card, packing list and handy apps: everything for your Working Holiday in one place.',
+    },
+  },
+  '/blogs/VisaAus': {
+    nl: {
+      title: 'Working Holiday visum Australië aanvragen | MAY WAYS',
+      description:
+        'Stap voor stap je eerste Working Holiday visum voor Australië aanvragen, met tips uit eigen ervaring.',
+    },
+    en: {
+      title: 'Applying for your Australian Working Holiday visa | MAY WAYS',
+      description:
+        'Step by step: applying for your first Working Holiday visa for Australia, with tips from my own experience.',
+    },
+  },
+  '/blogs/travel-budget': {
+    nl: {
+      title: 'Het leven in Australië | MAY WAYS',
+      description:
+        'Hoe is het leven in Australië echt? Over de laid-back lifestyle, koffiecultuur, barbecues, sporten en wat het kost om er te wonen.',
+    },
+    en: {
+      title: 'Life in Australia | MAY WAYS',
+      description:
+        'What is life in Australia really like? About the laid-back lifestyle, coffee culture, barbecues, sports and the cost of living there.',
+    },
+  },
+  '/blogs/tips-australia': {
+    nl: {
+      title: 'Stap in een reismentaliteit: tips voor Australië | MAY WAYS',
+      description:
+        'Tips om het meeste uit je reis door Australië te halen: hoe je nieuwe mensen ontmoet, slim reist en openstaat voor spontane avonturen.',
+    },
+    en: {
+      title: 'Step into a travel mindset: tips for Australia | MAY WAYS',
+      description:
+        'Tips to make the most of your trip through Australia: how to meet new people, travel smart and stay open to spontaneous adventures.',
+    },
+  },
+  '/blogs/beste-reisseizoen': {
+    nl: {
+      title: 'Wat is het beste reisseizoen voor Australië? | MAY WAYS',
+      description:
+        'Wanneer kun je het beste naar Australië? De seizoenen per regio, de kracht van de zon en waar je in welke maand naartoe gaat.',
+    },
+    en: {
+      title: 'What is the best season to travel Australia? | MAY WAYS',
+      description:
+        'When is the best time to visit Australia? The seasons per region, the strength of the sun and where to go in which month.',
+    },
+  },
+};

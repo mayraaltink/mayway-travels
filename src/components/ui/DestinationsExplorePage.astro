@@ -37,6 +37,9 @@ const destinations = [
 
 <BaseLayout title={t('destinations.title')}>
 
+<!-- Hoofdkop voor Google en schermlezers (niet zichtbaar; de pagina zelf toont een kaart) -->
+<h1 class="sr-only">{lang === 'en' ? 'Destinations: Australia & New Zealand' : 'Bestemmingen: Australië & Nieuw-Zeeland'}</h1>
+
 <!-- Mobiel: bestemmingen onder elkaar als grote afgeronde kaarten (geen wereldkaart) -->
 <div class="flex flex-col gap-6 bg-[#FFFDFA] px-7 pb-16 pt-24 md:hidden">
   {destinations.map((dest) => (

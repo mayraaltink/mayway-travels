@@ -65,7 +65,7 @@ const captionList = JSON.stringify(photos.map((p) => p.location));
               >
                 <Image
                   src={p.img}
-                  alt={p.location}
+                  alt={p.location || `${labels.title} ${p.i + 1}`}
                   widths={[400, 700, 1000]}
                   sizes="(min-width: 1152px) 360px, (min-width: 768px) 33vw, 50vw"
                   loading="lazy"

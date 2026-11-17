@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+  // volledig adres van de site (voor canonical-links en de sitemap)
+  site: 'https://may-ways.com',
   vite: {
     plugins: [tailwindcss()]
   },

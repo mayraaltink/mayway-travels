@@ -77,14 +77,14 @@ const socials = [
         <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row md:justify-start">
           <a
             href="#services"
-            class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-sm font-semibold text-[#0F7C82] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E6F6F6]"
+            class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-sm font-semibold text-[#0F7C82] shadow-lg transition-all duration-300 hover:bg-[#1CABB0] hover:text-white hover:border-[#1CABB0]"
           >
             {t('forBrands.hero.ctaSecondary')}
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
           </a>
           <a
             href={`/${lang}/contact`}
-            class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-white hover:bg-white/10"
+            class="inline-flex min-w-[13rem] items-center justify-center gap-2 rounded-full border-2 border-white/60 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#0F7C82] hover:border-white"
           >
             {t('forBrands.hero.ctaPrimary')}
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
@@ -176,7 +176,7 @@ const socials = [
                     <!-- Social media management (02) → pakketten-pagina, de rest → contact -->
                     <a
                       href={service.num === 2 ? `/${lang}/social-media` : `/${lang}/contact`}
-                      class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a]"
+                      class="inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#0F7C82]"
                     >
                       {service.num === 2 ? t('forBrands.services.packages') : t('forBrands.services.cta')}
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
@@ -212,7 +212,7 @@ const socials = [
 
           <a
             href={`/${lang}/contact`}
-            class="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#15939a]"
+            class="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1CABB0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#0F7C82]"
           >
             {t('forBrands.creator.cta')}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>

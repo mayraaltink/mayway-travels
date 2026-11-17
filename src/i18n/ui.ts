@@ -179,7 +179,7 @@ export const ui = {
     'contact.form.successTitle': 'Message sent!',
     'contact.form.successText': 'Thank you for your message. I will get back to you as soon as possible.',
     'contact.form.errorTitle': 'Oops, something went wrong.',
-    'contact.form.errorText': 'Please try again later or email me directly at maywaysocials@gmail.com.',
+    'contact.form.errorText': 'Please try again later or email me directly at info@may-ways.com.',
 
 
 
@@ -226,7 +226,7 @@ export const ui = {
 'pkg.form.content.options': 'Yes, I supply all content myself|Partly, but I would like help with it|No, I would like you to create it|Not sure yet',
 'pkg.form.submit': 'Send request',
 'pkg.form.sending': 'Sending...',
-'pkg.form.error': 'Something went wrong. Please try again later or email maywaysocials@gmail.com.',
+'pkg.form.error': 'Something went wrong. Please try again later or email info@may-ways.com.',
 'pkg.thanks.title': 'Thank you for your request!',
 'pkg.thanks.text': 'I have received your request and will get in touch within a few working days.',
 'forBrands.services.packages': 'View packages',
@@ -1250,7 +1250,7 @@ fiji_intro_cta: "Start planning your trip",
     'contact.form.successTitle': 'Bericht verstuurd!',
     'contact.form.successText': 'Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.',
     'contact.form.errorTitle': 'Oeps, er ging iets mis.',
-    'contact.form.errorText': 'Probeer het later opnieuw of mail me direct via maywaysocials@gmail.com.',
+    'contact.form.errorText': 'Probeer het later opnieuw of mail me direct via info@may-ways.com.',
 
 
     'collaboration.title': 'Samenwerken',
@@ -1314,7 +1314,7 @@ fiji_intro_cta: "Start planning your trip",
 'pkg.form.content.options': 'Ja, ik lever alle content zelf aan|Deels, maar ik wil er graag hulp bij|Nee, ik wil graag dat jij het maakt|Weet ik nog niet',
 'pkg.form.submit': 'Verstuur aanvraag',
 'pkg.form.sending': 'Bezig met versturen...',
-'pkg.form.error': 'Er ging iets mis. Probeer het later nog eens of mail naar maywaysocials@gmail.com.',
+'pkg.form.error': 'Er ging iets mis. Probeer het later nog eens of mail naar info@may-ways.com.',
 'pkg.thanks.title': 'Bedankt voor je aanvraag!',
 'pkg.thanks.text': 'Ik heb je aanvraag ontvangen en neem binnen een paar werkdagen contact met je op.',
 'forBrands.services.packages': 'Bekijk pakketten',

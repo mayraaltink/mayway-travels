@@ -44,6 +44,18 @@ const organization = {
   email: 'maywaysocials@gmail.com',
   description: defaultSeo[lang].description,
   founder: { '@type': 'Person', name: 'Mayra Altink' },
+  areaServed: { '@type': 'Country', name: 'Nederland' },
+  knowsAbout: lang === 'nl'
+    ? ['mobile-first content', 'short-form video', 'content creatie', 'video’s op locatie', 'TikTok', 'Instagram', 'social media beheer', 'creatieve concepten', 'merkbeleving', 'brand experiences', 'creator partnerships']
+    : ['mobile-first content', 'short-form video', 'content creation', 'on-location video', 'TikTok', 'Instagram', 'social media management', 'creative concepts', 'brand experience', 'brand experiences', 'creator partnerships'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: lang === 'nl' ? 'Diensten' : 'Services',
+    itemListElement: (lang === 'nl'
+      ? ['Social media beheer', 'Content creatie & short-form video’s op locatie', 'Creatieve concepten & brand experiences', 'Creator partnerships & collabs']
+      : ['Social media management', 'Content creation & on-location short-form video', 'Creative concepts & brand experiences', 'Creator partnerships & collabs']
+    ).map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } })),
+  },
   sameAs: ['https://www.instagram.com/mayraaltink/', 'https://www.tiktok.com/@mayraxaltink'],
 };
 ---

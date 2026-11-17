@@ -14,31 +14,40 @@ const t = lang === 'en'
       title: 'Manage consent',
       text: 'We use functional and analytical cookies to optimise MAY WAYS and improve your experience.',
       accept: 'Accept cookies',
+      deny: 'Functional only',
       prefs: 'View preferences',
+      save: 'Save preferences',
+      close: 'Close',
       functional: 'Functional',
       functionalText: 'Needed for the website to work properly.',
       always: 'Always active',
       stats: 'Statistics',
       statsText: 'Helps us understand how visitors use the website (Google Analytics).',
-      save: 'Save preferences',
     }
   : {
       title: 'Beheer toestemming',
       text: 'Wij gebruiken functionele en analytische cookies om MAY WAYS te optimaliseren en je ervaring te verbeteren.',
       accept: 'Cookies accepteren',
+      deny: 'Alleen functioneel',
       prefs: 'Bekijk voorkeuren',
+      save: 'Voorkeuren opslaan',
+      close: 'Sluiten',
       functional: 'Functioneel',
       functionalText: 'Nodig om de website goed te laten werken.',
       always: 'Altijd actief',
       stats: 'Statistieken',
       statsText: 'Helpt ons te zien hoe bezoekers de website gebruiken (Google Analytics).',
-      save: 'Voorkeuren opslaan',
     };
 ---
 
 <div id="mw-cookie-banner" class="mw-cookie" hidden>
   <div class="mw-cookie__box" role="dialog" aria-modal="true" aria-labelledby="mw-cookie-title">
-    <h2 id="mw-cookie-title" class="mw-cookie__title">{t.title}</h2>
+    <div class="mw-cookie__head">
+      <p id="mw-cookie-title" class="mw-cookie__title">{t.title}</p>
+      <button type="button" data-action="deny" class="mw-cookie__close" aria-label={t.close}>
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" /></svg>
+      </button>
+    </div>
     <p class="mw-cookie__text">{t.text}</p>
 
     <!-- Voorkeuren (verborgen tot "Bekijk voorkeuren") -->
@@ -64,9 +73,10 @@ const t = lang === 'en'
 
     <div class="mw-cookie__buttons">
       <button type="button" data-action="accept" class="mw-cookie__btn">{t.accept}</button>
-      <button type="button" data-action="save" class="mw-cookie__btn mw-cookie__btn--ghost" hidden>{t.save}</button>
+      <button type="button" data-action="deny" data-main-view class="mw-cookie__btn mw-cookie__btn--light">{t.deny}</button>
+      <button type="button" data-action="prefs" data-main-view class="mw-cookie__btn mw-cookie__btn--light">{t.prefs}</button>
+      <button type="button" data-action="save" class="mw-cookie__btn mw-cookie__btn--light" hidden>{t.save}</button>
     </div>
-    <button type="button" data-action="prefs" class="mw-cookie__link">{t.prefs}</button>
   </div>
 </div>
 
@@ -98,15 +108,13 @@ const t = lang === 'en'
       var prefs = document.getElementById('mw-cookie-prefs');
       var stats = document.getElementById('mw-cookie-stats');
       var saveBtn = popup.querySelector('[data-action="save"]');
-      var prefsBtn = popup.querySelector('[data-action="prefs"]');
+      var mainViewBtns = popup.querySelectorAll('[data-main-view]');
 
       popup.hidden = false;
-      document.documentElement.style.overflow = 'hidden';
 
       function close(value) {
         try { localStorage.setItem(KEY, value); } catch (err) {}
         popup.hidden = true;
-        document.documentElement.style.overflow = '';
         if (value === 'granted') loadGA();
       }
 
@@ -115,11 +123,12 @@ const t = lang === 'en'
         if (!btn) return;
         var action = btn.getAttribute('data-action');
         if (action === 'accept') close('granted');
+        if (action === 'deny') close('denied');
         if (action === 'save') close(stats.checked ? 'granted' : 'denied');
         if (action === 'prefs') {
           prefs.hidden = false;
           saveBtn.hidden = false;
-          prefsBtn.hidden = true;
+          mainViewBtns.forEach(function (b) { b.hidden = true; });
         }
       });
     }
@@ -138,43 +147,58 @@ const t = lang === 'en'
     align-items: center;
     justify-content: center;
     padding: 16px;
-    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
   }
   .mw-cookie[hidden],
   .mw-cookie [hidden] { display: none; }
 
   .mw-cookie__box {
+    pointer-events: auto;
     width: 100%;
-    max-width: 440px;
+    max-width: 520px;
     max-height: calc(100vh - 32px);
     overflow-y: auto;
-    padding: 28px 24px 20px;
-    background: #FFFDFA;
+    padding: 18px 20px 20px;
+    background: #fff;
     color: #1f2937;
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
     text-align: center;
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.6;
   }
-  .mw-cookie__title { margin: 0 0 8px; font-size: 22px; font-weight: 700; color: #111827; }
-  .mw-cookie__text { margin: 0 0 20px; color: #4b5563; }
+  .mw-cookie__head { position: relative; margin-bottom: 14px; }
+  .mw-cookie__title { margin: 0; padding: 0 28px; font-size: 14px; font-weight: 500; color: #111827; }
+  .mw-cookie__close {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    padding: 4px;
+    background: none;
+    border: 0;
+    color: #111827;
+    cursor: pointer;
+  }
+  .mw-cookie__text { margin: 0 auto 20px; max-width: 400px; color: #374151; }
 
-  .mw-cookie__prefs { margin: 0 0 20px; text-align: left; }
+  .mw-cookie__prefs { margin: 0 0 18px; text-align: left; }
   .mw-cookie__row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 12px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    background: #F3F4F6;
+    border-radius: 8px;
   }
-  .mw-cookie__row:last-child { border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
-  .mw-cookie__label { margin: 0; font-weight: 600; color: #111827; }
-  .mw-cookie__small { margin: 2px 0 0; font-size: 13px; color: #6b7280; }
-  .mw-cookie__always { flex-shrink: 0; font-size: 13px; font-weight: 600; color: #1CABB0; }
+  .mw-cookie__label { margin: 0; font-size: 13px; font-weight: 600; color: #111827; }
+  .mw-cookie__small { margin: 0; font-size: 11px; color: #6b7280; }
+  .mw-cookie__always { flex-shrink: 0; font-size: 11px; font-weight: 600; color: #1CABB0; }
 
-  .mw-switch { position: relative; flex-shrink: 0; width: 44px; height: 24px; cursor: pointer; }
+  .mw-switch { position: relative; flex-shrink: 0; width: 38px; height: 22px; cursor: pointer; }
   .mw-switch input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
   .mw-switch__slider {
     position: absolute;
@@ -189,43 +213,32 @@ const t = lang === 'en'
     position: absolute;
     top: 3px;
     left: 3px;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: #fff;
     transition: transform 0.2s;
   }
   .mw-switch input:checked + .mw-switch__slider { background: #1CABB0; }
-  .mw-switch input:checked + .mw-switch__slider::before { transform: translateX(20px); }
+  .mw-switch input:checked + .mw-switch__slider::before { transform: translateX(16px); }
   .mw-switch input:focus-visible + .mw-switch__slider { outline: 3px solid #f59e0b; outline-offset: 2px; }
 
-  .mw-cookie__buttons { display: flex; flex-direction: column; gap: 8px; }
+  .mw-cookie__buttons { display: flex; flex-wrap: wrap; gap: 8px; }
   .mw-cookie__btn {
-    width: 100%;
-    padding: 12px 20px;
-    border-radius: 999px;
-    border: 2px solid #1CABB0;
+    flex: 1 1 140px;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 6px;
     background: #1CABB0;
     color: #fff;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     cursor: pointer;
     transition: background 0.2s;
   }
-  .mw-cookie__btn:hover { background: #15939a; border-color: #15939a; }
-  .mw-cookie__btn--ghost { background: transparent; color: #1CABB0; }
-  .mw-cookie__btn--ghost:hover { background: #E6F6F6; color: #15939a; }
-  .mw-cookie__link {
-    margin-top: 12px;
-    padding: 4px;
-    background: none;
-    border: 0;
-    font-size: 14px;
-    color: #6b7280;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    cursor: pointer;
-  }
-  .mw-cookie__link:hover { color: #1CABB0; }
+  .mw-cookie__btn:hover { background: #15939a; }
+  .mw-cookie__btn--light { background: #F3F4F6; color: #1CABB0; }
+  .mw-cookie__btn--light:hover { background: #E6F6F6; color: #15939a; }
   .mw-cookie__btn:focus-visible,
-  .mw-cookie__link:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+  .mw-cookie__close:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
 </style>

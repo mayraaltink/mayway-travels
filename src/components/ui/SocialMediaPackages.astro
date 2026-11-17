@@ -167,7 +167,7 @@ const contentOptions = t('pkg.form.content.options').split('|');
 
 <script define:vars={{ messages, contentQuestionFor }}>
   // Elke aanvraag ook als rij in de Google Sheet zetten (Apps Script web-app, URL eindigt op /exec)
-  const SHEET_URL = 'PLAK_HIER_JE_WEB_APP_URL';
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzcPY81JR1Q-C-1sLzmmDLKbWa0S-64tLIbk1UrP6i8BFfqKJMaP5PObKChrYM95ay7/exec';
   function logToSheet(payload) {
     if (!SHEET_URL.startsWith('https://')) return;
     try {

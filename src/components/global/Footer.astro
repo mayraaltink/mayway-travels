@@ -79,4 +79,14 @@ const year = new Date().getFullYear();
       <a href="mailto:info@may-ways.com" class="transition hover:text-[#1CABB0]">info@may-ways.com</a>
     </div>
   </div>
+  <!-- Cookie-instellingen: wist de keuze en herlaadt de pagina, zodat de cookiebanner opnieuw verschijnt -->
+  <div class="pb-3 text-center">
+    <button
+      type="button"
+      onclick="try{localStorage.removeItem('mw-cookie-consent')}catch(e){}location.reload()"
+      class="text-[10px] text-gray-400 underline-offset-2 transition hover:text-[#1CABB0] hover:underline"
+    >
+      {lang === 'en' ? 'Cookie settings' : 'Cookie-instellingen'}
+    </button>
+  </div>
 </footer>

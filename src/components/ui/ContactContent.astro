@@ -144,6 +144,21 @@ const messages = {
 </style>
 
 <script define:vars={{ messages }}>
+  // Elke aanvraag ook als rij in de Google Sheet zetten (Apps Script web-app, URL eindigt op /exec)
+  const SHEET_URL = 'PLAK_HIER_JE_WEB_APP_URL';
+  function logToSheet(payload) {
+    if (!SHEET_URL.startsWith('https://')) return;
+    try {
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ token: 'mayways-2026', taal: document.documentElement.lang, ...payload }),
+      }).catch(() => {});
+    } catch {}
+  }
+
   function setupContactForm() {
     const form = document.getElementById('form');
     if (!form || form.dataset.ready) return;
@@ -192,6 +207,8 @@ const messages = {
         // Zelf ingevuld onderwerp meesturen als onderwerp
         if (!otherInput.hidden && data.onderwerp_anders) data.onderwerp = `${data.onderwerp} ${data.onderwerp_anders}`;
         delete data.onderwerp_anders;
+        logToSheet({ bron: 'Contactformulier', naam: data.naam, email: data.email, bedrijf: data.bedrijf,
+          onderwerp: data.onderwerp, bericht: data.bericht, botcheck: data.botcheck });
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },

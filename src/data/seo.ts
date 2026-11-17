@@ -83,12 +83,12 @@ export const pageSeo: Record<string, Record<Lang, Seo>> = {
     nl: {
       title: 'Contact: samenwerken met MAY WAYS',
       description:
-        'Zin om samen te werken'Op zoek naar een content creator of creative partner voor je socials? Neem contact op voor video’s op locatie, creatieve concepten en social media beheer.',
+        'Op zoek naar een content creator of creative partner voor je socials? Neem contact op voor video’s op locatie, creatieve concepten en social media beheer.',
     },
     en: {
       title: 'Contact: work with MAY WAYS',
       description:
-        'Want to work'Looking for a content creator or creative partner for your socials? Get in touch for on-location videos, creative concepts and social media management.',
+        'Looking for a content creator or creative partner for your socials? Get in touch for on-location videos, creative concepts and social media management.',
     },
   },
   '/destinations': {

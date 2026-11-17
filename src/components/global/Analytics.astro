@@ -1,0 +1,100 @@
+---
+// Google Analytics (GA4) + eenvoudige cookiebanner.
+// GA wordt pas geladen nadat de bezoeker op "Accepteren" klikt (AVG-proof).
+// De keuze wordt onthouden in de browser (localStorage: 'mw-cookie-consent').
+export interface Props {
+  lang?: 'nl' | 'en';
+}
+
+const GA_ID = 'G-YL718PF28L';
+const { lang = 'nl' } = Astro.props;
+const t = lang === 'en'
+  ? { text: 'We use analytics cookies to see how visitors use this website. Is that okay?', accept: 'Accept', decline: 'Decline' }
+  : { text: 'We gebruiken analytische cookies om te zien hoe bezoekers deze website gebruiken. Is dat oké?', accept: 'Accepteren', decline: 'Weigeren' };
+---
+
+<div id="mw-cookie-banner" class="mw-cookie" role="dialog" aria-live="polite" aria-label="Cookies" hidden>
+  <p class="mw-cookie__text">{t.text}</p>
+  <div class="mw-cookie__buttons">
+    <button type="button" data-consent="denied" class="mw-cookie__btn mw-cookie__btn--ghost">{t.decline}</button>
+    <button type="button" data-consent="granted" class="mw-cookie__btn">{t.accept}</button>
+  </div>
+</div>
+
+<script is:inline define:vars={{ GA_ID }}>
+  (function () {
+    var KEY = 'mw-cookie-consent';
+
+    function loadGA() {
+      if (window.__mwGaLoaded) return;
+      window.__mwGaLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', GA_ID);
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+    }
+
+    var choice = null;
+    try { choice = localStorage.getItem(KEY); } catch (e) {}
+    if (choice === 'granted') { loadGA(); return; }
+    if (choice === 'denied') return;
+
+    function showBanner() {
+      var banner = document.getElementById('mw-cookie-banner');
+      if (!banner) return;
+      banner.hidden = false;
+      banner.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-consent]');
+        if (!btn) return;
+        var value = btn.getAttribute('data-consent');
+        try { localStorage.setItem(KEY, value); } catch (err) {}
+        banner.hidden = true;
+        if (value === 'granted') loadGA();
+      });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showBanner);
+    else showBanner();
+  })();
+</script>
+
+<style>
+  .mw-cookie {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 100;
+    max-width: 560px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    padding: 16px 20px;
+    background: #fff;
+    color: #1f2937;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .mw-cookie[hidden] { display: none; }
+  .mw-cookie__text { flex: 1 1 260px; margin: 0; }
+  .mw-cookie__buttons { display: flex; gap: 8px; margin-left: auto; }
+  .mw-cookie__btn {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 2px solid #0F7C82;
+    background: #0F7C82;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .mw-cookie__btn--ghost { background: transparent; color: #0F7C82; }
+  .mw-cookie__btn:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+</style>

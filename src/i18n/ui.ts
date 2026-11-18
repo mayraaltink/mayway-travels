@@ -254,7 +254,7 @@ export const ui = {
 'forBrands.creator.eyebrow': 'Collaborate · Creator partnerships',
 'forBrands.creator.title': 'From brand experience',
 'forBrands.creator.titleHighlight': 'to online reach',
-'forBrands.creator.p1': 'The best stories and adventures are never created alone. That is why MAY WAYS works with destinations, (travel) brands, events and hospitality businesses that match our audience.',
+'forBrands.creator.p1': 'The best stories and adventures are never created alone. That is why MAY WAYS works with destinations, activities, (travel) brands, events and hospitality businesses that match our audience.',
 'forBrands.creator.p2': 'By making brands part of real experiences, we create authentic content that inspires, connects and gets people moving. Last year our content on TikTok and Instagram already reached hundreds of thousands of adventure seekers. Got a fun idea or want to explore the possibilities together?',
 'forBrands.creator.cta': "Let's connect",
 
@@ -278,7 +278,7 @@ export const ui = {
 'collaboration.title': 'Collaborations',
 
 'collaboration.text1':
-  'The most beautiful travel stories are not created alone. That is why MAY WAYS collaborates with destinations, (travel) brands, and hospitality companies that perfectly align with our adventurous audience.',
+  'The most beautiful travel stories are not created alone. That is why MAY WAYS collaborates with destinations, activities, (travel) brands, and hospitality companies that perfectly align with our adventurous audience.',
 
 'collaboration.text2':
   'We reach thousands of travelers across the Netherlands and Belgium every month with our personal travel posts and tips. We also share our experiences with enthusiasm with more than {followers} engaged followers on Instagram via {ig1} and {ig2}.',
@@ -775,7 +775,7 @@ faq_sim_a_f:
 
     // destination pages - australia
     'aus.page.title': 'Australia',
-    'aus.page.desc': 'Australia is a land full of adventure, from rugged nature and endless outback to pristine beaches. Admire the Sydney Opera House, dive into the underwater world of the Great Barrier Reef and hike through the Daintree, one of the oldest rainforests on earth. Drive straight through the red heart of the country and camp on K’gari, the largest sand island in the world: a trip Down Under is one you will never forget.',
+    'aus.page.desc': 'Australia is a land full of adventure, from rugged nature in the outback to hidden surf beaches. Admire the Sydney Opera House, dive into the underwater world of the Great Barrier Reef and hike through the Daintree, one of the oldest rainforests on earth. Drive straight through the red heart of the country and camp on K’gari, the largest sand island in the world: a trip Down Under is one you will never forget.',
     'aus.page.capital': 'Canberra',
     'aus.page.language': 'English',
     'aus.page.currency': 'Australian Dollar (AUD)',
@@ -806,9 +806,6 @@ faq_sim_a_f:
 
 'australia.intro.text2':
   'Every region feels like a new destination: tropical rainforest, pearl-white beaches, endless deserts, rugged mountains and vibrant cities. The country has 8 climate zones and 3 time zones, and a flight from Perth to Sydney easily takes 4 to 5 hours, as long as flying from the Netherlands to Egypt. That enormous size is what makes Australia so special, but it also makes planning your trip quite overwhelming. Let yourself be inspired!',
-
-'australia.intro.text3':
-  "Australia's size and diversity are exactly what make it so special, but they can also make planning your trip feel overwhelming. Which route best suits your travel style? How much time do you really need? And where can you find those unique accommodations, hidden beaches and local gems that aren't in the guidebooks?",
 
 'australia.intro.mistakesTitle':
   'Common mistakes when travelling through Australia',
@@ -1261,7 +1258,7 @@ fiji_intro_cta: "Start planning your trip",
     'collaboration.title': 'Samenwerken',
 
 'collaboration.text1':
-  'De mooiste reisverhalen ontstaan niet alleen. Daarom werkt MAY WAYS samen met bestemmingen, (reis)merken en hospitalitybedrijven die perfect aansluiten bij onze avontuurlijke doelgroep.',
+  'De mooiste reisverhalen ontstaan niet alleen. Daarom werkt MAY WAYS samen met bestemmingen, activiteiten, (reis)merken en hospitalitybedrijven die perfect aansluiten bij onze avontuurlijke doelgroep.',
 
 'collaboration.text2':
   'Wij bereiken maandelijks duizenden avonturisten in Nederland en België met onze persoonlijke reis posts en tips. Ook delen wij onze ervaringen vol enthousiasme met ruim {followers} betrokken volgers op Instagram via {ig1} en {ig2}.',
@@ -1345,7 +1342,7 @@ fiji_intro_cta: "Start planning your trip",
 'forBrands.creator.eyebrow': 'Samenwerken · Creator partnerships',
 'forBrands.creator.title': 'Van merkbeleving',
 'forBrands.creator.titleHighlight': 'naar online bereik',
-'forBrands.creator.p1': 'De mooiste verhalen en avonturen ontstaan niet alleen. Daarom werkt MAY WAYS samen met bestemmingen, (reis)merken, events en hospitalitybedrijven die aansluiten bij onze doelgroep.',
+'forBrands.creator.p1': 'De mooiste verhalen en avonturen ontstaan niet alleen. Daarom werkt MAY WAYS samen met bestemmingen, activiteiten, (reis)merken, events en hospitalitybedrijven die aansluiten bij onze doelgroep.',
 'forBrands.creator.p2': 'Door merken onderdeel te maken van échte ervaringen, creëren we authentieke content die inspireert, verbindt en mensen in beweging brengt. Afgelopen jaar bereikten we met onze content op TikTok en Instagram al honderdduizenden adventure seekers. Heb je een leuk idee of wil je sparren over de mogelijkheden?',
 'forBrands.creator.cta': "Let's connect",
 
@@ -1659,7 +1656,7 @@ faq_sim_a_f:
 
     // destination pages - australia
     'aus.page.title': 'Australië',
-    'aus.page.desc': 'Australië is een land vol avontuur, van ruige natuur en eindeloze outback tot ongerepte stranden. Bewonder het Sydney Opera House, duik in de onderwaterwereld van het Great Barrier Reef en trek door het Daintree, een van de oudste regenwouden op aarde. Rij dwars door het rode hart van het land en kampeer op K’gari, het grootste zandeiland ter wereld: een reis naar Down Under vergeet je nooit.',
+    'aus.page.desc': 'Australië is een land vol avontuur, van ruige natuur in de outback tot verborgen surfstranden. Bewonder het Sydney Opera House, duik in de onderwaterwereld van het Great Barrier Reef en trek door het Daintree, een van de oudste regenwouden op aarde. Rij dwars door het rode hart van het land en kampeer op K’gari, het grootste zandeiland ter wereld: een reis naar Down Under vergeet je nooit.',
     'aus.page.capital': 'Canberra',
     'aus.page.language': 'Engels',
     'aus.page.currency': 'Australische Dollar (AUD)',
@@ -1862,9 +1859,6 @@ faq_sim_a_f:
 
 'australia.intro.text2':
   'Elke regio voelt als een **nieuwe bestemming**: tropisch regenwoud, parelwitte stranden, eindeloze woestijnen, ruige bergen en bruisende steden. Het land telt **8 klimaatzones** en **3 tijdzones**, en een vlucht van Perth naar Sydney duurt al snel **4 tot 5 uur**, net zo lang als van Nederland naar Egypte. Die enorme grootte maakt Australië zo bijzonder, maar het plannen van je reis ook best overweldigend. **Laat je inspireren!**',
-
-'australia.intro.text3':
-  'Juist die enorme grootte en diversiteit maken Australië zo bijzonder, maar kunnen het plannen van je reis ook behoorlijk overweldigend maken. Welke route past het beste bij jouw reisstijl? Hoeveel tijd heb je écht nodig? En waar vind je die unieke accommodaties, verborgen stranden en lokale hotspots die je niet in de standaard reisgidsen vindt?',
 
 'australia.intro.mistakesTitle':
   "Veelgemaakte 'fouten' bij een reis door Australië",

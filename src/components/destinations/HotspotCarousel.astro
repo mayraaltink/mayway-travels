@@ -87,7 +87,7 @@ const desc = get(descKey);
     <!-- Kaarten: mobiel 1, tablet 2, desktop 3 per keer -->
     <div data-carousel-track class="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth md:mt-14">
       {items.map((h) => (
-        <article class="relative h-[500px] sm:h-[440px] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_20px_45px_rgba(0,0,0,0.12)] sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]">
+        <article class="relative cursor-pointer h-[500px] sm:h-[440px] w-full shrink-0 snap-start overflow-hidden rounded-[2rem] bg-[#0B5F64] shadow-[0_20px_45px_rgba(0,0,0,0.12)] sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]">
           {h.src ? (
             <img src={h.src} alt={h.title} loading="lazy" draggable="false" class="absolute inset-0 h-full w-full object-cover" />
           ) : (
@@ -122,8 +122,9 @@ const desc = get(descKey);
 
   <!-- Verhaal-popup -->
   <!-- Nooit hoger dan het scherm: foto bovenaan vast, de tekst eronder scrollt als hij te lang is -->
-  <!-- Mobiel: schermvullend (foto boven, ruim plek voor de tekst). Desktop: foto links, tekst rechts. -->
-  <dialog id="hotspot-story" class="hotspot-story m-0 h-[100dvh] max-h-none w-full max-w-none flex-col overflow-hidden bg-white p-0 shadow-2xl open:flex md:m-auto md:h-auto md:max-h-[90svh] md:w-[min(92vw,56rem)] md:flex-row md:rounded-[2rem]">
+  <!-- Mobiel: kaartje in het midden (foto boven, tekst eronder die scrollt), nooit hoger dan 90% van het scherm.
+       Desktop: foto links, tekst rechts. -->
+  <dialog id="hotspot-story" class="hotspot-story m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-none flex-col overflow-hidden rounded-[1.75rem] bg-white p-0 shadow-2xl open:flex md:max-h-[90svh] md:w-[min(92vw,56rem)] md:flex-row md:rounded-[2rem]">
     <!-- Lange, staande foto (gevuld): mobiel over de volle breedte, desktop links -->
     <div data-story-media class="relative h-[45dvh] w-full shrink-0 bg-gradient-to-br from-[#0F7C82] to-[#084649] md:h-auto md:min-h-[32rem] md:w-[52%]">
       <img data-story-image alt="" class="hidden h-full w-full object-cover" />
@@ -192,8 +193,9 @@ const desc = get(descKey);
       text.textContent = story ?? '';
     }
 
+    // de hele kaart (foto én knop) opent het verhaal; de klik op de knop komt hier ook binnen
     spots.forEach((btn, i) => {
-      btn.addEventListener('click', () => {
+      btn.closest('article')!.addEventListener('click', () => {
         show(i);
         dialog.showModal();
       });

@@ -76,12 +76,12 @@ const moments = allMoments.map((m) => ({
   </div>
 
   <!-- Moment met verhaal (opent bij klikken) -->
-  <!-- Nooit hoger dan het scherm: hele foto zichtbaar (niet bijgesneden), de tekst scrollt als hij te lang is.
-       Mobiel: foto boven, tekst eronder. Desktop: foto links, tekst rechts. -->
-  <dialog class="moment-story relative m-auto max-h-[90svh] w-[calc(100%-2rem)] max-w-3xl flex-col overflow-hidden rounded-[1.75rem] p-0 open:flex backdrop:bg-black/70 backdrop:backdrop-blur-sm md:flex-row">
-    <!-- naast de foto: donkerturquoise, zelfde als de hotspot-popup -->
-    <div class="relative h-[min(45svh,26rem)] shrink-0 overflow-hidden bg-[#0B5F64] md:h-auto md:min-h-[28rem] md:w-[52%]">
-      <img data-story-photo alt="" class="absolute inset-0 hidden h-full w-full object-contain" />
+  <!-- Nooit hoger dan het scherm; de tekst scrollt als hij te lang is.
+       Mobiel: foto boven (4:5), tekst eronder. Desktop: foto links, tekst rechts.
+       Let op: geen `relative` op de dialog, anders opent hij bovenaan de pagina in plaats van in beeld. -->
+  <dialog class="moment-story m-auto max-h-[90svh] w-[calc(100%-2rem)] max-w-3xl flex-col overflow-hidden rounded-[1.75rem] p-0 open:flex backdrop:bg-black/70 backdrop:backdrop-blur-sm md:flex-row">
+    <div class="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-gradient-to-br from-[#0F7C82] to-[#084649] md:aspect-auto md:min-h-[28rem] md:w-[52%]">
+      <img data-story-photo alt="" class="absolute inset-0 hidden h-full w-full object-cover" />
     </div>
     <div class="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain p-6 md:p-9">
       <!-- my-auto: kort verhaal staat in het midden, lang verhaal begint gewoon bovenaan -->

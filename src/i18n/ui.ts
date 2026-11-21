@@ -789,7 +789,7 @@ faq_sim_a_f:
 'Fiji.page.language': 'English, Fiji Hindi and Fijian',
 'Fiji.page.currency': 'Fijian Dollar (FJD)',
    'Fiji.page.flightTime': '24-26 hours',
-'aus.page.location': 'Byron Bay · Australia',
+'aus.page.location': 'Palm Beach · Australia',
 
 
 
@@ -922,6 +922,7 @@ fiji_intro_cta: "Start planning your trip",
 'nz.page.language': 'English and Māori',
 'nz.page.currency': 'New Zealand dollar (NZD)',
 'nz.page.flightTime': '26-30 hours',
+'nz.page.location': 'Mirror Lakes · New Zealand',
 
 'nz.intro.title': 'Road tripping',
 'nz.intro.titleBold': 'through New Zealand',
@@ -1681,7 +1682,7 @@ faq_sim_a_f:
 'Fiji.page.language': 'Engels, Fiji Hindi en Fijisch',
 'Fiji.page.currency': 'Fijische dollar (FJD)',
    'Fiji.page.flightTime': '24-26 uur',
-'aus.page.location': 'Byron Bay · Australië',
+'aus.page.location': 'Palm Beach · Australië',
 
 
 
@@ -1986,6 +1987,7 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'nz.page.language': 'Engels en Māori',
 'nz.page.currency': 'Nieuw-Zeelandse dollar (NZD)',
 'nz.page.flightTime': '26-30 uur',
+'nz.page.location': 'Mirror Lakes · Nieuw-Zeeland',
 
 'nz.intro.title': 'Roadtrippen',
 'nz.intro.titleBold': 'door Nieuw-Zeeland',

@@ -122,23 +122,32 @@ const desc = get(descKey);
 
   <!-- Verhaal-popup -->
   <!-- Nooit hoger dan het scherm: foto bovenaan vast, de tekst eronder scrollt als hij te lang is -->
-  <!-- Mobiel: schermvullend (foto boven, ruim plek voor de tekst). Desktop: kaartje in het midden. -->
-  <dialog id="hotspot-story" class="hotspot-story m-0 h-[100dvh] max-h-none w-full max-w-none flex-col overflow-hidden bg-white p-0 shadow-2xl open:flex md:m-auto md:h-auto md:max-h-[90svh] md:w-[28rem] md:rounded-[2rem]">
-    <div class="relative shrink-0">
-      <!-- Lange, staande foto over de volle breedte (gevuld); de tekst eronder scrollt -->
-      <div data-story-media class="h-[45dvh] w-full md:h-[min(60svh,34rem)] bg-gradient-to-br from-[#0F7C82] to-[#084649]">
-        <img data-story-image alt="" class="hidden h-full w-full object-cover" />
-      </div>
-      <button type="button" data-story-close aria-label={lang === 'nl' ? 'Sluiten' : 'Close'} class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow transition hover:bg-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+  <!-- Mobiel: schermvullend (foto boven, ruim plek voor de tekst). Desktop: foto links, tekst rechts. -->
+  <dialog id="hotspot-story" class="hotspot-story m-0 h-[100dvh] max-h-none w-full max-w-none flex-col overflow-hidden bg-white p-0 shadow-2xl open:flex md:m-auto md:h-auto md:max-h-[90svh] md:w-[min(92vw,56rem)] md:flex-row md:rounded-[2rem]">
+    <!-- Lange, staande foto (gevuld): mobiel over de volle breedte, desktop links -->
+    <div data-story-media class="relative h-[45dvh] w-full shrink-0 bg-gradient-to-br from-[#0F7C82] to-[#084649] md:h-auto md:min-h-[32rem] md:w-[52%]">
+      <img data-story-image alt="" class="hidden h-full w-full object-cover" />
+      <!-- subtiele pijltjes: vorige / volgende hotspot (zelfde als bij MAY WAY Moments) -->
+      <button type="button" data-story-prev aria-label={lang === 'nl' ? 'Vorige hotspot' : 'Previous hotspot'} class="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-white/90 backdrop-blur-sm transition hover:bg-black/40">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+      </button>
+      <button type="button" data-story-next aria-label={lang === 'nl' ? 'Volgende hotspot' : 'Next hotspot'} class="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-white/90 backdrop-blur-sm transition hover:bg-black/40">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
       </button>
     </div>
-    <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain p-7 md:p-9">
-      <p data-story-badge class="text-xs uppercase tracking-[0.2em] text-[#1CABB0]"></p>
-      <h3 data-story-title class="mt-2 text-2xl font-semibold leading-tight tracking-tight text-black md:text-3xl"></h3>
-      <!-- whitespace-pre-line: een witregel (\n\n) in de tekst wordt een nieuwe alinea -->
-      <p data-story-text class="mt-4 whitespace-pre-line text-[15px] leading-relaxed text-gray-600 md:text-base"></p>
+    <div class="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain p-7 md:p-9">
+      <!-- my-auto: kort verhaal in het midden, lang verhaal begint bovenaan en scrollt -->
+      <div class="my-auto">
+        <p data-story-badge class="pr-10 text-xs uppercase tracking-[0.2em] text-[#1CABB0]"></p>
+        <h3 data-story-title class="mt-2 text-2xl font-semibold leading-tight tracking-tight text-black md:text-3xl"></h3>
+        <!-- whitespace-pre-line: een witregel (\n\n) in de tekst wordt een nieuwe alinea -->
+        <p data-story-text class="mt-4 whitespace-pre-line text-[15px] leading-relaxed text-gray-600 md:text-base"></p>
+      </div>
     </div>
+    <!-- kruisje rechtsboven (mobiel op de foto, desktop boven de tekst); scrollt niet mee -->
+    <button type="button" data-story-close aria-label={lang === 'nl' ? 'Sluiten' : 'Close'} class="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow transition hover:bg-white md:bg-gray-100 md:shadow-none md:hover:bg-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+    </button>
   </dialog>
 </section>
 
@@ -164,22 +173,33 @@ const desc = get(descKey);
     const title = dialog.querySelector<HTMLElement>('[data-story-title]')!;
     const text = dialog.querySelector<HTMLElement>('[data-story-text]')!;
 
-    document.querySelectorAll<HTMLElement>('[data-hotspot-open]').forEach((btn) => {
+    const spots = Array.from(document.querySelectorAll<HTMLElement>('[data-hotspot-open]'));
+    let current = 0;
+
+    function show(i: number) {
+      // rondlopen: na de laatste hotspot weer de eerste
+      current = (i + spots.length) % spots.length;
+      const { src, badge: b, title: tt, story } = spots[current].dataset;
+      img.classList.toggle('hidden', !src);
+      if (src) {
+        img.src = src;
+        img.alt = tt ?? '';
+      }
+      // nieuwe plek: tekst weer bovenaan beginnen
+      text.closest<HTMLElement>('.overflow-y-auto')!.scrollTop = 0;
+      badge.textContent = b ?? '';
+      title.textContent = tt ?? '';
+      text.textContent = story ?? '';
+    }
+
+    spots.forEach((btn, i) => {
       btn.addEventListener('click', () => {
-        const { src, badge: b, title: tt, story } = btn.dataset;
-        img.classList.toggle('hidden', !src);
-        if (src) {
-          img.src = src;
-          img.alt = tt ?? '';
-        }
-        // nieuwe plek: tekst weer bovenaan beginnen
-        text.parentElement!.scrollTop = 0;
-        badge.textContent = b ?? '';
-        title.textContent = tt ?? '';
-        text.textContent = story ?? '';
+        show(i);
         dialog.showModal();
       });
     });
+    dialog.querySelector('[data-story-prev]')?.addEventListener('click', () => show(current - 1));
+    dialog.querySelector('[data-story-next]')?.addEventListener('click', () => show(current + 1));
 
     dialog.querySelector('[data-story-close]')?.addEventListener('click', () => dialog.close());
     // Klik naast de popup sluit hem ook

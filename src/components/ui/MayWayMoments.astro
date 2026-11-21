@@ -76,15 +76,25 @@ const moments = allMoments.map((m) => ({
   </div>
 
   <!-- Moment met verhaal (opent bij klikken) -->
-  <dialog class="moment-story m-auto w-[calc(100%-2rem)] max-w-3xl overflow-hidden rounded-[1.75rem] p-0 backdrop:bg-black/70 backdrop:backdrop-blur-sm">
-    <div class="grid md:grid-cols-[1.1fr_1fr]">
-      <div class="relative aspect-[4/5] bg-gradient-to-br from-[#0F7C82] to-[#084649] md:aspect-auto md:min-h-[28rem]">
+  <dialog class="moment-story m-auto w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-[1.75rem] p-0 backdrop:bg-black/70 backdrop:backdrop-blur-sm">
+    <!-- Mobiel: foto boven (±45% van het scherm), tekst eronder scrollt; nooit hoger dan het scherm.
+         Desktop (md:): foto links, tekst rechts. -->
+    <div class="relative flex max-h-[90dvh] flex-col md:grid md:max-h-none md:grid-cols-[1.3fr_1fr]">
+      <div class="relative h-[45dvh] shrink-0 bg-gradient-to-br from-[#0F7C82] to-[#084649] md:h-auto md:min-h-[34rem]">
         <img data-story-photo alt="" class="absolute inset-0 hidden h-full w-full object-cover" />
-      </div>
-      <div class="relative flex flex-col justify-center p-6 md:p-9">
-        <button type="button" data-story-close class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition hover:bg-gray-200" aria-label={t('cmoments.form.close')}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+        <!-- subtiele pijltjes: vorig / volgend moment -->
+        <button type="button" data-story-prev aria-label={lang === 'nl' ? 'Vorig moment' : 'Previous moment'} class="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-white/90 backdrop-blur-sm transition hover:bg-black/40">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
         </button>
+        <button type="button" data-story-next aria-label={lang === 'nl' ? 'Volgend moment' : 'Next moment'} class="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-white/90 backdrop-blur-sm transition hover:bg-black/40">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+      </div>
+      <!-- kruisje rechtsboven: mobiel op de foto, desktop in het tekstvlak; scrollt niet mee -->
+      <button type="button" data-story-close class="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition hover:bg-gray-200" aria-label={t('cmoments.form.close')}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div data-story-scroll class="relative flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain p-6 md:justify-center md:overflow-visible md:p-9">
         <p data-story-location class="flex items-center gap-1.5 pr-10 text-xs uppercase tracking-[0.15em] text-[#1CABB0]"></p>
         <h3 data-story-title class="mt-2 text-2xl font-semibold leading-tight tracking-tight text-black md:text-3xl"></h3>
         <p data-story-text class="mt-5 whitespace-pre-line text-[15px] leading-relaxed text-gray-600 md:text-base"></p>      </div>
@@ -105,6 +115,8 @@ const moments = allMoments.map((m) => ({
         const { src = '', title = '', location = '', story = '' } = card.dataset;
         photo.classList.toggle('hidden', !src);
         if (src) { photo.src = src; photo.alt = title; }
+        // nieuw moment: tekst weer bovenaan beginnen
+        dialog.querySelector<HTMLElement>('[data-story-scroll]')!.scrollTop = 0;
         set('[data-story-location]', location);
         set('[data-story-title]', title);
         set('[data-story-text]', story);

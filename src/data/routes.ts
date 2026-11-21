@@ -16,6 +16,8 @@ export type RouteDef = { key: string; stops: RouteStop[]; extras?: RouteExtra[];
 
 const au = (file: string) => `/images/australia/routes/${file}.jpg`;
 const nz = (file: string) => `/images/new-zealand/routes/${file}.jpg`;
+// eigen foto's in public/images/new-zealand (ook gebruikt bij de hotspots)
+const nzp = (file: string) => `/images/new-zealand/${file}.jpg`;
 const fj = (file: string) => `/images/fiji/routes/${file}.jpg`;
 
 export const australiaRoutes: RouteDef[] = [
@@ -111,24 +113,25 @@ export const australiaRoutes: RouteDef[] = [
 export const newZealandRoutes: RouteDef[] = [
   {
     key: "routes.nz.north",
+    photos: true,
     stops: [
-      { name: "Auckland", img: nz("north-1"), x: 297, y: 134 },
+      { name: "Auckland", img: nzp("auck"), x: 297, y: 134 },
       // om de Firth of Thames heen, dan langs de westkant van het schiereiland omhoog
       { name: "", img: "", x: 305, y: 150, via: true },
       { name: "", img: "", x: 322, y: 156, via: true },
       { name: "", img: "", x: 326, y: 143, via: true },
-      { name: "Coromandel", img: nz("north-coromandel"), x: 323, y: 131 },
-      { name: "Cathedral Cove & Hot Water Beach", img: nz("north-2"), x: 332, y: 136 },
-      { name: "Hobbiton", img: nz("north-3"), x: 329, y: 180 },
-      { name: "Rotorua", img: nz("north-4"), x: 349, y: 193 },
-      { name: "Redwoods", img: nz("north-redwoods"), x: 351, y: 196 },
-      { name: "Taupō", img: nz("north-5"), x: 343, y: 218 },
-      { name: "Tongariro", img: nz("north-6"), x: 328, y: 238 },
+      { name: "Coromandel", img: nzp("coromandol"), x: 323, y: 131 },
+      { name: "Cathedral Cove & Hot Water Beach", img: nzp("hotwater"), x: 332, y: 136 },
+      { name: "Hobbiton", img: nzp("hobbiton"), x: 329, y: 180 },
+      { name: "Rotorua", img: nzp("greenlake"), x: 349, y: 193 },
+      { name: "Redwoods", img: nzp("woodstrail"), x: 351, y: 196 },
+      { name: "Taupō", img: nzp("huka"), x: 343, y: 218 },
+      { name: "Tongariro", img: nzp("tongariro"), x: 328, y: 238 },
       // landinwaarts naar het zuiden, niet over de baai aan de westkant
       { name: "", img: "", x: 322, y: 280, via: true },
       { name: "", img: "", x: 311, y: 305, via: true },
       { name: "", img: "", x: 304, y: 322, via: true },
-      { name: "Wellington", img: nz("north-7"), x: 298, y: 336 },
+      { name: "Wellington", img: nzp("wellington"), x: 298, y: 336 },
     ],
   },
   {
@@ -169,17 +172,20 @@ export const newZealandRoutes: RouteDef[] = [
   {
     // 5 dagen vanuit Queenstown; via-punten terug naar Queenstown, zodat de lijn niet dwars over de bergen loopt
     key: "routes.nz.queenstown",
+    photos: true,
     stops: [
-      { name: "Queenstown", img: nz("south-2"), x: 86, y: 507 },
+      { name: "Queenstown", img: nzp("queenstown"), x: 86, y: 507 },
       { name: "Glenorchy", img: nz("south-1"), x: 77, y: 499 },
       { name: "", img: "", x: 86, y: 507, via: true },
       // Coronet Peak en Arrowtown liggen op de route over de Crown Range naar Wānaka
-      { name: "Coronet Peak", img: nz("south-coronet-peak"), x: 88, y: 501 },
-      { name: "Arrowtown", img: nz("south-arrowtown"), x: 92, y: 503 },
-      { name: "Wānaka", img: nz("west-6"), x: 102, y: 492 },
+      { name: "Coronet Peak", img: nzp("coronet"), x: 88, y: 501 },
+      { name: "Arrowtown", img: nzp("arrowtown"), x: 92, y: 503 },
+      { name: "Wānaka", img: nzp("wanaka"), x: 102, y: 492 },
       { name: "", img: "", x: 86, y: 507, via: true },
-      { name: "Te Anau", img: nz("south-4"), x: 53, y: 525 },
-      { name: "Milford Sound", img: nz("south-3"), x: 61, y: 491 },
+      { name: "Te Anau", img: nzp("teanau"), x: 53, y: 525 },
+      // langs de Milford Road, tussen Te Anau en Milford Sound
+      { name: "Mirror Lakes", img: nzp("mirrorlake"), x: 57, y: 508 },
+      { name: "Milford Sound", img: nzp("milford"), x: 61, y: 491 },
     ],
   },
 ];

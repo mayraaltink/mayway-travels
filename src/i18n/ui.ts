@@ -588,6 +588,7 @@ faq_sim_a_f:
 "stop.coronet-peak": "Queenstown's ski area, a twenty-minute drive from the centre. Skiing and snowboarding in winter, and great views over the valley all year round.",
 "stop.arrowtown": "A historic gold-mining village with wooden cottages and cosy cafés. In autumn the trees turn beautiful shades of yellow and orange.",
 "stop.te-anau": "A quiet lakeside town and the gateway to Fiordland. Visit the glowworm caves or start your drive along the Milford Road from here.",
+"stop.mirror-lakes": "A short stop along the Milford Road. On a calm day the small lakes reflect the mountains of the Earl Mountains like a perfect mirror.",
 "stop.milford-sound": "Steep cliffs, thundering waterfalls and deep dark water in New Zealand's most famous fjord. Take a cruise or kayak trip and spot seals and dolphins.",
 // East Coast
 "stop.sydney": "A vibrant city where urban energy and beach culture come together. From surfing at Bondi Beach to admiring the iconic Harbour Bridge and Opera House.",
@@ -941,9 +942,12 @@ fiji_intro_cta: "Start planning your trip",
 'routes.nz.north.subtitle': 'Auckland to Wellington',
 'routes.nz.north.tagline':
   "The North Island is the **perfect introduction** to New Zealand. Here you discover a mix of untouched beaches, volcanoes, endless green hills and a rich **Māori culture** that you won't experience this up close anywhere else. Ideal if you love variety, with a completely different landscape every day!\n\nAlong the way, the white beaches of the **Coromandel** and **Cathedral Cove** alternate with the glowworm caves of **Waitomo** and the green hills of **Hobbiton**. In **Rotorua** you smell the sulphur and see geysers and mud pools, and at **Taupō** and **Tongariro National Park** you walk straight through a moonscape of volcanoes and crater lakes. From here you have two options: drive on to **Wellington**, the hip capital where the ferry to the South Island is waiting for you, or head back to Auckland and fly to **Christchurch** or **Queenstown** in a few hours to explore the South Island from there.",
+'routes.nz.north.drive':
+  'Distance = ± 1,000 km\nDriving time = ± 14 hours\nRecommended travel time = 10 to 14 days',
 'routes.nz.north.expand': {
   route: 'Route: Auckland to Wellington',
   distance: 'Distance: ±1,000 km',
+  facts: ['Travel time: 10-14 days'],
   highlights: [
     'Cathedral Cove & Hot Water Beach',
     'The Hobbiton movie set',
@@ -955,9 +959,12 @@ fiji_intro_cta: "Start planning your trip",
 'routes.nz.southisland.subtitle': 'Christchurch to Christchurch',
 'routes.nz.southisland.tagline':
   "The South Island is where New Zealand **truly impresses**. Here everything gets bigger, wilder and emptier: snow-capped peaks, glaciers, turquoise lakes and endless roads where you want to stop for a photo at every bend. This is **the road trip for nature lovers and adventurers**, and the part of the trip you'll miss the most afterwards!\n\nAlong the way, the beaches of **Abel Tasman** alternate with the wild west coast, the **Pancake Rocks** at Punakaiki and the glaciers of **Franz Josef** and **Fox**. Over **Haast Pass** you drive to **Wānaka**, and then you arrive in **Queenstown**. There are so many activities here that it's almost a holiday in itself! From here you cruise between the steep fjords of **Milford Sound** and end at the bright blue lakes of **Tekapo** and **Pukaki**, at the foot of **Aoraki/Mount Cook**, the highest mountain in New Zealand.",
+'routes.nz.southisland.drive':
+  'Distance = ± 1,800 km\nDriving time = ± 28 hours\nRecommended travel time = 2.5 to 3 weeks',
 'routes.nz.southisland.expand': {
   route: 'Route: round trip from Christchurch',
   distance: 'Distance: ±1,800 km',
+  facts: ['Travel time: 2.5-3 weeks'],
   highlights: [
     'Whale watching in Kaikōura',
     'Kayaking in Abel Tasman National Park',
@@ -971,9 +978,12 @@ fiji_intro_cta: "Start planning your trip",
 'routes.nz.queenstown.subtitle': 'Southwest',
 'routes.nz.queenstown.tagline':
   "Last June I spent **9 days in Queenstown**, and I could easily have stayed longer. At first glance it looks like a small town, and especially in winter it feels like a **cosy ski village**: charming shopping streets, a big lake, views of snow-capped mountains and the gondola that takes you straight up the mountain.\n\nThe area has a huge number of **hikes**, from **Queenstown Hill** and the **Tiki Trail** to the tough climb up **Ben Lomond**, with one of the most beautiful views over Lake Wakatipu. You can also take all kinds of fun **day trips** from Queenstown: to **Arrowtown**, a historic gold-mining village, wine tasting in **Gibbston Valley**, the stunning lakeside drive to **Glenorchy**, or a day in **Wānaka**. But my number 1? A day trip to **Milford Sound**! Here you cruise past cliffs, waterfalls and steep fjords, and for me it's **the highlight of New Zealand**.\n\nFor real **adrenaline** you're in the right place too. You can skydive, take a helicopter flight over the mountains or race through narrow canyons on the **Shotover Jet**. And of course bungy jumping: jump off the **Kawarau Bridge**, the very first commercial bungy jump in the world, or go for the **Nevis Bungy** if you want it even more extreme, because at 134 metres it's the highest in New Zealand.",
+'routes.nz.queenstown.drive':
+  'Distance = ± 800 km\nDriving time = ± 12 hours\nRecommended travel time = 5 to 7 days',
 'routes.nz.queenstown.expand': {
   route: 'Route: 5 days from Queenstown',
   distance: 'Distance: ±800 km',
+  facts: ['Travel time: 5-7 days'],
   highlights: [
     'Adrenaline in Queenstown',
     'The Lord of the Rings landscapes around Glenorchy',
@@ -1746,6 +1756,7 @@ faq_sim_a_f:
 "stop.coronet-peak": "Het skigebied van Queenstown, op twintig minuten rijden van het centrum. In de winter skiën en snowboarden, en het hele jaar door een geweldig uitzicht over de vallei.",
 "stop.arrowtown": "Een historisch goudzoekersdorpje met houten huisjes en gezellige cafeetjes. In de herfst kleuren de bomen hier prachtig geel en oranje.",
 "stop.te-anau": "Een rustig plaatsje aan het meer en dé uitvalsbasis voor Fiordland. Bezoek de glimwormgrotten of start hier je rit over de Milford Road.",
+"stop.mirror-lakes": "Een korte stop langs de Milford Road. Op een windstille dag weerspiegelen de kleine meertjes de bergen van de Earl Mountains als een perfecte spiegel.",
 "stop.milford-sound": "Steile kliffen, donderende watervallen en diep donker water in de bekendste fjord van Nieuw-Zeeland. Maak een cruise of kajaktocht en spot zeehonden en dolfijnen.",
 // Oostkust
 "stop.sydney": "Een bruisende stad waar stadse energie en strandcultuur samenkomen. Van surfen bij Bondi Beach tot genieten van de iconische Harbour Bridge en het Opera House.",
@@ -1995,9 +2006,12 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'routes.nz.north.subtitle': 'Auckland naar Wellington',
 'routes.nz.north.tagline':
   'Het Noordereiland is de **perfecte kennismaking** met Nieuw-Zeeland. Je ontdekt hier een mix van ongerepte stranden, vulkanen, oneindige groene heuvels en een rijke **Māori-cultuur** die je nergens anders zo dichtbij ervaart. Ideaal voor wie houdt van afwisseling, met elke dag weer een totaal ander landschap!\n\nOnderweg wisselen de witte stranden van de **Coromandel** en **Cathedral Cove** zich af met de glimwormgrotten van **Waitomo** en de groene heuvels van **Hobbiton**. In **Rotorua** ruik je de zwavel en zie je geisers en modderpoelen, en bij **Taupō** en het **Tongariro National Park** loop je dwars door een maanlandschap van vulkanen en kratermeren. Vanaf hier heb je twee opties: je rijdt door naar **Wellington**, de hippe hoofdstad waar de ferry naar het Zuidereiland al op je wacht, of je keert terug naar Auckland en vliegt in een paar uur naar **Christchurch** of **Queenstown** om daar het Zuidereiland te ontdekken.',
+'routes.nz.north.drive':
+  'Afstand = ± 1.000 km\nRijtijd = ± 14 uur\nAanbevolen reistijd = 10 tot 14 dagen',
 'routes.nz.north.expand': {
   route: 'Route: Auckland naar Wellington',
   distance: 'Afstand: ±1.000 km',
+  facts: ['Reistijd: 10-14 dagen'],
   highlights: [
     'Cathedral Cove & Hot Water Beach',
     'De filmset van Hobbiton',
@@ -2009,9 +2023,12 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'routes.nz.southisland.subtitle': 'Christchurch naar Christchurch',
 'routes.nz.southisland.tagline':
   'Het Zuidereiland is waar Nieuw-Zeeland **écht indruk maakt**. Hier wordt alles groter, ruiger en leger: besneeuwde bergtoppen, gletsjers, turquoise meren en eindeloze wegen waar je bij elke bocht wilt stoppen voor een foto. Dit is **dé roadtrip voor natuurliefhebbers en avonturiers**, en het deel van de reis waar je achteraf het meest naar terugverlangt!\n\nOnderweg wisselen de stranden van **Abel Tasman** zich af met de wilde westkust, de **Pancake Rocks** van Punakaiki en de gletsjers van **Franz Josef** en **Fox**. Via de **Haast Pass** rijd je naar **Wānaka**, en daarna kom je aan in **Queenstown**. Hier kun je zóveel activiteiten doen dat het bijna een vakantie op zichzelf is! Vanaf hier vaar je tussen de steile fjorden van **Milford Sound** en eindig je bij de felblauwe meren van **Tekapo** en **Pukaki**, aan de voet van **Aoraki/Mount Cook**, de hoogste berg van Nieuw-Zeeland.',
+'routes.nz.southisland.drive':
+  'Afstand = ± 1.800 km\nRijtijd = ± 28 uur\nAanbevolen reistijd = 2,5 tot 3 weken',
 'routes.nz.southisland.expand': {
   route: 'Route: rondreis vanuit Christchurch',
   distance: 'Afstand: ±1.800 km',
+  facts: ['Reistijd: 2,5-3 weken'],
   highlights: [
     'Walvissen spotten in Kaikōura',
     'Kajakken in Abel Tasman National Park',
@@ -2025,9 +2042,12 @@ fiji_intro_cta: "Begin met het plannen van je reis",
 'routes.nz.queenstown.subtitle': 'Zuidwest',
 'routes.nz.queenstown.tagline':
   'Afgelopen juni ben ik **9 dagen in Queenstown** geweest, en ik had er zo nog langer kunnen blijven. Op het eerste gezicht lijkt het een klein stadje, en zeker in de winter voelt het als een **knus wintersportdorpje**: gezellige winkelstraatjes, een groot meer, uitzicht op besneeuwde bergen en de gondel die je zo de berg op brengt.\n\nIn de omgeving kun je gigantisch veel **hikes** doen, van **Queenstown Hill** en de **Tiki Trail** tot de pittige klim naar **Ben Lomond**, met een van de mooiste uitzichten over Lake Wakatipu. Ook kun je vanuit Queenstown allerlei leuke **dagtripjes** maken: naar **Arrowtown**, een historisch goudzoekersdorpje, wijn proeven in **Gibbston Valley**, de prachtige route langs het meer naar **Glenorchy**, of een dagje naar **Wānaka**. Maar mijn nummer 1? Een dagtrip naar **Milford Sound**! Hier vaar je tussen kliffen, watervallen en de steile fjorden door, en het is voor mij **hét hoogtepunt van Nieuw-Zeeland**.\n\nVoor de echte **adrenaline** zit je hier ook helemaal goed. Je kunt skydiven, een helikoptervlucht maken over de bergen of met de **Shotover Jet** door smalle kloven scheuren. En natuurlijk bungyjumpen: spring van de **Kawarau Bridge**, de allereerste commerciële bungyjump ter wereld, of ga voor de **Nevis Bungy** als je het nóg extremer wilt, want met 134 meter is dat de hoogste van Nieuw-Zeeland.',
+'routes.nz.queenstown.drive':
+  'Afstand = ± 800 km\nRijtijd = ± 12 uur\nAanbevolen reistijd = 5 tot 7 dagen',
 'routes.nz.queenstown.expand': {
   route: 'Route: 5 dagen vanuit Queenstown',
   distance: 'Afstand: ±800 km',
+  facts: ['Reistijd: 5-7 dagen'],
   highlights: [
     'Adrenaline in Queenstown',
     'De Lord of the Rings-landschappen rond Glenorchy',

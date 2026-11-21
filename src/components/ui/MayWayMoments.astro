@@ -110,19 +110,30 @@ const moments = allMoments.map((m) => ({
     const photo = dialog.querySelector<HTMLImageElement>('[data-story-photo]')!;
     const set = (selector: string, value: string) => { dialog.querySelector(selector)!.textContent = value; };
 
-    document.querySelectorAll<HTMLElement>('.moment-card').forEach((card) => {
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('.moment-card'));
+    let current = 0;
+
+    function show(i: number) {
+      // rondlopen: na het laatste moment weer het eerste
+      current = (i + cards.length) % cards.length;
+      const { src = '', title = '', location = '', story = '' } = cards[current].dataset;
+      photo.classList.toggle('hidden', !src);
+      if (src) { photo.src = src; photo.alt = title; }
+      // nieuw moment: tekst weer bovenaan beginnen
+      dialog!.querySelector<HTMLElement>('[data-story-scroll]')!.scrollTop = 0;
+      set('[data-story-location]', location);
+      set('[data-story-title]', title);
+      set('[data-story-text]', story);
+    }
+
+    cards.forEach((card, i) => {
       card.addEventListener('click', () => {
-        const { src = '', title = '', location = '', story = '' } = card.dataset;
-        photo.classList.toggle('hidden', !src);
-        if (src) { photo.src = src; photo.alt = title; }
-        // nieuw moment: tekst weer bovenaan beginnen
-        dialog.querySelector<HTMLElement>('[data-story-scroll]')!.scrollTop = 0;
-        set('[data-story-location]', location);
-        set('[data-story-title]', title);
-        set('[data-story-text]', story);
+        show(i);
         dialog.showModal();
       });
     });
+    dialog.querySelector('[data-story-prev]')?.addEventListener('click', () => show(current - 1));
+    dialog.querySelector('[data-story-next]')?.addEventListener('click', () => show(current + 1));
     dialog.querySelector('[data-story-close]')?.addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
   }

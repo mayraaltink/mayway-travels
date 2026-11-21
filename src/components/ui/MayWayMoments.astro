@@ -77,10 +77,10 @@ const moments = allMoments.map((m) => ({
 
   <!-- Moment met verhaal (opent bij klikken) -->
   <!-- Nooit hoger dan het scherm; de tekst scrollt als hij te lang is.
-       Mobiel: foto boven (4:5), tekst eronder. Desktop: foto links, tekst rechts.
+       Mobiel: schermvullend, foto boven, ruim plek voor de tekst eronder. Desktop: foto links, tekst rechts.
        Let op: geen `relative` op de dialog, anders opent hij bovenaan de pagina in plaats van in beeld. -->
-  <dialog class="moment-story m-auto max-h-[90svh] w-[calc(100%-2rem)] max-w-3xl flex-col overflow-hidden rounded-[1.75rem] p-0 open:flex backdrop:bg-black/70 backdrop:backdrop-blur-sm md:flex-row">
-    <div class="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-gradient-to-br from-[#0F7C82] to-[#084649] md:aspect-auto md:min-h-[28rem] md:w-[52%]">
+  <dialog class="moment-story m-0 h-[100dvh] max-h-none w-full max-w-none flex-col overflow-hidden p-0 open:flex backdrop:bg-black/70 backdrop:backdrop-blur-sm md:m-auto md:h-auto md:max-h-[90svh] md:w-[calc(100%-2rem)] md:max-w-3xl md:flex-row md:rounded-[1.75rem]">
+    <div class="relative h-[45dvh] w-full shrink-0 overflow-hidden bg-gradient-to-br from-[#0F7C82] to-[#084649] md:h-auto md:min-h-[28rem] md:w-[52%]">
       <img data-story-photo alt="" class="absolute inset-0 hidden h-full w-full object-cover" />
     </div>
     <div class="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain p-6 md:p-9">

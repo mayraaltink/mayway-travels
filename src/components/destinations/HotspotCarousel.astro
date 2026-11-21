@@ -122,9 +122,11 @@ const desc = get(descKey);
 
   <!-- Verhaal-popup -->
   <!-- Nooit hoger dan het scherm: foto bovenaan vast, de tekst eronder scrollt als hij te lang is -->
-  <dialog id="hotspot-story" class="hotspot-story m-auto max-h-[90svh] w-[min(92vw,34rem)] flex-col overflow-hidden rounded-[2rem] bg-white p-0 shadow-2xl open:flex">
+  <!-- Mobiel: schermvullend (foto boven, ruim plek voor de tekst). Desktop: kaartje in het midden. -->
+  <dialog id="hotspot-story" class="hotspot-story m-0 h-[100dvh] max-h-none w-full max-w-none flex-col overflow-hidden bg-white p-0 shadow-2xl open:flex md:m-auto md:h-auto md:max-h-[90svh] md:w-[28rem] md:rounded-[2rem]">
     <div class="relative shrink-0">
-      <div data-story-media class="aspect-[16/10] w-full bg-gradient-to-br from-[#0F7C82] to-[#084649]">
+      <!-- Lange, staande foto over de volle breedte (gevuld); de tekst eronder scrollt -->
+      <div data-story-media class="h-[45dvh] w-full md:h-[min(60svh,34rem)] bg-gradient-to-br from-[#0F7C82] to-[#084649]">
         <img data-story-image alt="" class="hidden h-full w-full object-cover" />
       </div>
       <button type="button" data-story-close aria-label={lang === 'nl' ? 'Sluiten' : 'Close'} class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow transition hover:bg-white">

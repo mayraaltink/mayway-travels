@@ -163,6 +163,16 @@ function t(key: keyof typeof ui[typeof lang]) {
               alt={imageAlt}
               class:list={["w-full h-full object-cover", imageClass]}
             />
+            <!-- Locatie van de foto rechtsonder, zelfde label als op mobiel -->
+            {location && (
+              <span class="absolute bottom-6 right-6 flex items-center gap-2 rounded-full bg-black/35 px-4 py-2 text-white/90 backdrop-blur-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span class="text-sm uppercase tracking-wide">{location}</span>
+              </span>
+            )}
           </div>
         </div>
 

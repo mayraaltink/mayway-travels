@@ -15,8 +15,8 @@ function t(key: keyof typeof ui[typeof defaultLang]) {
 const [subtitleBefore, subtitleAfter] = t('hero.subtitle').split(t('hero.mobileFirst.term'));
 ---
 
-<!-- Mobiel: hoogte = scherm zónder adresbalk (lvh), zodat er na terugscrollen geen strook onbedekt blijft -->
-<section class="hero relative -mt-16 flex min-h-[100lvh] overflow-hidden md:min-h-[90svh] rounded-b-[60px] bg-[#0F7C82] md:rounded-b-[80px]">
+<!-- Mobiel: iets korter dan het scherm zónder adresbalk (lvh) -->
+<section class="hero relative -mt-16 flex min-h-[92lvh] overflow-hidden md:min-h-[90svh] rounded-b-[60px] bg-[#0F7C82] md:rounded-b-[80px]">
 
   <!-- Foto -->
   <img
@@ -33,8 +33,8 @@ const [subtitleBefore, subtitleAfter] = t('hero.subtitle').split(t('hero.mobileF
   <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/25 to-transparent"></div>
 
   <!-- Inhoud -->
-  <!-- Op mobiel gecentreerd in het zichtbare scherm (svh, mét adresbalk), vanaf tablet links uitgelijnd -->
-  <div class="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center self-start px-6 py-24 text-center md:min-h-0 md:self-stretch md:px-12 md:pt-32 md:text-left">
+  <!-- Op mobiel gecentreerd (iets onder het midden, met ruimte voor het menu), vanaf tablet links uitgelijnd -->
+  <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-16 pt-32 text-center md:px-12 md:pb-24 md:pt-32 md:text-left">
     <div class="hero-content mx-auto max-w-2xl md:mx-0">
       <!-- handgeschreven accent boven de titel (alleen vanaf tablet; op mobiel weggelaten) -->
       <p class="font-neucha mb-5 hidden items-center md:flex justify-center gap-3 text-xl leading-none text-[#8EE3DF] md:justify-start md:text-2xl">
@@ -55,7 +55,7 @@ const [subtitleBefore, subtitleAfter] = t('hero.subtitle').split(t('hero.mobileF
               id="mobile-first-term"
               aria-expanded="false"
               aria-controls="mobile-first-definition"
-              class="cursor-help underline decoration-dotted decoration-1 underline-offset-4"
+              class="cursor-help text-[#8EE3DF] transition hover:text-white"
             >{t('hero.mobileFirst.term')}</button>{subtitleAfter}
             <span
               id="mobile-first-definition"
@@ -91,7 +91,7 @@ const [subtitleBefore, subtitleAfter] = t('hero.subtitle').split(t('hero.mobileF
     href="https://www.google.com/maps/search/?api=1&query=Margaret+River,+Western+Australia"
     target="_blank"
     rel="noopener noreferrer"
-    class="absolute left-1/2 top-[calc(100svh-4.5rem)] z-10 flex -translate-x-1/2 whitespace-nowrap md:left-auto md:right-10 md:top-auto md:bottom-10 md:translate-x-0 items-center gap-2 rounded-full bg-black/20 px-4 py-2 text-white/90 backdrop-blur-sm transition hover:bg-black/40"
+    class="absolute bottom-10 right-10 z-10 flex items-center gap-2 rounded-full bg-black/20 px-4 py-2 text-white/90 backdrop-blur-sm transition hover:bg-black/40"
   >
     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>

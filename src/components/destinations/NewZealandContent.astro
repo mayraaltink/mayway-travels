@@ -16,19 +16,34 @@ function t(key: keyof typeof ui[typeof lang]) {
 }
 
 const hotspots = [
-  'nz_hooker_kea',
-  'nz_redwoods',
   'nz_tongariro',
+  'nz_hooker_kea',
   'nz_milford',
-  'nz_hobbiton',
-  'nz_huka',
-  'nz_ben_lomond',
-  'nz_wanaka',
-  'nz_heli_glaciers',
-  'nz_nevis',
-  'nz_hot_water_beach',
   'nz_waitomo',
+  'nz_kawarau',
+  'nz_hot_water_beach',
+  'nz_heli_glaciers',
+  'nz_redwoods',
+  'nz_huka',
+  'nz_hobbiton',
+  'nz_te_anau',
+  'nz_ben_lomond',
 ];
+
+// Foto per hotspot (map public/images/new-zealand); zonder foto toont de kaart een turquoise vlak
+const photos: Record<string, string> = {
+  nz_hooker_kea: '/images/new-zealand/hooker.jpg',
+  nz_redwoods: '/images/new-zealand/woodstrail.jpg',
+  nz_hot_water_beach: '/images/new-zealand/hotwater.jpg',
+  nz_milford: '/images/new-zealand/milford.jpg',
+  nz_huka: '/images/new-zealand/huka.jpg',
+  nz_tongariro: '/images/new-zealand/tongariro.jpg',
+  nz_hobbiton: '/images/new-zealand/hobbiton.jpg',
+  nz_heli_glaciers: '/images/new-zealand/fox.jpg',
+  nz_waitomo: '/images/new-zealand/cave.jpg',
+  nz_kawarau: '/images/comfortzone/lach.jpg',
+  nz_te_anau: '/images/new-zealand/teanau.jpg',
+};
 ---
 
 <DestinationContent
@@ -44,10 +59,10 @@ const hotspots = [
   guideUrl={lang === 'nl' ? '/eguides/' : '/en/eguides/'}
 >
   <DestinationIntro prefix="nz" />
+  <HotspotCarousel hotspots={hotspots} photos={photos} descKey="hotspots_descNZ" />
   <RouteAtlas
     map="/images/new-zealand/new-zealand-shape.svg"
     routes={newZealandRoutes}
     subtitleKey="routes.nz.subtitle"
   />
-  <HotspotCarousel hotspots={hotspots} photos={{}} descKey="hotspots_descNZ" />
 </DestinationContent>

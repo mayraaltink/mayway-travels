@@ -10,22 +10,22 @@ const lang = (Astro.currentLocale || defaultLang) as keyof typeof ui;
 function t(key: keyof typeof ui[typeof defaultLang]) {
   return ui[lang][key];
 }
-
-// ondertitel rond "mobile-first" knippen, zodat dat woord de uitleg kan openen
-const [subtitleBefore, subtitleAfter] = t('hero.subtitle').split(t('hero.mobileFirst.term'));
 ---
 
-<!-- Mobiel: iets korter dan het scherm zónder adresbalk (lvh) -->
-<section class="hero relative -mt-16 flex min-h-[92lvh] overflow-hidden md:min-h-[90svh] rounded-b-[60px] bg-[#0F7C82] md:rounded-b-[80px]">
+<!-- Mobiel: zelfde hoogte als de hero op community (schermhoog, minimaal 640px) -->
+<section class="hero relative -mt-16 flex h-[100svh] min-h-[640px] overflow-hidden md:h-auto md:min-h-[90svh] rounded-b-[60px] bg-[#0F7C82] md:rounded-b-[80px]">
 
-  <!-- Foto -->
-  <img
-    src="/images/hero/header-6.jpg"
-    alt="Luchtfoto van twee suppers op helder turquoise water met een rog eronder, Margaret River"
-    class="hero-photo absolute inset-0 h-full w-full object-cover object-center"
-    loading="eager"
-    fetchpriority="high"
-  />
+  <!-- Foto: op mobiel een staande versie (header-6-mobile.jpg, 1200×1600), zodat er minder van wordt afgesneden -->
+  <picture>
+    <source media="(max-width: 767px)" srcset="/images/hero/header-6-mobile.jpg" />
+    <img
+      src="/images/hero/header-6.jpg"
+      alt="Luchtfoto van twee suppers op helder turquoise water met een rog eronder, Margaret River"
+      class="hero-photo absolute inset-0 h-full w-full object-cover object-center"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </picture>
 
   <!-- Donkere laag: lichte basis, sterker aan de linkerkant achter de tekst en bovenin voor het menu -->
   <div class="absolute inset-0 bg-black/10"></div>
@@ -46,25 +46,8 @@ const [subtitleBefore, subtitleAfter] = t('hero.subtitle').split(t('hero.mobileF
         {t('hero.title1')}
       </h1>
       <!-- ondertitel onder de grote titel: smal gehouden zodat hij in twee ongeveer even lange regels breekt -->
-      <!-- klik op "mobile-first" → korte uitleg verschijnt onder de ondertitel -->
-      <p class="hero-shadow relative mx-auto mt-5 max-w-[22rem] whitespace-pre-line text-base font-normal leading-relaxed text-white/90 [text-wrap:balance] md:mx-0 md:mt-6 md:max-w-[30rem] md:text-lg">
-        {subtitleAfter === undefined ? t('hero.subtitle') : (
-          <>
-            {subtitleBefore}<button
-              type="button"
-              id="mobile-first-term"
-              aria-expanded="false"
-              aria-controls="mobile-first-definition"
-              class="cursor-help text-[#8EE3DF] transition hover:text-white"
-            >{t('hero.mobileFirst.term')}</button>{subtitleAfter}
-            <span
-              id="mobile-first-definition"
-              role="tooltip"
-              hidden
-              class="absolute inset-x-0 top-full z-20 mt-3 rounded-2xl bg-white/95 px-5 py-4 text-left text-sm leading-relaxed text-[#0F7C82] shadow-lg [text-shadow:none] backdrop-blur-sm"
-            >{t('hero.mobileFirst.definition')}</span>
-          </>
-        )}
+      <p class="hero-shadow mx-auto mt-5 max-w-[22rem] whitespace-pre-line text-base font-normal leading-relaxed text-white/90 [text-wrap:balance] md:mx-0 md:mt-6 md:max-w-[30rem] md:text-lg">
+        {t('hero.subtitle')}
       </p>
 
       <div class="mt-8 flex md:mt-10 flex-wrap items-center justify-center gap-3 md:justify-start">
@@ -104,28 +87,6 @@ const [subtitleBefore, subtitleAfter] = t('hero.subtitle').split(t('hero.mobileF
   <span id="ontdek" class="absolute bottom-0" aria-hidden="true"></span>
 </section>
 
-<script>
-  // uitleg van "mobile-first" openen/sluiten; klik ernaast of Escape sluit hem weer
-  const term = document.getElementById('mobile-first-term');
-  const definition = document.getElementById('mobile-first-definition');
-  if (term && definition) {
-    const setOpen = (open: boolean) => {
-      definition.hidden = !open;
-      term.setAttribute('aria-expanded', String(open));
-    };
-    term.addEventListener('click', (e) => {
-      e.stopPropagation();
-      setOpen(definition.hidden === true);
-    });
-    document.addEventListener('click', (e) => {
-      if (!definition.contains(e.target as Node)) setOpen(false);
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') setOpen(false);
-    });
-  }
-</script>
-
 <style>
   /* foto beweegt als een drone-shot (langzaam stijgen, draaien en zweven), tekst komt omhoog */
   :global(html) {
@@ -151,6 +112,10 @@ const [subtitleBefore, subtitleAfter] = t('hero.subtitle').split(t('hero.mobileF
   @keyframes hero-up {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: none; }
+  }
+  /* op mobiel staat de foto stil */
+  @media (max-width: 767px) {
+    .hero-photo { animation: none; transform: none; will-change: auto; }
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-photo,

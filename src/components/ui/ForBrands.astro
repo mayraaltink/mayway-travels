@@ -32,6 +32,10 @@ const services = [
   offer: t(`forBrands.services.${s.num}.offer`).split('|').filter(Boolean),
 }));
 
+// hero-zin rond "mobile-first" knippen, zodat dat woord de uitleg kan openen (staat het woord er niet in, dan gewone tekst)
+const heroLine = t('forBrands.hero.line1');
+const [heroBefore, heroAfter] = heroLine.split(t('forBrands.hero.mobileFirst.term'));
+
 const socials = [
   { platform: 'instagram', handle: '@mayraaltink', href: 'https://www.instagram.com/mayraaltink', followers: '18.6K' },
   { platform: 'tiktok', handle: '@mayraxaltink', href: 'https://www.tiktok.com/@mayraxaltink', followers: '11K' },
@@ -70,8 +74,25 @@ const socials = [
           {t('forBrands.hero.headline')}
         </h1>
 
-        <p class="mx-auto mt-6 max-w-md text-base text-white/85 md:mx-0 md:text-lg">
-          {t('forBrands.hero.line1')}
+        <!-- klik op "mobile-first" → korte uitleg verschijnt onder de zin -->
+        <p class="relative mx-auto mt-6 max-w-md text-base text-white/85 md:mx-0 md:text-lg">
+          {heroAfter === undefined ? heroLine : (
+            <>
+              {heroBefore}<button
+                type="button"
+                id="mobile-first-term"
+                aria-expanded="false"
+                aria-controls="mobile-first-definition"
+                class="cursor-help text-[#C4F1EE] transition hover:text-white"
+              >{t('forBrands.hero.mobileFirst.term')}</button>{heroAfter}
+              <span
+                id="mobile-first-definition"
+                role="tooltip"
+                hidden
+                class="absolute inset-x-0 top-full z-30 mt-3 rounded-2xl bg-white/95 px-5 py-4 text-left text-sm leading-relaxed text-[#0F7C82] shadow-lg backdrop-blur-sm"
+              >{t('forBrands.hero.mobileFirst.definition')}</span>
+            </>
+          )}
         </p>
 
         <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row md:justify-start">
@@ -134,7 +155,7 @@ const socials = [
                   <!-- Tekst met rechts twee foto's. Vanaf tablet zweven de foto's naast de tekst (absolute),
                        zodat de knop eronder op dezelfde afstand staat als bij de andere services. Mobiel: foto's onder de tekst. -->
                   <div class="relative mt-5">
-                    <p class="whitespace-pre-line text-[15px] leading-[1.55] text-gray-600 sm:pr-[21rem] md:pr-[18rem] md:text-base lg:pr-40 xl:pr-24">{service.intro}</p>
+                    <p class="whitespace-pre-line text-[15px] leading-[1.55] text-gray-600 sm:pr-[21rem] md:pr-[18rem] md:text-base lg:pr-40 xl:pr-24">{service.intro.split('\n\n').map((para, i) => <span class:list={['block', { 'mt-3': i > 0 }]}>{para}</span>)}</p>
                     <!-- Twee foto's half over elkaar, schuin, als een stapeltje polaroids (achterste groter).
                          Op grotere schermen steken ze buiten de tekstkolom uit, de lege ruimte rechts in. -->
                     <div class="relative mt-6 h-64 w-[19rem] sm:absolute sm:right-0 sm:-top-12 sm:mt-0 md:-right-16 md:h-72 md:w-[21rem] lg:-right-48 xl:-right-64">
@@ -153,8 +174,8 @@ const socials = [
                   </div>
                 ) : (
                   <>
-                    <p class="mt-5 whitespace-pre-line text-[15px] leading-[1.55] text-gray-600 md:hidden">{service.introMobile}</p>
-                    <p class="mt-5 hidden whitespace-pre-line text-base leading-[1.55] text-gray-600 md:block">{service.intro}</p>
+                    <p class="mt-5 whitespace-pre-line text-[15px] leading-[1.55] text-gray-600 md:hidden">{service.introMobile.split('\n\n').map((para, i) => <span class:list={['block', { 'mt-3': i > 0 }]}>{para}</span>)}</p>
+                    <p class="mt-5 hidden whitespace-pre-line text-base leading-[1.55] text-gray-600 md:block">{service.intro.split('\n\n').map((para, i) => <span class:list={['block', { 'mt-3': i > 0 }]}>{para}</span>)}</p>
                   </>
                 )}
 
@@ -208,6 +229,8 @@ const socials = [
           <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-gray-600 md:text-base">
             <p>{t('forBrands.creator.p1')}</p>
             <p>{t('forBrands.creator.p2')}</p>
+            <!-- derde alinea alleen als die in ui.ts staat (nu alleen Engels) -->
+            {t('forBrands.creator.p3') !== 'forBrands.creator.p3' && <p>{t('forBrands.creator.p3')}</p>}
           </div>
 
           <a
@@ -276,3 +299,25 @@ const socials = [
     scroll-behavior: smooth;
   }
 </style>
+
+<script>
+  // uitleg van "mobile-first" openen/sluiten; klik ernaast of Escape sluit hem weer
+  const term = document.getElementById('mobile-first-term');
+  const definition = document.getElementById('mobile-first-definition');
+  if (term && definition) {
+    const setOpen = (open: boolean) => {
+      definition.hidden = !open;
+      term.setAttribute('aria-expanded', String(open));
+    };
+    term.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(definition.hidden === true);
+    });
+    document.addEventListener('click', (e) => {
+      if (!definition.contains(e.target as Node)) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  }
+</script>

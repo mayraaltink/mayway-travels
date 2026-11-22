@@ -11,7 +11,7 @@ const lang = (Astro.currentLocale || defaultLang) === 'en' ? 'en' : 'nl';
 
 const labels = {
   nl: { title: 'Een kijkje door mijn lens', close: 'Sluiten', prev: 'Vorige', next: 'Volgende' },
-  en: { title: 'A look through my lens', close: 'Close', prev: 'Previous', next: 'Next' },
+  en: { title: 'Through My Lens', close: 'Close', prev: 'Previous', next: 'Next' },
 }[lang];
 
 const assetImages = import.meta.glob<{ default: ImageMetadata }>('../../assets/**/*.{jpg,jpeg,png,webp,avif}', { eager: true });

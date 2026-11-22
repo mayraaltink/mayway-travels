@@ -73,9 +73,9 @@ export const ui = {
 
 'about.heading': 'Hi, I’m Mayra!',
 
-'about.intro.p1': 'I believe the best stories come from staying curious and daring to think out of the box. That mindset has not only taken me to extraordinary places, it is also the foundation of how I approach the creative process of making content.',
+'about.intro.p1': "Curiosity, thinking outside the box and daring to try something different have always been part of how I live. They've taken me to extraordinary places and continue to shape the way I approach creativity and content creation.",
 
-'about.intro.p2': 'After 2.5 years in Australia, everything comes together in MAY WAYS: my love for adventure, coming up with creative concepts and capturing them. From the first idea to the final edit, I think along with you and turn real experiences into authentic content that inspires, connects and sticks.',
+'about.intro.p2': "After two and a half years in Australia, I've brought everything I love together in MAY WAYS: my passion for adventure, creative concepts and honest storytelling. From the first idea to the final edit, I love being involved in every step, turning real experiences into content that people want to be part of.",
 
 'about.intro.p3': '',
 

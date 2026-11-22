@@ -75,7 +75,7 @@ const messages = {
       <!-- Rechts: formulier -->
       <div class="relative rounded-[2rem] bg-white p-7 shadow-[0_20px_50px_rgba(0,0,0,0.06)] md:p-12">
         <h2 class="text-2xl font-semibold tracking-tight text-black md:text-3xl">{t('contact.form.title')}</h2>
-        <p class="mt-2 text-[15px] leading-relaxed text-gray-600">{t('contact.form.intro')}</p>
+        {t('contact.form.intro') && <p class="mt-2 text-[13px] leading-relaxed text-gray-600">{t('contact.form.intro')}</p>}
 
         <form id="form" class="mt-8" novalidate>
           <input type="hidden" name="access_key" value="026a1614-327e-4e4b-bdb4-d41e59fe8520" />

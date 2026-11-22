@@ -28,7 +28,7 @@ export const packages: Package[] = [
     tagline: { nl: 'Zichtbaar en consistent online', en: 'Build a visible and consistent online presence' },
     bestFor: {
       nl: 'Ideaal voor merken die willen starten of hun socials eindelijk op orde willen hebben.',
-      en: 'Ideal for brands looking to get started with social media and bring structure and consistency to their existing channels.',
+      en: 'Ideal for brands that want to get started with social media and bring structure and consistency to their existing channels.',
     },
     price: { nl: 'Op aanvraag', en: 'On request' },
     items: {
@@ -64,7 +64,7 @@ export const packages: Package[] = [
     tagline: { nl: 'Groeien met een actieve community', en: 'Growing with an active community' },
     bestFor: {
       nl: 'Ideaal voor merken die willen groeien en een betrokken community opbouwen.',
-      en: 'Ideal for brands that want to grow and build an engaged community.',
+      en: 'Ideal for brands that want to grow and build an engaged online community.',
     },
     price: { nl: 'Op aanvraag', en: 'On request' },
     featured: true,

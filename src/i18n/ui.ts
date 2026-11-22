@@ -521,7 +521,7 @@ faq_sim_a_f:
     "routes.east.subtitle": "Sydney to Cairns",
 
     "routes.east.tagline":
-      "Australia's east coast is without a doubt the **most popular route** among travellers. On this trip you experience the real **Aussie vibes**: vibrant cities, endless beaches, impressive nature and the relaxed **surf lifestyle** Australia is so famous for.\n\nAlong the way, lively hotspots like **Sydney**, the **Gold Coast** and **Brisbane** alternate with real surf towns such as **Byron Bay** and **Noosa**. You pass places that feel like a true mini escape, such as **Magnetic Island**, and eventually you reach the **Great Barrier Reef** and the **Whitsunday Islands**, the special places Australia is so famous for.",
+      "Australia's east coast is without a doubt the **most popular route** among travellers. On this trip, you'll experience true **Aussie vibes**: vibrant cities, endless beaches, stunning nature and the laid-back **surf lifestyle** Australia is so famous for.\n\nAlong the way, lively hotspots like **Sydney**, the **Gold Coast** and **Brisbane** alternate with classic surf towns such as **Byron Bay** and **Noosa**. You'll pass places that feel like a mini escape, such as **Magnetic Island**, before finally reaching the **Great Barrier Reef** and the **Whitsunday Islands**, the absolute highlights of the trip.",
 
     "routes.east.drive":
       "Distance = ± 2,600 km\nDriving time = ± 24 to 28 hours\nRecommended travel time = 4 to 6 weeks",
@@ -561,7 +561,7 @@ faq_sim_a_f:
 "routes.west.title": "North West Coast",
 "routes.west.subtitle": "Perth to Exmouth",
 "routes.west.tagline":
-  "The north-west coast is **rugged, remote** and still wonderfully **undiscovered**. You can drive for hours without seeing another car, and that is exactly its charm. This route is for anyone who loves true **road trip freedom** and **adventure**!\n\nIt's the ultimate road trip to do in a **campervan**. Along the way, the **Pinnacles** and the bright pink **Hutt Lagoon** alternate with the deep gorges and surreal views of **Kalbarri**. In **Shark Bay** and **Monkey Mia** you come face to face with **wild dolphins**, and you finally end up at **Ningaloo Reef**. There you snorkel straight from the beach and swim with **whale sharks**, manta rays and turtles.",
+  "The north-west coast is **rugged, remote** and still wonderfully **undiscovered**. You can drive for hours without seeing another car, and that's exactly its charm. This route is for anyone who loves **freedom** and **adventure**!\n\nIt's the ultimate trip to do in a **campervan**. Along the way, you'll pass the **Pinnacles**, the bright pink **Hutt Lagoon**, and the deep gorges and surreal views of **Kalbarri**. In **Shark Bay** and **Monkey Mia**, you'll come face to face with **wild dolphins**, before finally reaching **Ningaloo Reef**. Here, you can snorkel straight from the beach and, in season, swim with **whale sharks**, manta rays and turtles.",
 // New Zealand – North Island
 "stop.auckland": "New Zealand's biggest city, built on volcanoes between two harbours. Climb Mount Eden, go up the Sky Tower or take the ferry to Waiheke Island.",
 "stop.coromandel": "A rugged peninsula full of white beaches, rainforest and small coastal villages. Perfect for slowing down and discovering the most beautiful bays.",
@@ -663,7 +663,7 @@ faq_sim_a_f:
 "routes.south.title": "South West Coast",
 "routes.south.subtitle": "Perth to Esperance",
 "routes.south.tagline":
-  "The south-west coast is one of the **most varied routes** in Australia. A route full of **adventure**, **surf spots** and amazing **campsites** to experience the real **Aussie lifestyle**.\n\nFrom Perth it's about a **3-hour** drive to the wine region of **Margaret River**. One moment you're walking through the **vineyards**, the next you're standing among **sixty-metre-tall karri trees** around **Pemberton**, and at the end of the route you share the paradise of **Lucky Bay** with **kangaroos**.",
+  "The south-west coast is one of the **most varied routes** in Australia, full of **adventure**, great **surf spots** and amazing **campsites** in the middle of nature.\n\nFrom Perth, it's about a **three-hour** drive to the wine region of **Margaret River**. One moment you're strolling through the **vineyards**, the next you're standing among **sixty-metre-tall karri trees** around **Pemberton**. And at the end of the route, you'll share the paradise of **Lucky Bay** with **kangaroos**.",
 "routes.south.drive":
   "Direct distance = ± 700 km\nAlong the coast = ± 1,300 km\nDriving time = ± 16 hours\nRecommended travel time = 10 to 18 days",
 "routes.south.expand": {
@@ -681,7 +681,7 @@ faq_sim_a_f:
 "routes.red.title": "Red Centre",
 "routes.red.subtitle": "Alice Springs region",
 "routes.red.tagline":
-  "In the middle of Australia lies **Uluru**, the sacred rock of the Aboriginal **Anangu** people. **Iconic, vast and special**, to say the least. The Red Centre is **far from everything**, so most travellers don't just drive past in their own 4WD, unless they're crossing the whole country. That's why many people choose an **organised tour** from **Alice Springs** or from **Ayers Rock Airport**, the airport right next to Uluru.\n\nA standard trip usually takes **4 days and 3 nights**. You hike along the rim of **Kings Canyon**, walk between the domes of **Kata Tjuta** and end the day with a **sunset barbecue** overlooking Uluru. At night you sleep in a **swag** or tent **under the stars**, in the middle of the outback.",
+  "In the middle of Australia lies **Uluru**, the sacred rock of the Aboriginal **Anangu** people. The Red Centre is **far from everything**, so unless you're crossing the whole country, it's not a place you simply drive to in your own 4WD. That's why many travellers choose an **organised tour** from **Alice Springs** or from **Ayers Rock Airport**, close to Uluru.\n\nA standard trip usually takes **three to four days**. You'll hike along the rim of **Kings Canyon**, walk between the domes of **Kata Tjuta** and enjoy a **sunset barbecue** overlooking Uluru. At night, you sleep in a **swag** or tent **under the stars**, in the middle of the outback.",
 "routes.red.drive":
   "From Alice Springs Airport = ± 1,300 km · ± 15 hrs\nFrom Ayers Rock Airport = ± 700 km · ± 8 hrs\nRecommended travel time = 3 to 5 days",
 "routes.red.expand": {
@@ -698,7 +698,7 @@ faq_sim_a_f:
 "routes.top.title": "Top End",
 "routes.top.subtitle": "Darwin & Kakadu",
 "routes.top.tagline":
-  "The Top End is Australia's **tropical north** and one of the coolest **outback adventures** you can have. Here, ancient **Aboriginal culture** meets the wild nature of **Kakadu**, the country's largest national park. Go in the **dry season (May to October)**, when most roads and swimming spots are open.\n\nLook out for **jumping crocodiles** on a cruise along the **Adelaide River**, swim beneath the waterfalls of **Litchfield** and at **Gunlom Falls**, take a boat trip on **Yellow Water** full of birds and crocs, and cruise or canoe through stunning **Katherine Gorge**.",
+  "The Top End is Australia's **tropical north** and one of the coolest **outback adventures** you can have. Here, ancient **Aboriginal culture** meets the wild nature of **Kakadu**, one of the country's largest national parks. Go in the **dry season (May to October)**, when most roads and swimming spots are open.\n\nLook out for **jumping crocodiles** on a boat tour along the **Adelaide River**, swim beneath the waterfalls of **Litchfield** and at **Gunlom Falls**, spot birds and crocs on a **Yellow Water** cruise, and canoe through the stunning **Katherine Gorge**.",
 "routes.top.drive":
   "Total route = ± 1,000 km\nDriving time = ± 12 hours\nRecommended travel time = 7 to 10 days",
 "routes.top.expand": {
@@ -813,22 +813,22 @@ faq_sim_a_f:
   'Common mistakes when travelling through Australia',
 
 'australia.intro.mistake1':
-  'Wanting to see the whole country in one trip',
+  'Trying to see the whole country in one trip',
 
 'australia.intro.mistake2':
   'Seriously underestimating the distances',
 
 'australia.intro.mistake3':
-  'Forgetting that every region has its own season',
+  'Forgetting that every region has its own seasons',
 
 'australia.intro.mistake4':
-  'Booking places to stay without a clear route',
+  'Booking accommodation before planning your route',
 
 'australia.intro.mistake5':
-  'Arranging popular hotspots last minute in peak season',
+  'Leaving popular spots until the last minute in peak season',
 
 'australia.intro.mistake6':
-  'Thinking it works like backpacking in Asia',
+  'Expecting it to be like backpacking in Asia',
 
 'australia.intro.cta':
   'Discover personalised travel advice',

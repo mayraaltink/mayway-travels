@@ -120,12 +120,12 @@ const desc = get(descKey);
     <CarouselControls />
   </div>
 
-  <!-- Verhaal-popup -->
-  <!-- Nooit hoger dan het scherm: foto bovenaan vast, de tekst eronder scrollt als hij te lang is -->
-  <!-- Mobiel: kaartje in het midden (foto boven, tekst eronder die scrollt), nooit hoger dan 90% van het scherm.
+  <!-- Verhaal-popup: zelfde opbouw als de MAY WAY Moments-popup (die werkt goed op de iPhone).
+       De dialog zelf blijft een gewoon blok; de binnenste laag regelt de indeling en de maximale hoogte.
+       Mobiel: kaartje met foto boven (±45% van het scherm), titel en tekst eronder die scrollt.
        Desktop: foto links, tekst rechts. -->
-  <dialog id="hotspot-story" class="hotspot-story m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-none flex-col overflow-hidden rounded-[1.75rem] bg-white p-0 shadow-2xl open:flex md:max-h-[90svh] md:w-[min(92vw,56rem)] md:flex-row md:rounded-[2rem]">
-    <!-- Lange, staande foto (gevuld): mobiel over de volle breedte, desktop links -->
+  <dialog id="hotspot-story" class="hotspot-story m-auto w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-[1.75rem] p-0 md:w-[min(92vw,56rem)] md:rounded-[2rem]">
+    <div class="relative flex max-h-[90dvh] flex-col md:max-h-[90svh] md:flex-row">
     <div data-story-media class="relative h-[45dvh] w-full shrink-0 bg-gradient-to-br from-[#0F7C82] to-[#084649] md:h-auto md:min-h-[32rem] md:w-[52%]">
       <img data-story-image alt="" class="hidden h-full w-full object-cover" />
       <!-- subtiele pijltjes: vorige / volgende hotspot (zelfde als bij MAY WAY Moments) -->
@@ -150,6 +150,7 @@ const desc = get(descKey);
     <button type="button" data-story-close aria-label={lang === 'nl' ? 'Sluiten' : 'Close'} class="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition hover:bg-gray-200 md:h-10 md:w-10 md:text-gray-900">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
     </button>
+    </div>
   </dialog>
 </section>
 
